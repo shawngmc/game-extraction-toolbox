@@ -1,0 +1,2187 @@
+{
+    "roms": {
+        "game_00": {
+            "id":"game_00",
+            "name":"Final Fight (JP)",
+            "transforms": [
+                {
+                    "action": "extract",
+                    "archive_type": "arc",
+                    "whitelist": [
+                        "bin/vampj"
+                    ]
+                },
+                {
+                    "action": "parts",
+                    
+                }
+            ]
+        },
+        "game_01": {
+            "id":"game_01",
+            "name":"Final Fight"
+        },
+        "game_10": {
+            "id":"game_10",
+            "name":"The King of Dragons (JP)"
+        },
+        "game_11": {
+            "id":"game_11",
+            "name":"The King of Dragons"
+        },
+        "game_20": {
+            "id":"game_20",
+            "name":"Captain Commando (JP)"
+        },
+        "game_21": {
+            "id":"game_21",
+            "name":"Captain Commando"
+        },
+        "game_30": {
+            "id":"game_30",
+            "name":"Knights of the Round (JP)"
+        },
+        "game_31": {
+            "id":"game_31",
+            "name":"Knights of the Round"
+        },
+        "game_40": {
+            "id":"game_40",
+            "name":"Warriors of Fate (JP)"
+        },
+        "game_41": {
+            "id":"game_41",
+            "name":"Warriors of Fate"
+        },
+        "game_50": {
+            "id":"game_50",
+            "name":"Powered Gear: Strategic Variant Armor Equipment (JP)"
+        },
+        "game_51": {
+            "id":"game_51",
+            "name":"Armored Warriors"
+        },
+        "game_60": {
+            "id":"game_60",
+            "name":"Battle Circuit (JP)"
+        },
+        "game_61": {
+            "id":"game_61",
+            "name":"Battle Circuit"
+        },
+        "1556707": {
+            "id":"1556707",
+            "name":"Bionic Commando"
+        },
+        "1556708": {
+            "id":"1556708",
+            "name":"Forgotton Worlds",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "rename",
+                    "mame_name": "lostwrld" 
+                }
+            ]
+        },
+        "1556709": {
+            "id":"1556709",
+            "name":"Ghouls 'n Ghosts"
+        },
+        "1556710": {
+            "id":"1556710",
+            "name":"Strider"
+        },
+        "1556711": {
+            "id":"1556711",
+            "name":"Dynasty Wars"
+        },
+        "1556712": {
+            "id":"1556712",
+            "name":"Final Fight",
+            "overrides": [
+                {
+                    "kpka_offset": 1497211,
+                    "strategy": "rename",
+                    "mame_name": "ffightu" 
+                }
+            ]
+        },
+        "1556713": {
+            "id":"1556713",
+            "name":"1941 Counter Attack",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "split_1941",
+                    "mame_name": "1941"
+                }
+            ]
+        },
+        "1556714": {
+            "id":"1556714",
+            "name":"Senjou no Ookami II",
+            "overrides": [
+                {
+                    "kpka_offset": 208,
+                    "strategy": "rename",
+                    "mame_name": "mercsj"
+                }
+            ]
+        },
+        "1556715": {
+            "id":"1556715",
+            "name":"Mega Twins",
+            "overrides": [
+                {
+                    "kpka_offset": 1511592,
+                    "strategy": "rename",
+                    "mame_name": "mtwins"
+                }
+            ]
+        },
+        "1556716": {
+            "id":"1556716",
+            "name":"Carrier Air Wing",
+            "overrides": [
+                {
+                    "kpka_offset": 1538278,
+                    "strategy": "rename",
+                    "mame_name": "cawingu"
+                }
+            ]
+        },
+        "1556717": {
+            "id":"1556717",
+            "name":"Street Fighter II",
+            "overrides": [
+                {
+                    "kpka_offset": 3611065,
+                    "strategy": "rename",
+                    "mame_name": "sf2um"
+                }
+            ]
+        },
+        "1556718": {
+            "id":"1556718",
+            "name":"Captain Commando"
+        },
+        "1556719": {
+            "id":"1556719",
+            "name":"Varth Operation Thunderstorm"
+        },
+        "1556720": {
+            "id":"1556720",
+            "name":"Warriors of Fate"
+        },
+        "1556721": {
+            "id":"1556721",
+            "name":"Street Fighter II Hyper Fighting"
+        },
+        "1556722": {
+            "id":"1556722",
+            "name":"Super Street Fighter II Turbo",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "ssf2xj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 3670016,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 7
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfxj.03d",
+                                    "sha1": "dc0330fcbffbc0077faa20d34a28d6a49b04639e"
+                                },
+                                {
+                                    "name": "sfxj.04a",
+                                    "sha1": "61e7364408bf07c01634913c112b6245acce48ab"
+                                },
+                                {
+                                    "name": "sfxj.05", 
+                                    "sha1": "aa713c9e1a2eba35bf1c9b40bb262ff7e46b9ce4"
+                                },
+                                {
+                                    "name": "sfxj.06b", 
+                                    "sha1": "63bf120566db0c23cc726e7cdbf78428582c694f"
+                                },
+                                {
+                                    "name": "sfxj.07a", 
+                                    "sha1": "f08dd30a1b864fdd5d05d58a0b43e65077702d32"
+                                },
+                                {
+                                    "name": "sfxj.08", 
+                                    "sha1": "8cbe96dfeaa41306caa2819b82272ce3b0b9f926"
+                                },
+                                {
+                                    "name": "sfx.09", 
+                                    "sha1": "746df99b826b9837bba267104132161153c1daff"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split_size",
+                                    "sizes": [
+                                        8388608,
+                                        4194304,
+                                        4194304
+                                    ]
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.13m", 
+                                    "sha1": "bf2a6d98a656d1cb5734da7836686242d3211137"
+                                },
+                                {
+                                    "name": "sfx.15m", 
+                                    "sha1": "4b302dbb66e8a5c2ad92798699391e981bada427"
+                                },
+                                {
+                                    "name": "sfx.17m", 
+                                    "sha1": "b21b1c749a8241440879bf8e7cb33968ccef97e5"
+                                },
+                                {
+                                    "name": "sfx.19m", 
+                                    "sha1": "4d320fc96d1ef0b9928a8ce801734245a4c097a5"
+                                },
+                                {
+                                    "name": "sfx.14m", 
+                                    "sha1": "0f4d26af338dab5dce5b7b34d32ad0c573434ace"
+                                },
+                                {
+                                    "name": "sfx.16m", 
+                                    "sha1": "f4456833fb396e6501f4174c0fe5fd63ea40a188"
+                                },
+                                {
+                                    "name": "sfx.18m", 
+                                    "sha1": "4b060501e56b9d61294748da5387cdae5280ec4d"
+                                },
+                                {
+                                    "name": "sfx.20m", 
+                                    "sha1": "32b11ba7a12004aff810d719bff7508204c7b7c0"
+                                },
+                                {
+                                    "name": "sfx.21m", 
+                                    "sha1": "1a5e11e9caa2b96108d89ae660ef1f6bcb469a74"
+                                },
+                                {
+                                    "name": "sfx.23m", 
+                                    "sha1": "491e28e14ee06821fc9e709efa7b91313bc0c2db"
+                                },
+                                {
+                                    "name": "sfx.24m", 
+                                    "sha1": "83df1d9953560edddc2951ea426d29fb014e6a8a"
+                                },
+                                {
+                                    "name": "sfx.27m", 
+                                    "sha1": "ad6921af36d0bd5dfb89b1fb53c3ca3fd92d7204"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.01", 
+                                    "sha1": "c8b2d50fe3a329bd0592ea160d505155d873dab1"
+                                },
+                                {
+                                    "name": "sfx.02", 
+                                    "sha1": "cab3afc79da53e3887eb1ccd1f4d19790728e6cd"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.11m", 
+                                    "sha1": "a8520f77f30b97aae36408e0c4ca1ebbde1808a5"
+                                },
+                                {
+                                    "name": "sfx.12m", 
+                                    "sha1": "d4eb9cae66c74e956569fea8b815156fbd420f83"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 15168864,
+                    "strategy": "transforms",
+                    "mame_name": "ssf2tu",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 3670016,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 7
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfxu.03e",
+                                    "sha1": "bea1a8aafbbbe9cb0895561a57dead1579361a8e"
+                                },
+                                {
+                                    "name": "sfxu.04a",
+                                    "sha1": "769a8a9d4e04e291ce7427b89e537bba2258ca82"
+                                },
+                                {
+                                    "name": "sfxu.05", 
+                                    "sha1": "7cce55a3e07b5ba2e2e37e4c66a52678a1b19a63"
+                                },
+                                {
+                                    "name": "sfxu.06b", 
+                                    "sha1": "273ff4d4242ce22b755d35e5d2cf2517d625bdd2"
+                                },
+                                {
+                                    "name": "sfxu.07a", 
+                                    "sha1": "840af0d0ce634fb98e4f89173c4f1f95ec2cf94b"
+                                },
+                                {
+                                    "name": "sfxu.08", 
+                                    "sha1": "b51515f4f4aee5bbbfc8b79372d0bc6e0c140912"
+                                },
+                                {
+                                    "name": "sfx.09", 
+                                    "sha1": "746df99b826b9837bba267104132161153c1daff"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split_size",
+                                    "sizes": [
+                                        8388608,
+                                        4194304,
+                                        4194304
+                                    ]
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.13m", 
+                                    "sha1": "bf2a6d98a656d1cb5734da7836686242d3211137"
+                                },
+                                {
+                                    "name": "sfx.15m", 
+                                    "sha1": "4b302dbb66e8a5c2ad92798699391e981bada427"
+                                },
+                                {
+                                    "name": "sfx.17m", 
+                                    "sha1": "b21b1c749a8241440879bf8e7cb33968ccef97e5"
+                                },
+                                {
+                                    "name": "sfx.19m", 
+                                    "sha1": "4d320fc96d1ef0b9928a8ce801734245a4c097a5"
+                                },
+                                {
+                                    "name": "sfx.14m", 
+                                    "sha1": "0f4d26af338dab5dce5b7b34d32ad0c573434ace"
+                                },
+                                {
+                                    "name": "sfx.16m", 
+                                    "sha1": "f4456833fb396e6501f4174c0fe5fd63ea40a188"
+                                },
+                                {
+                                    "name": "sfx.18m", 
+                                    "sha1": "4b060501e56b9d61294748da5387cdae5280ec4d"
+                                },
+                                {
+                                    "name": "sfx.20m", 
+                                    "sha1": "32b11ba7a12004aff810d719bff7508204c7b7c0"
+                                },
+                                {
+                                    "name": "sfx.21m", 
+                                    "sha1": "1a5e11e9caa2b96108d89ae660ef1f6bcb469a74"
+                                },
+                                {
+                                    "name": "sfx.23m", 
+                                    "sha1": "491e28e14ee06821fc9e709efa7b91313bc0c2db"
+                                },
+                                {
+                                    "name": "sfx.24m", 
+                                    "sha1": "83df1d9953560edddc2951ea426d29fb014e6a8a"
+                                },
+                                {
+                                    "name": "sfx.27m", 
+                                    "sha1": "ad6921af36d0bd5dfb89b1fb53c3ca3fd92d7204"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.01", 
+                                    "sha1": "c8b2d50fe3a329bd0592ea160d505155d873dab1"
+                                },
+                                {
+                                    "name": "sfx.02", 
+                                    "sha1": "cab3afc79da53e3887eb1ccd1f4d19790728e6cd"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "sfx.11m", 
+                                    "sha1": "a8520f77f30b97aae36408e0c4ca1ebbde1808a5"
+                                },
+                                {
+                                    "name": "sfx.12m", 
+                                    "sha1": "d4eb9cae66c74e956569fea8b815156fbd420f83"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556723": {
+            "id":"1556723",
+            "name":"Powered Gear: Strategic Variant Armor Equipment"
+        },
+        "1556724": {
+            "id": "1556724",
+            "name": "Cyberbots: Fullmetal Madness",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "cybotsj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 8
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cybj.03",
+                                    "sha1": "ea3fa2e6229d90cc3f69c59f447b6b373d64d2aa"
+                                },
+                                {
+                                    "name": "cybj.04",
+                                    "sha1": "595c3e679ea02282bf8a5aa6c7c09e5c30e839c7"
+                                },
+                                {
+                                    "name": "cyb.05", 
+                                    "sha1": "dd611c1708e7ef86e4f7cac4b7b0dff7baaee5ed"
+                                },
+                                {
+                                    "name": "cyb.06", 
+                                    "sha1": "2ea005f3e73b05f8f0ec006cd9e95f7731a73897"
+                                },
+                                {
+                                    "name": "cyb.07", 
+                                    "sha1": "4f607e733e2dea80211497522be6d0f09571928d"
+                                },
+                                {
+                                    "name": "cyb.08", 
+                                    "sha1": "9714579a7a78b9716e44bca6c18bf1a93aa4e482"
+                                },
+                                {
+                                    "name": "cyb.09", 
+                                    "sha1": "16abd92ebed921a6a7e8eac4b098dc61f7e5485c"
+                                },
+                                {
+                                    "name": "cyb.10", 
+                                    "sha1": "8a65026ae35247cda016ce85a34034c62b3aa1a6"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.13m", 
+                                    "sha1": "b743938dc8e772dc3f63ed88a4a54c34fffdba21"
+                                },
+                                {
+                                    "name": "cyb.15m", 
+                                    "sha1": "80e3cf5c69f13343de667e1476bb716d45d3ff63"
+                                },
+                                {
+                                    "name": "cyb.17m", 
+                                    "sha1": "40132f3cc79b0a74460ebd4e0d4ddbe240efc06f"
+                                },
+                                {
+                                    "name": "cyb.19m", 
+                                    "sha1": "154bbceb7d303a208abb1b2f3d507d5afacc71ed"
+                                },
+                                {
+                                    "name": "cyb.14m", 
+                                    "sha1": "bfb1cc6786277b94ce28bfd464e2bbb6f6d3486e"
+                                },
+                                {
+                                    "name": "cyb.16m", 
+                                    "sha1": "b0cde577d29a9f4e718b673c8645529ef0ababc9"
+                                },
+                                {
+                                    "name": "cyb.18m", 
+                                    "sha1": "e03f4a120c95a2f476ffc8492bca85e0c5cea068"
+                                },
+                                {
+                                    "name": "cyb.20m", 
+                                    "sha1": "94d0cc5f05de4bc2d43977d91f887005dc10310c"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.01", 
+                                    "sha1": "06d260875a76da08d56ea2b2ae277e8c2dbae6e3"
+                                },
+                                {
+                                    "name": "cyb.02", 
+                                    "sha1": "c322957558d8d3e9dad090aebbe485978cbce8f5"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.11m", 
+                                    "sha1": "28e537067d4846f22657ee37166d18b8f05f4da1"
+                                },
+                                {
+                                    "name": "cyb.12m", 
+                                    "sha1": "eb6a9d4998b3311344d73bae88d661d81609c492"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 20260870,
+                    "strategy": "transforms",
+                    "mame_name": "cybotsu",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 8
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cybu.03",
+                                    "sha1": "de9f3f261003f4f70ae32114a15e498387c23f6d"
+                                },
+                                {
+                                    "name": "cybu.04",
+                                    "sha1": "b2b9379c84b121048cb83a8c48756b48cdbc3ea1"
+                                },
+                                {
+                                    "name": "cyb.05", 
+                                    "sha1": "dd611c1708e7ef86e4f7cac4b7b0dff7baaee5ed"
+                                },
+                                {
+                                    "name": "cyb.06", 
+                                    "sha1": "2ea005f3e73b05f8f0ec006cd9e95f7731a73897"
+                                },
+                                {
+                                    "name": "cyb.07", 
+                                    "sha1": "4f607e733e2dea80211497522be6d0f09571928d"
+                                },
+                                {
+                                    "name": "cyb.08", 
+                                    "sha1": "9714579a7a78b9716e44bca6c18bf1a93aa4e482"
+                                },
+                                {
+                                    "name": "cyb.09", 
+                                    "sha1": "16abd92ebed921a6a7e8eac4b098dc61f7e5485c"
+                                },
+                                {
+                                    "name": "cyb.10", 
+                                    "sha1": "8a65026ae35247cda016ce85a34034c62b3aa1a6"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.13m", 
+                                    "sha1": "b743938dc8e772dc3f63ed88a4a54c34fffdba21"
+                                },
+                                {
+                                    "name": "cyb.15m", 
+                                    "sha1": "80e3cf5c69f13343de667e1476bb716d45d3ff63"
+                                },
+                                {
+                                    "name": "cyb.17m", 
+                                    "sha1": "40132f3cc79b0a74460ebd4e0d4ddbe240efc06f"
+                                },
+                                {
+                                    "name": "cyb.19m", 
+                                    "sha1": "154bbceb7d303a208abb1b2f3d507d5afacc71ed"
+                                },
+                                {
+                                    "name": "cyb.14m", 
+                                    "sha1": "bfb1cc6786277b94ce28bfd464e2bbb6f6d3486e"
+                                },
+                                {
+                                    "name": "cyb.16m", 
+                                    "sha1": "b0cde577d29a9f4e718b673c8645529ef0ababc9"
+                                },
+                                {
+                                    "name": "cyb.18m", 
+                                    "sha1": "e03f4a120c95a2f476ffc8492bca85e0c5cea068"
+                                },
+                                {
+                                    "name": "cyb.20m", 
+                                    "sha1": "94d0cc5f05de4bc2d43977d91f887005dc10310c"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.01", 
+                                    "sha1": "06d260875a76da08d56ea2b2ae277e8c2dbae6e3"
+                                },
+                                {
+                                    "name": "cyb.02", 
+                                    "sha1": "c322957558d8d3e9dad090aebbe485978cbce8f5"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "cyb.11m", 
+                                    "sha1": "28e537067d4846f22657ee37166d18b8f05f4da1"
+                                },
+                                {
+                                    "name": "cyb.12m", 
+                                    "sha1": "eb6a9d4998b3311344d73bae88d661d81609c492"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556725": {
+            "id": "1556725",
+            "name": "19XX: The War Against Destiny",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "19xxj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 2621440,
+                                    "end": 4194304
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 5
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19xj-03b.6a",
+                                    "sha1": "9b08cfdf278fc0cf60827518c4fecb99f224578b"
+                                },
+                                {
+                                    "name": "19xj-04b.7a",
+                                    "sha1": "940a4fe52c1eb208071ab9d0a0c256eb39620091"
+                                },
+                                {
+                                    "name": "19xj-05b.8a", 
+                                    "sha1": "40c79bc454d5fb8e5004db3df4fdcb10fae6c1e9"
+                                },
+                                {
+                                    "name": "19xj-06b.9a", 
+                                    "sha1": "7d38660703707382120e6af770543ff50d8190f6"
+                                },
+                                {
+                                    "name": "19xj-07.6d", 
+                                    "sha1": "9e225beccffd14bb53a32f8c0f2aef7f331dae30"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 2097152,
+                                    "end": 8388608
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 5
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x-69.4j",
+                                    "sha1": "901029b5423e4bda85f592735036c06b7d426680"
+                                },
+                                {
+                                    "name": "19x-59.4d",
+                                    "sha1": "9beb64ef0a8c92490848599d5d979bf42532609d"
+                                },
+                                {
+                                    "name": "19x-79.4m",
+                                    "sha1": "8a44364d9af6b9e1664b44b9235dc172182c9eb8"
+                                },
+                                {
+                                    "name": "19x-89.4p",
+                                    "sha1": "172413f220b242411218c7865e04014ec6417537"
+                                },
+                                {
+                                    "name": "19x-73.8j",
+                                    "sha1": "221016c97300b253301ad4da568ed912e3da6c24"
+                                },
+                                {
+                                    "name": "19x-63.8d",
+                                    "sha1": "41bc45c89c529011f755b6805ad8bad1a1f5e5e6"
+                                },
+                                {
+                                    "name": "19x-83.8m",
+                                    "sha1": "3118843063a9caaf9c8627ca2adedcce437cf8d5"
+                                },
+                                {
+                                    "name": "19x-93.8p",
+                                    "sha1": "9774d015ae417acbcf14c1c84eabd754a299cd50"
+                                },
+                                {
+                                    "name": "19x-74.9j",
+                                    "sha1": "3280f2849361b443c64ca3de4e77390fee4c047a"
+                                },
+                                {
+                                    "name": "19x-64.9d",
+                                    "sha1": "20d599ff61632e44a0143957572cb74b934a4aef"
+                                },
+                                {
+                                    "name": "19x-84.9m",
+                                    "sha1": "acb530475e3c66b7e46445332d93fcf6b6058cd2"
+                                },
+                                {
+                                    "name": "19x-94.9p",
+                                    "sha1": "6c4acc7f8b3f8f5df3768b2fabaf160502c17573"
+                                },
+                                {
+                                    "name": "19x-75.10j",
+                                    "sha1": "e2b30956684c89525bbc3fed841ba839ca732e21"
+                                },
+                                {
+                                    "name": "19x-65.10d", 
+                                    "sha1": "4b28b61cb01c81a24b0aea3bafac049b50338515"
+                                },
+                                {
+                                    "name": "19x-85.10m",
+                                    "sha1": "33ede06b46022fc348b9b81530892d132071da0d"
+                                },
+                                {
+                                    "name": "19x-95.10p",
+                                    "sha1": "96a3cb8b203738fff33e2ca6340fdef928a816b9"
+                                },
+                                {
+                                    "name": "19x-76.11j",
+                                    "sha1": "4d962e1172044c1996139cfd56cc6c00ee2137d5"
+                                },
+                                {
+                                    "name": "19x-66.11d",
+                                    "sha1": "e83886dba35cf31c956cd084141c3ae4078b3b72"
+                                },
+                                {
+                                    "name": "19x-86.11m",
+                                    "sha1": "6ac52750c1e4ddc0ed8fbe5ace2e827944aa9275"
+                                },
+                                {
+                                    "name": "19x-96.11p", 
+                                    "sha1": "4b564a375a08872aea534635ec526cce62dcdadd"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x-01.1a", 
+                                    "sha1": "813f465f2d392f6abeadbf661c54cf51171fa006"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 8
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x-51.6a", 
+                                    "sha1": "23c3d3968c2aec01ca25338b687be14407580b32"
+                                },
+                                {
+                                    "name": "19x-52.7a", 
+                                    "sha1": "1fd424c118fabcdb70ea025804552e99b8f8348a"
+                                },
+                                {
+                                    "name": "19x-53.8a", 
+                                    "sha1": "ed91404f27e36ff7c4bf4c297e81c4ebeb125db7"
+                                },
+                                {
+                                    "name": "19x-54.9a", 
+                                    "sha1": "3c2ae88946f86288886a901310165f5885b2d878"
+                                },
+                                {
+                                    "name": "19x-55.10a", 
+                                    "sha1": "b889e58c8b223c38858680c5e2d0bab5cfa323da"
+                                },
+                                {
+                                    "name": "19x-56.11a", 
+                                    "sha1": "b5112ced4632c888aee0ca6c1bc4b5097bbdabda"
+                                },
+                                {
+                                    "name": "19x-57.12a", 
+                                    "sha1": "2506b967689697fdb4e43d8b01fc9b564641a70d"
+                                },
+                                {
+                                    "name": "19x-58.13a", 
+                                    "sha1": "6a2684bc9738a3f6d071d72ffa678316a029f1c5"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 9054681,
+                    "strategy": "transforms",
+                    "mame_name": "19xxu",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 2621440,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 5
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19xu.03",
+                                    "sha1": "d3b6b416f1f9eb1c1cbca6647630d1155647082d"
+                                },
+                                {
+                                    "name": "19xu.04",
+                                    "sha1": "8bbce20ae7ba47949f4939b2f35014fb6decd283"
+                                },
+                                {
+                                    "name": "19xu.05", 
+                                    "sha1": "1303f7ab6296f1454907a24d64878bdbd1ef88a7"
+                                },
+                                {
+                                    "name": "19xu.06", 
+                                    "sha1": "26bf0936962051be871d7a7776cf78abfca5b5ee"
+                                },
+                                {
+                                    "name": "19x.07", 
+                                    "sha1": "9e225beccffd14bb53a32f8c0f2aef7f331dae30"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 2097152,
+                                    "end": 8388608
+                                },
+                                {
+                                    "action": "split_size",
+                                    "sizes": [
+                                        2097152,
+                                        8388608
+                                    ]
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x.13m", 
+                                    "sha1": "901029b5423e4bda85f592735036c06b7d426680"
+                                },
+                                {
+                                    "name": "19x.15m", 
+                                    "sha1": "9beb64ef0a8c92490848599d5d979bf42532609d"
+                                },
+                                {
+                                    "name": "19x.17m", 
+                                    "sha1": "8a44364d9af6b9e1664b44b9235dc172182c9eb8"
+                                },
+                                {
+                                    "name": "19x.19m", 
+                                    "sha1": "172413f220b242411218c7865e04014ec6417537"
+                                },
+                                {
+                                    "name": "19x.14m", 
+                                    "sha1": "3f937022166149a80585f91388de521055ca88ca"
+                                },
+                                {
+                                    "name": "19x.16m", 
+                                    "sha1": "4e1c8466eaa612102d0807d2e8bf1004e97476ea"
+                                },
+                                {
+                                    "name": "19x.18m", 
+                                    "sha1": "b1a9d5547f3f6c3ab59e8b761d224793c6ca33cb"
+                                },
+                                {
+                                    "name": "19x.20m", 
+                                    "sha1": "52b755da401fde90c13181b02ab33e5e4b2aa1f7"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x.01", 
+                                    "sha1": "813f465f2d392f6abeadbf661c54cf51171fa006"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "19x.11m", 
+                                    "sha1": "134e961b926a97cca5e45d3558efb98f6f278e08"
+                                },
+                                {
+                                    "name": "19x.12m", 
+                                    "sha1": "3c1b5563f8e7ee1c450b3592fcb319e928caec3c"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556726": {
+            "id": "1556726",
+            "name": "Battle Circuit",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "batcirj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 3670016,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 7
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btcj.03",
+                                    "sha1": "7e95cc436d53d1ce34b575bc7e2b6e2a7ae06cfb"
+                                },
+                                {
+                                    "name": "btcj.04",
+                                    "sha1": "0cc4a6c82f110d2334fd81f2d3abe5de882768bd"
+                                },
+                                {
+                                    "name": "btcj.05",
+                                    "sha1": "6c7eec9bf823c66fddbc6b297ea6aa883d03bff5"
+                                },
+                                {
+                                    "name": "btcj.06",
+                                    "sha1": "841c178722d4850994afee90ef3079607d8847ed"
+                                },
+                                {
+                                    "name": "btc.07",
+                                    "sha1": "473be1f1bf603bdd82451661a6206507f50ed2b6"
+                                },
+                                {
+                                    "name": "btc.08",
+                                    "sha1": "ad02d4185c2b3664fb96350d8ad317d3939a7554"
+                                },
+                                {
+                                    "name": "btc.09",
+                                    "sha1": "fdbea14618b277132f9e010ef36c134a8ea42162"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.13m",
+                                    "sha1": "96e37147674bf9cd21c770897da59daac25d921a"
+                                },
+                                {
+                                    "name": "btc.15m",
+                                    "sha1": "bbd7fbe061e751388d2f02434144daf9b1e36640"
+                                },
+                                {
+                                    "name": "btc.17m",
+                                    "sha1": "e501fd921c8bcede69946b029e05d422714c1040"
+                                },
+                                {
+                                    "name": "btc.19m",
+                                    "sha1": "7a28d5d7aa036d23d97fad17d0cdb8210dc8153a"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.01",
+                                    "sha1": "3b29de0aca9dbca59d6b50fb2509e2a913c6b0af"
+                                },
+                                {
+                                    "name": "btc.02",
+                                    "sha1": "50a5d1cce0caf7c5143d4904431e8f41e2a57464"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.11m",
+                                    "sha1": "df2459493af40937b6656a16fad43ff51bed2204"
+                                },
+                                {
+                                    "name": "btc.12m",
+                                    "sha1": "0642ddff2ab9255f154419da24ba644ed63f34ab"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 12520840,
+                    "strategy": "transforms",
+                    "mame_name": "batcir",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 3670016,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 7
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btce.03",
+                                    "sha1": "9b4e46d0f3d96edcd1c3707409507a5027c69039"
+                                },
+                                {
+                                    "name": "btce.04",
+                                    "sha1": "19a39ec30166d4b797babe9d70328ac572d1f916"
+                                },
+                                {
+                                    "name": "btce.05",
+                                    "sha1": "a978a7f5e0069cd78c8588c2d91b825796c723a5"
+                                },
+                                {
+                                    "name": "btce.06",
+                                    "sha1": "e8321dece8977131e41c9207946b627074c13ee7"
+                                },
+                                {
+                                    "name": "btc.07",
+                                    "sha1": "473be1f1bf603bdd82451661a6206507f50ed2b6"
+                                },
+                                {
+                                    "name": "btc.08",
+                                    "sha1": "ad02d4185c2b3664fb96350d8ad317d3939a7554"
+                                },
+                                {
+                                    "name": "btc.09",
+                                    "sha1": "fdbea14618b277132f9e010ef36c134a8ea42162"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.13m",
+                                    "sha1": "96e37147674bf9cd21c770897da59daac25d921a"
+                                },
+                                {
+                                    "name": "btc.15m",
+                                    "sha1": "bbd7fbe061e751388d2f02434144daf9b1e36640"
+                                },
+                                {
+                                    "name": "btc.17m",
+                                    "sha1": "e501fd921c8bcede69946b029e05d422714c1040"
+                                },
+                                {
+                                    "name": "btc.19m",
+                                    "sha1": "7a28d5d7aa036d23d97fad17d0cdb8210dc8153a"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 294912,
+                                    "end": 327679
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.01",
+                                    "sha1": "3b29de0aca9dbca59d6b50fb2509e2a913c6b0af"
+                                },
+                                {
+                                    "name": "btc.02",
+                                    "sha1": "50a5d1cce0caf7c5143d4904431e8f41e2a57464"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "btc.11m",
+                                    "sha1": "df2459493af40937b6656a16fad43ff51bed2204"
+                                },
+                                {
+                                    "name": "btc.12m",
+                                    "sha1": "0642ddff2ab9255f154419da24ba644ed63f34ab"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556727": {
+            "id": "1556727",
+            "name": "Giga Wing",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "gigawingj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1572864,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 3
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggwj.03a",
+                                    "sha1": "c805473d3dc6bdb7ce232a9d7181d213544b2e7b"
+                                },
+                                {
+                                    "name": "ggwj.04a",
+                                    "sha1": "a4864b3b54cf648af81f74e2936d2bb8b99d68a9"
+                                },
+                                {
+                                    "name": "ggwj.05a",
+                                    "sha1": "2a9563c840bd934c7e94f434a01686b7ff92e6d2"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.13m",
+                                    "sha1": "3be06c032985ea6bd3805d73a407bf748385087b"
+                                },
+                                {
+                                    "name": "ggw.15m",
+                                    "sha1": "adea1e844f3d9ccd5ad116ff8277f16a96e68d76"
+                                },
+                                {
+                                    "name": "ggw.17m",
+                                    "sha1": "9563455b95d36fafe508290659088b153539cfdf"
+                                },
+                                {
+                                    "name": "ggw.19m",
+                                    "sha1": "ea04afce17f00b45d3d2cd5140d0dd7ab4bccc00"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.1a", 
+                                    "sha1": "cef81fb7c4b8cb2ef1f8f3c27982aefbcbe38160"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.11m",
+                                    "sha1": "d7b0963d66165f3607d887741c5e7ab952bcf2ff"
+                                },
+                                {
+                                    "name": "ggw.12m",
+                                    "sha1": "c440b5a38359ec3b8002f39690b79bf78703f5d0"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 12569535,
+                    "strategy": "transforms",
+                    "mame_name": "gigawing",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1572864,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 3
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggwu.03a",
+                                    "sha1": "a4be9fe537cdb47b37478c8397f6effe8a536233"
+                                },
+                                {
+                                    "name": "ggwu.04a",
+                                    "sha1": "3bb0bd9503ef60892d5abd8640af524cf71da848"
+                                },
+                                {
+                                    "name": "ggw.05",
+                                    "sha1": "2fe3984c46a72aedb30a28e3db5af2612bdf0045"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.13m",
+                                    "sha1": "3be06c032985ea6bd3805d73a407bf748385087b"
+                                },
+                                {
+                                    "name": "ggw.15m",
+                                    "sha1": "adea1e844f3d9ccd5ad116ff8277f16a96e68d76"
+                                },
+                                {
+                                    "name": "ggw.17m",
+                                    "sha1": "9563455b95d36fafe508290659088b153539cfdf"
+                                },
+                                {
+                                    "name": "ggw.19m",
+                                    "sha1": "ea04afce17f00b45d3d2cd5140d0dd7ab4bccc00"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.1a", 
+                                    "sha1": "cef81fb7c4b8cb2ef1f8f3c27982aefbcbe38160"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "ggw.11m",
+                                    "sha1": "d7b0963d66165f3607d887741c5e7ab952bcf2ff"
+                                },
+                                {
+                                    "name": "ggw.12m",
+                                    "sha1": "c440b5a38359ec3b8002f39690b79bf78703f5d0"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556728": {
+            "id": "1556728",
+            "name": "1944: The Loop Master",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "1944j",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1572864,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 3
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nffj.03",
+                                    "sha1": "c6a04f514dd5ab40d8813dcfb8430bce54e7aa28"
+                                },
+                                {
+                                    "name": "nffj.04",
+                                    "sha1": "4764e77d4da5d19d9acded27df1e1bcba06b0fcf"
+                                },
+                                {
+                                    "name": "nffj.05",
+                                    "sha1": "380dc54d94c29c049a4c00ed58013e04eec87086"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split_size",
+                                    "sizes": [
+                                        16777216,
+                                        4194304
+                                    ]
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.13m",
+                                    "sha1": "1781d4fc18b6d6f79b7b39d9bcace750fb61a5cf"
+                                },
+                                {
+                                    "name": "nff.15m",
+                                    "sha1": "a0b6af49e1780678d808c317b875161cedddb314"
+                                },
+                                {
+                                    "name": "nff.17m",
+                                    "sha1": "bed6a82bf1dc1aa501d4c2d098115a15e18d446a"
+                                },
+                                {
+                                    "name": "nff.19m",
+                                    "sha1": "676078baad789e25f6e5a79de29672587be7ff00"
+                                },
+                                {
+                                    "name": "nff.14m",
+                                    "sha1": "0a8e5cae141d24fd8b3cb11796c44728b0acd69e"
+                                },
+                                {
+                                    "name": "nff.16m",
+                                    "sha1": "0aecd433fb4ca2de1aca9fbb1e314fb1f6979321"
+                                },
+                                {
+                                    "name": "nff.18m",
+                                    "sha1": "30137fa77573c84bcc24570bccb7dba61ddb413c"
+                                },
+                                {
+                                    "name": "nff.20m",
+                                    "sha1": "efa69f19a958047dd91a294c88857ed3133fcbef"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.01",
+                                    "sha1": "33e45f6fe9fed098a4c072b8c39406aef1a949b2"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.11m",
+                                    "sha1": "83281f7290ac105a3f9a7507cbc11317d45ba706"
+                                },
+                                {
+                                    "name": "nff.12m",
+                                    "sha1": "36f18c5d92b79433bdf7088b29a244708929d48e"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 15171376,
+                    "strategy": "transforms",
+                    "mame_name": "1944",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1572864,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 3
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nffu.03",
+                                    "sha1": "c296cb008e282f77b44374d1c3638a3f4d5d5d4e"
+                                },
+                                {
+                                    "name": "nff.04",
+                                    "sha1": "4764e77d4da5d19d9acded27df1e1bcba06b0fcf"
+                                },
+                                {
+                                    "name": "nffu.05",
+                                    "sha1": "34e0175a5f22d08c3538369b4bfd077a7427a128"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "split_size",
+                                    "sizes": [
+                                        16777216,
+                                        4194304                                        
+                                    ]
+                                },
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 4,
+                                    "word_size_bytes": 2
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.13m",
+                                    "sha1": "1781d4fc18b6d6f79b7b39d9bcace750fb61a5cf"
+                                },
+                                {
+                                    "name": "nff.15m",
+                                    "sha1": "a0b6af49e1780678d808c317b875161cedddb314"
+                                },
+                                {
+                                    "name": "nff.17m",
+                                    "sha1": "bed6a82bf1dc1aa501d4c2d098115a15e18d446a"
+                                },
+                                {
+                                    "name": "nff.19m",
+                                    "sha1": "676078baad789e25f6e5a79de29672587be7ff00"
+                                },
+                                {
+                                    "name": "nff.14m",
+                                    "sha1": "0a8e5cae141d24fd8b3cb11796c44728b0acd69e"
+                                },
+                                {
+                                    "name": "nff.16m",
+                                    "sha1": "0aecd433fb4ca2de1aca9fbb1e314fb1f6979321"
+                                },
+                                {
+                                    "name": "nff.18m",
+                                    "sha1": "30137fa77573c84bcc24570bccb7dba61ddb413c"
+                                },
+                                {
+                                    "name": "nff.20m",
+                                    "sha1": "efa69f19a958047dd91a294c88857ed3133fcbef"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.01",
+                                    "sha1": "33e45f6fe9fed098a4c072b8c39406aef1a949b2"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "nff.11m",
+                                    "sha1": "83281f7290ac105a3f9a7507cbc11317d45ba706"
+                                },
+                                {
+                                    "name": "nff.12m",
+                                    "sha1": "36f18c5d92b79433bdf7088b29a244708929d48e"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1556729": {
+            "id": "1556729",
+            "name": "Progear",
+            "overrides": [
+                {
+                    "kpka_offset": 352,
+                    "strategy": "transforms",
+                    "mame_name": "progearj",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1048576,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pgaj.03",
+                                    "sha1": "b0b808e9974c727bd187f2cdcba71a301b78c759"
+                                },
+                                {
+                                    "name": "pgaj.04",
+                                    "sha1": "839cdc89d9483632883c185951c76deb4ff7657e"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 8,
+                                    "word_size_bytes": 1
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga-simm.01c",
+                                    "sha1": "a10e615c32098f6d25becd466da8faa967523a7b"
+                                },
+                                {
+                                    "name": "pga-simm.01d",
+                                    "sha1": "fce0b8b43a1c069262f4e3e81c1a04621e232c88"
+                                },
+                                {
+                                    "name": "pga-simm.01a",
+                                    "sha1": "afbb26fed6cd0cb5c0099a10d35aeb453318c14d"
+                                },
+                                {
+                                    "name": "pga-simm.01b",
+                                    "sha1": "df6a3fe49c008f73b160eb6f2a44dc371ff73cba"
+                                },
+                                {
+                                    "name": "pga-simm.03c",
+                                    "sha1": "ebf44b42d784924e08a832a7e5f66a887bab244b"
+                                },
+                                {
+                                    "name": "pga-simm.03d",
+                                    "sha1": "0eaedd24cd3fa87b6f35fbd63078d40c493c92d0"
+                                },
+                                {
+                                    "name": "pga-simm.03a",
+                                    "sha1": "85d1bd31940e35ac8c732165020881a2d65cd6b1"
+                                },
+                                {
+                                    "name": "pga-simm.03b",
+                                    "sha1": "c591288e86ad1624d0fe66563808af9fac786e64"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga.01",
+                                    "sha1": "7c5496c1daaea6a7ab95c0b25625d325ec3427cc"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 4
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga-simm.05a",
+                                    "sha1": "91784d35d4f7e113529bb5be6081b67094b150ea"
+                                },
+                                {
+                                    "name": "pga-simm.05b",
+                                    "sha1": "374d562a4648734f82aa2ddb6d258e870896dd45"
+                                },
+                                {
+                                    "name": "pga-simm.06a",
+                                    "sha1": "5dcea28c873d0d472f5b94e07d97cd77ace2b252"
+                                },
+                                {
+                                    "name": "pga-simm.06b",
+                                    "sha1": "fd790efaf37dc2c4c16f657941044e3e2d3c2711"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "kpka_offset": 16442743,
+                    "strategy": "transforms",
+                    "mame_name": "progear",
+                    "parts": {
+                        "maincpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 1048576,
+                                    "end": 4194303
+                                },
+                                {
+                                    "action": "split",
+                                    "ways": 2
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pgau.03",
+                                    "sha1": "7ba8ae041b062767bf64328adf22ef100c38cdfd"
+                                },
+                                {
+                                    "name": "pgau.04",
+                                    "sha1": "c477de7f31df44144a60d10dc4d933f3a7c20722"
+                                }
+                            ]
+                        },
+                        "gfx": {
+                            "transforms": [
+                                {
+                                    "action": "deinterleave",
+                                    "ways": 8,
+                                    "word_size_bytes": 1
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga-simm.01c",
+                                    "sha1": "a10e615c32098f6d25becd466da8faa967523a7b"
+                                },
+                                {
+                                    "name": "pga-simm.01d",
+                                    "sha1": "fce0b8b43a1c069262f4e3e81c1a04621e232c88"
+                                },
+                                {
+                                    "name": "pga-simm.01a",
+                                    "sha1": "afbb26fed6cd0cb5c0099a10d35aeb453318c14d"
+                                },
+                                {
+                                    "name": "pga-simm.01b",
+                                    "sha1": "df6a3fe49c008f73b160eb6f2a44dc371ff73cba"
+                                },
+                                {
+                                    "name": "pga-simm.03c",
+                                    "sha1": "ebf44b42d784924e08a832a7e5f66a887bab244b"
+                                },
+                                {
+                                    "name": "pga-simm.03d",
+                                    "sha1": "0eaedd24cd3fa87b6f35fbd63078d40c493c92d0"
+                                },
+                                {
+                                    "name": "pga-simm.03a",
+                                    "sha1": "85d1bd31940e35ac8c732165020881a2d65cd6b1"
+                                },
+                                {
+                                    "name": "pga-simm.03b",
+                                    "sha1": "c591288e86ad1624d0fe66563808af9fac786e64"
+                                }
+                            ]
+                        },
+                        "audiocpu": {
+                            "transforms": [
+                                {
+                                    "action": "splice_out",
+                                    "start": 163840,
+                                    "end": 327680
+                                },
+                                {
+                                    "action": "splice_out",
+                                    "start": 32768,
+                                    "end": 65536
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga.01",
+                                    "sha1": "7c5496c1daaea6a7ab95c0b25625d325ec3427cc"
+                                }
+                            ]
+                        },
+                        "qsound": {
+                            "transforms": [
+                                {
+                                    "action": "split",
+                                    "ways": 4
+                                },
+                                {
+                                    "action": "endian"
+                                }
+                            ],
+                            "files": [
+                                {
+                                    "name": "pga-simm.05a",
+                                    "sha1": "91784d35d4f7e113529bb5be6081b67094b150ea"
+                                },
+                                {
+                                    "name": "pga-simm.05b",
+                                    "sha1": "374d562a4648734f82aa2ddb6d258e870896dd45"
+                                },
+                                {
+                                    "name": "pga-simm.06a",
+                                    "sha1": "5dcea28c873d0d472f5b94e07d97cd77ace2b252"
+                                },
+                                {
+                                    "name": "pga-simm.06b",
+                                    "sha1": "fd790efaf37dc2c4c16f657941044e3e2d3c2711"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
