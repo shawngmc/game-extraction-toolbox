@@ -1,0 +1,18 @@
+[project]
+name = "game-extraction-toolbox"
+version = "0.0.5"
+authors = [
+  { name="Shawn McNaughton", email="shawngmc@gmail.com" },
+]
+description = "CLI Tools for investigating game files and extracting known packages"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/shawngmc/game-extraction-toolbox"
+"Bug Tracker" = "https://github.com/shawngmc/game-extraction-toolbox/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
