@@ -35,3 +35,9 @@ py -m pipx ensurepath
 brew install pipx
 pipx ensurepath
 ```
+
+
+## Usage
+```gametoolbox --help```
+You can get --help on any command or subcommand, for example:
+```gametoolbox file --help```
