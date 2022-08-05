@@ -1,6 +1,5 @@
 import click
 import os
-import re
 import glob
 import importlib
 
@@ -8,7 +7,7 @@ import importlib
 def list():
     """List Available Tasks"""
     available_libs = glob.glob(os.path.join('lib', 'transforms', '*.py'))
-
+    
     for available_lib in available_libs:
         module_name = os.path.splitext(os.path.basename(available_lib))[0]
         transform_module = importlib.import_module(f'lib.transforms.{module_name}')
