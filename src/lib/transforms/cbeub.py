@@ -89,46 +89,19 @@ def find_files(base_path):
             archive_list.append(candidate)
     return archive_list
 
-
+def placeholder_generator(file_map):
+    def create_placeholders(contents):
+        out_files = {}
+        for filename, size in file_map.items():
+            out_files[filename] = bytes(size*b'\0')
+        return out_files  
+    return create_placeholders
 
 ################################################################################
 # START Final Fight                                                            #
 ################################################################################
 # game_00.arc: Final Fight (JP)
 # game_01.arc: Final Fight
-
-
-# bcut.exe ffightj  gfx.bin  0x400040 0x200000
-# BSwap.exe d b gfx.bin vrom.txt gfx.0 gfx.1 gfx.2 gfx.3 gfx.4 gfx.5 gfx.6 gfx.7
-# bcut.exe gfx.0  %TDIR%\ffj_09.4b    0x00000  0x20000
-# bcut.exe gfx.1  %TDIR%\ffj_01.4a    0x00000  0x20000
-# bcut.exe gfx.2  %TDIR%\ffj_13.9b    0x00000  0x20000
-# bcut.exe gfx.3  %TDIR%\ffj_05.9a    0x00000  0x20000
-# bcut.exe gfx.4  %TDIR%\ffj_24.5e    0x00000  0x20000
-# bcut.exe gfx.5  %TDIR%\ffj_17.5c    0x00000  0x20000
-# bcut.exe gfx.6  %TDIR%\ffj_38.8h    0x00000  0x20000
-# bcut.exe gfx.7  %TDIR%\ffj_32.8f    0x00000  0x20000
-# bcut.exe gfx.0  %TDIR%\ffj_10.5b    0x20000  0x20000
-# bcut.exe gfx.1  %TDIR%\ffj_02.5a    0x20000  0x20000
-# bcut.exe gfx.2  %TDIR%\ffj_14.10b   0x20000  0x20000
-# bcut.exe gfx.3  %TDIR%\ffj_06.10a   0x20000  0x20000
-# bcut.exe gfx.4  %TDIR%\ffj_25.7e    0x20000  0x20000
-# bcut.exe gfx.5  %TDIR%\ffj_18.7c    0x20000  0x20000
-# bcut.exe gfx.6  %TDIR%\ffj_39.9h    0x20000  0x20000
-# bcut.exe gfx.7  %TDIR%\ffj_33.9f    0x20000  0x20000
-# del gfx.*
-
-# fsutil file createnew %TDIR%\buf1      0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\ioa1      0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\prg1      0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\rom1      0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\sou1      0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\s222b.1a  0x117                           & rem CRC mismatch
-# fsutil file createnew %TDIR%\lwio.12c  0x117                           & rem CRC mismatch
-
-# powershell compress-archive -Path %TDIR%\* -DestinationPath %NAME%.zip -Force
-
-# rm -r tmp
 
 def ffight_qsound_common(filenames):
     def qsound(contents):
@@ -221,18 +194,16 @@ def handle_ffight(merged_contents):
     func_map['qsound'] = ffight_qsound_common(qsound_filenames)
 
 
-    def ffight_placeholder_files(contents):
-        filenames = [
-            'buf1',
-            'ioa1',
-            'prg1',
-            'rom1',
-            'sou1',
-            's224b.1a',
-            'iob1.11e',
-        ]
-        return dict(zip(filenames, [bytes(0x117*b'\0')]*len(filenames)))
-    func_map['placeholders'] = ffight_placeholder_files
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        's224b.1a': 0x117,
+        'iob1.11e': 0x117
+        }
+    func_map['placeholders'] = placeholder_generator(ph_files)
 
     zip_contents = merged_rom_handler(merged_contents, func_map)
     out_files.append({'filename': 'ffight.zip', 'contents': zip_contents})
@@ -296,18 +267,16 @@ def handle_ffightj(merged_contents):
     ]
     func_map['qsound'] = ffight_qsound_common(qsound_filenames)
     
-    def ffightj_placeholder_files(contents):
-        filenames = [
-            'buf1',
-            'ioa1',
-            'prg1',
-            'rom1',
-            'sou1',
-            's222b.1a',
-            'lwio.12c',
-        ]
-        return dict(zip(filenames, [bytes(0x117*b'\0')]*len(filenames)))
-    func_map['placeholders'] = ffightj_placeholder_files
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        's222b.1a': 0x117,
+        'lwio.12c': 0x117
+        }
+    func_map['placeholders'] = placeholder_generator(ph_files)
     
     zip_contents = merged_rom_handler(merged_contents, func_map)
     out_files.append({'filename': 'ffightj.zip', 'contents': zip_contents})
@@ -324,6 +293,189 @@ def handle_ffightj(merged_contents):
 ################################################################################
 # game_10.arc: The King of Dragons (JP)
 # game_11.arc: The King of Dragons
+
+
+
+def kod_qsound_common(filenames):
+    def qsound(contents):
+        contents = contents[0x818040:0x858040]
+        chunks = blob.equal_split(contents, num_chunks=2)
+        return dict(zip(filenames, chunks))
+    return qsound
+
+
+def kod_audiocpu_common(filenames):
+    def audiocpu(contents):
+        chunks = []
+        chunks.append(contents[0x800040:0x808040] + contents[0x810040:0x818040])
+        return dict(zip(filenames, chunks))
+    return audiocpu
+
+def deshuffle_gfx_common(start, length, filenames, num_deinterleave_split, do_split):
+    def gfx(contents):
+        # Cut out the section
+        contents = contents[start:start+length]
+
+        # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
+        bit_order = [
+            7, 3, 15, 11, 23, 19, 31, 27,
+            6, 2, 14, 10, 22, 18, 30, 26,
+            5, 1, 13, 9, 21, 17, 29, 25,
+            4, 0, 12, 8, 20, 16, 28, 24,
+            39, 35, 47, 43, 55, 51, 63, 59,
+            38, 34, 46, 42, 54, 50, 62, 58, 
+            37, 33, 45, 41, 53, 49, 61, 57, 
+            36, 32, 44, 40, 52, 48, 60, 56
+        ]
+        chunks = blob.split_bit_shuffle(contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
+
+        # Split it
+        if do_split:
+            new_chunks = []
+            for oldchunk in chunks:
+                new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+            chunks = new_chunks
+
+        return dict(zip(filenames, chunks))
+    return gfx
+
+
+def handle_kod(merged_contents): 
+    out_files = []
+    func_map = {}
+
+    maincpu_filenames = [
+        "kde_37a.11f", 
+        "kde_38a.12f", 
+        "kd_35.9f", 
+        "kd_36a.10f",
+        "kde_30a.11e", 
+        "kde_31a.12e", 
+        "kd_28.9e", 
+        "kd_29.10e"
+    ]
+    def maincpu(contents):
+        contents = contents[0x40:0x100040]
+        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        
+        new_chunks = []
+        for oldchunk in chunks:
+            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 4))
+        chunks = new_chunks
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    gfx_filenames = [
+        "kd-5m.4a",
+        "kd-6m.4c",
+        "kd-7m.6a",
+        "kd-8m.6c",
+        "kd-1m.3a",
+        "kd-2m.3c",
+        "kd-3m.5a",
+        "kd-4m.5c"
+    ]
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+    audiocpu_filenames = [
+        'kd_9.12a'
+    ]
+    func_map['audiocpu'] = kod_audiocpu_common(audiocpu_filenames)
+
+    qsound_filenames = [
+        'kd_18.11c',
+        'kd_19.12c'
+    ]
+    func_map['qsound'] = kod_qsound_common(qsound_filenames)
+
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'kd29b.1a': 0x117,
+        'iob1.11d': 0x117,
+        'ioc1.ic7': 0x104,
+        'c632.ic1': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'kod.zip', 'contents': zip_contents})
+
+    return out_files
+
+
+
+def handle_kodj(merged_contents): 
+    out_files = []
+    func_map = {}
+
+    maincpu_filenames = [
+        "kdj_37a.11f",
+        "kdj_38a.12f",
+        "kdj_30a.11e",
+        "kdj_31a.12e",
+        "kd_33.6f"
+    ]
+    def maincpu(contents):
+        chunk_5 = contents[0x080040:0x100040]
+        contents = contents[0x40:0x080040]
+        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        
+        new_chunks = []
+        for oldchunk in chunks:
+            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+        chunks = new_chunks
+
+        # Add 5th non-interleaved chunk
+        chunks.append(chunk_5)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    gfx_filenames = [
+        "kd_06.8a",
+        "kd_15.8c",
+        "kd_08.10a",
+        "kd_17.10c",
+        "kd_05.7a",
+        "kd_14.7c",
+        "kd_07.9a",
+        "kd_16.9c"
+    ]
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+    audiocpu_filenames = [
+        'kd_09.12a'
+    ]
+    func_map['audiocpu'] = kod_audiocpu_common(audiocpu_filenames)
+
+    qsound_filenames = [
+        'kd_18.11c',
+        'kd_19.12c'
+    ]
+    func_map['qsound'] = kod_qsound_common(qsound_filenames)
+
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'kd29b.1a': 0x117,
+        'iob1.11d': 0x117,
+        'ioc1.ic7': 0x104,
+        'c632.ic1': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'kodj.zip', 'contents': zip_contents})
+
+    return out_files
 
 
 ################################################################################
