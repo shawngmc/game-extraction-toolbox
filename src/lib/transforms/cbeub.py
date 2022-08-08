@@ -44,6 +44,7 @@
 
 # Typical Base Path: C:\Program Files (x86)\Steam\steamapps\common\CBEUB
 
+from email.mime import audio
 import re
 import traceback
 import glob
@@ -125,6 +126,23 @@ def deshuffle_gfx_common(start, length, filenames, num_deinterleave_split, do_sp
 
         return dict(zip(filenames, chunks))
     return gfx
+
+    
+def audio_common(start, filenames):
+    def audio(contents):
+        chunks = []
+
+        # Add the audio CPU
+        chunks.append(contents[start:start+0x8000] + contents[start+0x10000:start+0x18000])
+
+        # Add the qsound
+        qsound_start = start+0x18000
+        qsound_contents = contents[qsound_start:qsound_start+0x40000]
+        chunks.extend(blob.equal_split(qsound_contents, num_chunks=2))
+
+        return dict(zip(filenames, chunks))
+    return audio
+
 
 ################################################################################
 # START Final Fight                                                            #
@@ -480,72 +498,71 @@ def captcomm_audiocpu_common(filenames):
 
 
 
-# def handle_captcomm(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_captcomm(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [
-#         "kde_37a.11f", 
-#         "kde_38a.12f", 
-#         "kd_35.9f", 
-#         "kd_36a.10f",
-#         "kde_30a.11e", 
-#         "kde_31a.12e", 
-#         "kd_28.9e", 
-#         "kd_29.10e"
-#     ]
-#     def maincpu(contents):
-#         contents = contents[0x40:0x100040]
-#         chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
-        
-#         new_chunks = []
-#         for oldchunk in chunks:
-#             new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 4))
-#         chunks = new_chunks
+    maincpu_filenames = [
+        "cce_23f.8f",
+        "cc_28f.9f",
+        "cc_22f.7f",
+        "cc_24f.9e"
+    ]
+    def maincpu(contents):
+        # Only the last 2 128k chunks actually need deinterleaved...
+        maincpu_area = contents[0x40:0x140040]
+        deint_chunks = blob.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
 
-#         return dict(zip(maincpu_filenames, chunks))
-#     func_map['maincpu'] = maincpu
+        chunks = []
+        chunks.append(maincpu_area[0x0:0x80000])
+        chunks.append(deint_chunks[0])
+        chunks.append(maincpu_area[0x80000:0x100000])
+        chunks.append(deint_chunks[1])
 
-#     gfx_filenames = [
-#         "kd-5m.4a",
-#         "kd-6m.4c",
-#         "kd-7m.6a",
-#         "kd-8m.6c",
-#         "kd-1m.3a",
-#         "kd-2m.3c",
-#         "kd-3m.5a",
-#         "kd-4m.5c"
-#     ]
-#     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
 
-#     audiocpu_filenames = [
-#         'kd_9.12a'
-#     ]
-#     func_map['audiocpu'] = kod_audiocpu_common(audiocpu_filenames)
+    gfx_filenames = [
+        "cc-5m.3a",
+        "cc-6m.7a",
+        "cc-7m.5a",
+        "cc-8m.9a",
+        "cc-1m.4a",
+        "cc-2m.8a",
+        "cc-3m.6a",
+        "cc-4m.10a"
+    ]
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-#     qsound_filenames = [
-#         'kd_18.11c',
-#         'kd_19.12c'
-#     ]
-#     func_map['qsound'] = kod_qsound_common(qsound_filenames)
+    audiocpu_filenames = [
+        'cc_09.11a'
+    ]
+    func_map['audiocpu'] = captcomm_audiocpu_common(audiocpu_filenames)
 
-#     ph_files = {
-#         'buf1': 0x117,
-#         'ioa1': 0x117,
-#         'prg1': 0x117,
-#         'rom1': 0x117,
-#         'sou1': 0x117,
-#         'kd29b.1a': 0x117,
-#         'iob1.11d': 0x117,
-#         'ioc1.ic7': 0x104,
-#         'c632.ic1': 0x117
-#     }
-#     func_map['placeholders'] = placeholder_generator(ph_files)
+    qsound_filenames = [
+        'cc_18.11c',
+        'cc_19.12c'
+    ]
+    func_map['qsound'] = captcomm_qsound_common(qsound_filenames)
 
-#     zip_contents = merged_rom_handler(merged_contents, func_map)
-#     out_files.append({'filename': 'captcomm.zip', 'contents': zip_contents})
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'cc63b.1a': 0x117,
+        'iob1.12d': 0x117,
+        'ccprg1.11d': 0x117,
+        'ioc1.ic7': 0x104,
+        'c632b.ic1': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
 
-#     return out_files
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'captcomm.zip', 'contents': zip_contents})
+
+    return out_files
 
 
 
@@ -626,6 +643,130 @@ def handle_captcommj(merged_contents):
 ################################################################################
 # game_30.arc: Knights of the Round (JP)
 # game_31.arc: Knights of the Round
+
+
+
+def handle_knights(merged_contents): 
+    out_files = []
+    func_map = {}
+
+    maincpu_filenames = [
+        "kr_23e.8f",
+        "kr_22.7f"
+    ]
+    def maincpu(contents):
+        # Only the last 2 128k chunks actually need deinterleaved...
+        maincpu_area = contents[0x40:0x100040]
+        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    gfx_filenames = [
+        "kr-5m.3a",
+        "kr-6m.7a",
+        "kr-7m.5a",
+        "kr-8m.9a",
+        "kr-1m.4a",
+        "kr-2m.8a",
+        "kr-3m.6a",
+        "kr-4m.10a"
+    ]
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+    qsound_filenames = [
+        'kr_09.11a',
+        'kr_18.11c',
+        'kr_19.12c'
+    ]
+    func_map['audio'] = audio_common(0x800040, qsound_filenames)
+
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'kr63b.1a': 0x117,
+        'iob1.12d': 0x117,
+        'bprg1.11d': 0x117,
+        'ioc1.ic7': 0x104,
+        'c632.ic1': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'knights.zip', 'contents': zip_contents})
+
+    return out_files
+
+
+
+# def handle_knightsj(merged_contents): 
+#     out_files = []
+#     func_map = {}
+
+#     maincpu_filenames = [
+#         "ccj_23f.8f",
+#         "ccj_28f.9f",
+#         "ccj_22f.7f",
+#         "ccj_24f.9e"
+#     ]
+#     def maincpu(contents):
+#         # Only the last 2 128k chunks actually need deinterleaved...
+#         maincpu_area = contents[0x40:0x140040]
+#         deint_chunks = blob.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+
+#         chunks = []
+#         chunks.append(maincpu_area[0x0:0x80000])
+#         chunks.append(deint_chunks[0])
+#         chunks.append(maincpu_area[0x80000:0x100000])
+#         chunks.append(deint_chunks[1])
+
+#         return dict(zip(maincpu_filenames, chunks))
+#     func_map['maincpu'] = maincpu
+
+#     gfx_filenames = [
+#         "cc_01.3a",
+#         "cc_05.7a",
+#         "cc_02.4a",
+#         "cc_06.8a",
+#         "cc_03.5a",
+#         "cc_07.9a",
+#         "cc_04.6a",
+#         "cc_08.10a"
+#     ]
+#     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+#     audiocpu_filenames = [
+#         'ccj_09.12a'
+#     ]
+#     func_map['audiocpu'] = captcomm_audiocpu_common(audiocpu_filenames)
+
+#     qsound_filenames = [
+#         'ccj_18.11c',
+#         'ccj_19.12c'
+#     ]
+#     func_map['qsound'] = captcomm_qsound_common(qsound_filenames)
+
+#     ph_files = {
+#         'buf1': 0x117,
+#         'ioa1': 0x117,
+#         'prg1': 0x117,
+#         'rom1': 0x117,
+#         'sou1': 0x117,
+#         'cc63b.1a': 0x117,
+#         'iob1.12d': 0x117,
+#         'ccprg1.11d': 0x117,
+#         'ioc1.ic7': 0x104,
+#         'c632.ic1': 0x117
+#     }
+#     func_map['placeholders'] = placeholder_generator(ph_files)
+
+#     zip_contents = merged_rom_handler(merged_contents, func_map)
+#     out_files.append({'filename': 'knightsj.zip', 'contents': zip_contents})
+
+#     return out_files
 
 
 ################################################################################
