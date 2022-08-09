@@ -1063,38 +1063,6 @@ def merged_rom_handler(merged_contents, func_map):
     return new_contents.getvalue()
 
 
-# def ffightj(file_content, archive_meta):
-#     arc_files = arc.extract(file_content)
-
-#     target_file = [x for x in arc_files if x['path'] == "bin\ffightj"][0]
-#     contents = target_file['contents']
-
-#     # maincpu
-#     maincpu = contents[0x40:0x40+0x100000]
-
-#   - maincpu
-#     - geometry: offset 0x00040, length 0x100000
-#     - split: 4
-#     - deinterleave: 2 bytes
-#     - name
-#   - gfx
-#     - geometry: offset 0x400040, length 0x200000
-#     - split: 2
-#     - deinterleave: 8
-#     - name
-#   - audiocpu
-#     - geometry: offset 0x600040, length 0x018000
-#     - splice_out: offset 0x8000, length 0x2000
-#     - split: 2
-#     - name
-#   - qsound
-#     - geometry: offset 0x618040, length 0x040000
-#     - split: 2
-#     - name
-    # print("NYI")
-
-
-
 def main(game_base_dir, out_path):
     pak_files = find_files(game_base_dir)
     for file_path in pak_files:
