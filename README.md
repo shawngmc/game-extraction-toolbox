@@ -58,3 +58,13 @@ I prefer not to be artificially locked to specific platforms - why play a 25 yea
 
 ### Why not just download the ROMs?
 It is illegal. One can discuss economic moral implications all day, but at the end of the day, it's theft. As a software developer myself, I don't want my code stolen - so I can't claim a moral high ground there. Equally importantly, showing classic game owners that the market will support rereleases increases the liklihood of rereleases, and I want people who can't/won't download ROMs to enjoy these titles as well.
+
+
+## Collections
+
+**Collection**                             | **Status**     | **Notes**                                                               
+---------------------------------|-------------|---------------------------------------------------------------------
+ **Capcom Arcade Stadium 1**                      | 95%    | Requires Steam depot downloading, a couple shaky ROMs
+ **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data
+ **Capcom Fighting Collection**                 | 10% | Just started, but CPS2 is semi-standard. No Enc keys present.
+
