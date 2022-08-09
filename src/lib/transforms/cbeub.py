@@ -2,31 +2,6 @@
 
 # Extraction Script for Capcom Beat 'em Up Bundle
 
-# Game Mapping
-#  game_00.arc: Final Fight (JP)
-#   - maincpu
-#     - geometry: offset 0x00040, length 0x100000
-#     - split: 4
-#     - deinterleave: 2 bytes
-#     - name
-#   - gfx
-#     - geometry: offset 0x400040, length 0x200000
-#     - split: 2
-#     - deinterleave: 8
-#     - name
-#   - audiocpu
-#     - geometry: offset 0x600040, length 0x018000
-#     - splice_out: offset 0x8000, length 0x2000
-#     - split: 2
-#     - name
-#   - qsound
-#     - geometry: offset 0x618040, length 0x040000
-#     - split: 2
-#     - name
-
-
-
-
 # General Extraction Process
 # - Extract ARC Archive
 # - Pull bin/ROMNAME file
@@ -42,9 +17,6 @@
 #   - audiocpu: geometry
 #   - qsound: geometry + endian swap
 
-# Typical Base Path: C:\Program Files (x86)\Steam\steamapps\common\CBEUB
-
-from email.mime import audio
 import re
 import traceback
 import glob
@@ -58,7 +30,7 @@ from lib.utils import blob
 
 title = "Capcom Beat 'em Up Bundle"
 description = "NYI"
-in_dir_desc = "NYI"
+in_dir_desc = "CBEUB base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CBEUB)"
 
 pkg_name_map = {
     "game_00.arc": "ffightj",
@@ -150,22 +122,6 @@ def audio_common(start, filenames):
 # game_00.arc: Final Fight (JP)
 # game_01.arc: Final Fight
 
-def ffight_qsound_common(filenames):
-    def qsound(contents):
-        contents = contents[0x618040:0x658040]
-        chunks = blob.equal_split(contents, num_chunks=2)
-        return dict(zip(filenames, chunks))
-    return qsound
-
-
-def ffight_audiocpu_common(filenames):
-    def audiocpu(contents):
-        chunks = []
-        chunks.append(contents[0x600040:0x608040] + contents[0x610040:0x618040])
-        return dict(zip(filenames, chunks))
-    return audiocpu
-
-
 def handle_ffight(merged_contents): 
     out_files = []
     func_map = {}
@@ -201,17 +157,12 @@ def handle_ffight(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x200000, gfx_filenames, 4, False)
 
-    audiocpu_filenames = [
-        'ff_09.12b'
-    ]
-    func_map['audiocpu'] = ffight_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    audio_filenames = [
+        'ff_09.12b',
         'ff_18.11c',
         'ff_19.12c'
     ]
-    func_map['qsound'] = ffight_qsound_common(qsound_filenames)
-
+    func_map['audio'] = audio_common(0x600040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -275,16 +226,12 @@ def handle_ffightj(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x200000, gfx_filenames, 8, True)
 
-    audiocpu_filenames = [
-        'ff_23.bin'
-    ]
-    func_map['audiocpu'] = ffight_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    audio_filenames = [
+        'ff_23.bin',
         'ffj_30.bin',
         'ffj_31.bin'
     ]
-    func_map['qsound'] = ffight_qsound_common(qsound_filenames)
+    func_map['audio'] = audio_common(0x600040, audio_filenames)
     
     ph_files = {
         'buf1': 0x117,
@@ -312,23 +259,6 @@ def handle_ffightj(merged_contents):
 ################################################################################
 # game_10.arc: The King of Dragons (JP)
 # game_11.arc: The King of Dragons
-
-
-def kod_qsound_common(filenames):
-    def qsound(contents):
-        contents = contents[0x818040:0x858040]
-        chunks = blob.equal_split(contents, num_chunks=2)
-        return dict(zip(filenames, chunks))
-    return qsound
-
-
-def kod_audiocpu_common(filenames):
-    def audiocpu(contents):
-        chunks = []
-        chunks.append(contents[0x800040:0x808040] + contents[0x810040:0x818040])
-        return dict(zip(filenames, chunks))
-    return audiocpu
-
 
 
 def handle_kod(merged_contents): 
@@ -369,16 +299,12 @@ def handle_kod(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-    audiocpu_filenames = [
-        'kd_9.12a'
-    ]
-    func_map['audiocpu'] = kod_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    audio_filenames = [
+        'kd_9.12a',
         'kd_18.11c',
         'kd_19.12c'
     ]
-    func_map['qsound'] = kod_qsound_common(qsound_filenames)
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -439,16 +365,12 @@ def handle_kodj(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-    audiocpu_filenames = [
-        'kd_09.12a'
-    ]
-    func_map['audiocpu'] = kod_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    audio_filenames = [
+        'kd_09.12a',
         'kd_18.11c',
         'kd_19.12c'
     ]
-    func_map['qsound'] = kod_qsound_common(qsound_filenames)
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -479,24 +401,6 @@ def handle_kodj(merged_contents):
 ################################################################################
 # game_20.arc: Captain Commando (JP)
 # game_21.arc: Captain Commando
-
-
-def captcomm_qsound_common(filenames):
-    def qsound(contents):
-        contents = contents[0x818040:0x858040]
-        chunks = blob.equal_split(contents, num_chunks=2)
-        return dict(zip(filenames, chunks))
-    return qsound
-
-
-def captcomm_audiocpu_common(filenames):
-    def audiocpu(contents):
-        chunks = []
-        chunks.append(contents[0x800040:0x808040] + contents[0x810040:0x818040])
-        return dict(zip(filenames, chunks))
-    return audiocpu
-
-
 
 def handle_captcomm(merged_contents): 
     out_files = []
@@ -534,16 +438,12 @@ def handle_captcomm(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-    audiocpu_filenames = [
-        'cc_09.11a'
-    ]
-    func_map['audiocpu'] = captcomm_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    audio_filenames = [
+        'cc_09.11a',
         'cc_18.11c',
         'cc_19.12c'
     ]
-    func_map['qsound'] = captcomm_qsound_common(qsound_filenames)
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -601,17 +501,13 @@ def handle_captcommj(merged_contents):
         "cc_08.10a"
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
-
-    audiocpu_filenames = [
-        'ccj_09.12a'
-    ]
-    func_map['audiocpu'] = captcomm_audiocpu_common(audiocpu_filenames)
-
-    qsound_filenames = [
+    
+    audio_filenames = [
+        'ccj_09.12a',
         'ccj_18.11c',
         'ccj_19.12c'
     ]
-    func_map['qsound'] = captcomm_qsound_common(qsound_filenames)
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -674,12 +570,12 @@ def handle_knights(merged_contents):
     ]
     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-    qsound_filenames = [
+    audio_filenames = [
         'kr_09.11a',
         'kr_18.11c',
         'kr_19.12c'
     ]
-    func_map['audio'] = audio_common(0x800040, qsound_filenames)
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
     ph_files = {
         'buf1': 0x117,
@@ -702,71 +598,59 @@ def handle_knights(merged_contents):
 
 
 
-# def handle_knightsj(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_knightsj(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [
-#         "ccj_23f.8f",
-#         "ccj_28f.9f",
-#         "ccj_22f.7f",
-#         "ccj_24f.9e"
-#     ]
-#     def maincpu(contents):
-#         # Only the last 2 128k chunks actually need deinterleaved...
-#         maincpu_area = contents[0x40:0x140040]
-#         deint_chunks = blob.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+    maincpu_filenames = [
+        "kr_23j.8f",
+        "kr_22.7f"
+    ]
+    def maincpu(contents):
+        # Only the last 2 128k chunks actually need deinterleaved...
+        maincpu_area = contents[0x40:0x100040]
+        chunks = blob.equal_split(maincpu_area, num_chunks=2)
 
-#         chunks = []
-#         chunks.append(maincpu_area[0x0:0x80000])
-#         chunks.append(deint_chunks[0])
-#         chunks.append(maincpu_area[0x80000:0x100000])
-#         chunks.append(deint_chunks[1])
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
 
-#         return dict(zip(maincpu_filenames, chunks))
-#     func_map['maincpu'] = maincpu
+    gfx_filenames = [
+        "kr_01.3a",
+        "kr_05.7a",
+        "kr_02.4a",
+        "kr_06.8a",
+        "kr_03.5a",
+        "kr_07.9a",
+        "kr_04.6a",
+        "kr_08.10a"
+    ]
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
 
-#     gfx_filenames = [
-#         "cc_01.3a",
-#         "cc_05.7a",
-#         "cc_02.4a",
-#         "cc_06.8a",
-#         "cc_03.5a",
-#         "cc_07.9a",
-#         "cc_04.6a",
-#         "cc_08.10a"
-#     ]
-#     func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+    audio_filenames = [
+        'kr_09.12a',
+        'kr_18.11c',
+        'kr_19.12c'
+    ]
+    func_map['audio'] = audio_common(0x800040, audio_filenames)
 
-#     audiocpu_filenames = [
-#         'ccj_09.12a'
-#     ]
-#     func_map['audiocpu'] = captcomm_audiocpu_common(audiocpu_filenames)
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'kr63b.1a': 0x117,
+        'iob1.12d': 0x117,
+        'bprg1.11d': 0x117,
+        'ioc1.ic7': 0x104,
+        'c632.ic1': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
 
-#     qsound_filenames = [
-#         'ccj_18.11c',
-#         'ccj_19.12c'
-#     ]
-#     func_map['qsound'] = captcomm_qsound_common(qsound_filenames)
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'knightsj.zip', 'contents': zip_contents})
 
-#     ph_files = {
-#         'buf1': 0x117,
-#         'ioa1': 0x117,
-#         'prg1': 0x117,
-#         'rom1': 0x117,
-#         'sou1': 0x117,
-#         'cc63b.1a': 0x117,
-#         'iob1.12d': 0x117,
-#         'ccprg1.11d': 0x117,
-#         'ioc1.ic7': 0x104,
-#         'c632.ic1': 0x117
-#     }
-#     func_map['placeholders'] = placeholder_generator(ph_files)
-
-#     zip_contents = merged_rom_handler(merged_contents, func_map)
-#     out_files.append({'filename': 'knightsj.zip', 'contents': zip_contents})
-
-#     return out_files
+    return out_files
 
 
 ################################################################################
@@ -780,6 +664,154 @@ def handle_knights(merged_contents):
 # game_40.arc: Warriors of Fate (JP)
 # game_41.arc: Warriors of Fate
 
+# wof map from script
+#           0x000000    0x000040                IBIS Header
+# maincpu   0x000040    0x100040                OK
+#           0x100040    0x400040                Padding (All FF)
+# gfx       0x400040    0x800040                OK
+# audiocpu  0x800040    0x828040   (with gap)   BAD CRC, but looks like the audiocpu code from other ROMS (version header)
+#           |
+#           |  0x800040    0x808040                Different data - does not look like most audiocpu - no version header, a lot of it looks like junk filler
+#           |  0x808040    0x810040                Padding (All FF) - similar padding is only 0x075DB - 0x08000 in tk2_qa.5k
+#           |  0x810040    0x828040                Matches 0x08000 - 0x20000 in wof's tk2_qa.5k
+#           0x828040    0x830040                Unknown
+#           0x830040    0x850040                Padding (All FF)
+# qsound    0x850040    0xA50040                OK
+
+
+def wof_audio_common(filenames):
+    def audio(contents):
+        start = 0x800040
+        chunks = []
+
+        # Add the audio CPU
+        audiocpu_content = contents[start:start+0x8000] + contents[start+0x10000:start+0x28000]
+        chunks.append(audiocpu_content)
+
+        # Add the qsound
+        qsound_start = start+0x50000
+        qsound_contents = contents[qsound_start:qsound_start+0x200000]
+        chunks.extend(blob.equal_split(qsound_contents, num_chunks=4))
+
+        return dict(zip(filenames, chunks))
+    return audio
+
+def handle_wof(merged_contents): 
+    out_files = []
+    func_map = {}
+
+    maincpu_filenames = [
+        "tk2e_23c.8f",
+        "tk2e_22c.7f"
+    ]
+    def maincpu(contents):
+        maincpu_area = contents[0x40:0x100040]
+        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    gfx_filenames = [
+        "tk2-1m.3a",
+        "tk2-5m.7a",
+        "tk2-3m.5a",
+        "tk2-7m.9a",
+        "tk2-2m.4a",
+        "tk2-6m.8a",
+        "tk2-4m.6a",
+        "tk2-8m.10a"
+    ]
+
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+    audio_filenames = [
+        'tk2_qa.5k',
+        'tk2-q1.1k',
+        'tk2-q2.2k',
+        'tk2-q3.3k',
+        'tk2-q4.4k'
+    ]
+    func_map['audio'] = wof_audio_common(audio_filenames)
+
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg2': 0x117,
+        'rom1': 0x117,
+        'tk263b.1a': 0x117,
+        'iob1.12d': 0x117,
+        'bprg1.11d': 0x117,
+        'ioc1.ic1': 0x104,
+        'd7l1.7l': 0x117,
+        'd8l1.8l': 0x117,
+        'd9k1.9k': 0x117,
+        'd10f1.10f': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'wof.zip', 'contents': zip_contents})
+
+    return out_files
+
+def handle_wofj(merged_contents): 
+    out_files = []
+    func_map = {}
+
+    maincpu_filenames = [
+        "tk2j_23c.8f",
+        "tk2j_22c.7f"
+    ]
+    def maincpu(contents):
+        maincpu_area = contents[0x40:0x100040]
+        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    gfx_filenames = [
+        "tk2_01.3a",
+        "tk2_05.7a",
+        "tk2_02.4a",
+        "tk2_06.8a",
+        "tk2_03.5a",
+        "tk2_07.9a",
+        "tk2_04.6a",
+        "tk2_08.10a"
+    ]
+
+    func_map['gfx'] = deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+
+    audio_filenames = [
+        'tk2_qa.5k',
+        'tk2-q1.1k',
+        'tk2-q2.2k',
+        'tk2-q3.3k',
+        'tk2-q4.4k'
+    ]
+    func_map['audio'] = wof_audio_common(audio_filenames)
+
+    ph_files = {
+        'buf1': 0x117,
+        'ioa1': 0x117,
+        'prg1': 0x117,
+        'sou1': 0x117,
+        'rom1': 0x117,
+        'tk263b.1a': 0x117,
+        'iob1.12d': 0x117,
+        'bprg1.11d': 0x117,
+        'ioc1.ic1': 0x104,
+        'd7l1.7l': 0x117,
+        'd8l1.8l': 0x117,
+        'd9k1.9k': 0x117,
+        'd10f1.10f': 0x117
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    zip_contents = merged_rom_handler(merged_contents, func_map)
+    out_files.append({'filename': 'wofj.zip', 'contents': zip_contents})
+
+    return out_files
 
 ################################################################################
 # END Warriors of Fate                                                         #
@@ -792,6 +824,113 @@ def handle_knights(merged_contents):
 # game_50.arc: Powered Gear: Strategic Variant Armor Equipment (JP)
 # game_51.arc: Armored Warriors
 
+def armwar_gfx_common(contents):
+    # Cut out the section
+    contents = contents[0x0800040:0x1C00040]
+
+    # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
+    bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
+    contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+
+    # Split it
+    chunks = blob.equal_split(contents, num_chunks=20)
+
+    # Interleave each pair of chunks
+    new_chunks = []
+    for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
+        new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
+    chunks = new_chunks
+
+    # Merge the chunks back together
+    contents = blob.merge(chunks)
+
+    # Deinterleave the chunks into our files
+    new_chunks = []
+    chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
+    for chunk in chunks:
+        new_chunks.extend(blob.custom_split(chunk, [0x400000, 0x100000]))
+    chunks = new_chunks
+    filenames = [
+        'pwg.13m',
+        'pwg.14m',
+        'pwg.15m',
+        'pwg.16m',
+        'pwg.17m',
+        'pwg.18m',
+        'pwg.19m',
+        'pwg.20m'
+    ]
+    return dict(zip(filenames, chunks))
+
+def armwar_audiocpu_common(contents):
+    chunks = []
+    chunks.append(contents[0x1C00040:0x1C08040] + contents[0x1C10040:0x1C28040])
+    chunks.append(contents[0x1C28040:0x1C48040])
+    filenames = [
+        'pwg.01',
+        'pwg.02'
+    ]
+    return dict(zip(filenames, chunks))
+    
+def armwar_qsound_common(contents):
+    contents = contents[0x1C50040:0x2050040]
+    chunks = blob.equal_split(contents, num_chunks=2)
+    chunks = blob.swap_endian_all(chunks)
+    filenames = [
+        'pwg.11m',
+        'pwg.12m'
+    ]
+    return dict(zip(filenames, chunks))
+
+def handle_armwar(merged_contents):
+    out_files = []
+
+    def maincpu(contents):
+        contents = contents[0x40:0x400040]
+        chunks = blob.equal_split(contents, num_chunks=8)
+        filenames = [   
+            "pwge.03c",
+            "pwge.04c",
+            "pwge.05b",
+            "pwg.06",
+            "pwg.07",
+            "pwg.08",
+            "pwg.09a",
+            "pwg.10"
+        ]
+        return dict(zip(filenames, chunks))
+    func_map = {}
+    func_map['maincpu'] = maincpu
+    func_map['gfx'] = armwar_gfx_common
+    func_map['audiocpu'] = armwar_audiocpu_common
+    func_map['qsound'] = armwar_qsound_common
+    out_files.append({'filename': 'armwar.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    return out_files
+
+def handle_pgear(merged_contents):
+    out_files = []
+
+    def maincpu(contents):
+        contents = contents[0x40:0x400040]
+        chunks = blob.equal_split(contents, num_chunks=8)
+        filenames = [   
+            "pwgj.03a",
+            "pwgj.04a",
+            "pwgj.05a",
+            "pwg.06",
+            "pwg.07",
+            "pwg.08",
+            "pwg.09a",
+            "pwg.10"
+        ]
+        return dict(zip(filenames, chunks))
+    func_map = {}
+    func_map['maincpu'] = maincpu
+    func_map['gfx'] = armwar_gfx_common
+    func_map['audiocpu'] = armwar_audiocpu_common
+    func_map['qsound'] = armwar_qsound_common
+    out_files.append({'filename': 'pgear.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    return out_files
 
 ################################################################################
 # END Armored Warriors                                                         #
