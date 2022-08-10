@@ -10,7 +10,6 @@ setup(
         'bplist',
         'Click',
         'psutil',
-        'python-magic',
         'python-magic-bin',
         'rich',
     ],
