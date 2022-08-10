@@ -1,3 +1,6 @@
+# 0.0.7
+- Packaging/Installer Fix
+
 # 0.0.6
 - Added Games/Collections:
   - Capcom Beat 'em Up Bundle
