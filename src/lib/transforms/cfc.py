@@ -719,8 +719,8 @@ def handle_hsf2j(merged_contents):
     func_map = {}
 
     maincpu_filenames = [   
-        "hs2j.03c",
-        "hs2j.04b",
+        "hs2j.03",
+        "hs2j.04",
         "hs2j.05",
         "hs2j.06",
         "hs2j.07",
