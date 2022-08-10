@@ -33,22 +33,22 @@ description = "NYI"
 in_dir_desc = "CFC base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION)"
 
 pkg_name_map = {
-    "game_00.arc": "vampj",
-    "game_01.arc": "dstlku",
-    "game_10.arc": "vhuntjr2",
-    "game_11.arc": "nwarru",
-    "game_20.arc": "vsavj",
-    "game_21.arc": "vsavu",
-    "game_30.arc": "vhunt2",
-    "game_40.arc": "vsav2",
-    "game_50.arc": "cybotsj",
-    "game_51.arc": "cybotsu",
-    "game_60.arc": "spf2xj",
-    "game_61.arc": "spf2tu",
-    "game_70.arc": "pfghtj",
-    "game_71.arc": "sgemf",
-    "game_80.arc": "hsf2j",
-    "game_81.arc": "hsf2",
+    # "game_00.arc": "vampj",
+    # "game_01.arc": "dstlku",
+    # "game_10.arc": "vhuntjr2",
+    # "game_11.arc": "nwarru",
+    # "game_20.arc": "vsavj",
+    # "game_21.arc": "vsavu",
+    # "game_30.arc": "vhunt2",
+    # "game_40.arc": "vsav2",
+    # "game_50.arc": "cybotsj",
+    # "game_51.arc": "cybotsu",
+    # "game_60.arc": "spf2xj",
+    # "game_61.arc": "spf2tu",
+    # "game_70.arc": "pfghtj",
+    # "game_71.arc": "sgemf",
+    # "game_80.arc": "hsf2j",
+    # "game_81.arc": "hsf2",
     "game_90.arc": "warzard",
     "game_91.arc": "redearth",
 }
@@ -774,16 +774,55 @@ def handle_hsf2(merged_contents):
 # The actual ROM is small - only 512KB - but there doesn't appear to be an exact match offhand.
 # The majority of the data is in a CHD - but there doesn't appear to be an exact match offhand.
 
+# Warzard has a 'JACK' header, but Red Earth has an 'IBIS' header. So they are likely a similar format.
+
+# There are very 'word like' sections that cryptanalysis can be done with.
+# EX: 0x1A490
+#    orig: M:noadnouT:yuT:e
+#  endian: :MondaonTuy:Tue:
+# This section is pretty clearly days of week, followed by date format strings and months of year.
+# It LOOKS like every 4 charcters are backwards 
+#     sep: M:no | adno | uT:y | uT:e
+#  4 char: on:M | onda | y:Tu | e:Tue
+#  merged: on:Monday:Tue:Tue
+# Doing this to the whole file gets us a lot of readable text (Days/Months/Error Strings                                                                                                                                                                                                                                           )... 
+# But that readable text isn't in the romfile or compressed CHD.
+# Did they pre-decompress the CHD for performance?
+
+# There are CD001 headers - is this an ISO IMAGE?! https://en.wikipedia.org/wiki/ISO_9660#Specifications
+# 2 Tracks:
+#  0x1A1CF: hCD001� - type 68, ver 0 (invalid)
+#  0x1D80C: hCD001� - type 68, ver 0 (invalid)
+# There would be 32,768 bytes (0x8000) in a 'system area' before the first CD001 header
+# This would mean the image starts at 0x1A1CF - 0x8000 = 0x121CF
+# This is 0x0 - 0x121CF is NOT big enough to fit the 0x80000 ROM. Nor is 0x0 - 0x1A1CF. 
+# More importantly - this isn't a valid ISO 9660
+# The volume versions are invalid, there's not a primary or terminator...
+
 # def handle_warzard(merged_contents): 
 #     out_files = []
 #     func_map = {}
 
+
+#     def endian(contents):
+#         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
+#         return { 'endian.bin': contents }
+
+#     func_map['endian'] = endian
+#     out_files.append({'filename': 'warzard.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 #     return out_files
 
 # def handle_redearth(merged_contents): 
 #     out_files = []
 #     func_map = {}
 
+
+#     def endian(contents):
+#         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
+#         return { 'endian.bin': contents }
+
+#     func_map['endian'] = endian
+#     out_files.append({'filename': 'redearth.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 #     return out_files
 
 ################################################################################
