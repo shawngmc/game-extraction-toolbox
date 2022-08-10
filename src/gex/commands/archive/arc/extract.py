@@ -1,10 +1,8 @@
 import traceback
-import magic
 import os
-import io
-from lib.archive import arc
-from lib.file import identify
-from lib.utils import helper
+from gex.lib.archive import arc
+from gex.lib.file import identify
+from gex.lib.utils import helper
 import click
 
 @click.command()

@@ -9,13 +9,14 @@ setup(
     install_requires=[
         'bplist',
         'Click',
+        'psutil',
         'python-magic',
         'python-magic-bin',
         'rich',
     ],
     entry_points={
         'console_scripts': [
-            'gextoolbox = toolbox:cli'
+            'gextoolbox = gex.toolbox:cli'
         ]
     }
 )

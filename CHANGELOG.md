@@ -1,5 +1,6 @@
-# 0.0.7
-- Packaging/Installer Fix
+# 0.0.7 - 0.0.11
+- Packaging/Installer Fixes
+- Magic file IDing temporarily disabled
 
 # 0.0.6
 - Added Games/Collections:

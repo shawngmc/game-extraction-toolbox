@@ -1,9 +1,9 @@
 import click
 
-from commands.archive.archive import archive
-from commands.file.file import file
-from commands.finder.finder import finder
-from commands.postprocess.postprocess import postprocess
+from gex.commands.archive.archive import archive
+from gex.commands.file.file import file
+from gex.commands.finder.finder import finder
+from gex.commands.postprocess.postprocess import postprocess
 
 @click.group()
 def cli():
