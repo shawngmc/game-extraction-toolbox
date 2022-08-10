@@ -25,8 +25,8 @@ import logging
 import os
 import io
 
-from lib.archive import arc
-from lib.utils import blob
+from gex.lib.archive import arc
+from gex.lib.utils import blob
 
 title = "Capcom Beat 'em Up Bundle"
 description = "NYI"

@@ -1,4 +1,4 @@
-from lib.utils import blob
+from gex.lib.utils import blob
 
 # IBIS vs. JACK
 # It's unclear what the difference between IBIS and JACK headers really is

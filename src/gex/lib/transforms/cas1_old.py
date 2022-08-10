@@ -6,8 +6,8 @@ import os
 import io
 
 
-from lib.archive import kpka
-from lib.utils import blob
+from gex.lib.archive import kpka
+from gex.lib.utils import blob
 
 # Standard processing:
 # - Assume each zip in the KPKA is a game

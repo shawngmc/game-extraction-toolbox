@@ -25,8 +25,8 @@ import logging
 import os
 import io
 
-from lib.archive import arc, ibis
-from lib.utils import blob
+from gex.lib.archive import arc, ibis
+from gex.lib.utils import blob
 
 from bplist.bplist import BPListReader
 
