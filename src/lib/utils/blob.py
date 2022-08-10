@@ -131,7 +131,6 @@ def bit_shuffle(contents, word_size_bytes, bit_order):
 
 def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
     new_chunks = []
-    new_chunk_size = len(contents)//num_ways
     for x in range(0, num_ways):
         new_chunks.append(bytearray())
    
@@ -140,46 +139,34 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
         offset = i*word_size_bytes
         shuffle_word = bitarray()
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
-        # print(shuffle_word)
 
         updated_word = bitarray(word_size_bytes*8*'0')
         j = 0
         for next_bit in bit_order:
             updated_word[j] = shuffle_word[next_bit]
-            # print(next_bit)
-            # print(updated_word)
             j = j + 1
 
         offset = 0
         split_shuffle_length = word_size_bytes*8//num_ways
         for x in range(0, num_ways):
             end = offset+split_shuffle_length
-            # print(updated_word[offset:end])
             new_chunks[x].extend(updated_word[offset:end])
-            # print(f'chunk[{x}: {new_chunks[x]}')
             offset = end
-        # exit()
-
-    # num_shuffles = len(contents)//word_size_bytes
-    # for i in range(0, num_shuffles):
-    #     offset = i*word_size_bytes
-    #     shuffle_word = bitarray()
-    #     shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
-
-    #     def_size = word_size_bytes//num_ways*8
-    #     default_content = def_size*'0'
-    #     updated_words = []
-    #     print(updated_words)
-    #     for x in range(0, num_ways):
-    #         updated_words.append(bitarray(default_content))
-
-    #     i = 0
-    #     for next_bit in bit_order:
-    #         chunk_id = i//num_ways
-    #         updated_words[chunk_id][i] = shuffle_word[next_bit]
-    #         i = i + 1
-
-    #     for x in range(0, num_ways):
-    #         new_chunks[x].extend(updated_words[x])
 
     return new_chunks
+
+def byte_shuffle(contents, word_size_bytes, byte_order):
+    new_content = bytearray()    
+    num_shuffles = len(contents)//word_size_bytes
+    for i in range(0, num_shuffles):
+        offset = i*word_size_bytes
+        shuffle_word = bytearray(contents[offset:offset+word_size_bytes])
+
+        updated_word = bytearray(word_size_bytes)
+        i = 0
+        for next_byte in byte_order:
+            updated_word[i] = shuffle_word[next_byte]
+            i = i + 1
+
+        new_content.extend(updated_word)
+    return new_content

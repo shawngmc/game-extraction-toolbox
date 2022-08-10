@@ -1,5 +1,12 @@
 from lib.utils import blob
 
+# IBIS vs. JACK
+# It's unclear what the difference between IBIS and JACK headers really is
+# For example, all CBEUB games and all CFC games EXCEPT RedEarth ENG uses IBIS as the header
+# However
+#   - RedEarth JP uses a 'JACK' header
+#   - All CFC default save states use a 'jacksave' header
+
 
 def gfx_cps2(start, length, filenames, split = None):
     def gfx(contents):    # Cut out the section
