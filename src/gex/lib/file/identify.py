@@ -1,14 +1,14 @@
-# import magic
+import magic
 
 def enhanced_magic_from_path(in_file):
-    # magic_id = None
-    # try:
-    #     magic_id = magic.from_file(in_file)
-    # except Exception as e:
-    #     print(repr(e))
+    magic_id = None
+    try:
+        magic_id = magic.from_file(in_file)
+    except Exception as e:
+        print(repr(e))
 
-    # if magic_id != 'data' and magic_id != None:
-    #     return magic_id
+    if magic_id != 'data' and magic_id != None:
+        return magic_id
     
     # Try to identify based on known file types magic bytes
     with open(in_file, 'rb') as file:
@@ -16,14 +16,14 @@ def enhanced_magic_from_path(in_file):
         return enhanced_look(content_start)
 
 def enhanced_magic_from_buffer(content_peek):
-    # magic_id = None
-    # try:
-    #     magic_id = magic.from_buffer(content_peek)
-    # except Exception as e:
-    #     print(repr(e))
+    magic_id = None
+    try:
+        magic_id = magic.from_buffer(content_peek)
+    except Exception as e:
+        print(repr(e))
 
-    # if magic_id != 'data' and magic_id != None:
-    #     return magic_id
+    if magic_id != 'data' and magic_id != None:
+        return magic_id
     
     # Try to identify based on known file types magic bytes
     return enhanced_look(content_peek)
