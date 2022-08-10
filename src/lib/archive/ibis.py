@@ -39,10 +39,10 @@ def audiocpu_cps2(start, filenames):
         return dict(zip(filenames, chunks))
     return audiocpu
     
-def qsound_cps2(start, length, filenames):
+def qsound_cps2(start, length, filenames, num_chunks=2):
     def qsound(contents):
         contents = contents[start:start+length]
-        chunks = blob.equal_split(contents, num_chunks=2)
+        chunks = blob.equal_split(contents, num_chunks=num_chunks)
         chunks = blob.swap_endian_all(chunks)
         return dict(zip(filenames, chunks))
     return qsound
