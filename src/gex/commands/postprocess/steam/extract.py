@@ -11,5 +11,5 @@ def extract(src_dir, dest_dir, task):
     """Run a task to pull from Steam app or Content pulls (via depot download)"""
 
     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
-    transform_module = importlib.import_module(f'lib.transforms.{task}')
+    transform_module = importlib.import_module(f'gex.lib.transforms.{task}')
     transform_module.main(src_dir, dest_dir)
