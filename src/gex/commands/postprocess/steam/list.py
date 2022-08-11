@@ -2,15 +2,15 @@ import click
 import os
 import glob
 import importlib
+import pkgutil
+from gex.lib.transforms import *
+import inspect
 
 @click.command()
 def list():
     """List Available Tasks"""
-    available_libs = glob.glob(os.path.join('lib', 'transforms', '*.py'))
-    
-    for available_lib in available_libs:
-        module_name = os.path.splitext(os.path.basename(available_lib))[0]
-        transform_module = importlib.import_module(f'lib.transforms.{module_name}')
-        print(f'{module_name}: {transform_module.title}')
-        print(f'  {transform_module.description}')
-        print(f'  Expected input dir: {transform_module.in_dir_desc}')
+    for global_name, transform_module in globals().items():
+        if inspect.ismodule(transform_module) and transform_module.__package__ == 'gex.lib.transforms':
+            print(f'{global_name}: {transform_module.title}')
+            print(f'  {transform_module.description}')
+            print(f'  Expected input dir: {transform_module.in_dir_desc}')

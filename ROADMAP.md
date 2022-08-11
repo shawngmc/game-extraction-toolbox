@@ -1,11 +1,6 @@
 # Roadmap
 
-## Current
-- Capcom Arcade Stadium 1 (via old Steam depot download)
-
 ## Future / Other Tools
-- Capcom Beat 'em Up Bundle
-  https://github.com/farmerbb/RED-Project/issues/44#issuecomment-1193152501
 - SEGA Mega Drive and Genesis Classics
   Files in game dir - https://github.com/farmerbb/RED-Project/wiki/Sega-Mega-Drive-&-Genesis-Classics
 - SNK 40th Anniversary Collection
@@ -52,7 +47,6 @@
 ## Under Investigation
 - Capcom Arcade Stadium 1
 - Capcom Arcade Stadium 2
-- Capcom Fighting Collection
 - Pac-Man Museum+
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2

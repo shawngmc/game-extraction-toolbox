@@ -1,3 +1,11 @@
+# 0.0.13
+- Added 'version' subcommand
+- More build improvements
+- Fix postprocess steam list command
+
+# 0.0.12
+- Re-enabled magic after fixing library conflict
+
 # 0.0.7 - 0.0.11
 - Packaging/Installer Fixes
 - Magic file IDing temporarily disabled
