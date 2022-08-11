@@ -1,3 +1,6 @@
+# 0.0.15
+- Remove OBE libraries to fix install issues
+
 # 0.0.14
 - Fix postprocess steam extract command
 

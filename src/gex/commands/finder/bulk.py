@@ -1,6 +1,5 @@
 import click
 import os
-import psutil
 
 
 @click.command()
@@ -43,10 +42,6 @@ def bulk(target_dir, search_dir):
             break
         return child_files
 
-    def memory_usage():
-        process = psutil.Process(os.getpid())
-        print(f"Using {process.memory_info().rss} bytes...")  # in bytes
-
     search_files = list_child_files(search_dir)
     target_files = list_child_files(target_dir)
 
@@ -58,7 +53,6 @@ def bulk(target_dir, search_dir):
         precache_file(target_file)
 
     print(f"After caching:")
-    memory_usage()
 
     print(f"Searching...")
     for search_file in search_files:
@@ -73,4 +67,4 @@ def bulk(target_dir, search_dir):
             else:
                 print(f"  Match for {target_file} from {hex(match['start'])} to {hex(match['end'])}!")
                 matches.append(match)
-            memory_usage()
+                
