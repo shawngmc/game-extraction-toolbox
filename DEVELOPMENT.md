@@ -26,8 +26,12 @@
 4. Uninstall via ```pipx uninstall game-extraction-toolbox```
   * Reconfigure for local dev via ```pip install --user -e .```
 
-### Publish
+## Publish
+### Automatic
+1. Merge a PR from develop to main
+2. Create a new release
+3. Monitor the GH Publish Action
+
+### Manual
 1. Distribute via twine ```twine upload dist/*```
 2. Clean out dist dir
-
-## TODO: Transition to release-based builds - GH Action in place, needs tested!
