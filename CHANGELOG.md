@@ -1,3 +1,6 @@
+# 0.0.14
+- Fix postprocess steam extract command
+
 # 0.0.13
 - Added 'version' subcommand
 - More build improvements
