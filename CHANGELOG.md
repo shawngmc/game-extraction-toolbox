@@ -1,3 +1,6 @@
+# 0.0.17
+- Readd psutil, original bitarray ref
+
 # 0.0.16
 - Readd missing library
 
