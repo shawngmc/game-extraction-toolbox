@@ -1,3 +1,7 @@
+# 0.0.13
+- Added 'version' subcommand
+- More build improvements
+
 # 0.0.12
 - Re-enabled magic after fixing library conflict
 
