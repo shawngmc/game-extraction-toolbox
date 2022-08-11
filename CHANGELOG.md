@@ -1,3 +1,6 @@
+# 0.0.18
+- Repush
+
 # 0.0.17
 - Readd psutil, original bitarray ref
 
