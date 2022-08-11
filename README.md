@@ -3,7 +3,8 @@
 CLI Tools for investigating game files and extracting known packages
 
 ## Requirements
-- Python 3.7+
+- Python 3.7 - 3.11
+  - This should be a final release, especially if on Windows / C++ build tools aren't installed
 - PIPx
 
 ## Installation
