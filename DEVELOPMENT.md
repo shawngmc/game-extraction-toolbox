@@ -11,7 +11,7 @@
 3. Install build ```pipx install build```
 
 ### Prep
-1. Pre-test via local install (```pip install -e --user .```)
+1. Pre-test via local install (```pip install --user -e .```)
 2. Update version number (in pyproject.toml) and CHANGELOG.md
 
 ### Build
@@ -24,7 +24,7 @@
   * Uninstall first if necessary!
 3. Try running
 4. Uninstall via ```pipx uninstall game-extraction-toolbox```
-  * Reconfigure for local dev via ```pip install -e --user .```
+  * Reconfigure for local dev via ```pip install --user -e .```
 
 ### Publish
 1. Distribute via twine ```twine upload dist/*```
