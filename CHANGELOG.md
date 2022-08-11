@@ -1,3 +1,6 @@
+# 0.0.16
+- Readd missing library
+
 # 0.0.15
 - Remove OBE libraries to fix install issues
 
