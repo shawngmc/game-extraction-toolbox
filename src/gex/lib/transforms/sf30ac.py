@@ -52,37 +52,42 @@ def build_rom(in_files, func_map):
     new_data = dict()
     for func in func_map.values():
         new_data.update(func(in_files))
-
-    # for name, content in new_data.items():
-    #     print(f'{name}: {content[0:40]}')
-
     return build_zip_file(new_data)
 
+def save_in_files(in_files):
+    out_files = []
+    for key, value in in_files.items():
+        out_files.append({'filename': key, 'contents': value})
+    return out_files
 
-
-def deshuffle_gfx_common(filenames, num_deinterleave_split, do_split):
+def deshuffle_gfx_common(filenames, num_interim_split, final_split = None):
     def gfx(in_files):
-        # Cut out the section
         contents = in_files['vrom']
-
+        
         # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-        bit_order = [
-            7, 3, 15, 11, 23, 19, 31, 27,
-            6, 2, 14, 10, 22, 18, 30, 26,
-            5, 1, 13, 9, 21, 17, 29, 25,
-            4, 0, 12, 8, 20, 16, 28, 24,
-            39, 35, 47, 43, 55, 51, 63, 59,
-            38, 34, 46, 42, 54, 50, 62, 58, 
-            37, 33, 45, 41, 53, 49, 61, 57, 
-            36, 32, 44, 40, 52, 48, 60, 56
-        ]
-        chunks = blob.split_bit_shuffle(contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
+        bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
+        contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
 
-        # Split it
-        if do_split:
+        # Split into even chunks
+        chunks = blob.equal_split(contents, num_chunks=num_interim_split)
+
+        # Interleave each pair of chunks
+        new_chunks = []
+        for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
+            new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
+        chunks = new_chunks
+
+        # Merge the chunks back together
+        contents = blob.merge(chunks)
+
+        # Deinterleave the chunks into our 4 files
+        chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
+
+        # Do final split if provided
+        if final_split:
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+                new_chunks.extend(blob.custom_split(oldchunk, final_split))
             chunks = new_chunks
 
         return dict(zip(filenames, chunks))
@@ -275,7 +280,6 @@ def handle_sf2(mbundle_entries):
 def handle_sfa(mbundle_entries):
     out_files = []
     func_map = {}
-    print("NYI")
     in_files = {}
     in_files['vrom'] = mbundle_entries.get('StreetFighterAlpha.vrom')
     in_files['z80'] = mbundle_entries.get('StreetFighterAlpha.z80')
@@ -313,30 +317,7 @@ def handle_sfa(mbundle_entries):
         "sfz.18m",
         "sfz.20m",
     ]
-    def vrom(in_files):
-        contents = in_files['vrom']
-        
-        # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-        bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-        contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
-
-        # Split into 8 even chunks
-        chunks = blob.equal_split(contents, num_chunks=8)
-
-        # Interleave each pair of chunks
-        new_chunks = []
-        for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-            new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
-        chunks = new_chunks
-
-        # Merge the chunks back together
-        contents = blob.merge(chunks)
-
-        # Deinterleave the chunks into our 4 files
-        chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
-        # chunks = blob.deinterleave(in_files['vrom'], num_ways = 4, word_size = 2)
-        return dict(zip(vrom_filenames, chunks))
-    func_map['vrom'] = vrom
+    func_map['vrom'] = deshuffle_gfx_common(vrom_filenames, 8)
 
 
     # z80
@@ -362,8 +343,6 @@ def handle_sfa(mbundle_entries):
     func_map['qsound'] = qsound
     out_files.append({'filename': 'sfau.zip', 'contents': build_rom(in_files, func_map)})
 
-    for key, value in in_files.items():
-        out_files.append({'filename': key, 'contents': value})
     return out_files
 
 ################################################################################
@@ -376,7 +355,14 @@ def handle_sfa(mbundle_entries):
 ################################################################################
 
 def handle_sfa2(mbundle_entries):
+    out_files = []
+    func_map = {}
     print("NYI")
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('StreetFighterAlpha2.vrom')
+    in_files['z80'] = mbundle_entries.get('StreetFighterAlpha2.z80')
+    in_files['qs'] = mbundle_entries.get('StreetFighterAlpha2.qs')
+    in_files['u168k'] = mbundle_entries.get('StreetFighterAlpha2.u1.68k')
     # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterAlpha2.mbundle
     # StreetFighterAlpha2.vrom
     # StreetFighterAlpha2.z80
@@ -384,7 +370,58 @@ def handle_sfa2(mbundle_entries):
     # StreetFighterAlpha2.nv
     # StreetFighterAlpha2.u1.68y
     # StreetFighterAlpha2.qs
-    out_files = []
+
+    maincpu_filenames = [
+        "sz2u.03",
+        "sz2u.04",
+        "sz2u.05",
+        "sz2u.06",
+        "sz2u.07",
+        "sz2u.08"
+    ]
+    def maincpu(in_files):
+        contents = in_files['u168k']
+        contents = blob.swap_endian(contents)
+        chunks = blob.equal_split(contents, num_chunks = 6)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    vrom_filenames = [
+        "sz2.13m",
+        "sz2.14m",
+        "sz2.15m",
+        "sz2.16m",
+        "sz2.17m",
+        "sz2.18m",
+        "sz2.19m",
+        "sz2.20m"
+    ]
+    func_map['vrom'] = deshuffle_gfx_common(vrom_filenames, 20, final_split = [0x400000, 0x100000])
+
+    # z80
+    z80_filenames = [   
+        'sz2.01a',
+        'sz2.02a'
+    ]
+    def z80(in_files):
+        chunks = blob.equal_split(in_files['z80'], num_chunks=2)
+        return dict(zip(z80_filenames, chunks))
+    func_map['z80'] = z80
+
+    # qsound
+    qsound_filenames = [   
+        'sz2.11m',
+        'sz2.12m'
+    ]
+    def qsound(in_files):
+        chunks = blob.equal_split(in_files['qs'], num_chunks=2)
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(qsound_filenames, chunks))
+    func_map['qsound'] = qsound
+
+    out_files.append({'filename': 'sfa2ur1.zip', 'contents': build_rom(in_files, func_map)})
+
     return out_files
 
 ################################################################################
@@ -397,7 +434,14 @@ def handle_sfa2(mbundle_entries):
 ################################################################################
 
 def handle_sfa3(mbundle_entries):
+    out_files = []
+    func_map = {}
     print("NYI")
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('StreetFighterAlpha3.vrom')
+    in_files['z80'] = mbundle_entries.get('StreetFighterAlpha3.z80')
+    in_files['qs'] = mbundle_entries.get('StreetFighterAlpha3.qs')
+    in_files['u168k'] = mbundle_entries.get('StreetFighterAlpha3.u.68k')
     # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterAlpha3.mbundle
     # StreetFighterAlpha3.z80
     # StreetFighterAlpha3.qs
@@ -405,7 +449,59 @@ def handle_sfa3(mbundle_entries):
     # StreetFighterAlpha3.nv
     # StreetFighterAlpha3.vrom
     # StreetFighterAlpha3.u.68x
-    out_files = []
+    maincpu_filenames = [
+        "sz3u.03c",
+        "sz3u.04c",
+        "sz3.05c",
+        "sz3.06c",
+        "sz3.07c",
+        "sz3.08c",
+        "sz3.09c",
+        "sz3.10b"
+    ]
+    def maincpu(in_files):
+        contents = in_files['u168k']
+        contents = blob.swap_endian(contents)
+        chunks = blob.equal_split(contents, num_chunks = 8)
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    vrom_filenames = [
+        "sz3.13m",
+        "sz3.14m",
+        "sz3.15m",
+        "sz3.16m",
+        "sz3.17m",
+        "sz3.18m",
+        "sz3.19m",
+        "sz3.20m"
+    ]
+    func_map['vrom'] = deshuffle_gfx_common(vrom_filenames, 32, final_split = [0x400000, 0x400000])
+
+    # z80
+    z80_filenames = [   
+        'sz3.01',
+        'sz3.02'
+    ]
+    def z80(in_files):
+        chunks = blob.equal_split(in_files['z80'], num_chunks=2)
+        return dict(zip(z80_filenames, chunks))
+    func_map['z80'] = z80
+
+    # qsound
+    qsound_filenames = [   
+        'sz3.11m',
+        'sz3.12m'
+    ]
+    def qsound(in_files):
+        chunks = blob.equal_split(in_files['qs'], num_chunks=2)
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(qsound_filenames, chunks))
+    func_map['qsound'] = qsound
+
+    out_files.append({'filename': 'sfa3u.zip', 'contents': build_rom(in_files, func_map)})
+
     return out_files
 
 ################################################################################
