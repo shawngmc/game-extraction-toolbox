@@ -4,7 +4,7 @@ This is reverse-engineered based on:
 - The Japanese shell scripts in https://web.archive.org/web/20220213232038/http://blog.livedoor.jp/scrap_a/archives/22823395.html
 - Valad Amoleo's https://github.com/ValadAmoleo/sf30ac-extractor/
 
-This was a Japanese set of shell scripts and odd generic operation executables. There is some weird encoding here too.
+Beyond the usual QSound dl-1425.bin and decryption keys, some of the CRC matches appear to be modified VROMs. The extraction is correct - 90%+ of the ROM matches - but details appear to be changed.
 
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 
