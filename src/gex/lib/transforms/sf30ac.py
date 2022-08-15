@@ -60,6 +60,20 @@ def save_in_files(in_files):
         out_files.append({'filename': key, 'contents': value})
     return out_files
 
+def process_simm_common(simm_id, simm_prefix, simm_size_bytes):
+    def process_simm(in_files):
+        contents = in_files[simm_id]
+        num_chunks = len(contents)//simm_size_bytes
+        filenames = list(map(lambda x:f'{simm_prefix}-{simm_id}.{x}', range(0,num_chunks)))
+        chunks = blob.equal_split(contents, chunk_size = simm_size_bytes)
+        return dict(zip(filenames, chunks))
+    return process_simm
+
+def name_file(in_file_ref, filename):
+    def rename_from(in_files):
+        return {filename: in_files[in_file_ref]}
+    return rename_from
+
 def deshuffle_gfx_common(filenames, num_interim_split, final_split = None):
     def gfx(in_files):
         contents = in_files['vrom']
@@ -357,7 +371,6 @@ def handle_sfa(mbundle_entries):
 def handle_sfa2(mbundle_entries):
     out_files = []
     func_map = {}
-    print("NYI")
     in_files = {}
     in_files['vrom'] = mbundle_entries.get('StreetFighterAlpha2.vrom')
     in_files['z80'] = mbundle_entries.get('StreetFighterAlpha2.z80')
@@ -436,7 +449,6 @@ def handle_sfa2(mbundle_entries):
 def handle_sfa3(mbundle_entries):
     out_files = []
     func_map = {}
-    print("NYI")
     in_files = {}
     in_files['vrom'] = mbundle_entries.get('StreetFighterAlpha3.vrom')
     in_files['z80'] = mbundle_entries.get('StreetFighterAlpha3.z80')
@@ -513,28 +525,29 @@ def handle_sfa3(mbundle_entries):
 # START Street Fighter 3                                                       #
 ################################################################################
 
-    # sf30th_sfiiina = Game("Street Fighter III: New Generation", conversion_type_streetfighter30th, "StreetFighterIII", "sfiiina")
-    # sf30th_sfiiina.compatibility.extend(["FB Neo"])
-    # sf30th_sfiiina.files.append(SplitGameFile(sf30th_sfiiina.extracted_folder_name +".s1", ["sfiii-simm1.0", "sfiii-simm1.1", "sfiii-simm1.2", "sfiii-simm1.3"], 2097152))
-    # sf30th_sfiiina.files.append(SplitGameFile(sf30th_sfiiina.extracted_folder_name +".s3", ["sfiii-simm3.0", "sfiii-simm3.1", "sfiii-simm3.2", "sfiii-simm3.3", "sfiii-simm3.4", "sfiii-simm3.5", "sfiii-simm3.6", "sfiii-simm3.7"], 2097152))
-    # sf30th_sfiiina.files.append(SplitGameFile(sf30th_sfiiina.extracted_folder_name +".s4", ["sfiii-simm4.0", "sfiii-simm4.1", "sfiii-simm4.2", "sfiii-simm4.3", "sfiii-simm4.4", "sfiii-simm4.5", "sfiii-simm4.6", "sfiii-simm4.7"], 2097152))
-    # sf30th_sfiiina.files.append(SplitGameFile(sf30th_sfiiina.extracted_folder_name +".s5", ["sfiii-simm5.0", "sfiii-simm5.1"], 2097152))
-    # sf30th_sfiiina.files.append(RenameGameFile(sf30th_sfiiina.extracted_folder_name +".bios", "sfiii_euro.29f400.u2"))
-    # all_games.append(sf30th_sfiiina)
+def sf3_common(mbundle_entries, in_bios_filename, in_simm_bank_files, simm_prefix, bios_filename, mame_name):
+    out_files = []
+    func_map = {}
+    in_files = {}
+    simm_size = 2*1024*1024
+    for simm_bank_num, simm_filename in in_simm_bank_files.items():
+        bank_name = f'simm{simm_bank_num}'
+        in_files[bank_name] = mbundle_entries.get(simm_filename)
+        func_map[bank_name] = process_simm_common(bank_name, simm_prefix, simm_size)
+
+    in_files['bios'] = mbundle_entries.get(in_bios_filename)
+    func_map['bios'] = name_file("bios", bios_filename)
+
+    out_files.append({'filename': mame_name, 'contents': build_rom(in_files, func_map)})
+
+    return out_files
 
 def handle_sf3(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterIII.mbundle
-    # StreetFighterIII.s5
-    # StreetFighterIII.bios
-    # StreetFighterIII.s3
-    # StreetFighterIII.patch.vrom
-    # StreetFighterIII.nv
-    # StreetFighterIII.s4
-    # StreetFighterIII.s1
-    # StreetFighterIII.cooper.patch.vrom
-    out_files = []
-    return out_files
+    in_prefix = "StreetFighterIII"
+    in_simm_bank_nums = [1, 3, 4, 5]
+    in_simm_files = dict(zip(in_simm_bank_nums, list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
+    in_bios_file = f'{in_prefix}.bios'
+    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii', "sfiii_asia_nocd.29f400.u2", 'sfiiina.zip')
 
 ################################################################################
 # END Street Fighter 3                                                         #
@@ -545,31 +558,12 @@ def handle_sf3(mbundle_entries):
 # START Street Fighter 3 2nd Impact                                            #
 ################################################################################
 
-    # sf30th_sfiii2n = Game("Street Fighter III: 2nd Impact", conversion_type_streetfighter30th, "StreetFighterIII_2ndImpact", "sfiii2n")
-    # sf30th_sfiii2n.compatibility.extend(["FB Neo"])
-    # sf30th_sfiii2n.files.append(SplitGameFile(sf30th_sfiii2n.extracted_folder_name +".s1", ["sfiii2-simm1.0", "sfiii2-simm1.1", "sfiii2-simm1.2", "sfiii2-simm1.3"], 2097152))
-    # sf30th_sfiii2n.files.append(SplitGameFile(sf30th_sfiii2n.extracted_folder_name +".s2", ["sfiii2-simm2.0", "sfiii2-simm2.1", "sfiii2-simm2.2", "sfiii2-simm2.3"], 2097152))
-    # sf30th_sfiii2n.files.append(SplitGameFile(sf30th_sfiii2n.extracted_folder_name +".s3", ["sfiii2-simm3.0", "sfiii2-simm3.1", "sfiii2-simm3.2", "sfiii2-simm3.3", "sfiii2-simm3.4", "sfiii2-simm3.5", "sfiii2-simm3.6", "sfiii2-simm3.7"], 2097152))
-    # sf30th_sfiii2n.files.append(SplitGameFile(sf30th_sfiii2n.extracted_folder_name +".s4", ["sfiii2-simm4.0", "sfiii2-simm4.1", "sfiii2-simm4.2", "sfiii2-simm4.3", "sfiii2-simm4.4", "sfiii2-simm4.5", "sfiii2-simm4.6", "sfiii2-simm4.7"], 2097152))
-    # sf30th_sfiii2n.files.append(SplitGameFile(sf30th_sfiii2n.extracted_folder_name +".s5", ["sfiii2-simm5.0", "sfiii2-simm5.1", "sfiii2-simm5.2", "sfiii2-simm5.3", "sfiii2-simm5.4", "sfiii2-simm5.5", "sfiii2-simm5.6", "sfiii2-simm5.7"], 2097152))
-    # sf30th_sfiii2n.files.append(RenameGameFile(sf30th_sfiii2n.extracted_folder_name +".bios", "sfiii2_usa.29f400.u2"))
-    # all_games.append(sf30th_sfiii2n)
-
-
 def handle_sf3_2i(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterIII_2ndImpact.mbundle
-    # StreetFighterIII_2ndImpact.s2
-    # StreetFighterIII_2ndImpact.s5
-    # StreetFighterIII_2ndImpact.s3
-    # StreetFighterIII_2ndImpact.cooper.patch.vrom
-    # StreetFighterIII_2ndImpact.s1
-    # StreetFighterIII_2ndImpact.s4
-    # StreetFighterIII_2ndImpact.nv
-    # StreetFighterIII_2ndImpact.bios
-    # StreetFighterIII_2ndImpact.patch.vrom
-    out_files = []
-    return out_files
+    in_prefix = "StreetFighterIII_2ndImpact"
+    in_simm_bank_nums = list(range(1,6))
+    in_simm_files = dict(zip(in_simm_bank_nums, list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
+    in_bios_file = f'{in_prefix}.bios'
+    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii2', "sfiii2_usa.29f400.u22", 'sfiii2n.zip')
 
 ################################################################################
 # END Street Fighter 3 2nd Impact                                              #
@@ -580,30 +574,18 @@ def handle_sf3_2i(mbundle_entries):
 # START Street Fighter 3 3rd Strike                                            #
 ################################################################################
 
-    # sf30th_sfiii3nr1 = Game("Street Fighter III: 3rd Strike", conversion_type_streetfighter30th, "StreetFighterIII_3rdStrike", "sfiii3nr1")
-    # sf30th_sfiii3nr1.compatibility.extend(["FB Neo"])
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".r1.s1", ["sfiii3-simm1.0", "sfiii3-simm1.1", "sfiii3-simm1.2", "sfiii3-simm1.3"], 2097152))
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".r1.s2", ["sfiii3-simm2.0", "sfiii3-simm2.1", "sfiii3-simm2.2", "sfiii3-simm2.3"], 2097152))
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".s3", ["sfiii3-simm3.0", "sfiii3-simm3.1", "sfiii3-simm3.2", "sfiii3-simm3.3", "sfiii3-simm3.4", "sfiii3-simm3.5", "sfiii3-simm3.6", "sfiii3-simm3.7"], 2097152))
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".s4", ["sfiii3-simm4.0", "sfiii3-simm4.1", "sfiii3-simm4.2", "sfiii3-simm4.3", "sfiii3-simm4.4", "sfiii3-simm4.5", "sfiii3-simm4.6", "sfiii3-simm4.7"], 2097152))
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".s5", ["sfiii3-simm5.0", "sfiii3-simm5.1", "sfiii3-simm5.2", "sfiii3-simm5.3", "sfiii3-simm5.4", "sfiii3-simm5.5", "sfiii3-simm5.6", "sfiii3-simm5.7"], 2097152))
-    # sf30th_sfiii3nr1.files.append(SplitGameFile(sf30th_sfiii3nr1.extracted_folder_name +".s6", ["sfiii3-simm6.0", "sfiii3-simm6.1", "sfiii3-simm6.2", "sfiii3-simm6.3", "sfiii3-simm6.4", "sfiii3-simm6.5", "sfiii3-simm6.6", "sfiii3-simm6.7"], 2097152))
-    # sf30th_sfiii3nr1.files.append(RenameGameFile(sf30th_sfiii3nr1.extracted_folder_name +".bios", "sfiii3_usa.29f400.u2"))
-    # all_games.append(sf30th_sfiii3nr1)
-
 def handle_sf3_3s(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterIII_3rdStrike.mbundle
-    # StreetFighterIII_3rdStrike.s6
-    # StreetFighterIII_3rdStrike.s3
-    # StreetFighterIII_3rdStrike.nv
-    # StreetFighterIII_3rdStrike.s4
-    # StreetFighterIII_3rdStrike.bios
-    # StreetFighterIII_3rdStrike.r1.s1
-    # StreetFighterIII_3rdStrike.s5
-    # StreetFighterIII_3rdStrike.r1.s2
-    out_files = []
-    return out_files
+    in_prefix = "StreetFighterIII_3rdStrike"
+    in_simm_files = {
+        1: f'{in_prefix}.r1.s1',
+        2: f'{in_prefix}.r1.s2',
+        3: f'{in_prefix}.s3',
+        4: f'{in_prefix}.s4',
+        5: f'{in_prefix}.s5',
+        6: f'{in_prefix}.s6'
+    }
+    in_bios_file = f'{in_prefix}.bios'
+    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii3', "sfiii3_usa.29f400.u22", 'sfiii3nr1.zip')
 
 ################################################################################
 # END Street Fighter 3 3rd Strike                                              #
