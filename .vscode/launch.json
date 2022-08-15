@@ -23,6 +23,15 @@
                 "--destdir", 
                 "\"C:\\Users\\shawn\\Desktop\\rom playground\\sf30ac\""
             ]
+        },
+        {
+            "name": "Python: Deshuffle Perf Comparison",
+            "type": "python",
+            "request": "launch",
+            "program": "deshuffle_compare.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/testing",
+            "justMyCode": true
         }
     ]
 }

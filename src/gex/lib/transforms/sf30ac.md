@@ -15,9 +15,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
  **Street Fighter Alpha 2**                       | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (2)
  **Street Fighter Alpha 3**                       | MAME 0.139    | N          | sfa3u.zip        | Bad         | (1)
  **Street Fighter**                               | NYI           | NYI        | NYI              | NYI         | NYI
- **Street Fighter 3**                             | NYI           | NYI        | NYI              | NYI         | NYI
- **Street Fighter 3: 2nd Impact**                 | NYI           | NYI        | NYI              | NYI         | NYI
- **Street Fighter 3: 3rd Strike**                 | NYI           | NYI        | NYI              | NYI         | NYI
+ **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |
+ **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |
+ **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |
  **Street Fighter 2 Championship Edition**        | NYI           | NYI        | NYI              | NYI         | NYI
  **Street Fighter 2 Hyper Fighting**              | NYI           | NYI        | NYI              | NYI         | NYI 
  **Super Street Fighter 2**                       | NYI           | NYI        | NYI              | NYI         | NYI
