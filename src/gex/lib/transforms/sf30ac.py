@@ -153,8 +153,15 @@ def placeholder_generator(file_map):
         return out_files  
     return create_placeholders
 
+def equal_split_helper(in_file_ref, filenames):
+    def split(in_files):
+        contents = in_files[in_file_ref]
+        chunks = blob.equal_split(contents, num_chunks = len(filenames))
+        return dict(zip(filenames, chunks))
+    return split
+
 ################################################################################
-# START Street Fighter 2                                                       #
+# START Street Fighter                                                         #
 ################################################################################
 
     # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".bplanes.rom", ["sf-39.2k", "sf-38.1k", "sf-41.4k", "sf-40.3k"], 128 * 1024))
@@ -177,7 +184,104 @@ def handle_sf(mbundle_entries):
     # StreetFighter.maps.rom
     # StreetFighter.bplanes.rom
     # StreetFighter.mplanes.rom
+
+    func_map = {}
+    in_files = {}
+    in_files['z80'] = mbundle_entries.get("StreetFighter.z80")
+    in_files['alpha'] = mbundle_entries.get("StreetFighter.alpha.rom")
+    in_files['68k'] = mbundle_entries.get("StreetFighter.u.68k")
+    in_files['sprites'] = mbundle_entries.get("StreetFighter.sprites.rom")
+    in_files['samples'] = mbundle_entries.get("StreetFighter.u.samples.rom")
+    in_files['maps'] = mbundle_entries.get("StreetFighter.maps.rom")
+    in_files['bplanes'] = mbundle_entries.get("StreetFighter.bplanes.rom")
+    in_files['mplanes'] = mbundle_entries.get("StreetFighter.mplanes.rom")
+
+    bplanes_filenames = [
+        "sf-39.2k", 
+        "sf-38.1k", 
+        "sf-41.4k", 
+        "sf-40.3k"
+    ]
+    func_map['bplanes'] = equal_split_helper('bplanes', bplanes_filenames)
+
+    mplanes_filenames = [
+        "sf-25.1d", 
+        "sf-28.1e", 
+        "sf-30.1g", 
+        "sf-34.1h", 
+        "sf-26.2d", 
+        "sf-29.2e", 
+        "sf-31.2g", 
+        "sf-35.2h"
+    ]
+    func_map['mplanes'] = equal_split_helper('mplanes', mplanes_filenames)
+
+    sprites_filenames = [
+        "sf-15.1m", 
+        "sf-16.2m", 
+        "sf-11.1k", 
+        "sf-12.2k", 
+        "sf-07.1h", 
+        "sf-08.2h", 
+        "sf-03.1f", 
+        "sf-17.3m", 
+        "sf-18.4m", 
+        "sf-13.3k", 
+        "sf-14.4k", 
+        "sf-09.3h", 
+        "sf-10.4h",
+        "sf-05.3f"
+    ]
+    func_map['sprites'] = equal_split_helper('sprites', sprites_filenames)
+
+    func_map['alpha'] = name_file("alpha", "sf-27.4d")
+
+    maps_filenames = [
+        "sf-37.4h", 
+        "sf-36.3h", 
+        "sf-32.3g", 
+        "sf-33.4g"
+    ]
+    func_map['maps'] = equal_split_helper('maps', maps_filenames)
+
+    func_map['z80'] = name_file("z80", "sf-02.7k")
+
+    samples_filenames = [
+        "sfu-00.1h", 
+        "sf-01.1k"
+    ]
+    func_map['samples'] = equal_split_helper('samples', samples_filenames)
+
+    maincpu_filenames = [
+        "sfd-19.2a", 
+        "sfd-22.2c",
+        "sfd-20.3a", 
+        "sfd-23.3c",
+        "sfd-21.4a", 
+        "sfd-24.4c"  
+    ] 
+    def maincpu(in_files):
+        contents = in_files['68k']
+        chunks = blob.equal_split(contents, num_chunks = 3)
+        
+        new_chunks = []
+        for oldchunk in chunks:
+            new_chunks.extend(blob.deinterleave(oldchunk, num_ways=2, word_size=1))
+        chunks = new_chunks
+
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    ph_files = {
+        'mb7114h.12k': 0x100,
+        'mb7114h.11h': 0x100,
+        'mb7114h.12j': 0x100,
+        'mmi-7603.13h': 0x020,
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
     out_files = []
+    out_files.append({'filename': 'sf.zip', 'contents': build_rom(in_files, func_map)})
     return out_files
 
 ################################################################################
@@ -191,13 +295,11 @@ def handle_sf(mbundle_entries):
 
 def handle_sf2(mbundle_entries):
     func_map = {}
-    print("NYI")
     in_files = {}
     in_files['vrom'] = mbundle_entries.get('StreetFighterII.vrom')
     in_files['z80'] = mbundle_entries.get('StreetFighterII.z80')
     in_files['oki'] = mbundle_entries.get('StreetFighterII.oki')
     in_files['ub68k'] = mbundle_entries.get('StreetFighterII.ub.68k')
-    in_files['eagle'] = mbundle_entries.get('StreetFighterII.vrom')
 
     # audiocpu
     audiocpu_filenames = [   
@@ -301,13 +403,6 @@ def handle_sfa(mbundle_entries):
     in_files['nv'] = mbundle_entries.get('StreetFighterAlpha.nv')
     in_files['ub68k'] = mbundle_entries.get('StreetFighterAlpha.u.68k')
     in_files['ub68y'] = mbundle_entries.get('StreetFighterAlpha.u.68y')
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterAlpha.mbundle
-    # StreetFighterAlpha.u.68y
-    # StreetFighterAlpha.u.68k
-    # StreetFighterAlpha.nv
-    # StreetFighterAlpha.vrom
-    # StreetFighterAlpha.z80
-    # StreetFighterAlpha.qs
 
     # maincpu
     maincpu_filenames = [
@@ -376,13 +471,6 @@ def handle_sfa2(mbundle_entries):
     in_files['z80'] = mbundle_entries.get('StreetFighterAlpha2.z80')
     in_files['qs'] = mbundle_entries.get('StreetFighterAlpha2.qs')
     in_files['u168k'] = mbundle_entries.get('StreetFighterAlpha2.u1.68k')
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterAlpha2.mbundle
-    # StreetFighterAlpha2.vrom
-    # StreetFighterAlpha2.z80
-    # StreetFighterAlpha2.u1.68k
-    # StreetFighterAlpha2.nv
-    # StreetFighterAlpha2.u1.68y
-    # StreetFighterAlpha2.qs
 
     maincpu_filenames = [
         "sz2u.03",
@@ -433,7 +521,7 @@ def handle_sfa2(mbundle_entries):
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
 
-    out_files.append({'filename': 'sfa2ur1.zip', 'contents': build_rom(in_files, func_map)})
+    out_files.append({'filename': 'sfa2u.zip', 'contents': build_rom(in_files, func_map)})
 
     return out_files
 
@@ -454,13 +542,7 @@ def handle_sfa3(mbundle_entries):
     in_files['z80'] = mbundle_entries.get('StreetFighterAlpha3.z80')
     in_files['qs'] = mbundle_entries.get('StreetFighterAlpha3.qs')
     in_files['u168k'] = mbundle_entries.get('StreetFighterAlpha3.u.68k')
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterAlpha3.mbundle
-    # StreetFighterAlpha3.z80
-    # StreetFighterAlpha3.qs
-    # StreetFighterAlpha3.u.68k
-    # StreetFighterAlpha3.nv
-    # StreetFighterAlpha3.vrom
-    # StreetFighterAlpha3.u.68x
+
     maincpu_filenames = [
         "sz3u.03c",
         "sz3u.04c",
@@ -563,7 +645,7 @@ def handle_sf3_2i(mbundle_entries):
     in_simm_bank_nums = list(range(1,6))
     in_simm_files = dict(zip(in_simm_bank_nums, list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
     in_bios_file = f'{in_prefix}.bios'
-    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii2', "sfiii2_usa.29f400.u22", 'sfiii2n.zip')
+    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii2', "sfiii2_asia_nocd.29f400.u2", 'sfiii2n.zip')
 
 ################################################################################
 # END Street Fighter 3 2nd Impact                                              #
@@ -585,7 +667,7 @@ def handle_sf3_3s(mbundle_entries):
         6: f'{in_prefix}.s6'
     }
     in_bios_file = f'{in_prefix}.bios'
-    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii3', "sfiii3_usa.29f400.u22", 'sfiii3nr1.zip')
+    return sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii3', "sfiii3_japan_nocd.29f400.u2", 'sfiii3nr1.zip')
 
 ################################################################################
 # END Street Fighter 3 3rd Strike                                              #
@@ -605,16 +687,86 @@ def handle_sf3_3s(mbundle_entries):
     # all_games.append(sf30th_sf2ceua)
 
 def handle_sf2ce(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterII_CE.mbundle
-    # StreetFighterII_CE.ua.68k
-    # StreetFighterII_CE.z80
-    # StreetFighterII_CE.oki
-    # StreetFighterII_CE.vrom
-    # eagle_logo.vrom
-    out_files = []
-    return out_files
+    func_map = {}
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('StreetFighterII_CE.vrom')
+    in_files['z80'] = mbundle_entries.get('StreetFighterII_CE.z80')
+    in_files['oki'] = mbundle_entries.get('StreetFighterII_CE.oki')
+    in_files['68k'] = mbundle_entries.get('StreetFighterII_CE.ua.68k')
 
+    # audiocpu
+    audiocpu_filenames = [   
+        "s92_09.bin"
+    ]
+    def audiocpu(in_files):
+        contents = in_files['z80']
+        return dict(zip(audiocpu_filenames, [contents]))
+    func_map['audiocpu'] = audiocpu
+
+    # maincpu
+    maincpu_filenames = [
+        "s92u-23a", 
+        "sf2ce.22",
+        "s92_21a.bin"
+    ]
+    def maincpu(in_files):
+        contents = in_files['68k']
+        chunks = blob.equal_split(contents, num_chunks = 3)
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    # gfx
+    gfx_filenames = [
+        "s92_01.bin",
+        "s92_02.bin", 
+        "s92_03.bin", 
+        "s92_04.bin",
+        "s92_05.bin", 
+        "s92_06.bin", 
+        "s92_07.bin", 
+        "s92_08.bin",
+        "s92_10.bin",
+        "s92_11.bin", 
+        "s92_12.bin", 
+        "s92_13.bin"
+    ]
+    def gfx(in_files):
+        contents = in_files['vrom']
+        chunks = blob.equal_split(contents, num_chunks=3)
+
+        new_chunks = []
+        for oldchunk in chunks:
+            new_chunks.extend(cps1_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+        chunks = new_chunks
+        return dict(zip(gfx_filenames, chunks))
+    func_map['gfx'] = gfx
+
+    # oki
+    oki_filenames = [   
+        's92_18.bin',
+        's92_19.bin'
+    ]
+    def oki(in_files):
+        chunks = blob.equal_split(in_files['oki'], num_chunks=2)
+        return dict(zip(oki_filenames, chunks))
+    func_map['oki'] = oki
+
+
+    ph_files = {
+        'bprg1.11d': 0x117,
+        'buf1': 0x117,
+        'c632.ic1': 0x117,
+        'ioa1': 0x117,
+        'iob1.12d': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'ioc1.ic7': 0x104
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    return [{'filename': 'sf2ceua.zip', 'contents': build_rom(in_files, func_map)}]
 
 ################################################################################
 # END Street Fighter 2 Championship Edition                                    #
@@ -653,16 +805,88 @@ def handle_sf2ce(mbundle_entries):
     # sf30th_sf2t.files.append(sf30th_sf2hfu_uvrom)    
     # all_games.append(sf30th_sf2t)
 
+    
 def handle_sf2hf(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighterII_HF.mbundle
-    # StreetFighterII_HF.u.vrom
-    # StreetFighterII_HF.u.68k
-    # StreetFighterII_HF.z80
-    # eagle_logo.vrom
-    # StreetFighterII_HF.oki
-    out_files = []
-    return out_files
+    func_map = {}
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('StreetFighterII_HF.u.vrom')
+    in_files['z80'] = mbundle_entries.get('StreetFighterII_HF.z80')
+    in_files['oki'] = mbundle_entries.get('StreetFighterII_HF.oki')
+    in_files['68k'] = mbundle_entries.get('StreetFighterII_HF.u.68k')
+
+    # audiocpu
+    audiocpu_filenames = [   
+        "s92_09.bin"
+    ]
+    def audiocpu(in_files):
+        contents = in_files['z80']
+        return dict(zip(audiocpu_filenames, [contents]))
+    func_map['audiocpu'] = audiocpu
+
+    # maincpu
+    maincpu_filenames = [
+        "sf2_23a",
+        "sf2_22.bin",
+        "sf2_21.bin"
+    ]
+    def maincpu(in_files):
+        contents = in_files['68k']
+        chunks = blob.equal_split(contents, num_chunks = 3)
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    # gfx
+    gfx_filenames = [
+        "s92_01.bin", 
+        "s92_02.bin", 
+        "s92_03.bin", 
+        "s92_04.bin",
+        "s92_05.bin", 
+        "s92_06.bin", 
+        "s92_07.bin", 
+        "s92_08.bin",
+        "s2t_10.bin", 
+        "s2t_11.bin", 
+        "s2t_12.bin", 
+        "s2t_13.bin"
+    ]
+    def gfx(in_files):
+        contents = in_files['vrom']
+        chunks = blob.equal_split(contents, num_chunks=3)
+
+        new_chunks = []
+        for oldchunk in chunks:
+            new_chunks.extend(cps1_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+        chunks = new_chunks
+        return dict(zip(gfx_filenames, chunks))
+    func_map['gfx'] = gfx
+
+    # oki
+    oki_filenames = [   
+        's92_18.bin',
+        's92_19.bin'
+    ]
+    def oki(in_files):
+        chunks = blob.equal_split(in_files['oki'], num_chunks=2)
+        return dict(zip(oki_filenames, chunks))
+    func_map['oki'] = oki
+
+
+    ph_files = {
+        'bprg1.11d': 0x117,
+        'buf1': 0x117,
+        'c632.ic1': 0x117,
+        'ioa1': 0x117,
+        'iob1.12d': 0x117,
+        'prg1': 0x117,
+        'rom1': 0x117,
+        'sou1': 0x117,
+        'ioc1.ic7': 0x104
+    }
+    func_map['placeholders'] = placeholder_generator(ph_files)
+
+    return [{'filename': 'sf2t.zip', 'contents': build_rom(in_files, func_map)}]
 
 
 ################################################################################
@@ -673,30 +897,68 @@ def handle_sf2hf(mbundle_entries):
 ################################################################################
 # START Super Street Fighter 2                                                 #
 ################################################################################
-
-    # sf30th_ssf2u = Game("Super Street Fighter II", conversion_type_streetfighter30th, "SuperStreetFighterII", "ssf2u")
-    # sf30th_ssf2u.compatibility.extend(["Garbled graphics and broken audio", "MAME-2001", "MAME-2003", "MAME-2003 Plus", "MAME-2004", "MAME-2005", "MAME-2006", "MAME-2007", "MAME-2008", "MAME-2009"])
-    # sf30th_ssf2u.files.append(SplitGameFileSwab(sf30th_ssf2u.extracted_folder_name +".u.68k", ["ssfu.03a", "ssfu.04a", "ssfu.05", "ssfu.06", "ssfu.07"], 512 * 1024)) #correct
-    # sf30th_ssf2u.files.append(SplitGameFileInterleave4Cps1(sf30th_ssf2u.extracted_folder_name +".vrom", [("ssf.13m", "ssf.15m", "ssf.17m", "ssf.19m")], 2097152))
-    # sf30th_ssf2u.files.append(SplitGameFileInterleave4Cps1Offset(sf30th_ssf2u.extracted_folder_name +".vrom", [("ssf.14m", "ssf.16m", "ssf.18m", "ssf.20m")], 1048576, int("0x800000", 16)))
-    # sf30th_ssf2u.files.append(SplitGameFile(sf30th_ssf2u.extracted_folder_name +".z80", ["ssf.01"], int("0x080000", 16))) 
-    # sf30th_ssf2u.files.append(SplitGameFile(sf30th_ssf2u.extracted_folder_name +".qs", ["ssf.q01", "ssf.q02", "ssf.q03", "ssf.q04", "ssf.q05", "ssf.q06", "ssf.q07", "ssf.q08"], int("0x080000", 16)))  #correct
-    # all_games.append(sf30th_ssf2u)
-
-
+    
 def handle_ssf2(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleSuperStreetFighterII.mbundle
-    # red_eagle.vrom
-    # SuperStreetFighterII.z80
-    # SuperStreetFighterII.qs
-    # SuperStreetFighterII.u.68k
-    # SuperStreetFighterII.vrom
-    # SuperStreetFighterII.nv
-    # SuperStreetFighterII.u.68y
-    # eagle_logo.vrom
-    out_files = []
-    return out_files
+    func_map = {}
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('SuperStreetFighterII.vrom')
+    in_files['z80'] = mbundle_entries.get('SuperStreetFighterII.z80')
+    in_files['qsound'] = mbundle_entries.get('SuperStreetFighterII.qs')
+    in_files['68k'] = mbundle_entries.get('SuperStreetFighterII.u.68k')
+
+    # audiocpu
+    audiocpu_filenames = [   
+        "ssf.01"
+    ]
+    def audiocpu(in_files):
+        contents = in_files['z80']
+        return dict(zip(audiocpu_filenames, [contents]))
+    func_map['audiocpu'] = audiocpu
+
+    # maincpu
+    maincpu_filenames = [
+        "ssfu.03a", 
+        "ssfu.04a", 
+        "ssfu.05", 
+        "ssfu.06", 
+        "ssfu.07"
+    ]
+    def maincpu(in_files):
+        contents = in_files['68k']
+        chunks = blob.equal_split(contents, num_chunks = 5)
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    vrom_filenames = [
+        "ssf.13m",
+        "ssf.14m",
+        "ssf.15m",
+        "ssf.16m",
+        "ssf.17m",
+        "ssf.18m",
+        "ssf.19m",
+        "ssf.20m"
+    ]
+    func_map['vrom'] = deshuffle_gfx_common(vrom_filenames, 12, final_split = [0x200000, 0x100000])
+
+    # qsound
+    qsound_filenames = [   
+        "ssf.q01", 
+        "ssf.q02", 
+        "ssf.q03", 
+        "ssf.q04", 
+        "ssf.q05", 
+        "ssf.q06", 
+        "ssf.q07", 
+        "ssf.q08"
+    ]
+    def qsound(in_files):
+        chunks = blob.equal_split(in_files['qsound'], num_chunks=8)
+        return dict(zip(qsound_filenames, chunks))
+    func_map['qsound'] = qsound
+
+    return [{'filename': 'ssf2u.zip', 'contents': build_rom(in_files, func_map)}]
 
 
 ################################################################################
@@ -708,39 +970,69 @@ def handle_ssf2(mbundle_entries):
 # START Super Street Fighter 2 Turbo                                           #
 ################################################################################
 
-    # sf30th_ssf2tu = Game("Super Street Fighter II Turbo", conversion_type_streetfighter30th, "SuperStreetFighterIITurbo", "ssf2tu")
-    # sf30th_ssf2tu.compatibility.extend(["Garbled graphics", "MAME-2001", "MAME-2003", "MAME-2003 Plus", "MAME-2004", "MAME-2005", "MAME-2006", "MAME-2007", "MAME-2008", "MAME-2009"])
-    # sf30th_ssf2tu.files.append(SplitGameFileSwab(sf30th_ssf2tu.extracted_folder_name +".u.68k", ["sfxu.03c", "sfxu.04a", "sfxu.05", "sfxu.06a", "sfxu.07", "sfxu.08", "sfx.09"], 512 * 1024)) #correct
-    # sf30th_ssf2tu.files.append(SplitGameFileInterleave4Cps1(sf30th_ssf2tu.extracted_folder_name +".vrom", [("ssf.13m", "ssf.15m", "ssf.17m", "ssf.19m")], 2097152))
-    # sf30th_ssf2tu.files.append(SplitGameFileInterleave4Cps1Offset(sf30th_ssf2tu.extracted_folder_name +".vrom", [("ssf.14m", "ssf.16m", "ssf.18m", "ssf.20m"), ("sfx.21m", "sfx.23m", "sfx.25m", "sfx.27m")], 1048576, int("0x800000", 16)))
-    # sf30th_ssf2tu.files.append(SplitGameFile(sf30th_ssf2tu.extracted_folder_name +".z80", ["sfx.01", "sfx.02"], 128 * 1024)) #correct
-    # sf30th_ssf2tu.files.append(SplitGameFileSwab(sf30th_ssf2tu.extracted_folder_name +".qs", ["sfx.11m", "sfx.12m"], 2097152)) #correct
-    # all_games.append(sf30th_ssf2tu)
-    
-    
-    # sf30th_ssf2tu_mame2010 = Game("Super Street Fighter II Turbo (MAME 2010)", conversion_type_streetfighter30th, "SuperStreetFighterIITurbo", "ssf2tu-2010")
-    # sf30th_ssf2tu_mame2010.compatibility.extend(["Garbled graphics", "MAME-2010"])
-    # sf30th_ssf2tu_mame2010.files.append(SplitGameFileSwab(sf30th_ssf2tu.extracted_folder_name +".u.68k", ["sfxu.03c", "sfxu.04a", "sfxu.05", "sfxu.06a", "sfxu.07", "sfxu.08", "sfx.09"], 512 * 1024)) #correct
-    # sf30th_ssf2tu_mame2010.files.append(SplitGameFileInterleave4(sf30th_ssf2tu.extracted_folder_name +".vrom", [("sfx.13m", "sfx.15m", "sfx.17m", "sfx.19m")], 2097152))
-    # sf30th_ssf2tu_mame2010.files.append(SplitGameFileInterleave4Offset(sf30th_ssf2tu.extracted_folder_name +".vrom", [("sfx.14m", "sfx.16m", "sfx.18m", "sfx.20m"), ("sfx.21m", "sfx.23m", "sfx.25m", "sfx.27m")], 1048576, int("0x800000", 16)))
-    # sf30th_ssf2tu_mame2010.files.append(SplitGameFile(sf30th_ssf2tu.extracted_folder_name +".z80", ["sfx.01", "sfx.02"], 128 * 1024)) #correct
-    # sf30th_ssf2tu_mame2010.files.append(SplitGameFileSwab(sf30th_ssf2tu.extracted_folder_name +".qs", ["sfx.11m", "sfx.12m"], 2097152)) #correct
-    # all_games.append(sf30th_ssf2tu_mame2010)
-
-
 def handle_ssf2t(mbundle_entries):
-    print("NYI")
-    # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleSuperStreetFighterIITurbo.mbundle
-    # red_eagle.vrom
-    # SuperStreetFighterIITurbo.z80
-    # SuperStreetFighterIITurbo.qs
-    # SuperStreetFighterIITurbo.u.68y
-    # SuperStreetFighterIITurbo.nv
-    # SuperStreetFighterIITurbo.vrom
-    # SuperStreetFighterIITurbo.u.68k
-    # eagle_logo.vrom
-    out_files = []
-    return out_files
+    func_map = {}
+    in_files = {}
+    in_files['vrom'] = mbundle_entries.get('SuperStreetFighterIITurbo.vrom')
+    in_files['z80'] = mbundle_entries.get('SuperStreetFighterIITurbo.z80')
+    in_files['qsound'] = mbundle_entries.get('SuperStreetFighterIITurbo.qs')
+    in_files['68k'] = mbundle_entries.get('SuperStreetFighterIITurbo.u.68k')
+
+    # audiocpu
+    audiocpu_filenames = [   
+        "sfx.01",   
+        "sfx.02"
+    ]
+    def audiocpu(in_files):
+        contents = in_files['z80']
+        chunks = blob.equal_split(contents, num_chunks = len(audiocpu_filenames))
+        return dict(zip(audiocpu_filenames, chunks))
+    func_map['audiocpu'] = audiocpu
+
+    # maincpu
+    maincpu_filenames = [
+        "sfxu.03e", 
+        "sfxu.04a", 
+        "sfxu.05", 
+        "sfxu.06b", 
+        "sfxu.07a", 
+        "sfxu.08", 
+        "sfx.09"
+    ]
+    def maincpu(in_files):
+        contents = in_files['68k']
+        chunks = blob.equal_split(contents, num_chunks = len(maincpu_filenames))
+        chunks = blob.swap_endian_all(chunks)
+        return dict(zip(maincpu_filenames, chunks))
+    func_map['maincpu'] = maincpu
+
+    vrom_filenames = [
+        "sfx.13m",
+        "sfx.14m",
+        "sfx.21m",
+        "sfx.15m",
+        "sfx.16m",
+        "sfx.23m",
+        "sfx.17m",
+        "sfx.18m",
+        "sfx.25m", 
+        "sfx.19m",
+        "sfx.20m",
+        "sfx.27m"
+    ]
+    func_map['vrom'] = deshuffle_gfx_common(vrom_filenames, 16, final_split = [0x200000, 0x100000, 0x100000])
+
+    # qsound
+    qsound_filenames = [   
+        "sfx.11m", 
+        "sfx.12m",
+    ]
+    def qsound(in_files):
+        chunks = blob.equal_split(in_files['qsound'], num_chunks=2)
+        return dict(zip(qsound_filenames, chunks))
+    func_map['qsound'] = qsound
+
+    return [{'filename': 'ssf2tu.zip', 'contents': build_rom(in_files, func_map)}]
 
 
 ################################################################################
