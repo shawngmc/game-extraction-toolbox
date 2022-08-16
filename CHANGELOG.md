@@ -1,3 +1,8 @@
+# 0.0.19
+- Added Games/Collections:
+  - Street Fighter 30th Anniversary Collection
+- README improvements
+
 # 0.0.18
 - Repush
 
