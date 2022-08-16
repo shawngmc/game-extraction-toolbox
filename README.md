@@ -49,7 +49,7 @@ You can get --help on any command or subcommand, for example:
 I want to get ROMs legally, or as legally as possible. I've bought cart readers, but these 'official' ROMs are often different or for platforms that aren't viable for cartridge dumping. I want this to be feasible for others as well.
 
 ### Why are you reimplementing others? Why Python?
-Many solutions so far are written in Bash, Powershell, and Batch, none of which are well suited to binary file manipulation. My ideal is that this CLI is useful for reasearching these packages and extracting them, and that common library improvements make this very possible.
+Many solutions so far are written in Bash, Powershell, and Batch, none of which are not well suited to binary file manipulation. Some of these are documented in foreign languages. Many of these scripts haven't been updated in years. My ideal is that this CLI is useful for reasearching these packages and extracting them, and that common library improvements improve the extraction processes over time.
 
 ### Is this legal?
 I am not a lawyer, but any good lawyer would probably tell you that 'It depends'. That said, this is an effort to be as legal as possible; this code doesn't download things you don't own, and I intend to leave decryption (bypassing copyright protection devices) out, which would be illegal under the DMCA. This is also at a weird intersection of older law, such as Fair Use, which generally - in most jurisdictions - has some protections for format-shifting. That's largely the point of this - ROMs are flexible and can be played on $20 cheap handhelds, phones, Steam Decks, PCs, tablets, Chromebooks, web pages, etc.
@@ -65,7 +65,7 @@ It is illegal. One can discuss economic moral implications all day, but at the e
 
 **Collection**                             | **Status**     | **Notes**                                                               
 ---------------------------------|-------------|---------------------------------------------------------------------
- **Capcom Arcade Stadium 1**                      | 95%    | Requires Steam depot downloading, a couple shaky ROMs
+ **Capcom Arcade Stadium 1**                    | 95%    | Requires Steam depot downloading, a couple shaky ROMs...
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data
- **Capcom Fighting Collection**                 | 90% | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!
-
+ **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!
+ **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!
