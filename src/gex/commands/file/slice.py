@@ -1,5 +1,4 @@
 import click
-import zlib
 import click_log
 import logging
 
@@ -38,6 +37,5 @@ def slice(in_file, out_file, start, length):
     in_data = read_bin_file(in_file)
     out_data = in_data[int(start):int(start + length)]
     write_bin_file(out_data, out_file)
-    crc_val = zlib.crc32(out_data)
 
-    logger.info(f"Saved to {out_file} and calculated CRC {hex(crc_val)}")
+    logger.info(f"Saved to {out_file}")
