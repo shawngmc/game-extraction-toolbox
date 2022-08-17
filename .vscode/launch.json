@@ -5,6 +5,46 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Toolbox - Testing CBEUB",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "postprocess", 
+                "steam", 
+                "extract", 
+                "--task", 
+                "cbeub", 
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CBEUB\"", 
+                "--destdir", 
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cbeub\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CFC",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "postprocess", 
+                "steam", 
+                "extract", 
+                "--task", 
+                "cfc", 
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CAPCOM FIGHTING COLLECTION\"", 
+                "--destdir", 
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cfc\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SF30AC",
             "type": "python",
             "request": "launch",
@@ -21,7 +61,27 @@
                 "--srcdir", 
                 "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Street Fighter 30th Anniversary Collection\"", 
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\sf30ac\""
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\sf30ac\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CAS1 Old",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "postprocess", 
+                "steam", 
+                "extract", 
+                "--task", 
+                "cas1_old", 
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\content\"", 
+                "--destdir", 
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cas1_old\""
             ]
         },
         {

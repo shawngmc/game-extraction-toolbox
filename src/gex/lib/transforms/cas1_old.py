@@ -5,9 +5,10 @@ import logging
 import os
 import io
 
-
 from gex.lib.archive import kpka
 from gex.lib.utils import blob
+
+logger = logging.getLogger('gextoolbox')
 
 # Standard processing:
 # - Assume each zip in the KPKA is a game
@@ -54,20 +55,20 @@ pkg_name_map = {
 
 def debug_print_kpka_contents(kpka_contents):
     for key, entry in kpka_contents.items():
-        logging.debug(f'{key}: offset {entry["offset"]}, size {entry["size"]}')
-        logging.debug(f'    {entry["contents"][0:30]}')
+        logger.debug(f'{key}: offset {entry["offset"]}, size {entry["size"]}')
+        logger.debug(f'    {entry["contents"][0:30]}')
 
 def debug_print_zip_contents(zip_bytes):
     with zipfile.ZipFile(io.BytesIO(zip_bytes), "r") as old_archive:
         zip_entries = list(old_archive.infolist())
         for file_entry in zip_entries:
-            logging.debug(f'{file_entry.filename}')
+            logger.debug(f'{file_entry.filename}')
 
 def twiddle_zip(zip_bytes, remove_list = [], rename_dict = {}, lowercase_all = False):
     new_contents = io.BytesIO()
     with zipfile.ZipFile(io.BytesIO(zip_bytes), "r") as old_archive:
         zip_entries = list(old_archive.infolist())
-        with zipfile.ZipFile(new_contents, "w") as new_archive:
+        with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
             for file_entry in zip_entries:
                 # Skip files to remove
                 if not file_entry.filename in remove_list:
@@ -100,7 +101,7 @@ def merged_rom_handler(zip_contents, func_map):
                     new_data.update(type_func(file_data))
     # Build the new zip file
     new_contents = io.BytesIO()
-    with zipfile.ZipFile(new_contents, "w") as new_archive:
+    with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
         for name, data in new_data.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
@@ -878,8 +879,8 @@ def rebuild_mame_subfolder_zip(contents):
         try:
             index = zip_entries[0].filename.index('/')
         except Exception as e:
-            logging.warning(e)
-            logging.warning(zip_entries[0])
+            logger.warning(e)
+            logger.warning(zip_entries[0])
             raise Exception(f'not a mame subfolder zip - no slash in first zip entry')
 
         prefix = getPrefix(zip_entries[0])
@@ -888,7 +889,7 @@ def rebuild_mame_subfolder_zip(contents):
                 raise Exception(f'not a mame subfolder zip - {getPrefix(file_entry)} != {prefix}')
 
         new_contents = io.BytesIO()
-        with zipfile.ZipFile(new_contents, "w") as new_archive:
+        with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
             for file_entry in zip_entries:
                 with old_archive.open(file_entry) as file_read_obj:
                     file_data = file_read_obj.read()
@@ -918,28 +919,31 @@ def main(steam_dir, out_path):
         else:
             id = file[-11:-4]
 
-        logging.info(f"Extracting {file}: {pkg_name_map[id]}") 
-        try:
-            with open(file, "rb") as curr_file:
-                file_content = bytearray(curr_file.read())
-                kpka_contents = kpka.extract(file_content)
-                output_files = []
+        if id in pkg_name_map:
+            logger.info(f"Extracting {file}: {pkg_name_map[id]}") 
+            try:
+                with open(file, "rb") as curr_file:
+                    file_content = bytearray(curr_file.read())
+                    kpka_contents = kpka.extract(file_content)
+                    output_files = []
 
-                special_func = globals().get(f'handle_package_{id}')
-                if special_func:
-                    # Reflectively call the appropriate function to process the file
-                    output_files = special_func(kpka_contents)
-                else:
-                    output_files = standard_kpka_contents_processing(kpka_contents)
-                    
-                for output_file in output_files:
-                    with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
-                        out_file.write(output_file['contents'])
-        except Exception as e:
-            traceback.print_exc()
-            logging.warning(f'Error while processing {file}!') 
+                    special_func = globals().get(f'handle_package_{id}')
+                    if special_func:
+                        # Reflectively call the appropriate function to process the file
+                        output_files = special_func(kpka_contents)
+                    else:
+                        output_files = standard_kpka_contents_processing(kpka_contents)
+                        
+                    for output_file in output_files:
+                        with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
+                            out_file.write(output_file['contents'])
+            except Exception as e:
+                traceback.print_exc()
+                logger.warning(f'Error while processing {file}!') 
+        else:
+            logger.info(f'Skipping {file} as it contains no known ROMS!') 
 
-    logging.info("""
+    logger.info("""
         Processing complete. 
         TODOs:
          - Figure out fixes for the 'incomplete' games
