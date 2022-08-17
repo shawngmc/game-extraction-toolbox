@@ -3,7 +3,7 @@ import click
 import click_log
 import logging
 
-from gex.lib.utils.blob.transforms import hash
+from gex.lib.utils.blob import hash as hash_helper
 
 logger = logging.getLogger('gextoolbox')
 
@@ -20,10 +20,10 @@ def hash(in_file, hash_type):
         exit()
     
     if hash_type == 'CRC':
-        checksum = hash.get_crc(in_data)
+        checksum = hash_helper.get_crc(in_data)
     elif hash_type == 'MD5':
-        checksum = hash.get_md5(in_data)
+        checksum = hash_helper.get_md5(in_data)
     elif hash_type == 'SHA1':
-        checksum = hash.get_sha1(in_data)
+        checksum = hash_helper.get_sha1(in_data)
 
     logger.info(f'{os.path.basename(in_file)} {hash_type}: {checksum}')
