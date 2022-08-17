@@ -1,3 +1,9 @@
+# 0.0.20
+- Functional Improvements
+  - ZIP files now actually compressed
+  - More code reuse
+  - Standardized logging config on all CLI commands (not all USE the logger yet)
+
 # 0.0.19
 - Added Games/Collections:
   - Street Fighter 30th Anniversary Collection

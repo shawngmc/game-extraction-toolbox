@@ -26,10 +26,13 @@ import os
 import io
 
 from gex.lib.archive import arc
+from gex.lib.utils.vendor import capcom
 from gex.lib.utils import blob
 
+logger = logging.getLogger('gextoolbox')
+
 title = "Capcom Beat 'em Up Bundle"
-description = "NYI"
+description = ""
 in_dir_desc = "CBEUB base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CBEUB)"
 
 pkg_name_map = {
@@ -829,8 +832,7 @@ def armwar_gfx_common(contents):
     contents = contents[0x0800040:0x1C00040]
 
     # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-    bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-    contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+    contents = capcom.common_gfx_deshuffle(contents)
 
     # Split it
     chunks = blob.equal_split(contents, num_chunks=20)
@@ -948,9 +950,7 @@ def batcir_gfx_common(contents):
     # Cut out the section
     contents = contents[0x0800040:0x1800040]
 
-    # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-    bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-    contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+    contents = capcom.common_gfx_deshuffle(contents)
 
     # Split it
     chunks = blob.equal_split(contents, num_chunks=16)
@@ -1057,7 +1057,7 @@ def merged_rom_handler(merged_contents, func_map):
 
     # Build the new zip file
     new_contents = io.BytesIO()
-    with zipfile.ZipFile(new_contents, "w") as new_archive:
+    with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
         for name, data in new_data.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
@@ -1068,7 +1068,7 @@ def main(game_base_dir, out_path):
     for file_path in pak_files:
         file_name = os.path.basename(file_path)
         pkg_name = pkg_name_map[file_name]
-        logging.info(f"Extracting {file_name}: {pkg_name}") 
+        logger.info(f"Extracting {file_name}: {pkg_name}") 
         try:
             with open(file_path, "rb") as curr_file:
                 file_content = bytearray(curr_file.read())
@@ -1090,13 +1090,13 @@ def main(game_base_dir, out_path):
                         with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
                             out_file.write(output_file['contents'])
                 elif merged_rom_contents == None:
-                    print("Could not find merged rom data in arc.")
+                    logger.warning("Could not find merged rom data in arc.")
                 elif handler_func == None:
-                    print("Could not find matching handler function.")
+                    logger.warning("Could not find matching handler function.")
         except Exception as e:
             traceback.print_exc()
-            logging.warning(f'Error while processing {file_path}!') 
+            logger.warning(f'Error while processing {file_path}!') 
 
-    logging.info("""
+    logger.info("""
         Processing complete. 
     """)

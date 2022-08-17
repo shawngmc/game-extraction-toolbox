@@ -11,6 +11,7 @@ requires-python = ">=3.7"
 dependencies = [
   'bitarray >= 2.6.0',
   'click >= 8.1.3',
+  'click-log >= 0.4.0',
   'psutil >= 5.9.1',
   'python-magic-bin >= 0.4.14',
   'rich >= 12.5.1'

@@ -9,10 +9,13 @@ import os
 import io
 
 from gex.lib.utils import blob
+from gex.lib.utils.vendor import capcom
 from gex.lib.contrib.bputil import BPListReader
 
+logger = logging.getLogger('gextoolbox')
+
 title = "Street Fighter 30th Anniversary Collection"
-description = "NYI"
+description = ""
 in_dir_desc = "SF30AC base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection)"
 
 pkg_name_map = {
@@ -36,14 +39,13 @@ def write_temp_file(contents, path):
 
 def find_files(base_path):
     bundle_path = os.path.join(base_path, "Bundle", '*.mbundle') 
-    print(bundle_path)
     archive_list = glob.glob(bundle_path)
     return archive_list
 
 def build_zip_file(entries):
     # Build the new zip file
     new_contents = io.BytesIO()
-    with zipfile.ZipFile(new_contents, "w") as new_archive:
+    with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
         for name, data in entries.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
@@ -79,8 +81,7 @@ def deshuffle_gfx_common(filenames, num_interim_split, final_split = None):
         contents = in_files['vrom']
         
         # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-        bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-        contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+        contents = capcom.common_gfx_deshuffle(contents)
 
         # Split into even chunks
         chunks = blob.equal_split(contents, num_chunks=num_interim_split)
@@ -174,7 +175,6 @@ def equal_split_helper(in_file_ref, filenames):
     # sf30th_sf.files.append(SplitGameFileEvenOdd(sf30th_sf.extracted_folder_name +".u.68k", [("sfd-19.2a", "sfd-22.2c"),("sfd-20.3a", "sfd-23.3c"),("sfd-21.4a", "sfd-24.4c")], 64 * 1024))
 
 def handle_sf(mbundle_entries):
-    print("NYI")
     # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighter.mbundle
     # StreetFighter.z80
     # StreetFighter.alpha.rom
@@ -678,14 +678,6 @@ def handle_sf3_3s(mbundle_entries):
 # START Street Fighter 2 Championship Edition                                  #
 ################################################################################
 
-    # sf30th_sf2ceua = Game("Street Fighter II' Champion Edition", conversion_type_streetfighter30th, "StreetFighterII_CE", "sf2ceua")
-    # sf30th_sf2ceua.compatibility.extend(["MAME-2001", "MAME-2003", "MAME-2003 Plus", "MAME-2004", "MAME-2005", "MAME-2006", "MAME-2007"])
-    # sf30th_sf2ceua.files.append(RenameGameFile(sf30th_sf2ceua.extracted_folder_name +".z80", "s92_09.bin"))
-    # sf30th_sf2ceua.files.append(SplitGameFile(sf30th_sf2ceua.extracted_folder_name +".oki", ["s92_18.bin", "s92_19.bin"], 128 * 1024))
-    # sf30th_sf2ceua.files.append(SplitGameFileSwab(sf30th_sf2ceua.extracted_folder_name +".ua.68k", [("s92u-23a"),("sf2ce.22"),("s92_21a.bin")], 512 * 1024))
-    # sf30th_sf2ceua.files.append(SplitGameFileInterleave4Cps1(sf30th_sf2ceua.extracted_folder_name +".vrom",[("s92_01.bin", "s92_02.bin", "s92_03.bin", "s92_04.bin"),("s92_05.bin", "s92_06.bin", "s92_07.bin", "s92_08.bin"),("s92_10.bin","s92_11.bin", "s92_12.bin", "s92_13.bin")], 512 * 1024))    
-    # all_games.append(sf30th_sf2ceua)
-
 def handle_sf2ce(mbundle_entries):
     func_map = {}
     in_files = {}
@@ -776,35 +768,6 @@ def handle_sf2ce(mbundle_entries):
 ################################################################################
 # START Street Fighter 2 Hyper Fighting                                        #
 ################################################################################
-
-    # sf30th_sf2hfu = Game("Street Fighter II': Hyper Fighting", conversion_type_streetfighter30th, "StreetFighterII_HF", "sf2hfu")
-    # sf30th_sf2hfu.compatibility.extend(["FB Neo", "MAME-2010", "MAME-2015", "MAME-2016", "MAME-2017", "MAME-2018", "MAME-2019"])
-    # sf30th_sf2hfu_z80 = RenameGameFile(sf30th_sf2hfu.extracted_folder_name +".z80", "s92_09.bin")
-    # sf30th_sf2hfu.files.append(sf30th_sf2hfu_z80)
-    # sf30th_sf2hfu_oki = SplitGameFile(sf30th_sf2hfu.extracted_folder_name +".oki", ["s92_18.bin", "s92_19.bin"], 128 * 1024)
-    # sf30th_sf2hfu.files.append(sf30th_sf2hfu_oki)
-    # sf30th_sf2hfu_u68k = SplitGameFileSwab(sf30th_sf2hfu.extracted_folder_name +".u.68k", [("sf2_23a"),("sf2_22.bin"),("sf2_21.bin")], 512 * 1024)
-    # sf30th_sf2hfu.files.append(sf30th_sf2hfu_u68k)
-    # sf30th_sf2hfu_uvrom = SplitGameFileInterleave4Cps1(sf30th_sf2hfu.extracted_folder_name +".u.vrom",[("s92_01.bin", "s92_02.bin", "s92_03.bin", "s92_04.bin"),("s92_05.bin", "s92_06.bin", "s92_07.bin", "s92_08.bin"),("s2t_10.bin", "s2t_11.bin", "s2t_12.bin", "s2t_13.bin")], 512 * 1024)
-    # sf30th_sf2hfu.files.append(sf30th_sf2hfu_uvrom)    
-    # all_games.append(sf30th_sf2hfu)
-    
-    # sf30th_sf2hf = Game("Street Fighter II': Hyper Fighting", conversion_type_streetfighter30th, "StreetFighterII_HF", "sf2hf")
-    # sf30th_sf2hf.compatibility.extend(["FB Neo", "MAME-2010", "MAME-2015", "MAME-2016", "MAME-2017", "MAME-2018", "MAME-2019"])
-    # sf30th_sf2hf.files.append(sf30th_sf2hfu_z80)
-    # sf30th_sf2hf.files.append(sf30th_sf2hfu_oki)
-    # sf30th_sf2hf.files.append(sf30th_sf2hfu_u68k)
-    # sf30th_sf2hf.files.append(sf30th_sf2hfu_uvrom)    
-    # all_games.append(sf30th_sf2hf)
-        
-    # sf30th_sf2t = Game("Street Fighter II': Hyper Fighting (MAME 2003)", conversion_type_streetfighter30th, "StreetFighterII_HF", "sf2t")
-    # sf30th_sf2t.compatibility.extend(["MAME-2001", "MAME-2003", "MAME-2003 Plus", "MAME-2004", "MAME-2005", "MAME-2006", "MAME-2007"])
-    # sf30th_sf2t.files.append(sf30th_sf2hfu_z80)
-    # sf30th_sf2t.files.append(sf30th_sf2hfu_oki)
-    # sf30th_sf2t.files.append(sf30th_sf2hfu_u68k)
-    # sf30th_sf2t.files.append(sf30th_sf2hfu_uvrom)    
-    # all_games.append(sf30th_sf2t)
-
     
 def handle_sf2hf(mbundle_entries):
     func_map = {}
@@ -888,7 +851,6 @@ def handle_sf2hf(mbundle_entries):
 
     return [{'filename': 'sf2t.zip', 'contents': build_rom(in_files, func_map)}]
 
-
 ################################################################################
 # END Street Fighter 2 Hyper Fighting                                          #
 ################################################################################
@@ -959,7 +921,6 @@ def handle_ssf2(mbundle_entries):
     func_map['qsound'] = qsound
 
     return [{'filename': 'ssf2u.zip', 'contents': build_rom(in_files, func_map)}]
-
 
 ################################################################################
 # END Super Street Fighter 2                                                   #
@@ -1034,34 +995,9 @@ def handle_ssf2t(mbundle_entries):
 
     return [{'filename': 'ssf2tu.zip', 'contents': build_rom(in_files, func_map)}]
 
-
 ################################################################################
 # END Super Street Fighter 2 Turbo                                             #
 ################################################################################
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def merged_rom_handler(merged_contents, func_map):
     new_data = dict()
@@ -1070,23 +1006,18 @@ def merged_rom_handler(merged_contents, func_map):
 
     # Build the new zip file
     new_contents = io.BytesIO()
-    with zipfile.ZipFile(new_contents, "w") as new_archive:
+    with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
         for name, data in new_data.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
 
-
-
-
-
 def main(game_base_dir, out_path):
     bundle_files = find_files(game_base_dir)
     for file_path in bundle_files:
-        print(file_path)
         with open(file_path, 'rb') as fp:
             
             file_name = os.path.basename(file_path)
-            print(f'Reading files for {file_name}...')
+            logger.info(f'Reading files for {file_name}...')
             pkg_name = pkg_name_map.get(file_name)
             if pkg_name != None:
                 contents = fp.read()
@@ -1102,70 +1033,9 @@ def main(game_base_dir, out_path):
                         with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
                             out_file.write(output_file['contents'])
                 elif parsed == None:
-                    print("Could not find merged rom data in mbundle.")
+                    logger.warning("Could not find merged rom data in mbundle.")
                 elif handler_func == None:
-                    print("Could not find matching handler function.")
-
-                # print(f' files for {file_name}...')
-
-                # print(parsed)
-                # ignore_extensions = [
-                #     'png',
-                #     'ogg',
-                #     'minterface',
-                #     'sav',
-                #     'wav',
-                #     'ttf',
-                #     'otf',
-                #     'shader',
-                #     'plist',
-                #     'strings',
-                #     'ttc',
-                #     'ini',
-                #     'txt',
-                #     'xml'
-                # ]
-                # for key, value in parsed.items():
-                #     # filename_parts = item.split('.')
-                #     # if not filename_parts[len(filename_parts) - 1] in ignore_extensions:
-                #     #     print(item)
-                #     print(key)
-                #     print(value)
-    
-            # Now 'parsed' is a dictionary of values.
-        # file_name = os.path.basename(file_path)
-        # pkg_name = pkg_name_map.get(file_name)
-        # if not pkg_name == None:
-        #     logging.info(f"Extracting {file_name}: {pkg_name}") 
-        #     try:
-        #         with open(file_path, "rb") as curr_file:
-        #             file_content = bytearray(curr_file.read())
-        #             arc_contents = arc.extract(file_content)
-        #             output_files = []
-
-        #             # Get the bin entry
-        #             merged_rom_contents = None
-        #             for key, arc_content in arc_contents.items():
-        #                 if arc_content['path'].startswith('bin'):
-        #                     merged_rom_contents = arc_content['contents']
-
-        #             handler_func = globals().get(f'handle_{pkg_name}')
-
-        #             if merged_rom_contents != None and handler_func != None:
-        #                 output_files = handler_func(merged_rom_contents)
-                            
-        #                 for output_file in output_files:
-        #                     with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
-        #                         out_file.write(output_file['contents'])
-        #             elif merged_rom_contents == None:
-        #                 print("Could not find merged rom data in arc.")
-        #             elif handler_func == None:
-        #                 print("Could not find matching handler function.")
-        #     except Exception as e:
-        #         traceback.print_exc()
-        #         logging.warning(f'Error while processing {file_path}!') 
-        # else:
-        #     logging.info(f'Skipping unmatched file {file_path}!') 
-    logging.info("""
+                    logger.warning("Could not find matching handler function.")
+    logger.info("""
         Processing complete. 
     """)

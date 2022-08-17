@@ -1,5 +1,3 @@
-from gex.lib.utils import blob
-
 # IBIS vs. JACK
 # It's unclear what the difference between IBIS and JACK headers really is
 # For example, all CBEUB games and all CFC games EXCEPT RedEarth ENG uses IBIS as the header
@@ -7,17 +5,29 @@ from gex.lib.utils import blob
 #   - RedEarth JP uses a 'JACK' header
 #   - All CFC default save states use a 'jacksave' header
 
+from gex.lib.utils import blob
 
-def gfx_cps2(start, length, filenames, split = None):
-    def gfx(contents):    # Cut out the section
-        contents = contents[start:start+length]
+def blob_slice_helper(start, length):
+    def slice(contents):
+        return contents[start:start+length]
+    return slice
 
-        # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
-        bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-        contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+# Perform the following:
+# - Get the chunk to process
+# - Perform the bit shuffle
+# - Split in into 1MB chunks
+# - Interleave each pair of 1MB chunks together
+# - Merge all the chunks back together
+# - Deinterleave the chunks 4-ways
+# - If a final split is defined, perform that split on each deinterleaved chunk
+def gfx_cps2(filenames, data_select_func = lambda x: x, split = None):
+    def gfx(in_data):
+        contents = data_select_func(in_data)
+
+        contents = common_gfx_deshuffle(contents)
 
         # Split it
-        chunks = blob.equal_split(contents, num_chunks=length//(1024*1024))
+        chunks = blob.equal_split(contents, num_chunks=len(contents)//(1024*1024))
 
         # Interleave each pair of chunks
         new_chunks = []
@@ -61,6 +71,30 @@ def maincpu_cps2(start, length, num_chunks, filenames):
         return dict(zip(filenames, chunks))
     return maincpu
 
+# This is equivalent to the following bit shuffle implementation, but ends up being more performant
+# def decode_cps1_gfx(data):
+#     buf = bytearray(data)
+#     for i in range(0, len(buf), 4):
+#         dwval = 0
+#         src = buf[i] + (buf[i + 1] << 8) + (buf[i + 2] << 16) + (buf[i + 3] << 24)
 
+#         for j in range(8):
+#             n = src >> (j * 4) & 0x0f
+#             if (n & 0x01):
+#                 dwval |= 1 << (     7 - j)
+#             if (n & 0x02):
+#                 dwval |= 1 << ( 8 + 7 - j)
+#             if (n & 0x04):
+#                 dwval |= 1 << (16 + 7 - j)
+#             if (n & 0x08):
+#                 dwval |= 1 << (24 + 7 - j)
 
+#         buf[i + 0] = (dwval)       & 0xff
+#         buf[i + 1] = (dwval >>  8) & 0xff
+#         buf[i + 2] = (dwval >> 16) & 0xff
+#         buf[i + 3] = (dwval >> 24) & 0xff
+#     return buf
+deshuffle_bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
 
+def common_gfx_deshuffle(contents):
+    return blob.bit_shuffle(contents, word_size_bytes=4, bit_order=deshuffle_bit_order)

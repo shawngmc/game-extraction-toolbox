@@ -25,11 +25,14 @@ import logging
 import os
 import io
 
-from gex.lib.archive import arc, ibis
+from gex.lib.archive import arc
+from gex.lib.utils.vendor import capcom
 from gex.lib.utils import blob
 
+logger = logging.getLogger('gextoolbox')
+
 title = "Capcom Fighting Collection"
-description = "NYI"
+description = ""
 in_dir_desc = "CFC base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION)"
 
 pkg_name_map = {
@@ -116,10 +119,10 @@ def handle_vampj(merged_contents):
         "vamj.09a",
         "vamj.10a"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x1400000, vam_gfx_filenames, split=[0x400000, 0x100000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
 
     out_files.append({'filename': 'vampj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -140,10 +143,10 @@ def handle_dstlku(merged_contents):
         "vamu.09b",
         "vamu.10b"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x1400000, vam_gfx_filenames, split=[0x400000, 0x100000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
 
     out_files.append({'filename': 'dstlku.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -203,10 +206,10 @@ def handle_vhuntjr2(merged_contents):
         "vphj.09a",
         "vphj.10a"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vph_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
 
     out_files.append({'filename': 'vhuntjr2.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -228,10 +231,10 @@ def handle_nwarru(merged_contents):
     ]
 
     func_map = {}
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vph_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
 
     out_files.append({'filename': 'nwarru.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -291,10 +294,10 @@ def handle_vsavj(merged_contents):
         "vm3j.09b",
         "vm3j.10b"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vm3_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
 
     out_files.append({'filename': 'vsavj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -314,10 +317,10 @@ def handle_vsavu(merged_contents):
         "vm3.09b",
         "vm3.10b"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vm3_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
 
     out_files.append({'filename': 'vsavu.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -376,10 +379,10 @@ def handle_vhunt2(merged_contents):
         "vh2j.09",
         "vh2j.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vh2_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vh2_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, vh2_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vh2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vh2_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vh2_qsound_filenames)
 
     out_files.append({'filename': 'vhunt2.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -439,10 +442,10 @@ def handle_vsav2(merged_contents):
         "vs2j.09",
         "vs2j.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, vs2_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, vs2_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, vs2_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(vs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vs2_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vs2_qsound_filenames)
 
     out_files.append({'filename': 'vsav2.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -503,10 +506,10 @@ def handle_cybotsj(merged_contents):
         "cyb.09",
         "cyb.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, cybots_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
 
     out_files.append({'filename': 'cybotsj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -526,10 +529,10 @@ def handle_cybotsu(merged_contents):
         "cyb.09",
         "cyb.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, cybots_gfx_filenames, split=[0x400000, 0x400000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
 
     out_files.append({'filename': 'cybotsu.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -570,39 +573,39 @@ pzf_qsound_filenames = [
     'pzf.12m'
 ]
 
-# def handle_spf2xj(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_spf2xj(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [   
-#         "pzfj.03a",
-#         "pzf.04"
-#     ]
-#     func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-#     func_map['gfx'] = ibis.gfx_cps2(0x1000040, 0x400000, pzf_gfx_filenames, split=[0x100000])
-#     func_map['audiocpu'] = ibis.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
-#     func_map['qsound'] = ibis.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
+    maincpu_filenames = [   
+        "pzfj.03a",
+        "pzf.04"
+    ]
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, blob.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
 
-#     out_files.append({'filename': 'spf2xj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    out_files.append({'filename': 'spf2xj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
-#     return out_files
+    return out_files
 
-# def handle_spf2tu(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_spf2tu(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [   
-#         "pzfu.03a",
-#         "pzf.04"
-#     ]
-#     func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-#     func_map['gfx'] = ibis.gfx_cps2(0x1000040, 0x400000, pzf_gfx_filenames, split=[0x100000])
-#     func_map['audiocpu'] = ibis.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
-#     func_map['qsound'] = ibis.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
+    maincpu_filenames = [   
+        "pzfu.03a",
+        "pzf.04"
+    ]
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, blob.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
 
-#     out_files.append({'filename': 'spf2tu.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    out_files.append({'filename': 'spf2tu.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
-#     return out_files
+    return out_files
 
 ################################################################################
 # END Super Puzzle Fighter II Turbo                                            #
@@ -642,42 +645,42 @@ pcf_qsound_filenames = [
     'pcf.12m'
 ]
 
-# def handle_pfghtj(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_pfghtj(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [   
-#         "pcfj.03",
-#         "pcf.04",
-#         "pcf.05",
-#         "pcf.06",
-#         "pcf.07"
-#     ]
-#     func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-#     func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x1400000, pcf_gfx_filenames, split=[0x400000, 0x100000])
-#     func_map['audiocpu'] = ibis.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
-#     func_map['qsound'] = ibis.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
+    maincpu_filenames = [   
+        "pcfj.03",
+        "pcf.04",
+        "pcf.05",
+        "pcf.06",
+        "pcf.07"
+    ]
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
 
-#     out_files.append({'filename': 'pfghtj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    out_files.append({'filename': 'pfghtj.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
-#     return out_files
+    return out_files
 
-# def handle_sgemf(merged_contents): 
-#     out_files = []
-#     func_map = {}
+def handle_sgemf(merged_contents): 
+    out_files = []
+    func_map = {}
 
-#     maincpu_filenames = [   
-#         "pcfu.03a",
-#         "pcf.04"
-#     ]
-#     func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-#     func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x1400000, pcf_gfx_filenames, split=[0x400000, 0x100000])
-#     func_map['audiocpu'] = ibis.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
-#     func_map['qsound'] = ibis.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
+    maincpu_filenames = [   
+        "pcfu.03a",
+        "pcf.04"
+    ]
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
 
-#     out_files.append({'filename': 'sgemf.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
+    out_files.append({'filename': 'sgemf.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
-#     return out_files
+    return out_files
 
 ################################################################################
 # END Super Gem Fighter Mini Mix                                               #
@@ -728,10 +731,10 @@ def handle_hsf2j(merged_contents):
         "hs2j.09",
         "hs2j.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, hs2_gfx_filenames, split=[0x800000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
 
     out_files.append({'filename': 'hsf2j.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -751,10 +754,10 @@ def handle_hsf2(merged_contents):
         "hs2.09",
         "hs2.10"
     ]
-    func_map['maincpu'] = ibis.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = ibis.gfx_cps2(0x0800040, 0x2000000, hs2_gfx_filenames, split=[0x800000])
-    func_map['audiocpu'] = ibis.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
-    func_map['qsound'] = ibis.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
+    func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
+    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
+    func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
+    func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
 
     out_files.append({'filename': 'hsf2.zip', 'contents': merged_rom_handler(merged_contents, func_map)})
 
@@ -837,7 +840,7 @@ def merged_rom_handler(merged_contents, func_map):
 
     # Build the new zip file
     new_contents = io.BytesIO()
-    with zipfile.ZipFile(new_contents, "w") as new_archive:
+    with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
         for name, data in new_data.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
@@ -849,7 +852,7 @@ def main(game_base_dir, out_path):
         file_name = os.path.basename(file_path)
         pkg_name = pkg_name_map.get(file_name)
         if not pkg_name == None:
-            logging.info(f"Extracting {file_name}: {pkg_name}") 
+            logger.info(f"Extracting {file_name}: {pkg_name}") 
             try:
                 with open(file_path, "rb") as curr_file:
                     file_content = bytearray(curr_file.read())
@@ -871,14 +874,14 @@ def main(game_base_dir, out_path):
                             with open(os.path.join(out_path, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])
                     elif merged_rom_contents == None:
-                        print("Could not find merged rom data in arc.")
+                        logger.warning("Could not find merged rom data in arc.")
                     elif handler_func == None:
-                        print("Could not find matching handler function.")
+                        logger.warning("Could not find matching handler function.")
             except Exception as e:
                 traceback.print_exc()
-                logging.warning(f'Error while processing {file_path}!') 
+                logger.warning(f'Error while processing {file_path}!') 
         else:
-            logging.info(f'Skipping unmatched file {file_path}!') 
-    logging.info("""
+            logger.info(f'Skipping unmatched file {file_path}!') 
+    logger.info("""
         Processing complete. 
     """)

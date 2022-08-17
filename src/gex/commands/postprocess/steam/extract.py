@@ -1,7 +1,5 @@
 import click
-import logging
 import importlib
-import sys
 
 @click.command()
 @click.option('--srcdir', 'src_dir', help = 'path required by the transform set', required=True)
@@ -10,6 +8,5 @@ import sys
 def extract(src_dir, dest_dir, task):
     """Run a task to pull from Steam app or Content pulls (via depot download)"""
 
-    logging.basicConfig(stream=sys.stderr, level=logging.INFO)
     transform_module = importlib.import_module(f'gex.lib.transforms.{task}')
     transform_module.main(src_dir, dest_dir)
