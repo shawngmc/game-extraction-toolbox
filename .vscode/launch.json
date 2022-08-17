@@ -85,6 +85,26 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing CAS1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "postprocess", 
+                "steam", 
+                "extract", 
+                "--task", 
+                "cas1", 
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Capcom Arcade Stadium\"",
+                "--destdir", 
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cas1\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",

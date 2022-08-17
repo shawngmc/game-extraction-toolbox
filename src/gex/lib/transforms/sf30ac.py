@@ -8,7 +8,7 @@ import logging
 import os
 import io
 
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.contrib.bputil import BPListReader
 
@@ -67,7 +67,7 @@ def process_simm_common(simm_id, simm_prefix, simm_size_bytes):
         contents = in_files[simm_id]
         num_chunks = len(contents)//simm_size_bytes
         filenames = list(map(lambda x:f'{simm_prefix}-{simm_id}.{x}', range(0,num_chunks)))
-        chunks = blob.equal_split(contents, chunk_size = simm_size_bytes)
+        chunks = transforms.equal_split(contents, chunk_size = simm_size_bytes)
         return dict(zip(filenames, chunks))
     return process_simm
 
@@ -84,25 +84,25 @@ def deshuffle_gfx_common(filenames, num_interim_split, final_split = None):
         contents = capcom.common_gfx_deshuffle(contents)
 
         # Split into even chunks
-        chunks = blob.equal_split(contents, num_chunks=num_interim_split)
+        chunks = transforms.equal_split(contents, num_chunks=num_interim_split)
 
         # Interleave each pair of chunks
         new_chunks = []
         for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-            new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
+            new_chunks.append(transforms.interleave([oddchunk, evenchunk], word_size=8))
         chunks = new_chunks
 
         # Merge the chunks back together
-        contents = blob.merge(chunks)
+        contents = transforms.merge(chunks)
 
         # Deinterleave the chunks into our 4 files
-        chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
+        chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
 
         # Do final split if provided
         if final_split:
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(blob.custom_split(oldchunk, final_split))
+                new_chunks.extend(transforms.custom_split(oldchunk, final_split))
             chunks = new_chunks
 
         return dict(zip(filenames, chunks))
@@ -157,7 +157,7 @@ def placeholder_generator(file_map):
 def equal_split_helper(in_file_ref, filenames):
     def split(in_files):
         contents = in_files[in_file_ref]
-        chunks = blob.equal_split(contents, num_chunks = len(filenames))
+        chunks = transforms.equal_split(contents, num_chunks = len(filenames))
         return dict(zip(filenames, chunks))
     return split
 
@@ -262,11 +262,11 @@ def handle_sf(mbundle_entries):
     ] 
     def maincpu(in_files):
         contents = in_files['68k']
-        chunks = blob.equal_split(contents, num_chunks = 3)
+        chunks = transforms.equal_split(contents, num_chunks = 3)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.deinterleave(oldchunk, num_ways=2, word_size=1))
+            new_chunks.extend(transforms.deinterleave(oldchunk, num_ways=2, word_size=1))
         chunks = new_chunks
 
         return dict(zip(maincpu_filenames, chunks))
@@ -323,11 +323,11 @@ def handle_sf2(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['ub68k']
-        chunks = blob.equal_split(contents, num_chunks = 4)
+        chunks = transforms.equal_split(contents, num_chunks = 4)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.deinterleave(oldchunk, num_ways=2, word_size=1))
+            new_chunks.extend(transforms.deinterleave(oldchunk, num_ways=2, word_size=1))
         chunks = new_chunks
 
         return dict(zip(maincpu_filenames, chunks))
@@ -350,7 +350,7 @@ def handle_sf2(mbundle_entries):
     ]
     def gfx(in_files):
         contents = in_files['vrom']
-        chunks = blob.equal_split(contents, num_chunks=3)
+        chunks = transforms.equal_split(contents, num_chunks=3)
 
         new_chunks = []
         for oldchunk in chunks:
@@ -365,7 +365,7 @@ def handle_sf2(mbundle_entries):
         'sf2_19.12c'
     ]
     def oki(in_files):
-        chunks = blob.equal_split(in_files['oki'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
         return dict(zip(oki_filenames, chunks))
     func_map['oki'] = oki
 
@@ -413,8 +413,8 @@ def handle_sfa(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['ub68k']
-        contents = blob.swap_endian(contents)
-        chunks = blob.equal_split(contents, num_chunks = 4)
+        contents = transforms.swap_endian(contents)
+        chunks = transforms.equal_split(contents, num_chunks = 4)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -435,7 +435,7 @@ def handle_sfa(mbundle_entries):
         'sfz.02'
     ]
     def z80(in_files):
-        chunks = blob.equal_split(in_files['z80'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['z80'], num_chunks=2)
         return dict(zip(z80_filenames, chunks))
     func_map['z80'] = z80
 
@@ -446,8 +446,8 @@ def handle_sfa(mbundle_entries):
         'sfz.12m'
     ]
     def qsound(in_files):
-        chunks = blob.equal_split(in_files['qs'], num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(in_files['qs'], num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
     out_files.append({'filename': 'sfau.zip', 'contents': build_rom(in_files, func_map)})
@@ -482,8 +482,8 @@ def handle_sfa2(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['u168k']
-        contents = blob.swap_endian(contents)
-        chunks = blob.equal_split(contents, num_chunks = 6)
+        contents = transforms.swap_endian(contents)
+        chunks = transforms.equal_split(contents, num_chunks = 6)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -506,7 +506,7 @@ def handle_sfa2(mbundle_entries):
         'sz2.02a'
     ]
     def z80(in_files):
-        chunks = blob.equal_split(in_files['z80'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['z80'], num_chunks=2)
         return dict(zip(z80_filenames, chunks))
     func_map['z80'] = z80
 
@@ -516,8 +516,8 @@ def handle_sfa2(mbundle_entries):
         'sz2.12m'
     ]
     def qsound(in_files):
-        chunks = blob.equal_split(in_files['qs'], num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(in_files['qs'], num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
 
@@ -555,8 +555,8 @@ def handle_sfa3(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['u168k']
-        contents = blob.swap_endian(contents)
-        chunks = blob.equal_split(contents, num_chunks = 8)
+        contents = transforms.swap_endian(contents)
+        chunks = transforms.equal_split(contents, num_chunks = 8)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -579,7 +579,7 @@ def handle_sfa3(mbundle_entries):
         'sz3.02'
     ]
     def z80(in_files):
-        chunks = blob.equal_split(in_files['z80'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['z80'], num_chunks=2)
         return dict(zip(z80_filenames, chunks))
     func_map['z80'] = z80
 
@@ -589,8 +589,8 @@ def handle_sfa3(mbundle_entries):
         'sz3.12m'
     ]
     def qsound(in_files):
-        chunks = blob.equal_split(in_files['qs'], num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(in_files['qs'], num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
 
@@ -703,8 +703,8 @@ def handle_sf2ce(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['68k']
-        chunks = blob.equal_split(contents, num_chunks = 3)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks = 3)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
 
@@ -725,7 +725,7 @@ def handle_sf2ce(mbundle_entries):
     ]
     def gfx(in_files):
         contents = in_files['vrom']
-        chunks = blob.equal_split(contents, num_chunks=3)
+        chunks = transforms.equal_split(contents, num_chunks=3)
 
         new_chunks = []
         for oldchunk in chunks:
@@ -740,7 +740,7 @@ def handle_sf2ce(mbundle_entries):
         's92_19.bin'
     ]
     def oki(in_files):
-        chunks = blob.equal_split(in_files['oki'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
         return dict(zip(oki_filenames, chunks))
     func_map['oki'] = oki
 
@@ -794,8 +794,8 @@ def handle_sf2hf(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['68k']
-        chunks = blob.equal_split(contents, num_chunks = 3)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks = 3)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
 
@@ -816,7 +816,7 @@ def handle_sf2hf(mbundle_entries):
     ]
     def gfx(in_files):
         contents = in_files['vrom']
-        chunks = blob.equal_split(contents, num_chunks=3)
+        chunks = transforms.equal_split(contents, num_chunks=3)
 
         new_chunks = []
         for oldchunk in chunks:
@@ -831,7 +831,7 @@ def handle_sf2hf(mbundle_entries):
         's92_19.bin'
     ]
     def oki(in_files):
-        chunks = blob.equal_split(in_files['oki'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
         return dict(zip(oki_filenames, chunks))
     func_map['oki'] = oki
 
@@ -887,8 +887,8 @@ def handle_ssf2(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['68k']
-        chunks = blob.equal_split(contents, num_chunks = 5)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks = 5)
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
 
@@ -916,7 +916,7 @@ def handle_ssf2(mbundle_entries):
         "ssf.q08"
     ]
     def qsound(in_files):
-        chunks = blob.equal_split(in_files['qsound'], num_chunks=8)
+        chunks = transforms.equal_split(in_files['qsound'], num_chunks=8)
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
 
@@ -946,7 +946,7 @@ def handle_ssf2t(mbundle_entries):
     ]
     def audiocpu(in_files):
         contents = in_files['z80']
-        chunks = blob.equal_split(contents, num_chunks = len(audiocpu_filenames))
+        chunks = transforms.equal_split(contents, num_chunks = len(audiocpu_filenames))
         return dict(zip(audiocpu_filenames, chunks))
     func_map['audiocpu'] = audiocpu
 
@@ -962,8 +962,8 @@ def handle_ssf2t(mbundle_entries):
     ]
     def maincpu(in_files):
         contents = in_files['68k']
-        chunks = blob.equal_split(contents, num_chunks = len(maincpu_filenames))
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks = len(maincpu_filenames))
+        chunks = transforms.swap_endian_all(chunks)
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
 
@@ -989,7 +989,7 @@ def handle_ssf2t(mbundle_entries):
         "sfx.12m",
     ]
     def qsound(in_files):
-        chunks = blob.equal_split(in_files['qsound'], num_chunks=2)
+        chunks = transforms.equal_split(in_files['qsound'], num_chunks=2)
         return dict(zip(qsound_filenames, chunks))
     func_map['qsound'] = qsound
 

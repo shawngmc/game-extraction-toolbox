@@ -27,7 +27,7 @@ import io
 
 from gex.lib.archive import arc
 from gex.lib.utils.vendor import capcom
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
@@ -90,13 +90,13 @@ def deshuffle_gfx_common(start, length, filenames, num_deinterleave_split, do_sp
             37, 33, 45, 41, 53, 49, 61, 57, 
             36, 32, 44, 40, 52, 48, 60, 56
         ]
-        chunks = blob.split_bit_shuffle(contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
+        chunks = transforms.split_bit_shuffle(contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
 
         # Split it
         if do_split:
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+                new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
             chunks = new_chunks
 
         return dict(zip(filenames, chunks))
@@ -113,7 +113,7 @@ def audio_common(start, filenames):
         # Add the qsound
         qsound_start = start+0x18000
         qsound_contents = contents[qsound_start:qsound_start+0x40000]
-        chunks.extend(blob.equal_split(qsound_contents, num_chunks=2))
+        chunks.extend(transforms.equal_split(qsound_contents, num_chunks=2))
 
         return dict(zip(filenames, chunks))
     return audio
@@ -139,11 +139,11 @@ def handle_ffight(merged_contents):
     def maincpu(contents):
         chunk_5 = contents[0x080040:0x100040]
         contents = contents[0x40:0x080040]
-        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+            new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
         chunks = new_chunks
 
         # Add 5th non-interleaved chunk
@@ -200,11 +200,11 @@ def handle_ffightj(merged_contents):
     ]
     def maincpu(contents):
         contents = contents[0x40:0x100040]
-        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 4))
+            new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 4))
         chunks = new_chunks
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -280,11 +280,11 @@ def handle_kod(merged_contents):
     ]
     def maincpu(contents):
         contents = contents[0x40:0x100040]
-        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 4))
+            new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 4))
         chunks = new_chunks
 
         return dict(zip(maincpu_filenames, chunks))
@@ -343,11 +343,11 @@ def handle_kodj(merged_contents):
     def maincpu(contents):
         chunk_5 = contents[0x080040:0x100040]
         contents = contents[0x40:0x080040]
-        chunks = blob.deinterleave(contents, num_ways=2, word_size=1)
+        chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
         
         new_chunks = []
         for oldchunk in chunks:
-            new_chunks.extend(blob.equal_split(oldchunk, num_chunks = 2))
+            new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
         chunks = new_chunks
 
         # Add 5th non-interleaved chunk
@@ -418,7 +418,7 @@ def handle_captcomm(merged_contents):
     def maincpu(contents):
         # Only the last 2 128k chunks actually need deinterleaved...
         maincpu_area = contents[0x40:0x140040]
-        deint_chunks = blob.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+        deint_chunks = transforms.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
 
         chunks = []
         chunks.append(maincpu_area[0x0:0x80000])
@@ -482,7 +482,7 @@ def handle_captcommj(merged_contents):
     def maincpu(contents):
         # Only the last 2 128k chunks actually need deinterleaved...
         maincpu_area = contents[0x40:0x140040]
-        deint_chunks = blob.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+        deint_chunks = transforms.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
 
         chunks = []
         chunks.append(maincpu_area[0x0:0x80000])
@@ -556,7 +556,7 @@ def handle_knights(merged_contents):
     def maincpu(contents):
         # Only the last 2 128k chunks actually need deinterleaved...
         maincpu_area = contents[0x40:0x100040]
-        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+        chunks = transforms.equal_split(maincpu_area, num_chunks=2)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -612,7 +612,7 @@ def handle_knightsj(merged_contents):
     def maincpu(contents):
         # Only the last 2 128k chunks actually need deinterleaved...
         maincpu_area = contents[0x40:0x100040]
-        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+        chunks = transforms.equal_split(maincpu_area, num_chunks=2)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -694,7 +694,7 @@ def wof_audio_common(filenames):
         # Add the qsound
         qsound_start = start+0x50000
         qsound_contents = contents[qsound_start:qsound_start+0x200000]
-        chunks.extend(blob.equal_split(qsound_contents, num_chunks=4))
+        chunks.extend(transforms.equal_split(qsound_contents, num_chunks=4))
 
         return dict(zip(filenames, chunks))
     return audio
@@ -709,7 +709,7 @@ def handle_wof(merged_contents):
     ]
     def maincpu(contents):
         maincpu_area = contents[0x40:0x100040]
-        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+        chunks = transforms.equal_split(maincpu_area, num_chunks=2)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -767,7 +767,7 @@ def handle_wofj(merged_contents):
     ]
     def maincpu(contents):
         maincpu_area = contents[0x40:0x100040]
-        chunks = blob.equal_split(maincpu_area, num_chunks=2)
+        chunks = transforms.equal_split(maincpu_area, num_chunks=2)
 
         return dict(zip(maincpu_filenames, chunks))
     func_map['maincpu'] = maincpu
@@ -835,22 +835,22 @@ def armwar_gfx_common(contents):
     contents = capcom.common_gfx_deshuffle(contents)
 
     # Split it
-    chunks = blob.equal_split(contents, num_chunks=20)
+    chunks = transforms.equal_split(contents, num_chunks=20)
 
     # Interleave each pair of chunks
     new_chunks = []
     for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-        new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
+        new_chunks.append(transforms.interleave([oddchunk, evenchunk], word_size=8))
     chunks = new_chunks
 
     # Merge the chunks back together
-    contents = blob.merge(chunks)
+    contents = transforms.merge(chunks)
 
     # Deinterleave the chunks into our files
     new_chunks = []
-    chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
+    chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
     for chunk in chunks:
-        new_chunks.extend(blob.custom_split(chunk, [0x400000, 0x100000]))
+        new_chunks.extend(transforms.custom_split(chunk, [0x400000, 0x100000]))
     chunks = new_chunks
     filenames = [
         'pwg.13m',
@@ -876,8 +876,8 @@ def armwar_audiocpu_common(contents):
     
 def armwar_qsound_common(contents):
     contents = contents[0x1C50040:0x2050040]
-    chunks = blob.equal_split(contents, num_chunks=2)
-    chunks = blob.swap_endian_all(chunks)
+    chunks = transforms.equal_split(contents, num_chunks=2)
+    chunks = transforms.swap_endian_all(chunks)
     filenames = [
         'pwg.11m',
         'pwg.12m'
@@ -889,7 +889,7 @@ def handle_armwar(merged_contents):
 
     def maincpu(contents):
         contents = contents[0x40:0x400040]
-        chunks = blob.equal_split(contents, num_chunks=8)
+        chunks = transforms.equal_split(contents, num_chunks=8)
         filenames = [   
             "pwge.03c",
             "pwge.04c",
@@ -914,7 +914,7 @@ def handle_pgear(merged_contents):
 
     def maincpu(contents):
         contents = contents[0x40:0x400040]
-        chunks = blob.equal_split(contents, num_chunks=8)
+        chunks = transforms.equal_split(contents, num_chunks=8)
         filenames = [   
             "pwgj.03a",
             "pwgj.04a",
@@ -953,19 +953,19 @@ def batcir_gfx_common(contents):
     contents = capcom.common_gfx_deshuffle(contents)
 
     # Split it
-    chunks = blob.equal_split(contents, num_chunks=16)
+    chunks = transforms.equal_split(contents, num_chunks=16)
 
     # Interleave each pair of chunks
     new_chunks = []
     for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-        new_chunks.append(blob.interleave([oddchunk, evenchunk], word_size=8))
+        new_chunks.append(transforms.interleave([oddchunk, evenchunk], word_size=8))
     chunks = new_chunks
 
     # Merge the chunks back together
-    contents = blob.merge(chunks)
+    contents = transforms.merge(chunks)
 
     # Deinterleave the chunks into our 4 files
-    chunks = blob.deinterleave(contents, num_ways = 4, word_size=2)
+    chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
     filenames = [
         'btc.13m',
         'btc.15m',
@@ -986,8 +986,8 @@ def batcir_audiocpu_common(contents):
     
 def batcir_qsound_common(contents):
     contents = contents[0x1850040:0x1C50040]
-    chunks = blob.equal_split(contents, num_chunks=2)
-    chunks = blob.swap_endian_all(chunks)
+    chunks = transforms.equal_split(contents, num_chunks=2)
+    chunks = transforms.swap_endian_all(chunks)
     filenames = [
         'btc.11m',
         'btc.12m'
@@ -1000,7 +1000,7 @@ def handle_batcir(merged_contents):
 
     def maincpu(contents):
         contents = contents[0x40:0x380040]
-        chunks = blob.equal_split(contents, num_chunks=7)
+        chunks = transforms.equal_split(contents, num_chunks=7)
         filenames = [   
             "btce.03", 
             "btce.04", 
@@ -1025,7 +1025,7 @@ def handle_batcirj(merged_contents):
 
     def maincpu(contents):
         contents = contents[0x40:0x380040]
-        chunks = blob.equal_split(contents, num_chunks=7)
+        chunks = transforms.equal_split(contents, num_chunks=7)
         filenames = [   
             "btcj.03", 
             "btcj.04", 

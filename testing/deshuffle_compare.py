@@ -2,7 +2,7 @@ import zlib
 import os
 import timeit
 from gex.lib.contrib.bputil import BPListReader
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 from bitarray import bitarray
 
 sf30ac_root_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Street Fighter 30th Anniversary Collection\\"
@@ -24,7 +24,7 @@ final_split = [0x400000, 0x400000]
 def deshuffle_gfx_common(contents):    
     # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
     bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
-    contents = blob.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
+    contents = transforms.bit_shuffle(contents, word_size_bytes=4, bit_order=bit_order)
 
     return contents
 

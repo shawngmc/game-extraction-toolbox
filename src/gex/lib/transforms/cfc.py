@@ -27,7 +27,7 @@ import io
 
 from gex.lib.archive import arc
 from gex.lib.utils.vendor import capcom
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
@@ -120,7 +120,7 @@ def handle_vampj(merged_contents):
         "vamj.10a"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
 
@@ -144,7 +144,7 @@ def handle_dstlku(merged_contents):
         "vamu.10b"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(vam_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, vam_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, vam_qsound_filenames)
 
@@ -207,7 +207,7 @@ def handle_vhuntjr2(merged_contents):
         "vphj.10a"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
 
@@ -232,7 +232,7 @@ def handle_nwarru(merged_contents):
 
     func_map = {}
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vph_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vph_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, vph_qsound_filenames)
 
@@ -295,7 +295,7 @@ def handle_vsavj(merged_contents):
         "vm3j.10b"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
 
@@ -318,7 +318,7 @@ def handle_vsavu(merged_contents):
         "vm3.10b"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vm3_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vm3_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vm3_qsound_filenames)
 
@@ -380,7 +380,7 @@ def handle_vhunt2(merged_contents):
         "vh2j.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vh2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vh2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vh2_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vh2_qsound_filenames)
 
@@ -443,7 +443,7 @@ def handle_vsav2(merged_contents):
         "vs2j.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(vs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(vs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, vs2_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, vs2_qsound_filenames)
 
@@ -507,7 +507,7 @@ def handle_cybotsj(merged_contents):
         "cyb.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
 
@@ -530,7 +530,7 @@ def handle_cybotsu(merged_contents):
         "cyb.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
+    func_map['gfx'] = capcom.gfx_cps2(cybots_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, cybots_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, cybots_qsound_filenames)
 
@@ -582,7 +582,7 @@ def handle_spf2xj(merged_contents):
         "pzf.04"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, blob.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, transforms.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
 
@@ -599,7 +599,7 @@ def handle_spf2tu(merged_contents):
         "pzf.04"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, blob.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(pzf_gfx_filenames, transforms.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, pzf_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, pzf_qsound_filenames)
 
@@ -657,7 +657,7 @@ def handle_pfghtj(merged_contents):
         "pcf.07"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
 
@@ -674,7 +674,7 @@ def handle_sgemf(merged_contents):
         "pcf.04"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, blob.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
+    func_map['gfx'] = capcom.gfx_cps2(pcf_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, pcf_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, pcf_qsound_filenames)
 
@@ -732,7 +732,7 @@ def handle_hsf2j(merged_contents):
         "hs2j.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
+    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
 
@@ -755,7 +755,7 @@ def handle_hsf2(merged_contents):
         "hs2.10"
     ]
     func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, blob.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
+    func_map['gfx'] = capcom.gfx_cps2(hs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
     func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, hs2_audiocpu_filenames)
     func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, hs2_qsound_filenames, num_chunks=1)
 
