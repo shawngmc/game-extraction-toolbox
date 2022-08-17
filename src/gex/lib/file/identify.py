@@ -1,5 +1,9 @@
 import magic
 
+KPKA = "KPKA Archive, Capcom RE Engine"
+IBIS = "IBIS Archive, Capcom ROM Releases"
+ARC = "ARC Archive, Capcom MT Engine"
+
 def enhanced_magic_from_path(in_file):
     magic_id = None
     try:
@@ -30,11 +34,11 @@ def enhanced_magic_from_buffer(content_peek):
 
 def enhanced_look(content_peek):
     if content_peek[0:4] == b"KPKA":
-        return "KPKA Archive, Capcom RE Engine"
+        return KPKA
     if content_peek[0:4] == b"IBIS":
-        return "IBIS Archive, Capcom ROM Releases"
+        return IBIS
     if content_peek[0:3] == b"ARC":
-        return "ARC Archive, Capcom MT Engine"
+        return ARC
         
     return 'data'
             

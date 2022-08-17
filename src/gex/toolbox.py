@@ -12,7 +12,6 @@ logger = logging.getLogger('gextoolbox')
 click_log.basic_config(logger)
 
 @click.group()
-@click_log.simple_verbosity_option(logger)
 def cli():
     pass
 
