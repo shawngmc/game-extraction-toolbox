@@ -1,4 +1,4 @@
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 
 
 def extract(bytes):

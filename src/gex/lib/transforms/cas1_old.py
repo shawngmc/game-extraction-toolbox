@@ -6,7 +6,7 @@ import os
 import io
 
 from gex.lib.archive import kpka
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
@@ -276,8 +276,8 @@ def handle_package_1556718(kpka_contents):
 def handle_package_1556722(kpka_contents):
     out_files = []
     def gfx(contents):
-        chunks = blob.custom_split(contents, [8388608, 4194304, 4194304])
-        chunks = blob.deinterleave_all(chunks, num_ways=4, word_size=2)
+        chunks = transforms.custom_split(contents, [8388608, 4194304, 4194304])
+        chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
         filenames = [
             'sfx.13m',
             'sfx.15m',
@@ -295,17 +295,17 @@ def handle_package_1556722(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x48000, length=0x8000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
-        chunks = blob.equal_split(contents, num_chunks=2)
+        contents = transforms.splice_out(contents, 0x48000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
+        chunks = transforms.equal_split(contents, num_chunks=2)
         filenames = [
             'sfx.01',
             'sfx.02'
         ]
         return dict(zip(filenames, chunks))
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         filenames = [
             'sfx.11m',
             'sfx.12m'
@@ -318,9 +318,9 @@ def handle_package_1556722(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x380000, length=0x3FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=7)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=7)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "sfxj.03d", 
                         "sfxj.04a", 
@@ -340,9 +340,9 @@ def handle_package_1556722(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x380000, length=0x3FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=7)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=7)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "sfxu.03e", 
                         "sfxu.04a", 
@@ -363,8 +363,8 @@ def handle_package_1556722(kpka_contents):
 def handle_package_1556724(kpka_contents):
     out_files = []
     def gfx(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.deinterleave_all(chunks, num_ways=4, word_size=2)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
         filenames = [   
             "cyb.13m", 
             "cyb.15m", 
@@ -378,9 +378,9 @@ def handle_package_1556724(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x48000, length=0x8000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
-        chunks = blob.equal_split(contents, num_chunks=2)
+        contents = transforms.splice_out(contents, 0x48000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
+        chunks = transforms.equal_split(contents, num_chunks=2)
 
         return {
             'cyb.01': chunks[0],
@@ -388,8 +388,8 @@ def handle_package_1556724(kpka_contents):
         }
 
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
 
         return {
             'cyb.11m': chunks[0],
@@ -402,8 +402,8 @@ def handle_package_1556724(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    chunks = blob.equal_split(contents, num_chunks=8)
-                    chunks = blob.swap_endian_all(chunks)
+                    chunks = transforms.equal_split(contents, num_chunks=8)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "cybj.03", 
                         "cybj.04", 
@@ -424,8 +424,8 @@ def handle_package_1556724(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    chunks = blob.equal_split(contents, num_chunks=8)
-                    chunks = blob.swap_endian_all(chunks)
+                    chunks = transforms.equal_split(contents, num_chunks=8)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "cybu.03", 
                         "cybu.04", 
@@ -452,9 +452,9 @@ def handle_package_1556725(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x280000, length=0x180000)
-                    chunks = blob.equal_split(contents, num_chunks=5)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x280000, length=0x180000)
+                    chunks = transforms.equal_split(contents, num_chunks=5)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [    
                         '19xj.03a',
                         '19xj.04a',
@@ -466,9 +466,9 @@ def handle_package_1556725(kpka_contents):
                 func_map['maincpu'] = maincpu
 
                 def gfx(contents):
-                    contents = blob.splice_out(contents, 0x200000, length=0x600000)
-                    chunks = blob.equal_split(contents, num_chunks=5)
-                    chunks = blob.deinterleave_all(chunks, num_ways=4, word_size=2)
+                    contents = transforms.splice_out(contents, 0x200000, length=0x600000)
+                    chunks = transforms.equal_split(contents, num_chunks=5)
+                    chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
                     filenames = [    
                         '19x-69.4j',
                         '19x-59.4d',
@@ -496,16 +496,16 @@ def handle_package_1556725(kpka_contents):
                 func_map['gfx'] = gfx
 
                 def audiocpu(contents):
-                    contents = blob.splice_out(contents, 0x28000, length=0x28000)
-                    contents = blob.splice_out(contents, 0x8000, length=0x8000)
+                    contents = transforms.splice_out(contents, 0x28000, length=0x28000)
+                    contents = transforms.splice_out(contents, 0x8000, length=0x8000)
                     return {
                         '19x-01.1a': contents
                     }
                 func_map['audiocpu'] = audiocpu
 
                 def qsound(contents):
-                    chunks = blob.equal_split(contents, num_chunks=8)
-                    chunks = blob.swap_endian_all(chunks)
+                    chunks = transforms.equal_split(contents, num_chunks=8)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "19x-51.6a", 
                         "19x-52.7a", 
@@ -525,9 +525,9 @@ def handle_package_1556725(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x280000, length=0x180000)
-                    chunks = blob.equal_split(contents, num_chunks=5)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x280000, length=0x180000)
+                    chunks = transforms.equal_split(contents, num_chunks=5)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [    
                         '19xu.03',
                         '19xu.04',
@@ -539,9 +539,9 @@ def handle_package_1556725(kpka_contents):
                 func_map['maincpu'] = maincpu
                 
                 def gfx(contents):
-                    contents = blob.splice_out(contents, 0x200000, length=0x600000)
-                    chunks = blob.custom_split(contents, [2097152, 8388608])
-                    chunks = blob.deinterleave_all(chunks, num_ways=4, word_size=2)
+                    contents = transforms.splice_out(contents, 0x200000, length=0x600000)
+                    chunks = transforms.custom_split(contents, [2097152, 8388608])
+                    chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
                     filenames = [    
                         "19x.13m", 
                         "19x.15m", 
@@ -556,16 +556,16 @@ def handle_package_1556725(kpka_contents):
                 func_map['gfx'] = gfx
                 
                 def audiocpu(contents):
-                    contents = blob.splice_out(contents, 0x28000, length=0x28000)
-                    contents = blob.splice_out(contents, 0x8000, length=0x8000)
+                    contents = transforms.splice_out(contents, 0x28000, length=0x28000)
+                    contents = transforms.splice_out(contents, 0x8000, length=0x8000)
                     return {
                         '19x.01': contents
                     }
                 func_map['audiocpu'] = audiocpu
 
                 def qsound(contents):
-                    chunks = blob.equal_split(contents, num_chunks=2)
-                    chunks = blob.swap_endian_all(chunks)
+                    chunks = transforms.equal_split(contents, num_chunks=2)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "19x.11m",   
                         "19x.12m"
@@ -579,7 +579,7 @@ def handle_package_1556726(kpka_contents):
     out_files = []
 
     def gfx(contents):
-        chunks = blob.deinterleave(contents, num_ways=4, word_size=2)
+        chunks = transforms.deinterleave(contents, num_ways=4, word_size=2)
         filenames = [
             'btc.13m',
             'btc.15m',
@@ -589,17 +589,17 @@ def handle_package_1556726(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x48000, length=0x8000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
-        chunks = blob.equal_split(contents, num_chunks=2)
+        contents = transforms.splice_out(contents, 0x48000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
+        chunks = transforms.equal_split(contents, num_chunks=2)
         filenames = [
             'btc.01',
             'btc.02'
         ]
         return dict(zip(filenames, chunks))
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         filenames = [
             'btc.11m',
             'btc.12m'
@@ -612,9 +612,9 @@ def handle_package_1556726(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x380000, length=0x3FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=7)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=7)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "btcj.03", 
                         "btcj.04", 
@@ -634,9 +634,9 @@ def handle_package_1556726(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x380000, length=0x3FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=7)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=7)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "btce.03", 
                         "btce.04", 
@@ -658,7 +658,7 @@ def handle_package_1556727(kpka_contents):
     out_files = []
 
     def gfx(contents):
-        chunks = blob.deinterleave(contents, num_ways=4, word_size=2)
+        chunks = transforms.deinterleave(contents, num_ways=4, word_size=2)
         filenames = [
             'ggw.13m',
             'ggw.15m',
@@ -668,12 +668,12 @@ def handle_package_1556727(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x28000, length=0x28000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x28000, length=0x28000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
         return {'ggw.01': contents}
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         filenames = [
             'ggw.11m',
             'ggw.12m'
@@ -686,9 +686,9 @@ def handle_package_1556727(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x180000, length=0x27FFFF)
-                    chunks = blob.equal_split(contents, num_chunks=3)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=3)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "ggwj.03a",
                         "ggwj.04a",
@@ -704,9 +704,9 @@ def handle_package_1556727(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x180000, length=0x27FFFF)
-                    chunks = blob.equal_split(contents, num_chunks=3)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=3)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "ggwu.03",
                         "ggwu.04",
@@ -724,8 +724,8 @@ def handle_package_1556728(kpka_contents):
     out_files = []
 
     def gfx(contents):
-        chunks = blob.custom_split(contents, [16777216, 4194304])
-        chunks = blob.deinterleave_all(chunks, num_ways=4, word_size=2)
+        chunks = transforms.custom_split(contents, [16777216, 4194304])
+        chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
         filenames = [    
             "nff.13m", 
             "nff.15m", 
@@ -739,12 +739,12 @@ def handle_package_1556728(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x28000, length=0x28000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x28000, length=0x28000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
         return {'nff.01': contents}
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=2)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=2)
+        chunks = transforms.swap_endian_all(chunks)
         filenames = [
             'nff.11m',
             'nff.12m'
@@ -757,9 +757,9 @@ def handle_package_1556728(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x180000, length=0x27FFFF)
-                    chunks = blob.equal_split(contents, num_chunks=3)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=3)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "nffj.03",
                         "nffj.04",
@@ -775,9 +775,9 @@ def handle_package_1556728(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x180000, length=0x27FFFF)
-                    chunks = blob.equal_split(contents, num_chunks=3)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=3)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "nffu.03",
                         "nff.04",
@@ -795,7 +795,7 @@ def handle_package_1556729(kpka_contents):
     out_files = []
 
     def gfx(contents):
-        chunks = blob.deinterleave(contents, num_ways=8, word_size=1)
+        chunks = transforms.deinterleave(contents, num_ways=8, word_size=1)
         filenames = [    
             "pga-simm.01c",
             "pga-simm.01d",
@@ -809,12 +809,12 @@ def handle_package_1556729(kpka_contents):
         return dict(zip(filenames, chunks))
 
     def audiocpu(contents):
-        contents = blob.splice_out(contents, 0x28000, length=0x28000)
-        contents = blob.splice_out(contents, 0x8000, length=0x8000)
+        contents = transforms.splice_out(contents, 0x28000, length=0x28000)
+        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
         return {'pga.01': contents}
     def qsound(contents):
-        chunks = blob.equal_split(contents, num_chunks=4)
-        chunks = blob.swap_endian_all(chunks)
+        chunks = transforms.equal_split(contents, num_chunks=4)
+        chunks = transforms.swap_endian_all(chunks)
         filenames = [
             "pga-simm.05a",
             "pga-simm.05b",
@@ -829,9 +829,9 @@ def handle_package_1556729(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x100000, length=0x2FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=2)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x100000, length=0x2FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=2)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "pgaj.03",
                         "pgaj.04"
@@ -846,9 +846,9 @@ def handle_package_1556729(kpka_contents):
                 func_map = {}
 
                 def maincpu(contents):
-                    contents = blob.splice_out(contents, 0x100000, length=0x2FFFFF)
-                    chunks = blob.equal_split(contents, num_chunks=2)
-                    chunks = blob.swap_endian_all(chunks)
+                    contents = transforms.splice_out(contents, 0x100000, length=0x2FFFFF)
+                    chunks = transforms.equal_split(contents, num_chunks=2)
+                    chunks = transforms.swap_endian_all(chunks)
                     filenames = [   
                         "pgau.03",
                         "pgau.04"

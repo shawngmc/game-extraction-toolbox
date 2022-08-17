@@ -2,7 +2,7 @@ import click
 import click_log
 import logging
 
-from gex.lib.utils import blob
+from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
@@ -14,7 +14,7 @@ logger = logging.getLogger('gextoolbox')
 @click_log.simple_verbosity_option(logger)
 def deinterleave(in_file, out_file_base, num_ways, word_size):
     in_data = read_bin_file(in_file)
-    deinterleaved_chunks = blob.deinterleave(in_data, num_ways, word_size)
+    deinterleaved_chunks = transforms.deinterleave(in_data, num_ways, word_size)
 
     for idx, chunk in enumerate(deinterleaved_chunks):
         filename = f'{out_file_base}.{idx}'
