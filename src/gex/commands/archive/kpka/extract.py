@@ -4,10 +4,15 @@ from gex.lib.archive import kpka
 from gex.lib.file import identify
 from gex.lib.utils import helper
 import click
+import click_log
+import logging
+
+logger = logging.getLogger('gextoolbox')
 
 @click.command()
 @click.option('--in', 'in_file', help = 'path to input KPKA archive', required=True)
 @click.option('--out', 'out_dir', help = 'path to output folder (must exist)', required=True)
+@click_log.simple_verbosity_option(logger)
 def extract(in_file, out_dir):
     """Extract the contents of a KPKA archive"""
     try:
@@ -22,18 +27,21 @@ def extract(in_file, out_dir):
 
                 try:
                     type_id = identify.enhanced_magic_from_buffer(contents)
-                    print(type_id)
+                    if not type_id == identify.KPKA:
+                        logger.warning(f'Found {type_id} when identifying file, will try to extract anyway...')
                 except:
-                    print(f'Cannot typecheck!')
+                    logger.warning(f'Cannot typecheck!')
 
                 out_file_path = os.path.join(helper.cleanpath(out_dir), filename)
-                print(out_file_path)
+                logger.error(out_file_path)
                 with open(out_file_path, "wb") as out_file:
                     out_file.write(contents)
+        
+        logger.info('Extraction complete.')
     except Exception as e:
-        print(repr(e))
+        logger.error(repr(e))
         traceback.print_exc()
-        print('Error While Opening the file!') 
+        logger.error('Error While Opening the file!') 
 
 
 

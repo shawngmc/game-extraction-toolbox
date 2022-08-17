@@ -1,16 +1,16 @@
 import click
+import click_log
+import logging
+
+logger = logging.getLogger('gextoolbox')
 
 @click.command()
 @click.option('--in', 'in_file', help = 'path to input file', required=True)
 @click.option('--out1', 'out_file1', help = 'path to output file 1', required=True)
 @click.option('--out2', 'out_file2', help = 'path to output file 2', required=True)
+@click_log.simple_verbosity_option(logger)
 def deinterleave(in_file, out_file1, out_file2):
     in_data = read_bin_file(in_file)
-    # Original 1 and 1 
-    # CHANNEL_COUNT = 2
-    # deinterleaved = [in_data[idx::CHANNEL_COUNT] for idx in range(CHANNEL_COUNT)]
-    # write_bin_file(deinterleaved[0], out_file1)
-    # write_bin_file(deinterleaved[1], out_file2)
     data1 = bytearray()
     data2 = bytearray()
     for idx in range(len(in_data)):
@@ -20,9 +20,9 @@ def deinterleave(in_file, out_file1, out_file2):
         else:
             data2.append(in_data[idx])
 
-
     write_bin_file(data1, out_file1)
     write_bin_file(data2, out_file2)
+    logger.info("Done.")
 
 def read_bin_file(path):
     try: 
@@ -30,12 +30,14 @@ def read_bin_file(path):
             content = f.read()
             return content
     except IOError:
-        print(f"Error reading {path}!")   
+        logger.error(f"Error reading {path}!")
+        exit()  
 
 def write_bin_file(data, path):
     try: 
         with open(path, "wb") as f:
             f.write(data)
     except IOError:
-        print(f"Error writing {path}!")  
+        logger.error(f"Error writing {path}!")
+        exit()
 
