@@ -2,26 +2,25 @@ import click
 import click_log
 import logging
 
+from gex.lib.utils import blob
+
 logger = logging.getLogger('gextoolbox')
 
 @click.command()
 @click.option('--in', 'in_file', help = 'path to input file', required=True)
-@click.option('--out1', 'out_file1', help = 'path to output file 1', required=True)
-@click.option('--out2', 'out_file2', help = 'path to output file 2', required=True)
+@click.option('--out', 'out_file_base', help = 'path to output file base name (ex. ./my.file)', required=True)
+@click.option('--ways', 'num_ways', help = 'number of ways to deinterleave, default is 2-way', default=2)
+@click.option('--word', 'word_size', help = 'size of word (number of bytes) to put in each file, default is 2 bytes', default=2)
 @click_log.simple_verbosity_option(logger)
-def deinterleave(in_file, out_file1, out_file2):
+def deinterleave(in_file, out_file_base, num_ways, word_size):
     in_data = read_bin_file(in_file)
-    data1 = bytearray()
-    data2 = bytearray()
-    for idx in range(len(in_data)):
-        mod_val = idx % 4
-        if mod_val == 0 or mod_val == 1:
-            data1.append(in_data[idx])
-        else:
-            data2.append(in_data[idx])
+    deinterleaved_chunks = blob.deinterleave(in_data, num_ways, word_size)
 
-    write_bin_file(data1, out_file1)
-    write_bin_file(data2, out_file2)
+    for idx, chunk in enumerate(deinterleaved_chunks):
+        filename = f'{out_file_base}.{idx}'
+        print(filename)
+        write_bin_file(chunk, filename)
+
     logger.info("Done.")
 
 def read_bin_file(path):
