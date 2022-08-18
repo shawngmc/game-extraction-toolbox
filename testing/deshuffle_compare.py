@@ -44,10 +44,8 @@ def deshuffle_gfx_common_v2(contents):
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
 
         updated_word.setall(0)
-        i = 0
-        for next_bit in bit_order:
-            updated_word[i] = shuffle_word[next_bit]
-            i = i + 1
+        for idx, next_bit in enumerate(bit_order):
+            updated_word[idx] = shuffle_word[next_bit]
 
         new_content.extend(updated_word)
     return new_content
@@ -66,10 +64,8 @@ def deshuffle_gfx_common_v3(contents):
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
 
         updated_word.setall(0)
-        i = 0
-        for next_bit in bit_order:
-            updated_word[i] = shuffle_word[next_bit]
-            i = i + 1
+        for idx, next_bit in enumerate(bit_order):
+            updated_word[idx] = shuffle_word[next_bit]
 
         new_content[offset:offset+word_size_bytes] = updated_word
     return new_content

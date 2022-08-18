@@ -136,10 +136,8 @@ def bit_shuffle(contents, word_size_bytes, bit_order):
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
 
         updated_word = bitarray(word_size_bytes*8*'0')
-        i = 0
-        for next_bit in bit_order:
-            updated_word[i] = shuffle_word[next_bit]
-            i = i + 1
+        for idx, next_bit in enumerate(bit_order):
+            updated_word[idx] = shuffle_word[next_bit]
 
         new_content.extend(updated_word)
     return new_content
@@ -178,10 +176,8 @@ def byte_shuffle(contents, word_size_bytes, byte_order):
         shuffle_word = bytearray(contents[offset:offset+word_size_bytes])
 
         updated_word = bytearray(word_size_bytes)
-        i = 0
-        for next_byte in byte_order:
-            updated_word[i] = shuffle_word[next_byte]
-            i = i + 1
+        for idx, next_byte in enumerate(byte_order):
+            updated_word[idx] = shuffle_word[next_byte]
 
         new_content.extend(updated_word)
     return new_content
