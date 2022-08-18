@@ -4,7 +4,7 @@ import inspect
 
 @click.command()
 def list():
-    """List Available Tasks"""
+    """List available extraction tasks"""
     for global_name, transform_module in globals().items():
         if inspect.ismodule(transform_module) and transform_module.__package__ == 'gex.lib.transforms':
             print(f'{global_name}: {transform_module.title}')

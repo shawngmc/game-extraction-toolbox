@@ -6,7 +6,7 @@ from rich.markdown import Markdown
 @click.command()
 @click.option('--task', 'task', help = 'name of the transform set to run', required=True)
 def details(task):
-    """Get details about a specific Steam extraction task"""
+    """Get details about a specific extraction task"""
 
     # logging.basicConfig(stream=sys.stderr, level=logging.INFO)
     dir_path = os.path.dirname(os.path.realpath(__file__))

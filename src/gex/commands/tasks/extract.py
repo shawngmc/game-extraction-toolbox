@@ -13,7 +13,7 @@ logger = logging.getLogger('gextoolbox')
 @click.option('--task', 'task', help = 'name of the transform set to run', required=True)
 @click_log.simple_verbosity_option(logger)
 def extract(src_dir, dest_dir, task):
-    """Run a task to pull from Steam app or Content pulls (via depot download)"""
+    """Run a task to extract roms from Steam/GOG/etc. games"""
 
     # Ensure the output folder exists or can be made
     helper.preparepath(dest_dir)
