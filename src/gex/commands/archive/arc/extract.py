@@ -31,7 +31,7 @@ def extract(in_file, out_dir):
                 except:
                     logger.warning(f'Cannot typecheck!')
 
-                out_file_path = os.path.join(helper.cleanpath(out_dir), file_entry['path'].replace("\\", os.sep))
+                out_file_path = os.path.join(helper.cleanpath(out_dir), file_entry['path'].replace(r"\", os.sep))
                 os.makedirs(os.path.dirname(out_file_path), exist_ok = True)
                 with open(out_file_path, "wb") as out_file:
                     out_file.write(contents)
