@@ -1,6 +1,5 @@
 import os
 import click
-import importlib
 import click_log
 import logging
 
@@ -17,11 +16,11 @@ def extract(src_dir, dest_dir, task):
     """Run a task to extract roms from Steam/GOG/etc. games"""
 
     # Load the task module
-    transform_module = importlib.import_module(f'gex.lib.transforms.{task}')
+    task_class = helper.load_task(task)
 
     # If there isn't a src_dir set, pull in the default
     if not src_dir:
-        src_dir = transform_module.default_folder
+        src_dir = task_class.get_default_input_folder()
         # If there isn't a default, exit
         if not src_dir:
             logger.error(f"Task {task} requires a source dir; see task details for more info")
@@ -35,4 +34,4 @@ def extract(src_dir, dest_dir, task):
     # Ensure the output folder exists or can be made
     helper.preparepath(dest_dir)
 
-    transform_module.main(src_dir, dest_dir)
+    task_class.execute(src_dir, dest_dir)

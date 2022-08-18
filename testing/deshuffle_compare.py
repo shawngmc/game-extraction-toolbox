@@ -5,7 +5,7 @@ from gex.lib.contrib.bputil import BPListReader
 from gex.lib.utils.blob import transforms
 from bitarray import bitarray
 
-sf30ac_root_path = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\"
+sf30ac_root_path = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\""
 
 
 filenames = [

@@ -17,8 +17,6 @@
                 "extract", 
                 "--task", 
                 "cbeub", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CBEUB\"", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\cbeub\""
             ]
@@ -36,8 +34,6 @@
                 "extract", 
                 "--task", 
                 "saga", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sa・Ga COLLECTION\"", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\saga\""
             ]
@@ -55,8 +51,6 @@
                 "extract", 
                 "--task", 
                 "cfc", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CAPCOM FIGHTING COLLECTION\"", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\cfc\""
             ]
@@ -74,8 +68,6 @@
                 "extract", 
                 "--task", 
                 "sf30ac", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Street Fighter 30th Anniversary Collection\"", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\sf30ac\""
             ]
@@ -93,8 +85,6 @@
                 "extract", 
                 "--task", 
                 "cas1_old", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\content\"", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\cas1_old\""
             ]
@@ -112,8 +102,6 @@
                 "extract", 
                 "--task", 
                 "genesis", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sega Classics\"",
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\genesis\""
             ]
