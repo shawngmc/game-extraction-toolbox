@@ -1,8 +1,6 @@
 # Roadmap
 
 ## Future / Other Tools
-- SEGA Mega Drive and Genesis Classics
-  Files in game dir - https://github.com/farmerbb/RED-Project/wiki/Sega-Mega-Drive-&-Genesis-Classics
 - SNK 40th Anniversary Collection
   Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Samuari Shodown Collection
