@@ -85,7 +85,7 @@
             ]
         },
         {
-            "name": "Python: Toolbox - Testing CAS1",
+            "name": "Python: Toolbox - Testing Genesis",
             "type": "python",
             "request": "launch",
             "program": "toolbox.py",
@@ -97,11 +97,11 @@
                 "steam", 
                 "extract", 
                 "--task", 
-                "cas1", 
+                "genesis", 
                 "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Capcom Arcade Stadium\"",
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sega Classics\"",
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cas1\""
+                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\genesis\""
             ]
         },
         {

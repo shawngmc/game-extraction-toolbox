@@ -33,7 +33,8 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Capcom Beat 'em Up Bundle"
 description = ""
-in_dir_desc = "CBEUB base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CBEUB)"
+default_folder = "C:\Program Files (x86)\Steam\steamapps\common\CBEUB"
+in_dir_desc = "CBEUB Steam folder"
 
 pkg_name_map = {
     "game_00.arc": "ffightj",

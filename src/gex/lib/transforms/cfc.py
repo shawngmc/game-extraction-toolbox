@@ -33,7 +33,8 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Capcom Fighting Collection"
 description = ""
-in_dir_desc = "CFC base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION)"
+default_folder = "C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION"
+in_dir_desc = "CFC Steam folder"
 
 pkg_name_map = {
     "game_00.arc": "vampj",

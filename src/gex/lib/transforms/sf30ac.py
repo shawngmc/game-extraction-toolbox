@@ -16,7 +16,8 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Street Fighter 30th Anniversary Collection"
 description = ""
-in_dir_desc = "SF30AC base folder (Ex. C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection)"
+default_folder = "C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
+in_dir_desc = "SF30AC Steam folder"
 
 pkg_name_map = {
     'bundleStreetFighter.mbundle': 'sf',
@@ -1015,7 +1016,6 @@ def main(game_base_dir, out_path):
     bundle_files = find_files(game_base_dir)
     for file_path in bundle_files:
         with open(file_path, 'rb') as fp:
-            
             file_name = os.path.basename(file_path)
             logger.info(f'Reading files for {file_name}...')
             pkg_name = pkg_name_map.get(file_name)
