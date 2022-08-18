@@ -15,7 +15,7 @@ pipx install game-extraction-toolbox
 
 ### Full
 #### Python 3.7+
-Should by on Linux and MacOSX by default; for Windows, I recommend [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/install-python-windows-10)
+Should be on Linux and MacOSX by default; for Windows, I recommend [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/install-python-windows-10)
 
 #### PIPX
 
@@ -69,3 +69,4 @@ It is illegal. One can discuss economic moral implications all day, but at the e
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!
  **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!
+ **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted
