@@ -17,7 +17,7 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Collection of SaGa Final Fantasy Legend"
 description = ""
-default_folder = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sa・Ga COLLECTION\""
+default_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sa・Ga COLLECTION"
 in_dir_desc = "Collection of SaGa Steam folder"
 
 game_info_map = {
@@ -58,10 +58,6 @@ def find_files(base_path):
     print(bundle_path)
     archive_list = glob.glob(bundle_path)
     return archive_list
-
-
-
-
 
 def main(steam_dir, out_path):
     bundle_files = find_files(steam_dir)

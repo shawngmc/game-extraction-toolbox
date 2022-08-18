@@ -16,7 +16,7 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Street Fighter 30th Anniversary Collection"
 description = ""
-default_folder = "C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
+default_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
 in_dir_desc = "SF30AC Steam folder"
 
 pkg_name_map = {
