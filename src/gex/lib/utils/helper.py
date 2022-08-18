@@ -19,3 +19,8 @@ def preparepath(out_path):
         if not os.access(out_path, os.W_OK):
             raise Exception("Cannot write to output folder.")
 
+def task_module_print_header(name, transform_module):
+    print(f'{name}: {transform_module.title}')
+    if len(transform_module.description) > 0:
+        print(f'  {transform_module.description}')
+    print(f'  Expected input dir: {transform_module.in_dir_desc} (ex. {transform_module.default_folder})')
