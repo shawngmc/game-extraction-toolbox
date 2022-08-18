@@ -10,4 +10,4 @@ def list():
             print(f'{global_name}: {transform_module.title}')
             if len(transform_module.description) > 0:
                 print(f'  {transform_module.description}')
-            print(f'  Expected input dir: {transform_module.in_dir_desc}')
+            print(f'  Expected input dir: {transform_module.in_dir_desc} (ex. {transform_module.default_folder})')

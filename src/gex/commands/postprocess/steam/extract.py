@@ -3,6 +3,8 @@ import importlib
 import click_log
 import logging
 
+from gex.lib.utils import helper
+
 logger = logging.getLogger('gextoolbox')
 
 @click.command()
@@ -12,6 +14,9 @@ logger = logging.getLogger('gextoolbox')
 @click_log.simple_verbosity_option(logger)
 def extract(src_dir, dest_dir, task):
     """Run a task to pull from Steam app or Content pulls (via depot download)"""
+
+    # Ensure the output folder exists or can be made
+    helper.preparepath(dest_dir)
 
     transform_module = importlib.import_module(f'gex.lib.transforms.{task}')
     transform_module.main(src_dir, dest_dir)

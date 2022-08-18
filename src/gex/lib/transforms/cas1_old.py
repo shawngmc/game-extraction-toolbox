@@ -16,7 +16,8 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Capcom Arcade Stadium 1 (OLD)"
 description = "Capcom Arcade Stadium 1 as downloaded from depot using old manifests"
-in_dir_desc = "SteamApps Content Folder (ex. C:\Program Files (x86)\Steam\steamapps\content)"
+default_folder = "C:\Program Files (x86)\Steam\steamapps\content"
+in_dir_desc = "SteamApps Content Folder"
 
 pkg_name_map = {
     "1515951": "1943",
