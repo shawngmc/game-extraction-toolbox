@@ -10,6 +10,7 @@ from gex.commands.tasks.tasks import tasks
 from gex.commands.version import version
 
 logger = logging.getLogger('gextoolbox')
+logger.setLevel(logging.INFO)
 click_log.basic_config(logger)
 
 @click.group()

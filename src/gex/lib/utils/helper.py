@@ -1,6 +1,13 @@
 
+import importlib
+from inspect import isclass
+import inspect
 import os
+import pkgutil
+import sys
+import types
 
+from gex.lib.tasks.basetask import BaseTask
 
 def cleanpath(path_str):
     if path_str.startswith("\""):
@@ -19,8 +26,11 @@ def preparepath(out_path):
         if not os.access(out_path, os.W_OK):
             raise Exception("Cannot write to output folder.")
 
-def task_module_print_header(name, transform_module):
-    print(f'{name}: {transform_module.title}')
-    if len(transform_module.description) > 0:
-        print(f'  {transform_module.description}')
-    print(f'  Expected input dir: {transform_module.in_dir_desc} (ex. {transform_module.default_folder})')
+def load_task(task):
+    package = f'gex.lib.tasks.impl.{task}'
+    transform_module = importlib.import_module(package)
+    clsmembers = inspect.getmembers(transform_module, inspect.isclass)
+    for name, typedef in clsmembers:
+        if not name == 'BaseTask' and issubclass(typedef, BaseTask):
+            return typedef()
+    return None

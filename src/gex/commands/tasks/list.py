@@ -1,12 +1,15 @@
+import logging
 import click
-from gex.lib.transforms import *
-import inspect
+import gex.lib.tasks.impl as impl
+
+logger = logging.getLogger('gextoolbox')
 
 from gex.lib.utils import helper
 
 @click.command()
 def list():
     """List available extraction tasks"""
-    for global_name, transform_module in globals().items():
-        if inspect.ismodule(transform_module) and transform_module.__package__ == 'gex.lib.transforms':
-            helper.task_module_print_header(global_name, transform_module)
+    for task in impl.__all__:
+        task_class = helper.load_task(task)
+        if task_class:
+            logger.info(f"{task_class.get_task_name().rjust(10, ' ')}: {task_class.get_title()}")
