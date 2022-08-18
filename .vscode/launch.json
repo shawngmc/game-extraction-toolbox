@@ -24,6 +24,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Collection of SaGa",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "saga", 
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sa・Ga COLLECTION\"", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\saga\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CFC",
             "type": "python",
             "request": "launch",
