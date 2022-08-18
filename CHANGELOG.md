@@ -1,3 +1,10 @@
+# 0.0.21
+- Improvements
+  - Moved 'postprocess steam' commands to more generic 'tasks' command
+    This is one of the main purposes of this program, and not Steam specific - GOG, etc. should also be considered
+- Internal
+  - Test configs for development should now work on any machine
+
 # 0.0.20
 - Added Games/Collections:
   - Sega Genesis and Mega Drive Collection
