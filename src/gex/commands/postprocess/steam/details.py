@@ -1,7 +1,5 @@
 import os
 import click
-import logging
-import sys
 from rich.console import Console
 from rich.markdown import Markdown
 
@@ -10,7 +8,7 @@ from rich.markdown import Markdown
 def details(task):
     """Get details about a specific Steam extraction task"""
 
-    logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+    # logging.basicConfig(stream=sys.stderr, level=logging.INFO)
     dir_path = os.path.dirname(os.path.realpath(__file__))
     md_path = os.path.join(dir_path, "..", "..", "..", "lib", "transforms", f'{task}.md')
     if not os.path.exists(md_path):

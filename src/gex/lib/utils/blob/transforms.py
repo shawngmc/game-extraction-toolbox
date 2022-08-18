@@ -8,7 +8,8 @@ def merge(chunks):
 
 def custom_split(contents, chunk_sizes):
     if len(contents) != sum(chunk_sizes):
-        raise Exception("Custom split needs the chunk_sizes to equal the input size.")
+        breakpoint()
+        raise Exception(f'Custom split needs the chunk_sizes {sum(chunk_sizes)} to equal the input size {len(contents)}.')
 
     num_chunks = len(chunk_sizes)
     start_offset = 0
@@ -98,13 +99,27 @@ def splice_out(contents, start, length=None, end=None):
     new_contents.extend(contents[end:len(contents)])
     return new_contents
 
+def splice_out_helper(start, length=None, end=None):
+    def slice(contents):
+        return splice_out(contents, start, length, end)
+    return slice
+    
+def slice_helper(start=0, length=None, end=None):
+    if length == None and end == None:
+        raise Exception("Splice out needs a length or end value, but received neither.")
+    elif length != None and end != None:
+        raise Exception("Splice out needs a length or end value, but received both.")
+    elif end == None:
+        end = start + length
+    def slice(contents):
+        return contents[start:end]
+    return slice
 
 def swap_endian(contents):
     new_contents = bytearray(len(contents))
     new_contents[0::2] = contents[1::2]
     new_contents[1::2] = contents[0::2]
     return new_contents
-
 
 def swap_endian_all(chunks):
     temp_chunks = []
@@ -121,10 +136,8 @@ def bit_shuffle(contents, word_size_bytes, bit_order):
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
 
         updated_word = bitarray(word_size_bytes*8*'0')
-        i = 0
-        for next_bit in bit_order:
-            updated_word[i] = shuffle_word[next_bit]
-            i = i + 1
+        for idx, next_bit in enumerate(bit_order):
+            updated_word[idx] = shuffle_word[next_bit]
 
         new_content.extend(updated_word)
     return new_content
@@ -163,10 +176,8 @@ def byte_shuffle(contents, word_size_bytes, byte_order):
         shuffle_word = bytearray(contents[offset:offset+word_size_bytes])
 
         updated_word = bytearray(word_size_bytes)
-        i = 0
-        for next_byte in byte_order:
-            updated_word[i] = shuffle_word[next_byte]
-            i = i + 1
+        for idx, next_byte in enumerate(byte_order):
+            updated_word[idx] = shuffle_word[next_byte]
 
         new_content.extend(updated_word)
     return new_content

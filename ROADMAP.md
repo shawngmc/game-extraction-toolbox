@@ -1,8 +1,6 @@
 # Roadmap
 
 ## Future / Other Tools
-- SEGA Mega Drive and Genesis Classics
-  Files in game dir - https://github.com/farmerbb/RED-Project/wiki/Sega-Mega-Drive-&-Genesis-Classics
 - SNK 40th Anniversary Collection
   Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Samuari Shodown Collection
@@ -27,8 +25,6 @@
   MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 - Namco Museum Archives (Vol 1 and Vol 2)
   https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
-- SF 30th Collection
-  https://github.com/ValadAmoleo/sf30ac-extractor
 - Raiden Legacy
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
 - Zombies ate my neighbor/Ghoul Patrol

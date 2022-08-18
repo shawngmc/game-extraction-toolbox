@@ -1,3 +1,12 @@
+# 0.0.20
+- Added Games/Collections:
+  - Sega Genesis and Mega Drive Collection
+- Functional Improvements
+  - ZIP files now actually compressed
+  - More code reuse
+  - Standardized logging config on all CLI commands (not all USE the logger yet)
+  - Makes output folder if it doesn't exist
+
 # 0.0.19
 - Added Games/Collections:
   - Street Fighter 30th Anniversary Collection
