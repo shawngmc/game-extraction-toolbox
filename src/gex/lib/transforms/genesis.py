@@ -29,7 +29,7 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Sega Genesis and Mega Drive Collection"
 description = ""
-default_folder = "C:\Program Files (x86)\Steam\steamapps\common\Sega Classics"
+default_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sega Classics"
 in_dir_desc = "Sega Classics Steam Folder"
 
 game_info_map = {

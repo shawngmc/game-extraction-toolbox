@@ -33,7 +33,7 @@ logger = logging.getLogger('gextoolbox')
 
 title = "Capcom Beat 'em Up Bundle"
 description = ""
-default_folder = "C:\Program Files (x86)\Steam\steamapps\common\CBEUB"
+default_folder = r"C:\Program Files (x86)\Steam\steamapps\common\CBEUB"
 in_dir_desc = "CBEUB Steam folder"
 
 pkg_name_map = {
