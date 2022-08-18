@@ -33,8 +33,6 @@
 - Blizzard Arcade Collection
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
-- Collection of SaGa Final Fantasy
-  https://github.com/farmerbb/RED-Project/issues/39
 - Sonic Advenutre DX (a ton of hidden Game Gear Sonic games)
   Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Arcade Game Series (by Namco)
