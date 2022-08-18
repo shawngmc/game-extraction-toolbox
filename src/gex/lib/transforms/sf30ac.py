@@ -1017,9 +1017,9 @@ def main(game_base_dir, out_path):
     for file_path in bundle_files:
         with open(file_path, 'rb') as fp:
             file_name = os.path.basename(file_path)
-            logger.info(f'Reading files for {file_name}...')
             pkg_name = pkg_name_map.get(file_name)
             if pkg_name != None:
+                logger.info(f'Reading files for {file_name}...')
                 contents = fp.read()
                 reader = BPListReader(contents)
                 parsed = reader.parse()
@@ -1036,6 +1036,8 @@ def main(game_base_dir, out_path):
                     logger.warning("Could not find merged rom data in mbundle.")
                 elif handler_func == None:
                     logger.warning("Could not find matching handler function.")
+            else:
+                logger.info(f'Skipping {file_name} as it contains no known roms...')
     logger.info("""
         Processing complete. 
     """)
