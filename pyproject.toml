@@ -1,6 +1,6 @@
 [project]
 name = "game-extraction-toolbox"
-version = "0.0.19"
+version = "0.0.20"
 authors = [
   { name="Shawn McNaughton", email="shawngmc@gmail.com" },
 ]
