@@ -27,6 +27,8 @@ Beyond the usual QSound dl-1425.bin and decryption keys, some of the CRC matches
 
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 
+Note that this does NOT extract the Japanese ROMs as those are only included in SF30AC International Edition. As a US player, I can't get them - I've tried!
+
  **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
 ---------------------------------------------|---------------|------------|------------------|-------------|-------------------  
  **Street Fighter**                               | MAME 0.246    | Y          | sf.zip           | Bad         |   
