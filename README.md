@@ -100,5 +100,6 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |
+ **Mega Man Legacy Collection 1**               | 100%   |
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted
  **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!
