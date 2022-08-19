@@ -158,6 +158,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Bubsy",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "bubsy", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\bubsy\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",
