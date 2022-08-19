@@ -13,20 +13,20 @@ class BlizzArcadeTask(BaseTask):
     _details_markdown = '''
 These are the ROMs just sitting in the assets/roms folder.
 
- **Game**                                                    | **Platform**      | **Filename**
--------------------------------------------------------------|---------------|-----------------------------------------
-**Blackthorne Patched                                        | Sega 32X      | Blackthorne_U_Patched.32x
-**Blackthorne**                                              | SNES          | Blackthorne.sfc
-**Blackthorne w/ Z-Patch*                                    | SNES          | Blackthorne_ZPatch.sfc
-**Radical Psycho Machine Racing**                            | SNES          | RadicalPsychoMachineRacing.sfc
-**Rock n' Roll Racing**                                      | Genesis       | RockAndRollRacing_U.bin
-**Rock n' Roll Racing**                                      | SNES          | RockAndRollRacing.sfc
-**Rock n' Roll Racing Definitive Edition A**                 | SNES          | RockAndRollRacing_DefinitiveA.sfc
-**Rock n' Roll Racing Definitive Edition B**                 | SNES          | RockAndRollRacing_DefinitiveB.sfc
-**The Lost Vikings**                                         | Genesis       | LostVikings_U.bin
-**The Lost Vikings**                                         | SNES          | LostVikings.sfc
-**The Lost Vikings Definitive Edition**                      | SNES          | LostVikings_Definitive.sfc
-**The Lost Vikings 2**                                       | SNES          | LostVikings2.sfc
+ **Game**                                                     | **Platform**      | **Filename**  
+---------------------------------------------------------|---------------|-----------------------------------------  
+**Blackthorne Patched**                                      | Sega 32X      | Blackthorne_U_Patched.32x  
+**Blackthorne**                                              | SNES          | Blackthorne.sfc  
+**Blackthorne w/ Z-Patch**                                   | SNES          | Blackthorne_ZPatch.sfc  
+**Radical Psycho Machine Racing**                            | SNES          | RadicalPsychoMachineRacing.sfc  
+**Rock n' Roll Racing**                                      | Genesis       | RockAndRollRacing_U.bin  
+**Rock n' Roll Racing**                                      | SNES          | RockAndRollRacing.sfc  
+**Rock n' Roll Racing Definitive Edition A**                 | SNES          | RockAndRollRacing_DefinitiveA.sfc  
+**Rock n' Roll Racing Definitive Edition B**                 | SNES          | RockAndRollRacing_DefinitiveB.sfc  
+**The Lost Vikings**                                         | Genesis       | LostVikings_U.bin  
+**The Lost Vikings**                                         | SNES          | LostVikings.sfc  
+**The Lost Vikings Definitive Edition**                      | SNES          | LostVikings_Definitive.sfc  
+**The Lost Vikings 2**                                       | SNES          | LostVikings2.sfc  
 
     '''
     _default_input_folder = r"C:\Program Files (x86)\Blizzard Arcade Collection"
