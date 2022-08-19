@@ -30,7 +30,6 @@
 - Zombies ate my neighbor/Ghoul Patrol
   https://www.gog.com/forum/general/rom_based_gog_games_compatible_with_third_party_emulators_thread/post127
 - Bubsy Two-Fur
-- Blizzard Arcade Collection
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Sonic Advenutre DX (a ton of hidden Game Gear Sonic games)

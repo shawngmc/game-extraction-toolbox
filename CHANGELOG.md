@@ -1,12 +1,15 @@
 # 0.0.21
 - Added Games/Collections:
+  - Blizzard Arcade Collection
   - Collection of SaGa/Final Fantasy Legend
 - Improvements:
   - Moved 'postprocess steam' commands to more generic 'tasks' command
     This is one of the main purposes of this program, and not Steam specific - GOG, etc. should also be considered
+  - Added default input folders for Tasks
 - Internal:
   - Test configs for development should now work on any machine
-
+  - Tasks are now slightly more defined using a class
+  
 # 0.0.20
 - Added Games/Collections:
   - Sega Genesis and Mega Drive Collection
