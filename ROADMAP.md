@@ -19,8 +19,6 @@
   https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
 - Atari Vault
   Files exist in game dir
-- Mega Man Legacy Collection 1
-  MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 - Mega Man X Legacy Collection 1
   MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 - Namco Museum Archives (Vol 1 and Vol 2)
