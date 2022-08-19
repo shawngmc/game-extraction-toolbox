@@ -62,8 +62,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                     reader = BPListReader(contents)
                     parsed = reader.parse()
                     
-                    handler_func = globals().get(f'handle_{pkg_name}')
-
+                    handler_func = self.find_handler_func(pkg_name)
                     if parsed != None and handler_func != None:
                         output_files = handler_func(parsed)
                             
@@ -77,11 +76,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                 else:
                     logger.info(f'Skipping {file_name} as it contains no known roms...')
         logger.info("Processing complete.")
-
-
-
-
-
 
 
     _pkg_name_map = {
