@@ -120,7 +120,7 @@ There are a few more regional variants that are only available in PAK files, but
                 display_name = game_info['name']
                 if game_info['region']:
                     display_name += f' ({game_info["region"]})'
-                logger.info(f"Extracting {file_name}: {display_name}") 
+                logger.info(f"Copying {file_name}: {display_name}") 
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
                 except Exception as e:

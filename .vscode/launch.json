@@ -107,6 +107,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing BlizzArcade",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "blizzarcade", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\blizzarcade\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",

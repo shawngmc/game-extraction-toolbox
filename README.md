@@ -65,9 +65,10 @@ It is illegal. One can discuss economic moral implications all day, but at the e
 
 **Collection**                             | **Status**     | **Notes**                                                               
 ---------------------------------|-------------|---------------------------------------------------------------------
+ **Blizzard Arcade Collection**                 | 100%   | 
  **Capcom Arcade Stadium 1**                    | 95%    | Requires Steam depot downloading, a couple shaky ROMs...
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!
+ **Collection of SaGa/Final Fantasy Legend**    | 100%   |
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracte
  **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!
- **Collection of SaGa/Final Fantasy Legend**    | 100%   |
