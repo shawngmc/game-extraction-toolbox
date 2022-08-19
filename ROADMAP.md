@@ -35,7 +35,7 @@
 - Sonic Advenutre DX (a ton of hidden Game Gear Sonic games)
   Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Arcade Game Series (by Namco)
-  Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
+  https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
 
 ## Under Investigation
 - Capcom Arcade Stadium 1
@@ -66,6 +66,8 @@
   Appears to be a Unity port
 - Mortal Kombat 1+2+3 (GOG)
   DOS Version
+- Mortal Kombat Trilogy (GOG)
+  Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
 
