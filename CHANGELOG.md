@@ -1,6 +1,7 @@
 # 0.0.21
 - Added Games/Collections:
   - Blizzard Arcade Collection
+  - Bubsy Two-Fur
   - Collection of SaGa/Final Fantasy Legend
   - Mega Man Legacy Collection 1
   - Mega Man X Legacy Collection 1

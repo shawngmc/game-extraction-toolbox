@@ -11,12 +11,6 @@
   https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
 - Double Dragon Trilogy
   https://github.com/farmerbb/RED-Project/wiki/Double-Dragon-Trilogy
-- Contra Anniversary Collection
-  https://github.com/farmerbb/RED-Project/wiki/Contra-Anniversary-Collection
-- Castlevania Advance Collection
-  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
-- Castlevania Anniversary Collection
-  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
 - Atari Vault
   Files exist in game dir
 - Namco Museum Archives (Vol 1 and Vol 2)
@@ -25,7 +19,6 @@
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
 - Zombies ate my neighbor/Ghoul Patrol
   https://www.gog.com/forum/general/rom_based_gog_games_compatible_with_third_party_emulators_thread/post127
-- Bubsy Two-Fur
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Sonic Advenutre DX (a ton of hidden Game Gear Sonic games)
@@ -42,8 +35,6 @@
 - Mega Man Legacy Collection 2
 - Mortal Kombat Kollection
 - Arcade Collection Anniversary Classics
-- Dungeons & Dragons: Chronicles of Mystara
-  This appears to partially be roms, but the audio might have been converted to something else
 - Neo Geo Pocket Color Selection Vol. 1
 - ColecoVision Flashback
   https://github.com/ZetTheLegendaryHero/Colecovision-Flashback-40-Game-Pack-ROM-Extractor
@@ -54,7 +45,13 @@
 - Atari 50th: Anniversary Collection
 - R-Type Dimensions EX
 
-
+## Uses .PSB.M/.BIN File Container?
+- Contra Anniversary Collection
+  https://github.com/farmerbb/RED-Project/wiki/Contra-Anniversary-Collection
+- Castlevania Advance Collection
+  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
+- Castlevania Anniversary Collection
+  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
 
 
 ## Not Complete / Not ROMs
@@ -66,4 +63,6 @@
   Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
+- Dungeons & Dragons: Chronicles of Mystara
+  Maincpu and Gfx ROMs are there, but audio is completely reworked.
 
