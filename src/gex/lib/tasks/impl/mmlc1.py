@@ -133,16 +133,16 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 
 
     def execute(self, in_dir, out_dir):
-        proteus_path = os.path.join(in_dir, 'Proteus.exe')
-        with open(proteus_path, 'rb') as proteus_file:
-            proteus_data = proteus_file.read()
+        exe_path = os.path.join(in_dir, 'Proteus.exe')
+        with open(exe_path, 'rb') as exe_file:
+            exe_data = exe_file.read()
 
             for game_info in self._game_info_list:
                 logger.info(f"Extracting {game_info['name']}...")
                 game_data = bytearray()
                 game_data.extend(game_info['header'])
                 for section in game_info['sections'].values():
-                    game_data.extend(proteus_data[section['start']:section['start']+section['length']])
+                    game_data.extend(exe_data[section['start']:section['start']+section['length']])
                 
                 with open(os.path.join(out_dir, game_info['filename']), "wb") as out_file:
                     out_file.write(game_data)

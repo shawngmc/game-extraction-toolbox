@@ -3,6 +3,7 @@
   - Blizzard Arcade Collection
   - Collection of SaGa/Final Fantasy Legend
   - Mega Man Legacy Collection 1
+  - Mega Man X Legacy Collection 1
 - Improvements:
   - Moved 'postprocess steam' commands to more generic 'tasks' command
     This is one of the main purposes of this program, and not Steam specific - GOG, etc. should also be considered
