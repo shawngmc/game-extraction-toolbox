@@ -19,14 +19,14 @@ class SagaTask(BaseTask):
 These are extracted from the Unity asset bundle files.
 See https://github.com/farmerbb/RED-Project/issues/39 for more info.s
 
- **Game**                                                    | **Region**      | **Filename**
--------------------------------------------------------------|---------------|-----------------------------------------
-**Final Fantasy Legend**                                     | US            | FinalFantasyLegend.bin
-**Final Fantasy Legend 2**                                   | US            | FinalFantasyLegend2.bin
-**Final Fantasy Legend 3**                                   | US            | FinalFantasyLegend3.bin
-**SaGa**                                                     | Japan         | SaGa.bin
-**SaGa 2**                                                   | Japan         | SaGa2.bin
-**SaGa 3**                                                   | Japan         | SaGa3.bin
+ **Game**                                                    | **Region**        | **Filename**  
+--------------------------------------------------------|---------------|----------------------------  
+ **Final Fantasy Legend**                                    | US            | FinalFantasyLegend.bin  
+ **Final Fantasy Legend 2**                                  | US            | FinalFantasyLegend2.bin  
+ **Final Fantasy Legend 3**                                  | US            | FinalFantasyLegend3.bin  
+ **SaGa**                                                    | Japan         | SaGa.bin  
+ **SaGa 2**                                                  | Japan         | SaGa2.bin  
+ **SaGa 3**                                                  | Japan         | SaGa3.bin  
     '''
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sa・Ga COLLECTION"
     _input_folder_desc = "Collection of SaGa Steam folder"
