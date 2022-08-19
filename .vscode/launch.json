@@ -141,6 +141,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing MMXLC1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmxlc1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmxlc1\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",
