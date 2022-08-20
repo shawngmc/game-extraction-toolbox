@@ -41,9 +41,11 @@
 - 8-bit Adventure Anthology: Volume I	(Shadowgate, The Uninvited, Deja Vu)
   https://gitlab.com/vaiski/romextract/-/blob/master/supported.csv
 - IREM Arcade Hits
-- Teenage Mutant Ninja Turtles: The Cowabunga Collection
-- Atari 50th: Anniversary Collection
 - R-Type Dimensions EX
+
+## Upcoming Releases
+- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
+- Atari 50th: Anniversary Collection (Winter 2022)
 
 ## Uses .PSB.M/.BIN File Container?
 - Contra Anniversary Collection
