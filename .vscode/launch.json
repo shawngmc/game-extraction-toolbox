@@ -175,6 +175,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Double Dragon Trilogy",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ddragontrilogy", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ddragontrilogy\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",
