@@ -3,6 +3,7 @@
   - Blizzard Arcade Collection
   - Bubsy Two-Fur
   - Collection of SaGa/Final Fantasy Legend
+  - Double Dragon Trilogy
   - Mega Man Legacy Collection 1
   - Mega Man X Legacy Collection 1
 - Improvements:

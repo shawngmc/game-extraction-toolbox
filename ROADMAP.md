@@ -9,8 +9,6 @@
   MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 - Disney Aladdin/Lion King Bundle
   https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
-- Double Dragon Trilogy
-  https://github.com/farmerbb/RED-Project/wiki/Double-Dragon-Trilogy
 - Atari Vault
   Files exist in game dir
 - Namco Museum Archives (Vol 1 and Vol 2)
