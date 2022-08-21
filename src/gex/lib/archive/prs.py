@@ -1,13 +1,15 @@
-# SEGA PRS Decompression (LZS variant)
-# From: https://forums.qhimm.com/index.php?topic=11225.0 (Micky)
-# Credits:
-# based on information/comparing output with
-# Nemesis/http://www.romhacking.net/utils/671/
-# puyotools/http://code.google.com/p/puyotools/
-# fuzziqer software prs/http://www.fuzziqersoftware.com/projects.php
+'''
+Module to decompress SEGA .prs files
 
-# TODO: This was quickly converted from python2, and can likely be optimized and made much more pythonic
+SEGA PRS Decompression (LZS variant)
+From: https://forums.qhimm.com/index.php?topic=11225.0 (Micky)
+Credits: based on information/comparing output with
+  Nemesis/http://www.romhacking.net/utils/671/
+  puyotools/http://code.google.com/p/puyotools/
+  fuzziqer software prs/http://www.fuzziqersoftware.com/projects.php
 
+# TODO: This was quickly converted from python2, and can likely be optimized/made more pythonic
+'''
 import array
 
 class DecompressPrs:
@@ -35,6 +37,7 @@ class DecompressPrs:
         return bit
 
     def decompress(self):
+        '''Decompress the PRS file this class was created around'''
         while self.iofs < len(self.ibuf):
             cmd = self._get_bit()
             if cmd:
@@ -43,11 +46,11 @@ class DecompressPrs:
             else:
                 t = self._get_bit()
                 if t:
-                    a = self._get_byte()
-                    b = self._get_byte()
+                    byte_a = self._get_byte()
+                    byte_b = self._get_byte()
 
-                    offset = ((b << 8) | a) >> 3
-                    amount = a & 7
+                    offset = ((byte_b << 8) | byte_a) >> 3
+                    amount = byte_a & 7
                     if self.iofs < len(self.ibuf):
                         if amount == 0:
                             amount = self._get_byte() + 1

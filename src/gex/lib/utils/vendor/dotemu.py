@@ -25,26 +25,26 @@ def reencode_gfx(contents, layout):
         temp_layout = copy.deepcopy(mod_layout)
         temp_layout['total'] = len(dest) * 8 // mod_layout['charincrement'] * num // den
 
-        def map_plane_offset(x):
-            if isinstance(x, list):
-                [num, den, *add] = x
+        def map_plane_offset(plane_offset):
+            if isinstance(plane_offset, list):
+                [num, den, *add] = plane_offset
                 add = add[0] if add else 0
                 return len(dest) * 8 * num // den + add
             else:
-                return x
+                return plane_offset
         temp_layout['planeoffset'] = list(map(map_plane_offset, mod_layout['planeoffset']))
         mod_layout = temp_layout
 
     i = 0
     for c in range(0, mod_layout['total']):
         charoffset = mod_layout['charincrement'] * c
-        for y in range(0, mod_layout['height']):
-            yoffset = charoffset + mod_layout['yoffset'][y]
-            for x in range(0, mod_layout['width']):
-                xoffset = yoffset + mod_layout['xoffset'][x]
-                for p in range(0, num_planes):
-                    offset = xoffset + mod_layout['planeoffset'][p]
-                    dest[offset >> 3] = dest[offset >> 3] | ((contents[i] >> num_planes-1-p) & 1) << (~offset & 7)
+        for curr_height in range(0, mod_layout['height']):
+            yoffset = charoffset + mod_layout['yoffset'][curr_height]
+            for curr_width in range(0, mod_layout['width']):
+                xoffset = yoffset + mod_layout['xoffset'][curr_width]
+                for curr_plane in range(0, num_planes):
+                    offset = xoffset + mod_layout['planeoffset'][curr_plane]
+                    dest[offset >> 3] = dest[offset >> 3] | ((contents[i] >> num_planes-1-curr_plane) & 1) << (~offset & 7)
                 i += 1
 
     return dest

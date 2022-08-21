@@ -1,6 +1,5 @@
 '''Implementation of cbeub: Capcom Beat 'em Up Bundle'''
 import re
-import traceback
 import glob
 import logging
 import os
@@ -21,7 +20,6 @@ class CBEUBTask(BaseTask):
     _details_markdown = '''
 The notes I found were at https://web.archive.org/web/20220213232104/http://blog.livedoor.jp/scrap_a/archives/23114141.html.
 This was a Japanese set of shell scripts and odd generic operation executables. There is some weird encoding here too.
-
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 
  **Game**                             | **MAME Ver.**     | **FB Neo**     | **ENG Filename**     | **ENG CRC**     | **JP Filename**     | **JP CRC**     | **Notes**  
@@ -33,7 +31,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
  **Warriors of Fate**                 | None          | N          | wof.zip          | Bad         | wofj.zip        | Bad        | (2) (4)  
  **Powered Gear**                     | MAME 0.139    | N          | pgear.zip        | OK          | armwar.zip      | OK         | (1)  
  **Battle Circuit**                   | MAME 0.139    | N          | batcir.zip       | OK          | batcirj.zip     | OK         | (1)  
-
 
 1. These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require
 2. These ROMs play fine, even in the current MAME, despite the bad CRCs. The bad CRCs are small ancillary files that aren't strictly required or included, but stubbed out to pass checks. 
@@ -65,9 +62,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                     handler_func = self.find_handler_func(pkg_name)
                     if merged_rom_contents is not None and handler_func is not None:
                         output_files = handler_func(merged_rom_contents)
-
                         for output_file in output_files:
-                            with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
+                            out_path = os.path.join(out_dir, output_file['filename'])
+                            with open(out_path, "wb") as out_file:
                                 out_file.write(output_file['contents'])
                     elif merged_rom_contents is None:
                         logger.warning(
@@ -75,8 +72,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                     elif handler_func is None:
                         logger.warning(
                             "Could not find matching handler function.")
-            except Exception as e:
-                traceback.print_exc()
+            except Exception as _:
                 logger.warning(f'Error while processing {file_path}!')
 
         logger.info("Processing complete.")
@@ -106,14 +102,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             if re.search(r'game_\d\d.arc', candidate):
                 archive_list.append(candidate)
         return archive_list
-
-    def _placeholder_generator(self, file_map):
-        def create_placeholders(_):
-            out_files = {}
-            for filename, size in file_map.items():
-                out_files[filename] = bytes(size * b'\0')
-            return out_files
-        return create_placeholders
 
     def _deshuffle_gfx_common(self, start, length, filenames, num_deinterleave_split, do_split):
         def gfx(contents):
@@ -163,10 +151,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return audio
 
     ################################################################################
-    # START Final Fight                                                            #
+    # Final Fight                                                                  #
     ################################################################################
-    # game_00.arc: Final Fight (JP)
-    # game_01.arc: Final Fight
 
     def _handle_ffight(self, merged_contents):
         out_files = []
@@ -222,7 +208,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             's224b.1a': 0x117,
             'iob1.11e': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'ffight.zip', 'contents': zip_contents})
@@ -247,7 +233,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         def maincpu(contents):
             contents = contents[0x40:0x100040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-
             new_chunks = []
             for oldchunk in chunks:
                 new_chunks.extend(
@@ -293,22 +278,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             's222b.1a': 0x117,
             'lwio.12c': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'ffightj.zip', 'contents': zip_contents})
-
         return out_files
 
     ################################################################################
-    # END Final Fight                                                              #
+    # The King of Dragons                                                          #
     ################################################################################
-
-    ################################################################################
-    # START The King of Dragons                                                    #
-    ################################################################################
-    # game_10.arc: The King of Dragons (JP)
-    # game_11.arc: The King of Dragons
 
     def _handle_kod(self, merged_contents):
         out_files = []
@@ -369,7 +347,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'kod.zip', 'contents': zip_contents})
@@ -392,7 +370,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             chunk_5 = contents[0x080040:0x100040]
             contents = contents[0x40:0x080040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-
             new_chunks = []
             for oldchunk in chunks:
                 new_chunks.extend(
@@ -436,22 +413,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'kodj.zip', 'contents': zip_contents})
-
         return out_files
 
     ################################################################################
-    # END The King of Dragons                                                      #
+    # Captain Commando                                                             #
     ################################################################################
-
-    ################################################################################
-    # START Captain Commando                                                       #
-    ################################################################################
-    # game_20.arc: Captain Commando (JP)
-    # game_21.arc: Captain Commando
 
     def _handle_captcomm(self, merged_contents):
         out_files = []
@@ -469,13 +439,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             maincpu_area = contents[0x40:0x140040]
             deint_chunks = transforms.deinterleave(
                 maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
-
             chunks = []
             chunks.append(maincpu_area[0x0:0x80000])
             chunks.append(deint_chunks[0])
             chunks.append(maincpu_area[0x80000:0x100000])
             chunks.append(deint_chunks[1])
-
             return dict(zip(maincpu_filenames, chunks))
         func_map['maincpu'] = maincpu
 
@@ -511,12 +479,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632b.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append(
-            {'filename': 'captcomm.zip', 'contents': zip_contents})
-
+            {'filename': 'captcomm.zip', 'contents': zip_contents}
+        )
         return out_files
 
     def _handle_captcommj(self, merged_contents):
@@ -577,7 +545,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append(
@@ -586,14 +554,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Captain Commando                                                         #
+    # Knights of the Round                                                         #
     ################################################################################
-
-    ################################################################################
-    # START Knights of the Round                                                   #
-    ################################################################################
-    # game_30.arc: Knights of the Round (JP)
-    # game_31.arc: Knights of the Round
 
     def _handle_knights(self, merged_contents):
         out_files = []
@@ -644,7 +606,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'knights.zip', 'contents': zip_contents})
@@ -700,7 +662,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ioc1.ic7': 0x104,
             'c632.ic1': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append(
@@ -709,28 +671,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Knights of the Round                                                     #
+    # Warriors of Fate                                                             #
     ################################################################################
-
-    ################################################################################
-    # START Warriors of Fate                                                       #
-    ################################################################################
-    # game_40.arc: Warriors of Fate (JP)
-    # game_41.arc: Warriors of Fate
-
-    # wof map from script
-    #           0x000000    0x000040                IBIS Header
-    # maincpu   0x000040    0x100040                OK
-    #           0x100040    0x400040                Padding (All FF)
-    # gfx       0x400040    0x800040                OK
-    # audiocpu  0x800040    0x828040   (with gap)   BAD CRC, but looks like the audiocpu code from other ROMS (version header)
-    #           |
-    #           |  0x800040    0x808040                Different data - does not look like most audiocpu - no version header, a lot of it looks like junk filler
-    #           |  0x808040    0x810040                Padding (All FF) - similar padding is only 0x075DB - 0x08000 in tk2_qa.5k
-    #           |  0x810040    0x828040                Matches 0x08000 - 0x20000 in wof's tk2_qa.5k
-    #           0x828040    0x830040                Unknown
-    #           0x830040    0x850040                Padding (All FF)
-    # qsound    0x850040    0xA50040                OK
 
     def _wof_audio(self, filenames):
         def audio(contents):
@@ -804,7 +746,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'd9k1.9k': 0x117,
             'd10f1.10f': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'wof.zip', 'contents': zip_contents})
@@ -865,7 +807,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'd9k1.9k': 0x117,
             'd10f1.10f': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'wofj.zip', 'contents': zip_contents})
@@ -873,23 +815,14 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Warriors of Fate                                                         #
+    # Armored Warriors                                                             #
     ################################################################################
-
-    ################################################################################
-    # START Armored Warriors                                                       #
-    ################################################################################
-    # game_50.arc: Powered Gear: Strategic Variant Armor Equipment (JP)
-    # game_51.arc: Armored Warriors
 
     def _armwar_gfx(self, contents):
-        # Cut out the section
         contents = contents[0x0800040:0x1C00040]
 
-        # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
         contents = capcom.common_gfx_deshuffle(contents)
 
-        # Split it
         chunks = transforms.equal_split(contents, num_chunks=20)
 
         # Interleave each pair of chunks
@@ -899,7 +832,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                 [oddchunk, evenchunk], word_size=8))
         chunks = new_chunks
 
-        # Merge the chunks back together
         contents = transforms.merge(chunks)
 
         # Deinterleave the chunks into our files
@@ -995,24 +927,14 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Armored Warriors                                                         #
+    # Battle Circuit                                                               #
     ################################################################################
-
-    ################################################################################
-    # START Battle Circuit                                                         #
-    ################################################################################
-    # game_60.arc: Battle Circuit (JP)
-    # game_61.arc: Battle Circuit
-    # Battle Circuit has some weird graphics interleaving that took some time to recreate from the Japanese script.
-    # None the less, it's in - and only the maincpu differs between the two!
 
     def _batcir_gfx(self, contents):
-        # Cut out the section
         contents = contents[0x0800040:0x1800040]
 
         contents = capcom.common_gfx_deshuffle(contents)
 
-        # Split it
         chunks = transforms.equal_split(contents, num_chunks=16)
 
         # Interleave each pair of chunks
@@ -1022,7 +944,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                 [oddchunk, evenchunk], word_size=8))
         chunks = new_chunks
 
-        # Merge the chunks back together
         contents = transforms.merge(chunks)
 
         # Deinterleave the chunks into our 4 files
@@ -1105,7 +1026,3 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         out_files.append({'filename': 'batcirj.zip', 'contents': helpers.build_rom(
             merged_contents, func_map)})
         return out_files
-
-    ################################################################################
-    # END Battle Circuit                                                           #
-    ################################################################################

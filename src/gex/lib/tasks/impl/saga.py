@@ -1,5 +1,4 @@
 '''Implmentation of saga: Collection of SaGa Final Fantasy Legend'''
-import traceback
 import glob
 import logging
 import os
@@ -44,8 +43,7 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
                         rom_data = rom_asset.read()
                         with open(os.path.join(out_dir, game_info['filename']), "wb") as out_file:
                             out_file.write(rom_data.script)
-                except Exception as e:
-                    traceback.print_exc()
+                except Exception as _:
                     logger.warning(f'Error while processing {file_path}!')
             else:
                 logger.info(f'Skipping {file_path} as it contains no known ROMS!')
@@ -53,7 +51,8 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
         logger.info("Processing complete.")
 
     def _find_files(self, base_path):
-        bundle_path = os.path.join(base_path, 'Sa・Ga COLLECTION_Data', 'StreamingAssets', 'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle')
+        bundle_path = os.path.join(base_path, 'Sa・Ga COLLECTION_Data', 'StreamingAssets',
+            'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle')
         archive_list = glob.glob(bundle_path)
         return archive_list
 

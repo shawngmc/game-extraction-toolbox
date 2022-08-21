@@ -26,11 +26,14 @@ def extract(in_file, out_dir):
                 try:
                     type_id = identify.enhanced_magic_from_buffer(contents)
                     if not type_id == identify.ARC:
-                        logger.warning(f'Found {type_id} when identifying file, will try to extract anyway...')
+                        logger.warning(f'Found {type_id} file, will try to extract anyway...')
                 except Exception as _:
                     logger.warning('Cannot typecheck!')
 
-                out_file_path = os.path.join(helper.cleanpath(out_dir), file_entry['path'].replace("\\", os.sep))
+                out_file_path = os.path.join(
+                    helper.cleanpath(out_dir),
+                    file_entry['path'].replace("\\", os.sep)
+                )
                 os.makedirs(os.path.dirname(out_file_path), exist_ok = True)
                 with open(out_file_path, "wb") as out_file:
                     out_file.write(contents)

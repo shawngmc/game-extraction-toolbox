@@ -12,8 +12,10 @@ def list_files(list_dir):
     return files
 
 @click.command()
-@click.option('--srcdir', 'src_dir', help='path to directory with cleanrip output files', required=True)
-@click.option('--destdir', 'dest_dir', help='path to send reassembled, verified ROMs to', required=True)
+@click.option('--srcdir', 'src_dir', 
+    help='path to directory with cleanrip output files', required=True)
+@click.option('--destdir', 'dest_dir', 
+    help='path to send reassembled, verified ROMs to', required=True)
 def cleanrip(src_dir, dest_dir):
     """Clean up Cleanrip dumps"""
 
