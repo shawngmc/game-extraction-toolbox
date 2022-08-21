@@ -1,8 +1,10 @@
+'''Module to handle KPKA archive (Capcom RE Engine)'''
 import sys
 import zlib
 import logging
 
 def extract(bytes_obj):
+    '''Extract a KPKA archive (Capcom RE Engine)'''
     magic_string = bytes_obj[0:4].decode("utf-8")
     if magic_string != "KPKA":
         raise Exception("Not a valid KPKA archive!")

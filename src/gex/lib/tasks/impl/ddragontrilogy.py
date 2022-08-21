@@ -99,19 +99,31 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '21j-3.24',
             '21j-4-1.23'
         ]
-        func_map['maincpu'] = helpers.equal_split_helper('ddragon_hd6309.bin', maincpu_filenames)
+        func_map['maincpu'] = helpers.equal_split_helper(
+            'ddragon_hd6309.bin',
+            maincpu_filenames
+        )
 
         # Sub
-        func_map['sub'] = helpers.name_file_helper('ddragon_hd63701.bin', '21jm-0.ic55')
+        func_map['sub'] = helpers.name_file_helper(
+            'ddragon_hd63701.bin',
+            '21jm-0.ic55'
+        )
 
         # SoundCPU
-        func_map['soundcpu'] = helpers.name_file_helper('ddragon_m6809.bin', '21j-0-1')
+        func_map['soundcpu'] = helpers.name_file_helper(
+            'ddragon_m6809.bin',
+            '21j-0-1'
+        )
 
         # Gfx 1
         gfx1_filesnames = [
             '21j-5'
         ]
-        func_map['gfx1'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
+        func_map['gfx1'] = self._dotemu_reencode_gfx_helper(
+            'ddragon_gfxdata1.bin',
+            gfx1_filesnames,
+            self._DDRAGON_CHAR_LAYOUT)
 
         # Gfx 2
         gfx2_filesnames = [
@@ -124,8 +136,11 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '21j-g',
             '21j-h'
         ]
-        func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
-
+        func_map['gfx2'] = self._dotemu_reencode_gfx_helper(
+            'ddragon_gfxdata2.bin',
+            gfx2_filesnames,
+            self._DDRAGON_TILE_LAYOUT
+        )
 
         # Gfx 3
         gfx3_filesnames = [
@@ -134,8 +149,11 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '21j-i',
             '21j-j'
         ]
-        func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
-
+        func_map['gfx3'] = self._dotemu_reencode_gfx_helper(
+            'ddragon_gfxdata3.bin',
+            gfx3_filesnames,
+            self._DDRAGON_TILE_LAYOUT
+        )
 
         # ADPCM
         adpcm_filenames = [
@@ -166,16 +184,26 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         func_map['maincpu'] = helpers.equal_split_helper('ddragon2_hd6309.bin', maincpu_filenames)
 
         # Sub
-        func_map['sub'] = helpers.name_file_helper('ddragon2_z80sub.bin', '26ae-0.bin')
+        func_map['sub'] = helpers.name_file_helper(
+            'ddragon2_z80sub.bin',
+            '26ae-0.bin'
+        )
 
         # SoundCPU
-        func_map['soundcpu'] = helpers.name_file_helper('ddragon2_z80sound.bin', '26ad-0.bin')
+        func_map['soundcpu'] = helpers.name_file_helper(
+            'ddragon2_z80sound.bin',
+            '26ad-0.bin'
+        )
 
         # Gfx 1
         gfx1_filesnames = [
             '26a8-0e.19'
         ]
-        func_map['gfx1'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
+        func_map['gfx1'] = self._dotemu_reencode_gfx_helper(
+            'ddragon2_gfxdata1.bin',
+            gfx1_filesnames,
+            self._DDRAGON_CHAR_LAYOUT
+        )
 
         # Gfx 2
         gfx2_filesnames = [
@@ -186,28 +214,42 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '26j3-0.bin',
             '26a10-0.bin'
         ]
-        func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx2'] = self._dotemu_reencode_gfx_helper(
+            'ddragon2_gfxdata2.bin',
+            gfx2_filesnames,
+            self._DDRAGON_TILE_LAYOUT
+        )
 
         # Gfx 3
         gfx3_filesnames = [
             '26j4-0.bin',
             '26j5-0.bin'
         ]
-        func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx3'] = self._dotemu_reencode_gfx_helper(
+            'ddragon2_gfxdata3.bin',
+            gfx3_filesnames,
+            self._DDRAGON_TILE_LAYOUT
+        )
 
         # OKI
         oki_filenames = [
             '26j6-0.bin',
             '26j7-0.bin'
         ]
-        func_map['oki'] = helpers.equal_split_helper('ddragon2_oki.bin', oki_filenames)
+        func_map['oki'] = helpers.equal_split_helper(
+            'ddragon2_oki.bin',
+            oki_filenames
+        )
 
         # PROMs
         prom_file_map = {
             '21j-k-0': 0x100,
             'prom.16': 0x200
         }
-        func_map['prom'] = helpers.custom_split_helper('proms.bin', prom_file_map)
+        func_map['prom'] = helpers.custom_split_helper(
+            'proms.bin',
+            prom_file_map
+        )
 
         return {'filename': 'ddragon2.zip', 'contents': helpers.build_rom(in_files, func_map)}
 
@@ -286,7 +328,8 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         def gfx2(in_files):
             contents = in_files['ddragon3_gfxdata2.bin']
             contents = dotemu.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
-            chunks = transforms.custom_split(contents, [0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000])
+            chunks = transforms.custom_split(contents,
+                [0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000])
             return dict(zip(gfx2_filenames, chunks))
         func_map['gfx2'] = gfx2
 
