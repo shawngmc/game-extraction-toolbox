@@ -1,4 +1,3 @@
-import copy
 import glob
 import logging
 import os
@@ -6,6 +5,7 @@ import os
 from gex.lib.utils.blob import transforms
 from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.utils.vendor import dotemu
 
 logger = logging.getLogger('gextoolbox') 
 
@@ -55,45 +55,10 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
                 files[os.path.basename(file_path)] = file_data
         return files
 
-    def _dotemu_encode_gfx(self, contents, layout):
-        # This appears to be rebuilding GFX roms from sprites.
-        modLayout = copy.deepcopy(layout)
-        numPlanes = modLayout['planes']
-        dest = bytearray(len(contents) * numPlanes // 8)
-
-        if (isinstance(modLayout['total'], list)):
-            [num, den] = modLayout['total']
-            tempLayout = copy.deepcopy(modLayout)
-            tempLayout['total'] = len(dest) * 8 // modLayout['charincrement'] * num // den
-
-            def map_plane_offset(x):
-                if isinstance(x, list):
-                    [num, den, *add] = x
-                    add = add[0] if add else 0
-                    return len(dest) * 8 * num // den + add
-                else:
-                    return x
-            tempLayout['planeoffset'] = list(map(map_plane_offset, modLayout['planeoffset']))
-            modLayout = tempLayout
-
-        i = 0
-        for c in range(0, modLayout['total']):
-            charoffset = modLayout['charincrement'] * c
-            for y in range(0, modLayout['height']):
-                yoffset = charoffset + modLayout['yoffset'][y]
-                for x in range(0, modLayout['width']):
-                    xoffset = yoffset + modLayout['xoffset'][x]
-                    for p in range(0, numPlanes):
-                        offset = xoffset + modLayout['planeoffset'][p]
-                        dest[offset >> 3] = dest[offset >> 3] | ((contents[i] >> numPlanes-1-p) & 1) << (~offset & 7)
-                    i += 1
-
-        return dest
-
-    def _dotemu_encode_gfx_helper(self, in_file_name, filenames, layout):
+    def _dotemu_reencode_gfx_helper(self, in_file_name, filenames, layout):
         def encode(in_files):
             contents = in_files[in_file_name]
-            contents = self._dotemu_encode_gfx(contents, layout)
+            contents = dotemu.reencode_gfx(contents, layout)
             chunks = transforms.equal_split(contents, num_chunks=len(filenames))
             return dict(zip(filenames, chunks))
         return encode
@@ -146,7 +111,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         gfx1_filesnames = [
             '21j-5'
         ]
-        func_map['gfx1'] = self._dotemu_encode_gfx_helper('ddragon_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
+        func_map['gfx1'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
 
         # Gfx 2
         gfx2_filesnames = [
@@ -159,7 +124,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '21j-g', 
             '21j-h'
         ]
-        func_map['gfx2'] = self._dotemu_encode_gfx_helper('ddragon_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
 
 
         # Gfx 3
@@ -169,7 +134,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '21j-i', 
             '21j-j'
         ]
-        func_map['gfx3'] = self._dotemu_encode_gfx_helper('ddragon_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
 
 
         # ADPCM
@@ -210,7 +175,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         gfx1_filesnames = [
             '26a8-0e.19'
         ]
-        func_map['gfx1'] = self._dotemu_encode_gfx_helper('ddragon2_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
+        func_map['gfx1'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata1.bin', gfx1_filesnames, self._DDRAGON_CHAR_LAYOUT)
 
         # Gfx 2
         gfx2_filesnames = [
@@ -221,14 +186,14 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             '26j3-0.bin', 
             '26a10-0.bin'
         ]
-        func_map['gfx2'] = self._dotemu_encode_gfx_helper('ddragon2_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
 
         # Gfx 3
         gfx3_filesnames = [
             '26j4-0.bin', 
             '26j5-0.bin'
         ]
-        func_map['gfx3'] = self._dotemu_encode_gfx_helper('ddragon2_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
+        func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
 
         # OKI
         oki_filenames = [
@@ -300,7 +265,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx1(in_files):
             contents = in_files['ddragon3_gfxdata1.bin']
-            contents = self._dotemu_encode_gfx(contents, self._WWF_TILE_LAYOUT)
+            contents = dotemu.reencode_gfx(contents, self._WWF_TILE_LAYOUT)
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
             contents = transforms.merge(chunks)
             chunks = transforms.equal_split(contents, len(gfx1_filenames))
@@ -320,7 +285,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx2(in_files):
             contents = in_files['ddragon3_gfxdata2.bin']
-            contents = self._dotemu_encode_gfx(contents, self._WWF_SPRITE_LAYOUT)
+            contents = dotemu.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
             chunks = transforms.custom_split(contents, [0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000])
             return dict(zip(gfx2_filenames, chunks))
         func_map['gfx2'] = gfx2
