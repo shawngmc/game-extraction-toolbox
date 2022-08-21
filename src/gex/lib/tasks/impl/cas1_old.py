@@ -1,3 +1,4 @@
+'''Implementation of cas1_old: Capcom Arcade Stadium 1 (OLD)'''
 import glob
 import zipfile
 import logging

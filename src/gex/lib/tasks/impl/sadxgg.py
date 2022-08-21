@@ -1,3 +1,4 @@
+'''Implementation of sadxgg: Sonic Adventure DX - Game Gear'''
 import logging
 import os
 

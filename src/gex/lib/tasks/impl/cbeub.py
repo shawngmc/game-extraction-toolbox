@@ -1,22 +1,4 @@
-
-
-# Extraction Script for Capcom Beat 'em Up Bundle
-
-# General Extraction Process
-# - Extract ARC Archive
-# - Pull bin/ROMNAME file
-# - Split it into parts using offsets/length
-#   - Header (60b)
-#   - MainCPU (???k)
-#   - ??? inv gfx (???k)
-#   - AudioCPU (???k)
-#   - QSound (???k)
-# - Process each part
-#   - maincpu: geometry
-#   - gfx: geometry, deinterleave, endian swap?
-#   - audiocpu: geometry
-#   - qsound: geometry + endian swap
-
+'''Implementation of cbeub: Capcom Beat 'em Up Bundle'''
 import re
 import traceback
 import glob

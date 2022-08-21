@@ -1,3 +1,4 @@
+'''Implmentation of saga: Collection of SaGa Final Fantasy Legend'''
 import traceback
 import glob
 import logging
