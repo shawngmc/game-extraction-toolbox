@@ -1,3 +1,4 @@
+'''Implementation of ddragontrilogy: Double Dragon Trilogy'''
 import glob
 import logging
 import os

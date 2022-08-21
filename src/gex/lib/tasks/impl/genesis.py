@@ -1,3 +1,4 @@
+'''Implementation of genesis: Sega Genesis and Mega Drive Collection'''
 import shutil
 import glob
 import logging

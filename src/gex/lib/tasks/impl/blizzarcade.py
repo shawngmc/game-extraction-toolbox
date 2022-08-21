@@ -1,3 +1,4 @@
+'''Implementation of blizzarcade: Blizzard Arcade Collection'''
 import logging
 import os
 import shutil

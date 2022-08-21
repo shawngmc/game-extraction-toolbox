@@ -1,3 +1,4 @@
+'''Implementation of sf30ac: Street Fighter 30th Anniversary Collection'''
 import glob
 import logging
 import os
@@ -178,26 +179,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # START Street Fighter                                                         #
     ################################################################################
 
-        # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".bplanes.rom", ["sf-39.2k", "sf-38.1k", "sf-41.4k", "sf-40.3k"], 128 * 1024))
-        # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".mplanes.rom", ["sf-25.1d", "sf-28.1e", "sf-30.1g", "sf-34.1h", "sf-26.2d", "sf-29.2e", "sf-31.2g", "sf-35.2h"], 128 * 1024))
-        # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".sprites.rom", ["sf-15.1m", "sf-16.2m", "sf-11.1k", "sf-12.2k", "sf-07.1h", "sf-08.2h", "sf-03.1f", "sf-17.3m", "sf-18.4m", "sf-13.3k", "sf-14.4k", "sf-09.3h", "sf-10.4h","sf-05.3f"], 128 * 1024))
-        # sf30th_sf.files.append(RenameGameFile(sf30th_sf.extracted_folder_name +".alpha.rom", "sf-27.4d"))
-        # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".maps.rom", ["sf-37.4h", "sf-36.3h", "sf-32.3g", "sf-33.4g"], 64 * 1024))
-        # sf30th_sf.files.append(RenameGameFile(sf30th_sf.extracted_folder_name +".z80", "sf-02.7k"))
-        # sf30th_sf.files.append(SplitGameFile(sf30th_sf.extracted_folder_name +".u.samples.rom", ["sfu-00.1h", "sf-01.1k"], 128 * 1024))
-        # sf30th_sf.files.append(SplitGameFileEvenOdd(sf30th_sf.extracted_folder_name +".u.68k", [("sfd-19.2a", "sfd-22.2c"),("sfd-20.3a", "sfd-23.3c"),("sfd-21.4a", "sfd-24.4c")], 64 * 1024))
-
     def _handle_sf(self, mbundle_entries):
-        # C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection\Bundle\bundleStreetFighter.mbundle
-        # StreetFighter.z80
-        # StreetFighter.alpha.rom
-        # StreetFighter.u.68k
-        # StreetFighter.sprites.rom
-        # StreetFighter.u.samples.rom
-        # StreetFighter.maps.rom
-        # StreetFighter.bplanes.rom
-        # StreetFighter.mplanes.rom
-
         func_map = {}
         in_files = {}
         in_files['z80'] = mbundle_entries.get("StreetFighter.z80")

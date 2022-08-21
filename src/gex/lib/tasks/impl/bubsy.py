@@ -1,4 +1,4 @@
-
+'''Implementation of bubsy: Bubsy Two-Fur'''
 import shutil
 import logging
 import os

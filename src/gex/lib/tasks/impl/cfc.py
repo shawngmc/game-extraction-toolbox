@@ -1,20 +1,4 @@
-# Extraction Script for Capcom Fighting Collection
-
-# General Extraction Process
-# - Extract ARC Archive
-# - Pull bin/ROMNAME file
-# - Split it into parts using offsets/length
-#   - Header (60b)
-#   - MainCPU (???k)
-#   - ??? inv gfx (???k)
-#   - AudioCPU (???k)
-#   - QSound (???k)
-# - Process each part
-#   - maincpu: geometry
-#   - gfx: geometry, deinterleave, endian swap?
-#   - audiocpu: geometry
-#   - qsound: geometry + endian swap
-
+'''Implementation of cfc: Capcom Fighting Collection'''
 import re
 import traceback
 import glob
@@ -23,7 +7,6 @@ import os
 
 from gex.lib.archive import arc
 from gex.lib.utils.vendor import capcom
-from gex.lib.utils.blob import transforms
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 

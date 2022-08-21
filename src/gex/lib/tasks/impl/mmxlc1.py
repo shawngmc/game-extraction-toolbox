@@ -1,3 +1,4 @@
+'''Implementation of mmxlc1: Mega Man X Legacy Collection 1'''
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
