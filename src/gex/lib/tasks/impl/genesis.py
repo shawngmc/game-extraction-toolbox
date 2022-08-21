@@ -1,5 +1,4 @@
 import shutil
-import traceback
 import glob
 import logging
 import os
@@ -103,8 +102,7 @@ There are a few more regional variants that are only available in PAK files, but
                 logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
-                except Exception as e:
-                    traceback.print_exc()
+                except Exception as _:
                     logger.warning(f'Error while processing {file_path}!')
             else:
                 logger.info(f'Skipping unmatched file {file_path}!')

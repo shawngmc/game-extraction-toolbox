@@ -3,14 +3,13 @@ import re
 import zlib
 import click
 
-def list_files(dir):
+def list_files(list_dir):
     files = []
-    for (dirpath, dirnames, filenames) in os.walk(dir):
+    for (_, _, filenames) in os.walk(list_dir):
         for filename in filenames:
             files.append(os.path.join(dir, filename))
         break
     return files
-
 
 @click.command()
 @click.option('--srcdir', 'src_dir', help='path to directory with cleanrip output files', required=True)

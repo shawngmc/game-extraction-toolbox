@@ -15,8 +15,8 @@ def slice_cli(in_file, out_file, start, length):
 
     def read_bin_file(path):
         try:
-            with open(path, "rb") as f:
-                content = f.read()
+            with open(path, "rb") as file:
+                content = file.read()
                 return content
         except IOError:
             logger.error(f"Error reading {path}!")
@@ -24,8 +24,8 @@ def slice_cli(in_file, out_file, start, length):
 
     def write_bin_file(data, path):
         try:
-            with open(path, "wb") as f:
-                f.write(data)
+            with open(path, "wb") as file:
+                file.write(data)
         except IOError:
             logger.error(f"Error writing {path}!")
             exit()

@@ -1,7 +1,7 @@
 import os
+import logging
 import click
 import click_log
-import logging
 
 from gex.lib.utils import helper
 
@@ -30,7 +30,7 @@ def extract(src_dir, dest_dir, task):
     if not os.path.exists(src_dir):
         logger.error(f"Source dir {src_dir} does not exist; see task details for more info")
         exit()
-    
+
     # Ensure the output folder exists or can be made
     helper.preparepath(dest_dir)
 

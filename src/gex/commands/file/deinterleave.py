@@ -1,6 +1,6 @@
+import logging
 import click
 import click_log
-import logging
 
 from gex.lib.utils.blob import transforms
 
@@ -24,19 +24,18 @@ def deinterleave(in_file, out_file_base, num_ways, word_size):
     logger.info("Done.")
 
 def read_bin_file(path):
-    try: 
-        with open(path, "rb") as f:
-            content = f.read()
+    try:
+        with open(path, "rb") as file:
+            content = file.read()
             return content
     except IOError:
         logger.error(f"Error reading {path}!")
-        exit()  
+        exit()
 
 def write_bin_file(data, path):
-    try: 
-        with open(path, "wb") as f:
-            f.write(data)
+    try:
+        with open(path, "wb") as file:
+            file.write(data)
     except IOError:
         logger.error(f"Error writing {path}!")
         exit()
-

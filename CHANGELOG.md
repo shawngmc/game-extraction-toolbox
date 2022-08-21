@@ -16,6 +16,7 @@
 - Internal:
   - Test configs for development should now work on any machine
   - Tasks are now slightly more defined using a class
+  - First major lint/code style effort; nowhere near done, but much more idiomatic
   
 # 0.0.20
 - Added Games/Collections:
