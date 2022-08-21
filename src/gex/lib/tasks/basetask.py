@@ -1,4 +1,3 @@
-
 class BaseTask:
     _task_name = None
     _title = None

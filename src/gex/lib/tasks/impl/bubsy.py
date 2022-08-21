@@ -3,10 +3,9 @@ import shutil
 import traceback
 import logging
 import os
-
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class BubsyTask(BaseTask):
     _task_name = "bubsy"
@@ -22,27 +21,6 @@ These are the ROMs just sitting in the install folder
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Bubsy Two-Fur"
     _input_folder_desc = "Bubsy Two-Fur Steam Folder"
     _short_description = ""
-
-
-    def execute(self, in_dir, out_dir):
-        rom_files = self._find_files(in_dir)
-        for file_path in rom_files:
-            # TODO: Add a handler for the pak compressed ones
-            file_name = os.path.basename(file_path)
-            game_info = self._game_info_map.get(file_name)
-            if not game_info == None:
-                display_name = game_info['name']
-                if game_info['region']:
-                    display_name += f' ({game_info["region"]})'
-                logger.info(f"Copying {file_name}: {display_name}") 
-                try:
-                    shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
-                except Exception as e:
-                    traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
-            else:
-                logger.info(f'Skipping unmatched file {file_path}!') 
-        logger.info("Processing complete.")
 
     _game_info_map = {
         'bubsy_1': {
@@ -70,15 +48,14 @@ These are the ROMs just sitting in the install folder
         for file_path in rom_files:
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
-            if not game_info == None:
+            if game_info is not None:
                 display_name = game_info['name']
-                logger.info(f"Copying {file_name}: {display_name}") 
+                logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                    logger.warning(f'Error while processing {file_path}!')
             else:
-                logger.info(f'Skipping unmatched file {file_path}!') 
+                logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")
-

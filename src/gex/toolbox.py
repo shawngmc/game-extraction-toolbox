@@ -1,6 +1,6 @@
+import logging
 import click
 import click_log
-import logging
 
 from gex.commands.archive.archive import archive
 from gex.commands.file.file import file

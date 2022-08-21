@@ -9,7 +9,7 @@ from gex.lib.archive import kpka
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.utils.blob import transforms
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class CAS1OldTask(BaseTask):
     _task_name = 'cas1_old'
@@ -155,7 +155,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         # Used for 3wonders in ghouls jp and 1941 in 1941j
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == target_offset:
                     contents = file_entry['contents']
                     subzip_contents = None
@@ -197,7 +197,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556708(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 352:
                     contents = self._twiddle_zip(file_entry['contents'], lowercase_all=True)
                     out_files.append({'filename': 'lostwrld.zip', 'contents': contents})
@@ -233,7 +233,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556712(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 1497211:
                     contents = self._twiddle_zip(file_entry['contents'], lowercase_all=True)
                     out_files.append({'filename': 'ffightu.zip', 'contents': contents})
@@ -257,7 +257,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556715(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 1511592:
                     out_files.append({'filename': 'mtwins.zip', 'contents': file_entry['contents']})
                 else:
@@ -366,13 +366,13 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "sfxj.03d", 
-                            "sfxj.04a", 
-                            "sfxj.05", 
-                            "sfxj.06b", 
-                            "sfxj.07a", 
-                            "sfxj.08", 
+                        filenames = [
+                            "sfxj.03d",
+                            "sfxj.04a",
+                            "sfxj.05",
+                            "sfxj.06b",
+                            "sfxj.07a",
+                            "sfxj.08",
                             "sfx.09"
                         ]
                         return dict(zip(filenames, chunks))
@@ -388,13 +388,13 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "sfxu.03e", 
-                            "sfxu.04a", 
-                            "sfxu.05", 
-                            "sfxu.06b", 
-                            "sfxu.07a", 
-                            "sfxu.08", 
+                        filenames = [
+                            "sfxu.03e",
+                            "sfxu.04a",
+                            "sfxu.05",
+                            "sfxu.06b",
+                            "sfxu.07a",
+                            "sfxu.08",
                             "sfxu.09"
                         ]
                         return dict(zip(filenames, chunks))
@@ -410,14 +410,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         def gfx(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
             chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
-            filenames = [   
-                "cyb.13m", 
-                "cyb.15m", 
-                "cyb.17m", 
-                "cyb.19m", 
-                "cyb.14m", 
-                "cyb.16m", 
-                "cyb.18m", 
+            filenames = [
+                "cyb.13m",
+                "cyb.15m",
+                "cyb.17m",
+                "cyb.19m",
+                "cyb.14m",
+                "cyb.16m",
+                "cyb.18m",
                 "cyb.20m"
             ]
             return dict(zip(filenames, chunks))
@@ -449,14 +449,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     def maincpu(contents):
                         chunks = transforms.equal_split(contents, num_chunks=8)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "cybj.03", 
-                            "cybj.04", 
-                            "cyb.05", 
-                            "cyb.06", 
-                            "cyb.07", 
-                            "cyb.08", 
-                            "cyb.09", 
+                        filenames = [
+                            "cybj.03",
+                            "cybj.04",
+                            "cyb.05",
+                            "cyb.06",
+                            "cyb.07",
+                            "cyb.08",
+                            "cyb.09",
                             "cyb.10"
                         ]
                         return dict(zip(filenames, chunks))
@@ -471,14 +471,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     def maincpu(contents):
                         chunks = transforms.equal_split(contents, num_chunks=8)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "cybu.03", 
-                            "cybu.04", 
-                            "cyb.05", 
-                            "cyb.06", 
-                            "cyb.07", 
-                            "cyb.08", 
-                            "cyb.09", 
+                        filenames = [
+                            "cybu.03",
+                            "cybu.04",
+                            "cyb.05",
+                            "cyb.06",
+                            "cyb.07",
+                            "cyb.08",
+                            "cyb.09",
                             "cyb.10"
                         ]
                         return dict(zip(filenames, chunks))
@@ -734,7 +734,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "ggwj.03a",
                             "ggwj.04a",
                             "ggwj.05a",
@@ -752,7 +752,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "ggwu.03",
                             "ggwu.04",
                             "ggw.05",
@@ -771,15 +771,15 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         def gfx(contents):
             chunks = transforms.custom_split(contents, [16777216, 4194304])
             chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
-            filenames = [    
-                "nff.13m", 
-                "nff.15m", 
-                "nff.17m", 
-                "nff.19m", 
-                "nff.14m", 
-                "nff.16m", 
-                "nff.18m", 
-                "nff.20m", 
+            filenames = [
+                "nff.13m",
+                "nff.15m",
+                "nff.17m",
+                "nff.19m",
+                "nff.14m",
+                "nff.16m",
+                "nff.18m",
+                "nff.20m",
             ]
             return dict(zip(filenames, chunks))
 
@@ -965,7 +965,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                 id = file[-11:-4]
 
             if id in self._pkg_name_map:
-                logger.info(f"Extracting {file}: {self._pkg_name_map[id]}") 
+                logger.info(f"Extracting {file}: {self._pkg_name_map[id]}")
                 try:
                     with open(file, "rb") as curr_file:
                         file_content = bytearray(curr_file.read())
@@ -984,8 +984,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                                 out_file.write(output_file['contents'])
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file}!') 
+                    logger.warning(f'Error while processing {file}!')
             else:
-                logger.info(f'Skipping {file} as it contains no known ROMS!') 
+                logger.info(f'Skipping {file} as it contains no known ROMS!')
 
         logger.info("Processing complete.")
