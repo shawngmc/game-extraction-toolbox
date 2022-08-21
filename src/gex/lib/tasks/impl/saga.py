@@ -8,6 +8,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class SagaTask(BaseTask):
+    '''Implments saga: Collection of SaGa Final Fantasy Legend'''
     _task_name = "saga"
     _title = "Collection of SaGa Final Fantasy Legend"
     _details_markdown = '''

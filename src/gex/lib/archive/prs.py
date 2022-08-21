@@ -11,6 +11,7 @@
 import array
 
 class DecompressPrs:
+    '''Class to decompress a SEGA .prs file (LZ77)'''
     def __init__(self, data):
         self.ibuf = array.array("B", data)
         self.obuf = array.array("B")

@@ -5,6 +5,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class DisneyAfternoonCollectionTask(BaseTask):
+    '''Implemnts disneyac: Disney Afternoon Collection'''
     _task_name = "disneyac"
     _title = "Disney Afternoon Collection"
     _details_markdown = '''

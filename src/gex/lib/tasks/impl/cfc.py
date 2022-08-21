@@ -31,6 +31,7 @@ logger = logging.getLogger('gextoolbox')
 
 
 class CFCTask(BaseTask):
+    '''Implements cfc: Capcom Fighting Collection'''
     _task_name = "cfc"
     _title = "Capcom Fighting Collection"
     _details_markdown = '''
@@ -182,7 +183,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x1400000), split=[0x400000, 0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1C00040, self._vam_audiocpu_filenames)
@@ -210,7 +211,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x1400000), split=[0x400000, 0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1C00040, self._vam_audiocpu_filenames)
@@ -277,7 +278,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vph_audiocpu_filenames)
@@ -306,7 +307,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map = {}
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vph_audiocpu_filenames)
@@ -373,7 +374,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vm3_audiocpu_filenames)
@@ -401,7 +402,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vm3_audiocpu_filenames)
@@ -467,7 +468,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vh2_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vh2_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vh2_audiocpu_filenames)
@@ -533,7 +534,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vs2_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._vs2_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._vs2_audiocpu_filenames)
@@ -600,7 +601,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._cybots_audiocpu_filenames)
@@ -628,7 +629,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x400000, 0x400000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._cybots_audiocpu_filenames)
@@ -684,7 +685,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x100000, 2, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, helpers.slice_helper(
             0x1000040, length=0x400000), split=[0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1400040, self._pzf_audiocpu_filenames)
@@ -706,7 +707,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x100000, 2, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, helpers.slice_helper(
             0x1000040, length=0x400000), split=[0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1400040, self._pzf_audiocpu_filenames)
@@ -769,7 +770,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x280000, 5, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x1400000), split=[0x400000, 0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1C00040, self._pcf_audiocpu_filenames)
@@ -791,7 +792,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x280000, 5, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x1400000), split=[0x400000, 0x100000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x1C00040, self._pcf_audiocpu_filenames)
@@ -853,7 +854,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x800000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._hs2_audiocpu_filenames)
@@ -881,7 +882,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         func_map['maincpu'] = capcom.maincpu_cps2(
             0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(
+        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, helpers.slice_helper(
             0x0800040, length=0x2000000), split=[0x800000])
         func_map['audiocpu'] = capcom.audiocpu_cps2(
             0x2800040, self._hs2_audiocpu_filenames)

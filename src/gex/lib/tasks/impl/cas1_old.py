@@ -11,8 +11,8 @@ from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
-
 class CAS1OldTask(BaseTask):
+    '''Implements cas1_old: Capcom Arcade Stadium 1 (OLD)'''
     _task_name = 'cas1_old'
     _title = "Capcom Arcade Stadium 1 (OLD)"
     _details_markdown = '''

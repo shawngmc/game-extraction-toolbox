@@ -7,6 +7,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class BubsyTask(BaseTask):
+    '''Implements bubsy: Bubsy Two-Fur'''
     _task_name = "bubsy"
     _title = "Bubsy Two-Fur"
     _details_markdown = '''

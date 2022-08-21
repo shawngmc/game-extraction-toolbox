@@ -8,6 +8,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class GenesisTask(BaseTask):
+    '''Implments genesis: Sega Genesis and Mega Drive Collection'''
     _task_name = "genesis"
     _title = "Sega Genesis and Mega Drive Collection"
     _details_markdown = '''

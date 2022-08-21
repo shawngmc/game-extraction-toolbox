@@ -1,3 +1,5 @@
+'''Contains more generic utility functions'''
+
 import importlib
 import inspect
 import os
@@ -5,6 +7,7 @@ import os
 from gex.lib.tasks.basetask import BaseTask
 
 def cleanpath(path_str):
+    '''Clean the double-quotes from a path'''
     if path_str.startswith("\""):
         path_str = path_str[1:]
     if path_str.endswith("\""):
@@ -12,6 +15,7 @@ def cleanpath(path_str):
     return path_str
 
 def preparepath(out_path):
+    '''Make sure the output folder exists and is writable or can be created'''
     if not os.path.exists(out_path):
         try:
             os.makedirs(out_path)
@@ -22,6 +26,7 @@ def preparepath(out_path):
             raise Exception("Cannot write to output folder.")
 
 def load_task(task):
+    '''Load a task module's task class from the task name'''
     package = f'gex.lib.tasks.impl.{task}'
     transform_module = importlib.import_module(package)
     clsmembers = inspect.getmembers(transform_module, inspect.isclass)

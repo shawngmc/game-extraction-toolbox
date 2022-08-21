@@ -7,6 +7,7 @@ from gex.lib.archive.prs import DecompressPrs
 logger = logging.getLogger('gextoolbox')
 
 class SonicAdventureDXGameGearTask(BaseTask):
+    '''Implements sadxgg: Sonic Adventure DX - Game Gear'''
     _task_name = "sadxgg"
     _title = "Sonic Adventure DX - Game Gear"
     _details_markdown = '''
