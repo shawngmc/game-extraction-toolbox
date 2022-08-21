@@ -8,9 +8,12 @@ logger = logging.getLogger('gextoolbox')
 
 @click.command()
 @click.option('--in', 'in_file', help = 'path to input file', required=True)
-@click.option('--out', 'out_file_base', help = 'path to output file base name (ex. ./my.file)', required=True)
-@click.option('--ways', 'num_ways', help = 'number of ways to deinterleave, default is 2-way', default=2)
-@click.option('--word', 'word_size', help = 'size of word (number of bytes) to put in each file, default is 2 bytes', default=2)
+@click.option('--out', 'out_file_base',
+    help = 'path to output file base name (ex. ./my.file)', required=True)
+@click.option('--ways', 'num_ways',
+    help = 'number of ways to deinterleave, default is 2-way', default=2)
+@click.option('--word', 'word_size',
+    help = 'size of word (number of bytes) to put in each file, default is 2 bytes', default=2)
 @click_log.simple_verbosity_option(logger)
 def deinterleave(in_file, out_file_base, num_ways, word_size):
     '''CLI tool to deinterleave a file into num_ways files by word_size bytes'''

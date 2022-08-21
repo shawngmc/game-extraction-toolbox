@@ -1,6 +1,5 @@
 '''Implementation of cfc: Capcom Fighting Collection'''
 import re
-import traceback
 import glob
 import logging
 import os
@@ -11,7 +10,6 @@ from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
-
 
 class CFCTask(BaseTask):
     '''Implements cfc: Capcom Fighting Collection'''
@@ -78,8 +76,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                         elif handler_func is None:
                             logger.warning(
                                 "Could not find matching handler function.")
-                except Exception as e:
-                    traceback.print_exc()
+                except Exception as _:
                     logger.warning(f'Error while processing {file_path}!')
             else:
                 logger.info(f'Skipping unmatched file {file_path}!')
@@ -116,18 +113,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return archive_list
 
     ################################################################################
-    # START Darkstalkers/Vampire: The Night Warriors                               #
+    # Darkstalkers/Vampire: The Night Warriors                                     #
     ################################################################################
-    # game_00.arc: Vampire: The Night Warriors (JP)
-    # game_01.arc: Darkstalkers: The Night Warriors
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu - OK!
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x1C00040       gfx - OK!
-    #   0x1C00040   0x1C48040       audiocpu - OK!
-    #   0x1C48040   0x1C50040       ???
-    #   0x1C50040   0x2050040       qsound - OK!
 
     _vam_gfx_filenames = [
         'vam.13m',
@@ -207,22 +194,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Darkstalkers/Vampire: The Night Warriors                                 #
+    # Vampire Hunter/Night Warriors: Darkstalkers' Revenge                         #
     ################################################################################
-
-    ################################################################################
-    # START Vampire Hunter/Night Warriors: Darkstalkers' Revenge                   #
-    ################################################################################
-    # game_10.arc: Vampire: The Night Warriors (JP)
-    # game_11.arc: Darkstalkers: The Night Warriors
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x2C50040       qsound
 
     _vph_gfx_filenames = [
         'vph.13m',
@@ -303,22 +276,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Vampire Hunter/Night Warriors: Darkstalkers' Revenge                     #
+    # Vampire Savior: The Lord of Vampire                                          #
     ################################################################################
-
-    ################################################################################
-    # START Vampire Savior: The Lord of Vampire                                    #
-    ################################################################################
-    # game_20.arc: Vampire Savior: The Lord of Vampire (JP)
-    # game_21.arc: Darkstalkers: The Night Warriors
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x3050040       qsound
 
     _vm3_gfx_filenames = [
         'vm3.13m',
@@ -398,21 +357,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Vampire Savior: The Lord of Vampire                                      #
+    # Vampire Hunter 2: Darkstalkers Revenge                                       #
     ################################################################################
-
-    ################################################################################
-    # START Vampire Hunter 2: Darkstalkers Revenge                                 #
-    ################################################################################
-    # game_30.arc: Vampire Hunter 2: Darkstalkers Revenge (JP)
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x3050040       qsound
 
     _vh2_gfx_filenames = [
         'vh2.13m',
@@ -464,21 +410,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Vampire Hunter 2: Darkstalkers Revenge                                   #
+    # Vampire Savior 2: The Lord of Vampire                                        #
     ################################################################################
-
-    ################################################################################
-    # START Vampire Savior 2: The Lord of Vampire                                  #
-    ################################################################################
-    # game_40.arc: Vampire Savior 2: The Lord of Vampire (JP)
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x3050040       qsound
 
     _vs2_gfx_filenames = [
         'vs2.13m',
@@ -530,22 +463,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Vampire Savior 2: The Lord of Vampire                                    #
+    # Cyberbots: Fullmetal Madness                                                 #
     ################################################################################
-
-    ################################################################################
-    # START Cyberbots: Fullmetal Madness                                           #
-    ################################################################################
-    # game_50.arc: Cyberbots: Fullmetal Madness (JP)
-    # game_51.arc: Cyberbots: Fullmetal Madness
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0100040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x2C50040       qsound
 
     _cybots_gfx_filenames = [
         'cyb.13m',
@@ -625,21 +544,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Cyberbots: Fullmetal Madness                                             #
+    # Super Puzzle Fighter II Turbo                                                #
     ################################################################################
-
-    ################################################################################
-    # START Super Puzzle Fighter II Turbo                                          #
-    ################################################################################
-    # game_60.arc: Super Puzzle Fighter II X (JP)
-    # game_61.arc: Super Puzzle Fighter II Turbo
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0100040       maincpu
-    #   0x0100040   0x1000040       ???
-    #   0x1000040   0x1400040       gfx
-    #   0x1400040   0x1448040       audiocpu
-    #   0x1450040   0x1850040       qsound
 
     _pzf_gfx_filenames = [
         'pzf.14m',
@@ -703,21 +609,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Super Puzzle Fighter II Turbo                                            #
+    # Super Gem Fighter Mini Mix                                                   #
     ################################################################################
-
-    ################################################################################
-    # START Super Gem Fighter Mini Mix                                             #
-    ################################################################################
-    # game_70.arc: Pocket Fighter (JP)
-    # game_71.arc: Super Gem Fighter Mini Mix
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0280040       maincpu
-    #   0x0280040   0x0800040       ???
-    #   0x0800040   0x1C00040       gfx
-    #   0x1C00040   0x1C48040       audiocpu
-    #   0x1C50040   0x2550040       qsound
 
     _pcf_gfx_filenames = [
         'pcf.13m',
@@ -788,22 +681,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Super Gem Fighter Mini Mix                                               #
+    # Hyper Street Fighter II: Anniversary Edition                                 #
     ################################################################################
-
-    ################################################################################
-    # START Hyper Street Fighter II: Anniversary Edition                           #
-    ################################################################################
-    # game_80.arc: Hyper Street Fighter II: Anniversary Edition (JP)
-    # game_81.arc: Hyper Street Fighter II: Anniversary Edition
-
-    #   0x0000000   0x0000040       IBIS Header
-    #   0x0000040   0x0400040       maincpu
-    #   0x0400040   0x0800040       ???
-    #   0x0800040   0x2800040       gfx
-    #   0x2800040   0x2848040       audiocpu
-    #   0x2848040   0x2850040       ???
-    #   0x2850040   0x3050040       qsound
 
     _hs2_gfx_filenames = [
         'hs2.13m',
@@ -878,11 +757,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
     ################################################################################
-    # END Hyper Street Fighter II: Anniversary Edition                             #
-    ################################################################################
-
-    ################################################################################
-    # START Red Earth                                                              #
+    # Red Earth                                                                    #
     ################################################################################
     # game_90.arc: Warzard (JP)
     # game_91.arc: Red Earth
@@ -925,7 +800,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #         return { 'endian.bin': contents }
 
     #     func_map['endian'] = endian
-    #     out_files.append({'filename': 'warzard.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+    #     out_files.append(
+    #         {'filename': 'warzard.zip', 'contents': helpers.build_rom(merged_contents, func_map)}
+    #     )
     #     return out_files
 
     # def _handle_redearth(self, merged_contents):
@@ -937,9 +814,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #         return { 'endian.bin': contents }
 
     #     func_map['endian'] = endian
-    #     out_files.append({'filename': 'redearth.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+    #     out_files.append(
+    #         {'filename': 'redearth.zip', 'contents': helpers.build_rom(merged_contents, func_map)}
+    #     )
     #     return out_files
-
-    ################################################################################
-    # END Red Earth                                                                #
-    ################################################################################
