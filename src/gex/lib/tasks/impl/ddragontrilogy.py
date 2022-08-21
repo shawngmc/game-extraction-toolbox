@@ -1,15 +1,10 @@
 import copy
 import glob
-import zipfile
 import logging
 import os
-import io
 
 from gex.lib.utils.blob import transforms
 from gex.lib.tasks import helpers
-
-import logging
-
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox') 
@@ -59,25 +54,6 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
                 file_data = file_obj.read()
                 files[os.path.basename(file_path)] = file_data
         return files
-
-    def _build_rom(self, in_files, func_map):
-        new_data = dict()
-        for func in func_map.values():
-            new_data.update(func(in_files))
-        
-        # Build the new zip file
-        new_contents = io.BytesIO()
-        with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
-            for name, data in new_data.items():
-                new_archive.writestr(name, data)
-        return new_contents.getvalue()
-
-    def _equal_split_helper(self, in_file_ref, filenames):
-        def split(in_files):
-            contents = in_files[in_file_ref]
-            chunks = transforms.equal_split(contents, num_chunks = len(filenames))
-            return dict(zip(filenames, chunks))
-        return split
 
     def _dotemu_encode_gfx(self, contents, layout):
         # This appears to be rebuilding GFX roms from sprites.
@@ -210,7 +186,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         }
         func_map['prom'] = helpers.custom_split_helper('proms.bin', prom_file_map)
 
-        return {'filename': 'ddragon.zip', 'contents': self._build_rom(in_files, func_map)}
+        return {'filename': 'ddragon.zip', 'contents': helpers.build_rom(in_files, func_map)}
 
     def _ddragon2(self, in_files):
         func_map = {}
@@ -268,7 +244,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         }
         func_map['prom'] = helpers.custom_split_helper('proms.bin', prom_file_map)
 
-        return {'filename': 'ddragon2.zip', 'contents': self._build_rom(in_files, func_map)}
+        return {'filename': 'ddragon2.zip', 'contents': helpers.build_rom(in_files, func_map)}
 
 
     _WWF_TILE_LAYOUT = {
@@ -357,7 +333,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             return {'mb7114h.ic38': bytearray(0x100)}
         func_map['prom'] = dummy_prom
 
-        return {'filename': 'ddragon3.zip', 'contents': self._build_rom(in_files, func_map)}
+        return {'filename': 'ddragon3.zip', 'contents': helpers.build_rom(in_files, func_map)}
 
 
 

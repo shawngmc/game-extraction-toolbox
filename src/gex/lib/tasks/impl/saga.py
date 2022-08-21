@@ -1,13 +1,9 @@
 import traceback
 import glob
-import zipfile
 import logging
 import os
-import io
 import UnityPy
 
-from gex.lib.archive import kpka
-from gex.lib.utils.blob import transforms
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox') 
