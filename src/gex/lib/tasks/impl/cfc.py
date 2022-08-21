@@ -6,7 +6,7 @@
 # - Split it into parts using offsets/length
 #   - Header (60b)
 #   - MainCPU (???k)
-#   - ??? inv gfx (???k) 
+#   - ??? inv gfx (???k)
 #   - AudioCPU (???k)
 #   - QSound (???k)
 # - Process each part
@@ -164,11 +164,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'vam.12m'
     ]
 
-    def _handle_vampj(self, merged_contents): 
-        out_files = []   
+    def _handle_vampj(self, merged_contents):
+        out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vamj.03a",
             "vamj.04b",
             "vamj.05a",
@@ -188,11 +188,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
 
-    def _handle_dstlku(self, merged_contents): 
-        out_files = []   
+    def _handle_dstlku(self, merged_contents):
+        out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vamu.03b",
             "vamu.04b",
             "vamu.05b",
@@ -251,11 +251,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'vph.12m'
     ]
 
-    def _handle_vhuntjr2(self, merged_contents): 
+    def _handle_vhuntjr2(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vphj.03b",
             "vphj.04a",
             "vphj.05a",
@@ -275,10 +275,10 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return out_files
 
 
-    def _handle_nwarru(self, merged_contents): 
+    def _handle_nwarru(self, merged_contents):
         out_files = []
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vphu.03f",
             "vphu.04c",
             "vphu.05e",
@@ -339,11 +339,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'vm3.12m'
     ]
 
-    def _handle_vsavj(self, merged_contents): 
+    def _handle_vsavj(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vm3j.03d",
             "vm3j.04d",
             "vm3j.05a",
@@ -362,11 +362,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-    def _handle_vsavu(self, merged_contents): 
+    def _handle_vsavu(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vm3u.03d",
             "vm3u.04d",
             "vm3.05a",
@@ -424,11 +424,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'vh2.12m'
     ]
 
-    def _handle_vhunt2(self, merged_contents): 
+    def _handle_vhunt2(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vh2j.03a",
             "vh2j.04a",
             "vh2j.05",
@@ -487,11 +487,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'vs2.12m'
     ]
 
-    def _handle_vsav2(self, merged_contents): 
+    def _handle_vsav2(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "vs2j.03",
             "vs2j.04",
             "vs2j.05",
@@ -547,15 +547,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     ]
 
     _cybots_qsound_filenames = [
-        'cyb.11m',
+        'cyb.11m',    
         'cyb.12m'
     ]
 
-    def _handle_cybotsj(self, merged_contents): 
+    def _handle_cybotsj(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "cybj.03",
             "cybj.04",
             "cyb.05",

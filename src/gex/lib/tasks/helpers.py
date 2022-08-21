@@ -38,5 +38,5 @@ def placeholder_helper(file_map):
         out_files = {}
         for filename, size in file_map.items():
             out_files[filename] = bytes(size*b'\0')
-        return out_files  
+        return out_files
     return create_placeholders

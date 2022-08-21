@@ -19,14 +19,14 @@ class DecompressPrs:
         self.bit = 0
         self.cmd = 0
 
-    def _getByte(self):
+    def _get_byte(self):
         val = self.ibuf[self.iofs]
         self.iofs += 1
         return val
 
-    def _getBit(self):
+    def _get_bit(self):
         if self.bit == 0:
-            self.cmd = self._getByte()
+            self.cmd = self._get_byte()
             self.bit = 8
         bit = self.cmd & 1
         self.cmd >>= 1
@@ -35,31 +35,31 @@ class DecompressPrs:
 
     def decompress(self):
         while self.iofs < len(self.ibuf):
-            cmd = self._getBit()
+            cmd = self._get_bit()
             if cmd:
                 self.obuf.append(self.ibuf[self.iofs])
                 self.iofs += 1
             else:
-                t = self._getBit()
+                t = self._get_bit()
                 if t:
-                    a = self._getByte()
-                    b = self._getByte()
+                    a = self._get_byte()
+                    b = self._get_byte()
 
                     offset = ((b << 8) | a) >> 3
                     amount = a & 7
                     if self.iofs < len(self.ibuf):
                         if amount == 0:
-                            amount = self._getByte() + 1
+                            amount = self._get_byte() + 1
                         else:
                             amount += 2
 
                     start = len(self.obuf) - 0x2000 + offset
                 else:
                     amount = 0
-                    for j in range(2):
+                    for _ in range(2):
                         amount <<= 1
-                        amount |= self._getBit()
-                    offset = self._getByte()
+                        amount |= self._get_bit()
+                    offset = self._get_byte()
                     amount += 2
 
                     start = len(self.obuf) - 0x100 + offset

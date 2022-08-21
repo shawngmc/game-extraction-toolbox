@@ -8,7 +8,7 @@
 # - Split it into parts using offsets/length
 #   - Header (60b)
 #   - MainCPU (???k)
-#   - ??? inv gfx (???k) 
+#   - ??? inv gfx (???k)
 #   - AudioCPU (???k)
 #   - QSound (???k)
 # - Process each part
@@ -30,7 +30,8 @@ from gex.lib.tasks import helpers
 
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
+
 
 class CBEUBTask(BaseTask):
     _task_name = "cbeub"
@@ -61,13 +62,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     _input_folder_desc = "CBEUB Steam folder"
     _short_description = ""
 
-
     def execute(self, in_dir, out_dir):
         pak_files = self._find_files(in_dir)
         for file_path in pak_files:
             file_name = os.path.basename(file_path)
             pkg_name = self._pkg_name_map[file_name]
-            logger.info(f"Extracting {file_name}: {pkg_name}") 
+            logger.info(f"Extracting {file_name}: {pkg_name}")
             try:
                 with open(file_path, "rb") as curr_file:
                     file_content = bytearray(curr_file.read())
@@ -83,17 +83,19 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                     handler_func = self.find_handler_func(pkg_name)
                     if merged_rom_contents != None and handler_func != None:
                         output_files = handler_func(merged_rom_contents)
-                            
+
                         for output_file in output_files:
                             with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])
                     elif merged_rom_contents == None:
-                        logger.warning("Could not find merged rom data in arc.")
+                        logger.warning(
+                            "Could not find merged rom data in arc.")
                     elif handler_func == None:
-                        logger.warning("Could not find matching handler function.")
+                        logger.warning(
+                            "Could not find matching handler function.")
             except Exception as e:
                 traceback.print_exc()
-                logger.warning(f'Error while processing {file_path}!') 
+                logger.warning(f'Error while processing {file_path}!')
 
         logger.info("Processing complete.")
 
@@ -115,8 +117,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     }
 
     def _find_files(self, base_path):
-        arc_path = os.path.join(base_path, "nativeDX11x64", "arc") 
-        candidate_files = glob.glob(arc_path +'/game_*.arc')
+        arc_path = os.path.join(base_path, "nativeDX11x64", "arc")
+        candidate_files = glob.glob(arc_path + '/game_*.arc')
         archive_list = []
         for candidate in candidate_files:
             if re.search(r'game_\d\d.arc', candidate):
@@ -128,9 +130,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             out_files = {}
             for filename, size in file_map.items():
                 out_files[filename] = bytes(size*b'\0')
-            return out_files  
+            return out_files
         return create_placeholders
-
 
     def _deshuffle_gfx_common(self, start, length, filenames, num_deinterleave_split, do_split):
         def gfx(contents):
@@ -144,38 +145,40 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                 5, 1, 13, 9, 21, 17, 29, 25,
                 4, 0, 12, 8, 20, 16, 28, 24,
                 39, 35, 47, 43, 55, 51, 63, 59,
-                38, 34, 46, 42, 54, 50, 62, 58, 
-                37, 33, 45, 41, 53, 49, 61, 57, 
+                38, 34, 46, 42, 54, 50, 62, 58,
+                37, 33, 45, 41, 53, 49, 61, 57,
                 36, 32, 44, 40, 52, 48, 60, 56
             ]
-            chunks = transforms.split_bit_shuffle(contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
+            chunks = transforms.split_bit_shuffle(
+                contents, word_size_bytes=8, bit_order=bit_order, num_ways=num_deinterleave_split)
 
             # Split it
             if do_split:
                 new_chunks = []
                 for oldchunk in chunks:
-                    new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
+                    new_chunks.extend(
+                        transforms.equal_split(oldchunk, num_chunks=2))
                 chunks = new_chunks
 
             return dict(zip(filenames, chunks))
         return gfx
 
-        
     def _audio_common(self, start, filenames):
         def audio(contents):
             chunks = []
 
             # Add the audio CPU
-            chunks.append(contents[start:start+0x8000] + contents[start+0x10000:start+0x18000])
+            chunks.append(contents[start:start+0x8000] +
+                          contents[start+0x10000:start+0x18000])
 
             # Add the qsound
             qsound_start = start+0x18000
             qsound_contents = contents[qsound_start:qsound_start+0x40000]
-            chunks.extend(transforms.equal_split(qsound_contents, num_chunks=2))
+            chunks.extend(transforms.equal_split(
+                qsound_contents, num_chunks=2))
 
             return dict(zip(filenames, chunks))
         return audio
-
 
     ################################################################################
     # START Final Fight                                                            #
@@ -183,7 +186,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # game_00.arc: Final Fight (JP)
     # game_01.arc: Final Fight
 
-    def _handle_ffight(self, merged_contents): 
+    def _handle_ffight(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -194,14 +197,16 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "ff_37.12f",
             "ff-32m.8h"
         ]
+
         def maincpu(contents):
             chunk_5 = contents[0x080040:0x100040]
             contents = contents[0x40:0x080040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-            
+
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
+                new_chunks.extend(
+                    transforms.equal_split(oldchunk, num_chunks=2))
             chunks = new_chunks
 
             # Add 5th non-interleaved chunk
@@ -216,7 +221,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "ff-1m.3a",
             "ff-3m.5a"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x200000, gfx_filenames, 4, False)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x200000, gfx_filenames, 4, False)
 
         audio_filenames = [
             'ff_09.12b',
@@ -233,7 +239,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'sou1': 0x117,
             's224b.1a': 0x117,
             'iob1.11e': 0x117
-            }
+        }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
@@ -241,8 +247,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-
-    def _handle_ffightj(self, merged_contents): 
+    def _handle_ffightj(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -256,13 +261,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "ffj_34.10f",
             "ffj_35.11f"
         ]
+
         def maincpu(contents):
             contents = contents[0x40:0x100040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-            
+
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 4))
+                new_chunks.extend(
+                    transforms.equal_split(oldchunk, num_chunks=4))
             chunks = new_chunks
             return dict(zip(maincpu_filenames, chunks))
         func_map['maincpu'] = maincpu
@@ -285,7 +292,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "ffj_32.8f",
             "ffj_33.9f"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x200000, gfx_filenames, 8, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x200000, gfx_filenames, 8, True)
 
         audio_filenames = [
             'ff_23.bin',
@@ -293,7 +301,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'ffj_31.bin'
         ]
         func_map['audio'] = self._audio_common(0x600040, audio_filenames)
-        
+
         ph_files = {
             'buf1': 0x117,
             'ioa1': 0x117,
@@ -302,9 +310,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             'sou1': 0x117,
             's222b.1a': 0x117,
             'lwio.12c': 0x117
-            }
+        }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
-        
+
         zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'ffightj.zip', 'contents': zip_contents})
 
@@ -314,35 +322,35 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # END Final Fight                                                              #
     ################################################################################
 
-
     ################################################################################
     # START The King of Dragons                                                    #
     ################################################################################
     # game_10.arc: The King of Dragons (JP)
     # game_11.arc: The King of Dragons
 
-
-    def _handle_kod(self, merged_contents): 
+    def _handle_kod(self, merged_contents):
         out_files = []
         func_map = {}
 
         maincpu_filenames = [
-            "kde_37a.11f", 
-            "kde_38a.12f", 
-            "kd_35.9f", 
+            "kde_37a.11f",
+            "kde_38a.12f",
+            "kd_35.9f",
             "kd_36a.10f",
-            "kde_30a.11e", 
-            "kde_31a.12e", 
-            "kd_28.9e", 
+            "kde_30a.11e",
+            "kde_31a.12e",
+            "kd_28.9e",
             "kd_29.10e"
         ]
+
         def maincpu(contents):
             contents = contents[0x40:0x100040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-            
+
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 4))
+                new_chunks.extend(
+                    transforms.equal_split(oldchunk, num_chunks=4))
             chunks = new_chunks
 
             return dict(zip(maincpu_filenames, chunks))
@@ -358,7 +366,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kd-3m.5a",
             "kd-4m.5c"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'kd_9.12a',
@@ -385,9 +394,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-
-
-    def _handle_kodj(self, merged_contents): 
+    def _handle_kodj(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -398,14 +405,16 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kdj_31a.12e",
             "kd_33.6f"
         ]
+
         def maincpu(contents):
             chunk_5 = contents[0x080040:0x100040]
             contents = contents[0x40:0x080040]
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
-            
+
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(transforms.equal_split(oldchunk, num_chunks = 2))
+                new_chunks.extend(
+                    transforms.equal_split(oldchunk, num_chunks=2))
             chunks = new_chunks
 
             # Add 5th non-interleaved chunk
@@ -424,7 +433,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kd_07.9a",
             "kd_16.9c"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'kd_09.12a',
@@ -451,11 +461,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-
     ################################################################################
     # END The King of Dragons                                                      #
     ################################################################################
-
 
     ################################################################################
     # START Captain Commando                                                       #
@@ -463,7 +471,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # game_20.arc: Captain Commando (JP)
     # game_21.arc: Captain Commando
 
-    def _handle_captcomm(self, merged_contents): 
+    def _handle_captcomm(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -473,10 +481,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "cc_22f.7f",
             "cc_24f.9e"
         ]
+
         def maincpu(contents):
             # Only the last 2 128k chunks actually need deinterleaved...
             maincpu_area = contents[0x40:0x140040]
-            deint_chunks = transforms.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+            deint_chunks = transforms.deinterleave(
+                maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
 
             chunks = []
             chunks.append(maincpu_area[0x0:0x80000])
@@ -497,7 +507,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "cc-3m.6a",
             "cc-4m.10a"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'cc_09.11a',
@@ -521,13 +532,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'captcomm.zip', 'contents': zip_contents})
+        out_files.append(
+            {'filename': 'captcomm.zip', 'contents': zip_contents})
 
         return out_files
 
-
-
-    def _handle_captcommj(self, merged_contents): 
+    def _handle_captcommj(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -537,10 +547,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "ccj_22f.7f",
             "ccj_24f.9e"
         ]
+
         def maincpu(contents):
             # Only the last 2 128k chunks actually need deinterleaved...
             maincpu_area = contents[0x40:0x140040]
-            deint_chunks = transforms.deinterleave(maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
+            deint_chunks = transforms.deinterleave(
+                maincpu_area[0x100000:0x140000], num_ways=2, word_size=1)
 
             chunks = []
             chunks.append(maincpu_area[0x0:0x80000])
@@ -561,8 +573,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "cc_04.6a",
             "cc_08.10a"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
-        
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
+
         audio_filenames = [
             'ccj_09.12a',
             'ccj_18.11c',
@@ -585,15 +598,14 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'captcommj.zip', 'contents': zip_contents})
+        out_files.append(
+            {'filename': 'captcommj.zip', 'contents': zip_contents})
 
         return out_files
-
 
     ################################################################################
     # END Captain Commando                                                         #
     ################################################################################
-
 
     ################################################################################
     # START Knights of the Round                                                   #
@@ -601,9 +613,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # game_30.arc: Knights of the Round (JP)
     # game_31.arc: Knights of the Round
 
-
-
-    def _handle_knights(self, merged_contents): 
+    def _handle_knights(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -611,6 +621,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kr_23e.8f",
             "kr_22.7f"
         ]
+
         def maincpu(contents):
             # Only the last 2 128k chunks actually need deinterleaved...
             maincpu_area = contents[0x40:0x100040]
@@ -629,7 +640,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kr-3m.6a",
             "kr-4m.10a"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'kr_09.11a',
@@ -657,9 +669,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-
-
-    def _handle_knightsj(self, merged_contents): 
+    def _handle_knightsj(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -667,6 +677,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kr_23j.8f",
             "kr_22.7f"
         ]
+
         def maincpu(contents):
             # Only the last 2 128k chunks actually need deinterleaved...
             maincpu_area = contents[0x40:0x100040]
@@ -685,7 +696,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "kr_04.6a",
             "kr_08.10a"
         ]
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'kr_09.12a',
@@ -709,15 +721,14 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
         zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'knightsj.zip', 'contents': zip_contents})
+        out_files.append(
+            {'filename': 'knightsj.zip', 'contents': zip_contents})
 
         return out_files
-
 
     ################################################################################
     # END Knights of the Round                                                     #
     ################################################################################
-
 
     ################################################################################
     # START Warriors of Fate                                                       #
@@ -739,25 +750,26 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #           0x830040    0x850040                Padding (All FF)
     # qsound    0x850040    0xA50040                OK
 
-
     def _wof_audio(self, filenames):
         def audio(contents):
             start = 0x800040
             chunks = []
 
             # Add the audio CPU
-            audiocpu_content = contents[start:start+0x8000] + contents[start+0x10000:start+0x28000]
+            audiocpu_content = contents[start:start+0x8000] + \
+                contents[start+0x10000:start+0x28000]
             chunks.append(audiocpu_content)
 
             # Add the qsound
             qsound_start = start+0x50000
             qsound_contents = contents[qsound_start:qsound_start+0x200000]
-            chunks.extend(transforms.equal_split(qsound_contents, num_chunks=4))
+            chunks.extend(transforms.equal_split(
+                qsound_contents, num_chunks=4))
 
             return dict(zip(filenames, chunks))
         return audio
 
-    def _handle_wof(self, merged_contents): 
+    def _handle_wof(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -765,6 +777,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "tk2e_23c.8f",
             "tk2e_22c.7f"
         ]
+
         def maincpu(contents):
             maincpu_area = contents[0x40:0x100040]
             chunks = transforms.equal_split(maincpu_area, num_chunks=2)
@@ -783,7 +796,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "tk2-8m.10a"
         ]
 
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'tk2_qa.5k',
@@ -815,7 +829,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         return out_files
 
-    def _handle_wofj(self, merged_contents): 
+    def _handle_wofj(self, merged_contents):
         out_files = []
         func_map = {}
 
@@ -823,6 +837,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "tk2j_23c.8f",
             "tk2j_22c.7f"
         ]
+
         def maincpu(contents):
             maincpu_area = contents[0x40:0x100040]
             chunks = transforms.equal_split(maincpu_area, num_chunks=2)
@@ -841,7 +856,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "tk2_08.10a"
         ]
 
-        func_map['gfx'] = self._deshuffle_gfx_common(0x400040, 0x400000, gfx_filenames, 4, True)
+        func_map['gfx'] = self._deshuffle_gfx_common(
+            0x400040, 0x400000, gfx_filenames, 4, True)
 
         audio_filenames = [
             'tk2_qa.5k',
@@ -878,7 +894,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # END Warriors of Fate                                                         #
     ################################################################################
 
-
     ################################################################################
     # START Armored Warriors                                                       #
     ################################################################################
@@ -897,8 +912,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         # Interleave each pair of chunks
         new_chunks = []
-        for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-            new_chunks.append(transforms.interleave([oddchunk, evenchunk], word_size=8))
+        for oddchunk, evenchunk in zip(chunks[0::2], chunks[1::2]):
+            new_chunks.append(transforms.interleave(
+                [oddchunk, evenchunk], word_size=8))
         chunks = new_chunks
 
         # Merge the chunks back together
@@ -906,9 +922,10 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         # Deinterleave the chunks into our files
         new_chunks = []
-        chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
+        chunks = transforms.deinterleave(contents, num_ways=4, word_size=2)
         for chunk in chunks:
-            new_chunks.extend(transforms.custom_split(chunk, [0x400000, 0x100000]))
+            new_chunks.extend(transforms.custom_split(
+                chunk, [0x400000, 0x100000]))
         chunks = new_chunks
         filenames = [
             'pwg.13m',
@@ -924,14 +941,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
     def _armwar_audio(self, contents):
         chunks = []
-        chunks.append(contents[0x1C00040:0x1C08040] + contents[0x1C10040:0x1C28040])
+        chunks.append(contents[0x1C00040:0x1C08040] +
+                      contents[0x1C10040:0x1C28040])
         chunks.append(contents[0x1C28040:0x1C48040])
         filenames = [
             'pwg.01',
             'pwg.02'
         ]
         return dict(zip(filenames, chunks))
-        
+
     def _armwar_qsound(self, contents):
         contents = contents[0x1C50040:0x2050040]
         chunks = transforms.equal_split(contents, num_chunks=2)
@@ -948,7 +966,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         def maincpu(contents):
             contents = contents[0x40:0x400040]
             chunks = transforms.equal_split(contents, num_chunks=8)
-            filenames = [   
+            filenames = [
                 "pwge.03c",
                 "pwge.04c",
                 "pwge.05b",
@@ -964,7 +982,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'armwar.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'armwar.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
         return out_files
 
     def _handle_pgear(self, merged_contents):
@@ -973,7 +992,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         def maincpu(contents):
             contents = contents[0x40:0x400040]
             chunks = transforms.equal_split(contents, num_chunks=8)
-            filenames = [   
+            filenames = [
                 "pwgj.03a",
                 "pwgj.04a",
                 "pwgj.05a",
@@ -989,7 +1008,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'pgear.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'pgear.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
         return out_files
 
     ################################################################################
@@ -1015,15 +1035,16 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
         # Interleave each pair of chunks
         new_chunks = []
-        for oddchunk,evenchunk in zip(chunks[0::2], chunks[1::2]):
-            new_chunks.append(transforms.interleave([oddchunk, evenchunk], word_size=8))
+        for oddchunk, evenchunk in zip(chunks[0::2], chunks[1::2]):
+            new_chunks.append(transforms.interleave(
+                [oddchunk, evenchunk], word_size=8))
         chunks = new_chunks
 
         # Merge the chunks back together
         contents = transforms.merge(chunks)
 
         # Deinterleave the chunks into our 4 files
-        chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
+        chunks = transforms.deinterleave(contents, num_ways=4, word_size=2)
         filenames = [
             'btc.13m',
             'btc.15m',
@@ -1034,14 +1055,15 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
     def _batcir_audio(self, contents):
         chunks = []
-        chunks.append(contents[0x1800040:0x1808040] + contents[0x1810040:0x1828040])
+        chunks.append(contents[0x1800040:0x1808040] +
+                      contents[0x1810040:0x1828040])
         chunks.append(contents[0x1828040:0x1848040])
         filenames = [
             'btc.01',
             'btc.02'
         ]
         return dict(zip(filenames, chunks))
-        
+
     def _batcir_qsound(self, contents):
         contents = contents[0x1850040:0x1C50040]
         chunks = transforms.equal_split(contents, num_chunks=2)
@@ -1052,20 +1074,19 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
         return dict(zip(filenames, chunks))
 
-
     def _handle_batcir(self, merged_contents):
         out_files = []
 
         def maincpu(contents):
             contents = contents[0x40:0x380040]
             chunks = transforms.equal_split(contents, num_chunks=7)
-            filenames = [   
-                "btce.03", 
-                "btce.04", 
-                "btce.05", 
-                "btce.06", 
-                "btc.07", 
-                "btc.08", 
+            filenames = [
+                "btce.03",
+                "btce.04",
+                "btce.05",
+                "btce.06",
+                "btc.07",
+                "btc.08",
                 "btc.09"
             ]
             return dict(zip(filenames, chunks))
@@ -1074,9 +1095,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcir.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'batcir.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
         return out_files
-
 
     def _handle_batcirj(self, merged_contents):
         out_files = []
@@ -1084,13 +1105,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         def maincpu(contents):
             contents = contents[0x40:0x380040]
             chunks = transforms.equal_split(contents, num_chunks=7)
-            filenames = [   
-                "btcj.03", 
-                "btcj.04", 
-                "btcj.05", 
-                "btcj.06", 
-                "btc.07", 
-                "btc.08", 
+            filenames = [
+                "btcj.03",
+                "btcj.04",
+                "btcj.05",
+                "btcj.06",
+                "btc.07",
+                "btc.08",
                 "btc.09"
             ]
             return dict(zip(filenames, chunks))
@@ -1099,11 +1120,10 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcirj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'batcirj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
         return out_files
-
 
     ################################################################################
     # END Battle Circuit                                                           #
     ################################################################################
-
