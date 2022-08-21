@@ -94,7 +94,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 ## Collections
 
 **Collection**                             | **Status**     | **Notes**           
----------------------------------|-------------|---------------------------------------------------------------------  
+--------------------------------------------|-------------|---------------------------------------------------------------------  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
  **Capcom Arcade Stadium 1**                    | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
@@ -106,4 +106,5 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
+ **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!  

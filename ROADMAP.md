@@ -17,8 +17,6 @@
   https://www.gog.com/forum/general/rom_based_gog_games_compatible_with_third_party_emulators_thread/post127
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
-- Sonic Advenutre DX (a ton of hidden Game Gear Sonic games)
-  Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Arcade Game Series (by Namco)
   https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
 

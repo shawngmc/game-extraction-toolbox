@@ -13,7 +13,7 @@ class SagaTask(BaseTask):
     _title = "Collection of SaGa Final Fantasy Legend"
     _details_markdown = '''
 These are extracted from the Unity asset bundle files.
-See https://github.com/farmerbb/RED-Project/issues/39 for more info.s
+See https://github.com/farmerbb/RED-Project/issues/39 for more info.
 
  **Game**                                                    | **Region**        | **Filename**  
 --------------------------------------------------------|---------------|----------------------------  
@@ -31,7 +31,6 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.s
 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
-        print(bundle_files)
         for file_path in bundle_files:
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
@@ -54,7 +53,6 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.s
         
     def _find_files(self, base_path):
         bundle_path = os.path.join(base_path, 'Sa・Ga COLLECTION_Data', 'StreamingAssets', 'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle') 
-        print(bundle_path)
         archive_list = glob.glob(bundle_path)
         return archive_list
 

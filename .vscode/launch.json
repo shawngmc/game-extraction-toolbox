@@ -209,6 +209,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SADXGG",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sadxgg", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sadxgg\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",

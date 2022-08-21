@@ -7,6 +7,7 @@
   - Double Dragon Trilogy
   - Mega Man Legacy Collection 1
   - Mega Man X Legacy Collection 1
+  - Sonic Adventure DX (Hidden Game Gear games)
 - Improvements:
   - Moved 'postprocess steam' commands to more generic 'tasks' command
     This is one of the main purposes of this program, and not Steam specific - GOG, etc. should also be considered
