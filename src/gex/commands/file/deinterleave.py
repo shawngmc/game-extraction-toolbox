@@ -13,6 +13,7 @@ logger = logging.getLogger('gextoolbox')
 @click.option('--word', 'word_size', help = 'size of word (number of bytes) to put in each file, default is 2 bytes', default=2)
 @click_log.simple_verbosity_option(logger)
 def deinterleave(in_file, out_file_base, num_ways, word_size):
+    '''CLI tool to deinterleave a file into num_ways files by word_size bytes'''
     in_data = read_bin_file(in_file)
     deinterleaved_chunks = transforms.deinterleave(in_data, num_ways, word_size)
 
