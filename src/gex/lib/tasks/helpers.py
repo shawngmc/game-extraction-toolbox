@@ -1,3 +1,4 @@
+import io
 import zipfile
 from gex.lib.utils.blob import transforms
 
