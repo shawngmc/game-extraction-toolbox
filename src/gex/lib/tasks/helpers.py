@@ -33,3 +33,10 @@ def name_file_helper(in_file_ref, filename):
         return {filename: in_files[in_file_ref]}
     return rename_from
         
+def placeholder_helper(file_map):
+    def create_placeholders(contents):
+        out_files = {}
+        for filename, size in file_map.items():
+            out_files[filename] = bytes(size*b'\0')
+        return out_files  
+    return create_placeholders

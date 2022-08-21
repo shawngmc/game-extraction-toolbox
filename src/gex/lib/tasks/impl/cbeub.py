@@ -20,16 +20,13 @@
 import re
 import traceback
 import glob
-import zipfile
 import logging
 import os
-import io
 
 from gex.lib.archive import arc
 from gex.lib.utils.vendor import capcom
 from gex.lib.utils.blob import transforms
-
-import logging
+from gex.lib.tasks import helpers
 
 from gex.lib.tasks.basetask import BaseTask
 
@@ -239,7 +236,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'ffight.zip', 'contents': zip_contents})
 
         return out_files
@@ -308,7 +305,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
         
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'ffightj.zip', 'contents': zip_contents})
 
         return out_files
@@ -383,7 +380,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'kod.zip', 'contents': zip_contents})
 
         return out_files
@@ -449,7 +446,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'kodj.zip', 'contents': zip_contents})
 
         return out_files
@@ -523,7 +520,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'captcomm.zip', 'contents': zip_contents})
 
         return out_files
@@ -587,7 +584,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'captcommj.zip', 'contents': zip_contents})
 
         return out_files
@@ -655,7 +652,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'knights.zip', 'contents': zip_contents})
 
         return out_files
@@ -711,7 +708,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'knightsj.zip', 'contents': zip_contents})
 
         return out_files
@@ -813,7 +810,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'wof.zip', 'contents': zip_contents})
 
         return out_files
@@ -872,7 +869,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = self._placeholder_generator(ph_files)
 
-        zip_contents = self._merged_rom_handler(merged_contents, func_map)
+        zip_contents = helpers.build_rom(merged_contents, func_map)
         out_files.append({'filename': 'wofj.zip', 'contents': zip_contents})
 
         return out_files
@@ -967,7 +964,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'armwar.zip', 'contents': self._merged_rom_handler(merged_contents, func_map)})
+        out_files.append({'filename': 'armwar.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
         return out_files
 
     def _handle_pgear(self, merged_contents):
@@ -992,7 +989,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'pgear.zip', 'contents': self._merged_rom_handler(merged_contents, func_map)})
+        out_files.append({'filename': 'pgear.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
         return out_files
 
     ################################################################################
@@ -1077,7 +1074,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcir.zip', 'contents': self._merged_rom_handler(merged_contents, func_map)})
+        out_files.append({'filename': 'batcir.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
         return out_files
 
 
@@ -1102,24 +1099,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcirj.zip', 'contents': self._merged_rom_handler(merged_contents, func_map)})
+        out_files.append({'filename': 'batcirj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
         return out_files
 
 
     ################################################################################
     # END Battle Circuit                                                           #
     ################################################################################
-
-
-    def _merged_rom_handler(self, merged_contents, func_map):
-        new_data = dict()
-        for func in func_map.values():
-            new_data.update(func(bytearray(merged_contents)))
-
-        # Build the new zip file
-        new_contents = io.BytesIO()
-        with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
-            for name, data in new_data.items():
-                new_archive.writestr(name, data)
-        return new_contents.getvalue()
 

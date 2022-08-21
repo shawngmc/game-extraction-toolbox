@@ -3,15 +3,14 @@
 # Extraction Script for Street Fighter 30th Anniversary Collection
 
 import glob
-import zipfile
 import logging
 import os
-import io
 
 from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox') 
 
@@ -100,18 +99,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         archive_list = glob.glob(bundle_path)
         return archive_list
 
-    def _build_rom(self, in_files, func_map):
-        new_data = dict()
-        for func in func_map.values():
-            new_data.update(func(in_files))
-        
-        # Build the new zip file
-        new_contents = io.BytesIO()
-        with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
-            for name, data in new_data.items():
-                new_archive.writestr(name, data)
-        return new_contents.getvalue()
-
     def _process_simm_common(self, simm_id, simm_prefix, simm_size_bytes):
         def process_simm(in_files):
             contents = in_files[simm_id]
@@ -120,11 +107,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.equal_split(contents, chunk_size = simm_size_bytes)
             return dict(zip(filenames, chunks))
         return process_simm
-
-    def _name_file(self, in_file_ref, filename):
-        def rename_from(in_files):
-            return {filename: in_files[in_file_ref]}
-        return rename_from
 
     def _deshuffle_gfx_common(self, filenames, num_interim_split, final_split = None):
         def gfx(in_files):
@@ -204,13 +186,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return out_files  
         return create_placeholders
 
-    def _equal_split_helper(self, in_file_ref, filenames):
-        def split(in_files):
-            contents = in_files[in_file_ref]
-            chunks = transforms.equal_split(contents, num_chunks = len(filenames))
-            return dict(zip(filenames, chunks))
-        return split
-
     ################################################################################
     # START Street Fighter                                                         #
     ################################################################################
@@ -252,7 +227,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sf-41.4k", 
             "sf-40.3k"
         ]
-        func_map['bplanes'] = self._equal_split_helper('bplanes', bplanes_filenames)
+        func_map['bplanes'] = helpers.equal_split_helper('bplanes', bplanes_filenames)
 
         mplanes_filenames = [
             "sf-25.1d", 
@@ -264,7 +239,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sf-31.2g", 
             "sf-35.2h"
         ]
-        func_map['mplanes'] = self._equal_split_helper('mplanes', mplanes_filenames)
+        func_map['mplanes'] = helpers.equal_split_helper('mplanes', mplanes_filenames)
 
         sprites_filenames = [
             "sf-15.1m", 
@@ -282,9 +257,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sf-10.4h",
             "sf-05.3f"
         ]
-        func_map['sprites'] = self._equal_split_helper('sprites', sprites_filenames)
+        func_map['sprites'] = helpers.equal_split_helper('sprites', sprites_filenames)
 
-        func_map['alpha'] = self._name_file("alpha", "sf-27.4d")
+        func_map['alpha'] = helpers.name_file_helper("alpha", "sf-27.4d")
 
         maps_filenames = [
             "sf-37.4h", 
@@ -292,15 +267,15 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sf-32.3g", 
             "sf-33.4g"
         ]
-        func_map['maps'] = self._equal_split_helper('maps', maps_filenames)
+        func_map['maps'] = helpers.equal_split_helper('maps', maps_filenames)
 
-        func_map['z80'] = self._name_file("z80", "sf-02.7k")
+        func_map['z80'] = helpers.name_file_helper("z80", "sf-02.7k")
 
         samples_filenames = [
             "sfu-00.1h", 
             "sf-01.1k"
         ]
-        func_map['samples'] = self._equal_split_helper('samples', samples_filenames)
+        func_map['samples'] = helpers.equal_split_helper('samples', samples_filenames)
 
         maincpu_filenames = [
             "sfd-19.2a", 
@@ -328,10 +303,10 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             'mb7114h.12j': 0x100,
             'mmi-7603.13h': 0x020,
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
         out_files = []
-        out_files.append({'filename': 'sf.zip', 'contents': self._build_rom(in_files, func_map)})
+        out_files.append({'filename': 'sf.zip', 'contents': helpers.build_rom(in_files, func_map)})
         return out_files
 
     ################################################################################
@@ -430,9 +405,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             'sou1': 0x117,
             'stf29.1a': 0x117
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        return [{'filename': 'sf2ub.zip', 'contents': self._build_rom(in_files, func_map)}]
+        return [{'filename': 'sf2ub.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
     # END Street Fighter 2                                                         #
@@ -500,7 +475,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.swap_endian_all(chunks)
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
-        out_files.append({'filename': 'sfau.zip', 'contents': self._build_rom(in_files, func_map)})
+        out_files.append({'filename': 'sfau.zip', 'contents': helpers.build_rom(in_files, func_map)})
 
         return out_files
 
@@ -571,7 +546,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        out_files.append({'filename': 'sfa2u.zip', 'contents': self._build_rom(in_files, func_map)})
+        out_files.append({'filename': 'sfa2u.zip', 'contents': helpers.build_rom(in_files, func_map)})
 
         return out_files
 
@@ -644,7 +619,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        out_files.append({'filename': 'sfa3u.zip', 'contents': self._build_rom(in_files, func_map)})
+        out_files.append({'filename': 'sfa3u.zip', 'contents': helpers.build_rom(in_files, func_map)})
 
         return out_files
 
@@ -668,9 +643,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             func_map[bank_name] = self._process_simm_common(bank_name, simm_prefix, simm_size)
 
         in_files['bios'] = mbundle_entries.get(in_bios_filename)
-        func_map['bios'] = self._name_file("bios", bios_filename)
+        func_map['bios'] = helpers.name_file_helper("bios", bios_filename)
 
-        out_files.append({'filename': mame_name, 'contents': self._build_rom(in_files, func_map)})
+        out_files.append({'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)})
 
         return out_files
 
@@ -806,9 +781,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             'sou1': 0x117,
             'ioc1.ic7': 0x104
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        return [{'filename': 'sf2ceua.zip', 'contents': self._build_rom(in_files, func_map)}]
+        return [{'filename': 'sf2ceua.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
     # END Street Fighter 2 Championship Edition                                    #
@@ -897,9 +872,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             'sou1': 0x117,
             'ioc1.ic7': 0x104
         }
-        func_map['placeholders'] = self._placeholder_generator(ph_files)
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        return [{'filename': 'sf2t.zip', 'contents': self._build_rom(in_files, func_map)}]
+        return [{'filename': 'sf2t.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
     # END Street Fighter 2 Hyper Fighting                                          #
@@ -970,7 +945,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        return [{'filename': 'ssf2u.zip', 'contents': self._build_rom(in_files, func_map)}]
+        return [{'filename': 'ssf2u.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
     # END Super Street Fighter 2                                                   #
@@ -1043,7 +1018,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        return [{'filename': 'ssf2tu.zip', 'contents': self._build_rom(in_files, func_map)}]
+        return [{'filename': 'ssf2tu.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
     # END Super Street Fighter 2 Turbo                                             #
