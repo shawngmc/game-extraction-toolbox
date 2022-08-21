@@ -5,8 +5,6 @@
   Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 - Samuari Shodown Collection
   https://github.com/ValadAmoleo/sf30ac-extractor
-- Disney Afternoon Collection
-  MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 - Disney Aladdin/Lion King Bundle
   https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
 - Atari Vault

@@ -192,6 +192,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Disney Afternoon Collection",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "disneyac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\disneyac\""
+            ]
+        },
+        {
             "name": "Python: Deshuffle Perf Comparison",
             "type": "python",
             "request": "launch",
