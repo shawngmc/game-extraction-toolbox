@@ -11,6 +11,7 @@ from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
+
 class CAS1OldTask(BaseTask):
     _task_name = 'cas1_old'
     _title = "Capcom Arcade Stadium 1 (OLD)"
@@ -73,7 +74,6 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     _input_folder_desc = "SteamApps Content Folder"
     _short_description = "Capcom Arcade Stadium 1, ~30 arcade games, as downloaded from depot using old manifests"
 
-
     _pkg_name_map = {
         "1515951": "1943",
         "1556690": "Ghosts 'n Goblins",
@@ -109,7 +109,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         "1556729": "Progear"
     }
 
-    def _twiddle_zip(self, zip_bytes, remove_list = [], rename_dict = {}, lowercase_all = False):
+    def _twiddle_zip(self, zip_bytes, remove_list=[], rename_dict={}, lowercase_all=False):
         new_contents = io.BytesIO()
         with zipfile.ZipFile(io.BytesIO(zip_bytes), "r") as old_archive:
             zip_entries = list(old_archive.infolist())
@@ -134,6 +134,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         new_data = dict()
         with zipfile.ZipFile(io.BytesIO(zip_contents), "r") as old_archive:
             zip_entries = list(old_archive.infolist())
+
             def getType(zip_entry):
                 return zip_entry.filename.split('.')[1]
             for file_entry in zip_entries:
@@ -167,13 +168,17 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                                     subzip_contents = file_read_obj.read()
                     # If extra rom was found, save it off AND remove it from the main zip to allow processing
                     if subzip_contents != None:
-                        subzip_fixed = self._standard_kpka_contents_processing({'0': {'contents': subzip_contents}})[0]
+                        subzip_fixed = self._standard_kpka_contents_processing(
+                            {'0': {'contents': subzip_contents}})[0]
                         out_files.append(subzip_fixed)
-                        contents = self._twiddle_zip(contents, remove_list = [subzip_filename])
-                    other_zip = self._standard_kpka_contents_processing({'0': {'contents': contents}})[0]
+                        contents = self._twiddle_zip(
+                            contents, remove_list=[subzip_filename])
+                    other_zip = self._standard_kpka_contents_processing(
+                        {'0': {'contents': contents}})[0]
                     out_files.append(other_zip)
                 else:
-                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[0]
+                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[
+                        0]
                     out_files.append(other_zip)
         return out_files
 
@@ -182,7 +187,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         # Start with standard processing
         out_files = self._standard_kpka_contents_processing(kpka_contents)
         # Remove 1943j as it's just too broken
-        out_files = list(filter(lambda i: i['filename'] != "1943j.zip", out_files))
+        out_files = list(
+            filter(lambda i: i['filename'] != "1943j.zip", out_files))
         return out_files
 
     def _handle_1556690(self, kpka_contents):
@@ -191,7 +197,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         out_files = self._standard_kpka_contents_processing(kpka_contents)
         for out_file in out_files:
             if out_file['filename'] == 'makaimurg.zip':
-                out_file['contents'] = self._twiddle_zip(out_file['contents'], remove_list = ['gg1.bin'])
+                out_file['contents'] = self._twiddle_zip(
+                    out_file['contents'], remove_list=['gg1.bin'])
         return out_files
 
     def _handle_1556708(self, kpka_contents):
@@ -199,11 +206,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         for file_entry in kpka_contents.values():
             if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 352:
-                    contents = self._twiddle_zip(file_entry['contents'], lowercase_all=True)
-                    out_files.append({'filename': 'lostwrld.zip', 'contents': contents})
+                    contents = self._twiddle_zip(
+                        file_entry['contents'], lowercase_all=True)
+                    out_files.append(
+                        {'filename': 'lostwrld.zip', 'contents': contents})
                 else:
                     # This is ok for standard processing
-                    ffightj_zip = self._standard_kpka_contents_processing({'0': file_entry})[0]
+                    ffightj_zip = self._standard_kpka_contents_processing({'0': file_entry})[
+                        0]
                     out_files.append(ffightj_zip)
         return out_files
 
@@ -218,7 +228,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             if out_file['filename'] == 'striderjr2.zip':
                 out_file['filename'] = 'striderjr.zip'
             elif out_file['filename'] == 'striderua.zip':
-                out_file['contents'] = self._twiddle_zip(out_file['contents'], remove_list = ['st24b2.1a'])
+                out_file['contents'] = self._twiddle_zip(
+                    out_file['contents'], remove_list=['st24b2.1a'])
         return out_files
 
     def _handle_1556711(self, kpka_contents):
@@ -227,7 +238,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         out_files = self._standard_kpka_contents_processing(kpka_contents)
         for out_file in out_files:
             if out_file['filename'] == 'dynwarj.zip':
-                out_file['contents'] = self._twiddle_zip(out_file['contents'], remove_list = ['TK_14.BIN'])
+                out_file['contents'] = self._twiddle_zip(
+                    out_file['contents'], remove_list=['TK_14.BIN'])
         return out_files
 
     def _handle_1556712(self, kpka_contents):
@@ -235,11 +247,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         for file_entry in kpka_contents.values():
             if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 1497211:
-                    contents = self._twiddle_zip(file_entry['contents'], lowercase_all=True)
-                    out_files.append({'filename': 'ffightu.zip', 'contents': contents})
+                    contents = self._twiddle_zip(
+                        file_entry['contents'], lowercase_all=True)
+                    out_files.append(
+                        {'filename': 'ffightu.zip', 'contents': contents})
                 else:
                     # This is ok for standard processing
-                    ffightj_zip = self._standard_kpka_contents_processing({'0': file_entry})[0]
+                    ffightj_zip = self._standard_kpka_contents_processing({'0': file_entry})[
+                        0]
                     out_files.append(ffightj_zip)
         return out_files
 
@@ -251,7 +266,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
                 # This is merjs; rename it
-                out_files.append({'filename': 'mercsj.zip', 'contents': file_entry['contents']})
+                out_files.append(
+                    {'filename': 'mercsj.zip', 'contents': file_entry['contents']})
         return out_files
 
     def _handle_1556715(self, kpka_contents):
@@ -259,9 +275,11 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         for file_entry in kpka_contents.values():
             if file_entry['contents'][0:2].decode("utf-8") == "PK":
                 if file_entry['offset'] == 1511592:
-                    out_files.append({'filename': 'mtwins.zip', 'contents': file_entry['contents']})
+                    out_files.append(
+                        {'filename': 'mtwins.zip', 'contents': file_entry['contents']})
                 else:
-                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[0]
+                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[
+                        0]
                     out_files.append(other_zip)
         return out_files
 
@@ -270,9 +288,11 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
                 if file_entry['offset'] == 1538278:
-                    out_files.append({'filename': 'cawingu.zip', 'contents': file_entry['contents']})
+                    out_files.append(
+                        {'filename': 'cawingu.zip', 'contents': file_entry['contents']})
                 else:
-                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[0]
+                    other_zip = self._standard_kpka_contents_processing({'0': file_entry})[
+                        0]
                     out_files.append(other_zip)
         return out_files
 
@@ -306,23 +326,28 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     "sf2u_19.bin": "sf2_19.12c",
                     "sf2u_37m.bin": "sf-2u_37m.11f",
                 }
-                out_file['contents'] = self._twiddle_zip(out_file['contents'], rename_dict=rename_dict, lowercase_all=True)
+                out_file['contents'] = self._twiddle_zip(
+                    out_file['contents'], rename_dict=rename_dict, lowercase_all=True)
         return out_files
-        
+
     def _handle_1556718(self, kpka_contents):
         out_files = []
         # Start with standard processing
         out_files = self._standard_kpka_contents_processing(kpka_contents)
         # For each resulting zip, remove the optional and bad CRC files
         for out_file in out_files:
-            out_file['contents'] = self._twiddle_zip(out_file['contents'], rename_dict={'c632b.ic1': 'c632.ic1'})
+            out_file['contents'] = self._twiddle_zip(
+                out_file['contents'], rename_dict={'c632b.ic1': 'c632.ic1'})
         return out_files
 
     def _handle_1556722(self, kpka_contents):
         out_files = []
+
         def gfx(contents):
-            chunks = transforms.custom_split(contents, [8388608, 4194304, 4194304])
-            chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
+            chunks = transforms.custom_split(
+                contents, [8388608, 4194304, 4194304])
+            chunks = transforms.deinterleave_all(
+                chunks, num_ways=4, word_size=2)
             filenames = [
                 'sfx.13m',
                 'sfx.15m',
@@ -348,6 +373,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                 'sfx.02'
             ]
             return dict(zip(filenames, chunks))
+
         def qsound(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
             chunks = transforms.swap_endian_all(chunks)
@@ -359,11 +385,12 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #ssf2xj
+                if file_entry['offset'] == 352:  # ssf2xj
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
                         filenames = [
@@ -380,12 +407,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'ssf2xj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #ssf2tu
+                    out_files.append({'filename': 'ssf2xj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # ssf2tu
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
                         filenames = [
@@ -402,14 +431,17 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'ssf2tu.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': 'ssf2tu.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556724(self, kpka_contents):
         out_files = []
+
         def gfx(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
-            chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
+            chunks = transforms.deinterleave_all(
+                chunks, num_ways=4, word_size=2)
             filenames = [
                 "cyb.13m",
                 "cyb.15m",
@@ -443,7 +475,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #cybotsj
+                if file_entry['offset'] == 352:  # cybotsj
                     func_map = {}
 
                     def maincpu(contents):
@@ -464,8 +496,9 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'cybotsj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #cybotsu
+                    out_files.append({'filename': 'cybotsj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # cybotsu
                     func_map = {}
 
                     def maincpu(contents):
@@ -486,21 +519,23 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'cybotsu.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': 'cybotsu.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556725(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #19xxj
+                if file_entry['offset'] == 352:  # 19xxj
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x280000, length=0x180000)
+                        contents = transforms.splice_out(
+                            contents, 0x280000, length=0x180000)
                         chunks = transforms.equal_split(contents, num_chunks=5)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [    
+                        filenames = [
                             '19xj.03a',
                             '19xj.04a',
                             '19xj.05a',
@@ -511,10 +546,12 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['maincpu'] = maincpu
 
                     def gfx(contents):
-                        contents = transforms.splice_out(contents, 0x200000, length=0x600000)
+                        contents = transforms.splice_out(
+                            contents, 0x200000, length=0x600000)
                         chunks = transforms.equal_split(contents, num_chunks=5)
-                        chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
-                        filenames = [    
+                        chunks = transforms.deinterleave_all(
+                            chunks, num_ways=4, word_size=2)
+                        filenames = [
                             '19x-69.4j',
                             '19x-59.4d',
                             '19x-79.4m',
@@ -541,8 +578,10 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
 
                     def audiocpu(contents):
-                        contents = transforms.splice_out(contents, 0x28000, length=0x28000)
-                        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
+                        contents = transforms.splice_out(
+                            contents, 0x28000, length=0x28000)
+                        contents = transforms.splice_out(
+                            contents, 0x8000, length=0x8000)
                         return {
                             '19x-01.1a': contents
                         }
@@ -551,29 +590,31 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     def qsound(contents):
                         chunks = transforms.equal_split(contents, num_chunks=8)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "19x-51.6a", 
-                            "19x-52.7a", 
-                            "19x-53.8a", 
-                            "19x-54.9a", 
-                            "19x-55.10a", 
-                            "19x-56.11a", 
-                            "19x-57.12a", 
+                        filenames = [
+                            "19x-51.6a",
+                            "19x-52.7a",
+                            "19x-53.8a",
+                            "19x-54.9a",
+                            "19x-55.10a",
+                            "19x-56.11a",
+                            "19x-57.12a",
                             "19x-58.13a"
                         ]
 
                         return dict(zip(filenames, chunks))
                     func_map['qsound'] = qsound
 
-                    out_files.append({'filename': '19xxj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #19xx
+                    out_files.append({'filename': '19xxj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # 19xx
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x280000, length=0x180000)
+                        contents = transforms.splice_out(
+                            contents, 0x280000, length=0x180000)
                         chunks = transforms.equal_split(contents, num_chunks=5)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [    
+                        filenames = [
                             '19xu.03',
                             '19xu.04',
                             '19xu.05',
@@ -582,27 +623,32 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         ]
                         return dict(zip(filenames, chunks))
                     func_map['maincpu'] = maincpu
-                    
+
                     def gfx(contents):
-                        contents = transforms.splice_out(contents, 0x200000, length=0x600000)
-                        chunks = transforms.custom_split(contents, [2097152, 8388608])
-                        chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
-                        filenames = [    
-                            "19x.13m", 
-                            "19x.15m", 
-                            "19x.17m", 
-                            "19x.19m", 
-                            "19x.14m", 
-                            "19x.16m", 
-                            "19x.18m", 
-                            "19x.20m", 
+                        contents = transforms.splice_out(
+                            contents, 0x200000, length=0x600000)
+                        chunks = transforms.custom_split(
+                            contents, [2097152, 8388608])
+                        chunks = transforms.deinterleave_all(
+                            chunks, num_ways=4, word_size=2)
+                        filenames = [
+                            "19x.13m",
+                            "19x.15m",
+                            "19x.17m",
+                            "19x.19m",
+                            "19x.14m",
+                            "19x.16m",
+                            "19x.18m",
+                            "19x.20m",
                         ]
                         return dict(zip(filenames, chunks))
                     func_map['gfx'] = gfx
-                    
+
                     def audiocpu(contents):
-                        contents = transforms.splice_out(contents, 0x28000, length=0x28000)
-                        contents = transforms.splice_out(contents, 0x8000, length=0x8000)
+                        contents = transforms.splice_out(
+                            contents, 0x28000, length=0x28000)
+                        contents = transforms.splice_out(
+                            contents, 0x8000, length=0x8000)
                         return {
                             '19x.01': contents
                         }
@@ -611,13 +657,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     def qsound(contents):
                         chunks = transforms.equal_split(contents, num_chunks=2)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "19x.11m",   
+                        filenames = [
+                            "19x.11m",
                             "19x.12m"
                         ]
                         return dict(zip(filenames, chunks))
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': '19xx.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': '19xx.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556726(self, kpka_contents):
@@ -642,6 +689,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                 'btc.02'
             ]
             return dict(zip(filenames, chunks))
+
         def qsound(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
             chunks = transforms.swap_endian_all(chunks)
@@ -653,20 +701,21 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #batcirj
+                if file_entry['offset'] == 352:  # batcirj
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "btcj.03", 
-                            "btcj.04", 
-                            "btcj.05", 
-                            "btcj.06", 
-                            "btc.07", 
-                            "btc.08", 
+                        filenames = [
+                            "btcj.03",
+                            "btcj.04",
+                            "btcj.05",
+                            "btcj.06",
+                            "btc.07",
+                            "btc.08",
                             "btc.09"
                         ]
                         return dict(zip(filenames, chunks))
@@ -674,21 +723,23 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'batcirj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #batcir
+                    out_files.append({'filename': 'batcirj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # batcir
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x380000, length=0x3FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x380000, length=0x3FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=7)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
-                            "btce.03", 
-                            "btce.04", 
-                            "btce.05", 
-                            "btce.06", 
-                            "btc.07", 
-                            "btc.08", 
+                        filenames = [
+                            "btce.03",
+                            "btce.04",
+                            "btce.05",
+                            "btce.06",
+                            "btc.07",
+                            "btc.08",
                             "btc.09"
                         ]
                         return dict(zip(filenames, chunks))
@@ -696,7 +747,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'batcir.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': 'batcir.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556727(self, kpka_contents):
@@ -716,6 +768,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             contents = transforms.splice_out(contents, 0x28000, length=0x28000)
             contents = transforms.splice_out(contents, 0x8000, length=0x8000)
             return {'ggw.01': contents}
+
         def qsound(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
             chunks = transforms.swap_endian_all(chunks)
@@ -727,11 +780,12 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #gigawingj
+                if file_entry['offset'] == 352:  # gigawingj
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
                         filenames = [
@@ -744,12 +798,14 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'gigawingj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #gigawing
+                    out_files.append({'filename': 'gigawingj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # gigawing
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
                         filenames = [
@@ -762,7 +818,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'gigawing.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': 'gigawing.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556728(self, kpka_contents):
@@ -770,7 +827,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         def gfx(contents):
             chunks = transforms.custom_split(contents, [16777216, 4194304])
-            chunks = transforms.deinterleave_all(chunks, num_ways=4, word_size=2)
+            chunks = transforms.deinterleave_all(
+                chunks, num_ways=4, word_size=2)
             filenames = [
                 "nff.13m",
                 "nff.15m",
@@ -787,6 +845,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             contents = transforms.splice_out(contents, 0x28000, length=0x28000)
             contents = transforms.splice_out(contents, 0x8000, length=0x8000)
             return {'nff.01': contents}
+
         def qsound(contents):
             chunks = transforms.equal_split(contents, num_chunks=2)
             chunks = transforms.swap_endian_all(chunks)
@@ -798,14 +857,15 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #1944j
+                if file_entry['offset'] == 352:  # 1944j
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "nffj.03",
                             "nffj.04",
                             "nffj.05",
@@ -815,15 +875,17 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': '1944j.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #1944
+                    out_files.append({'filename': '1944j.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # 1944
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x180000, length=0x27FFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x180000, length=0x27FFFF)
                         chunks = transforms.equal_split(contents, num_chunks=3)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "nffu.03",
                             "nff.04",
                             "nffu.05",
@@ -833,7 +895,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': '1944.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': '1944.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _handle_1556729(self, kpka_contents):
@@ -841,7 +904,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         def gfx(contents):
             chunks = transforms.deinterleave(contents, num_ways=8, word_size=1)
-            filenames = [    
+            filenames = [
                 "pga-simm.01c",
                 "pga-simm.01d",
                 "pga-simm.01a",
@@ -857,6 +920,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             contents = transforms.splice_out(contents, 0x28000, length=0x28000)
             contents = transforms.splice_out(contents, 0x8000, length=0x8000)
             return {'pga.01': contents}
+
         def qsound(contents):
             chunks = transforms.equal_split(contents, num_chunks=4)
             chunks = transforms.swap_endian_all(chunks)
@@ -870,14 +934,15 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
-                if file_entry['offset'] == 352: #progearj
+                if file_entry['offset'] == 352:  # progearj
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x100000, length=0x2FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x100000, length=0x2FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=2)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "pgaj.03",
                             "pgaj.04"
                         ]
@@ -886,15 +951,17 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'progearj.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
-                else: #progear
+                    out_files.append({'filename': 'progearj.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
+                else:  # progear
                     func_map = {}
 
                     def maincpu(contents):
-                        contents = transforms.splice_out(contents, 0x100000, length=0x2FFFFF)
+                        contents = transforms.splice_out(
+                            contents, 0x100000, length=0x2FFFFF)
                         chunks = transforms.equal_split(contents, num_chunks=2)
                         chunks = transforms.swap_endian_all(chunks)
-                        filenames = [   
+                        filenames = [
                             "pgau.03",
                             "pgau.04"
                         ]
@@ -903,7 +970,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     func_map['gfx'] = gfx
                     func_map['audiocpu'] = audiocpu
                     func_map['qsound'] = qsound
-                    out_files.append({'filename': 'progear.zip', 'contents': self._merged_rom_handler(file_entry['contents'], func_map)})
+                    out_files.append({'filename': 'progear.zip', 'contents': self._merged_rom_handler(
+                        file_entry['contents'], func_map)})
         return out_files
 
     def _find_files(self, in_path):
@@ -913,7 +981,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         # open old zipfile
         with zipfile.ZipFile(io.BytesIO(contents), "r") as old_archive:
             zip_entries = list(old_archive.infolist())
-            
+
             def getPrefix(zip_entry):
                 return zip_entry.filename.split('/')[0]
 
@@ -926,22 +994,24 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             except Exception as e:
                 logger.warning(e)
                 logger.warning(zip_entries[0])
-                raise Exception(f'not a mame subfolder zip - no slash in first zip entry')
+                raise Exception(
+                    f'not a mame subfolder zip - no slash in first zip entry')
 
             prefix = getPrefix(zip_entries[0])
             for file_entry in zip_entries:
                 if getPrefix(file_entry) != prefix:
-                    raise Exception(f'not a mame subfolder zip - {getPrefix(file_entry)} != {prefix}')
+                    raise Exception(
+                        f'not a mame subfolder zip - {getPrefix(file_entry)} != {prefix}')
 
             new_contents = io.BytesIO()
             with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
                 for file_entry in zip_entries:
                     with old_archive.open(file_entry) as file_read_obj:
                         file_data = file_read_obj.read()
-    
+
                         # add to new archive
                         new_archive.writestr(getName(file_entry), file_data)
-            
+
             ret_obj = dict()
             ret_obj['filename'] = f'{prefix}.zip'
             ret_obj['contents'] = new_contents.getvalue()
@@ -951,7 +1021,8 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         out_files = []
         for file_entry in kpka_contents.values():
             if (file_entry['contents'][0:2] == "PK".encode('utf-8')):
-                rebuilt = self._rebuild_mame_subfolder_zip(file_entry['contents'])
+                rebuilt = self._rebuild_mame_subfolder_zip(
+                    file_entry['contents'])
                 out_files.append(rebuilt)
         return out_files
 
@@ -977,8 +1048,9 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                             # Reflectively call the appropriate function to process the file
                             output_files = handler_func(kpka_contents)
                         else:
-                            output_files = self._standard_kpka_contents_processing(kpka_contents)
-                            
+                            output_files = self._standard_kpka_contents_processing(
+                                kpka_contents)
+
                         for output_file in output_files:
                             with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])

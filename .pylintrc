@@ -1,0 +1,4 @@
+[MESSAGES CONTROL]
+# W1202, W1203Allow f-string log messages
+enable=W1202
+disable=W1203
