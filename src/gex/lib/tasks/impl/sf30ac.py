@@ -1,18 +1,13 @@
-
-
-# Extraction Script for Street Fighter 30th Anniversary Collection
-
 import glob
 import logging
 import os
-
 from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class SF30ACTask(BaseTask):
     _task_name = "sf30ac"
@@ -54,25 +49,25 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
         for file_path in bundle_files:
-            with open(file_path, 'rb') as fp:
+            with open(file_path, 'rb') as in_file:
                 file_name = os.path.basename(file_path)
                 pkg_name = self._pkg_name_map.get(file_name)
-                if pkg_name != None:
+                if pkg_name is not None:
                     logger.info(f'Reading files for {file_name}...')
-                    contents = fp.read()
+                    contents = in_file.read()
                     reader = BPListReader(contents)
                     parsed = reader.parse()
-                    
+
                     handler_func = self.find_handler_func(pkg_name)
-                    if parsed != None and handler_func != None:
+                    if parsed is not None and handler_func is not None:
                         output_files = handler_func(parsed)
-                            
+
                         for output_file in output_files:
                             with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])
-                    elif parsed == None:
+                    elif parsed is None:
                         logger.warning("Could not find merged rom data in mbundle.")
-                    elif handler_func == None:
+                    elif handler_func is None:
                         logger.warning("Could not find matching handler function.")
                 else:
                     logger.info(f'Skipping {file_name} as it contains no known roms...')
@@ -95,7 +90,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     }
 
     def _find_files(self, base_path):
-        bundle_path = os.path.join(base_path, "Bundle", '*.mbundle') 
+        bundle_path = os.path.join(base_path, "Bundle", '*.mbundle')
         archive_list = glob.glob(bundle_path)
         return archive_list
 
@@ -111,7 +106,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     def _deshuffle_gfx_common(self, filenames, num_interim_split, final_split = None):
         def gfx(in_files):
             contents = in_files['vrom']
-            
+
             # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
             contents = capcom.common_gfx_deshuffle(contents)
 
@@ -149,13 +144,13 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
                 for j in range(8):
                     n = src >> (j * 4) & 0x0f
-                    if (n & 0x01):
+                    if n & 0x01:
                         dwval |= 1 << (     7 - j)
-                    if (n & 0x02):
+                    if n & 0x02:
                         dwval |= 1 << ( 8 + 7 - j)
-                    if (n & 0x04):
+                    if n & 0x04:
                         dwval |= 1 << (16 + 7 - j)
-                    if (n & 0x08):
+                    if n & 0x08:
                         dwval |= 1 << (24 + 7 - j)
 
                 buf[i + 0] = (dwval)       & 0xff
@@ -177,14 +172,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                 temp_chunks[j].extend(interleave_group[interleave_offset:interleave_end])
                 interleave_offset = interleave_end
         return temp_chunks
-
-    def _placeholder_generator(self, file_map):
-        def create_placeholders(contents):
-            out_files = {}
-            for filename, size in file_map.items():
-                out_files[filename] = bytes(size*b'\0')
-            return out_files  
-        return create_placeholders
 
     ################################################################################
     # START Street Fighter                                                         #
@@ -222,38 +209,38 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['mplanes'] = mbundle_entries.get("StreetFighter.mplanes.rom")
 
         bplanes_filenames = [
-            "sf-39.2k", 
-            "sf-38.1k", 
-            "sf-41.4k", 
+            "sf-39.2k",
+            "sf-38.1k",
+            "sf-41.4k",
             "sf-40.3k"
         ]
         func_map['bplanes'] = helpers.equal_split_helper('bplanes', bplanes_filenames)
 
         mplanes_filenames = [
-            "sf-25.1d", 
-            "sf-28.1e", 
-            "sf-30.1g", 
-            "sf-34.1h", 
-            "sf-26.2d", 
-            "sf-29.2e", 
-            "sf-31.2g", 
+            "sf-25.1d",
+            "sf-28.1e",
+            "sf-30.1g",
+            "sf-34.1h",
+            "sf-26.2d",
+            "sf-29.2e",
+            "sf-31.2g",
             "sf-35.2h"
         ]
         func_map['mplanes'] = helpers.equal_split_helper('mplanes', mplanes_filenames)
 
         sprites_filenames = [
-            "sf-15.1m", 
-            "sf-16.2m", 
-            "sf-11.1k", 
-            "sf-12.2k", 
-            "sf-07.1h", 
-            "sf-08.2h", 
-            "sf-03.1f", 
-            "sf-17.3m", 
-            "sf-18.4m", 
-            "sf-13.3k", 
-            "sf-14.4k", 
-            "sf-09.3h", 
+            "sf-15.1m",
+            "sf-16.2m",
+            "sf-11.1k",
+            "sf-12.2k",
+            "sf-07.1h",
+            "sf-08.2h",
+            "sf-03.1f",
+            "sf-17.3m",
+            "sf-18.4m",
+            "sf-13.3k",
+            "sf-14.4k",
+            "sf-09.3h",
             "sf-10.4h",
             "sf-05.3f"
         ]
@@ -262,9 +249,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['alpha'] = helpers.name_file_helper("alpha", "sf-27.4d")
 
         maps_filenames = [
-            "sf-37.4h", 
-            "sf-36.3h", 
-            "sf-32.3g", 
+            "sf-37.4h",
+            "sf-36.3h",
+            "sf-32.3g",
             "sf-33.4g"
         ]
         func_map['maps'] = helpers.equal_split_helper('maps', maps_filenames)
@@ -272,23 +259,23 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['z80'] = helpers.name_file_helper("z80", "sf-02.7k")
 
         samples_filenames = [
-            "sfu-00.1h", 
+            "sfu-00.1h",
             "sf-01.1k"
         ]
         func_map['samples'] = helpers.equal_split_helper('samples', samples_filenames)
 
         maincpu_filenames = [
-            "sfd-19.2a", 
+            "sfd-19.2a",
             "sfd-22.2c",
-            "sfd-20.3a", 
+            "sfd-20.3a",
             "sfd-23.3c",
-            "sfd-21.4a", 
-            "sfd-24.4c"  
-        ] 
+            "sfd-21.4a",
+            "sfd-24.4c"
+        ]
         def maincpu(in_files):
             contents = in_files['68k']
             chunks = transforms.equal_split(contents, num_chunks = 3)
-            
+
             new_chunks = []
             for oldchunk in chunks:
                 new_chunks.extend(transforms.deinterleave(oldchunk, num_ways=2, word_size=1))
@@ -327,7 +314,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['ub68k'] = mbundle_entries.get('StreetFighterII.ub.68k')
 
         # audiocpu
-        audiocpu_filenames = [   
+        audiocpu_filenames = [
             "sf2_9.12a"
         ]
         def audiocpu(in_files):
@@ -349,7 +336,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         def maincpu(in_files):
             contents = in_files['ub68k']
             chunks = transforms.equal_split(contents, num_chunks = 4)
-            
+
             new_chunks = []
             for oldchunk in chunks:
                 new_chunks.extend(transforms.deinterleave(oldchunk, num_ways=2, word_size=1))
@@ -360,17 +347,17 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         # gfx
         gfx_filenames = [
-            "sf2_06.bin", 
-            "sf2_08.bin", 
-            "sf2_05.bin", 
+            "sf2_06.bin",
+            "sf2_08.bin",
+            "sf2_05.bin",
             "sf2_07.bin",
-            "sf2_15.bin", 
-            "sf2_17.bin", 
-            "sf2_14.bin", 
+            "sf2_15.bin",
+            "sf2_17.bin",
+            "sf2_14.bin",
             "sf2_16.bin",
-            "sf2_25.bin", 
-            "sf2_27.bin", 
-            "sf2_24.bin", 
+            "sf2_25.bin",
+            "sf2_27.bin",
+            "sf2_24.bin",
             "sf2_26.bin"
         ]
         def gfx(in_files):
@@ -385,7 +372,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['gfx'] = gfx
 
         # oki
-        oki_filenames = [   
+        oki_filenames = [
             'sf2_18.11c',
             'sf2_19.12c'
         ]
@@ -455,7 +442,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
 
         # z80
-        z80_filenames = [   
+        z80_filenames = [
             'sfz.01',
             'sfz.02'
         ]
@@ -466,7 +453,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
 
         # qsound
-        qsound_filenames = [   
+        qsound_filenames = [
             'sfz.11m',
             'sfz.12m'
         ]
@@ -526,7 +513,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 20, final_split = [0x400000, 0x100000])
 
         # z80
-        z80_filenames = [   
+        z80_filenames = [
             'sz2.01a',
             'sz2.02a'
         ]
@@ -536,7 +523,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['z80'] = z80
 
         # qsound
-        qsound_filenames = [   
+        qsound_filenames = [
             'sz2.11m',
             'sz2.12m'
         ]
@@ -599,7 +586,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 32, final_split = [0x400000, 0x400000])
 
         # z80
-        z80_filenames = [   
+        z80_filenames = [
             'sz3.01',
             'sz3.02'
         ]
@@ -609,7 +596,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['z80'] = z80
 
         # qsound
-        qsound_filenames = [   
+        qsound_filenames = [
             'sz3.11m',
             'sz3.12m'
         ]
@@ -712,7 +699,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['68k'] = mbundle_entries.get('StreetFighterII_CE.ua.68k')
 
         # audiocpu
-        audiocpu_filenames = [   
+        audiocpu_filenames = [
             "s92_09.bin"
         ]
         def audiocpu(in_files):
@@ -722,7 +709,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         # maincpu
         maincpu_filenames = [
-            "s92u-23a", 
+            "s92u-23a",
             "sf2ce.22",
             "s92_21a.bin"
         ]
@@ -736,16 +723,16 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         # gfx
         gfx_filenames = [
             "s92_01.bin",
-            "s92_02.bin", 
-            "s92_03.bin", 
+            "s92_02.bin",
+            "s92_03.bin",
             "s92_04.bin",
-            "s92_05.bin", 
-            "s92_06.bin", 
-            "s92_07.bin", 
+            "s92_05.bin",
+            "s92_06.bin",
+            "s92_07.bin",
             "s92_08.bin",
             "s92_10.bin",
-            "s92_11.bin", 
-            "s92_12.bin", 
+            "s92_11.bin",
+            "s92_12.bin",
             "s92_13.bin"
         ]
         def gfx(in_files):
@@ -760,7 +747,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['gfx'] = gfx
 
         # oki
-        oki_filenames = [   
+        oki_filenames = [
             's92_18.bin',
             's92_19.bin'
         ]
@@ -793,7 +780,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     ################################################################################
     # START Street Fighter 2 Hyper Fighting                                        #
     ################################################################################
-        
+
     def _handle_sf2hf(self, mbundle_entries):
         func_map = {}
         in_files = {}
@@ -803,7 +790,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['68k'] = mbundle_entries.get('StreetFighterII_HF.u.68k')
 
         # audiocpu
-        audiocpu_filenames = [   
+        audiocpu_filenames = [
             "s92_09.bin"
         ]
         def audiocpu(in_files):
@@ -826,17 +813,17 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         # gfx
         gfx_filenames = [
-            "s92_01.bin", 
-            "s92_02.bin", 
-            "s92_03.bin", 
+            "s92_01.bin",
+            "s92_02.bin",
+            "s92_03.bin",
             "s92_04.bin",
-            "s92_05.bin", 
-            "s92_06.bin", 
-            "s92_07.bin", 
+            "s92_05.bin",
+            "s92_06.bin",
+            "s92_07.bin",
             "s92_08.bin",
-            "s2t_10.bin", 
-            "s2t_11.bin", 
-            "s2t_12.bin", 
+            "s2t_10.bin",
+            "s2t_11.bin",
+            "s2t_12.bin",
             "s2t_13.bin"
         ]
         def gfx(in_files):
@@ -851,7 +838,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['gfx'] = gfx
 
         # oki
-        oki_filenames = [   
+        oki_filenames = [
             's92_18.bin',
             's92_19.bin'
         ]
@@ -884,7 +871,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     ################################################################################
     # START Super Street Fighter 2                                                 #
     ################################################################################
-        
+
     def _handle_ssf2(self, mbundle_entries):
         func_map = {}
         in_files = {}
@@ -894,7 +881,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['68k'] = mbundle_entries.get('SuperStreetFighterII.u.68k')
 
         # audiocpu
-        audiocpu_filenames = [   
+        audiocpu_filenames = [
             "ssf.01"
         ]
         def audiocpu(in_files):
@@ -904,10 +891,10 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         # maincpu
         maincpu_filenames = [
-            "ssfu.03a", 
-            "ssfu.04a", 
-            "ssfu.05", 
-            "ssfu.06", 
+            "ssfu.03a",
+            "ssfu.04a",
+            "ssfu.05",
+            "ssfu.06",
             "ssfu.07"
         ]
         def maincpu(in_files):
@@ -930,14 +917,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 12, final_split = [0x200000, 0x100000])
 
         # qsound
-        qsound_filenames = [   
-            "ssf.q01", 
-            "ssf.q02", 
-            "ssf.q03", 
-            "ssf.q04", 
-            "ssf.q05", 
-            "ssf.q06", 
-            "ssf.q07", 
+        qsound_filenames = [
+            "ssf.q01",
+            "ssf.q02",
+            "ssf.q03",
+            "ssf.q04",
+            "ssf.q05",
+            "ssf.q06",
+            "ssf.q07",
             "ssf.q08"
         ]
         def qsound(in_files):
@@ -965,8 +952,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['68k'] = mbundle_entries.get('SuperStreetFighterIITurbo.u.68k')
 
         # audiocpu
-        audiocpu_filenames = [   
-            "sfx.01",   
+        audiocpu_filenames = [
+            "sfx.01",
             "sfx.02"
         ]
         def audiocpu(in_files):
@@ -977,12 +964,12 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         # maincpu
         maincpu_filenames = [
-            "sfxu.03e", 
-            "sfxu.04a", 
-            "sfxu.05", 
-            "sfxu.06b", 
-            "sfxu.07a", 
-            "sfxu.08", 
+            "sfxu.03e",
+            "sfxu.04a",
+            "sfxu.05",
+            "sfxu.06b",
+            "sfxu.07a",
+            "sfxu.08",
             "sfx.09"
         ]
         def maincpu(in_files):
@@ -1001,7 +988,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sfx.23m",
             "sfx.17m",
             "sfx.18m",
-            "sfx.25m", 
+            "sfx.25m",
             "sfx.19m",
             "sfx.20m",
             "sfx.27m"
@@ -1009,8 +996,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 16, final_split = [0x200000, 0x100000, 0x100000])
 
         # qsound
-        qsound_filenames = [   
-            "sfx.11m", 
+        qsound_filenames = [
+            "sfx.11m",
             "sfx.12m",
         ]
         def qsound(in_files):

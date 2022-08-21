@@ -2,10 +2,9 @@ import logging
 import os
 import shutil
 import traceback
-
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class BlizzArcadeTask(BaseTask):
     _task_name = "blizzarcade"
@@ -124,15 +123,15 @@ These are the ROMs just sitting in the assets/roms folder.
         for file_path in rom_files:
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
-            if not game_info == None:
+            if game_info is not None:
                 display_name = game_info['name']
                 display_name += f' ({game_info["version"]})'
-                logger.info(f"Copying {file_name}: {display_name}") 
+                logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                    logger.warning(f'Error while processing {file_path}!')
             else:
-                logger.info(f'Skipping unmatched file {file_path}!') 
+                logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")

@@ -4,10 +4,9 @@ import glob
 import logging
 import os
 
-from gex.lib.archive import kpka
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class GenesisTask(BaseTask):
     _task_name = "genesis"
@@ -97,18 +96,18 @@ There are a few more regional variants that are only available in PAK files, but
             # TODO: Add a handler for the pak compressed ones
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
-            if not game_info == None:
+            if game_info is not None:
                 display_name = game_info['name']
                 if game_info['region']:
                     display_name += f' ({game_info["region"]})'
-                logger.info(f"Copying {file_name}: {display_name}") 
+                logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                    logger.warning(f'Error while processing {file_path}!')
             else:
-                logger.info(f'Skipping unmatched file {file_path}!') 
+                logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")
 
     _game_info_map = {
@@ -450,9 +449,7 @@ There are a few more regional variants that are only available in PAK files, but
     }
 
     def _find_files(self, base_path):
-        uncomp_rom_path = os.path.join(base_path, "uncompressed ROMs") 
+        uncomp_rom_path = os.path.join(base_path, "uncompressed ROMs")
         archive_list = glob.glob(uncomp_rom_path +'/*.*')
         # TODO: Add Pak roms to search - possibly only the non-dupes?
         return archive_list
-
-

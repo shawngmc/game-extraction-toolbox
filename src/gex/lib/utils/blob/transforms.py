@@ -21,12 +21,12 @@ def custom_split(contents, chunk_sizes):
 
 
 def equal_split(contents, num_chunks = None, chunk_size = None):
-    if num_chunks == None and chunk_size == None:
+    if num_chunks is None and chunk_size is None:
         raise Exception("Equal split needs a number of slices to end up with and/or a chunk size.")
-    elif num_chunks != None and chunk_size != None:
+    elif num_chunks is not None and chunk_size is not None:
         if num_chunks * chunk_size != len(contents):
             raise Exception("Equal split received a number of slices to end up with and a chunk size, but these don't add up to the content length.")
-    elif num_chunks == None:
+    elif num_chunks is None:
         num_chunks = len(contents)//chunk_size
     else:
         chunk_size = len(contents)//num_chunks
@@ -41,14 +41,14 @@ def equal_split(contents, num_chunks = None, chunk_size = None):
 def interleave(chunks, word_size):
     if len(chunks) < 2:
         raise Exception("Interleave requires at least 2 chunks to interleave.")
-    
+
     chunk_length = len(chunks[0])
     for chunk in chunks:
         if len(chunk) != chunk_length:
             raise Exception("Interleave requires chunks of the same size.")
 
     combined_length = len(chunks) * chunk_length
-    
+
     interleave_group_length = len(chunks) * word_size
     num_interleave_groups = combined_length//interleave_group_length
     new_contents = bytearray()
@@ -87,11 +87,11 @@ def truncate(contents, max_length):
 
 
 def splice_out(contents, start, length=None, end=None):
-    if length == None and end == None:
+    if length is None and end is None:
         raise Exception("Splice out needs a length or end value, but received neither.")
-    elif length != None and end != None:
+    elif length is not None and end is not None:
         raise Exception("Splice out needs a length or end value, but received both.")
-    elif end == None:
+    elif end is None:
         end = start + length
 
     new_contents = bytearray()
@@ -100,20 +100,20 @@ def splice_out(contents, start, length=None, end=None):
     return new_contents
 
 def splice_out_helper(start, length=None, end=None):
-    def slice(contents):
+    def splice_func(contents):
         return splice_out(contents, start, length, end)
-    return slice
-    
+    return splice_func
+
 def slice_helper(start=0, length=None, end=None):
-    if length == None and end == None:
+    if length is None and end is None:
         raise Exception("Splice out needs a length or end value, but received neither.")
-    elif length != None and end != None:
+    elif length is not None and end is not None:
         raise Exception("Splice out needs a length or end value, but received both.")
-    elif end == None:
+    elif end is None:
         end = start + length
-    def slice(contents):
+    def slice_func(contents):
         return contents[start:end]
-    return slice
+    return slice_func
 
 def swap_endian(contents):
     new_contents = bytearray(len(contents))
@@ -128,7 +128,7 @@ def swap_endian_all(chunks):
     return temp_chunks
 
 def bit_shuffle(contents, word_size_bytes, bit_order):
-    new_content = bytearray()    
+    new_content = bytearray()
     num_shuffles = len(contents)//word_size_bytes
     for i in range(0, num_shuffles):
         offset = i*word_size_bytes
@@ -146,7 +146,7 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
     new_chunks = []
     for x in range(0, num_ways):
         new_chunks.append(bytearray())
-   
+
     num_shuffles = len(contents)//word_size_bytes
     for i in range(0, num_shuffles):
         offset = i*word_size_bytes
@@ -169,7 +169,7 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
     return new_chunks
 
 def byte_shuffle(contents, word_size_bytes, byte_order):
-    new_content = bytearray()    
+    new_content = bytearray()
     num_shuffles = len(contents)//word_size_bytes
     for i in range(0, num_shuffles):
         offset = i*word_size_bytes

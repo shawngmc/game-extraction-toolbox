@@ -16,14 +16,14 @@ import copy
 
 def reencode_gfx(contents, layout):
     # This appears to be rebuilding GFX roms from sprites.
-    modLayout = copy.deepcopy(layout)
-    numPlanes = modLayout['planes']
-    dest = bytearray(len(contents) * numPlanes // 8)
+    mod_layout = copy.deepcopy(layout)
+    num_planes = mod_layout['planes']
+    dest = bytearray(len(contents) * num_planes // 8)
 
-    if (isinstance(modLayout['total'], list)):
-        [num, den] = modLayout['total']
-        tempLayout = copy.deepcopy(modLayout)
-        tempLayout['total'] = len(dest) * 8 // modLayout['charincrement'] * num // den
+    if (isinstance(mod_layout['total'], list)):
+        [num, den] = mod_layout['total']
+        temp_layout = copy.deepcopy(mod_layout)
+        temp_layout['total'] = len(dest) * 8 // mod_layout['charincrement'] * num // den
 
         def map_plane_offset(x):
             if isinstance(x, list):
@@ -32,19 +32,19 @@ def reencode_gfx(contents, layout):
                 return len(dest) * 8 * num // den + add
             else:
                 return x
-        tempLayout['planeoffset'] = list(map(map_plane_offset, modLayout['planeoffset']))
-        modLayout = tempLayout
+        temp_layout['planeoffset'] = list(map(map_plane_offset, mod_layout['planeoffset']))
+        mod_layout = temp_layout
 
     i = 0
-    for c in range(0, modLayout['total']):
-        charoffset = modLayout['charincrement'] * c
-        for y in range(0, modLayout['height']):
-            yoffset = charoffset + modLayout['yoffset'][y]
-            for x in range(0, modLayout['width']):
-                xoffset = yoffset + modLayout['xoffset'][x]
-                for p in range(0, numPlanes):
-                    offset = xoffset + modLayout['planeoffset'][p]
-                    dest[offset >> 3] = dest[offset >> 3] | ((contents[i] >> numPlanes-1-p) & 1) << (~offset & 7)
+    for c in range(0, mod_layout['total']):
+        charoffset = mod_layout['charincrement'] * c
+        for y in range(0, mod_layout['height']):
+            yoffset = charoffset + mod_layout['yoffset'][y]
+            for x in range(0, mod_layout['width']):
+                xoffset = yoffset + mod_layout['xoffset'][x]
+                for p in range(0, num_planes):
+                    offset = xoffset + mod_layout['planeoffset'][p]
+                    dest[offset >> 3] = dest[offset >> 3] | ((contents[i] >> num_planes-1-p) & 1) << (~offset & 7)
                 i += 1
 
     return dest

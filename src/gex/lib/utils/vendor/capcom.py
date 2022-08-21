@@ -8,9 +8,9 @@
 from gex.lib.utils.blob import transforms
 
 def blob_slice_helper(start, length):
-    def slice(contents):
+    def blob_slice(contents):
         return contents[start:start+length]
-    return slice
+    return blob_slice
 
 # Perform the following:
 # - Get the chunk to process
@@ -41,7 +41,7 @@ def gfx_cps2(filenames, data_select_func = lambda x: x, split = None):
         # Deinterleave the chunks into our files
         new_chunks = []
         chunks = transforms.deinterleave(contents, num_ways = 4, word_size=2)
-        if split != None:
+        if split is not None:
             for chunk in chunks:
                 new_chunks.extend(transforms.custom_split(chunk, split))
             chunks = new_chunks
@@ -55,7 +55,7 @@ def audiocpu_cps2(start, filenames):
         chunks.append(contents[start+0x28000:start+0x48000])
         return dict(zip(filenames, chunks))
     return audiocpu
-    
+
 def qsound_cps2(start, length, filenames, num_chunks=2):
     def qsound(contents):
         contents = contents[start:start+length]

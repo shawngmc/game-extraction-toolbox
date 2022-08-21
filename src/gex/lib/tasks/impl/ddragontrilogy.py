@@ -1,13 +1,12 @@
 import glob
 import logging
 import os
-
 from gex.lib.utils.blob import transforms
 from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.utils.vendor import dotemu
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class DoubleDragonTrilogyTask(BaseTask):
     _task_name = "ddragontrilogy"
@@ -46,7 +45,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         logger.info("Processing complete.")
 
     def _read_all_files(self, base_path):
-        files_path = os.path.join(base_path, "resources", "game") 
+        files_path = os.path.join(base_path, "resources", "game")
         file_paths = glob.glob(files_path +'/*.*')
         files = {}
         for file_path in file_paths:
@@ -75,7 +74,6 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         'charincrement': 32*8
     }
 
-    
     _DDRAGON_TILE_LAYOUT = {
         'width': 16,
         'height': 16,
@@ -94,9 +92,9 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # MainCPU
         maincpu_filenames = [
-            '21j-1-5.26', 
-            '21j-2-3.25', 
-            '21j-3.24', 
+            '21j-1-5.26',
+            '21j-2-3.25',
+            '21j-3.24',
             '21j-4-1.23'
         ]
         func_map['maincpu'] = helpers.equal_split_helper('ddragon_hd6309.bin', maincpu_filenames)
@@ -115,13 +113,13 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # Gfx 2
         gfx2_filesnames = [
-            '21j-a', 
-            '21j-b', 
-            '21j-c', 
+            '21j-a',
+            '21j-b',
+            '21j-c',
             '21j-d',
-            '21j-e', 
-            '21j-f', 
-            '21j-g', 
+            '21j-e',
+            '21j-f',
+            '21j-g',
             '21j-h'
         ]
         func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
@@ -129,9 +127,9 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # Gfx 3
         gfx3_filesnames = [
-            '21j-8', 
-            '21j-9', 
-            '21j-i', 
+            '21j-8',
+            '21j-9',
+            '21j-i',
             '21j-j'
         ]
         func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
@@ -139,7 +137,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # ADPCM
         adpcm_filenames = [
-            '21j-6', 
+            '21j-6',
             '21j-7'
         ]
         func_map['adpcm'] = helpers.equal_split_helper('ddragon_adpcm.bin', adpcm_filenames)
@@ -158,9 +156,9 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # MainCPU
         maincpu_filenames = [
-            '26a9-04.bin', 
-            '26aa-03.bin', 
-            '26ab-0.bin', 
+            '26a9-04.bin',
+            '26aa-03.bin',
+            '26ab-0.bin',
             '26ac-0e.63'
         ]
         func_map['maincpu'] = helpers.equal_split_helper('ddragon2_hd6309.bin', maincpu_filenames)
@@ -179,25 +177,25 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # Gfx 2
         gfx2_filesnames = [
-            '26j0-0.bin', 
-            '26j1-0.bin', 
+            '26j0-0.bin',
+            '26j1-0.bin',
             '26af-0.bin',
-            '26j2-0.bin', 
-            '26j3-0.bin', 
+            '26j2-0.bin',
+            '26j3-0.bin',
             '26a10-0.bin'
         ]
         func_map['gfx2'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata2.bin', gfx2_filesnames, self._DDRAGON_TILE_LAYOUT)
 
         # Gfx 3
         gfx3_filesnames = [
-            '26j4-0.bin', 
+            '26j4-0.bin',
             '26j5-0.bin'
         ]
         func_map['gfx3'] = self._dotemu_reencode_gfx_helper('ddragon2_gfxdata3.bin', gfx3_filesnames, self._DDRAGON_TILE_LAYOUT)
 
         # OKI
         oki_filenames = [
-            '26j6-0.bin', 
+            '26j6-0.bin',
             '26j7-0.bin'
         ]
         func_map['oki'] = helpers.equal_split_helper('ddragon2_oki.bin', oki_filenames)
@@ -243,7 +241,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # CPU
         maincpu_filenames = [
-            '30a15-0.ic79', 
+            '30a15-0.ic79',
             '30a14-0.ic78'
         ]
         def maincpu(in_files):
@@ -258,9 +256,9 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # Gfx 1
         gfx1_filenames = [
-            '30j-6.ic5', 
+            '30j-6.ic5',
             '30j-4.ic7',
-            '30j-7.ic4', 
+            '30j-7.ic4',
             '30j-5.ic6'
         ]
         def gfx1(in_files):
@@ -274,13 +272,13 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         # Gfx 2
         gfx2_filenames = [
-            '30j-3.ic9', 
-            '30a12-0.ic8', 
-            '30j-2.ic11', 
+            '30j-3.ic9',
+            '30a12-0.ic8',
+            '30j-2.ic11',
             '30a11-0.ic10',
-            '30j-1.ic13', 
-            '30a10-0.ic12', 
-            '30j-0.ic15', 
+            '30j-1.ic13',
+            '30a10-0.ic12',
+            '30j-0.ic15',
             '30a9-0.ic14'
         ]
         def gfx2(in_files):
@@ -299,33 +297,3 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         func_map['prom'] = dummy_prom
 
         return {'filename': 'ddragon3.zip', 'contents': helpers.build_rom(in_files, func_map)}
-
-
-
-# function ddragon3(srcdir)
-# {
-#     convert_roms('ddragon3', srcdir, {
-#         maincpu: {
-#             input: 'ddragon3_m68k.bin',
-#             output: ['30a15-0.ic79', '30a14-0.ic78'],
-#             transform: bin => {
-#                 const a = interleave(bin);
-#                 return [a[0].slice(0, 0x20000), a[1]];
-#             }
-#         },
-#         gfx1: {
-#             input: { file: 'ddragon3_gfxdata1.bin', layout: WWF_TILE_LAYOUT },
-#             output: ['30j-6.ic5', '30j-4.ic7', '30j-7.ic4', '30j-5.ic6'],
-#             transform: bin => interleave(bin).flatMap(b => split_at(b, 0x40000))
-#         },
-#         gfx2: {
-#             input: { file: 'ddragon3_gfxdata2.bin', layout: WWF_SPRITE_LAYOUT},
-#             output: ['30j-3.ic9',  '30a12-0.ic8',  '30j-2.ic11', '30a11-0.ic10',
-#                      '30j-1.ic13', '30a10-0.ic12', '30j-0.ic15', '30a9-0.ic14'],
-#             transform: bin =>
-#                 split(bin, 0x90000).flatMap(b => split_at(b, 0x80000))
-#         },
-#         // missing
-#         proms: { input: Buffer.alloc(0x100), output: 'mb7114h.ic38' }
-#     });
-# }

@@ -1,9 +1,8 @@
 import logging
 import os
-
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class MegaManXLegacyCollection1Task(BaseTask):
     _task_name = "mmXlc1"
@@ -82,7 +81,7 @@ Mega Man X4 does not appear to be ROM based, but investigation is ongoing.
                 game_data = bytearray()
                 for section in game_info['sections'].values():
                     game_data.extend(exe_data[section['start']:section['start']+section['length']])
-                
+
                 with open(os.path.join(out_dir, game_info['filename']), "wb") as out_file:
                     out_file.write(game_data)
 

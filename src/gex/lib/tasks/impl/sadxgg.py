@@ -1,11 +1,10 @@
-import traceback
 import logging
 import os
 
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.archive.prs import DecompressPrs
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class SonicAdventureDXGameGearTask(BaseTask):
     _task_name = "sadxgg"
@@ -45,23 +44,19 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
             if game_info:
-                logger.info(f"Extracting {file_path}: {game_info['name']}") 
-                try:
-                    with open(file_path, 'rb') as in_file:
-                        in_data = in_file.read()
-                        prs = DecompressPrs(in_data)
-                        rom_data = prs.decompress()
-                        filename = f"{game_info['name']} ({game_info['region']}).gg"
-                        with open(os.path.join(out_dir, filename), "wb") as out_file:
-                            out_file.write(rom_data)
-                except Exception as e:
-                    traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                logger.info(f"Extracting {file_path}: {game_info['name']}")
+                with open(file_path, 'rb') as in_file:
+                    in_data = in_file.read()
+                    prs = DecompressPrs(in_data)
+                    rom_data = prs.decompress()
+                    filename = f"{game_info['name']} ({game_info['region']}).gg"
+                    with open(os.path.join(out_dir, filename), "wb") as out_file:
+                        out_file.write(rom_data)
             else:
-                logger.info(f'Skipping {file_path} as it contains no known ROMS!') 
+                logger.info(f'Skipping {file_path} as it contains no known ROMS!')
 
         logger.info("Processing complete.")
-        
+
     def _find_files(self, base_path):
         new_paths = []
         for filename in self._game_info_map.keys():

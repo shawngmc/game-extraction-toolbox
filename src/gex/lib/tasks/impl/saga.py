@@ -3,10 +3,9 @@ import glob
 import logging
 import os
 import UnityPy
-
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class SagaTask(BaseTask):
     _task_name = "saga"
@@ -35,7 +34,7 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
             file_name = os.path.basename(file_path)
             game_info = self._game_info_map.get(file_name)
             if game_info:
-                logger.info(f"Extracting {file_path}: {game_info['name']}") 
+                logger.info(f"Extracting {file_path}: {game_info['name']}")
                 try:
                     unity_bundle = UnityPy.load(file_path)
                     rom_asset = unity_bundle.container.get(game_info['asset_path'])
@@ -45,14 +44,14 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
                             out_file.write(rom_data.script)
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                    logger.warning(f'Error while processing {file_path}!')
             else:
-                logger.info(f'Skipping {file_path} as it contains no known ROMS!') 
+                logger.info(f'Skipping {file_path} as it contains no known ROMS!')
 
         logger.info("Processing complete.")
-        
+
     def _find_files(self, base_path):
-        bundle_path = os.path.join(base_path, 'Sa・Ga COLLECTION_Data', 'StreamingAssets', 'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle') 
+        bundle_path = os.path.join(base_path, 'Sa・Ga COLLECTION_Data', 'StreamingAssets', 'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle')
         archive_list = glob.glob(bundle_path)
         return archive_list
 

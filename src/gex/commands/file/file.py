@@ -1,16 +1,15 @@
 import click
 
 from .deinterleave import deinterleave
-from .hash import hash
+from .hash import hash_cli
 from .identify import identify
-from .slice import slice
+from .slice import slice_cli
 
 @click.group()
 def file():
     """Generic file operations"""
-    pass
 
 file.add_command(deinterleave)
-file.add_command(hash)
+file.add_command(hash_cli)
 file.add_command(identify)
-file.add_command(slice)
+file.add_command(slice_cli)

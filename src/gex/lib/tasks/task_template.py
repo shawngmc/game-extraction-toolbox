@@ -2,7 +2,7 @@ import logging
 
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class MyTask(BaseTask):
     _task_name = ""
