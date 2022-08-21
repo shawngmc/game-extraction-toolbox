@@ -64,9 +64,10 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                     if parsed is not None and handler_func is not None:
                         output_files = handler_func(parsed)
 
-                        for output_file in output_files:
-                            with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
-                                out_file.write(output_file['contents'])
+                        for out_file in output_files:
+                            out_path = os.path.join(out_dir, out_file['filename'])
+                            with open(out_path, "wb") as out_file:
+                                out_file.write(out_file['contents'])
                     elif parsed is None:
                         logger.warning("Could not find merged rom data in mbundle.")
                     elif handler_func is None:
@@ -137,37 +138,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(filenames, chunks))
         return gfx
 
-    def _cps1_gfx_deinterleave(self, contents, num_ways=4, word_size=2):
-        def decode_cps1_gfx(data):
-            buf = bytearray(data)
-            for i in range(0, len(buf), 4):
-                dwval = 0
-                src = buf[i] + (buf[i + 1] << 8) + (buf[i + 2] << 16) + (buf[i + 3] << 24)
-
-                for j in range(8):
-                    n = src >> (j * 4) & 0x0f
-                    if n & 0x01:
-                        dwval |= 1 << (     7 - j)
-                    if n & 0x02:
-                        dwval |= 1 << ( 8 + 7 - j)
-                    if n & 0x04:
-                        dwval |= 1 << (16 + 7 - j)
-                    if n & 0x08:
-                        dwval |= 1 << (24 + 7 - j)
-
-                buf[i + 0] = (dwval)       & 0xff
-                buf[i + 1] = (dwval >>  8) & 0xff
-                buf[i + 2] = (dwval >> 16) & 0xff
-                buf[i + 3] = (dwval >> 24) & 0xff
-            return buf
-
+    def _cps2_gfx_deinterleave(self, contents, num_ways=4, word_size=2):
         interleave_group_length = num_ways * word_size
         num_interleave_groups = len(contents)//interleave_group_length
         temp_chunks = [bytearray() for i in range(num_ways)]
         for i in range(0, num_interleave_groups):
             offset = i * interleave_group_length
             interleave_group = contents[offset:offset+interleave_group_length]
-            interleave_group = decode_cps1_gfx(interleave_group)
+            interleave_group = capcom.common_gfx_deshuffle(interleave_group)
             interleave_offset = 0
             for j in range(0, num_ways):
                 interleave_end = interleave_offset + word_size
@@ -176,7 +154,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return temp_chunks
 
     ################################################################################
-    # START Street Fighter                                                         #
+    # Street Fighter                                                               #
     ################################################################################
 
     def _handle_sf(self, mbundle_entries):
@@ -280,12 +258,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return out_files
 
     ################################################################################
-    # END Street Fighter                                                           #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 2                                                       #
+    #  Street Fighter 2                                                            #
     ################################################################################
 
     def _handle_sf2(self, mbundle_entries):
@@ -349,7 +322,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(self._cps1_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+                new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
             chunks = new_chunks
             return dict(zip(gfx_filenames, chunks))
         func_map['gfx'] = gfx
@@ -380,12 +353,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return [{'filename': 'sf2ub.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
-    # END Street Fighter 2                                                         #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter Alpha                                                   #
+    # Street Fighter Alpha                                                         #
     ################################################################################
 
     def _handle_sfa(self, mbundle_entries):
@@ -445,17 +413,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.swap_endian_all(chunks)
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
-        out_files.append({'filename': 'sfau.zip', 'contents': helpers.build_rom(in_files, func_map)})
+        out_files.append(
+            {'filename': 'sfau.zip', 'contents': helpers.build_rom(in_files, func_map)}
+        )
 
         return out_files
 
     ################################################################################
-    # END Street Fighter Alpha                                                     #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter Alpha 2                                                 #
+    # Street Fighter Alpha 2                                                       #
     ################################################################################
 
     def _handle_sfa2(self, mbundle_entries):
@@ -493,7 +458,11 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sz2.19m",
             "sz2.20m"
         ]
-        func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 20, final_split = [0x400000, 0x100000])
+        func_map['vrom'] = self._deshuffle_gfx_common(
+            vrom_filenames,
+            20,
+            final_split = [0x400000, 0x100000]
+        )
 
         # z80
         z80_filenames = [
@@ -516,17 +485,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        out_files.append({'filename': 'sfa2u.zip', 'contents': helpers.build_rom(in_files, func_map)})
+        out_files.append(
+            {'filename': 'sfa2u.zip', 'contents': helpers.build_rom(in_files, func_map)}
+        )
 
         return out_files
 
     ################################################################################
-    # END Street Fighter Alpha 2                                                   #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter Alpha 3                                                 #
+    # Street Fighter Alpha 3                                                       #
     ################################################################################
 
     def _handle_sfa3(self, mbundle_entries):
@@ -566,7 +532,11 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sz3.19m",
             "sz3.20m"
         ]
-        func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 32, final_split = [0x400000, 0x400000])
+        func_map['vrom'] = self._deshuffle_gfx_common(
+            vrom_filenames,
+            32,
+            final_split = [0x400000, 0x400000]
+        )
 
         # z80
         z80_filenames = [
@@ -589,17 +559,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        out_files.append({'filename': 'sfa3u.zip', 'contents': helpers.build_rom(in_files, func_map)})
+        out_files.append(
+            {'filename': 'sfa3u.zip', 'contents': helpers.build_rom(in_files, func_map)}
+        )
 
         return out_files
 
     ################################################################################
-    # END Street Fighter Alpha 3                                                   #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 3                                                       #
+    # Street Fighter 3                                                             #
     ################################################################################
 
     def _sf3_common(self, mbundle_entries, in_bios_filename, in_simm_bank_files, simm_prefix, bios_filename, mame_name):
@@ -622,33 +589,39 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     def _handle_sf3(self, mbundle_entries):
         in_prefix = "StreetFighterIII"
         in_simm_bank_nums = [1, 3, 4, 5]
-        in_simm_files = dict(zip(in_simm_bank_nums, list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
+        in_simm_files = dict(zip(in_simm_bank_nums,
+            list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
         in_bios_file = f'{in_prefix}.bios'
-        return self._sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii', "sfiii_asia_nocd.29f400.u2", 'sfiiina.zip')
+        return self._sf3_common(
+            mbundle_entries,
+            in_bios_file,
+            in_simm_files,
+            'sfiii',
+            "sfiii_asia_nocd.29f400.u2",
+            'sfiiina.zip'
+        )
 
     ################################################################################
-    # END Street Fighter 3                                                         #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 3 2nd Impact                                            #
+    # Street Fighter 3 2nd Impact                                                  #
     ################################################################################
 
     def _handle_sf3_2i(self, mbundle_entries):
         in_prefix = "StreetFighterIII_2ndImpact"
         in_simm_bank_nums = list(range(1,6))
-        in_simm_files = dict(zip(in_simm_bank_nums, list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
+        in_simm_files = dict(zip(in_simm_bank_nums,
+            list(map(lambda x:f'{in_prefix}.s{x}', in_simm_bank_nums))))
         in_bios_file = f'{in_prefix}.bios'
-        return self._sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii2', "sfiii2_asia_nocd.29f400.u2", 'sfiii2n.zip')
+        return self._sf3_common(
+            mbundle_entries,
+            in_bios_file,
+            in_simm_files,
+            'sfiii2',
+            "sfiii2_asia_nocd.29f400.u2",
+            'sfiii2n.zip'
+        )
 
     ################################################################################
-    # END Street Fighter 3 2nd Impact                                              #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 3 3rd Strike                                            #
+    # Street Fighter 3 3rd Strike                                                  #
     ################################################################################
 
     def _handle_sf3_3s(self, mbundle_entries):
@@ -662,15 +635,17 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             6: f'{in_prefix}.s6'
         }
         in_bios_file = f'{in_prefix}.bios'
-        return self._sf3_common(mbundle_entries, in_bios_file, in_simm_files, 'sfiii3', "sfiii3_japan_nocd.29f400.u2", 'sfiii3nr1.zip')
+        return self._sf3_common(
+            mbundle_entries,
+            in_bios_file,
+            in_simm_files,
+            'sfiii3',
+            "sfiii3_japan_nocd.29f400.u2",
+            'sfiii3nr1.zip'
+        )
 
     ################################################################################
-    # END Street Fighter 3 3rd Strike                                              #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 2 Championship Edition                                  #
+    # Street Fighter 2 Championship Edition                                        #
     ################################################################################
 
     def _handle_sf2ce(self, mbundle_entries):
@@ -724,7 +699,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(self._cps1_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+                new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
             chunks = new_chunks
             return dict(zip(gfx_filenames, chunks))
         func_map['gfx'] = gfx
@@ -756,12 +731,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return [{'filename': 'sf2ceua.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
-    # END Street Fighter 2 Championship Edition                                    #
-    ################################################################################
-
-
-    ################################################################################
-    # START Street Fighter 2 Hyper Fighting                                        #
+    # Street Fighter 2 Hyper Fighting                                              #
     ################################################################################
 
     def _handle_sf2hf(self, mbundle_entries):
@@ -815,7 +785,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
             new_chunks = []
             for oldchunk in chunks:
-                new_chunks.extend(self._cps1_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+                new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
             chunks = new_chunks
             return dict(zip(gfx_filenames, chunks))
         func_map['gfx'] = gfx
@@ -847,12 +817,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return [{'filename': 'sf2t.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
-    # END Street Fighter 2 Hyper Fighting                                          #
-    ################################################################################
-
-
-    ################################################################################
-    # START Super Street Fighter 2                                                 #
+    # Super Street Fighter 2                                                       #
     ################################################################################
 
     def _handle_ssf2(self, mbundle_entries):
@@ -897,7 +862,11 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "ssf.19m",
             "ssf.20m"
         ]
-        func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 12, final_split = [0x200000, 0x100000])
+        func_map['vrom'] = self._deshuffle_gfx_common(
+            vrom_filenames,
+            12,
+            final_split = [0x200000, 0x100000]
+        )
 
         # qsound
         qsound_filenames = [
@@ -918,12 +887,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         return [{'filename': 'ssf2u.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
     ################################################################################
-    # END Super Street Fighter 2                                                   #
-    ################################################################################
-
-
-    ################################################################################
-    # START Super Street Fighter 2 Turbo                                           #
+    # Super Street Fighter 2 Turbo                                                 #
     ################################################################################
 
     def _handle_ssf2t(self, mbundle_entries):
@@ -976,7 +940,11 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "sfx.20m",
             "sfx.27m"
         ]
-        func_map['vrom'] = self._deshuffle_gfx_common(vrom_filenames, 16, final_split = [0x200000, 0x100000, 0x100000])
+        func_map['vrom'] = self._deshuffle_gfx_common(
+            vrom_filenames,
+            16,
+            final_split = [0x200000, 0x100000, 0x100000]
+        )
 
         # qsound
         qsound_filenames = [
@@ -989,7 +957,3 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         func_map['qsound'] = qsound
 
         return [{'filename': 'ssf2tu.zip', 'contents': helpers.build_rom(in_files, func_map)}]
-
-    ################################################################################
-    # END Super Street Fighter 2 Turbo                                             #
-    ################################################################################

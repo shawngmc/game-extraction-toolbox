@@ -8,7 +8,8 @@ from gex.lib.utils import helper
 logger = logging.getLogger('gextoolbox')
 
 @click.command()
-@click.option('--srcdir', 'src_dir', help = 'path required by the transform set - see task for details and default info', default=None)
+@click.option('--srcdir', 'src_dir',
+    help = 'path required by the transform set - see task for details', default=None)
 @click.option('--destdir', 'dest_dir', help = 'path to send reassembled ROMs to', required=True)
 @click.option('--task', 'task', help = 'name of the transform set to run', required=True)
 @click_log.simple_verbosity_option(logger)
