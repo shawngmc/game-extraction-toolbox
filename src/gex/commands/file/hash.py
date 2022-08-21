@@ -12,8 +12,8 @@ logger = logging.getLogger('gextoolbox')
 @click_log.simple_verbosity_option(logger)
 def hash_cli(in_file, hash_type):
     try:
-        with open(in_file, "rb") as f:
-            in_data = f.read()
+        with open(in_file, "rb") as file:
+            in_data = file.read()
     except IOError:
         logger.error(f"Error reading {in_file}!")
         exit()

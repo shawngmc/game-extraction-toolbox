@@ -1,8 +1,5 @@
-
-
 import hashlib
 import zlib
-
 
 def get_crc(content):
     return hex(zlib.crc32(content) & 0xffffffff)

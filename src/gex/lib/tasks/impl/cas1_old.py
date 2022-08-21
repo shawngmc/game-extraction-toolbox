@@ -135,13 +135,13 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         with zipfile.ZipFile(io.BytesIO(zip_contents), "r") as old_archive:
             zip_entries = list(old_archive.infolist())
 
-            def getType(zip_entry):
+            def get_type(zip_entry):
                 return zip_entry.filename.split('.')[1]
             for file_entry in zip_entries:
                 # read in the entry - we need the body either way
                 with old_archive.open(file_entry) as file_read_obj:
                     file_data = file_read_obj.read()
-                    type_name = getType(file_entry)
+                    type_name = get_type(file_entry)
                     type_func = func_map.get(type_name)
                     if type_func is not None:
                         new_data.update(type_func(file_data))
@@ -982,10 +982,10 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         with zipfile.ZipFile(io.BytesIO(contents), "r") as old_archive:
             zip_entries = list(old_archive.infolist())
 
-            def getPrefix(zip_entry):
+            def get_prefix(zip_entry):
                 return zip_entry.filename.split('/')[0]
 
-            def getName(zip_entry):
+            def get_name(zip_entry):
                 return zip_entry.filename.split('/')[1]
 
             # first, check the zip entries for a subfolder to reuse the name of
@@ -997,11 +997,11 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                 raise Exception(
                     'not a mame subfolder zip - no slash in first zip entry') from error
 
-            prefix = getPrefix(zip_entries[0])
+            prefix = get_prefix(zip_entries[0])
             for file_entry in zip_entries:
-                if getPrefix(file_entry) != prefix:
+                if get_prefix(file_entry) != prefix:
                     raise Exception(
-                        f'not a mame subfolder zip - {getPrefix(file_entry)} != {prefix}')
+                        f'not a mame subfolder zip - {get_prefix(file_entry)} != {prefix}')
 
             new_contents = io.BytesIO()
             with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
@@ -1010,7 +1010,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         file_data = file_read_obj.read()
 
                         # add to new archive
-                        new_archive.writestr(getName(file_entry), file_data)
+                        new_archive.writestr(get_name(file_entry), file_data)
 
             ret_obj = dict()
             ret_obj['filename'] = f'{prefix}.zip'

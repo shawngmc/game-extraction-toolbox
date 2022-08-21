@@ -94,7 +94,7 @@ def maincpu_cps2(start, length, num_chunks, filenames):
 #         buf[i + 2] = (dwval >> 16) & 0xff
 #         buf[i + 3] = (dwval >> 24) & 0xff
 #     return buf
-deshuffle_bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18, 
+deshuffle_bit_order = [7, 3, 15, 11, 23, 19, 31, 27, 6, 2, 14, 10, 22, 18,
                        30, 26, 5, 1, 13, 9, 21, 17, 29, 25, 4, 0, 12, 8, 20, 16, 28, 24]
 
 def common_gfx_deshuffle(contents):

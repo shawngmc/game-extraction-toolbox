@@ -10,12 +10,12 @@ def details(task):
     """Get details about a specific extraction task"""
 
     task_class = helper.load_task(task)
-    if task_class == None:
+    if task_class is None:
         raise Exception(f"Task {task} not found to describe.")
 
     markdown_text = task_class.get_header_markdown()
     markdown_text += "\n\n"
     markdown_text += task_class.get_details_markdown()
     console = Console()
-    md = Markdown(markdown_text)
-    console.print(md)
+    formatted_text = Markdown(markdown_text)
+    console.print(formatted_text)
