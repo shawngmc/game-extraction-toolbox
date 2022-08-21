@@ -1,6 +1,5 @@
 
 import shutil
-import traceback
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
@@ -35,7 +34,7 @@ These are the ROMs just sitting in the install folder
 
     def _find_files(self, base_path):
         new_paths = []
-        for filename in self._game_info_map.keys():
+        for filename in self._game_info_map:
             new_path = os.path.join(base_path, filename)
             if os.path.exists(new_path):
                 new_paths.append(new_path)
@@ -53,9 +52,9 @@ These are the ROMs just sitting in the install folder
                 logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
-                except Exception as e:
-                    traceback.print_exc()
+                except OSError as error:
                     logger.warning(f'Error while processing {file_path}!')
+                    logger.warning(error)
             else:
                 logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")

@@ -1,7 +1,6 @@
 import logging
 import os
 import shutil
-import traceback
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
@@ -129,9 +128,9 @@ These are the ROMs just sitting in the assets/roms folder.
                 logger.info(f"Copying {file_name}: {display_name}")
                 try:
                     shutil.copyfile(file_path, os.path.join(out_dir, game_info['filename']))
-                except Exception as e:
-                    traceback.print_exc()
+                except OSError as error:
                     logger.warning(f'Error while processing {file_path}!')
+                    logger.warning(error)
             else:
                 logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")

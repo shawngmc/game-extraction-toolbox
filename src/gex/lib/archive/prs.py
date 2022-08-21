@@ -63,7 +63,7 @@ class DecompressPrs:
                     amount += 2
 
                     start = len(self.obuf) - 0x100 + offset
-                for j in range(amount):
+                for _ in range(amount):
                     if start < 0:
                         self.obuf.append(0)
                     elif start < len(self.obuf):

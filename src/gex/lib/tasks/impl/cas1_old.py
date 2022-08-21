@@ -1,4 +1,3 @@
-import traceback
 import glob
 import zipfile
 import logging
@@ -6,6 +5,7 @@ import os
 import io
 
 from gex.lib.archive import kpka
+from gex.lib.file import identify
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.utils.blob import transforms
 
@@ -121,7 +121,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                             file_data = file_read_obj.read()
                             filename = file_entry.filename
                             # If a file needs renamed, do so
-                            if filename in rename_dict.keys():
+                            if filename in rename_dict:
                                 filename = rename_dict.get(filename)
                             # If filenames should be made lowercase, do so
                             if lowercase_all:
@@ -143,7 +143,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                     file_data = file_read_obj.read()
                     type_name = getType(file_entry)
                     type_func = func_map.get(type_name)
-                    if type_func != None:
+                    if type_func is not None:
                         new_data.update(type_func(file_data))
         # Build the new zip file
         new_contents = io.BytesIO()
@@ -156,7 +156,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
         # Used for 3wonders in ghouls jp and 1941 in 1941j
         out_files = []
         for file_entry in kpka_contents.values():
-            if file_entry['contents'][0:2].decode("utf-8") == "PK":
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == target_offset:
                     contents = file_entry['contents']
                     subzip_contents = None
@@ -167,7 +167,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                                 with old_archive.open(file_entry) as file_read_obj:
                                     subzip_contents = file_read_obj.read()
                     # If extra rom was found, save it off AND remove it from the main zip to allow processing
-                    if subzip_contents != None:
+                    if subzip_contents is not None:
                         subzip_fixed = self._standard_kpka_contents_processing(
                             {'0': {'contents': subzip_contents}})[0]
                         out_files.append(subzip_fixed)
@@ -204,7 +204,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556708(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if file_entry['contents'][0:2].decode("utf-8") == "PK":
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:
                     contents = self._twiddle_zip(
                         file_entry['contents'], lowercase_all=True)
@@ -245,7 +245,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556712(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if file_entry['contents'][0:2].decode("utf-8") == "PK":
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 1497211:
                     contents = self._twiddle_zip(
                         file_entry['contents'], lowercase_all=True)
@@ -264,7 +264,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556714(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 # This is merjs; rename it
                 out_files.append(
                     {'filename': 'mercsj.zip', 'contents': file_entry['contents']})
@@ -273,7 +273,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556715(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if file_entry['contents'][0:2].decode("utf-8") == "PK":
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 1511592:
                     out_files.append(
                         {'filename': 'mtwins.zip', 'contents': file_entry['contents']})
@@ -286,7 +286,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556716(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 1538278:
                     out_files.append(
                         {'filename': 'cawingu.zip', 'contents': file_entry['contents']})
@@ -384,7 +384,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             return dict(zip(filenames, chunks))
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # ssf2xj
                     func_map = {}
 
@@ -474,7 +474,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             }
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # cybotsj
                     func_map = {}
 
@@ -526,7 +526,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _handle_1556725(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # 19xxj
                     func_map = {}
 
@@ -700,7 +700,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             return dict(zip(filenames, chunks))
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # batcirj
                     func_map = {}
 
@@ -779,7 +779,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             return dict(zip(filenames, chunks))
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # gigawingj
                     func_map = {}
 
@@ -856,7 +856,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             return dict(zip(filenames, chunks))
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # 1944j
                     func_map = {}
 
@@ -933,7 +933,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
             return dict(zip(filenames, chunks))
 
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2].decode("utf-8") == "PK"):
+            if identify.check_if_zip(file_entry['contents']):
                 if file_entry['offset'] == 352:  # progearj
                     func_map = {}
 
@@ -990,12 +990,12 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
 
             # first, check the zip entries for a subfolder to reuse the name of
             try:
-                index = zip_entries[0].filename.index('/')
-            except Exception as e:
-                logger.warning(e)
+                _ = zip_entries[0].filename.index('/')
+            except Exception as error:
+                logger.warning(error)
                 logger.warning(zip_entries[0])
                 raise Exception(
-                    f'not a mame subfolder zip - no slash in first zip entry')
+                    'not a mame subfolder zip - no slash in first zip entry') from error
 
             prefix = getPrefix(zip_entries[0])
             for file_entry in zip_entries:
@@ -1020,7 +1020,7 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def _standard_kpka_contents_processing(self, kpka_contents):
         out_files = []
         for file_entry in kpka_contents.values():
-            if (file_entry['contents'][0:2] == "PK".encode('utf-8')):
+            if identify.check_if_zip(file_entry['contents']):
                 rebuilt = self._rebuild_mame_subfolder_zip(
                     file_entry['contents'])
                 out_files.append(rebuilt)
@@ -1029,21 +1029,21 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     def execute(self, in_dir, out_dir):
         pak_files = self._find_files(in_dir)
         for file in pak_files:
-            id = None
+            file_id = None
             if os.path.basename(file) == "re_chunk_000.pak":
-                id = "1515951"
+                file_id = "1515951"
             else:
-                id = file[-11:-4]
+                file_id = file[-11:-4]
 
-            if id in self._pkg_name_map:
-                logger.info(f"Extracting {file}: {self._pkg_name_map[id]}")
+            if file_id in self._pkg_name_map:
+                logger.info(f"Extracting {file}: {self._pkg_name_map[file_id]}")
                 try:
                     with open(file, "rb") as curr_file:
                         file_content = bytearray(curr_file.read())
                         kpka_contents = kpka.extract(file_content)
                         output_files = []
 
-                        handler_func = self.find_handler_func(id)
+                        handler_func = self.find_handler_func(file_id)
                         if handler_func:
                             # Reflectively call the appropriate function to process the file
                             output_files = handler_func(kpka_contents)
@@ -1054,9 +1054,9 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
                         for output_file in output_files:
                             with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])
-                except Exception as e:
-                    traceback.print_exc()
+                except OSError as error:
                     logger.warning(f'Error while processing {file}!')
+                    logger.warning(error)
             else:
                 logger.info(f'Skipping {file} as it contains no known ROMS!')
 

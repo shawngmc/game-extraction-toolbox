@@ -59,7 +59,7 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
 
     def _find_files(self, base_path):
         new_paths = []
-        for filename in self._game_info_map.keys():
+        for filename in self._game_info_map:
             new_path = os.path.join(base_path, 'system', filename)
             if os.path.exists(new_path):
                 new_paths.append(new_path)

@@ -8,7 +8,6 @@ def merge(chunks):
 
 def custom_split(contents, chunk_sizes):
     if len(contents) != sum(chunk_sizes):
-        breakpoint()
         raise Exception(f'Custom split needs the chunk_sizes {sum(chunk_sizes)} to equal the input size {len(contents)}.')
 
     num_chunks = len(chunk_sizes)
@@ -33,7 +32,7 @@ def equal_split(contents, num_chunks = None, chunk_size = None):
 
     start_offset = 0
     temp_chunks = []
-    for i in range(0, num_chunks):
+    for _ in range(0, num_chunks):
         temp_chunks.append(bytearray(contents[start_offset:start_offset+chunk_size]))
         start_offset = start_offset + chunk_size
     return temp_chunks
