@@ -1,7 +1,9 @@
+'''Module to handle ARC archives (Capcom MT Engine)'''
 import zlib
 import logging
 
 def extract(bytes_obj):
+    '''Extract an ARC archive (Capcom MT Engine)'''
     magic_string = bytes_obj[0:3].decode("utf-8")
     if magic_string != "ARC":
         raise Exception("Not a valid ARC archive!")
