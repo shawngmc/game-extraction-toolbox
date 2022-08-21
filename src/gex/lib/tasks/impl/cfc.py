@@ -766,13 +766,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # The actual ROM is small - only 512KB - but there doesn't appear to be an exact match offhand.
     # The majority of the data is in a CHD - but there doesn't appear to be an exact match offhand.
 
-    # Warzard has a 'JACK' header, but Red Earth has an 'IBIS' header. So they are likely a similar format.
+    # Warzard has a 'JACK' header, but Red Earth has an 'IBIS' header. Likely same format.
 
     # There are very 'word like' sections that cryptanalysis can be done with.
     # EX: 0x1A490
     #    orig: M:noadnouT:yuT:e
     #  endian: :MondaonTuy:Tue:
-    # This section is pretty clearly days of week, followed by date format strings and months of year.
+    # This section is pretty clearly days of week, date format strings and months of year.
     # It LOOKS like every 4 charcters are backwards
     #     sep: M:no | adno | uT:y | uT:e
     #  4 char: on:M | onda | y:Tu | e:Tue
@@ -781,7 +781,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # But that readable text isn't in the romfile or compressed CHD.
     # Did they pre-decompress the CHD for performance?
 
-    # There are CD001 headers - is this an ISO IMAGE?! https://en.wikipedia.org/wiki/ISO_9660#Specifications
+    # There are CD001 headers - is this an ISO IMAGE?!
+    # https://en.wikipedia.org/wiki/ISO_9660#Specifications
     # 2 Tracks:
     #  0x1A1CF: hCD001� - type 68, ver 0 (invalid)
     #  0x1D80C: hCD001� - type 68, ver 0 (invalid)
