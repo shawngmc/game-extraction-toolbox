@@ -6,7 +6,7 @@ import psutil
 @click.option('--target', 'target_dir', help = 'path to directory of files to search for', required=True)
 @click.option('--search', 'search_dir', help = 'path to directory of files to search within', required=True)
 def bulk(target_dir, search_dir):
-    """Find target files with offsets within the files of a search path"""
+    """CLI tool to find target files with offsets within the files of a search path"""
 
     file_cache = {}
 
