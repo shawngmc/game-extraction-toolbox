@@ -32,8 +32,8 @@ from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
 
-
 class CBEUBTask(BaseTask):
+    '''Implements cbeub: Capcom Beat 'em Up Bundle'''
     _task_name = "cbeub"
     _title = "Capcom Beat 'em Up Bundle"
     _details_markdown = '''

@@ -6,6 +6,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class BlizzArcadeTask(BaseTask):
+    '''Implements blizzarcade: Blizzard Arcade Collection'''
     _task_name = "blizzarcade"
     _title = "Blizzard Arcade Collection"
     _details_markdown = '''

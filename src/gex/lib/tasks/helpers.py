@@ -33,6 +33,22 @@ def name_file_helper(in_file_ref, filename):
         return {filename: in_files[in_file_ref]}
     return rename_from
 
+def splice_out_helper(start, length=None, end=None):
+    def splice_func(contents):
+        return transforms.splice_out(contents, start, length, end)
+    return splice_func
+
+def slice_helper(start=0, length=None, end=None):
+    if length is None and end is None:
+        raise Exception("Splice out needs a length or end value, but received neither.")
+    elif length is not None and end is not None:
+        raise Exception("Splice out needs a length or end value, but received both.")
+    elif end is None:
+        end = start + length
+    def slice_func(contents):
+        return contents[start:end]
+    return slice_func
+
 def placeholder_helper(file_map):
     def create_placeholders(_):
         out_files = {}

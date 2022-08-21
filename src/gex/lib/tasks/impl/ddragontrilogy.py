@@ -9,6 +9,7 @@ from gex.lib.utils.vendor import dotemu
 logger = logging.getLogger('gextoolbox')
 
 class DoubleDragonTrilogyTask(BaseTask):
+    '''Implements ddragontrilogy: Double Dragon Trilogy'''
     _task_name = "ddragontrilogy"
     _title = "Double Dragon Trilogy"
     _details_markdown = '''

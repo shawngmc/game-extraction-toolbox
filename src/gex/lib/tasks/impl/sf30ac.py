@@ -10,6 +10,7 @@ from gex.lib.tasks import helpers
 logger = logging.getLogger('gextoolbox')
 
 class SF30ACTask(BaseTask):
+    '''Implements sf30ac: Street Fighter 30th Anniversary Collection'''
     _task_name = "sf30ac"
     _title = "Street Fighter 30th Anniversary Collection"
     _details_markdown = '''

@@ -5,6 +5,7 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class MegaManLegacyCollection1Task(BaseTask):
+    '''Implements mmlc1: Mega Man Legacy Collection 1'''
     _task_name = "mmlc1"
     _title = "Mega Man Legacy Collection 1"
     _details_markdown = '''

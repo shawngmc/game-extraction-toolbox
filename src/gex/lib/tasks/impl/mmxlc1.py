@@ -5,7 +5,8 @@ from gex.lib.tasks.basetask import BaseTask
 logger = logging.getLogger('gextoolbox')
 
 class MegaManXLegacyCollection1Task(BaseTask):
-    _task_name = "mmXlc1"
+    '''Implements mmxlc1: Mega Man X Legacy Collection 1'''
+    _task_name = "mmxlc1"
     _title = "Mega Man X Legacy Collection 1"
     _details_markdown = '''
 Based on: https://github.com/s3phir0th115/MMXLC1-Rom-Extractor/blob/master/mmxlc_rom_extract.py
