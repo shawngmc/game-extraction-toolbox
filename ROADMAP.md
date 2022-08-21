@@ -1,24 +1,37 @@
 # Roadmap
 
 ## Future / Other Tools
-- SNK 40th Anniversary Collection
-  Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
-- Samuari Shodown Collection
-  https://github.com/ValadAmoleo/sf30ac-extractor
-- Disney Aladdin/Lion King Bundle
-  https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
 - Atari Vault
   Files exist in game dir
-- Namco Museum Archives (Vol 1 and Vol 2)
-  https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
-- Raiden Legacy
-  https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
 - Zombies ate my neighbor/Ghoul Patrol
   https://www.gog.com/forum/general/rom_based_gog_games_compatible_with_third_party_emulators_thread/post127
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Arcade Game Series (by Namco)
   https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
+
+### Uses BPList/Mbundle
+- Disney Aladdin/Lion King Bundle
+  https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
+- Samuari Shodown Collection
+  https://github.com/ValadAmoleo/sf30ac-extractor
+- Namco Museum Archives (Vol 1 and Vol 2)
+  https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
+- SNK 40th Anniversary Collection
+  Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
+
+### Uses .PSB.M/.BIN File Container?
+- Contra Anniversary Collection
+  https://github.com/farmerbb/RED-Project/wiki/Contra-Anniversary-Collection
+- Castlevania Advance Collection
+  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
+- Castlevania Anniversary Collection
+  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
+
+### Uses dotemu2mame.js
+- Raiden Legacy
+  https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
+
 
 ## Under Investigation
 - Capcom Arcade Stadium 1
@@ -40,15 +53,6 @@
 ## Upcoming Releases
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
 - Atari 50th: Anniversary Collection (Winter 2022)
-
-## Uses .PSB.M/.BIN File Container?
-- Contra Anniversary Collection
-  https://github.com/farmerbb/RED-Project/wiki/Contra-Anniversary-Collection
-- Castlevania Advance Collection
-  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
-- Castlevania Anniversary Collection
-  https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
-
 
 ## Not Complete / Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
