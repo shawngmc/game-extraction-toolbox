@@ -76,21 +76,21 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
                     # Get the bin entry
                     merged_rom_contents = None
-                    for key, arc_content in arc_contents.items():
+                    for _, arc_content in arc_contents.items():
                         if arc_content['path'].startswith('bin'):
                             merged_rom_contents = arc_content['contents']
 
                     handler_func = self.find_handler_func(pkg_name)
-                    if merged_rom_contents != None and handler_func != None:
+                    if merged_rom_contents is not None and handler_func is not None:
                         output_files = handler_func(merged_rom_contents)
 
                         for output_file in output_files:
                             with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                 out_file.write(output_file['contents'])
-                    elif merged_rom_contents == None:
+                    elif merged_rom_contents is None:
                         logger.warning(
                             "Could not find merged rom data in arc.")
-                    elif handler_func == None:
+                    elif handler_func is None:
                         logger.warning(
                             "Could not find matching handler function.")
             except Exception as e:
@@ -126,17 +126,17 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return archive_list
 
     def _placeholder_generator(self, file_map):
-        def create_placeholders(contents):
+        def create_placeholders(_):
             out_files = {}
             for filename, size in file_map.items():
-                out_files[filename] = bytes(size*b'\0')
+                out_files[filename] = bytes(size * b'\0')
             return out_files
         return create_placeholders
 
     def _deshuffle_gfx_common(self, start, length, filenames, num_deinterleave_split, do_split):
         def gfx(contents):
             # Cut out the section
-            contents = contents[start:start+length]
+            contents = contents[start:start + length]
 
             # This is weird... it's a bit shuffle, not byte-level and not a normal interleave
             bit_order = [
@@ -168,12 +168,12 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             chunks = []
 
             # Add the audio CPU
-            chunks.append(contents[start:start+0x8000] +
-                          contents[start+0x10000:start+0x18000])
+            chunks.append(contents[start:start + 0x8000] +
+                          contents[start + 0x10000:start + 0x18000])
 
             # Add the qsound
-            qsound_start = start+0x18000
-            qsound_contents = contents[qsound_start:qsound_start+0x40000]
+            qsound_start = start + 0x18000
+            qsound_contents = contents[qsound_start:qsound_start + 0x40000]
             chunks.extend(transforms.equal_split(
                 qsound_contents, num_chunks=2))
 
@@ -756,13 +756,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             chunks = []
 
             # Add the audio CPU
-            audiocpu_content = contents[start:start+0x8000] + \
-                contents[start+0x10000:start+0x28000]
+            audiocpu_content = contents[start:start + 0x8000] + \
+                contents[start + 0x10000:start + 0x28000]
             chunks.append(audiocpu_content)
 
             # Add the qsound
-            qsound_start = start+0x50000
-            qsound_contents = contents[qsound_start:qsound_start+0x200000]
+            qsound_start = start + 0x50000
+            qsound_contents = contents[qsound_start:qsound_start + 0x200000]
             chunks.extend(transforms.equal_split(
                 qsound_contents, num_chunks=4))
 

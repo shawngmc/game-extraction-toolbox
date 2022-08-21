@@ -20,7 +20,7 @@ def reencode_gfx(contents, layout):
     num_planes = mod_layout['planes']
     dest = bytearray(len(contents) * num_planes // 8)
 
-    if (isinstance(mod_layout['total'], list)):
+    if isinstance(mod_layout['total'], list):
         [num, den] = mod_layout['total']
         temp_layout = copy.deepcopy(mod_layout)
         temp_layout['total'] = len(dest) * 8 // mod_layout['charincrement'] * num // den

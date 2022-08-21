@@ -292,7 +292,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         func_map['oki'] = helpers.name_file_helper('ddragon3_oki.bin', '30j-8.ic73')
 
         # PROMs
-        def dummy_prom(in_files):
+        def dummy_prom(_):
             return {'mb7114h.ic38': bytearray(0x100)}
         func_map['prom'] = dummy_prom
 

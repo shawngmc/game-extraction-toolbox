@@ -1,9 +1,8 @@
 import logging
 import os
-
 from gex.lib.tasks.basetask import BaseTask
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
 
 class DisneyAfternoonCollectionTask(BaseTask):
     _task_name = "disneyac"
@@ -88,7 +87,7 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
                 game_data.extend(game_info['header'])
                 for section in game_info['sections'].values():
                     game_data.extend(exe_data[section['start']:section['start']+section['length']])
-                
+
                 with open(os.path.join(out_dir, game_info['filename']), "wb") as out_file:
                     out_file.write(game_data)
 

@@ -15,8 +15,8 @@ def preparepath(out_path):
     if not os.path.exists(out_path):
         try:
             os.makedirs(out_path)
-        except Exception as x:
-            raise Exception("Cannot create output folder.")
+        except OSError as error:
+            raise Exception("Cannot create output folder.") from error
     else:
         if not os.access(out_path, os.W_OK):
             raise Exception("Cannot write to output folder.")

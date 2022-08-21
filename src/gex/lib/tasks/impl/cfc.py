@@ -27,7 +27,8 @@ from gex.lib.utils.blob import transforms
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 
-logger = logging.getLogger('gextoolbox') 
+logger = logging.getLogger('gextoolbox')
+
 
 class CFCTask(BaseTask):
     _task_name = "cfc"
@@ -66,8 +67,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         for file_path in pak_files:
             file_name = os.path.basename(file_path)
             pkg_name = self._pkg_name_map.get(file_name)
-            if not pkg_name == None:
-                logger.info(f"Extracting {file_name}: {pkg_name}") 
+            if pkg_name is not None:
+                logger.info(f"Extracting {file_name}: {pkg_name}")
                 try:
                     with open(file_path, "rb") as curr_file:
                         file_content = bytearray(curr_file.read())
@@ -76,26 +77,28 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
                         # Get the bin entry
                         merged_rom_contents = None
-                        for key, arc_content in arc_contents.items():
+                        for _, arc_content in arc_contents.items():
                             if arc_content['path'].startswith('bin'):
                                 merged_rom_contents = arc_content['contents']
 
                         handler_func = self.find_handler_func(pkg_name)
-                        if merged_rom_contents != None and handler_func != None:
+                        if merged_rom_contents is not None and handler_func is not None:
                             output_files = handler_func(merged_rom_contents)
-                                
+
                             for output_file in output_files:
                                 with open(os.path.join(out_dir, output_file['filename']), "wb") as out_file:
                                     out_file.write(output_file['contents'])
-                        elif merged_rom_contents == None:
-                            logger.warning("Could not find merged rom data in arc.")
-                        elif handler_func == None:
-                            logger.warning("Could not find matching handler function.")
+                        elif merged_rom_contents is None:
+                            logger.warning(
+                                "Could not find merged rom data in arc.")
+                        elif handler_func is None:
+                            logger.warning(
+                                "Could not find matching handler function.")
                 except Exception as e:
                     traceback.print_exc()
-                    logger.warning(f'Error while processing {file_path}!') 
+                    logger.warning(f'Error while processing {file_path}!')
             else:
-                logger.info(f'Skipping unmatched file {file_path}!') 
+                logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")
 
     _pkg_name_map = {
@@ -120,14 +123,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     }
 
     def _find_files(self, base_path):
-        arc_path = os.path.join(base_path, "nativeDX11x64", "arc", "pc") 
-        candidate_files = glob.glob(arc_path +'/game_*.arc')
+        arc_path = os.path.join(base_path, "nativeDX11x64", "arc", "pc")
+        candidate_files = glob.glob(arc_path + '/game_*.arc')
         archive_list = []
         for candidate in candidate_files:
             if re.search(r'game_\d\d.arc', candidate):
                 archive_list.append(candidate)
         return archive_list
-
 
     ################################################################################
     # START Darkstalkers/Vampire: The Night Warriors                               #
@@ -178,15 +180,19 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vamj.09a",
             "vamj.10a"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, self._vam_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, self._vam_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x1400000), split=[0x400000, 0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1C00040, self._vam_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1C50040, 0x400000, self._vam_qsound_filenames)
 
-        out_files.append({'filename': 'vampj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vampj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
-
 
     def _handle_dstlku(self, merged_contents):
         out_files = []
@@ -202,19 +208,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vamu.09b",
             "vamu.10b"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, self._vam_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x400000, self._vam_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vam_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x1400000), split=[0x400000, 0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1C00040, self._vam_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1C50040, 0x400000, self._vam_qsound_filenames)
 
-        out_files.append({'filename': 'dstlku.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'dstlku.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
     ################################################################################
     # END Darkstalkers/Vampire: The Night Warriors                                 #
     ################################################################################
-
 
     ################################################################################
     # START Vampire Hunter/Night Warriors: Darkstalkers' Revenge                   #
@@ -265,15 +275,19 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vphj.09a",
             "vphj.10a"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vph_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, self._vph_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vph_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x400000, self._vph_qsound_filenames)
 
-        out_files.append({'filename': 'vhuntjr2.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vhuntjr2.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
-
 
     def _handle_nwarru(self, merged_contents):
         out_files = []
@@ -290,19 +304,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         ]
 
         func_map = {}
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vph_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, self._vph_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vph_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vph_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x400000, self._vph_qsound_filenames)
 
-        out_files.append({'filename': 'nwarru.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'nwarru.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
     ################################################################################
     # END Vampire Hunter/Night Warriors: Darkstalkers' Revenge                     #
     ################################################################################
-
 
     ################################################################################
     # START Vampire Savior: The Lord of Vampire                                    #
@@ -353,12 +371,17 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vm3j.09b",
             "vm3j.10b"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vm3_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._vm3_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vm3_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._vm3_qsound_filenames)
 
-        out_files.append({'filename': 'vsavj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vsavj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
@@ -376,19 +399,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vm3.09b",
             "vm3.10b"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vm3_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._vm3_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vm3_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vm3_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._vm3_qsound_filenames)
 
-        out_files.append({'filename': 'vsavu.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vsavu.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
     ################################################################################
     # END Vampire Savior: The Lord of Vampire                                      #
     ################################################################################
-
 
     ################################################################################
     # START Vampire Hunter 2: Darkstalkers Revenge                                 #
@@ -438,20 +465,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vh2j.09",
             "vh2j.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vh2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vh2_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._vh2_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vh2_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vh2_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._vh2_qsound_filenames)
 
-        out_files.append({'filename': 'vhunt2.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vhunt2.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
-
 
     ################################################################################
     # END Vampire Hunter 2: Darkstalkers Revenge                                   #
     ################################################################################
-
 
     ################################################################################
     # START Vampire Savior 2: The Lord of Vampire                                  #
@@ -501,20 +531,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "vs2j.09",
             "vs2j.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._vs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._vs2_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._vs2_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._vs2_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._vs2_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._vs2_qsound_filenames)
 
-        out_files.append({'filename': 'vsav2.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'vsav2.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
-
 
     ################################################################################
     # END Vampire Savior 2: The Lord of Vampire                                    #
     ################################################################################
-
 
     ################################################################################
     # START Cyberbots: Fullmetal Madness                                           #
@@ -547,7 +580,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     ]
 
     _cybots_qsound_filenames = [
-        'cyb.11m',    
+        'cyb.11m',
         'cyb.12m'
     ]
 
@@ -565,20 +598,25 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "cyb.09",
             "cyb.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._cybots_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, self._cybots_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._cybots_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x400000, self._cybots_qsound_filenames)
 
-        out_files.append({'filename': 'cybotsj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'cybotsj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
-    def _handle_cybotsu(self, merged_contents): 
+    def _handle_cybotsu(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "cybu.03",
             "cybu.04",
             "cyb.05",
@@ -588,19 +626,23 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "cyb.09",
             "cyb.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x400000, 0x400000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._cybots_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x400000, self._cybots_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._cybots_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x400000, 0x400000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._cybots_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x400000, self._cybots_qsound_filenames)
 
-        out_files.append({'filename': 'cybotsu.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'cybotsu.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
     ################################################################################
     # END Cyberbots: Fullmetal Madness                                             #
     ################################################################################
-
 
     ################################################################################
     # START Super Puzzle Fighter II Turbo                                          #
@@ -632,37 +674,47 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'pzf.12m'
     ]
 
-    def _handle_spf2xj(self, merged_contents): 
+    def _handle_spf2xj(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "pzfj.03a",
             "pzf.04"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, self._pzf_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, self._pzf_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x100000, 2, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(
+            0x1000040, length=0x400000), split=[0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1400040, self._pzf_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1450040, 0x400000, self._pzf_qsound_filenames)
 
-        out_files.append({'filename': 'spf2xj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'spf2xj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
-    def _handle_spf2tu(self, merged_contents): 
+    def _handle_spf2tu(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "pzfu.03a",
             "pzf.04"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x100000, 2, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(0x1000040, length = 0x400000), split=[0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1400040, self._pzf_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1450040, 0x400000, self._pzf_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x100000, 2, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._pzf_gfx_filenames, transforms.slice_helper(
+            0x1000040, length=0x400000), split=[0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1400040, self._pzf_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1450040, 0x400000, self._pzf_qsound_filenames)
 
-        out_files.append({'filename': 'spf2tu.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'spf2tu.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
@@ -704,47 +756,56 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'pcf.12m'
     ]
 
-    def _handle_pfghtj(self, merged_contents): 
+    def _handle_pfghtj(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "pcfj.03",
             "pcf.04",
             "pcf.05",
             "pcf.06",
             "pcf.07"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, self._pcf_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, self._pcf_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x280000, 5, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x1400000), split=[0x400000, 0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1C00040, self._pcf_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1C50040, 0x800000, self._pcf_qsound_filenames)
 
-        out_files.append({'filename': 'pfghtj.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'pfghtj.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
-    def _handle_sgemf(self, merged_contents): 
+    def _handle_sgemf(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "pcfu.03a",
             "pcf.04"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x280000, 5, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x1400000), split=[0x400000, 0x100000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x1C00040, self._pcf_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x1C50040, 0x800000, self._pcf_qsound_filenames)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x280000, 5, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._pcf_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x1400000), split=[0x400000, 0x100000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x1C00040, self._pcf_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x1C50040, 0x800000, self._pcf_qsound_filenames)
 
-        out_files.append({'filename': 'sgemf.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'sgemf.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
     ################################################################################
     # END Super Gem Fighter Mini Mix                                               #
     ################################################################################
-
 
     ################################################################################
     # START Hyper Street Fighter II: Anniversary Edition                           #
@@ -776,11 +837,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         'hs2.11m'
     ]
 
-    def _handle_hsf2j(self, merged_contents): 
+    def _handle_hsf2j(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "hs2j.03",
             "hs2j.04",
             "hs2j.05",
@@ -790,20 +851,25 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "hs2j.09",
             "hs2j.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._hs2_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._hs2_qsound_filenames, num_chunks=1)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x800000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._hs2_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._hs2_qsound_filenames, num_chunks=1)
 
-        out_files.append({'filename': 'hsf2j.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'hsf2j.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
-    def _handle_hsf2(self, merged_contents): 
+    def _handle_hsf2(self, merged_contents):
         out_files = []
         func_map = {}
 
-        maincpu_filenames = [   
+        maincpu_filenames = [
             "hs2u.03",
             "hs2u.04",
             "hs2.05",
@@ -813,12 +879,17 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "hs2.09",
             "hs2.10"
         ]
-        func_map['maincpu'] = capcom.maincpu_cps2(0x40, 0x400000, 8, maincpu_filenames)
-        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(0x0800040, length = 0x2000000), split=[0x800000])
-        func_map['audiocpu'] = capcom.audiocpu_cps2(0x2800040, self._hs2_audiocpu_filenames)
-        func_map['qsound'] = capcom.qsound_cps2(0x2850040, 0x800000, self._hs2_qsound_filenames, num_chunks=1)
+        func_map['maincpu'] = capcom.maincpu_cps2(
+            0x40, 0x400000, 8, maincpu_filenames)
+        func_map['gfx'] = capcom.gfx_cps2(self._hs2_gfx_filenames, transforms.slice_helper(
+            0x0800040, length=0x2000000), split=[0x800000])
+        func_map['audiocpu'] = capcom.audiocpu_cps2(
+            0x2800040, self._hs2_audiocpu_filenames)
+        func_map['qsound'] = capcom.qsound_cps2(
+            0x2850040, 0x800000, self._hs2_qsound_filenames, num_chunks=1)
 
-        out_files.append({'filename': 'hsf2.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
+        out_files.append({'filename': 'hsf2.zip', 'contents': helpers.build_rom(
+            merged_contents, func_map)})
 
         return out_files
 
@@ -832,7 +903,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # game_90.arc: Warzard (JP)
     # game_91.arc: Red Earth
 
-    # This is CPS3. 
+    # This is CPS3.
     # The actual ROM is small - only 512KB - but there doesn't appear to be an exact match offhand.
     # The majority of the data is in a CHD - but there doesn't appear to be an exact match offhand.
 
@@ -843,11 +914,11 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #    orig: M:noadnouT:yuT:e
     #  endian: :MondaonTuy:Tue:
     # This section is pretty clearly days of week, followed by date format strings and months of year.
-    # It LOOKS like every 4 charcters are backwards 
+    # It LOOKS like every 4 charcters are backwards
     #     sep: M:no | adno | uT:y | uT:e
     #  4 char: on:M | onda | y:Tu | e:Tue
     #  merged: on:Monday:Tue:Tue
-    # Doing this to the whole file gets us a lot of readable text (Days/Months/Error Strings                                                                                                                                                                                                                                           )... 
+    # Doing this to the whole file gets us a lot of readable text (Days/Months/Error Strings)...
     # But that readable text isn't in the romfile or compressed CHD.
     # Did they pre-decompress the CHD for performance?
 
@@ -857,14 +928,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #  0x1D80C: hCD001� - type 68, ver 0 (invalid)
     # There would be 32,768 bytes (0x8000) in a 'system area' before the first CD001 header
     # This would mean the image starts at 0x1A1CF - 0x8000 = 0x121CF
-    # This is 0x0 - 0x121CF is NOT big enough to fit the 0x80000 ROM. Nor is 0x0 - 0x1A1CF. 
+    # This is 0x0 - 0x121CF is NOT big enough to fit the 0x80000 ROM. Nor is 0x0 - 0x1A1CF.
     # More importantly - this isn't a valid ISO 9660
     # The volume versions are invalid, there's not a primary or terminator...
 
-    # def _handle_warzard(self, merged_contents): 
+    # def _handle_warzard(self, merged_contents):
     #     out_files = []
     #     func_map = {}
-
 
     #     def endian(contents):
     #         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
@@ -874,10 +944,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #     out_files.append({'filename': 'warzard.zip', 'contents': helpers.build_rom(merged_contents, func_map)})
     #     return out_files
 
-    # def _handle_redearth(self, merged_contents): 
+    # def _handle_redearth(self, merged_contents):
     #     out_files = []
     #     func_map = {}
-
 
     #     def endian(contents):
     #         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
