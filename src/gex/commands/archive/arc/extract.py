@@ -1,11 +1,10 @@
-import traceback
 import os
+import logging
+import click
+import click_log
 from gex.lib.archive import arc
 from gex.lib.file import identify
 from gex.lib.utils import helper
-import click
-import click_log
-import logging
 
 logger = logging.getLogger('gextoolbox')
 
@@ -21,26 +20,25 @@ def extract(in_file, out_dir):
             arc_contents = arc.extract(file_content)
 
             # Extract files
-            for offset, file_entry in arc_contents.items():
+            for _, file_entry in arc_contents.items():
                 contents = file_entry['contents']
 
                 try:
                     type_id = identify.enhanced_magic_from_buffer(contents)
                     if not type_id == identify.ARC:
-                        logger.warning(f'Found {type_id} when identifying file, will try to extract anyway...')
-                except:
-                    logger.warning(f'Cannot typecheck!')
+                        logger.warning(f'Found {type_id} file, will try to extract anyway...')
+                except Exception as _:
+                    logger.warning('Cannot typecheck!')
 
-                out_file_path = os.path.join(helper.cleanpath(out_dir), file_entry['path'].replace("\\", os.sep))
+                out_file_path = os.path.join(
+                    helper.cleanpath(out_dir),
+                    file_entry['path'].replace("\\", os.sep)
+                )
                 os.makedirs(os.path.dirname(out_file_path), exist_ok = True)
                 with open(out_file_path, "wb") as out_file:
                     out_file.write(contents)
-                    
+
         logger.info('Extraction complete.')
-    except Exception as e:
-        logger.error(repr(e))
-        traceback.print_exc()
-        logger.error('Error While Opening the file!') 
-
-
-
+    except Exception as error:
+        logger.error(error)
+        logger.error('Error While Opening the file!')

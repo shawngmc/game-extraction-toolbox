@@ -13,15 +13,29 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
-                "postprocess", 
-                "steam", 
+                "tasks", 
                 "extract", 
                 "--task", 
                 "cbeub", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CBEUB\"", 
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cbeub\""
+                "\"${workspaceFolder}\\out\\cbeub\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Collection of SaGa",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "saga", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\saga\""
             ]
         },
         {
@@ -33,15 +47,12 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
-                "postprocess", 
-                "steam", 
+                "tasks", 
                 "extract", 
                 "--task", 
                 "cfc", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\CAPCOM FIGHTING COLLECTION\"", 
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cfc\""
+                "\"${workspaceFolder}\\out\\cfc\""
             ]
         },
         {
@@ -53,15 +64,12 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
-                "postprocess", 
-                "steam", 
+                "tasks", 
                 "extract", 
                 "--task", 
                 "sf30ac", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Street Fighter 30th Anniversary Collection\"", 
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\sf30ac\""
+                "\"${workspaceFolder}\\out\\sf30ac\""
             ]
         },
         {
@@ -73,15 +81,12 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
-                "postprocess", 
-                "steam", 
+                "tasks", 
                 "extract", 
                 "--task", 
                 "cas1_old", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\content\"", 
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\cas1_old\""
+                "\"${workspaceFolder}\\out\\cas1_old\""
             ]
         },
         {
@@ -93,25 +98,132 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
-                "postprocess", 
-                "steam", 
+                "tasks", 
                 "extract", 
                 "--task", 
                 "genesis", 
-                "--srcdir", 
-                "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Sega Classics\"",
                 "--destdir", 
-                "\"C:\\Users\\shawn\\Desktop\\rom playground\\gex_testing\\genesis\""
+                "\"${workspaceFolder}\\out\\genesis\""
             ]
         },
         {
-            "name": "Python: Deshuffle Perf Comparison",
+            "name": "Python: Toolbox - Testing BlizzArcade",
             "type": "python",
             "request": "launch",
-            "program": "deshuffle_compare.py",
+            "program": "toolbox.py",
             "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/testing",
-            "justMyCode": true
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "blizzarcade", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\blizzarcade\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing MMLC1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmlc1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmlc1\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing MMXLC1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmxlc1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmxlc1\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Bubsy",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "bubsy", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\bubsy\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Double Dragon Trilogy",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ddragontrilogy", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ddragontrilogy\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Disney Afternoon Collection",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "disneyac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\disneyac\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing SADXGG",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sadxgg", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sadxgg\""
+            ]
         }
     ]
 }

@@ -1,11 +1,10 @@
-import traceback
 import os
+import logging
+import click
+import click_log
 from gex.lib.archive import kpka
 from gex.lib.file import identify
 from gex.lib.utils import helper
-import click
-import click_log
-import logging
 
 logger = logging.getLogger('gextoolbox')
 
@@ -29,19 +28,15 @@ def extract(in_file, out_dir):
                     type_id = identify.enhanced_magic_from_buffer(contents)
                     if not type_id == identify.KPKA:
                         logger.warning(f'Found {type_id} when identifying file, will try to extract anyway...')
-                except:
-                    logger.warning(f'Cannot typecheck!')
+                except Exception as _:
+                    logger.warning('Cannot typecheck!')
 
                 out_file_path = os.path.join(helper.cleanpath(out_dir), filename)
                 logger.error(out_file_path)
                 with open(out_file_path, "wb") as out_file:
                     out_file.write(contents)
-        
+
         logger.info('Extraction complete.')
-    except Exception as e:
-        logger.error(repr(e))
-        traceback.print_exc()
-        logger.error('Error While Opening the file!') 
-
-
-
+    except Exception as error:
+        logger.error(error)
+        logger.error('Error While Opening the file!')
