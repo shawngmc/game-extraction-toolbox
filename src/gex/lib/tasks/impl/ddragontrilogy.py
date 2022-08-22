@@ -40,6 +40,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
 
         for func in funcs:
+            logger.info(f"Extracting {func.__name__[1:]}...")
             rom_package = func(all_ddragon_trio_files)
             with open(os.path.join(out_dir, rom_package['filename']), "wb") as out_file:
                 out_file.write(rom_package['contents'])
