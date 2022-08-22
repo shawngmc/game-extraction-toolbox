@@ -4,17 +4,37 @@ import zipfile
 from gex.lib.utils.blob import transforms
 
 def build_rom(in_files, func_map):
-    '''Function to run all mapped functions and zip the results up'''
-    new_data = dict()
-    for func in func_map.values():
-        new_data.update(func(in_files))
+    '''Convenience function to run both process_rom_files and build_zip together'''
+    file_map = process_rom_files(in_files, func_map)
+    return build_zip(file_map)
 
-    # Build the new zip file
+def process_rom_files(in_files, func_map):
+    '''Look at a list of content files and run a set of transform functions on them'''
+    file_map = {}
+    for func in func_map.values():
+        file_map.update(func(in_files))
+    return file_map
+
+def create_combined_file_map(*file_maps):
+    '''Create a combined file map from 2 or more existing maps'''
+    new_map = {}
+    for file_map in file_maps:
+        new_map.update(file_map)
+    return new_map
+
+def build_zip(file_map):
+    '''Build a zip file from a dictionary of paths to contents'''
     new_contents = io.BytesIO()
     with zipfile.ZipFile(new_contents, "w", compression=zipfile.ZIP_DEFLATED) as new_archive:
-        for name, data in new_data.items():
+        for name, data in file_map.items():
             new_archive.writestr(name, data)
     return new_contents.getvalue()
+
+def existing_files_helper(file_map):
+    '''Func map helper to reuse a file map'''
+    def existing_files(in_files):
+        return file_map
+    return existing_files
 
 def equal_split_helper(in_file_ref, filenames):
     '''Func map helper for transforms.equal_split'''

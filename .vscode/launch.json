@@ -73,6 +73,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SF30ACInternational",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--srcdir", 
+                "\"${workspaceFolder}\\out\\sf30acint-testing\"",
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30acint\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1 Old",
             "type": "python",
             "request": "launch",
