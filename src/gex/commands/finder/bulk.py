@@ -1,13 +1,14 @@
-import click
 import os
+import click
 import psutil
 
-
 @click.command()
-@click.option('--target', 'target_dir', help = 'path to directory of files to search for', required=True)
-@click.option('--search', 'search_dir', help = 'path to directory of files to search within', required=True)
+@click.option('--target', 'target_dir',
+    help = 'path to directory of files to search for', required=True)
+@click.option('--search', 'search_dir',
+    help = 'path to directory of files to search within', required=True)
 def bulk(target_dir, search_dir):
-    """Find target files with offsets within the files of a search path"""
+    """CLI tool to find target files w/offsets within the files of a search path"""
 
     file_cache = {}
 
@@ -16,13 +17,13 @@ def bulk(target_dir, search_dir):
         file_cache[file_path] = file_data
 
     def read_bin_file(path):
-        try: 
-            with open(path, "rb") as f:
-                content = f.read()
+        try:
+            with open(path, "rb") as file:
+                content = file.read()
                 return content
         except IOError:
-            print('Error While Opening the file!')  
-    
+            print('Error While Opening the file!')
+
     def find_match(archive_content, sub_content):
         for i in range(0x0, len(archive_content) - len(sub_content)):
             if archive_content[i] == sub_content[0]:
@@ -34,10 +35,10 @@ def bulk(target_dir, search_dir):
                 if valid:
                     return {'start': i, 'end': i+len(sub_content)}
         return None
-        
+
     def list_child_files(child_path):
         child_files = []
-        for (dirpath, dirnames, filenames) in os.walk(child_path):
+        for (_, _, filenames) in os.walk(child_path):
             for filename in filenames:
                 child_files.append(os.path.join(child_path, filename))
             break
@@ -51,16 +52,16 @@ def bulk(target_dir, search_dir):
     target_files = list_child_files(target_dir)
 
     matches = []
-        
-    print(f"Precaching...")
+
+    print("Precaching...")
     for target_file in target_files:
         print(f" Precaching {target_file}...")
         precache_file(target_file)
 
-    print(f"After caching:")
+    print("After caching:")
     memory_usage()
 
-    print(f"Searching...")
+    print("Searching...")
     for search_file in search_files:
         print(f" Searching {search_file}...")
         search_content = read_bin_file(search_file)
@@ -68,8 +69,8 @@ def bulk(target_dir, search_dir):
         for target_file in target_files:
             target_content = file_cache[target_file]
             match = find_match(search_content, target_content)
-            if match == None:
-                print(f"  No match found for {target_file}") 
+            if match is None:
+                print(f"  No match found for {target_file}")
             else:
                 print(f"  Match for {target_file} from {hex(match['start'])} to {hex(match['end'])}!")
                 matches.append(match)

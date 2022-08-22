@@ -35,3 +35,10 @@
 ### Manual
 1. Distribute via twine ```twine upload dist/*```
 2. Clean out dist dir
+
+
+## Special Topics
+### Markdown Tables
+In the task details, markdown tables behave oddly:
+* Rows are not resized automatically
+* Every line needs 1-2 spaces at the end
