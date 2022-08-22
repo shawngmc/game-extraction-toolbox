@@ -64,10 +64,10 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                     if parsed is not None and handler_func is not None:
                         output_files = handler_func(parsed)
 
-                        for out_file in output_files:
-                            out_path = os.path.join(out_dir, out_file['filename'])
+                        for out_file_entry in output_files:
+                            out_path = os.path.join(out_dir, out_file_entry['filename'])
                             with open(out_path, "wb") as out_file:
-                                out_file.write(out_file['contents'])
+                                out_file.write(out_file_entry['contents'])
                     elif parsed is None:
                         logger.warning("Could not find merged rom data in mbundle.")
                     elif handler_func is None:
