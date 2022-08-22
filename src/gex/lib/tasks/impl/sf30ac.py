@@ -44,9 +44,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |  
  **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |  
  **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
- **Street Fighter 2 Championship Edition**        | MAME 0.246     | N          | sf2ceua.zip        | Bad         | (2) (3)  
- **Street Fighter 2 Championship Edition (JA)**   | N/A           | N/A        | sf2ceja.zip              | Bad         | (2) (3) (4) (5)  
- **Street Fighter 2 Championship Edition (JB)**   | MAME 0.246     | N          | sf2cejb.zip        | Bad         | (2) (3) (4)   
+ **Street Fighter 2 Championship Edition**        | MAME 0.78     |           | sf2ceua.zip        | Bad         | (2) (3)  
+ **Street Fighter 2 Championship Edition (JB)**   | MAME 0.78     |           | sf2cejb.zip        | Bad         | (2) (3) (4)   
+ **Street Fighter 2 Championship Edition (JC)**   | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
  **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
  **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
  **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
@@ -420,7 +420,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
 
         # See if the J ROM is present
-        if in_files['ja-68k'] is not None and in_files['jl-68k'] is not None:
+        if in_files['ja-68k'] is not None:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_ja = [
@@ -900,6 +900,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['z80'] = mbundle_entries.get('StreetFighterII_CE.z80')
         in_files['oki'] = mbundle_entries.get('StreetFighterII_CE.oki')
         in_files['68k'] = mbundle_entries.get('StreetFighterII_CE.ua.68k')
+        in_files['jb-68k'] = mbundle_entries.get('StreetFighterII_CE.jb.68k')
 
         # audiocpu
         audiocpu_filenames = [
@@ -945,24 +946,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
             return dict(zip(oki_filenames, chunks))
         func_map['oki'] = oki
-        logger.info("Processing SF2CE common files...")
-        common_file_map = helpers.process_rom_files(in_files, func_map)
-
-        func_map = {}
-        # maincpu
-        maincpu_filenames = [
-            "s92u-23a",
-            "sf2ce.22",
-            "s92_21a.bin"
-        ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = 3)
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
-
-
+        
         ph_files = {
             'bprg1.11d': 0x117,
             'buf1': 0x117,
@@ -976,24 +960,55 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
+        logger.info("Processing SF2CE common files...")
+        common_file_map = helpers.process_rom_files(in_files, func_map)
+
 
         func_map = {}
         # maincpu
         maincpu_filenames = [
-            "s92j_23b.bin",
-            "s92j_22b.bin",
+            "s92u-23a",
+            "sf2ce.22",
             "s92_21a.bin"
         ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = 3)
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
+        def sf2ce_maincpu(in_file_name, filenames):
+            def maincpu(in_files):
+                contents = in_files[in_file_name]
+                chunks = transforms.equal_split(contents, num_chunks = 3)
+                chunks = transforms.swap_endian_all(chunks)
+                return dict(zip(filenames, chunks))
+            return maincpu
+        func_map['maincpu'] = sf2ce_maincpu('68k', maincpu_filenames)
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        mame_name = "sf2ceua.zip"
+        logger.info(f"Building {mame_name}...")
+        out_files.append(
+            {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+        )
+        logger.info(f"Extracted {mame_name}.")
 
+        if in_files['jb-68k'] is not None:
+            logger.info("Japanese ROMs found, extracting...")
+            func_map = {}
+            maincpu_filenames_jb = [
+                "s92j_23b.bin",
+                "s92j_22b.bin",
+                "s92_21a.bin"
+            ]
+            func_map['maincpu'] = sf2ce_maincpu('jb-68k', maincpu_filenames_jb)
+            func_map['common'] = helpers.existing_files_helper(common_file_map)
+            mame_name_jb = 'sf2cej.zip'
+            logger.info(f"Building {mame_name_jb}...")
+            out_files.append(
+                {'filename': mame_name_jb, 'contents': helpers.build_rom(in_files, func_map)}
+            )
+            logger.info(f"Extracted {mame_name_jb}.")
 
+            logger.info("Skipping sf2ceja.zip as it needs a key but isn't in an old keyless MAME.")
+        else:
+            logger.info("Japanese ROMs not found, skipping.")
 
-        return [{'filename': 'sf2ceua.zip', 'contents': helpers.build_rom(in_files, func_map)}]
+        return out_files
 
     ################################################################################
     # Street Fighter 2 Hyper Fighting                                              #
