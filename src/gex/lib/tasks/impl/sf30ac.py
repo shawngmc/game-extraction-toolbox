@@ -31,10 +31,10 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
  **Street Fighter 2**                             | MAME 0.78     | N          | sf2ub.zip        | Bad         | (2) (3)  
  **Street Fighter 2 (JA)**                        | MAME 0.78     |           | sf2ja.zip        | Bad         | (2) (3) (4)  
- **Street Fighter 2 (JL)**                        | N/A           | N/A        | sf2jl.zip        | Bad         | (2) (3) (4) (5)  
+ **Street Fighter 2 (JL)**                        | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
  **Street Fighter Alpha**                         | MAME 0.139    | N          | sfau.zip         | Bad         | (1)  
- **Street Fighter Alpha (J)**                     | MAME 0.139    |           | sfzj.zip         | Bad         | (1)  
- **Street Fighter Alpha (JR2)**                   | MAME 0.139    |           | sfzjr2.zip       | Bad         | (1)  
+ **Street Fighter Alpha (J)**                     | MAME 0.139    |           | sfzj.zip         | Bad         | (1) (4)  
+ **Street Fighter Alpha (JR2)**                   | MAME 0.139    |           | sfzjr2.zip       | Bad         | (1) (4)  
  **Street Fighter Alpha 2**                       | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (3)  
  **Street Fighter Alpha 2 (J)**                   | MAME 0.139    |           | sfa2u.zip        | Bad         | (1) (3) (4)
  **Street Fighter Alpha 2 (JR1)**                 | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)
@@ -44,7 +44,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |  
  **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |  
  **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
- **Street Fighter 2 Championship Edition**        | MAME 0.78     | N          | sf2ce.zip        | Bad         | (2) (3)  
+ **Street Fighter 2 Championship Edition**        | MAME 0.246     | N          | sf2ceua.zip        | Bad         | (2) (3)  
+ **Street Fighter 2 Championship Edition (JA)**   | N/A           | N/A        | sf2ceja.zip              | Bad         | (2) (3) (4) (5)  
+ **Street Fighter 2 Championship Edition (JB)**   | MAME 0.246     | N          | sf2cejb.zip        | Bad         | (2) (3) (4)   
  **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
  **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
  **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
@@ -93,11 +95,11 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         # 'bundleStreetFighterAlpha.mbundle': 'sfa',
         # 'bundleStreetFighterAlpha2.mbundle': 'sfa2',
         # 'bundleStreetFighterAlpha3.mbundle': 'sfa3',
-        'bundleStreetFighterII.mbundle': 'sf2',
+        # 'bundleStreetFighterII.mbundle': 'sf2',
         # 'bundleStreetFighterIII.mbundle': 'sf3',
         # 'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
         # 'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
-        # 'bundleStreetFighterII_CE.mbundle': 'sf2ce',
+        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
         # 'bundleStreetFighterII_HF.mbundle': 'sf2hf',
         # 'bundleSuperStreetFighterII.mbundle': 'ssf2',
         # 'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
@@ -892,6 +894,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
     def _handle_sf2ce(self, mbundle_entries):
         func_map = {}
+        out_files = []
         in_files = {}
         in_files['vrom'] = mbundle_entries.get('StreetFighterII_CE.vrom')
         in_files['z80'] = mbundle_entries.get('StreetFighterII_CE.z80')
@@ -906,19 +909,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             contents = in_files['z80']
             return dict(zip(audiocpu_filenames, [contents]))
         func_map['audiocpu'] = audiocpu
-
-        # maincpu
-        maincpu_filenames = [
-            "s92u-23a",
-            "sf2ce.22",
-            "s92_21a.bin"
-        ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = 3)
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
 
         # gfx
         gfx_filenames = [
@@ -955,6 +945,22 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
             return dict(zip(oki_filenames, chunks))
         func_map['oki'] = oki
+        logger.info("Processing SF2CE common files...")
+        common_file_map = helpers.process_rom_files(in_files, func_map)
+
+        func_map = {}
+        # maincpu
+        maincpu_filenames = [
+            "s92u-23a",
+            "sf2ce.22",
+            "s92_21a.bin"
+        ]
+        def maincpu(in_files):
+            contents = in_files['68k']
+            chunks = transforms.equal_split(contents, num_chunks = 3)
+            chunks = transforms.swap_endian_all(chunks)
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
 
 
         ph_files = {
@@ -969,6 +975,23 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             'ioc1.ic7': 0x104
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+
+
+        func_map = {}
+        # maincpu
+        maincpu_filenames = [
+            "s92j_23b.bin",
+            "s92j_22b.bin",
+            "s92_21a.bin"
+        ]
+        def maincpu(in_files):
+            contents = in_files['68k']
+            chunks = transforms.equal_split(contents, num_chunks = 3)
+            chunks = transforms.swap_endian_all(chunks)
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+
+
 
         return [{'filename': 'sf2ceua.zip', 'contents': helpers.build_rom(in_files, func_map)}]
 
