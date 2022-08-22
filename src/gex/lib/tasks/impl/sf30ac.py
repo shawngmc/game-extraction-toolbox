@@ -28,11 +28,19 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
 ---------------------------------------------|---------------|------------|------------------|-------------|-------------------  
  **Street Fighter**                               | MAME 0.246    | Y          | sf.zip           | Bad         |  
- **Street Fighter (J)**                           | MAME 0.246    | Y          | sfj.zip          | Bad         | (4)  
+ **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
  **Street Fighter 2**                             | MAME 0.78     | N          | sf2ub.zip        | Bad         | (2) (3)  
+ **Street Fighter 2 (JA)**                        | MAME 0.78     | N          | sf2ja.zip        | Bad         | (2) (3) (4)  
+ **Street Fighter 2 (JL)**                        | MAME 0.78     | N          | sf2jl.zip        | Bad         | (2) (3) (4)  
  **Street Fighter Alpha**                         | MAME 0.139    | N          | sfau.zip         | Bad         | (1)  
+ **Street Fighter Alpha (J)**                     | MAME 0.139    | N          | sfzj.zip         | Bad         | (1)  
+ **Street Fighter Alpha (JR2)**                   | MAME 0.139    | N          | sfzjr2.zip       | Bad         | (1)  
  **Street Fighter Alpha 2**                       | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (3)  
+ **Street Fighter Alpha 2 (J)**                   | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (3) (4)
+ **Street Fighter Alpha 2 (JR1)**                 | N/A           | N          | N/A              | Bad         | (1) (3) (4) (5)
  **Street Fighter Alpha 3**                       | MAME 0.139    | N          | sfa3u.zip        | Bad         | (1)  
+ **Street Fighter Alpha 3 (J)**                   | MAME 0.139    | N          | sfz3j.zip        | Bad         | (1) (4)  
+ **Street Fighter Alpha 3 (JR2)**                 | MAME 0.139    | N          | sfz3jr2.zip      | Bad         | (1) (4)  
  **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |  
  **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |  
  **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
@@ -45,6 +53,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 2. These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.
 3. These are using an older naming convention to allow recognition by the targeted MAME version.
 4. These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.
+5. This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split.
     '''
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
     _input_folder_desc = "SF30AC Steam folder"
@@ -299,6 +308,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         in_files['z80'] = mbundle_entries.get('StreetFighterII.z80')
         in_files['oki'] = mbundle_entries.get('StreetFighterII.oki')
         in_files['ub68k'] = mbundle_entries.get('StreetFighterII.ub.68k')
+        in_files['ja68k'] = mbundle_entries.get('StreetFighterII.ja.68k')
+        in_files['jl68k'] = mbundle_entries.get('StreetFighterII.jl.68k')
 
         # audiocpu
         audiocpu_filenames = [
@@ -585,12 +596,12 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_j = [
-                "sz2j.03",
-                "sz2j.04",
-                "sz2j.05",
-                "sz2j.06",
-                "sz2j.07",
-                "sz2j.08"
+                "sz2j.03a",
+                "sz2j.04a",
+                "sz2.05a",
+                "sz2.06",
+                "sz2j.07a",
+                "sz2.08"
             ]
             func_map['maincpu'] = sfa2_maincpu('j-68k', maincpu_filenames_j)
             func_map['common'] = helpers.existing_files_helper(common_file_map)
@@ -601,23 +612,24 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             )
             logger.info(f"Extracted {mame_name_j}.")
 
-            func_map = {}
-            maincpu_filenames_jr1 = [
-                "sz2j.03a",
-                "sz2j.04a",
-                "sz2.05a",
-                "sz2.06",
-                "sz2j.07a",
-                "sz2.08"
-            ]
-            func_map['maincpu'] = sfa2_maincpu('jr1-68k', maincpu_filenames_jr1)
-            func_map['common'] = helpers.existing_files_helper(common_file_map)
-            mame_name_jr1 = 'sfz2jr1.zip'
-            logger.info(f"Building {mame_name_jr1}...")
-            out_files.append(
-                {'filename': mame_name_jr1, 'contents': helpers.build_rom(in_files, func_map)}
-            )
-            logger.info(f"Extracted {mame_name_jr1}.")
+            logger.info(f"Skipping sfz2jr1.zip as it needs a key but isn't in an old keyless MAME.")
+            # func_map = {}
+            # maincpu_filenames_jr1 = [
+            #     "sz2j.03",
+            #     "sz2j.04",
+            #     "sz2j.05",
+            #     "sz2j.06",
+            #     "sz2j.07",
+            #     "sz2j.08"
+            # ]
+            # func_map['maincpu'] = sfa2_maincpu('jr1-68k', maincpu_filenames_jr1)
+            # func_map['common'] = helpers.existing_files_helper(common_file_map)
+            # mame_name_jr1 = 'sfz2jr1.zip'
+            # logger.info(f"Building {mame_name_jr1}...")
+            # out_files.append(
+            #     {'filename': mame_name_jr1, 'contents': helpers.build_rom(in_files, func_map)}
+            # )
+            # logger.info(f"Extracted {mame_name_jr1}.")
 
         else:
             logger.info("Japanese ROMs not found, skipping.")
