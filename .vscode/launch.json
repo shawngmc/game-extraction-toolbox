@@ -224,15 +224,6 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\sadxgg\""
             ]
-        },
-        {
-            "name": "Python: Deshuffle Perf Comparison",
-            "type": "python",
-            "request": "launch",
-            "program": "deshuffle_compare.py",
-            "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/testing",
-            "justMyCode": true
         }
     ]
 }
