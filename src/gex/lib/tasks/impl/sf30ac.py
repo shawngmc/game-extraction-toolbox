@@ -28,29 +28,36 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
 ---------------------------------------------|---------------|------------|------------------|-------------|-------------------  
  **Street Fighter**                               | MAME 0.246    | Y          | sf.zip           | Bad         |  
- **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
  **Street Fighter 2**                             | MAME 0.78     | N          | sf2ub.zip        | Bad         | (2) (3)  
- **Street Fighter 2 (JA)**                        | MAME 0.78     |           | sf2ja.zip        | Bad         | (2) (3) (4)  
- **Street Fighter 2 (JL)**                        | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
+ **Street Fighter 2 Championship Edition**        | MAME 0.78     |           | sf2ceua.zip      | Bad         | (2) (3)  
+ **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
  **Street Fighter Alpha**                         | MAME 0.139    | N          | sfau.zip         | Bad         | (1)  
- **Street Fighter Alpha (J)**                     | MAME 0.139    |           | sfzj.zip         | Bad         | (1) (4)  
- **Street Fighter Alpha (JR2)**                   | MAME 0.139    |           | sfzjr2.zip       | Bad         | (1) (4)  
  **Street Fighter Alpha 2**                       | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (3)  
- **Street Fighter Alpha 2 (J)**                   | MAME 0.139    |           | sfa2u.zip        | Bad         | (1) (3) (4)
- **Street Fighter Alpha 2 (JR1)**                 | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)
  **Street Fighter Alpha 3**                       | MAME 0.139    | N          | sfa3u.zip        | Bad         | (1)  
- **Street Fighter Alpha 3 (J)**                   | MAME 0.139    |           | sfz3j.zip        | Bad         | (1) (4)  
- **Street Fighter Alpha 3 (JR2)**                 | MAME 0.139    |           | sfz3jr2.zip      | Bad         | (1) (4)  
  **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |  
  **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |  
  **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
- **Street Fighter 2 Championship Edition**        | MAME 0.78     |           | sf2ceua.zip        | Bad         | (2) (3)  
- **Street Fighter 2 Championship Edition (JB)**   | MAME 0.78     |           | sf2cejb.zip        | Bad         | (2) (3) (4)   
- **Street Fighter 2 Championship Edition (JC)**   | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
- **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
- **Street Fighter 2 Hyper Fighting (J)**          | MAME 0.78     |            | sf2tj.zip        | Bad         | (2) (3) (4)  
  **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
  **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
+
+
+ 
+ **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
+ **Street Fighter 2 (JA)**                        | MAME 0.78     |           | sf2ja.zip        | Bad         | (2) (3) (4)  
+ **Street Fighter 2 (JL)**                        | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
+ **Street Fighter 2 Championship Edition (JB)**   | MAME 0.78     |           | sf2cejb.zip      | Bad         | (2) (3) (4)   
+ **Street Fighter 2 Championship Edition (JC)**   | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
+ **Street Fighter 2 Hyper Fighting (J)**          | MAME 0.78     |            | sf2tj.zip        | Bad         | (2) (3) (4)  
+ **Street Fighter Alpha (J)**                     | MAME 0.139    |           | sfzj.zip         | Bad         | (1) (4)  
+ **Street Fighter Alpha (JR2)**                   | MAME 0.139    |           | sfzjr2.zip       | Bad         | (1) (4)  
+ **Street Fighter Alpha 2 (J)**                   | MAME 0.139    |           | sfa2u.zip        | Bad         | (1) (3) (4)
+ **Street Fighter Alpha 2 (JR1)**                 | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)
+ **Street Fighter Alpha 3 (J)**                   | MAME 0.139    |           | sfz3j.zip        | Bad         | (1) (4)  
+ **Street Fighter Alpha 3 (JR2)**                 | MAME 0.139    |           | sfz3jr2.zip      | Bad         | (1) (4)  
+ **Super Street Fighter 2 (J)**                   | MAME 0.139    |           | ssf2u.zip        | Bad         | (1) (3) (4)  
+ **Super Street Fighter 2 (JR1)**                 | MAME 0.139    |           | ssf2u.zip        | Bad         | (1) (3) (4)  
+ **Super Street Fighter 2 Turbo (J)**             | MAME 0.139    |           | ssf2tu.zip       | Bad         | (1) (3) (4)  
+ **Super Street Fighter 2 Turbo (JR1)**           | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)  
 
 1. These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.
 2. These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.
@@ -92,18 +99,18 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
 
     _pkg_name_map = {
-        # 'bundleStreetFighter.mbundle': 'sf',
-        # 'bundleStreetFighterAlpha.mbundle': 'sfa',
-        # 'bundleStreetFighterAlpha2.mbundle': 'sfa2',
-        # 'bundleStreetFighterAlpha3.mbundle': 'sfa3',
-        # 'bundleStreetFighterII.mbundle': 'sf2',
-        # 'bundleStreetFighterIII.mbundle': 'sf3',
-        # 'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
-        # 'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
-        # 'bundleStreetFighterII_CE.mbundle': 'sf2ce',
+        'bundleStreetFighter.mbundle': 'sf',
+        'bundleStreetFighterAlpha.mbundle': 'sfa',
+        'bundleStreetFighterAlpha2.mbundle': 'sfa2',
+        'bundleStreetFighterAlpha3.mbundle': 'sfa3',
+        'bundleStreetFighterII.mbundle': 'sf2',
+        'bundleStreetFighterIII.mbundle': 'sf3',
+        'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
+        'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
+        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
         'bundleStreetFighterII_HF.mbundle': 'sf2hf',
-        # 'bundleSuperStreetFighterII.mbundle': 'ssf2',
-        # 'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
+        'bundleSuperStreetFighterII.mbundle': 'ssf2',
+        'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
     }
 
     def _find_files(self, base_path):
@@ -496,7 +503,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.swap_endian_all(chunks)
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
-        
+
         logger.info("Processing SFA1 common files...")
         common_file_map = helpers.process_rom_files(in_files, func_map)
 
@@ -525,7 +532,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        
         # See if the J ROM is present
         if in_files['j-68k'] is not None and in_files['jr2-68k'] is not None:
             logger.info("Japanese ROMs found, extracting...")
@@ -947,7 +953,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
             return dict(zip(oki_filenames, chunks))
         func_map['oki'] = oki
-        
+
         ph_files = {
             'bprg1.11d': 0x117,
             'buf1': 0x117,
@@ -1099,7 +1105,9 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
                 new_chunks = []
                 for oldchunk in chunks:
-                    new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+                    new_chunks.extend(
+                        self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2)
+                    )
                 chunks = new_chunks
                 return dict(zip(filenames, chunks))
             return gfx
@@ -1156,11 +1164,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
     def _handle_ssf2(self, mbundle_entries):
         func_map = {}
+        out_files = []
         in_files = {}
         in_files['vrom'] = mbundle_entries.get('SuperStreetFighterII.vrom')
         in_files['z80'] = mbundle_entries.get('SuperStreetFighterII.z80')
         in_files['qsound'] = mbundle_entries.get('SuperStreetFighterII.qs')
         in_files['68k'] = mbundle_entries.get('SuperStreetFighterII.u.68k')
+        in_files['j-68k'] = mbundle_entries.get('SuperStreetFighterII.j.68k')
+        in_files['jr1-68k'] = mbundle_entries.get('SuperStreetFighterII.jr1.68k')
 
         # audiocpu
         audiocpu_filenames = [
@@ -1171,20 +1182,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(audiocpu_filenames, [contents]))
         func_map['audiocpu'] = audiocpu
 
-        # maincpu
-        maincpu_filenames = [
-            "ssfu.03a",
-            "ssfu.04a",
-            "ssfu.05",
-            "ssfu.06",
-            "ssfu.07"
-        ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = 5)
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
 
         vrom_filenames = [
             "ssf.13m",
@@ -1218,7 +1215,73 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        return [{'filename': 'ssf2u.zip', 'contents': helpers.build_rom(in_files, func_map)}]
+        logger.info("Processing SSF2 common files...")
+        common_file_map = helpers.process_rom_files(in_files, func_map)
+
+        func_map = {}
+        # maincpu
+        maincpu_filenames = [
+            "ssfu.03a",
+            "ssfu.04a",
+            "ssfu.05",
+            "ssfu.06",
+            "ssfu.07"
+        ]
+        def ssf2_maincpu(in_file_name, filenames):
+            def maincpu(in_files):
+                contents = in_files[in_file_name]
+                chunks = transforms.equal_split(contents, num_chunks = 5)
+                chunks = transforms.swap_endian_all(chunks)
+                return dict(zip(filenames, chunks))
+            return maincpu
+        func_map['maincpu'] = ssf2_maincpu('68k', maincpu_filenames)
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        mame_name = "ssf2u.zip"
+        logger.info(f"Building {mame_name}...")
+        out_files.append(
+            {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+        )
+        logger.info(f"Extracted {mame_name}.")
+
+
+        if in_files['j-68k'] is not None and in_files['jr1-68k'] is not None:
+            logger.info("Japanese ROMs found, extracting...")
+            func_map = {}
+            maincpu_filenames = [
+                "ssfj.03b",
+                "ssfj.04a",
+                "ssfj.05",
+                "ssfj.06b",
+                "ssfj.07"
+            ]
+            func_map['maincpu'] = ssf2_maincpu('j-68k', maincpu_filenames)
+            func_map['common'] = helpers.existing_files_helper(common_file_map)
+            mame_name = 'ssf2j.zip'
+            logger.info(f"Building {mame_name}...")
+            out_files.append(
+                {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+            )
+            logger.info(f"Extracted {mame_name}.")
+            func_map = {}
+            maincpu_filenames = [
+                "ssfj.03a",
+                "ssfj.04a",
+                "ssfj.05",
+                "ssfj.06",
+                "ssfj.07"
+            ]
+            func_map['maincpu'] = ssf2_maincpu('jr1-68k', maincpu_filenames)
+            func_map['common'] = helpers.existing_files_helper(common_file_map)
+            mame_name = 'ssf2jr1.zip'
+            logger.info(f"Building {mame_name}...")
+            out_files.append(
+                {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+            )
+            logger.info(f"Extracted {mame_name}.")
+        else:
+            logger.info("Japanese ROMs not found, skipping.")
+
+        return out_files
 
     ################################################################################
     # Super Street Fighter 2 Turbo                                                 #
@@ -1226,11 +1289,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
     def _handle_ssf2t(self, mbundle_entries):
         func_map = {}
+        out_files = []
         in_files = {}
         in_files['vrom'] = mbundle_entries.get('SuperStreetFighterIITurbo.vrom')
         in_files['z80'] = mbundle_entries.get('SuperStreetFighterIITurbo.z80')
         in_files['qsound'] = mbundle_entries.get('SuperStreetFighterIITurbo.qs')
         in_files['68k'] = mbundle_entries.get('SuperStreetFighterIITurbo.u.68k')
+        in_files['j-68k'] = mbundle_entries.get('SuperStreetFighterIITurbo.j.68k')
+        in_files['jr1-68k'] = mbundle_entries.get('SuperStreetFighterIITurbo.jr1.68k')
 
         # audiocpu
         audiocpu_filenames = [
@@ -1242,23 +1308,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             chunks = transforms.equal_split(contents, num_chunks = len(audiocpu_filenames))
             return dict(zip(audiocpu_filenames, chunks))
         func_map['audiocpu'] = audiocpu
-
-        # maincpu
-        maincpu_filenames = [
-            "sfxu.03e",
-            "sfxu.04a",
-            "sfxu.05",
-            "sfxu.06b",
-            "sfxu.07a",
-            "sfxu.08",
-            "sfx.09"
-        ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = len(maincpu_filenames))
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
 
         vrom_filenames = [
             "sfx.13m",
@@ -1290,4 +1339,60 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(qsound_filenames, chunks))
         func_map['qsound'] = qsound
 
-        return [{'filename': 'ssf2tu.zip', 'contents': helpers.build_rom(in_files, func_map)}]
+        logger.info("Processing SSFT2 common files...")
+        common_file_map = helpers.process_rom_files(in_files, func_map)
+
+        func_map = {}
+        # maincpu
+        maincpu_filenames = [
+            "sfxu.03e",
+            "sfxu.04a",
+            "sfxu.05",
+            "sfxu.06b",
+            "sfxu.07a",
+            "sfxu.08",
+            "sfx.09"
+        ]
+        def ssf2t_maincpu(in_file_name, filenames):
+            def maincpu(in_files):
+                contents = in_files[in_file_name]
+                chunks = transforms.equal_split(contents, num_chunks = len(maincpu_filenames))
+                chunks = transforms.swap_endian_all(chunks)
+                return dict(zip(filenames, chunks))
+            return maincpu
+        func_map['maincpu'] = ssf2t_maincpu('68k', maincpu_filenames)
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        mame_name = "ssf2tu.zip"
+        logger.info(f"Building {mame_name}...")
+        out_files.append(
+            {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+        )
+        logger.info(f"Extracted {mame_name}.")
+
+
+        if in_files['j-68k'] is not None:
+            logger.info("Japanese ROMs found, extracting...")
+            func_map = {}
+            maincpu_filenames = [
+                "sfxj.03c",
+                "sfxj.04a",
+                "sfxj.05",
+                "sfxj.06a",
+                "sfxj.07",
+                "sfxj.08",
+                "sfx.09"
+            ]
+            func_map['maincpu'] = ssf2t_maincpu('j-68k', maincpu_filenames)
+            func_map['common'] = helpers.existing_files_helper(common_file_map)
+            mame_name = 'ssf2xj.zip'
+            logger.info(f"Building {mame_name}...")
+            out_files.append(
+                {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+            )
+            logger.info(f"Extracted {mame_name}.")
+
+            logger.info("Skipping ssf2xjr1.zip as it needs a key but isn't in an old keyless MAME.")
+        else:
+            logger.info("Japanese ROMs not found, skipping.")
+
+        return out_files
