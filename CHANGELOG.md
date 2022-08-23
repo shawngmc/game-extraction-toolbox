@@ -1,3 +1,8 @@
+# 0.0.22
+- Updated Collections:
+  - Street Fighter 30th Anniversary Collection
+    - Added International Release Support
+
 # 0.0.21
 - Added Games/Collections:
   - Blizzard Arcade Collection
