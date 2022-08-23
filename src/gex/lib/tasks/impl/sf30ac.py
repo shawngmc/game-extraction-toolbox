@@ -39,9 +39,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
  **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
  **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
-
-
- 
  **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
  **Street Fighter 2 (JA)**                        | MAME 0.78     |           | sf2ja.zip        | Bad         | (2) (3) (4)  
  **Street Fighter 2 (JL)**                        | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  

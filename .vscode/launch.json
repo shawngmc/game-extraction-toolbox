@@ -228,6 +228,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Disney Classics Aladding and Lion King w/ DLC",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "disneyalkb", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\disneyalkb\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SADXGG",
             "type": "python",
             "request": "launch",
