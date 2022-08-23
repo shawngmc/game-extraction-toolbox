@@ -11,8 +11,6 @@
   https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
 
 ### Uses BPList/Mbundle
-- Disney Aladdin/Lion King Bundle
-  https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
 - Samuari Shodown Collection
   https://github.com/ValadAmoleo/sf30ac-extractor
 - Namco Museum Archives (Vol 1 and Vol 2)
