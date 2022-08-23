@@ -48,6 +48,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
  **Street Fighter 2 Championship Edition (JB)**   | MAME 0.78     |           | sf2cejb.zip        | Bad         | (2) (3) (4)   
  **Street Fighter 2 Championship Edition (JC)**   | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
  **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
+ **Street Fighter 2 Hyper Fighting (J)**          | MAME 0.78     |            | sf2tj.zip        | Bad         | (2) (3) (4)  
  **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
  **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
 
@@ -99,8 +100,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         # 'bundleStreetFighterIII.mbundle': 'sf3',
         # 'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
         # 'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
-        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
-        # 'bundleStreetFighterII_HF.mbundle': 'sf2hf',
+        # 'bundleStreetFighterII_CE.mbundle': 'sf2ce',
+        'bundleStreetFighterII_HF.mbundle': 'sf2hf',
         # 'bundleSuperStreetFighterII.mbundle': 'ssf2',
         # 'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
     }
@@ -1016,11 +1017,14 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
     def _handle_sf2hf(self, mbundle_entries):
         func_map = {}
+        out_files = []
         in_files = {}
         in_files['vrom'] = mbundle_entries.get('StreetFighterII_HF.u.vrom')
         in_files['z80'] = mbundle_entries.get('StreetFighterII_HF.z80')
         in_files['oki'] = mbundle_entries.get('StreetFighterII_HF.oki')
         in_files['68k'] = mbundle_entries.get('StreetFighterII_HF.u.68k')
+        in_files['j-vrom'] = mbundle_entries.get('StreetFighterII_HF.j.p16.p32.vrom')
+        in_files['j-68k'] = mbundle_entries.get('StreetFighterII_HF.j.68k')
 
         # audiocpu
         audiocpu_filenames = [
@@ -1031,18 +1035,47 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             return dict(zip(audiocpu_filenames, [contents]))
         func_map['audiocpu'] = audiocpu
 
+        # oki
+        oki_filenames = [
+            's92_18.bin',
+            's92_19.bin'
+        ]
+        def oki(in_files):
+            chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
+            return dict(zip(oki_filenames, chunks))
+        func_map['oki'] = oki
+
+        ph_files = {
+            'bprg1.11d': 0x117,
+            'buf1': 0x117,
+            'c632.ic1': 0x117,
+            'ioa1': 0x117,
+            'iob1.12d': 0x117,
+            'prg1': 0x117,
+            'rom1': 0x117,
+            'sou1': 0x117,
+            'ioc1.ic7': 0x104
+        }
+        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+
+        logger.info("Processing SF2HF common files...")
+        common_file_map = helpers.process_rom_files(in_files, func_map)
+
+        func_map = {}
         # maincpu
         maincpu_filenames = [
             "sf2_23a",
             "sf2_22.bin",
             "sf2_21.bin"
         ]
-        def maincpu(in_files):
-            contents = in_files['68k']
-            chunks = transforms.equal_split(contents, num_chunks = 3)
-            chunks = transforms.swap_endian_all(chunks)
-            return dict(zip(maincpu_filenames, chunks))
-        func_map['maincpu'] = maincpu
+        def sf2hf_maincpu(in_file_name, filenames):
+            def maincpu(in_files):
+                contents = in_files[in_file_name]
+                chunks = transforms.equal_split(contents, num_chunks = 3)
+                chunks = transforms.swap_endian_all(chunks)
+                return dict(zip(filenames, chunks))
+            return maincpu
+        func_map['maincpu'] = sf2hf_maincpu('68k', maincpu_filenames)
 
         # gfx
         gfx_filenames = [
@@ -1059,42 +1092,63 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "s2t_12.bin",
             "s2t_13.bin"
         ]
-        def gfx(in_files):
-            contents = in_files['vrom']
-            chunks = transforms.equal_split(contents, num_chunks=3)
+        def sf2hf_gfx(in_file_name, filenames):
+            def gfx(in_files):
+                contents = in_files[in_file_name]
+                chunks = transforms.equal_split(contents, num_chunks=3)
 
-            new_chunks = []
-            for oldchunk in chunks:
-                new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
-            chunks = new_chunks
-            return dict(zip(gfx_filenames, chunks))
-        func_map['gfx'] = gfx
+                new_chunks = []
+                for oldchunk in chunks:
+                    new_chunks.extend(self._cps2_gfx_deinterleave(oldchunk, num_ways=4, word_size=2))
+                chunks = new_chunks
+                return dict(zip(filenames, chunks))
+            return gfx
+        func_map['gfx'] = sf2hf_gfx('vrom', gfx_filenames)
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        mame_name = "sf2t.zip"
+        logger.info(f"Building {mame_name}...")
+        out_files.append(
+            {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
+        )
+        logger.info(f"Extracted {mame_name}.")
 
-        # oki
-        oki_filenames = [
-            's92_18.bin',
-            's92_19.bin'
-        ]
-        def oki(in_files):
-            chunks = transforms.equal_split(in_files['oki'], num_chunks=2)
-            return dict(zip(oki_filenames, chunks))
-        func_map['oki'] = oki
+        if in_files['j-68k'] is not None and in_files['j-vrom'] is not None:
+            logger.info("Japanese ROMs found, extracting...")
+            func_map = {}
+            maincpu_filenames = [
+                "s2tj_23.bin",
+                "sft_22.bin",
+                "sft_21.bin"
+            ]
+            func_map['maincpu'] = sf2hf_maincpu('j-68k', maincpu_filenames)
+            # gfx
+            gfx_filenames = [
+                "s92_01.bin",
+                "s92_02.bin",
+                "s92_03.bin",
+                "s92_04.bin",
+                "s92_05.bin",
+                "s92_06.bin",
+                "s92_07.bin",
+                "s92_08.bin",
+                "s2t_10.bin",
+                "s2t_11.bin",
+                "s2t_12.bin",
+                "s2t_13.bin"
+            ]
+            func_map['gfx'] = sf2hf_gfx('j-vrom', gfx_filenames)
+            func_map['common'] = helpers.existing_files_helper(common_file_map)
+            mame_name_jb = 'sf2tj.zip'
+            logger.info(f"Building {mame_name_jb}...")
+            out_files.append(
+                {'filename': mame_name_jb, 'contents': helpers.build_rom(in_files, func_map)}
+            )
+            logger.info(f"Extracted {mame_name_jb}.")
+        else:
+            logger.info("Japanese ROMs not found, skipping.")
 
 
-        ph_files = {
-            'bprg1.11d': 0x117,
-            'buf1': 0x117,
-            'c632.ic1': 0x117,
-            'ioa1': 0x117,
-            'iob1.12d': 0x117,
-            'prg1': 0x117,
-            'rom1': 0x117,
-            'sou1': 0x117,
-            'ioc1.ic7': 0x104
-        }
-        func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-
-        return [{'filename': 'sf2t.zip', 'contents': helpers.build_rom(in_files, func_map)}]
+        return out_files
 
     ################################################################################
     # Super Street Fighter 2                                                       #
