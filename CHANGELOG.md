@@ -1,6 +1,7 @@
 # 0.0.22
 - Added Games/Collections:
   - Disney Classics Collection: Aladdin and Lion King (w/ Jungle Book DLC)
+  - SNK 40th Anniversary Collection
 - Updated Collections:
   - Street Fighter 30th Anniversary Collection
     - Added International Release Support

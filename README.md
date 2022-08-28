@@ -108,4 +108,5 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
+ **SNK 40th Anniversary Collection**            | 80%    | A bunch of games are missing PROMs
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
