@@ -102,9 +102,11 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
  **Disney Afternoon Collection**                | 100%   |  
+ **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%   |  
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **Street Fighter 30th Anniversary Collection** | 100%   | All games are playable with some version of MAME!  
+ **SNK 40th Anniversary Collection**            | 80%    | A bunch of games are missing PROMs
+ **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.

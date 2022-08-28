@@ -73,6 +73,42 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SNK40",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "snk40", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\snk40\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing SF30ACInternational",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--srcdir", 
+                "\"${workspaceFolder}\\out\\sf30acint-testing\"",
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30acint\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1 Old",
             "type": "python",
             "request": "launch",
@@ -206,6 +242,23 @@
                 "disneyac", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\disneyac\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Disney Classics Aladding and Lion King w/ DLC",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "disneyalkb", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\disneyalkb\""
             ]
         },
         {

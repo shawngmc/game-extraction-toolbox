@@ -5,6 +5,7 @@ import logging
 import os
 
 from gex.lib.archive import arc
+from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
@@ -762,6 +763,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # game_90.arc: Warzard (JP)
     # game_91.arc: Red Earth
 
+    # This does not appear to be the old NO-CD release (0.139 would target it!)
+
     # This is CPS3.
     # The actual ROM is small - only 512KB - but there doesn't appear to be an exact match offhand.
     # The majority of the data is in a CHD - but there doesn't appear to be an exact match offhand.
@@ -792,12 +795,20 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     # More importantly - this isn't a valid ISO 9660
     # The volume versions are invalid, there's not a primary or terminator...
 
+    # 0x0 - 0x40 is the IBIS/JACK header.
+    # 0x40 - 0x1FF40 matches 0x0 - 0x1FF00 in the dump from MAME.
+    # After that, however, the files differ substantially - the vast majority of the file from CFC is blank.
+
+    # After 0x80040 there needs to be the equivalent of the .CHD file for the game. (TLDR, CPS3 games had a ROM and a CD-ROM, and MAME uses the .CHD to represent the CDROM.)
+
+    # However, even a larger dump saveo warzard-full.bin,0,2080000 looks like it has the CHD header, etc.
+
     # def _handle_warzard(self, merged_contents):
     #     out_files = []
     #     func_map = {}
 
     #     def endian(contents):
-    #         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
+    #         contents = transforms.byte_shuffle(contents, 4, [3, 2, 1, 0])
     #         return { 'endian.bin': contents }
 
     #     func_map['endian'] = endian
@@ -811,7 +822,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     #     func_map = {}
 
     #     def endian(contents):
-    #         contents = blob.byte_shuffle(contents, 4, [3, 2, 1, 0])
+    #         contents = transforms.byte_shuffle(contents, 4, [3, 2, 1, 0])
     #         return { 'endian.bin': contents }
 
     #     func_map['endian'] = endian
