@@ -54,6 +54,7 @@ def custom_split_helper(in_file_ref, name_size_map):
     return split
 
 def deinterleave_helper(in_file_name, filenames, num_ways, word_size):
+    '''Func map helper for deinterleaving a file'''
     def deinterleave(in_files):
         contents = in_files[in_file_name]
         chunks = transforms.deinterleave(contents, num_ways=num_ways, word_size=word_size)
