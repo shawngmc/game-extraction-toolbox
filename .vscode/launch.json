@@ -73,6 +73,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SNK40",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "snk40", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\snk40\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SF30ACInternational",
             "type": "python",
             "request": "launch",

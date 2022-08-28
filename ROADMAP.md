@@ -13,10 +13,6 @@
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
   https://github.com/ValadAmoleo/sf30ac-extractor
-- Namco Museum Archives (Vol 1 and Vol 2)
-  https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
-- SNK 40th Anniversary Collection
-  Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 
 ### Uses .PSB.M/.BIN File Container?
 - Contra Anniversary Collection
@@ -25,6 +21,8 @@
   https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
 - Castlevania Anniversary Collection
   https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
+- Namco Museum Archives (Vol 1 and Vol 2)
+  https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
 
 ### Uses dotemu2mame.js
 - Raiden Legacy

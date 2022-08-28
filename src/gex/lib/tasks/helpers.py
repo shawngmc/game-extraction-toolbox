@@ -36,6 +36,7 @@ def existing_files_helper(file_map):
         return file_map
     return existing_files
 
+
 def equal_split_helper(in_file_ref, filenames):
     '''Func map helper for transforms.equal_split'''
     def split(in_files):
@@ -51,6 +52,13 @@ def custom_split_helper(in_file_ref, name_size_map):
         chunks = transforms.custom_split(contents, list(name_size_map.values()))
         return dict(zip(name_size_map.keys(), chunks))
     return split
+
+def deinterleave_helper(in_file_name, filenames, num_ways, word_size):
+    def deinterleave(in_files):
+        contents = in_files[in_file_name]
+        chunks = transforms.deinterleave(contents, num_ways=num_ways, word_size=word_size)
+        return dict(zip(filenames, chunks))
+    return deinterleave
 
 def name_file_helper(in_file_ref, filename):
     '''Func map helper for renaming a file'''
