@@ -1,6 +1,9 @@
 # 0.0.23
 - Improvements:
   - Some tasks now support config flags via '--prop'; see task details for supported flags
+  - Reworked tables using TextTable to make code cleaner and tables more reliable
+- Internal:
+  - Restructured some tasks to allow splitting/props
 
 # 0.0.22
 - Added Games/Collections:
