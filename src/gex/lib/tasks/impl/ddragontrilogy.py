@@ -15,16 +15,29 @@ class DoubleDragonTrilogyTask(BaseTask):
     _title = "Double Dragon Trilogy"
     _details_markdown = '''
 Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf8894f
-
- **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
----------------------------------------------|---------------|------------|------------------|-------------|-------------------  
- **Double Dragon**                                | MAME 0.246    | Y          | ddragon.zip      | OK          |   
- **Double Dragon 2: The Revenge**                 | MAME 0.246    | Y          | ddragon2.zip     | OK          |  
- **Double Dragon 3: The Rosetta Stone**           | MAME 0.246    | N          | ddragon3.zip     | Bad         | (1)  
-
- 
-1. This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo.
-    '''
+'''
+    _out_file_list = [
+        {
+            "game": "Double Dragon",
+            "system": "Arcade",
+            "filename": "ddragon.zip",
+            "notes": []
+        },
+        {
+            "game": "Double Dragon 2: The Revenge",
+            "system": "Arcade",
+            "filename": "ddragon2.zip",
+            "notes": []
+        },
+        {
+            "game": "Double Dragon 3: The Rosetta Stone",
+            "system": "Arddragon3.zip",
+            "notes": [1]
+        }
+    ]
+    _out_file_notes = {
+        "1": "This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo."
+    }
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Double Dragon Trilogy"
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
     _short_description = ""

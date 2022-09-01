@@ -11,6 +11,7 @@ from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
+# TODO: Cleanup the details
 
 class CFCTask(BaseTask):
     '''Implements cfc: Capcom Fighting Collection'''

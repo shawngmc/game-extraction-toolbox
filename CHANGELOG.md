@@ -1,3 +1,7 @@
+# 0.0.23
+- Improvements:
+  - Some tasks now support config flags via '--prop'; see task details for supported flags
+
 # 0.0.22
 - Added Games/Collections:
   - Disney Classics Collection: Aladdin and Lion King (w/ Jungle Book DLC)

@@ -12,8 +12,9 @@ logger = logging.getLogger('gextoolbox')
     help = 'path required by the transform set - see task for details', default=None)
 @click.option('--destdir', 'dest_dir', help = 'path to send reassembled ROMs to', required=True)
 @click.option('--task', 'task', help = 'name of the transform set to run', required=True)
+@click.option("--prop", 'props', multiple=True, help = 'per task config options; see task details for supported options', default=[])
 @click_log.simple_verbosity_option(logger)
-def extract(src_dir, dest_dir, task):
+def extract(src_dir, dest_dir, task, props):
     """Run a task to extract roms from Steam/GOG/etc. games"""
 
     # Load the task module
@@ -34,5 +35,7 @@ def extract(src_dir, dest_dir, task):
 
     # Ensure the output folder exists or can be made
     helper.preparepath(dest_dir)
+
+    task_class.set_props(props)
 
     task_class.execute(src_dir, dest_dir)
