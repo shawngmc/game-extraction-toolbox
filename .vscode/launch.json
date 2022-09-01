@@ -86,7 +86,9 @@
                 "--task", 
                 "snk40", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\snk40\""
+                "\"${workspaceFolder}\\out\\snk40\"",
+                "--prop",
+                "include-partials=True"
             ]
         },
         {

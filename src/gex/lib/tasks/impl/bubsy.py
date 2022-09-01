@@ -11,16 +11,27 @@ class BubsyTask(BaseTask):
     _task_name = "bubsy"
     _title = "Bubsy Two-Fur"
     _details_markdown = '''
-These are the ROMs just sitting in the install folder
-
-**Game**          |  **Filename**  
---------------|----------------  
-**Bubsy**         |  Bubsy.sfc   
-**Bubsy 2**       |  Bubsy2.sfc   
+These are the ROMs just sitting in the install folder. 
     '''
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Bubsy Two-Fur"
     _input_folder_desc = "Bubsy Two-Fur Steam Folder"
     _short_description = ""
+
+    _out_file_list = [
+        {
+            "game": "Bubsy",
+            "system": "SNES",
+            "filename": "Bubsy.sfc",
+            "notes": []
+        },
+        {
+            "game": "Bubsy 2",
+            "system": "SNES",
+            "filename": "Bubsy2.sfc",
+            "notes": []
+        }
+    ]
+    _out_file_notes = {}
 
     _game_info_map = {
         'bubsy_1': {

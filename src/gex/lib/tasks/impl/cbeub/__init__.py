@@ -12,6 +12,7 @@ from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
+# TODO: Cleanup the details
 
 class CBEUBTask(BaseTask):
     '''Implements cbeub: Capcom Beat 'em Up Bundle'''

@@ -15,6 +15,7 @@ dependencies = [
   'psutil >= 5.9.1',
   'python-magic-bin >= 0.4.14',
   'rich >= 12.5.1',
+  'texttable >= 1.6.4',
   'UnityPy >= 1.9.12'
 ]
 

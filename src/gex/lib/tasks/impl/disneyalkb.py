@@ -13,27 +13,106 @@ class DisneyClassicsTask(BaseTask):
     _title = "Disney Aladdin / Lion King Bundle (and DLC)"
     _details_markdown = '''
 Based on https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Aladdin-and-The-Lion-King
-
- **Game**                                         | **System**     |  **Filename**           
----------------------------------------------|---------------|------------------ 
- **Aladdin**                                 | Game Boy      | Aladdin.gb
- **Jungle Book**                             | Game Boy      | JungleBook.gb
- **Lion King**                               | Game Boy      | LionKing.gb
- **Aladdin (4F7A Patch)**                    | Genesis       | Aladdin.4F7A.PATCHED.md
- **Aladdin (9CB2 Patch)**                    | Genesis       | Aladdin.9CB2.PATCHED.md
- **Aladdin (CES Patch)**                     | Genesis       | Aladdin.CES.PATCHED.md
- **Aladdin Remix**                           | Genesis       | Aladdin-Remix.md
- **Jungle Book**                             | Genesis       | JungleBook.md
- **Jungle Book**                             | Genesis       | JUNGLEBOOK.PATCHED.md
- **Lion King**                               | Genesis       | LionKing.0D3D.PATCHED.md
- **Jungle Book**                             | NES           | JungleBook.nes
- **Aladdin**                                 | SNES          | Aladdin.sfc
- **Jungle Book**                             | SNES          | JungleBook.sfc
- **Jungle Book Music**                       | SNES          | JungleBookMusicROM.sfc
- **Lion King**                               | SNES          | LionKing.919A.PATCHED.sfc
- **Lion King**                               | SNES          | LionKing.DE6E.PATCHED.sfc
-
-    '''
+'''
+    _out_file_list = [
+        {
+            "game": "Aladdin",
+            "system": "Game Boy",
+            "filename": "Aladdin.gb",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book",
+            "system": "Game Boy",
+            "filename": "JungleBook.gb",
+            "notes": []
+        },
+        {
+            "game": "Lion King",
+            "system": "Game Boy",
+            "filename": "LionKing.gb",
+            "notes": []
+        },
+        {
+            "game": "Aladdin (4F7A Patch)",
+            "system": "Genesis",
+            "filename": "Aladdin.4F7A.PATCHED.md",
+            "notes": []
+        },
+        {
+            "game": "Aladdin (9CB2 Patch)",
+            "system": "Genesis",
+            "filename": "Aladdin.9CB2.PATCHED.md",
+            "notes": []
+        },
+        {
+            "game": "Aladdin (CES Patch)",
+            "system": "Genesis",
+            "filename": "Aladdin.CES.PATCHED.md",
+            "notes": []
+        },
+        {
+            "game": "Aladdin Remix",
+            "system": "Genesis",
+            "filename": "Aladdin-Remix.md",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book",
+            "system": "Genesis",
+            "filename": "JungleBook.md",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book (Patched)",
+            "system": "Genesis",
+            "filename": "JUNGLEBOOK.PATCHED.md",
+            "notes": []
+        },
+        {
+            "game": "Lion King (0D3D Patch)",
+            "system": "Genesis",
+            "filename": "LionKing.0D3D.PATCHED.md",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book",
+            "system": "NES",
+            "filename": "JungleBook.sfc",
+            "notes": []
+        },
+        {
+            "game": "Aladdin",
+            "system": "SNES",
+            "filename": "Aladdin.sfc",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book",
+            "system": "SNES",
+            "filename": "JungleBook.sfc",
+            "notes": []
+        },
+        {
+            "game": "Jungle Book Music",
+            "system": "SNES",
+            "filename": "JungleBookMusicROM.sfc",
+            "notes": []
+        },
+        {
+            "game": "Lion King (919A Patch)",
+            "system": "SNES",
+            "filename": "LionKing.919A.PATCHED.sfc",
+            "notes": []
+        },
+        {
+            "game": "Lion King (DE6E Patch)",
+            "system": "SNES",
+            "filename": "LionKing.DE6E.PATCHED.sfc",
+            "notes": []
+        }
+    ]
+    _out_file_notes = {}
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Disney Classic Games Aladdin and the Lion King"
     _input_folder_desc = "Disney Classics Steam folder"
     _short_description = ""
