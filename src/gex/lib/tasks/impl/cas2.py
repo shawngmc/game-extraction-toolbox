@@ -71,7 +71,7 @@ See CAS 1 for more info.
                         kpka_contents = kpka.extract(file_content)
                         output_files = []
 
-                        for id, kpka_contents in kpka_contents.items():
+                        for kpka_contents in kpka_contents.values():
                             print(f"{kpka_contents['entry']}: {kpka_contents['size']}")
                             output_files.append({'filename': f"{file_id}_{kpka_contents['entry']}_{kpka_contents['size']}.dat", "contents": kpka_contents['contents']})
 
