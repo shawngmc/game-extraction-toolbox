@@ -31,11 +31,13 @@
 
 ## Owned / Under Investigation
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
-  Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #16.
+  Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #17.
 - Capcom Arcade Stadium 1
   Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
+  PLACEHOLDER ADDED. See #18.
 - Capcom Arcade Stadium 2
   Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
+  PLACEHOLDER ADDED. See #18.
 - Pac-Man Museum+
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2
