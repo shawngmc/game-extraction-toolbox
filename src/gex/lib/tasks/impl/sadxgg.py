@@ -109,12 +109,11 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
     _input_folder_desc = "Sonic Adventure DX Steam folder"
     _short_description = ""
 
-
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
         for file_path in bundle_files:
             file_name = os.path.basename(file_path)
-            game_info = self._game_info_map.get(file_name)
+            game_info = self._game_info_map.get(file_name.lower())
             if game_info:
                 logger.info(f"Extracting {file_path}: {game_info['name']}")
                 with open(file_path, 'rb') as in_file:
