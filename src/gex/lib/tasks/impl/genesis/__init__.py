@@ -7,7 +7,7 @@ import os
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
-# TODO: Cleanup the details
+
 class GenesisTask(BaseTask):
     '''Implments genesis: Sega Genesis and Mega Drive Collection'''
     _task_name = "genesis"
