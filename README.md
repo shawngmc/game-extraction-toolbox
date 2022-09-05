@@ -97,7 +97,9 @@ These are noted in the documentation for each script. If you think a ROM is misi
 --------------------------------------------|-------------|---------------------------------------------------------------------  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1**                    | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
+ **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
