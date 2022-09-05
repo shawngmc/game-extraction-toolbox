@@ -279,6 +279,25 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\sadxgg\""
             ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CAS1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas1\"",
+                "--prop",
+                "include-partials=True"
+            ]
         }
     ]
 }
