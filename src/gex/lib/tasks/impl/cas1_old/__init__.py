@@ -11,7 +11,7 @@ from gex.lib.tasks.basetask import BaseTask
 from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
-# TODO: Cleanup the details
+# TODO: Cleanup the details report - file map is much more complex with depotID and manifestID
 
 class CAS1OldTask(BaseTask):
     '''Implements cas1_old: Capcom Arcade Stadium 1 (OLD)'''
@@ -64,14 +64,19 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
  **1943: The Battle of Midway**       | 1515951     | 1597238681896386079 | N/A           | EN         | 1943u.zip        | OK          | 1943j.zip       | BAD        | (5)       
  **3 Wonders**                        | 1556709     | 7553746399143380961 | MAME 0.246    | Y          | 3wondersu.zip    | OK          | N/A             | N/A        | (6)       
 
-1. These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require
-2. These ROMs play fine, even in the current MAME, despite the bad CRCs. This is likely due to Capcom redumping or making a minor modification to omit copyright/trademark material.
-3. This ROM specifically complains about a bad dump on a specific file; it still plays OK.
-4. This ROM is using an older naming convention to help allow emulation in the older MAME it requires.
-5. Embedded in main package; JP version is missing too much, but US version can run in FB Neo
-6. Embedded in a specific depot of Ghouls n Ghosts
-7. Includes extra ROM 1941.zip; same solid compatibility
     '''
+    _out_file_list = [
+    ]
+
+    _out_file_notes = {
+        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
+        "2": "These ROMs play fine, even in the current MAME, despite the bad CRCs. This is likely due to Capcom redumping or making a minor modification to omit copyright/trademark material.",
+        "3": "This ROM specifically complains about a bad dump on a specific file; it still plays OK.",
+        "4": "This ROM is using an older naming convention to help allow emulation in the older MAME it requires.",
+        "5": "Embedded in main package; JP version is missing too much, but US version can run in FB Neo",
+        "6": "Embedded in a specific depot of Ghouls n Ghosts",
+        "7": "Includes extra ROM 1941.zip; same solid compatibility",
+    }
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\content"
     _input_folder_desc = "SteamApps Content Folder"
     _short_description = "Capcom Arcade Stadium 1, ~30 arcade games, as downloaded from depot using old manifests"
