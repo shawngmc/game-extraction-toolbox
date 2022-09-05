@@ -298,6 +298,25 @@
                 "--prop",
                 "include-partials=True"
             ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CAS2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas2\"",
+                "--prop",
+                "include-partials=True"
+            ]
         }
     ]
 }
