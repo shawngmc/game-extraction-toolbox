@@ -29,15 +29,21 @@
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
 
 
-## Under Investigation
+## Owned / Under Investigation
+- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
+  Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #16.
 - Capcom Arcade Stadium 1
+  Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
 - Capcom Arcade Stadium 2
+  Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
 - Pac-Man Museum+
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2
 - Mega Man Legacy Collection 2
 - Mortal Kombat Kollection
 - Arcade Collection Anniversary Classics
+
+## Not Yet Owned / Future Investigation
 - Neo Geo Pocket Color Selection Vol. 1
 - ColecoVision Flashback
   https://github.com/ZetTheLegendaryHero/Colecovision-Flashback-40-Game-Pack-ROM-Extractor
@@ -45,9 +51,16 @@
   https://gitlab.com/vaiski/romextract/-/blob/master/supported.csv
 - IREM Arcade Hits
 - R-Type Dimensions EX
+- CAVE: Mushihimesama
+  Recommended in #15.
+- CAVE: DoDonPachi Resurrection
+  Recommended in #15.
+- CAVE: Deathsmiles
+  Recommended in #15.
+- CAVE: Deathsmiles I + II
+  Recommended in #15.
 
 ## Upcoming Releases
-- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
 - Atari 50th: Anniversary Collection (Winter 2022)
 
 ## Not Complete / Not ROMs
