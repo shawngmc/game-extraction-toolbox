@@ -17,7 +17,7 @@ class CAS1Task(BaseTask):
     _details_markdown = '''
 ## INCOMPLETE!
 
-This script is a placeholder for full CAS1 extraction.
+This script is a placeholder for full CAS1 extraction. See https://github.com/shawngmc/game-extraction-toolbox/issues/18 for latest details!
 
 Currently, it extracts nothing; however, with a "--prop include-partials=True", it will extract all KPKA paks with the following naming convention:
 [ARCHIVEID]_[SEQUENTIALNUM]_[SIZE].dat
