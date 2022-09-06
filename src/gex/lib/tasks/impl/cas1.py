@@ -4,6 +4,7 @@ import logging
 import os
 
 from gex.lib.archive import kpka
+from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
@@ -52,7 +53,7 @@ As such, this is likely a coincidence or other dead end.
 
     _out_file_notes = {
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Capcom Arcade Stadium"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Capcom Arcade Stadium")
     _input_folder_desc = "CAS 1 Folder"
     _short_description = ""
     _prop_info = {

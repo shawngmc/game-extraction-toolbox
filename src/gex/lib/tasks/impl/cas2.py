@@ -4,13 +4,14 @@ import logging
 import os
 
 from gex.lib.archive import kpka
+from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
 
 # TODO: Further research required
 
-class cas2Task(BaseTask):
+class CAS2Task(BaseTask):
     '''INCOMPLETE Implements cas2: Capcom Arcade Stadium 2'''
     _task_name = 'cas2'
     _title = "Capcom Arcade Stadium 2"
@@ -36,7 +37,7 @@ See CAS 1 for more info.
 
     _out_file_notes = {
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Capcom Arcade 2nd Stadium"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Capcom Arcade 2nd Stadium")
     _input_folder_desc = "CAS 2 Folder"
     _short_description = ""
     _prop_info = {
@@ -73,7 +74,11 @@ See CAS 1 for more info.
 
                         for kpka_contents in kpka_contents.values():
                             print(f"{kpka_contents['entry']}: {kpka_contents['size']}")
-                            output_files.append({'filename': f"{file_id}_{kpka_contents['entry']}_{kpka_contents['size']}.dat", "contents": kpka_contents['contents']})
+                            output_files.append({
+                                'filename': f"{file_id}_{kpka_contents['entry']}"\
+                                    f"_{kpka_contents['size']}.dat",
+                                "contents": kpka_contents['contents']
+                            })
 
                         for output_file in output_files:
                             out_path = os.path.join(out_dir, output_file['filename'])
@@ -83,6 +88,7 @@ See CAS 1 for more info.
                     logger.warning(f'Error while processing {file}!')
                     logger.warning(error)
         else:
-            logger.error("cas2 is not yet implemented; to help investigate, add --prop 'include-partials=True' to extract what we have so far!")
+            logger.error("cas2 is not yet implemented!")
+            logger.error("To help investigate, add --prop 'include-partials=True' to extract raw KPKA")
 
         logger.info("Processing complete.")

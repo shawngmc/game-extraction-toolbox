@@ -4,6 +4,7 @@ import logging
 import os
 from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 from gex.lib.tasks.impl.snk40 import partials, nes, arcadedlc, arcademain, arcadepatch
 
 logger = logging.getLogger('gextoolbox')
@@ -17,7 +18,7 @@ class SNK40thAnniversaryCollectionTask(BaseTask):
     _details_markdown = '''
 Based on https://gitlab.com/vaiski/romextract/-/blob/master/scripts/STEAM-865940.sh
     '''
-    _default_input_folder = r"C:\Program Files (x86)\Amazon Games\Library\SNK 40th Anniversary Collection"
+    _default_input_folder = helpers.gen_steam_app_default_folder("SNK 40th Anniversary Collection")
     _input_folder_desc = "SNK 40th install folder"
     _short_description = ""
     _prop_info = {

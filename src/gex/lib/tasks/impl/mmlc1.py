@@ -2,6 +2,7 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -87,7 +88,7 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
         },
     ]
     _out_file_notes = {}
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Suzy"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Suzy")
     _input_folder_desc = "'Suzy' Folder (Steam MMLC install folder)"
     _short_description = ""
 
