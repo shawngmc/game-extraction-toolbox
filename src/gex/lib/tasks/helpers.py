@@ -1,7 +1,13 @@
 '''Convenience wrappers for task implementation'''
 import io
+import os
 import zipfile
 from gex.lib.utils.blob import transforms
+
+_steam_app_root = r"C:\Program Files (x86)\Steam\steamapps\common"
+def gen_steam_app_default_folder(app_folder):
+    return os.path.join(_steam_app_root, app_folder)
+
 
 def build_rom(in_files, func_map):
     '''Convenience function to run both process_rom_files and build_zip together'''
@@ -35,7 +41,6 @@ def existing_files_helper(file_map):
     def existing_files(in_files):
         return file_map
     return existing_files
-
 
 def equal_split_helper(in_file_ref, filenames):
     '''Func map helper for transforms.equal_split'''

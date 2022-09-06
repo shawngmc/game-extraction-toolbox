@@ -4,6 +4,7 @@ import logging
 import os
 import UnityPy
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -54,7 +55,7 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
         },
     ]
     _out_file_notes = {}
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sa・Ga COLLECTION"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Sa・Ga COLLECTION")
     _input_folder_desc = "Collection of SaGa Steam folder"
     _short_description = ""
 

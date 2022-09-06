@@ -61,6 +61,5 @@ def extract(bundle_contents):
     out_files.extend(extract_tnk3(bundle_contents))
     return out_files
 
-
 def extract_tnk3(bundle_contents):
     return []

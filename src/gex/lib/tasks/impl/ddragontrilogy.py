@@ -38,7 +38,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     _out_file_notes = {
         "1": "This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo."
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Double Dragon Trilogy"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Double Dragon Trilogy")
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
     _short_description = ""
 

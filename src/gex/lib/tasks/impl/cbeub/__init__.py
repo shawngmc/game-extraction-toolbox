@@ -115,7 +115,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         "3": "The JP version of this ROM is fine in modern MAME 0.246; the English version needs 0.139",
         "4": "The Audio CPU ROM for this is not present in the expected format. Further investigation required."
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\CBEUB"
+    _default_input_folder = helpers.gen_steam_app_default_folder("CBEUB")
     _input_folder_desc = "CBEUB Steam folder"
     _short_description = ""
 

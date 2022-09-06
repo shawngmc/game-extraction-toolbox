@@ -3,6 +3,7 @@ import logging
 import os
 
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 from gex.lib.archive.prs import DecompressPrs
 
 logger = logging.getLogger('gextoolbox')
@@ -105,7 +106,7 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
         }
     ]
     _out_file_notes = {}
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sonic Adventure DX"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Sonic Adventure DX")
     _input_folder_desc = "Sonic Adventure DX Steam folder"
     _short_description = ""
 

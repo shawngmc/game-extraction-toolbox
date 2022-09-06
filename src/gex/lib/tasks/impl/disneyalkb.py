@@ -3,6 +3,7 @@ import glob
 import logging
 import os
 from gex.lib.contrib.bputil import BPListReader
+from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
@@ -113,7 +114,8 @@ Based on https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Alad
         }
     ]
     _out_file_notes = {}
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Disney Classic Games Aladdin and the Lion King"
+    _default_input_folder = helpers.gen_steam_app_default_folder(
+        "Disney Classic Games Aladdin and the Lion King")
     _input_folder_desc = "Disney Classics Steam folder"
     _short_description = ""
 

@@ -200,13 +200,15 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         }
     ]
     _out_file_notes = {
-        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
-        "2": "These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). "\
+            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+        "2": "These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). "\
+            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
         "3": "These are using an older naming convention to allow recognition by the targeted MAME version.",
         "4": "These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.",
         "5": "This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split."
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Street Fighter 30th Anniversary Collection")
     _input_folder_desc = "SF30AC Steam folder"
     _short_description = ""
 

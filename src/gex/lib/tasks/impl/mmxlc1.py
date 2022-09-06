@@ -2,6 +2,7 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -14,7 +15,7 @@ Based on: https://github.com/s3phir0th115/MMXLC1-Rom-Extractor/blob/master/mmxlc
 
 Mega Man X4 does not appear to be ROM based, but investigation is ongoing.
 '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Mega Man X Legacy Collection"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Mega Man X Legacy Collection")
     _input_folder_desc = "Steam MMxLC install folder"
     _short_description = ""
 

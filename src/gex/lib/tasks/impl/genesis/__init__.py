@@ -4,6 +4,7 @@ import glob
 import logging
 import os
 
+from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
@@ -16,10 +17,19 @@ class GenesisTask(BaseTask):
 These are the ROMs just sitting in the uncompressed ROMs folder.
 There are a few more regional variants that are only available in PAK files, but this tool doesn't have a Python SGMDC PAK extractor yet 
     '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sega Classics"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Sega Classics")
     _input_folder_desc = "Sega Classics Steam Folder"
     _short_description = ""
 
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': f"{x['name']} ({x['region']})",
+            'system': "Genesis",
+            "notes": []},
+            self._game_info_map.values())
+        self._out_file_notes = {}
 
     def execute(self, in_dir, out_dir):
         rom_files = self._find_files(in_dir)
@@ -40,10 +50,6 @@ There are a few more regional variants that are only available in PAK files, but
                 logger.info(f'Skipping unmatched file {file_path}!')
         logger.info("Processing complete.")
 
-    def __init__(self):
-        super().__init__()
-        self._out_file_list = map(lambda x: {'filename': x['filename'], 'game': f"{x['name']} ({x['region']})", 'system': "Genesis", "notes": []}, self._game_info_map.values())
-        self._out_file_notes = {}
 
     _game_info_map = {
         'ALEXKIDD_U.68K': {

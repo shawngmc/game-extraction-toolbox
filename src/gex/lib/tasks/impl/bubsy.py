@@ -3,6 +3,7 @@ import shutil
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -13,7 +14,7 @@ class BubsyTask(BaseTask):
     _details_markdown = '''
 These are the ROMs just sitting in the install folder. 
     '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Bubsy Two-Fur"
+    _default_input_folder = helpers.gen_steam_app_default_folder("Bubsy Two-Fur")
     _input_folder_desc = "Bubsy Two-Fur Steam Folder"
     _short_description = ""
 

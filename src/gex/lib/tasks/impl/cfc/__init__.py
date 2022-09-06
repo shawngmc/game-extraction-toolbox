@@ -5,7 +5,6 @@ import logging
 import os
 
 from gex.lib.archive import arc
-from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
@@ -132,7 +131,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         "3": "The US version of does not have a valid MAME release.",
         "4": "The JP version of is using an older internal file naming convention."
     }
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION"
+    _default_input_folder = helpers.gen_steam_app_default_folder("CAPCOM FIGHTING COLLECTION")
     _input_folder_desc = "CFC Steam folder"
     _short_description = ""
 
