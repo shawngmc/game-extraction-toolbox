@@ -1,4 +1,5 @@
 '''Common operations for blobs (binary contents) and arrays of blobs'''
+import itertools
 from bitarray import bitarray
 
 def merge(chunks):
@@ -66,20 +67,23 @@ def interleave(chunks, word_size):
 def deinterleave(contents, num_ways, word_size):
     '''Deinterleave a blob into an array of num_ways blobs, word_size bytes at a time'''
     interleave_group_length = num_ways * word_size
-    num_interleave_groups = len(contents)//interleave_group_length
-    temp_chunks = [bytearray() for i in range(num_ways)]
-    for i in range(0, num_interleave_groups):
-        offset = i * interleave_group_length
-        interleave_group = contents[offset:offset+interleave_group_length]
-        interleave_offset = 0
-        for j in range(0, num_ways):
-            interleave_end = interleave_offset + word_size
-            temp_chunks[j].extend(interleave_group[interleave_offset:interleave_end])
-            interleave_offset = interleave_end
+    temp_chunks = []
+    for j in range(0, num_ways):
+        # Make a compress flag array of the combined group length, and 1s only for the appropriate bytes for this chunk
+        flag_arr = [0] * interleave_group_length
+        flag_arr[j*word_size:(j+1)*word_size] = [1 for val in flag_arr[j*word_size:(j+1)*word_size]]
+
+        # Use compress() to select bytes based on the flag array repeated via cycle()
+        temp_chunks.append(bytearray(itertools.compress(contents, itertools.cycle(flag_arr))))
     return temp_chunks
 
 def deinterleave_all(chunks, num_ways, word_size):
     '''Convenience wrapper for deinterleave() to handle multiple input blobs at once'''
+    # TODO: figure out how to flatten at the same time!
+    # Note: A list comprehension like the following would be more pythonic here, but...
+    # However, it's actually harder to read AND oddly slightly less performant (typically .1-.2s at the most)
+    # It's not clear why it's slower, but not worth using the list comprehension. Even 2 separated list comprehensions isn't faster...
+    # return [deint_chunk for chunk in chunks for deint_chunk in deinterleave(chunk, num_ways, word_size)]
     temp_chunks = []
     for chunk in chunks:
         temp_chunks.extend(deinterleave(chunk, num_ways, word_size))
