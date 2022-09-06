@@ -98,10 +98,7 @@ def splice_out(contents, start, length=None, end=None):
     elif end is None:
         end = start + length
 
-    new_contents = bytearray()
-    new_contents.extend(contents[0:start])
-    new_contents.extend(contents[end:len(contents)])
-    return new_contents
+    return bytearray(contents[0:start] + contents[end:len(contents)])
 
 def swap_endian(contents):
     '''Swap the a blob from little endian to big or vice versa'''
