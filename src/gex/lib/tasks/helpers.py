@@ -38,7 +38,7 @@ def build_zip(file_map):
 
 def existing_files_helper(file_map):
     '''Func map helper to reuse a file map'''
-    def existing_files(in_files):
+    def existing_files(*_):
         return file_map
     return existing_files
 
