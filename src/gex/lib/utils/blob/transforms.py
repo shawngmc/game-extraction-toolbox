@@ -2,6 +2,7 @@
 import itertools
 from bitarray import bitarray
 
+
 def merge(chunks):
     '''Merge an array of blobs into a single blob'''
     new_content = bytearray()
@@ -9,28 +10,32 @@ def merge(chunks):
         new_content += chunk
     return new_content
 
+
 def custom_split(contents, chunk_sizes):
     '''Split a blob into an array of blobs with specified sizes'''
     if len(contents) != sum(chunk_sizes):
-        raise Exception(f'Custom split chunk_sizes {sum(chunk_sizes)} != input len {len(contents)}')
+        raise Exception(
+            f'Custom split chunk_sizes {sum(chunk_sizes)} != input len {len(contents)}')
 
     num_chunks = len(chunk_sizes)
     start_offset = 0
     temp_chunks = []
     for i in range(0, num_chunks):
-        temp_chunks.append(bytearray(contents[start_offset:start_offset+chunk_sizes[i]]))
+        temp_chunks.append(
+            bytearray(contents[start_offset:start_offset+chunk_sizes[i]]))
         start_offset = start_offset + chunk_sizes[i]
     return temp_chunks
 
 
-def equal_split(contents, num_chunks = None, chunk_size = None):
+def equal_split(contents, num_chunks=None, chunk_size=None):
     '''Split a blob in an array of blobs with equal sizes'''
     if num_chunks is None and chunk_size is None:
         raise Exception("Equal split num_chunks or chunk_Size required")
 
     if num_chunks is not None and chunk_size is not None:
         if num_chunks * chunk_size != len(contents):
-            raise Exception("Equal split num_chunks * chunk_size != content length.")
+            raise Exception(
+                "Equal split num_chunks * chunk_size != content length.")
     elif num_chunks is None:
         num_chunks = len(contents)//chunk_size
     else:
@@ -39,9 +44,11 @@ def equal_split(contents, num_chunks = None, chunk_size = None):
     start_offset = 0
     temp_chunks = []
     for _ in range(0, num_chunks):
-        temp_chunks.append(bytearray(contents[start_offset:start_offset+chunk_size]))
+        temp_chunks.append(
+            bytearray(contents[start_offset:start_offset+chunk_size]))
         start_offset = start_offset + chunk_size
     return temp_chunks
+
 
 def interleave(chunks, word_size):
     '''Interleave an array of blobs together into a single blob, word_size bytes at a time'''
@@ -64,6 +71,7 @@ def interleave(chunks, word_size):
             new_contents += chunk[offset:offset+word_size]
     return new_contents
 
+
 def deinterleave(contents, num_ways, word_size):
     '''Deinterleave a blob into an array of num_ways blobs, word_size bytes at a time'''
     interleave_group_length = num_ways * word_size
@@ -72,11 +80,14 @@ def deinterleave(contents, num_ways, word_size):
         # Make a compress flag array of the combined group length.
         # This 1s only for the appropriate bytes for this chunk.
         flag_arr = [0] * interleave_group_length
-        flag_arr[j*word_size:(j+1)*word_size] = [1 for val in flag_arr[j*word_size:(j+1)*word_size]]
+        flag_arr[j*word_size:(j+1)*word_size] = [1 for val in flag_arr[j *
+                                                                       word_size:(j+1)*word_size]]
 
         # Use compress() to select bytes based on the flag array repeated via cycle()
-        temp_chunks.append(bytearray(itertools.compress(contents, itertools.cycle(flag_arr))))
+        temp_chunks.append(bytearray(itertools.compress(
+            contents, itertools.cycle(flag_arr))))
     return temp_chunks
+
 
 def deinterleave_all(chunks, num_ways, word_size):
     '''Convenience wrapper for deinterleave() to handle multiple input blobs at once'''
@@ -90,20 +101,25 @@ def deinterleave_all(chunks, num_ways, word_size):
         temp_chunks.extend(deinterleave(chunk, num_ways, word_size))
     return temp_chunks
 
+
 def truncate(contents, max_length):
     '''Remove all content from a blob after max_length bytes'''
     return contents[0:max_length]
 
+
 def splice_out(contents, start, length=None, end=None):
     '''Remove an inner section of a blob'''
     if length is None and end is None:
-        raise Exception("Splice out needs a length or end value, but received neither.")
+        raise Exception(
+            "Splice out needs a length or end value, but received neither.")
     elif length is not None and end is not None:
-        raise Exception("Splice out needs a length or end value, but received both.")
+        raise Exception(
+            "Splice out needs a length or end value, but received both.")
     elif end is None:
         end = start + length
 
     return bytearray(contents[0:start] + contents[end:len(contents)])
+
 
 def swap_endian(contents):
     '''Swap the a blob from little endian to big or vice versa'''
@@ -112,12 +128,14 @@ def swap_endian(contents):
     new_contents[1::2] = contents[0::2]
     return new_contents
 
+
 def swap_endian_all(chunks):
     '''Convenience wrapper for swap_endian() to handle multiple input blobs at once'''
     temp_chunks = []
     for chunk in chunks:
         temp_chunks.append(swap_endian(chunk))
     return temp_chunks
+
 
 def bit_shuffle(contents, word_size_bytes, bit_order):
     '''Reshuffle bits in a blob using the specified order'''
@@ -160,6 +178,7 @@ def bit_shuffle(contents, word_size_bytes, bit_order):
         new_content += updated_word.tobytes()
     return new_content
 
+
 def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
     '''Reshuffle bits in a blob using the specified order into an array of blobs'''
     new_chunks = []
@@ -188,6 +207,7 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
             offset = end
 
     return new_chunks
+
 
 def byte_shuffle(contents, word_size_bytes, byte_order):
     '''Reshuffle bytes in a blob using the specified order'''
