@@ -6,7 +6,7 @@ def merge(chunks):
     '''Merge an array of blobs into a single blob'''
     new_content = bytearray()
     for chunk in chunks:
-        new_content.extend(chunk)
+        new_content += chunk
     return new_content
 
 def custom_split(contents, chunk_sizes):
@@ -61,7 +61,7 @@ def interleave(chunks, word_size):
     for i in range(0, num_interleave_groups):
         offset = i * word_size
         for chunk in chunks:
-            new_contents.extend(chunk[offset:offset+word_size])
+            new_contents += chunk[offset:offset+word_size]
     return new_contents
 
 def deinterleave(contents, num_ways, word_size):
@@ -69,7 +69,8 @@ def deinterleave(contents, num_ways, word_size):
     interleave_group_length = num_ways * word_size
     temp_chunks = []
     for j in range(0, num_ways):
-        # Make a compress flag array of the combined group length, and 1s only for the appropriate bytes for this chunk
+        # Make a compress flag array of the combined group length.
+        # This 1s only for the appropriate bytes for this chunk.
         flag_arr = [0] * interleave_group_length
         flag_arr[j*word_size:(j+1)*word_size] = [1 for val in flag_arr[j*word_size:(j+1)*word_size]]
 
@@ -79,11 +80,11 @@ def deinterleave(contents, num_ways, word_size):
 
 def deinterleave_all(chunks, num_ways, word_size):
     '''Convenience wrapper for deinterleave() to handle multiple input blobs at once'''
-    # TODO: figure out how to flatten at the same time!
     # Note: A list comprehension like the following would be more pythonic here, but...
-    # However, it's actually harder to read AND oddly slightly less performant (typically .1-.2s at the most)
-    # It's not clear why it's slower, but not worth using the list comprehension. Even 2 separated list comprehensions isn't faster...
-    # return [deint_chunk for chunk in chunks for deint_chunk in deinterleave(chunk, num_ways, word_size)]
+    # It's actually harder to read AND oddly slightly less performant (typically .1-.2s at the most)
+    # It's not clear why it's slower, but not worth using the list comprehension.
+    # Even 2 separated list comprehensions isn't faster...
+    # return [d for chunk in chunks for d in deinterleave(chunk, num_ways, word_size)]
     temp_chunks = []
     for chunk in chunks:
         temp_chunks.extend(deinterleave(chunk, num_ways, word_size))
@@ -120,18 +121,43 @@ def swap_endian_all(chunks):
 
 def bit_shuffle(contents, word_size_bytes, bit_order):
     '''Reshuffle bits in a blob using the specified order'''
-    new_content = bytearray()
-    num_shuffles = len(contents)//word_size_bytes
-    for i in range(0, num_shuffles):
-        offset = i*word_size_bytes
-        shuffle_word = bitarray()
-        shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
+    # This is a SLOW operation no matter what.
+    # Given an example from SFA1:
+    # - Bitwise math: ~17.5s
+    # - Native Shuffle, bit map as we go: ~12.1s
+    # - Native Shuffle, bit map as we go, but use += instead of extend: ~12.0s
+    # - Native Shuffle, outer loop via chunker generator, bit map as we go, but use += instead of extend: ~12.8s
+    # - Native Shuffle, bit map append as we go, but use += instead of extend: ~13.8s
+    # - Native Shuffle, dump all in bitarray and change in place: ~12.5s
+    # - Native Shuffle, dump all in bitarray, use itertools generator, use += instead of extend: ~11.2s
+    # - Native Shuffle, dump all in bitarray, use itertools generator, use += and explicit tobytes instead of extend: ~11.2s
+    # - Native Shuffle, dump all in bitarray, use itertools generator, don't clean updated_word,use += and explicit tobytes instead of extend: ~10.8s
+    # - Full numpy process: ~19.0s
+    # - Numpy Shuffle, assuming already numpy array: ~19.0s
+    # - Numpy Shuffle, without pack/unpack: ~18.9s
+    # - Numpy Shuffle ONLY replacing bitarray: ~37.0s
+    # - Numpy Shuffle array: ~30.0s and it still isn't modifying in place
+    # Also, things that don't seem to work:
+    # - more_itertools.grouper gets int arrays instead of byte arrays
+    # Other ideas:
+    # - Use a memory view?
 
-        updated_word = bitarray(word_size_bytes*8*'0')
+    # print(f"before: {hash_helper.get_crc(contents)}")
+    # shuffle_start = time.perf_counter()
+    def chunker(iterable, size, fillvalue=None):
+        args = [iter(iterable)] * size
+        return itertools.zip_longest(*args, fillvalue=fillvalue)
+    word_size_bits = word_size_bytes*8
+    bit_contents = bitarray()
+    bit_contents.frombytes(contents)
+    new_content = bytearray()
+    updated_word = bitarray(word_size_bits*'0')
+    for shuffle_word in chunker(bit_contents, word_size_bits):
+        # Perform shuffle
         for idx, next_bit in enumerate(bit_order):
             updated_word[idx] = shuffle_word[next_bit]
-
-        new_content.extend(updated_word)
+        # Append to output
+        new_content += updated_word.tobytes()
     return new_content
 
 def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
@@ -141,12 +167,14 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
         new_chunks.append(bytearray())
 
     num_shuffles = len(contents)//word_size_bytes
+    shuffle_word = bitarray()
+    updated_word = bitarray(word_size_bytes*8*'0')
     for i in range(0, num_shuffles):
         offset = i*word_size_bytes
-        shuffle_word = bitarray()
+        shuffle_word.clear()
         shuffle_word.frombytes(contents[offset:offset+word_size_bytes])
 
-        updated_word = bitarray(word_size_bytes*8*'0')
+        updated_word.setall(0)
         j = 0
         for next_bit in bit_order:
             updated_word[j] = shuffle_word[next_bit]
@@ -156,7 +184,7 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
         split_shuffle_length = word_size_bytes*8//num_ways
         for curr_way in range(0, num_ways):
             end = offset+split_shuffle_length
-            new_chunks[curr_way].extend(updated_word[offset:end])
+            new_chunks[curr_way] += updated_word[offset:end]
             offset = end
 
     return new_chunks
@@ -165,13 +193,14 @@ def byte_shuffle(contents, word_size_bytes, byte_order):
     '''Reshuffle bytes in a blob using the specified order'''
     new_content = bytearray()
     num_shuffles = len(contents)//word_size_bytes
+    updated_word = bytearray(word_size_bytes)
     for i in range(0, num_shuffles):
         offset = i*word_size_bytes
         shuffle_word = bytearray(contents[offset:offset+word_size_bytes])
 
-        updated_word = bytearray(word_size_bytes)
+        updated_word.clear()
         for idx, next_byte in enumerate(byte_order):
             updated_word[idx] = shuffle_word[next_byte]
 
-        new_content.extend(updated_word)
+        new_content += updated_word
     return new_content
