@@ -305,17 +305,18 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     def _cps2_gfx_deinterleave(self, contents, num_ways=4, word_size=2):
         interleave_group_length = num_ways * word_size
         num_interleave_groups = len(contents)//interleave_group_length
+        contents = capcom.common_gfx_deshuffle(contents)
         temp_chunks = [bytearray() for i in range(num_ways)]
         for i in range(0, num_interleave_groups):
             offset = i * interleave_group_length
             interleave_group = contents[offset:offset+interleave_group_length]
-            interleave_group = capcom.common_gfx_deshuffle(interleave_group)
             interleave_offset = 0
             for j in range(0, num_ways):
                 interleave_end = interleave_offset + word_size
-                temp_chunks[j].extend(interleave_group[interleave_offset:interleave_end])
+                temp_chunks[j] += interleave_group[interleave_offset:interleave_end]
                 interleave_offset = interleave_end
         return temp_chunks
+        
 
     ################################################################################
     # Street Fighter                                                               #
