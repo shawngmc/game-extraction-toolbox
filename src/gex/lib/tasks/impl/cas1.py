@@ -27,7 +27,7 @@ These are not playable ROMs!
 ## Analysis
 ### KPKA
 These appear to be KPKA archives, and it is reasonably certain that the extraction is correct, as most files have a 3-4 character allcaps header
-indicating file type.
+indicating file type. Note that the file order can differ between KPKA files; the size and header bytes are best used for identification.
 
 #### Example KPKA (1556708)
  - 1556708_0_1957557.dat - One of the ROM packages
@@ -46,7 +46,10 @@ In the example above, 1556708_1_331.dat appears to have ".psb" at the beginning;
  - We have no current indication M2 (which makes the m2engage emulator and MArchive file format) worked on CAS
  - MArchiveBatchTool can't seem to do anything with the file.
  - The file is far shorter than most PSB files.
-As such, this is likely a coincidence or other dead end.
+As such, 'PSB' is likely a coincidence or other dead end.
+For CAS1, every '.psb' file is identical. CAS2 does not have these '.psb' files (at least in the per-DLC packages). 
+However, there is a '.psb' file in the main package (look for the 331 byte file size/file 1888).
+It is definitely different than the CAS1 PSB, but only about 30% of the file is changed. (0x30-0x47, 0x6F-0x81)
     '''
     _out_file_list = [
     ]
