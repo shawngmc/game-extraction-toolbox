@@ -4,10 +4,10 @@ import os
 import zipfile
 from gex.lib.utils.blob import transforms
 
-_steam_app_root = r"C:\Program Files (x86)\Steam\steamapps\common"
-def gen_steam_app_default_folder(app_folder):
-    return os.path.join(_steam_app_root, app_folder)
-
+_STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
+def gen_steam_app_default_folder(app_folder, library_root=_STEAM_APP_ROOT):
+    '''Convenience function to get a Steam App folder'''
+    return os.path.join(library_root, app_folder)
 
 def build_rom(in_files, func_map):
     '''Convenience function to run both process_rom_files and build_zip together'''
