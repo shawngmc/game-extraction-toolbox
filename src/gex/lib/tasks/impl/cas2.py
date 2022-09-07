@@ -27,10 +27,7 @@ These are not playable ROMs!
 ## Analysis
 ### KPKA
 These appear to be KPKA archives, and it is reasonably certain that the extraction is correct, as most files have a 3-4 character allcaps header
-indicating file type.
-
-### PSB
-See CAS 1 for more info.
+indicating file type. Note that the file order can differ between KPKA files; the size and header bytes are best used for identification.
     '''
     _out_file_list = [
     ]
