@@ -1,9 +1,12 @@
 # 0.0.23
+- Updated Collections:
+  - SNK 40th Anniversary Collection
+    - Added partial (broken) ROM extraction support
 - Improvements:
   - Some tasks now support config flags via '--prop'; see task details for supported flags
   - Reworked tables using TextTable to make code cleaner and tables more reliable
   - Added placeholder partials for CAS1 and CAS2
-  - Major performance improvement for deinterleave operations
+  - Performance improvements, including major gains for deinterleave and bit shuffle operations
 - Internal:
   - Restructured some tasks to allow splitting/props
   - Added some support tool for Steam folders (eventually may add detection?)
