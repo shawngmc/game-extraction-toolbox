@@ -73,6 +73,26 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Profile SF30AC",
+            "type": "python",
+            "request": "launch",
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "-o",
+                "\"${workspaceFolder}\\out\\sf30ac.prof\"",
+                "${workspaceFolder}\\src\\gex\\toolbox.py",
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30ac\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SNK40",
             "type": "python",
             "request": "launch",
@@ -87,6 +107,8 @@
                 "snk40", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\snk40\"",
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\"",
                 "--prop",
                 "include-partials=True"
             ]
@@ -119,6 +141,26 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas1_old", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas1_old\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Profile CAS1 Old",
+            "type": "python",
+            "request": "launch",
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "-o",
+                "\"${workspaceFolder}\\out\\cas1_old.prof\"",
+                "${workspaceFolder}\\src\\gex\\toolbox.py",
                 "tasks", 
                 "extract", 
                 "--task", 
