@@ -2,10 +2,47 @@
 import logging
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
+from gex.lib.tasks.impl.snk40 import utils
 
 logger = logging.getLogger('gextoolbox')
 
 out_file_info = [
+    {
+        "game": "ASO: ArmoredScrumObject",
+        "system": "Arcade",
+        "filename": "aso.zip",
+        "notes": []
+    },
+    {
+        "game": "ASO: ArmoredScrumObject",
+        "system": "Arcade",
+        "filename": "alphamis.zip",
+        "notes": []
+    },
+    {
+        "game": "ASO: ArmoredScrumObject",
+        "system": "Arcade",
+        "filename": "arian.zip",
+        "notes": []
+    },
+    {
+        "game": "TNKIII",
+        "system": "Arcade",
+        "filename": "tnk3.zip",
+        "notes": []
+    },
+    {
+        "game": "TNKIII (J)",
+        "system": "Arcade",
+        "filename": "tnk3j.zip",
+        "notes": []
+    },
+    {
+        "game": "Athena",
+        "system": "Arcade",
+        "filename": "N/A",
+        "notes": []
+    },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
@@ -189,9 +226,12 @@ def extract(bundle_contents):
     out_files.extend(_handle_victoryroad(contents))
     out_files.extend(_handle_ikari(contents))
     out_files.extend(_handle_guerilla(contents))
+    out_files.extend(_handle_tnk3(contents))
+    out_files.extend(_handle_aso(contents))
+    out_files.extend(_handle_athena(contents))
     return out_files
 
-def _handle_prehisle(mbundle_entries):
+def _handle_prehisle(bundle_contents):
     # PREHISLE Common
     func_map = {}
     out_files = []
@@ -208,7 +248,7 @@ def _handle_prehisle(mbundle_entries):
     func_map['bgmap'] = helpers.name_file_helper("PrehistoricIsleIn1930.bg.map", "gt11.11")
     func_map['samples'] = helpers.name_file_helper("PrehistoricIsleIn1930.samples", "gt4.4")
     logger.info("Processing PREHISLE common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     def prehisle_maincpu(in_file_name, filenames):
         def maincpu(in_files):
@@ -225,12 +265,7 @@ def _handle_prehisle(mbundle_entries):
     ]
     func_map['maincpu'] = prehisle_maincpu('PrehistoricIsleIn1930.j.68k', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "gensitou.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("gensitou.zip", bundle_contents, func_map))
 
     # PREHISLEU
     func_map = {}
@@ -240,12 +275,7 @@ def _handle_prehisle(mbundle_entries):
     ]
     func_map['maincpu'] = prehisle_maincpu('PrehistoricIsleIn1930.u.68k', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "prehisleu.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("prehisleu.zip", bundle_contents, func_map))
 
     # PREHISLE
     func_map = {}
@@ -255,15 +285,10 @@ def _handle_prehisle(mbundle_entries):
     ]
     func_map['maincpu'] = prehisle_maincpu('PrehistoricIsleIn1930.w.68k', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "prehisle.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("prehisle.zip", bundle_contents, func_map))
     return out_files
 
-def _handle_streetsm(mbundle_entries):
+def _handle_streetsm(bundle_contents):
     # STREETS Common
     func_map = {}
     out_files = []
@@ -287,7 +312,7 @@ def _handle_streetsm(mbundle_entries):
     func_map['gfx2'] = streets_gfx2('streetsm.gfx2', gfx2_filenames)
 
     logger.info("Processing STREETS common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # STREETS1 GFX Common
     func_map = {}
@@ -297,7 +322,7 @@ def _handle_streetsm(mbundle_entries):
     ]
     func_map['gfx1'] = helpers.equal_split_helper('streetsm1.gfx1', gfx1_filenames)
     logger.info("Processing STREETS1 GFX common files...")
-    gfx1_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    gfx1_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     def streets_maincpu(in_file_name, filenames):
         def maincpu(in_files):
@@ -319,12 +344,7 @@ def _handle_streetsm(mbundle_entries):
     ]
     func_map['gfx1'] = helpers.equal_split_helper('streetsm.gfx1', gfx1_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "streetsm.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("streetsm.zip", bundle_contents, func_map))
 
     # STREETSM1
     func_map = {}
@@ -335,12 +355,7 @@ def _handle_streetsm(mbundle_entries):
     func_map['maincpu'] = streets_maincpu('streetsm1.maincpu', maincpu_filenames)
     func_map['gfx1'] = helpers.existing_files_helper(gfx1_file_map)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "streetsm1.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("streetsm1.zip", bundle_contents, func_map))
 
     # STREETSMJ
     func_map = {}
@@ -351,12 +366,7 @@ def _handle_streetsm(mbundle_entries):
     func_map['maincpu'] = streets_maincpu('streetsmj.maincpu', maincpu_filenames)
     func_map['gfx1'] = helpers.existing_files_helper(gfx1_file_map)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "streetsmj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("streetsmj.zip", bundle_contents, func_map))
 
     # STREETSMW
     func_map = {}
@@ -367,15 +377,10 @@ def _handle_streetsm(mbundle_entries):
     func_map['maincpu'] = streets_maincpu('streetsmw.maincpu', maincpu_filenames)
     func_map['gfx1'] = helpers.existing_files_helper(gfx1_file_map)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "streetsmw.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("streetsmw.zip", bundle_contents, func_map))
     return out_files
 
-def _handle_ikari3(mbundle_entries):
+def _handle_ikari3(bundle_contents):
     # IKARI3 Common
     func_map = {}
     out_files = []
@@ -388,7 +393,7 @@ def _handle_ikari3(mbundle_entries):
         user_filenames, num_ways=2, word_size=1)
 
     logger.info("Processing IKARI3 common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # IKARI3 GFX1 Common
     func_map = {}
@@ -398,7 +403,7 @@ def _handle_ikari3(mbundle_entries):
     ]
     func_map['gfx1'] = helpers.equal_split_helper('ikari3.gfx1', gfx1_filenames)
     logger.info("Processing IKARI3 GFX1 common files...")
-    gfx1_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    gfx1_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # IKARI3 GFX2 Common
     func_map = {}
@@ -434,7 +439,7 @@ def _handle_ikari3(mbundle_entries):
         return gfx2
     func_map['gfx2'] = ikari3_gfx2_common('ikari3.gfx2', gfx2_filenames)
     logger.info("Processing IKARI3 GFX2 common files...")
-    gfx2_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    gfx2_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # IKARI3
     func_map = {}
@@ -448,12 +453,7 @@ def _handle_ikari3(mbundle_entries):
     func_map['gfx2'] = helpers.existing_files_helper(gfx2_file_map)
     func_map['soundcpu'] = helpers.name_file_helper("ikari3.soundcpu", "ik3-5.16d")
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "ikari3.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikari3.zip", bundle_contents, func_map))
 
     # IKARI3J
     func_map = {}
@@ -467,12 +467,7 @@ def _handle_ikari3(mbundle_entries):
     func_map['gfx2'] = helpers.existing_files_helper(gfx2_file_map)
     func_map['soundcpu'] = helpers.name_file_helper("ikari3.soundcpu", "ik3-5.16d")
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "ikari3j.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikari3j.zip", bundle_contents, func_map))
 
     # IKARI3K
     func_map = {}
@@ -509,12 +504,7 @@ def _handle_ikari3(mbundle_entries):
     func_map['gfx2'] = ikari3k_gfx2('ikari3.gfx2', gfx2_filenames)
     func_map['soundcpu'] = helpers.name_file_helper("ikari3.soundcpu", "ik3-5.16d")
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "ikari3k.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikari3k.zip", bundle_contents, func_map))
 
     # IKARI3U
     func_map = {}
@@ -528,15 +518,11 @@ def _handle_ikari3(mbundle_entries):
     func_map['gfx2'] = helpers.existing_files_helper(gfx2_file_map)
     func_map['soundcpu'] = helpers.name_file_helper("ikari3.soundcpu", "ik3-5.15d")
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "ikari3u.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikari3u.zip", bundle_contents, func_map))
+
     return out_files
 
-def _handle_vanguard(mbundle_entries):
+def _handle_vanguard(bundle_contents):
     # VANGUARD Common
     func_map = {}
     out_files = []
@@ -573,7 +559,7 @@ def _handle_vanguard(mbundle_entries):
         return speech
     func_map['speech'] = vanguard_speech("vanguard.speech", speech_file_names)
     logger.info("Processing VANGUARD common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # VANGUARD
     func_map = {}
@@ -589,12 +575,7 @@ def _handle_vanguard(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.equal_split_helper('vanguard.maincpu', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "vanguard.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("vanguard.zip", bundle_contents, func_map))
 
     # VANGUARDC
     func_map = {}
@@ -610,12 +591,7 @@ def _handle_vanguard(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.equal_split_helper('vanguardc.maincpu', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "vanguardc.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("vanguardc.zip", bundle_contents, func_map))
 
     # VANGUARDJ
     func_map = {}
@@ -631,15 +607,11 @@ def _handle_vanguard(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.equal_split_helper('vanguardj.maincpu', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "vanguardj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("vanguardj.zip", bundle_contents, func_map))
+
     return out_files
 
-def _handle_pow(mbundle_entries):
+def _handle_pow(bundle_contents):
     # POW Common
     func_map = {}
     out_files = []
@@ -681,7 +653,7 @@ def _handle_pow(mbundle_entries):
         return gfx2
     func_map['gfx2'] = pow_gfx2_common('pow.gfx2', gfx2_file_names)
     logger.info("Processing POW common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # POW
     func_map = {}
@@ -691,12 +663,7 @@ def _handle_pow(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.deinterleave_helper('pow.maincpu', maincpu_filenames, 2, 1)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "pow.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("pow.zip", bundle_contents, func_map))
 
     # POWJ
     func_map = {}
@@ -706,24 +673,9 @@ def _handle_pow(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.deinterleave_helper('powj.maincpu', maincpu_filenames, 2, 1)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "powj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("powj.zip", bundle_contents, func_map))
+
     return out_files
-
-
-def _pal_helper(in_file_ref, pal_filenames):
-    '''Rebuild RGB Palette ROMs'''
-    def palette(in_files):
-        in_data = in_files[in_file_ref]
-        pal_contents = transforms.deinterleave_nibble(in_data, 4)
-        del pal_contents[2] # Remove the spacing entry
-        return dict(zip(pal_filenames, pal_contents))
-    return palette
-
 
 def _handle_victoryroad(bundle_contents):
     '''Extract Ikari 2 Victory Road'''
@@ -778,13 +730,8 @@ def _handle_victoryroad(bundle_contents):
         "c1.1k",
         "c3.1l"
     ]
-    func_map['pal'] = _pal_helper('VictoryRoad.j.pal', pal_filenames)
-    mame_name = "dogosoke.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    func_map['pal'] = utils.simple_palette_helper('VictoryRoad.j.pal', pal_filenames)
+    out_files.append(utils.build_snk_rom("dogosoke.zip", bundle_contents, func_map))
 
     # VICTROAD
     func_map = {}
@@ -817,16 +764,10 @@ def _handle_victoryroad(bundle_contents):
         "c1.1k",
         "c3.1l"
     ]
-    func_map['pal'] = _pal_helper('VictoryRoad.pal', pal_filenames)
-    mame_name = "victroad.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    func_map['pal'] = utils.simple_palette_helper('VictoryRoad.pal', pal_filenames)
+    out_files.append(utils.build_snk_rom("victroad.zip", bundle_contents, func_map))
 
     return out_files
-
 
 def _handle_ikari(bundle_contents):
     '''Extract Ikari Warriors'''
@@ -853,7 +794,7 @@ def _handle_ikari(bundle_contents):
         "1.1h",
         "3.1j"
     ]
-    func_map['pal'] = _pal_helper('IkariWarriors.pal', pal_filenames)
+    func_map['pal'] = utils.simple_palette_helper('IkariWarriors.pal', pal_filenames)
     logger.info("Processing Ikari Palette common files...")
     palette_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
@@ -915,12 +856,7 @@ def _handle_ikari(bundle_contents):
         "ampal16r6a-a5004-1.6d": 260
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "ikaria.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikaria.zip", bundle_contents, func_map))
 
     # IKARIJP
     func_map = {}
@@ -958,12 +894,7 @@ def _handle_ikari(bundle_contents):
         "ampal16r6a-a5004-1.6d": 260
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "ikarijp.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikarijp.zip", bundle_contents, func_map))
 
     # IKARI
     func_map = {}
@@ -977,17 +908,7 @@ def _handle_ikari(bundle_contents):
         "1.1h": "a6002-1.1k",
         "3.1j": "a6002-3.1l"
     })
-    ph_files = {
-        "1.1d": 4096,
-        "1.2d": 4096
-    }
-    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "ikari.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ikari.zip", bundle_contents, func_map))
 
     # IKARINC
     func_map = {}
@@ -1008,13 +929,7 @@ def _handle_ikari(bundle_contents):
         "ampal16r6a-a5004-1.6d": 260
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "ikarinc.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
-
+    out_files.append(utils.build_snk_rom("ikarinc.zip", bundle_contents, func_map))
 
     return out_files
 
@@ -1060,7 +975,7 @@ def _handle_guerilla(bundle_contents):
         '3.9w',
         '1.9u'
     ]
-    func_map['pal'] = _pal_helper('GuerillaWar.pal', pal_filenames)
+    func_map['pal'] = utils.simple_palette_helper('GuerillaWar.pal', pal_filenames)
     logger.info("Processing GWAR palette common files...")
     pal_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
@@ -1083,12 +998,7 @@ def _handle_guerilla(bundle_contents):
         'l.1w': 0x1000
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "gwar.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("gwar.zip", bundle_contents, func_map))
 
     # # GWARA
     func_map = {}
@@ -1127,12 +1037,7 @@ def _handle_guerilla(bundle_contents):
         'vertical.8k': 0x400
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "gwara.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("gwara.zip", bundle_contents, func_map))
 
     # GWARB
     func_map = {}
@@ -1166,12 +1071,7 @@ def _handle_guerilla(bundle_contents):
         "1.9u": "2.1l",
         "2.9v": "3.2l"
     })
-    mame_name = "gwarb.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("gwarb.zip", bundle_contents, func_map))
 
     # GWARJ
     func_map = {}
@@ -1185,12 +1085,7 @@ def _handle_guerilla(bundle_contents):
         'l.1w': 0x1000
     }
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
-    mame_name = "gwarj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("gwarj.zip", bundle_contents, func_map))
 
     return out_files
 
@@ -1237,10 +1132,9 @@ def _handle_psycho(bundle_contents):
         "psc1.1k",
         "psc2.2k"
     ]
-    func_map['pal'] = _pal_helper('PsychoSoldier.pal', pal_filenames)
+    func_map['pal'] = utils.simple_palette_helper('PsychoSoldier.pal', pal_filenames)
     logger.info("Processing Psycho Soldier common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)
-
 
     # PSYCHOS
     func_map = {}
@@ -1254,12 +1148,7 @@ def _handle_psycho(bundle_contents):
     ]
     func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "psychos.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("psychos.zip", bundle_contents, func_map))
 
     # PSYCHOSJ
     func_map = {}
@@ -1273,11 +1162,262 @@ def _handle_psycho(bundle_contents):
     ]
     func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "psychosj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("psychosj.zip", bundle_contents, func_map))
+
+    return out_files
+
+def _handle_aso(bundle_contents):
+    '''Extract Armored Scrum Object'''
+    print("NYI")
+    out_files = []
+    for key, value in bundle_contents.items():
+        if key.startswith("ASOArmoredScrumObject"):
+            print(f'{key}: {len(value)}')
+
+    # ASO Common
+    func_map = {}
+    func_map['bg'] = helpers.name_file_helper("ASOArmoredScrumObject.bg", "p10.14h")
+    audiocpu_filenames = [
+        "p7.4f",
+        "p8.3f",
+        "p9.2f"
+    ]
+    func_map['audiocpu'] = helpers.equal_split_helper(
+        'ASOArmoredScrumObject.2.z80', audiocpu_filenames)
+    sp_filenames = [
+        "p11.11h",
+        "p12.9h",
+        "p13.8h"
+    ]
+    def aso_sp(in_files):
+        contents = in_files['ASOArmoredScrumObject.sp']
+        chunks = transforms.equal_split(contents, num_chunks = 12)
+
+        p11 = transforms.merge([chunks[2] + chunks[3] + chunks[0] + chunks[1]])
+        p12 = transforms.merge([chunks[6] + chunks[7] + chunks[4] + chunks[5]])
+        p13 = transforms.merge([chunks[10] + chunks[11] + chunks[8] + chunks[9]])
+
+        chunks = [p11, p12, p13]
+
+        return dict(zip(sp_filenames, chunks))
+    func_map['sp'] = aso_sp
+    pals_meta = [
+        {
+            "filename": "mb7122h.12f",
+            "crc":"0x5b0a0059",
+            "sha": "f61e17c8959f1cd6cc12b38f2fb7c6190ebd0e0c",
+            "length": 1024
+        },
+        {
+            "filename": "mb7122h.13f",
+            "crc":"0x37e28dd8",
+            "sha": "681726e490872a574dd0295823a44d64ef3a7b45",
+            "length": 1024
+        },
+        {
+            "filename": "mb7122h.14f",
+            "crc":"0xc3fd1dd3",
+            "sha": "c48030cc458f0bebea0ffccf3d3c43260da6a7fb",
+            "length": 1024
+        }
+    ]
+    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'ASOArmoredScrumObject.pal')
+    ph_files = {
+        'pal16l8a-1.bin': 260,
+        'pal16l8a-2.bin': 260,
+        'pal16r6a.15b': 260
+    }
+    func_map['ph'] = helpers.placeholder_helper(ph_files)
+    logger.info("Processing ASO common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # ASO
+    func_map = {}
+    maincpu_filenames = [
+        "p1.8d",
+        "p2.7d",
+        "p3.5d"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper(
+        'ASOArmoredScrumObject.0.z80', maincpu_filenames)
+    sub_filenames = [
+        "p4.3d",
+        "p5.2d",
+        "p6.1d"
+    ]
+    func_map['sub'] = helpers.equal_split_helper('ASOArmoredScrumObject.1.z80', sub_filenames)
+    func_map['tx'] = helpers.name_file_helper("ASOArmoredScrumObject.tx", "p14.1h")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    out_files.append(utils.build_snk_rom("aso.zip", bundle_contents, func_map))
+
+    # ALPHAMIS
+    func_map = {}
+    maincpu_filenames = [
+        "p1.8d",
+        "p2.7d",
+        "p3.5d"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper(
+        'ASOArmoredScrumObject.b.0.z80', maincpu_filenames)
+    sub_filenames = [
+        "p4.3d",
+        "p5.2d",
+        "p6.1d"
+    ]
+    func_map['sub'] = helpers.equal_split_helper('ASOArmoredScrumObject.b.1.z80', sub_filenames)
+    func_map['tx'] = helpers.name_file_helper("ASOArmoredScrumObject.b.tx", "p14.1h")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    out_files.append(utils.build_snk_rom("alphamis.zip", bundle_contents, func_map))
+
+    # ARIAN
+    func_map = {}
+    maincpu_filenames = [
+        "p1.8d",
+        "p2.7d",
+        "p3.5d"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper(
+        'ASOArmoredScrumObject.c.0.z80', maincpu_filenames)
+    sub_filenames = [
+        "p4.3d",
+        "p5.2d",
+        "p6.1d"
+    ]
+    func_map['sub'] = helpers.equal_split_helper('ASOArmoredScrumObject.c.1.z80', sub_filenames)
+    func_map['tx'] = helpers.name_file_helper("ASOArmoredScrumObject.c.tx", "p14.1h")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    out_files.append(utils.build_snk_rom("arian.zip", bundle_contents, func_map))
+
+    return out_files
+
+def _handle_athena(bundle_contents):
+    '''Extract Athena'''
+    out_files = []
+
+    func_map = {}
+    sub_file_map = {
+        "p3.8p": 0x4000,
+        "p4.8m": 0x8000
+    }
+    func_map['sub'] = helpers.custom_split_helper('Athena.1.z80', sub_file_map)
+    audiocpu_file_map = {
+        "p5.6g": 0x4000,
+        "p6.6k": 0x8000
+    }
+    func_map['audiocpu'] = helpers.custom_split_helper('Athena.2.z80', audiocpu_file_map)
+    sp_filenames = [
+        "p7.2p",
+        "p8.2s",
+        "p9.2t"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('Athena.sp', sp_filenames)
+
+    maincpu_file_map = {
+        "p1.4p": 0x4000,
+        "p2.4m": 0x8000
+    }
+    func_map['maincpu'] = helpers.custom_split_helper('Athena.0.z80', maincpu_file_map)
+    func_map['tx'] = helpers.name_file_helper("Athena.tx", "p11.2d")
+    func_map['bg'] = helpers.name_file_helper("Athena.bg", "p10.2b")
+    pals_meta = [
+        {
+            "filename": "1.1c",
+            "crc":"0xa4a4e7dc",
+            "sha": "aa694c2d44dcabc6cfd46307c55c3759eff57236",
+            "length": 1024
+        },
+        {
+            "filename": "2.1b",
+            "crc":"0xd25c9099",
+            "sha": "f3933075cce1255affc61dfefd9559b6e15ed29c",
+            "length": 1024
+        },
+        {
+            "filename": "3.2c",
+            "crc":"0x294279ae",
+            "sha": "b3db5617b83845a6c1abca8f71fa4598758a2a56",
+            "length": 1024
+        }
+    ]
+    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'Athena.pal')
+    out_files.append(utils.build_snk_rom("athena.zip", bundle_contents, func_map))
+
+    return out_files
+
+def _handle_tnk3(bundle_contents):
+    '''Extract TnkIII'''
+    out_files = []
+
+    # # TNK3 Common
+    func_map = {}
+    sub_filenames = [
+        "p4.2e",
+        "p5.2f",
+        "p6.2h"
+    ]
+    func_map['sub'] = helpers.equal_split_helper('TNKIII.1.z80', sub_filenames)
+    audiocpu_filenames = [
+        "p10.6f",
+        "p11.6d"
+    ]
+    func_map['audiocpu'] = helpers.equal_split_helper('TNKIII.2.z80', audiocpu_filenames)
+    bg_filenames = [
+        "p12.3d",
+        "p13.3c"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('TNKIII.bg', bg_filenames)
+    sp_filenames = [
+        "p7.7h",
+        "p8.7f",
+        "p9.7e"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('TNKIII.sp', sp_filenames)
+    pals_meta = [
+        {
+            "filename": "0.5h",
+            "crc":"0x4662b4c8",
+            "sha": "391c2b8a17ce2e092b46a17fc4170dc1e3bde426",
+            "length": 1024
+        },
+        {
+            "filename": "1.5g",
+            "crc":"0x6d0ac66a",
+            "sha": "e792218ec43dd10473dc020afed8527cf43ea0d0",
+            "length": 1024
+        },
+        {
+            "filename": "2.5f",
+            "crc":"0x34c06bc6",
+            "sha": "bb68e96a8fcc754840420952dab961e03bf6acdd",
+            "length": 1024
+        }
+    ]
+    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'TNKIII.pal')
+    logger.info("Processing TNK3 common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # # TNK3
+    func_map = {}
+    maincpu_filenames = [
+        "p1.4e",
+        "p2.4f",
+        "p3.4h"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper('TNKIII.0.z80', maincpu_filenames)
+    func_map['tx'] = helpers.name_file_helper("TNKIII.tx", "p14.1e")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    out_files.append(utils.build_snk_rom("tnk3.zip", bundle_contents, func_map))
+
+    # TNK3J
+    func_map = {}
+    maincpu_filenames = [
+        "p1.4e",
+        "p2.4f",
+        "p3.4h"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper('TNKIII.j.0.z80', maincpu_filenames)
+    func_map['tx'] = helpers.name_file_helper("TNKIII.j.tx", "p14.1e")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    out_files.append(utils.build_snk_rom("tnk3j.zip", bundle_contents, func_map))
 
     return out_files

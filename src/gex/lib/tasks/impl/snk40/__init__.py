@@ -9,8 +9,6 @@ from gex.lib.tasks.impl.snk40 import partials, nes, arcadedlc, arcademain, arcad
 
 logger = logging.getLogger('gextoolbox')
 
-# TODO: Add in https://github.com/lioneltrs/buildROM if feasible
-
 class SNK40thAnniversaryCollectionTask(BaseTask):
     '''Implements snk40: SNK 40th Anniversary Collection'''
     _task_name = "snk40"
