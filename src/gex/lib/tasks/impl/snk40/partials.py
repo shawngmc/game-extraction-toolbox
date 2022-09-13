@@ -2,7 +2,6 @@
 import logging
 from gex.lib.tasks import helpers
 from gex.lib.tasks.impl.snk40 import utils
-from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 

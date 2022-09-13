@@ -14,7 +14,9 @@ class SNK40thAnniversaryCollectionTask(BaseTask):
     _task_name = "snk40"
     _title = "SNK 40th Anniversary Collection"
     _details_markdown = '''
-Based on https://gitlab.com/vaiski/romextract/-/blob/master/scripts/STEAM-865940.sh
+Based on:
+- https://gitlab.com/vaiski/romextract/-/blob/master/scripts/STEAM-865940.sh
+- https://github.com/lioneltrs/buildROM
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("SNK 40th Anniversary Collection")
     _input_folder_desc = "SNK 40th install folder"
