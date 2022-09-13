@@ -1,6 +1,7 @@
 '''Extraction code for Arcade ROMs from SNK40 Patch Bundle'''
 import logging
 from gex.lib.tasks import helpers
+from gex.lib.tasks.impl.snk40 import utils
 from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
@@ -77,6 +78,12 @@ out_file_info = [
         "system": "Arcade",
         "filename": "bermudata.zip",
         "notes": [2]
+    },
+    {
+        "game": "MarvinsMaze",
+        "system": "Arcade",
+        "filename": "N/A",
+        "notes": []
     }
 ]
 
@@ -92,6 +99,7 @@ def extract(bundle_contents):
     out_files.extend(_handle_ozmawars(contents))
     out_files.extend(_handle_paddlemania(contents))
     out_files.extend(_handle_bermuda(contents))
+    out_files.extend(_handle_marvin(contents))
     return out_files
 
 def _handle_chopper(mbundle_entries):
@@ -607,7 +615,7 @@ def _handle_bermuda(bundle_contents):
         "u1bt.1k",
         "u3bt.1l"
     ]
-    func_map['pal'] = _pal_helper('WorldWars.j.pal', pal_filenames)
+    func_map['pal'] = utils.simple_palette_helper('WorldWars.j.pal', pal_filenames)
     mame_name = "bermudata.zip"
     logger.info(f"Building {mame_name}...")
     out_files.append(
@@ -617,11 +625,57 @@ def _handle_bermuda(bundle_contents):
 
     return out_files
 
-def _pal_helper(in_file_ref, pal_filenames):
-    '''Rebuild RGB Palette ROMs'''
-    def palette(in_files):
-        in_data = in_files[in_file_ref]
-        pal_contents = transforms.deinterleave_nibble(in_data, 4)
-        del pal_contents[2] # Remove the spacing entry
-        return dict(zip(pal_filenames, pal_contents))
-    return palette
+def _handle_marvin(bundle_contents):
+    '''Extract Marvin's Maze'''
+    out_files = []
+    func_map = {}
+    maincpu_filenames = [
+        "pa1",
+        "pa2",
+        "pa3"
+    ]
+    func_map['maincpu'] = helpers.equal_split_helper('MarvinsMaze.0.z80', maincpu_filenames)
+    func_map['sub'] = helpers.name_file_helper("MarvinsMaze.1.z80", "pb1")
+    audiocpu_filenames = [
+        "m1",
+        "m2"
+    ]
+    func_map['audiocpu'] = helpers.equal_split_helper('MarvinsMaze.2.z80', audiocpu_filenames)
+    func_map['bg'] = helpers.name_file_helper("MarvinsMaze.bg", "b2")
+    func_map['fg'] = helpers.name_file_helper("MarvinsMaze.fg", "b1")
+    sp_filenames = [
+        "f1",
+        "f2",
+        "f3"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('MarvinsMaze.sp', sp_filenames)
+    func_map['tx'] = helpers.name_file_helper("MarvinsMaze.tx", "s1")
+    pals_meta = [
+        {
+            "filename": "marvmaze.j1",
+            "crc":"0x92f5b06d",
+            "sha": "97979ffb6fb065d9c99da43173180fefb2de1886",
+            "length": 1024
+        },
+        {
+            "filename": "marvmaze.j2",
+            "crc":"0xd2b25665",
+            "sha": "b913b8b9c5ee0a29b5a115b2432c5706979059cf",
+            "length": 1024
+        },
+        {
+            "filename": "marvmaze.j3",
+            "crc":"0xdf9e6005",
+            "sha": "8f633f664c3f8e4f6ca94bee74a68c8fda8873e3",
+            "length": 1024
+        }
+    ]
+    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'MarvinsMaze.pal')
+    mame_name = "marvins.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    return out_files
