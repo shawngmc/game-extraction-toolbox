@@ -88,6 +88,23 @@ def deinterleave(contents, num_ways, word_size):
             contents, itertools.cycle(flag_arr))))
     return temp_chunks
 
+def deinterleave_nibble(contents, num_ways, bit_prefix=bitarray('0000')):
+    '''Deinterleave a blob into an array of num_ways blobs, 4 bits at a time; must be an even num_ways'''
+    interleave_group_length = int(num_ways * .5)
+    num_interleave_groups = len(contents) // interleave_group_length
+    temp_bit_chunks = []
+    for j in range(0, num_ways):
+        temp_bit_chunks.append(bitarray())
+    curr_bits = bitarray()
+    for i in range(0, num_interleave_groups):
+        curr_bytes = contents[i*interleave_group_length:(i+1)*interleave_group_length]
+        curr_bits.clear()
+        curr_bits.frombytes(curr_bytes)
+
+        for j in range(0, num_ways):
+            temp_bit_chunks[j].extend(bit_prefix + curr_bits[j*4:(j+1)*4])
+
+    return [bytearray(temp_bit_chunk.tobytes()) for temp_bit_chunk in temp_bit_chunks]
 
 def deinterleave_all(chunks, num_ways, word_size):
     '''Convenience wrapper for deinterleave() to handle multiple input blobs at once'''
