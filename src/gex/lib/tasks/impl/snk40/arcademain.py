@@ -1168,7 +1168,6 @@ def _handle_psycho(bundle_contents):
 
 def _handle_aso(bundle_contents):
     '''Extract Armored Scrum Object'''
-    print("NYI")
     out_files = []
     for key, value in bundle_contents.items():
         if key.startswith("ASOArmoredScrumObject"):
