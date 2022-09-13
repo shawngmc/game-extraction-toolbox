@@ -102,7 +102,7 @@ def extract(bundle_contents):
     out_files.extend(_handle_marvin(contents))
     return out_files
 
-def _handle_chopper(mbundle_entries):
+def _handle_chopper(bundle_contents):
     out_files = []
 
     # CHOPPERB
@@ -144,12 +144,7 @@ def _handle_chopper(mbundle_entries):
     func_map['sp32'] = helpers.equal_split_helper("chopper.sp32_tiles", sp32_file_names)
     func_map['ym2'] = helpers.name_file_helper("chopper.ym2", "kk2.3j")
     func_map['plds'] = helpers.name_file_helper("chopper.plds", "p-a1.2c")
-    mame_name = "chopperb.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("chopperb.zip", bundle_contents, func_map))
 
     # LEGOFAIR
     func_map = {}
@@ -190,16 +185,11 @@ def _handle_chopper(mbundle_entries):
     func_map['sp32'] = helpers.equal_split_helper("chopper.sp32_tiles", sp32_file_names)
     func_map['ym2'] = helpers.name_file_helper("chopper.ym2", "kk2.5b")
     func_map['plds'] = helpers.name_file_helper("chopper.plds", "p-a1.8b")
-    mame_name = "legofair.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("legofair.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_fantasy(mbundle_entries):
+def _handle_fantasy(bundle_contents):
     out_files = []
     # COMMON
     func_map = {}
@@ -221,7 +211,7 @@ def _handle_fantasy(mbundle_entries):
     ]
     func_map['speech'] = helpers.equal_split_helper("fantasyu.speech", speech_file_names)
     logger.info("Processing fantasy common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # FANTASYJ
     func_map = {}
@@ -243,12 +233,7 @@ def _handle_fantasy(mbundle_entries):
     ]
     func_map['maincpu'] = helpers.equal_split_helper("fantasyj.maincpu", maincpu_file_names)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "fantasyj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("fantasyj.zip", bundle_contents, func_map))
 
     # FANTASYU
     func_map = {}
@@ -271,16 +256,11 @@ def _handle_fantasy(mbundle_entries):
     func_map['maincpu'] = helpers.equal_split_helper("fantasyu.maincpu", maincpu_file_names)
 
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "fantasyu.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("fantasyu.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_timesoldiers(mbundle_entries):
+def _handle_timesoldiers(bundle_contents):
     out_files = []
 
     # Common
@@ -318,7 +298,7 @@ def _handle_timesoldiers(mbundle_entries):
     func_map['gfx2'] = timesold_gfx2("TimeSoldiers.gfx2.rom", gfx2_file_names)
 
     logger.info("Processing timesold common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
 
     def timesold_maincpu_common(in_file_name, filenames):
@@ -345,13 +325,7 @@ def _handle_timesoldiers(mbundle_entries):
     func_map['gfx1'] = helpers.deinterleave_helper("TimeSoldiers.u.gfx1.rom",
         gfx1_file_names, num_ways=2, word_size=1)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-
-    mame_name = "timesold.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("timesold.zip", bundle_contents, func_map))
 
     # BTLFIELD
     func_map = {}
@@ -369,17 +343,11 @@ def _handle_timesoldiers(mbundle_entries):
     func_map['gfx1'] = helpers.deinterleave_helper("TimeSoldiers.j.gfx1.rom",
         gfx1_file_names, num_ways=2, word_size=1)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-
-    mame_name = "btlfield.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("btlfield.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_munchmobile(mbundle_entries):
+def _handle_munchmobile(bundle_contents):
     out_files = []
 
     # Common
@@ -399,7 +367,7 @@ def _handle_munchmobile(mbundle_entries):
     func_map['gfx4'] = helpers.name_file_helper("joyfulr.gfx4", "h")
 
     logger.info("Processing joyfulr common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # JOYFULR
     func_map = {}
@@ -415,12 +383,7 @@ def _handle_munchmobile(mbundle_entries):
     ]
     func_map['gfx3'] = helpers.equal_split_helper("joyfulr.gfx3", gfx3_file_names)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "joyfulr.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("joyfulr.zip", bundle_contents, func_map))
 
     # MNCHMOBL
     func_map = {}
@@ -436,16 +399,11 @@ def _handle_munchmobile(mbundle_entries):
     ]
     func_map['gfx3'] = helpers.equal_split_helper("mnchmobl.gfx3", gfx3_file_names)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "mnchmobl.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("mnchmobl.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_sasuke(mbundle_entries):
+def _handle_sasuke(bundle_contents):
     out_files = []
 
     func_map = {}
@@ -469,17 +427,11 @@ def _handle_sasuke(mbundle_entries):
     func_map['gfx1'] = helpers.equal_split_helper('sasuke.gfx1', gfx1_file_names)
     func_map['proms'] = helpers.name_file_helper("sasuke.proms", "sasuke.clr")
     func_map['snk6502'] = helpers.name_file_helper("sasuke.snk6502", "sc11")
-
-    mame_name = "sasuke.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("sasuke.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_ozmawars(mbundle_entries):
+def _handle_ozmawars(bundle_contents):
     out_files = []
 
     func_map = {}
@@ -504,17 +456,13 @@ def _handle_ozmawars(mbundle_entries):
         "02.2"
     ]
     func_map['prom'] = helpers.equal_split_helper('moonbase.proms', prom_file_names)
-    mame_name = "ozmawars.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("ozmawars.zip", bundle_contents, func_map))
 
     return out_files
 
-def _handle_paddlemania(mbundle_entries):
+def _handle_paddlemania(bundle_contents):
     func_map = {}
+    out_files = []
 
     prom_file_map = {
         "padlem.a": 0x100,
@@ -551,13 +499,7 @@ def _handle_paddlemania(mbundle_entries):
         "padlem.13n"
     ]
     func_map['gfx1'] = padlem_maincpu('PaddleMania.gfx1.rom', gfx1_file_names)
-    mame_name = "paddlema.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files = []
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("paddlema.zip", bundle_contents, func_map))
 
     return out_files
 
@@ -616,12 +558,7 @@ def _handle_bermuda(bundle_contents):
         "u3bt.1l"
     ]
     func_map['pal'] = utils.simple_palette_helper('WorldWars.j.pal', pal_filenames)
-    mame_name = "bermudata.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("bermudata.zip", bundle_contents, func_map))
 
     return out_files
 
@@ -650,32 +587,12 @@ def _handle_marvin(bundle_contents):
     ]
     func_map['sp'] = helpers.equal_split_helper('MarvinsMaze.sp', sp_filenames)
     func_map['tx'] = helpers.name_file_helper("MarvinsMaze.tx", "s1")
-    pals_meta = [
-        {
-            "filename": "marvmaze.j1",
-            "crc":"0x92f5b06d",
-            "sha": "97979ffb6fb065d9c99da43173180fefb2de1886",
-            "length": 1024
-        },
-        {
-            "filename": "marvmaze.j2",
-            "crc":"0xd2b25665",
-            "sha": "b913b8b9c5ee0a29b5a115b2432c5706979059cf",
-            "length": 1024
-        },
-        {
-            "filename": "marvmaze.j3",
-            "crc":"0xdf9e6005",
-            "sha": "8f633f664c3f8e4f6ca94bee74a68c8fda8873e3",
-            "length": 1024
-        }
+    pals_filenames = [
+        "marvmaze.j2",
+        "marvmaze.j1",
+        "marvmaze.j3"
     ]
-    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'MarvinsMaze.pal')
-    mame_name = "marvins.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    func_map['pal'] = utils.palette_rebuild_helper(pals_filenames, 'MarvinsMaze.pal')
+    out_files.append(utils.build_snk_rom("marvins.zip", bundle_contents, func_map))
 
     return out_files

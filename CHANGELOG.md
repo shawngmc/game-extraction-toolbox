@@ -2,6 +2,7 @@
 - Updated Collections:
   - SNK 40th Anniversary Collection
     - Added partial (broken) ROM extraction support
+    - Fixed most ROMs, including changes from lionel/BuildROM and some further decoding research
 - Improvements:
   - Some tasks now support config flags via '--prop'; see task details for supported flags
   - Reworked tables using TextTable to make code cleaner and tables more reliable

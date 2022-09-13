@@ -1,5 +1,7 @@
+'''Extraction code for arcade ROMS from DLC bundle'''
 import logging
 from gex.lib.tasks import helpers
+from gex.lib.tasks.impl.snk40 import utils
 from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
@@ -44,6 +46,7 @@ out_file_info = [
 ]
 
 def extract(bundle_contents):
+    '''Extract files from DLC bundle'''
     out_files = []
     contents = bundle_contents['dlc']
     out_files.extend(_handle_bbusters(contents))
@@ -59,8 +62,8 @@ def _gfx_split_swap(in_file_ref, filenames):
         chunks = transforms.swap_endian_all(chunks)
         return dict(zip(filenames, chunks))
     return split
-    
-def _handle_bbusters(mbundle_entries):
+
+def _handle_bbusters(bundle_contents):
     # bbusters commons
     func_map = {}
     out_files = []
@@ -89,7 +92,7 @@ def _handle_bbusters(mbundle_entries):
     func_map['ymsnd'] = helpers.name_file_helper('bbusters.ymsnd', 'bb-pcma.l5')
 
     logger.info("Processing bbusters common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # bbusters
     func_map = {}
@@ -114,12 +117,7 @@ def _handle_bbusters(mbundle_entries):
     func_map['maincpu'] = bbusters_maincpu('bbusters.maincpu', maincpu_filenames)
     func_map['ymsnd.deltat'] = helpers.name_file_helper('bbusters.ymsnd.deltat', 'bb-pcmb.l3')
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "bbusters.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("bbusters.zip", bundle_contents, func_map))
 
     # bbustersj
     func_map = {}
@@ -132,12 +130,7 @@ def _handle_bbusters(mbundle_entries):
     func_map['maincpu'] = bbusters_maincpu('bbustersj.maincpu', maincpu_filenames)
     func_map['ymsnd.deltat'] = helpers.name_file_helper('bbusters.ymsnd.deltat', 'bb-pcmb.l3')
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "bbustersj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("bbustersj.zip", bundle_contents, func_map))
 
     # bbustersu
     func_map = {}
@@ -149,15 +142,10 @@ def _handle_bbusters(mbundle_entries):
     ]
     func_map['maincpu'] = bbusters_maincpu('bbustersu.maincpu', maincpu_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "bbustersu.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("bbustersu.zip", bundle_contents, func_map))
     return out_files
 
-def _handle_searchar(mbundle_entries):
+def _handle_searchar(bundle_contents):
     # searchar common
     func_map = {}
     out_files = []
@@ -186,7 +174,7 @@ def _handle_searchar(mbundle_entries):
     func_map['upd'] = helpers.name_file_helper('searchar.upd', 'bh.v1')
 
     logger.info("Processing searchar common files...")
-    common_file_map = helpers.process_rom_files(mbundle_entries, func_map)
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
     # searchar
     func_map = {}
@@ -207,12 +195,7 @@ def _handle_searchar(mbundle_entries):
     ]
     func_map['user1'] = searchar_maincpu('searchar.user1', user_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "searchar.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("searchar.zip", bundle_contents, func_map))
 
     # searcharj
     func_map = {}
@@ -227,12 +210,7 @@ def _handle_searchar(mbundle_entries):
     ]
     func_map['user1'] = searchar_maincpu('searchar.user1', user_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "searcharj.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("searcharj.zip", bundle_contents, func_map))
 
     # searcharu
     func_map = {}
@@ -247,10 +225,5 @@ def _handle_searchar(mbundle_entries):
     ]
     func_map['user1'] = searchar_maincpu('searcharu.user1', user_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
-    mame_name = "searcharu.zip"
-    logger.info(f"Building {mame_name}...")
-    out_files.append(
-        {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
-    )
-    logger.info(f"Extracted {mame_name}.")
+    out_files.append(utils.build_snk_rom("searcharu.zip", bundle_contents, func_map))
     return out_files

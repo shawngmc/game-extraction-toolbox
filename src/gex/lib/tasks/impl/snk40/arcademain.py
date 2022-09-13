@@ -11,19 +11,19 @@ out_file_info = [
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "aso.zip",
-        "notes": []
+        "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "alphamis.zip",
-        "notes": []
+        "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "arian.zip",
-        "notes": []
+        "notes": [2]
     },
     {
         "game": "TNKIII",
@@ -155,7 +155,7 @@ out_file_info = [
         "game": "Guerilla War (B)",
         "system": "Arcade",
         "filename": "gwarb.zip",
-        "notes": []
+        "notes": [2]
     },
     {
         "game": "Guevara (Guerilla War (J))",
@@ -1200,27 +1200,12 @@ def _handle_aso(bundle_contents):
 
         return dict(zip(sp_filenames, chunks))
     func_map['sp'] = aso_sp
-    pals_meta = [
-        {
-            "filename": "mb7122h.12f",
-            "crc":"0x5b0a0059",
-            "sha": "f61e17c8959f1cd6cc12b38f2fb7c6190ebd0e0c",
-            "length": 1024
-        },
-        {
-            "filename": "mb7122h.13f",
-            "crc":"0x37e28dd8",
-            "sha": "681726e490872a574dd0295823a44d64ef3a7b45",
-            "length": 1024
-        },
-        {
-            "filename": "mb7122h.14f",
-            "crc":"0xc3fd1dd3",
-            "sha": "c48030cc458f0bebea0ffccf3d3c43260da6a7fb",
-            "length": 1024
-        }
+    pals_filenames = [
+        "mb7122h.13f",
+        "mb7122h.12f",
+        "mb7122h.14f"
     ]
-    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'ASOArmoredScrumObject.pal')
+    func_map['pal'] = utils.palette_rebuild_helper(pals_filenames, 'ASOArmoredScrumObject.pal')
     ph_files = {
         'pal16l8a-1.bin': 260,
         'pal16l8a-2.bin': 260,
@@ -1318,27 +1303,12 @@ def _handle_athena(bundle_contents):
     func_map['maincpu'] = helpers.custom_split_helper('Athena.0.z80', maincpu_file_map)
     func_map['tx'] = helpers.name_file_helper("Athena.tx", "p11.2d")
     func_map['bg'] = helpers.name_file_helper("Athena.bg", "p10.2b")
-    pals_meta = [
-        {
-            "filename": "1.1c",
-            "crc":"0xa4a4e7dc",
-            "sha": "aa694c2d44dcabc6cfd46307c55c3759eff57236",
-            "length": 1024
-        },
-        {
-            "filename": "2.1b",
-            "crc":"0xd25c9099",
-            "sha": "f3933075cce1255affc61dfefd9559b6e15ed29c",
-            "length": 1024
-        },
-        {
-            "filename": "3.2c",
-            "crc":"0x294279ae",
-            "sha": "b3db5617b83845a6c1abca8f71fa4598758a2a56",
-            "length": 1024
-        }
+    pals_filenames = [
+        "2.1b",
+        "3.2c",
+        "1.1c"
     ]
-    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'Athena.pal')
+    func_map['pal'] = utils.palette_rebuild_helper(pals_filenames, 'Athena.pal')
     out_files.append(utils.build_snk_rom("athena.zip", bundle_contents, func_map))
 
     return out_files
@@ -1371,27 +1341,12 @@ def _handle_tnk3(bundle_contents):
         "p9.7e"
     ]
     func_map['sp'] = helpers.equal_split_helper('TNKIII.sp', sp_filenames)
-    pals_meta = [
-        {
-            "filename": "0.5h",
-            "crc":"0x4662b4c8",
-            "sha": "391c2b8a17ce2e092b46a17fc4170dc1e3bde426",
-            "length": 1024
-        },
-        {
-            "filename": "1.5g",
-            "crc":"0x6d0ac66a",
-            "sha": "e792218ec43dd10473dc020afed8527cf43ea0d0",
-            "length": 1024
-        },
-        {
-            "filename": "2.5f",
-            "crc":"0x34c06bc6",
-            "sha": "bb68e96a8fcc754840420952dab961e03bf6acdd",
-            "length": 1024
-        }
+    pals_filenames = [
+        "1.5g",
+        "2.5f",
+        "0.5h"
     ]
-    func_map['pal'] = utils.palette_rebuild_helper(pals_meta, 'TNKIII.pal')
+    func_map['pal'] = utils.palette_rebuild_helper(pals_filenames, 'TNKIII.pal')
     logger.info("Processing TNK3 common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
