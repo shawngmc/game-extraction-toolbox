@@ -39,9 +39,20 @@ pipx ensurepath
 
 
 ## Usage
-```gametoolbox --help```
+```gextoolbox --help```
 You can get --help on any command or subcommand, for example:
-```gametoolbox file --help```
+```gextoolbox file --help```
+
+### Extracting Known Game Collections
+This tool has scripts for a substantial number of game rereleases.
+To get a list of the known rereleases:
+```gextoolbox tasks list```
+To get details, including configurable properties:
+```gextoolbox tasks details --task TASKNAME```
+To run a task with default settings, extracting into the current directory:
+```gextoolbox tasks extract --task TASKNAME --destdir ./```
+To run a task with a custom input folder and an example property:
+```gextoolbox tasks extract --task TASKNAME --srcdir /path/to/rerelease/ --destdir ./ --prop "include-partials=True"```
 
 ## FAQ
 
@@ -112,3 +123,4 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
+ **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  

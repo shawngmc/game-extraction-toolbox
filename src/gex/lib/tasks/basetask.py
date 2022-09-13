@@ -10,7 +10,7 @@ class BaseTask:
     _default_input_folder = None
     _input_folder_desc = None
     _short_description = None
-    _out_file_list = {}
+    _out_file_list = []
     _out_file_notes = {}
     _prop_info = {}
     _props = {}
@@ -28,7 +28,6 @@ class BaseTask:
             else:
                 key = value
             self._props[key] = value
-        print(self._props)
 
     def get_out_file_info(self):
         '''Return a list of output files'''

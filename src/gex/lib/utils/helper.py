@@ -34,3 +34,6 @@ def load_task(task):
         if not name == 'BaseTask' and issubclass(typedef, BaseTask):
             return typedef()
     return None
+
+def get_task_names():
+    pass
