@@ -1,3 +1,4 @@
+'''Extraction code for Arcade ROMs from SNK40 Main Bundle'''
 import logging
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
@@ -58,25 +59,25 @@ out_file_info = [
         "system": "Arcade",
         "filename": "ikari3j.zip",
         "notes": []
-    },   
+    },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3k.zip",
         "notes": []
-    },   
+    },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3u.zip",
         "notes": []
-    },   
+    },
     {
         "game": "P.O.W",
         "system": "Arcade",
         "filename": "pow.zip",
         "notes": []
-    },   
+    },
     {
         "game": "P.O.W",
         "system": "Arcade",
@@ -100,10 +101,83 @@ out_file_info = [
         "system": "Arcade",
         "filename": "vanguardj.zip",
         "notes": []
+    },
+    {
+        "game": "Guerilla War",
+        "system": "Arcade",
+        "filename": "gwar.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Guerilla War (A)",
+        "system": "Arcade",
+        "filename": "gwara.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Guerilla War (B)",
+        "system": "Arcade",
+        "filename": "gwarb.zip",
+        "notes": []
+    },
+    {
+        "game": "Guevara (Guerilla War (J))",
+        "system": "Arcade",
+        "filename": "gwarj.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Psycho Soldier",
+        "system": "Arcade",
+        "filename": "psychos.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Psycho Soldier (J)",
+        "system": "Arcade",
+        "filename": "psychosj.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Ikari I",
+        "system": "Arcade",
+        "filename": "ikari.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Ikari I (US Alt.)",
+        "system": "Arcade",
+        "filename": "ikaria.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Ikari I (J, No Continues)",
+        "system": "Arcade",
+        "filename": "ikarijp.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Ikari I (No Continues)",
+        "system": "Arcade",
+        "filename": "ikarinc.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Ikari 2 Victory Road",
+        "system": "Arcade",
+        "filename": "victroad.zip",
+        "notes": [2]
+    },
+    {
+        "game": "Dogou Souken (Ikari 2 Victory Road (J))",
+        "system": "Arcade",
+        "filename": "dogosoke.zip",
+        "notes": [2]
     }
 ]
 
 def extract(bundle_contents):
+    '''Extract Arcade ROMs from main bundle'''
     out_files = []
     contents = bundle_contents['main']
     out_files.extend(_handle_prehisle(contents))
@@ -111,6 +185,10 @@ def extract(bundle_contents):
     out_files.extend(_handle_ikari3(contents))
     out_files.extend(_handle_vanguard(contents))
     out_files.extend(_handle_pow(contents))
+    out_files.extend(_handle_psycho(contents))
+    out_files.extend(_handle_victoryroad(contents))
+    out_files.extend(_handle_ikari(contents))
+    out_files.extend(_handle_guerilla(contents))
     return out_files
 
 def _handle_prehisle(mbundle_entries):
@@ -634,4 +712,572 @@ def _handle_pow(mbundle_entries):
         {'filename': mame_name, 'contents': helpers.build_rom(mbundle_entries, func_map)}
     )
     logger.info(f"Extracted {mame_name}.")
+    return out_files
+
+
+def _pal_helper(in_file_ref, pal_filenames):
+    '''Rebuild RGB Palette ROMs'''
+    def palette(in_files):
+        in_data = in_files[in_file_ref]
+        pal_contents = transforms.deinterleave_nibble(in_data, 4)
+        del pal_contents[2] # Remove the spacing entry
+        return dict(zip(pal_filenames, pal_contents))
+    return palette
+
+
+def _handle_victoryroad(bundle_contents):
+    '''Extract Ikari 2 Victory Road'''
+    out_files = []
+
+    # VICTROAD Common
+    func_map = {}
+    func_map['sub'] = helpers.name_file_helper("VictoryRoad.1.z80", "p2.8p")
+    sp32_filenames = [
+        "p11.4m",
+        "p14.2m",
+        "p12.4p",
+        "p15.2p",
+        "p13.4r",
+        "p16.2r"
+    ]
+    func_map['sp32'] = helpers.equal_split_helper('VictoryRoad.sp32', sp32_filenames)
+    bg_filenames = [
+        "p17.4c",
+        "p18.2c",
+        "p19.4b",
+        "p20.2b"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('VictoryRoad.bg', bg_filenames)
+    logger.info("Processing Victory Road common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # DOGOSOKE
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("VictoryRoad.j.0.z80", "p1.4p")
+    func_map['audiocpu'] = helpers.name_file_helper("VictoryRoad.j.2.z80", "p3.7k")
+    adpcm_filenames = [
+        "p4.5e",
+        "p5.5g"
+    ]
+    func_map['adpcm'] = helpers.equal_split_helper('VictoryRoad.j.adpcm', adpcm_filenames)
+    func_map['tx'] = helpers.name_file_helper("VictoryRoad.j.tx", "p7.3b")
+    sp_filenames = [
+        "p8.3d",
+        "p9.3f",
+        "p10.3h"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('VictoryRoad.j.sp', sp_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    ph_files = {
+        "1.1d": 4096,
+        "1.2d": 4096
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    pal_filenames = [
+        "c2.2l",
+        "c1.1k",
+        "c3.1l"
+    ]
+    func_map['pal'] = _pal_helper('VictoryRoad.j.pal', pal_filenames)
+    mame_name = "dogosoke.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # VICTROAD
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("VictoryRoad.0.z80", "p1.4p")
+    func_map['audiocpu'] = helpers.name_file_helper("VictoryRoad.2.z80", "p3.7k")
+    adpcm_filenames = [
+        "p4.5e",
+        "p5.5g"
+    ]
+    func_map['adpcm'] = helpers.equal_split_helper('VictoryRoad.adpcm', adpcm_filenames)
+    func_map['tx'] = helpers.name_file_helper("VictoryRoad.tx", "p7.3b")
+    sp_filenames = [
+        "p8.3d",
+        "p9.3f",
+        "p10.3h"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('VictoryRoad.sp', sp_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    ph_files = {
+        "1.1d": 4096,
+        "1.2d": 4096,
+        "a5004-1.6d": 260,
+        "a5004-4.8s": 260,
+        "a6002-2.5r": 324,
+        "a6002-3.2p": 260
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    pal_filenames = [
+        "c2.2l",
+        "c1.1k",
+        "c3.1l"
+    ]
+    func_map['pal'] = _pal_helper('VictoryRoad.pal', pal_filenames)
+    mame_name = "victroad.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    return out_files
+
+
+def _handle_ikari(bundle_contents):
+    '''Extract Ikari Warriors'''
+    out_files = []
+
+    # Ikari Common
+    func_map = {}
+    sp32_filenames = [
+        "p11.4m",
+        "p14.2m",
+        "p12.4p",
+        "p15.2p",
+        "p13.4r",
+        "p16.2r"
+    ]
+    func_map['sp32'] = helpers.equal_split_helper('IkariWarriors.sp32', sp32_filenames)
+    logger.info("Processing Ikari common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # Ikari Palette Common
+    func_map = {}
+    pal_filenames = [
+        "2.2j",
+        "1.1h",
+        "3.1j"
+    ]
+    func_map['pal'] = _pal_helper('IkariWarriors.pal', pal_filenames)
+    logger.info("Processing Ikari Palette common files...")
+    palette_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # Ikari US Common
+    func_map = {}
+    func_map['tx'] = helpers.name_file_helper("IkariWarriors.tx", "p7.3b")
+    sp_filenames = [
+        "p8.3d",
+        "p9.3f",
+        "p10.3h"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('IkariWarriors.sp', sp_filenames)
+    bg_filenames = [
+        "p17.4d",
+        "p18.2d",
+        "p19.4b",
+        "p20.2b"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('IkariWarriors.bg', bg_filenames)
+    logger.info("Processing Ikari US common files...")
+    us_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # Ikari Sub Common
+    func_map = {}
+    sub_file_map = {
+        "p3.8l": 0x4000,
+        "p4.8k": 0x8000
+    }
+    func_map['audiocpu'] = helpers.custom_split_helper('IkariWarriors.a.1.z80', sub_file_map)
+    logger.info("Processing Ikari Sub common files...")
+    sub_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # Ikari AudioCPU Common
+    func_map = {}
+    audiocpu_file_map = {
+        "p5.6e": 0x4000,
+        "p6.6f": 0x8000
+    }
+    func_map['audiocpu'] = helpers.custom_split_helper('IkariWarriors.a.2.z80', audiocpu_file_map)
+    logger.info("Processing Ikari AudioCPU Common files...")
+    audiocpu_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # IKARIA
+    func_map = {}
+    maincpu_file_map = {
+        "p1.4l": 0x4000,
+        "p2.4k": 0x8000
+    }
+    func_map['maincpu'] = helpers.custom_split_helper('IkariWarriors.a.0.z80', maincpu_file_map)
+    func_map['sub'] = helpers.existing_files_helper(sub_common_file_map)
+    func_map['audiocpu'] = helpers.existing_files_helper(audiocpu_common_file_map)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['us_common'] = helpers.existing_files_helper(us_common_file_map)
+    func_map['palette'] = helpers.existing_files_helper(palette_common_file_map)
+    ph_files = {
+        "ampal16l8a-a5004-3.2n": 260,
+        "ampal16l8a-a5004-4.8s": 260,
+        "pal20l8a-a5004-2.6m": 324,
+        "ampal16r6a-a5004-1.6d": 260
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "ikaria.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # IKARIJP
+    func_map = {}
+    maincpu_file_map = {
+        "p1.4l": 0x4000,
+        "p2.4k": 0x8000
+    }
+    func_map['maincpu'] = helpers.custom_split_helper('IkariWarriors.j.0.z80', maincpu_file_map)
+    sub_file_map = {
+        "p3.8l": 0x4000,
+        "p4.8k": 0x8000
+    }
+    func_map['sub'] = helpers.custom_split_helper('IkariWarriors.j.1.z80', sub_file_map)
+    func_map['audiocpu'] = helpers.existing_files_helper(audiocpu_common_file_map)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['tx'] = helpers.name_file_helper("IkariWarriors.j.tx", "p7.3b")
+    sp_filenames = [
+        "p8.3d",
+        "p9.3f",
+        "p10.3h"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('IkariWarriors.j.sp', sp_filenames)
+    bg_filenames = [
+        "p17.4d",
+        "p18.2d",
+        "p19.4b",
+        "p20.2b"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('IkariWarriors.j.bg', bg_filenames)
+    func_map['palette'] = helpers.existing_files_helper(palette_common_file_map)
+    ph_files = {
+        "ampal16l8a-a5004-3.2n": 260,
+        "ampal16l8a-a5004-4.8s": 260,
+        "pal20l8a-a5004-2.6m": 324,
+        "ampal16r6a-a5004-1.6d": 260
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "ikarijp.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # IKARI
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("IkariWarriors.0.z80", "1.4p")
+    func_map['sub'] = helpers.name_file_helper("IkariWarriors.1.z80", "2.8p")
+    func_map['audiocpu'] = helpers.name_file_helper("IkariWarriors.2.z80", "3.7k")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['us_common'] = helpers.existing_files_helper(us_common_file_map)
+    func_map['palette'] = helpers.common_rename_helper(palette_common_file_map, {
+        "2.2j": "a6002-2.2l",
+        "1.1h": "a6002-1.1k",
+        "3.1j": "a6002-3.1l"
+    })
+    ph_files = {
+        "1.1d": 4096,
+        "1.2d": 4096
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "ikari.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # IKARINC
+    func_map = {}
+    maincpu_file_map = {
+        "p1.4l": 0x4000,
+        "p2.4k": 0x8000
+    }
+    func_map['maincpu'] = helpers.custom_split_helper('IkariWarriors.nc.0.z80', maincpu_file_map)
+    func_map['sub'] = helpers.existing_files_helper(sub_common_file_map)
+    func_map['audiocpu'] = helpers.existing_files_helper(audiocpu_common_file_map)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['us_common'] = helpers.existing_files_helper(us_common_file_map)
+    func_map['palette'] = helpers.existing_files_helper(palette_common_file_map)
+    ph_files = {
+        "ampal16l8a-a5004-3.2n": 260,
+        "ampal16l8a-a5004-4.8s": 260,
+        "pal20l8a-a5004-2.6m": 324,
+        "ampal16r6a-a5004-1.6d": 260
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "ikarinc.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+
+    return out_files
+
+def _handle_guerilla(bundle_contents):
+    '''Extract Guerilla Wars'''
+    out_files = []
+
+    # GWAR Common
+    func_map = {}
+    sp_filenames = [
+        "gw6.2j",
+        "7.2l",
+        "gw8.2m",
+        "gw9.2p"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('GuerillaWar.sp', sp_filenames)
+    sp32_filenames = [
+        "16.2ab",
+        "17.2ad",
+        "14.2y",
+        "15.2aa",
+        "12.2v",
+        "13.2w",
+        "10.2s",
+        "11.2t"
+    ]
+    func_map['sp32'] = helpers.equal_split_helper('GuerillaWar.sp32', sp32_filenames)
+    bg_filenames = [
+        "18.8x",
+        "19.8z",
+        "gw20.8aa",
+        "21.8ac"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('GuerillaWar.bg', bg_filenames)
+    func_map['adpcm'] = helpers.name_file_helper("GuerillaWar.adpcm", "4.2j")
+    logger.info("Processing GWAR common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # GWAR Palette Common
+    func_map = {}
+    pal_filenames = [
+        '2.9v',
+        '3.9w',
+        '1.9u'
+    ]
+    func_map['pal'] = _pal_helper('GuerillaWar.pal', pal_filenames)
+    logger.info("Processing GWAR palette common files...")
+    pal_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # GWAR Audio Common
+    func_map = {}
+    func_map['sub'] = helpers.name_file_helper("GuerillaWar.1.z80", "2.6g")
+    func_map['audiocpu'] = helpers.name_file_helper("GuerillaWar.2.z80", "3.7g")
+    logger.info("Processing GWAR audio common files...")
+    audio_common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # GWAR
+    func_map = {}
+    func_map['tx'] = helpers.name_file_helper("GuerillaWar.tx", "gw5.8p")
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.0.z80", "1.2g")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['audio'] = helpers.existing_files_helper(audio_common_file_map)
+    func_map['pal'] = helpers.existing_files_helper(pal_common_file_map)
+    ph_files = {
+        'l.1x': 0x1000,
+        'l.1w': 0x1000
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "gwar.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # # GWARA
+    func_map = {}
+    func_map['tx'] = helpers.name_file_helper("GuerillaWar.tx", "gv5.3a")
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.a.0.z80", "gv3_1.4p")
+    func_map['sub'] = helpers.name_file_helper("GuerillaWar.a.1.z80", "gv4.8p")
+    func_map['audiocpu'] = helpers.name_file_helper("GuerillaWar.a.2.z80", "gv2.7k")
+    func_map['common'] = helpers.common_rename_helper(common_file_map, {
+        "4.2j": "gv1.5g",
+        "gw6.2j": "gv9.3g",
+        "7.2l": "gv8.3e",
+        "gw8.2m": "gv7.3d",
+        "gw9.2p": "gv6.3b",
+        "16.2ab": "gv14.8l",
+        "17.2ad": "gv15.8n",
+        "14.2y": "gv16.8p",
+        "15.2aa": "gv17.8s",
+        "12.2v": "gv18.7p",
+        "13.2w": "gv19.7s",
+        "10.2s": "gv20.8j",
+        "11.2t": "gv21.8k",
+        "18.8x": "gv13.2a",
+        "19.8z": "gv12.2b",
+        "gw20.8aa": "gv11.2d",
+        "21.8ac": "gv10.2e"
+    })
+    func_map['pal'] = helpers.common_rename_helper(pal_common_file_map, {
+        "3.9w": "1.1k",
+        "1.9u": "2.1l",
+        "2.9v": "3.2l"
+    })
+    ph_files = {
+        'l.1x': 0x1000,
+        'l.1w': 0x1000,
+        'horizon.8j': 0x400,
+        'vertical.8k': 0x400
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "gwara.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # GWARB
+    func_map = {}
+    func_map['tx'] = helpers.name_file_helper("GuerillaWar.tx", "gv5.3a")
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.b.0.z80", "g01")
+    func_map['audio'] = helpers.common_rename_helper(audio_common_file_map, {
+        "2.6g": "g02",
+        "3.7g": "g03"
+    })
+    func_map['common'] = helpers.common_rename_helper(common_file_map, {
+        "4.2j": "gv1.5g",
+        "gw6.2j": "gv9.3g",
+        "7.2l": "gv8.3e",
+        "gw8.2m": "gv7.3d",
+        "gw9.2p": "gv6.3b",
+        "16.2ab": "gv14.8l",
+        "17.2ad": "gv15.8n",
+        "14.2y": "gv16.8p",
+        "15.2aa": "gv17.8s",
+        "12.2v": "gv18.7p",
+        "13.2w": "gv19.7s",
+        "10.2s": "gv20.8j",
+        "11.2t": "gv21.8k",
+        "18.8x": "gv13.2a",
+        "19.8z": "gv12.2b",
+        "gw20.8aa": "gv11.2d",
+        "21.8ac": "gv10.2e"
+    })
+    func_map['pal'] = helpers.common_rename_helper(pal_common_file_map, {
+        "3.9w": "1.1k",
+        "1.9u": "2.1l",
+        "2.9v": "3.2l"
+    })
+    mame_name = "gwarb.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # GWARJ
+    func_map = {}
+    func_map['tx'] = helpers.name_file_helper("GuerillaWar.j.tx", "gw5.8p")
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.j.0.z80", "1.2g")
+    func_map['audio'] = helpers.existing_files_helper(audio_common_file_map)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    func_map['pal'] = helpers.existing_files_helper(pal_common_file_map)
+    ph_files = {
+        'l.1x': 0x1000,
+        'l.1w': 0x1000
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    mame_name = "gwarj.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    return out_files
+
+def _handle_psycho(bundle_contents):
+    '''Extract Psycho Soldier'''
+    out_files = []
+
+    # PSYCHO Common
+    func_map = {}
+    func_map['sub'] = helpers.name_file_helper("PsychoSoldier.1.z80", "ps6.8m")
+    func_map['tx'] = helpers.name_file_helper("PsychoSoldier.tx", "ps8.3a")
+    bg_filenames = [
+        "ps16.1f",
+        "ps15.1d",
+        "ps14.1c",
+        "ps13.1a"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('PsychoSoldier.bg', bg_filenames)
+    sp_filenames = [
+        "ps12.3g",
+        "ps11.3e",
+        "ps10.3c",
+        "ps9.3b"
+    ]
+    func_map['sp'] = helpers.equal_split_helper('PsychoSoldier.sp', sp_filenames)
+    sp32_filenames = [
+        "ps17.10f",
+        "ps18.10h",
+        "ps19.10j",
+        "ps20.10l",
+        "ps21.10m",
+        "ps22.10n",
+        "ps23.10r",
+        "ps24.10s"
+    ]
+    func_map['sp32'] = helpers.equal_split_helper('PsychoSoldier.sp32', sp32_filenames)
+    ph_files = {
+        'horizon.8j': 0x400,
+        'vertical.8k': 0x400
+    }
+    func_map['ph'] = helpers.placeholder_helper(ph_files)
+    pal_filenames = [
+        "psc3.1l",
+        "psc1.1k",
+        "psc2.2k"
+    ]
+    func_map['pal'] = _pal_helper('PsychoSoldier.pal', pal_filenames)
+    logger.info("Processing Psycho Soldier common files...")
+    common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+
+    # PSYCHOS
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("PsychoSoldier.0.z80", "ps7.4m")
+    func_map['sub'] = helpers.name_file_helper("PsychoSoldier.2.z80", "ps5.6j")
+    adpcm_filenames = [
+        "ps1.5b",
+        "ps2.5c",
+        "ps3.5d",
+        "ps4.5f"
+    ]
+    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    mame_name = "psychos.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+    # PSYCHOSJ
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("PsychoSoldier.j.0.z80", "ps7.4m")
+    func_map['sub'] = helpers.name_file_helper("PsychoSoldier.j.2.z80", "ps5.6j")
+    adpcm_filenames = [
+        "ps1.5b",
+        "ps2.5c",
+        "ps3.5d",
+        "ps4.5f"
+    ]
+    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    mame_name = "psychosj.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
     return out_files

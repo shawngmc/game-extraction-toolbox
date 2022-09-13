@@ -103,7 +103,7 @@ def common_picker_helper(common_file_map, src_name, dst_name=None):
     '''Func map helper for picking/renaming a single file from an existing common map'''
     def pick(_):
         out_files = {}
-        
+
         content = common_file_map.get(src_name)
         filename = dst_name if not None else src_name
 
@@ -116,7 +116,7 @@ def common_rename_helper(common_file_map, rename_map):
     '''Func map helper for picking/renaming a single file from an existing common map'''
     def pick(_):
         out_files = {}
-        
+
         for src_name, dst_name in rename_map.items():
             out_files[dst_name] = common_file_map.get(src_name)
 
