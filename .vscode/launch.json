@@ -323,6 +323,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing ZAMN",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "zamn", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\zamn\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1",
             "type": "python",
             "request": "launch",
