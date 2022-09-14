@@ -340,6 +340,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Atari Vault",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "atarivault", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\atarivault\"",
+                "--prop",
+                "include-arcade-partials=True"
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1",
             "type": "python",
             "request": "launch",
