@@ -63,21 +63,21 @@ games = [
         "files": [
             "CanyonBomber.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Centipede",
         "files": [
             "Centipede.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Crystal Castles",
         "files": [
             "Crystal Castles.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Gravitar",
@@ -106,7 +106,7 @@ games = [
             "Liberator.bin",
             "Liberator Projection.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Lunar Lander",
@@ -141,7 +141,7 @@ games = [
         "files": [
             "Millipede.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Missile Command",
@@ -164,7 +164,7 @@ games = [
             "Red Baron.bin"
         ],
         "mame_name": "redbaron",
-        "unextracted": True
+        "partial": True
         # "split": {
         #     "037007.01e": 2048,
         #     "037000.01e": 2048,
@@ -197,21 +197,21 @@ games = [
         "files": [
             "Sprint2.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Stunt Cycle",
         "files": [
             "stunt.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Super Breakout",
         "files": [
             "Super Breakout.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Tempest",
@@ -233,99 +233,110 @@ games = [
         "files": [
             "Warlords.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Avalanche",
         "files": [
             "Avalanche.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Atari Baseball",
         "files": [
             "AtariBaseball.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Atari Basketball",
         "files": [
             "AtariBasketball.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Destroyer",
         "files": [
             "Destroyer.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Dominos",
         "files": [
             "Dominos.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Fire Truck",
         "files": [
             "FireTruck.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Atari Football",
         "files": [
             "AtariFootball.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Maze Invaders",
         "files": [
-            "MazeInvaders.bin"
+            "MazeInvaders.bin",
+            "MazeInvaders.bmp"
         ],
-        "unextracted": True
+        "mame_name": "mazeinv",
+        "handler": "_handle_mazeinv",
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Monte Carlo",
         "files": [
             "MonteCarlo.bin",
-            "MonteCarloColors.bin"
+            "MonteCarloColors.bin",
+            "MonteCarloSprites1.bmp",
+            "MonteCarloSprites2.bmp",
+            "MonteCarloTiles1.bmp",
+            "MonteCarloTiles2.bmp"
         ],
-        "unextracted": True
+        "mame_name": "montecar",
+        "handler": "_handle_montecar",
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Pool Shark",
         "files": [
             "Poolshark.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Sky Diver",
         "files": [
             "SkydiverROM.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Atari Soccer",
         "files": [
             "AtariSoccer.bin"
         ],
-        "unextracted": True
+        "partial": True
     },
     {
         "name": "Super Bug",
         "files": [
             "SuperBug.bin"
         ],
-        "unextracted": True
+        "partial": True
     }
 ]
 
@@ -372,6 +383,67 @@ def _handle_mhavoc(in_dir, game_desc):
         'contents': helpers.build_zip(zip_files)
     }]
 
+def _handle_montecar(in_dir, game_desc):
+    zip_files = {}
+
+    # MonteCarlo.bin
+    with open(os.path.join(in_dir, "MonteCarlo.bin"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        chunks = transforms.equal_split(contents, 4)
+        zip_files['35763-01.h1'] = chunks[0]
+        zip_files['35763-01.f1'] = chunks[1]
+        zip_files['35763-01.d1'] = chunks[2]
+        zip_files['35763-01.c1'] = chunks[3]
+
+    # MonteCarloColors.bin
+    with open(os.path.join(in_dir, "MonteCarloColors.bin"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        zip_files['35785-01.e7'] = contents
+
+    # Bitmaps    
+    bitmaps = [
+        "MonteCarloSprites1.bmp",
+        "MonteCarloSprites2.bmp",
+        "MonteCarloTiles1.bmp",
+        "MonteCarloTiles2.bmp"
+    ]
+    for bitmap_file in bitmaps:
+        with open(os.path.join(in_dir, bitmap_file), "rb") as curr_file:
+            contents = bytearray(curr_file.read())
+            zip_files[bitmap_file] = contents
+
+    return [{
+        'filename': f"{game_desc['mame_name']}.zip",
+        'contents': helpers.build_zip(zip_files)
+    }]
+
+def _handle_mazeinv(in_dir, game_desc):
+    zip_files = {}
+
+    # MazeInvaders.bin
+    with open(os.path.join(in_dir, "MazeInvaders.bin"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        chunks = transforms.equal_split(contents, 5)
+        zip_files['a'] = chunks[0]
+        zip_files['b'] = chunks[1]
+        zip_files['c'] = chunks[2]
+        zip_files['d'] = chunks[3]
+        zip_files['e'] = chunks[4]
+
+    # Bitmaps    
+    bitmaps = [
+        "MazeInvaders.bmp",
+    ]
+    for bitmap_file in bitmaps:
+        with open(os.path.join(in_dir, bitmap_file), "rb") as curr_file:
+            contents = bytearray(curr_file.read())
+            zip_files[bitmap_file] = contents
+
+    return [{
+        'filename': f"{game_desc['mame_name']}.zip",
+        'contents': helpers.build_zip(zip_files)
+    }]
+
 
 def _handle_standard(in_dir, game_desc):
     out_files = []
@@ -407,17 +479,22 @@ def extract_partials(in_dir, out_dir):
                             "StreamingAssets", "FOCAL_Emulator")
 
     output_files = []
+    funcs = globals()
     for game in games:
-        if 'unextracted' in game and game['unextracted'] is True:
-            logger.info(f"Copying unextractable {game['name']}...")
-            for file in game['files']:
-                file_path = os.path.join(rom_path, file)
-                try:
-                    shutil.copyfile(file_path, os.path.join(out_dir, file))
-                except Exception as _:
-                    logger.warning(f'Error while processing {file_path}!')
-
-    logger.info("Saving games...")
+        if 'partial' in game and game['partial'] is True:
+            logger.info(f"Copying partially extracted {game['name']}...")
+            
+            if 'handler' in game:
+                handler_func = funcs[game['handler']]
+                output_files += handler_func(rom_path, game)
+            else:
+                for file in game['files']:
+                    file_path = os.path.join(rom_path, file)
+                    try:
+                        shutil.copyfile(file_path, os.path.join(out_dir, file))
+                    except Exception as _:
+                        logger.warning(f'Error while processing {file_path}!')
+                        
     for output_file in output_files:
         logger.info(f"Writing {output_file['filename']}...")
         out_path = os.path.join(out_dir, output_file['filename'])
@@ -433,7 +510,7 @@ def extract(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if 'unextracted' not in game or game['unextracted'] is False:
+        if 'partial' not in game or game['partial'] is False:
             logger.info(f"Extracting {game['name']}...")
             if 'handler' in game:
                 handler_func = funcs[game['handler']]

@@ -67,17 +67,19 @@ ROM files are in the installation folder, but arcade ROMS need rebuilt and only 
         "2": "This ROM has a CRC mismatch, but appears to work fine.",
         "3": "This Arcade ROM is currently non-functional - too small, etc.",
         "4": "There does not appear to be a ROM for this title",
+        "5": "This ROM cannot be extracted.",
+        "6": "The sprites and/or tiles for this ROM have been converted to bitmaps."
     }
 
     def execute(self, in_dir, out_dir):
-        # if self._props.get('include-2600'):
-        #     atari2600.copy(in_dir, out_dir)
-        # if self._props.get('include-5200'):
-        #     atari5200.copy(in_dir, out_dir)
-        # if self._props.get('include-prototype'):
-        #     prototype2600.copy(in_dir, out_dir)
-        # if self._props.get('include-mnetwork'):
-        #     mnetwork.copy(in_dir, out_dir)
+        if self._props.get('include-2600'):
+            atari2600.copy(in_dir, out_dir)
+        if self._props.get('include-5200'):
+            atari5200.copy(in_dir, out_dir)
+        if self._props.get('include-prototype'):
+            prototype2600.copy(in_dir, out_dir)
+        if self._props.get('include-mnetwork'):
+            mnetwork.copy(in_dir, out_dir)
         if self._props.get('include-arcade'):
             arcade.extract(in_dir, out_dir)
         if self._props.get('include-arcade-partials'):
