@@ -58,21 +58,21 @@ games = [
         },
         "notes": [2]
     },
-    { 
+    {
         "name": "Canyon Bomber",
         "files": [
             "CanyonBomber.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Centipede",
         "files": [
             "Centipede.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Crystal Castles",
         "files": [
             "Crystal Castles.bin"
@@ -100,7 +100,7 @@ games = [
         },
         "notes": []
     },
-    { # Might be able to use combined
+    {  # Might be able to use combined
         "name": "Liberator",
         "files": [
             "Liberator.bin",
@@ -125,7 +125,7 @@ games = [
         ],
         "notes": [2]
     },
-    { # Might be able to use combined
+    {  # Might be able to use combined
         "name": "Major Havoc",
         "files": [
             "Major Havoc alpha banks.bin",
@@ -136,7 +136,7 @@ games = [
         "mame_name": "mhavoc",
         "handler": "_handle_mhavoc"
     },
-    { 
+    {
         "name": "Millipede",
         "files": [
             "Millipede.bin"
@@ -157,8 +157,8 @@ games = [
             "035824.02",
             "035825.02"
         ]
-    }, 
-    { # Appears to be redbarona variant instead of redbaron - try making a MAME current package? 
+    },
+    {  # Appears to be redbarona variant instead of redbaron - try making a MAME current package?
         "name": "Red Baron",
         "files": [
             "Red Baron.bin"
@@ -175,7 +175,7 @@ games = [
         #     "036995.01e": 2048,
         #     "037587.01": 4096
         # }
-    }, 
+    },
     {
         "name": "Space Duel",
         "files": [
@@ -192,21 +192,21 @@ games = [
             "136006.105": 4096
         }
     },
-    { 
+    {
         "name": "Sprint2",
         "files": [
             "Sprint2.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Stunt Cycle",
         "files": [
             "stunt.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Super Breakout",
         "files": [
             "Super Breakout.bin"
@@ -228,70 +228,70 @@ games = [
             "138.002"
         ]
     },
-    { 
+    {
         "name": "Warlords",
         "files": [
             "Warlords.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Avalanche",
         "files": [
             "Avalanche.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Atari Baseball",
         "files": [
             "AtariBaseball.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Atari Basketball",
         "files": [
             "AtariBasketball.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Destroyer",
         "files": [
             "Destroyer.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Dominos",
         "files": [
             "Dominos.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Fire Truck",
         "files": [
             "FireTruck.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Atari Football",
         "files": [
             "AtariFootball.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Maze Invaders",
         "files": [
             "MazeInvaders.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Monte Carlo",
         "files": [
             "MonteCarlo.bin",
@@ -299,28 +299,28 @@ games = [
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Pool Shark",
         "files": [
             "Poolshark.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Sky Diver",
         "files": [
             "SkydiverROM.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Atari Soccer",
         "files": [
             "AtariSoccer.bin"
         ],
         "unextracted": True
     },
-    { 
+    {
         "name": "Super Bug",
         "files": [
             "SuperBug.bin"
@@ -328,6 +328,7 @@ games = [
         "unextracted": True
     }
 ]
+
 
 def get_game_list():
     '''Transform the game map for documentation'''
@@ -372,7 +373,6 @@ def _handle_mhavoc(in_dir, game_desc):
     }]
 
 
-
 def _handle_standard(in_dir, game_desc):
     out_files = []
     with open(os.path.join(in_dir, game_desc['files'][0]), "rb") as curr_file:
@@ -400,9 +400,11 @@ def _handle_standard(in_dir, game_desc):
         })
     return out_files
 
+
 def extract_partials(in_dir, out_dir):
     '''Extract Atari Arcade ROMs'''
-    rom_path = os.path.join(in_dir, "AtariVault_Data", "StreamingAssets", "FOCAL_Emulator")
+    rom_path = os.path.join(in_dir, "AtariVault_Data",
+                            "StreamingAssets", "FOCAL_Emulator")
 
     output_files = []
     for game in games:
@@ -414,7 +416,7 @@ def extract_partials(in_dir, out_dir):
                     shutil.copyfile(file_path, os.path.join(out_dir, file))
                 except Exception as _:
                     logger.warning(f'Error while processing {file_path}!')
-            
+
     logger.info("Saving games...")
     for output_file in output_files:
         logger.info(f"Writing {output_file['filename']}...")
@@ -425,7 +427,8 @@ def extract_partials(in_dir, out_dir):
 
 def extract(in_dir, out_dir):
     '''Extract Atari Arcade ROMs'''
-    rom_path = os.path.join(in_dir, "AtariVault_Data", "StreamingAssets", "FOCAL_Emulator")
+    rom_path = os.path.join(in_dir, "AtariVault_Data",
+                            "StreamingAssets", "FOCAL_Emulator")
 
     output_files = []
     funcs = globals()
