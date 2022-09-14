@@ -10,6 +10,13 @@ def merge(chunks):
         new_content += chunk
     return new_content
 
+def pad(contents, new_length, pad_byte=b'\0'):
+    '''Pad a blob to a specific size'''
+    new_content = bytearray()
+    new_content.extend(contents)
+    pad_size = new_length - len(contents)
+    new_content.extend(bytearray(pad_byte * pad_size))
+    return new_content
 
 def custom_split(contents, chunk_sizes):
     '''Split a blob into an array of blobs with specified sizes'''
