@@ -359,6 +359,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing AGS Dig Dug",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_digdug", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_digdug\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1",
             "type": "python",
             "request": "launch",
