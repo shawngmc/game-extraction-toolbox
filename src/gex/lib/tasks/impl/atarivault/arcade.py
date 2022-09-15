@@ -1,7 +1,6 @@
 '''Extraction code for Atari Arcade ROMs'''
 import logging
 import os
-import shutil
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
 
@@ -61,22 +60,29 @@ games = [
     {
         "name": "Canyon Bomber",
         "files": [
-            "CanyonBomber.bin"
+            "CanyonBomber.bin",
+            "CanyonBomberSprites.bmp",
+            "CanyonBomberTiles.bmp"
         ],
+        "mame_name": "canyon",
         "partial": True
     },
     {
         "name": "Centipede",
         "files": [
-            "Centipede.bin"
+            "Centipede.bin",
+            "Centipede.bmp"
         ],
+        "mame_name": "centiped",
         "partial": True
     },
     {
         "name": "Crystal Castles",
         "files": [
-            "Crystal Castles.bin"
+            "Crystal Castles.bin",
+            "Crystal Castles.bmp"
         ],
+        "mame_name": "ccastles",
         "partial": True
     },
     {
@@ -104,8 +110,10 @@ games = [
         "name": "Liberator",
         "files": [
             "Liberator.bin",
+            "Liberator.bmp",
             "Liberator Projection.bin"
         ],
+        "mame_name": "liberatr",
         "partial": True
     },
     {
@@ -125,7 +133,7 @@ games = [
         ],
         "notes": [2]
     },
-    {  # Might be able to use combined
+    {
         "name": "Major Havoc",
         "files": [
             "Major Havoc alpha banks.bin",
@@ -139,8 +147,10 @@ games = [
     {
         "name": "Millipede",
         "files": [
-            "Millipede.bin"
+            "Millipede.bin",
+            "Millipede.bmp"
         ],
+        "mame_name": "milliped",
         "partial": True
     },
     {
@@ -195,22 +205,21 @@ games = [
     {
         "name": "Sprint2",
         "files": [
-            "Sprint2.bin"
+            "Sprint2.bin",
+            "Sprint2Sprites.bmp",
+            "Sprint2Tiles.bmp"
         ],
-        "partial": True
-    },
-    {
-        "name": "Stunt Cycle",
-        "files": [
-            "stunt.bin"
-        ],
+        "mame_name": "sprint2",
         "partial": True
     },
     {
         "name": "Super Breakout",
         "files": [
-            "Super Breakout.bin"
+            "Super Breakout.bin",
+            "Super Breakout vector.bmp",
+            "Super Breakout.bmp"
         ],
+        "mame_name": "sbrkout",
         "partial": True
     },
     {
@@ -231,8 +240,11 @@ games = [
     {
         "name": "Warlords",
         "files": [
-            "Warlords.bin"
+            "Warlords.bin",
+            "Warlords Background.bmp",
+            "Warlords.bmp"
         ],
+        "mame_name": "warlords",
         "partial": True
     },
     {
@@ -240,48 +252,71 @@ games = [
         "files": [
             "Avalanche.bin"
         ],
-        "partial": True
+        "mame_name": "avalnche",
+        "handler": "_handle_avalnche"
     },
     {
         "name": "Atari Baseball",
         "files": [
-            "AtariBaseball.bin"
+            "AtariBaseball.bin",
+            "AtariBaseballTiles1.bmp",
+            "AtariBaseballTiles2.bmp"
         ],
-        "partial": True
+        "mame_name": "abaseb",
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Atari Basketball",
         "files": [
-            "AtariBasketball.bin"
+            "AtariBasketball.bin",
+            "AtariBasketballTiles.bmp",
+            "AtariBasketballSprites.bmp"
         ],
+        "mame_name": "bsktball",
         "partial": True
     },
     {
         "name": "Destroyer",
         "files": [
-            "Destroyer.bin"
+            "Destroyer.bin",
+            "DestroyerSprites1.bmp",
+            "DestroyerSprites2.bmp",
+            "DestroyerTiles.bmp",
+            "DestroyerWaves.bmp"
         ],
+        "mame_name": "destroyr1",
         "partial": True
     },
     {
         "name": "Dominos",
         "files": [
-            "Dominos.bin"
+            "Dominos.bin",
+            "DominosTiles.bmp"
         ],
+        "mame_name": "dominos",
         "partial": True
     },
     {
         "name": "Fire Truck",
         "files": [
-            "FireTruck.bin"
+            "FireTruck.bin",
+            "FireTruckSprites1.bmp",
+            "FireTruckSprites2.bmp",
+            "FireTruckTiles1.bmp",
+            "FireTruckTiles2.bmp"
         ],
+        "mame_name": "firetrk",
         "partial": True
     },
     {
         "name": "Atari Football",
         "files": [
-            "AtariFootball.bin"
+            "AtariFootball.bin",
+            "AtariFootballTiles1.bmp",
+            "AtariFootballTiles2.bmp"
         ],
+        "mame_name": "atarifb",
         "partial": True
     },
     {
@@ -313,29 +348,43 @@ games = [
     {
         "name": "Pool Shark",
         "files": [
-            "Poolshark.bin"
+            "Poolshark.bin",
+            "PoolsharkSprites.bmp",
+            "PoolsharkTiles.bmp"
         ],
+        "mame_name": "poolshrk",
         "partial": True
     },
     {
         "name": "Sky Diver",
         "files": [
-            "SkydiverROM.bin"
+            "SkydiverROM.bin",
+            "SkydiverSprites.bmp",
+            "SkydiverTiles.bmp"
         ],
+        "mame_name": "skydiver",
         "partial": True
     },
     {
         "name": "Atari Soccer",
         "files": [
-            "AtariSoccer.bin"
+            "AtariSoccer.bin",
+            "AtariSoccerSprites.bmp",
+            "AtariSoccerTiles1.bmp",
+            "AtariSoccerTiles2.bmp"
         ],
+        "mame_name": "soccer",
         "partial": True
     },
     {
         "name": "Super Bug",
         "files": [
-            "SuperBug.bin"
+            "SuperBug.bin",
+            "SuperBugSprites.bmp",
+            "SuperBugTiles1.bmp",
+            "SuperBugTiles2.bmp"
         ],
+        "mame_name": "superbug",
         "partial": True
     }
 ]
@@ -344,7 +393,7 @@ games = [
 def get_game_list():
     '''Transform the game map for documentation'''
     return map(lambda x: {
-        'filename': f"{x['mame_name']}.zip" if 'mame_name' in x else "N/A",
+        'filename': f"{x['mame_name']}{'-partial' if 'partial' in x and x['partial'] is True else ''}.zip",
         'game': x['name'],
         'system': "Arcade",
         "notes": [[1] if 'mame_name' in x else None] + [[5] if 'unextractable' in x and x['unextractable'] else None] + [x['notes'] if 'notes' in x else None]}, games)
@@ -413,7 +462,7 @@ def _handle_montecar(in_dir, game_desc):
             zip_files[bitmap_file] = contents
 
     return [{
-        'filename': f"{game_desc['mame_name']}.zip",
+        'filename': f"{game_desc['mame_name']}-partial.zip",
         'contents': helpers.build_zip(zip_files)
     }]
 
@@ -440,10 +489,34 @@ def _handle_mazeinv(in_dir, game_desc):
             zip_files[bitmap_file] = contents
 
     return [{
-        'filename': f"{game_desc['mame_name']}.zip",
+        'filename': f"{game_desc['mame_name']}-partial.zip",
         'contents': helpers.build_zip(zip_files)
     }]
 
+def _handle_avalnche(in_dir, game_desc):
+    # Avalanche.bin
+    with open(os.path.join(in_dir, "Avalanche.bin"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+
+        chunks = transforms.equal_split(contents, 3)
+        new_chunks = []
+        for chunk in chunks:
+            new_chunks.extend(transforms.deinterleave_nibble(chunk, 2))
+
+        filenames = [
+            "30612.d2",
+            "30615.d3",
+            "30613.e2",
+            "30616.e3",
+            "30611.c2",
+            "30614.c3",
+        ]
+        zip_files = dict(zip(filenames, new_chunks))
+
+    return [{
+        'filename': f"{game_desc['mame_name']}.zip",
+        'contents': helpers.build_zip(zip_files)
+    }]
 
 def _handle_standard(in_dir, game_desc):
     out_files = []
@@ -474,7 +547,7 @@ def _handle_standard(in_dir, game_desc):
 
 
 def extract_partials(in_dir, out_dir):
-    '''Extract Atari Arcade ROMs'''
+    '''Extract Partial Atari Arcade ROMs'''
     rom_path = os.path.join(in_dir, "AtariVault_Data",
                             "StreamingAssets", "FOCAL_Emulator")
 
@@ -488,12 +561,14 @@ def extract_partials(in_dir, out_dir):
                 handler_func = funcs[game['handler']]
                 output_files += handler_func(rom_path, game)
             else:
-                for file in game['files']:
-                    file_path = os.path.join(rom_path, file)
-                    try:
-                        shutil.copyfile(file_path, os.path.join(out_dir, file))
-                    except Exception as _:
-                        logger.warning(f'Error while processing {file_path}!')
+                zip_files = {}
+                for filename in game['files']:
+                    with open(os.path.join(rom_path, filename), "rb") as curr_file:
+                        contents = bytearray(curr_file.read())
+                        zip_files[filename] = contents
+                
+                with open(os.path.join(out_dir, f"{game['mame_name']}-partial.zip"), "wb") as out_file:
+                    out_file.write(helpers.build_zip(zip_files))
                         
     for output_file in output_files:
         logger.info(f"Writing {output_file['filename']}...")
