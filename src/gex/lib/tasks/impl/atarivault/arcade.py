@@ -3,9 +3,9 @@ import logging
 import os
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
+from gex.lib.utils import gfx_rebuilder
 
 logger = logging.getLogger('gextoolbox')
-
 
 games = [
     {
@@ -204,6 +204,7 @@ games = [
             "Sprint2Tiles.bmp"
         ],
         "mame_name": "sprint2",
+        "handler": "_handle_sprint2",
         "partial": True,
         "notes": [6]
     },
@@ -493,6 +494,65 @@ def _handle_redbaron(in_dir, game_desc):
         'contents': helpers.build_zip(zip_files)
     }]
 
+def _handle_sprint2(in_dir, game_desc):
+    zip_files = {}
+
+    # Sprint2.bin
+    with open(os.path.join(in_dir, "Sprint2.bin"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        chunks = transforms.equal_split(contents, 4)
+        zip_files['6290-01.b1'] = chunks[0]
+        zip_files['6291-01.c1'] = chunks[1]
+        zip_files['6404.d1'] = chunks[2]
+        zip_files['6405.e1'] = chunks[3]
+
+    # Sprint2Sprites.bmp
+    with open(os.path.join(in_dir, "Sprint2Sprites.bmp"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        contents = gfx_rebuilder.reverse_bmp(contents)
+        _SPRINT2_CAR_LAYOUT = {
+            'width': 16,
+            'height': 8,
+            'total': 32,
+            'planes': 1,
+            'planeoffset': [0],
+            'xoffset': [0x7, 0x6, 0x5, 0x4, 0x3, 0x2, 0x1, 0x0,
+                    0xf, 0xe, 0xd, 0xc, 0xb, 0xa, 0x9, 0x8],
+            'yoffset': [0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70],
+            'charincrement': 0x80
+        }
+        contents = gfx_rebuilder.reencode_gfx(contents, _SPRINT2_CAR_LAYOUT)
+        chunks = transforms.deinterleave_nibble(contents, 2)
+        zip_files['6399-01.j6'] = chunks[0]
+        zip_files['6398-01.k6'] = chunks[1]
+
+    # Sprint2Tiles.bmp
+    with open(os.path.join(in_dir, "Sprint2Tiles.bmp"), "rb") as curr_file:
+        contents = bytearray(curr_file.read())
+        contents = gfx_rebuilder.reverse_bmp(contents)
+        _SPRINT2_TILE_LAYOUT = {
+            'width': 8,
+            'height': 8,
+            'total': 64,
+            'planes': 1,
+            'planeoffset': [0],
+            'xoffset': [0, 1, 2, 3, 4, 5, 6, 7],
+            'yoffset': [0x00, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38],
+            'charincrement': 0x40
+        }
+        contents = gfx_rebuilder.reencode_gfx(contents, _SPRINT2_TILE_LAYOUT)
+        chunks = transforms.deinterleave_nibble(contents, 2)
+        zip_files['6396-01.p4'] = chunks[0]
+        zip_files['6397-01.r4'] = chunks[1]
+
+        zip_files['6400-01.m2'] = bytearray(0x100)
+        zip_files['6401-01.e2'] = bytearray(0x20)
+
+    return [{
+        'filename': f"{game_desc['mame_name']}.zip",
+        'contents': helpers.build_zip(zip_files)
+    }]
+    
 def _handle_avalnche(in_dir, game_desc):
     # Avalanche.bin
     with open(os.path.join(in_dir, "Avalanche.bin"), "rb") as curr_file:
@@ -544,7 +604,6 @@ def _handle_standard(in_dir, game_desc):
             'contents': helpers.build_zip(dict(zip(filenames, chunks)))
         })
     return out_files
-
 
 def extract_partials(in_dir, out_dir):
     '''Extract Partial Atari Arcade ROMs'''
