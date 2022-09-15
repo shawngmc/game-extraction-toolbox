@@ -74,6 +74,7 @@ game_name_map = {
     'starship.bin': 'Star Ship',
     'steplchs.bin': 'Steeplechase',
     'stlrtrak.bin': 'Stellar Track',
+    'stunt.bin': 'Stunt Cycle',
     'streetrc.bin': 'Street Racer',
     'subcmdr.bin': 'Submarine Commander',
     'sprbaseb.bin': 'Super Baseball',
