@@ -65,7 +65,8 @@ games = [
             "CanyonBomberTiles.bmp"
         ],
         "mame_name": "canyon",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Centipede",
@@ -74,7 +75,8 @@ games = [
             "Centipede.bmp"
         ],
         "mame_name": "centiped",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Crystal Castles",
@@ -106,7 +108,7 @@ games = [
         },
         "notes": []
     },
-    {  # Might be able to use combined
+    {
         "name": "Liberator",
         "files": [
             "Liberator.bin",
@@ -114,7 +116,8 @@ games = [
             "Liberator Projection.bin"
         ],
         "mame_name": "liberatr",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Lunar Lander",
@@ -151,7 +154,8 @@ games = [
             "Millipede.bmp"
         ],
         "mame_name": "milliped",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Missile Command",
@@ -168,23 +172,13 @@ games = [
             "035825.02"
         ]
     },
-    {  # Appears to be redbarona variant instead of redbaron - try making a MAME current package?
+    {
         "name": "Red Baron",
         "files": [
             "Red Baron.bin"
         ],
         "mame_name": "redbaron",
-        "partial": True
-        # "split": {
-        #     "037007.01e": 2048,
-        #     "037000.01e": 2048,
-        #     "037006.01e": 2048,
-        #     "036998.01e": 2048,
-        #     "036997.01e": 2048,
-        #     "036996.01e": 2048,
-        #     "036995.01e": 2048,
-        #     "037587.01": 4096
-        # }
+        "handler": "_handle_redbaron"
     },
     {
         "name": "Space Duel",
@@ -202,7 +196,7 @@ games = [
             "136006.105": 4096
         }
     },
-    {
+    { # Look at avault2mame.js
         "name": "Sprint2",
         "files": [
             "Sprint2.bin",
@@ -210,7 +204,8 @@ games = [
             "Sprint2Tiles.bmp"
         ],
         "mame_name": "sprint2",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Super Breakout",
@@ -220,7 +215,8 @@ games = [
             "Super Breakout.bmp"
         ],
         "mame_name": "sbrkout",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Tempest",
@@ -245,7 +241,8 @@ games = [
             "Warlords.bmp"
         ],
         "mame_name": "warlords",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Avalanche",
@@ -295,7 +292,8 @@ games = [
             "DominosTiles.bmp"
         ],
         "mame_name": "dominos",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Fire Truck",
@@ -307,7 +305,8 @@ games = [
             "FireTruckTiles2.bmp"
         ],
         "mame_name": "firetrk",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Atari Football",
@@ -317,7 +316,8 @@ games = [
             "AtariFootballTiles2.bmp"
         ],
         "mame_name": "atarifb",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Maze Invaders",
@@ -326,7 +326,6 @@ games = [
             "MazeInvaders.bmp"
         ],
         "mame_name": "mazeinv",
-        "handler": "_handle_mazeinv",
         "partial": True,
         "notes": [6]
     },
@@ -353,7 +352,8 @@ games = [
             "PoolsharkTiles.bmp"
         ],
         "mame_name": "poolshrk",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Sky Diver",
@@ -363,7 +363,8 @@ games = [
             "SkydiverTiles.bmp"
         ],
         "mame_name": "skydiver",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Atari Soccer",
@@ -374,7 +375,8 @@ games = [
             "AtariSoccerTiles2.bmp"
         ],
         "mame_name": "soccer",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     },
     {
         "name": "Super Bug",
@@ -385,7 +387,8 @@ games = [
             "SuperBugTiles2.bmp"
         ],
         "mame_name": "superbug",
-        "partial": True
+        "partial": True,
+        "notes": [6]
     }
 ]
 
@@ -466,30 +469,27 @@ def _handle_montecar(in_dir, game_desc):
         'contents': helpers.build_zip(zip_files)
     }]
 
-def _handle_mazeinv(in_dir, game_desc):
+def _handle_redbaron(in_dir, game_desc):
     zip_files = {}
 
-    # MazeInvaders.bin
-    with open(os.path.join(in_dir, "MazeInvaders.bin"), "rb") as curr_file:
+    # Red Baron.bin
+    with open(os.path.join(in_dir, "Red Baron.bin"), "rb") as curr_file:
         contents = bytearray(curr_file.read())
-        chunks = transforms.equal_split(contents, 5)
-        zip_files['a'] = chunks[0]
-        zip_files['b'] = chunks[1]
-        zip_files['c'] = chunks[2]
-        zip_files['d'] = chunks[3]
-        zip_files['e'] = chunks[4]
+        chunks = transforms.equal_split(contents, 9)
+        zip_files['35763-01.h1'] = chunks[0]
 
-    # Bitmaps    
-    bitmaps = [
-        "MazeInvaders.bmp",
-    ]
-    for bitmap_file in bitmaps:
-        with open(os.path.join(in_dir, bitmap_file), "rb") as curr_file:
-            contents = bytearray(curr_file.read())
-            zip_files[bitmap_file] = contents
+
+        zip_files["037587.01"] = transforms.merge([chunks[0] + chunks[2]])
+        zip_files["037000.01e"] = chunks[1]
+        zip_files["036998.01e"] = chunks[3]
+        zip_files["036997.01e"] = chunks[4]
+        zip_files["036996.01e"] = chunks[5]
+        zip_files["036995.01e"] = chunks[6]
+        zip_files["037006.01e"] = chunks[7]
+        zip_files["037007.01e"] = chunks[8]
 
     return [{
-        'filename': f"{game_desc['mame_name']}-partial.zip",
+        'filename': f"{game_desc['mame_name']}.zip",
         'contents': helpers.build_zip(zip_files)
     }]
 

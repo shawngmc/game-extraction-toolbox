@@ -12,6 +12,7 @@ class AtariVaultTask(BaseTask):
     _title = "Atari Vault"
     _details_markdown = '''
 ROM files are in the installation folder, but arcade ROMS need rebuilt and only work in MAME 2003.
+Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107ed80e0a6c8c5b887c4/raw/d3cae583024f44c06d69a55d867066084838c2f7/avault2mame.js
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Atari Vault")
     _input_folder_desc = "Atari Vault install folder"
@@ -66,7 +67,7 @@ ROM files are in the installation folder, but arcade ROMS need rebuilt and only 
         "1": "Arcade ROMs require MAME 2003.",
         "2": "This ROM has a CRC mismatch, but appears to work fine.",
         "3": "This Arcade ROM is currently non-functional - too small, etc.",
-        "4": "There does not appear to be a ROM for this title",
+        "4": "This title uses TTL logic and does not have an associated ROM.",
         "5": "This ROM cannot be extracted.",
         "6": "The sprites and/or tiles for this ROM have been converted to bitmaps."
     }

@@ -106,6 +106,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
  **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  

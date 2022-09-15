@@ -1,8 +1,6 @@
 # Roadmap
 
 ## Future / Other Tools
-- Atari Vault
-  Files exist in game dir
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Arcade Game Series (by Namco)

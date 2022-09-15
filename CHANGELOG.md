@@ -1,5 +1,6 @@
 # 0.0.23
 - Added Games/Collections:
+  - Atari Vault
   - Zombies Ate My Neighbor & Ghoul Patrol
 - Updated Collections:
   - SNK 40th Anniversary Collection
