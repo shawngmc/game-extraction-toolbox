@@ -5,7 +5,7 @@ import os
 from gex.lib.utils.blob import transforms
 from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
-from gex.lib.utils.vendor import dotemu
+from gex.lib.utils import gfx_rebuilder
 
 logger = logging.getLogger('gextoolbox')
 
@@ -73,7 +73,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     def _dotemu_reencode_gfx_helper(self, in_file_name, filenames, layout):
         def encode(in_files):
             contents = in_files[in_file_name]
-            contents = dotemu.reencode_gfx(contents, layout)
+            contents = gfx_rebuilder.reencode_gfx(contents, layout)
             chunks = transforms.equal_split(contents, num_chunks=len(filenames))
             return dict(zip(filenames, chunks))
         return encode
@@ -321,7 +321,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx1(in_files):
             contents = in_files['ddragon3_gfxdata1.bin']
-            contents = dotemu.reencode_gfx(contents, self._WWF_TILE_LAYOUT)
+            contents = gfx_rebuilder.reencode_gfx(contents, self._WWF_TILE_LAYOUT)
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
             contents = transforms.merge(chunks)
             chunks = transforms.equal_split(contents, len(gfx1_filenames))
@@ -341,7 +341,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx2(in_files):
             contents = in_files['ddragon3_gfxdata2.bin']
-            contents = dotemu.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
+            contents = gfx_rebuilder.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
             chunks = transforms.custom_split(contents,
                 [0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000])
             return dict(zip(gfx2_filenames, chunks))

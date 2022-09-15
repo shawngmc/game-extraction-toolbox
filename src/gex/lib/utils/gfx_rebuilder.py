@@ -1,5 +1,9 @@
-'''Tools for DotEmu games, largely based on dotemu2mame.js'''
+'''Tools for Graphics ROMs, largely based on dotemu2mame.js and avault2mame.js by cxx on GitHub'''
 import copy
+from collections import namedtuple
+import struct
+
+# TODO: Make these functions easier to read/more pythonic
 
 def reencode_gfx(contents, layout):
     '''
@@ -38,8 +42,8 @@ def reencode_gfx(contents, layout):
         mod_layout = temp_layout
 
     i = 0
-    for c in range(0, mod_layout['total']):
-        charoffset = mod_layout['charincrement'] * c
+    for curr_char in range(0, mod_layout['total']):
+        charoffset = mod_layout['charincrement'] * curr_char
         for curr_height in range(0, mod_layout['height']):
             yoffset = charoffset + mod_layout['yoffset'][curr_height]
             for curr_width in range(0, mod_layout['width']):
@@ -50,3 +54,13 @@ def reencode_gfx(contents, layout):
                 i += 1
 
     return dest
+
+BitmapMeta = namedtuple('BitmapMeta', 'offset width height')
+def reverse_bmp(contents):
+    '''Given a .BMP bitmap, reverse it for gfx rom rebuilding'''
+    bmp_meta = BitmapMeta._make(struct.unpack('<L4xLL', contents[10:26]))
+    buf = bytearray()
+    for row in range(0, bmp_meta.height):
+        src_start = bmp_meta.offset + (bmp_meta.width * (bmp_meta.height - (1 + row)))
+        buf += contents[src_start:src_start + bmp_meta.width]
+    return buf
