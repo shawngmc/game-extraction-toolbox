@@ -65,6 +65,7 @@ games = [
             "CanyonBomberTiles.bmp"
         ],
         "mame_name": "canyon",
+        # "handler": "_handle_canyon",
         "partial": True,
         "notes": [6]
     },
@@ -196,7 +197,7 @@ games = [
             "136006.105": 4096
         }
     },
-    { # Look at avault2mame.js
+    {
         "name": "Sprint2",
         "files": [
             "Sprint2.bin",
@@ -205,7 +206,6 @@ games = [
         ],
         "mame_name": "sprint2",
         "handler": "_handle_sprint2",
-        "partial": True,
         "notes": [6]
     },
     {
@@ -552,6 +552,66 @@ def _handle_sprint2(in_dir, game_desc):
         'filename': f"{game_desc['mame_name']}.zip",
         'contents': helpers.build_zip(zip_files)
     }]
+
+# def _handle_canyon(in_dir, game_desc):
+#     zip_files = {}
+
+#     # CanyonBomber.bin
+#     with open(os.path.join(in_dir, "CanyonBomber.bin"), "rb") as curr_file:
+#         contents = bytearray(curr_file.read())
+#         chunks = transforms.custom_split(contents, [1024, 1024, 2048])
+#         nib_chunks = transforms.deinterleave_nibble(chunks[0], 2)
+#         zip_files['9503-01.p1'] = nib_chunks[0]
+#         zip_files['9499-01.j1'] = nib_chunks[1]
+#         zip_files['9496-01.d1'] = chunks[2]
+
+#     # CanyonBomberSprites.bmp
+#     with open(os.path.join(in_dir, "CanyonBomberSprites.bmp"), "rb") as curr_file:
+#         contents = bytearray(curr_file.read())
+#         contents = gfx_rebuilder.reverse_bmp(contents)
+#         _SPRITE_LAYOUT = {
+#             'width': 32,
+#             'height': 16,
+#             'total': 4,
+#             'planes': 1,
+#             'planeoffset': [0],
+#             'xoffset': [0x007, 0x006, 0x005, 0x004, 0x003, 0x002, 0x001, 0x000,
+#                 0x00F, 0x00E, 0x00D, 0x00C, 0x00B, 0x00A, 0x009, 0x008,
+#                 0x107, 0x106, 0x105, 0x104, 0x103, 0x102, 0x101, 0x100,
+#                 0x10F, 0x10E, 0x10D, 0x10C, 0x10B, 0x10A, 0x109, 0x108],
+#             'yoffset': [0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70,
+# 		        0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0],
+#             'charincrement': 0x200
+#         }
+#         contents = gfx_rebuilder.reencode_gfx(contents, _SPRITE_LAYOUT)
+#         chunks = transforms.deinterleave_nibble(contents, 2)
+#         zip_files['9505-01.n5'] = chunks[0]
+#         zip_files['9506-01.m5'] = chunks[1]
+
+#     # CanyonBomberTiles.bmp
+#     # TODO: Something is wrong with the math on this one, and I think it's a discrepancy vs. the mame tile layout
+#     with open(os.path.join(in_dir, "CanyonBomberTiles.bmp"), "rb") as curr_file:
+#         contents = bytearray(curr_file.read())
+#         contents = gfx_rebuilder.reverse_bmp(contents)
+#         zip_files['tiles_temp'] = contents
+#         _TILE_LAYOUT = {
+#             'width': 8,
+#             'height': 8,
+#             'total': 64,
+#             'planes': 1,
+#             'planeoffset': [0],
+#             'xoffset': [4, 5, 6, 7, 0, 1, 2, 3],
+#             'yoffset': [0x00, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38],
+#             'charincrement': 0x80
+#         }
+#         contents = gfx_rebuilder.reencode_gfx(contents, _TILE_LAYOUT)
+#         zip_files['9492-01.n8'] = contents
+
+#     return [{
+#         'filename': f"{game_desc['mame_name']}.zip",
+#         'contents': helpers.build_zip(zip_files)
+#     }]
+
     
 def _handle_avalnche(in_dir, game_desc):
     # Avalanche.bin
