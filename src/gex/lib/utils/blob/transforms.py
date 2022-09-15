@@ -3,6 +3,19 @@ import itertools
 from bitarray import bitarray
 
 
+def cut(contents, start, length=None, end=None):
+    '''Select a chunk out of a blob'''
+    if length is None and end is None:
+        raise Exception(
+            "Splice out needs a length or end value, but received neither.")
+    elif length is not None and end is not None:
+        raise Exception(
+            "Splice out needs a length or end value, but received both.")
+    elif end is None:
+        end = start + length
+
+    return bytearray(contents[start:end])
+
 def merge(chunks):
     '''Merge an array of blobs into a single blob'''
     new_content = bytearray()
