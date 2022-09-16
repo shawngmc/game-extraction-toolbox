@@ -3,8 +3,6 @@
 ## Future / Other Tools
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
-- Arcade Game Series (by Namco)
-  https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection

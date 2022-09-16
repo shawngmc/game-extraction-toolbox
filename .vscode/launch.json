@@ -359,7 +359,7 @@
             ]
         },
         {
-            "name": "Python: Toolbox - Testing AGS Dig Dug",
+            "name": "Python: Toolbox - Testing AGS",
             "type": "python",
             "request": "launch",
             "program": "toolbox.py",
@@ -370,9 +370,11 @@
                 "tasks", 
                 "extract", 
                 "--task", 
-                "ags_digdug", 
+                "ags", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_digdug\""
+                "\"${workspaceFolder}\\out\\ags\"",
+                "--prop",
+                "include-partials=True"
             ]
         },
         {

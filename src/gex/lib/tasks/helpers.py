@@ -4,8 +4,8 @@ import os
 import zipfile
 from gex.lib.utils.blob import transforms
 
-_STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
-def gen_steam_app_default_folder(app_folder, library_root=_STEAM_APP_ROOT):
+STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
+def gen_steam_app_default_folder(app_folder, library_root=STEAM_APP_ROOT):
     '''Convenience function to get a Steam App folder'''
     return os.path.join(library_root, app_folder)
 
