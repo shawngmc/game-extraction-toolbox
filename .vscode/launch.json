@@ -378,6 +378,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing MKAK",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mkak", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mkak\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1",
             "type": "python",
             "request": "launch",
