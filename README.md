@@ -104,6 +104,8 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ## Collections
 
+### Playable
+
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
@@ -126,3 +128,9 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
  **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
+
+
+### Completely Unplayable
+**Collection**                             | **Status**     | **Notes**           
+--------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  

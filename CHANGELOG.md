@@ -1,6 +1,7 @@
 # 0.0.23
 - Added Games/Collections:
   - Atari Vault
+  - Mortal Kombat Arcade Collection
   - Namco Arcade Game Series
   - Zombies Ate My Neighbor & Ghoul Patrol
 - Updated Collections:
