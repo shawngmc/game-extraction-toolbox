@@ -14,6 +14,12 @@ class BubsyTask(BaseTask):
     _title = "Mortal Kombat Arcade Kollection"
     _details_markdown = '''
     None of these games currently are playable, as it appears the Audio ROMs are replaced with a different audio format.
+
+    It might be possible to convert the Audio to Ogg via instructions at:
+    https://borderlands.fandom.com/wiki/Extracting_PC_resources
+    Turning those into a functional (let alone CRC matching) ROM is a difficult task.
+    See GH issue #25 for the most recent notes.
+
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Mortal Kombat Arcade Kollection")
     _input_folder_desc = "Mortal Kombat Arcade Kollection Steam Folder"
