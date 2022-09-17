@@ -38,8 +38,7 @@
   Loading as a DLL, there is a CreateGameModule function that looks promising.
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2
-- Mega Man Legacy Collection 2
-
+- Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
 
 ## Not Yet Owned / Future Investigation
@@ -62,9 +61,13 @@
 ## Upcoming Releases
 - Atari 50th: Anniversary Collection (Winter 2022)
 
-## Not Complete / Not ROMs
+## Not Complete ROMs (may add partial extraction later)
 - Mortal Kombat Kollection
   Audio ROMs were replaced with a different audio solution.
+- Dungeons & Dragons: Chronicles of Mystara
+  Maincpu and Gfx ROMs are there, but audio is completely reworked.
+
+## Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
   Appears to be a Unity port
 - Mortal Kombat 1+2+3 (GOG)
@@ -73,6 +76,4 @@
   Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
-- Dungeons & Dragons: Chronicles of Mystara
-  Maincpu and Gfx ROMs are there, but audio is completely reworked.
 
