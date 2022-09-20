@@ -1,8 +1,9 @@
-# 0.0.23
+# 0.1.0
 - Added Games/Collections:
   - Atari Vault
   - Mortal Kombat Arcade Collection (No playable ROMs at this time)
   - Namco Arcade Game Series
+  - Pac Man Museum Plus
   - Zombies Ate My Neighbor & Ghoul Patrol
 - Updated Collections:
   - SNK 40th Anniversary Collection
