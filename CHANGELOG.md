@@ -1,3 +1,24 @@
+# 0.1.0
+- Added Games/Collections:
+  - Atari Vault
+  - Mortal Kombat Arcade Collection (No playable ROMs at this time)
+  - Namco Arcade Game Series
+  - Pac Man Museum Plus
+  - Zombies Ate My Neighbor & Ghoul Patrol
+- Updated Collections:
+  - SNK 40th Anniversary Collection
+    - Added partial (broken) ROM extraction support
+    - Fixed most ROMs, including changes from lionel/BuildROM and some further decoding research
+- Improvements:
+  - Some tasks now support config flags via '--prop'; see task details for supported flags
+  - Reworked tables using TextTable to make code cleaner and tables more reliable
+  - Added placeholder partials for CAS1 and CAS2
+  - Performance improvements, including major gains for deinterleave and bit shuffle operations
+  - Fix a bug where some tasks aren't listed
+- Internal:
+  - Restructured some tasks to allow splitting/props
+  - Added some support tool for Steam folders (eventually may add detection?)
+  
 # 0.0.22
 - Added Games/Collections:
   - Disney Classics Collection: Aladdin and Lion King (w/ Jungle Book DLC)

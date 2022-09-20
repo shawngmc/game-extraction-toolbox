@@ -1,4 +1,7 @@
 '''Containes the BaseTask class, the base class for tasks'''
+
+import copy
+
 class BaseTask:
     '''Base class for rom extraction tasks'''
     _task_name = None
@@ -7,6 +10,35 @@ class BaseTask:
     _default_input_folder = None
     _input_folder_desc = None
     _short_description = None
+    _out_file_list = []
+    _out_file_notes = {}
+    _prop_info = {}
+    _props = {}
+
+    def __init__(self):
+        for prop_key, prop_value in self._prop_info.items():
+            self._props[prop_key] = prop_value['default']
+
+    def set_props(self, in_props):
+        '''Set any additional props for this task'''
+        for value in in_props:
+            print(value)
+            if '=' in value:
+                key, value = value.split('=')
+            else:
+                key = value
+            self._props[key] = value
+
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": copy.deepcopy(self._out_file_list),
+            "notes": copy.deepcopy(self._out_file_notes)
+        }
+
+    def get_prop_info(self):
+        '''Return a list of available props'''
+        return copy.deepcopy(self._prop_info)
 
     def get_task_name(self):
         '''Get the task name, a short string for referring to the task'''
@@ -31,15 +63,6 @@ class BaseTask:
     def get_input_folder_description(self):
         '''Get a short description of what the input folder should refer to'''
         return self._input_folder_desc
-
-    def get_header_markdown(self):
-        '''Get a markdown-formatted header for this task for help, etc.'''
-        markdown_text = f'# {self.get_task_name()}: {self.get_title()}\n'
-        if len(self.get_short_description()) > 0:
-            markdown_text += f'  {self.get_short_description()}\n\n'
-        markdown_text += f'  Expected input dir: {self.get_input_folder_description()} '
-        markdown_text += f' (ex. "{self.get_default_input_folder()}")\n'
-        return markdown_text
 
     def find_handler_func(self, package_name):
         '''Utility function to look for a sub-package handler in a task'''

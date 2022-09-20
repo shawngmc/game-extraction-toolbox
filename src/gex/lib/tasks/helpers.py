@@ -1,7 +1,13 @@
 '''Convenience wrappers for task implementation'''
 import io
+import os
 import zipfile
 from gex.lib.utils.blob import transforms
+
+STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
+def gen_steam_app_default_folder(app_folder, library_root=STEAM_APP_ROOT):
+    '''Convenience function to get a Steam App folder'''
+    return os.path.join(library_root, app_folder)
 
 def build_rom(in_files, func_map):
     '''Convenience function to run both process_rom_files and build_zip together'''
@@ -32,10 +38,9 @@ def build_zip(file_map):
 
 def existing_files_helper(file_map):
     '''Func map helper to reuse a file map'''
-    def existing_files(in_files):
+    def existing_files(*_):
         return file_map
     return existing_files
-
 
 def equal_split_helper(in_file_ref, filenames):
     '''Func map helper for transforms.equal_split'''
@@ -93,3 +98,27 @@ def placeholder_helper(file_map):
             out_files[filename] = bytes(size*b'\0')
         return out_files
     return create_placeholders
+
+def common_picker_helper(common_file_map, src_name, dst_name=None):
+    '''Func map helper for picking/renaming a single file from an existing common map'''
+    def pick(_):
+        out_files = {}
+
+        content = common_file_map.get(src_name)
+        filename = dst_name if not None else src_name
+
+        out_files[filename] = content
+
+        return out_files
+    return pick
+
+def common_rename_helper(common_file_map, rename_map):
+    '''Func map helper for picking/renaming a single file from an existing common map'''
+    def pick(_):
+        out_files = {}
+
+        for src_name, dst_name in rename_map.items():
+            out_files[dst_name] = common_file_map.get(src_name)
+
+        return out_files
+    return pick

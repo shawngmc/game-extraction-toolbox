@@ -4,6 +4,7 @@ import logging
 import os
 import UnityPy
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -14,17 +15,47 @@ class SagaTask(BaseTask):
     _details_markdown = '''
 These are extracted from the Unity asset bundle files.
 See https://github.com/farmerbb/RED-Project/issues/39 for more info.
-
- **Game**                                                    | **Region**        | **Filename**  
---------------------------------------------------------|---------------|----------------------------  
- **Final Fantasy Legend**                                    | US            | FinalFantasyLegend.bin  
- **Final Fantasy Legend 2**                                  | US            | FinalFantasyLegend2.bin  
- **Final Fantasy Legend 3**                                  | US            | FinalFantasyLegend3.bin  
- **SaGa**                                                    | Japan         | SaGa.bin  
- **SaGa 2**                                                  | Japan         | SaGa2.bin  
- **SaGa 3**                                                  | Japan         | SaGa3.bin  
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sa・Ga COLLECTION"
+'''
+    _out_file_list = [
+        {
+            "game": "Final Fantasy Legend",
+            "system": "Game Boy",
+            "filename": "FinalFantasyLegend.gb",
+            "notes": []
+        },
+        {
+            "game": "Final Fantasy Legend 2",
+            "system": "Game Boy",
+            "filename": "FinalFantasyLegend2.gb",
+            "notes": []
+        },
+        {
+            "game": "Final Fantasy Legend 3",
+            "system": "Game Boy",
+            "filename": "FinalFantasyLegend3.gb",
+            "notes": []
+        },
+        {
+            "game": "SaGa",
+            "system": "Game Boy",
+            "filename": "SaGa.gb",
+            "notes": []
+        },
+        {
+            "game": "SaGa 2",
+            "system": "Game Boy",
+            "filename": "SaGa2.gb",
+            "notes": []
+        },
+        {
+            "game": "SaGa 3",
+            "system": "Game Boy",
+            "filename": "SaGa3.gb",
+            "notes": []
+        },
+    ]
+    _out_file_notes = {}
+    _default_input_folder = helpers.gen_steam_app_default_folder("Sa・Ga COLLECTION")
     _input_folder_desc = "Collection of SaGa Steam folder"
     _short_description = ""
 

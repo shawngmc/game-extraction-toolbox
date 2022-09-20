@@ -12,27 +12,87 @@ class BlizzArcadeTask(BaseTask):
     _title = "Blizzard Arcade Collection"
     _details_markdown = '''
 These are the ROMs just sitting in the assets/roms folder.
-
- **Game**                                                     | **Platform**      | **Filename**  
----------------------------------------------------------|---------------|-----------------------------------------  
-**Blackthorne Patched**                                      | Sega 32X      | Blackthorne_U_Patched.32x  
-**Blackthorne**                                              | SNES          | Blackthorne.sfc  
-**Blackthorne w/ Z-Patch**                                   | SNES          | Blackthorne_ZPatch.sfc  
-**Radical Psycho Machine Racing**                            | SNES          | RadicalPsychoMachineRacing.sfc  
-**Rock n' Roll Racing**                                      | Genesis       | RockAndRollRacing_U.bin  
-**Rock n' Roll Racing**                                      | SNES          | RockAndRollRacing.sfc  
-**Rock n' Roll Racing Definitive Edition A**                 | SNES          | RockAndRollRacing_DefinitiveA.sfc  
-**Rock n' Roll Racing Definitive Edition B**                 | SNES          | RockAndRollRacing_DefinitiveB.sfc  
-**The Lost Vikings**                                         | Genesis       | LostVikings_U.bin  
-**The Lost Vikings**                                         | SNES          | LostVikings.sfc  
-**The Lost Vikings Definitive Edition**                      | SNES          | LostVikings_Definitive.sfc  
-**The Lost Vikings 2**                                       | SNES          | LostVikings2.sfc  
-
-    '''
+'''
     _default_input_folder = r"C:\Program Files (x86)\Blizzard Arcade Collection"
     _input_folder_desc = "Blizzard Arcade Collection install folder"
     _short_description = ""
 
+
+    _out_file_list = [
+        {
+            "game": "Blackthorne Patched",
+            "system": "Sega 32X",
+            "filename": "Blackthorne_U_Patched.32x",
+            "notes": []
+        },
+        {
+            "game": "Blackthorne",
+            "system": "SNES",
+            "filename": "Blackthorne.sfc",
+            "notes": []
+        },
+        {
+            "game": "Blackthorne w/ Z-Patch",
+            "system": "SNES",
+            "filename": "Blackthorne_ZPatch.sfc",
+            "notes": []
+        },
+        {
+            "game": "Radical Psycho Machine Racing",
+            "system": "SNES",
+            "filename": "RadicalPsychoMachineRacing.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rock n' Roll Racing",
+            "system": "Genesis",
+            "filename": "RockAndRollRacing_U.bin",
+            "notes": []
+        },
+        {
+            "game": "Rock n' Roll Racing",
+            "system": "SNES",
+            "filename": "RockAndRollRacing.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rock n' Roll Racing Definitive Edition A",
+            "system": "SNES",
+            "filename": "RockAndRollRacing_DefinitiveA.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rock n' Roll Racing Definitive Edition B",
+            "system": "SNES",
+            "filename": "RockAndRollRacing_DefinitiveB.sfc",
+            "notes": []
+        },
+        {
+            "game": "The Lost Vikings",
+            "system": "Genesis",
+            "filename": "LostVikings_U.bin",
+            "notes": []
+        },
+        {
+            "game": "The Lost Vikings",
+            "system": "SNES",
+            "filename": "LostVikings.sfc",
+            "notes": []
+        },
+        {
+            "game": "The Lost Vikings Definitive Edition",
+            "system": "SNES",
+            "filename": "LostVikings_Definitive.sfc",
+            "notes": []
+        },
+        {
+            "game": "The Lost Vikings 2",
+            "system": "SNES",
+            "filename": "LostVikings2.sfc",
+            "notes": []
+        }
+    ]
+    _out_file_notes = {}
 
     _game_info_map = {
         'Blackthorne (U) (32X) [patched].32x': {

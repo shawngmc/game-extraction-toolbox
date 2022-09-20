@@ -3,6 +3,7 @@ import logging
 import os
 
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 from gex.lib.archive.prs import DecompressPrs
 
 logger = logging.getLogger('gextoolbox')
@@ -17,34 +18,103 @@ Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 
 However, this doesn't use an external PRS tool and is intended to target Sonic Adventure DX from Steam.
 PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
-
- **Game**                                                    | **Region**        | **Filename**  
---------------------------------------------------------|---------------|----------------------------   
- **G-Sonic - Sonic Blast**                                   | World             | G-Sonic - Sonic Blast (World).gg  
- **Sonic Labyrinth**                                         | World             | Sonic Labyrinth (World).gg  
- **Dr. Robotnik's Mean Bean Machine**                        | USA,Europe        | Dr. Robotnik's Mean Bean Machine (USA,Europe).gg  
- **Sonic Drift 2**                                           | Japan,USA         | Sonic Drift 2 (Japan,USA).gg  
- **Tails no Skypatrol**                                      | Japan             | Tails no Skypatrol (Japan).gg  
- **Sonic The Hedgehog 2**                                    | World             | Sonic The Hedgehog 2 (World).gg  
- **Sonic Chaos**                                             | USA,Europe        | Sonic Chaos (USA,Europe).gg  
- **Sonic Drift**                                             | Japan             | Sonic Drift (Japan).gg  
- **Sonic The Hedgehog (Rev 1)**                              | World             | Sonic The Hedgehog (Rev 1) (World).gg  
- **Sonic & Tails**                                           | Japan             | Sonic & Tails (Japan).gg  
- **Sonic & Tails 2**                                         | Japan             | Sonic & Tails 2 (Japan).gg  
- **Sonic Spinball**                                          | USA,Europe        | Sonic Spinball (USA,Europe).gg  
- **Sonic The Hedgehog - Triple Trouble**                     | USA,Europe        | Sonic The Hedgehog - Triple Trouble (USA,Europe).gg  
- **Tails Adventures**                                        | World             | Tails Adventures (World).gg  
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Sonic Adventure DX"
+'''
+    _out_file_list = [
+        {
+            "game": "G-Sonic - Sonic Blast (World)",
+            "system": "Game Gear",
+            "filename": "G-Sonic - Sonic Blast (World).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic Labyrinth (World)",
+            "system": "Game Gear",
+            "filename": "Sonic Labyrinth (World).gg",
+            "notes": []
+        },
+        {
+            "game": "Dr. Robotnik's Mean Bean Machine (USA,Europe)",
+            "system": "Game Gear",
+            "filename": "Dr. Robotnik's Mean Bean Machine (USA,Europe).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic Drift 2 (Japan,USA)",
+            "system": "Game Gear",
+            "filename": "Sonic Drift 2 (Japan,USA).gg",
+            "notes": []
+        },
+        {
+            "game": "Tails no Skypatrol (Japan)",
+            "system": "Game Gear",
+            "filename": "Tails no Skypatrol (Japan).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic The Hedgehog 2 (World)",
+            "system": "Game Gear",
+            "filename": "Sonic The Hedgehog 2 (World).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic Chaos (USA,Europe)",
+            "system": "Game Gear",
+            "filename": "Sonic Chaos (USA,Europe).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic Drift (Japan)",
+            "system": "Game Gear",
+            "filename": "Sonic Drift (Japan).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic The Hedgehog (Rev 1) (World)",
+            "system": "Game Gear",
+            "filename": "Sonic The Hedgehog (Rev 1) (World).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic & Tails (Japan)",
+            "system": "Game Gear",
+            "filename": "Sonic & Tails (Japan).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic & Tails 2 (Japan)",
+            "system": "Game Gear",
+            "filename": "Sonic & Tails 2 (Japan).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic Spinball (USA,Europe)",
+            "system": "Game Gear",
+            "filename": "Sonic Spinball (USA,Europe).gg",
+            "notes": []
+        },
+        {
+            "game": "Sonic The Hedgehog - Triple Trouble (USA,Europe)",
+            "system": "Game Gear",
+            "filename": "Sonic The Hedgehog - Triple Trouble (USA,Europe).gg",
+            "notes": []
+        },
+        {
+            "game": "Tails Adventures (World)",
+            "system": "Game Gear",
+            "filename": "Tails Adventures (World).gg",
+            "notes": []
+        }
+    ]
+    _out_file_notes = {}
+    _default_input_folder = helpers.gen_steam_app_default_folder("Sonic Adventure DX")
     _input_folder_desc = "Sonic Adventure DX Steam folder"
     _short_description = ""
-
 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
         for file_path in bundle_files:
             file_name = os.path.basename(file_path)
-            game_info = self._game_info_map.get(file_name)
+            game_info = self._game_info_map.get(file_name.lower())
             if game_info:
                 logger.info(f"Extracting {file_path}: {game_info['name']}")
                 with open(file_path, 'rb') as in_file:

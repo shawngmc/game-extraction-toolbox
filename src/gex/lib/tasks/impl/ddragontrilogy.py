@@ -5,7 +5,7 @@ import os
 from gex.lib.utils.blob import transforms
 from gex.lib.tasks import helpers
 from gex.lib.tasks.basetask import BaseTask
-from gex.lib.utils.vendor import dotemu
+from gex.lib.utils import gfx_rebuilder
 
 logger = logging.getLogger('gextoolbox')
 
@@ -15,17 +15,30 @@ class DoubleDragonTrilogyTask(BaseTask):
     _title = "Double Dragon Trilogy"
     _details_markdown = '''
 Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf8894f
-
- **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
----------------------------------------------|---------------|------------|------------------|-------------|-------------------  
- **Double Dragon**                                | MAME 0.246    | Y          | ddragon.zip      | OK          |   
- **Double Dragon 2: The Revenge**                 | MAME 0.246    | Y          | ddragon2.zip     | OK          |  
- **Double Dragon 3: The Rosetta Stone**           | MAME 0.246    | N          | ddragon3.zip     | Bad         | (1)  
-
- 
-1. This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo.
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Double Dragon Trilogy"
+'''
+    _out_file_list = [
+        {
+            "game": "Double Dragon",
+            "system": "Arcade",
+            "filename": "ddragon.zip",
+            "notes": []
+        },
+        {
+            "game": "Double Dragon 2: The Revenge",
+            "system": "Arcade",
+            "filename": "ddragon2.zip",
+            "notes": []
+        },
+        {
+            "game": "Double Dragon 3: The Rosetta Stone",
+            "system": "Arddragon3.zip",
+            "notes": [1]
+        }
+    ]
+    _out_file_notes = {
+        "1": "This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo."
+    }
+    _default_input_folder = helpers.gen_steam_app_default_folder("Double Dragon Trilogy")
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
     _short_description = ""
 
@@ -60,7 +73,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     def _dotemu_reencode_gfx_helper(self, in_file_name, filenames, layout):
         def encode(in_files):
             contents = in_files[in_file_name]
-            contents = dotemu.reencode_gfx(contents, layout)
+            contents = gfx_rebuilder.reencode_gfx(contents, layout)
             chunks = transforms.equal_split(contents, num_chunks=len(filenames))
             return dict(zip(filenames, chunks))
         return encode
@@ -308,7 +321,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx1(in_files):
             contents = in_files['ddragon3_gfxdata1.bin']
-            contents = dotemu.reencode_gfx(contents, self._WWF_TILE_LAYOUT)
+            contents = gfx_rebuilder.reencode_gfx(contents, self._WWF_TILE_LAYOUT)
             chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
             contents = transforms.merge(chunks)
             chunks = transforms.equal_split(contents, len(gfx1_filenames))
@@ -328,7 +341,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         ]
         def gfx2(in_files):
             contents = in_files['ddragon3_gfxdata2.bin']
-            contents = dotemu.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
+            contents = gfx_rebuilder.reencode_gfx(contents, self._WWF_SPRITE_LAYOUT)
             chunks = transforms.custom_split(contents,
                 [0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000, 0x80000, 0x10000])
             return dict(zip(gfx2_filenames, chunks))

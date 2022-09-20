@@ -2,6 +2,7 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -11,24 +12,83 @@ class MegaManLegacyCollection1Task(BaseTask):
     _title = "Mega Man Legacy Collection 1"
     _details_markdown = '''
 Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
-
- **Game**                                   | **Region**      | **Filename**          
----------------------------------------|-------------|----------------  
- **Mega Man**                               | US          | megaman.bin   
- **Mega Man 2**                             | US          | megaman2.bin  
- **Mega Man 3**                             | US          | megaman3.bin  
- **Mega Man 4**                             | US          | megaman4.bin  
- **Mega Man 5**                             | US          | megaman5.bin  
- **Mega Man 6**                             | US          | megaman6.bin  
- **Rockman**                                | Japan       | rockman.bin  
- **Rockman 2 - Dr Wily no Nazo**            | Japan       | rockman2.bin  
- **Rockman 3 - Dr Wily no Saigo!**          | Japan       | rockman3.bin  
- **Rockman 4 - Aratanaru Yabou!!**          | Japan       | rockman4.bin  
- **Rockman 5 - Blues no Wana!**             | Japan       | rockman5.bin  
- **Rockman 6 - Shijou Saidai no Tatakai!!** | Japan       | rockman6.bin  
-
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Suzy"
+'''
+    _out_file_list = [
+        {
+            "game": "Mega Man",
+            "system": "NES",
+            "filename": "megaman.nes",
+            "notes": []
+        },
+        {
+            "game": "Mega Man 2",
+            "system": "NES",
+            "filename": "megaman2.nes",
+            "notes": []
+        },
+        {
+            "game": "Mega Man 3",
+            "system": "NES",
+            "filename": "megaman3.nes",
+            "notes": []
+        },
+        {
+            "game": "Mega Man 4",
+            "system": "NES",
+            "filename": "megaman4.nes",
+            "notes": []
+        },
+        {
+            "game": "Mega Man 5",
+            "system": "NES",
+            "filename": "megaman5.nes",
+            "notes": []
+        },
+        {
+            "game": "Mega Man 6",
+            "system": "NES",
+            "filename": "megaman6.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman",
+            "system": "NES",
+            "filename": "rockman.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman 2 - Dr Wily no Nazo",
+            "system": "NES",
+            "filename": "rockman2.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman 3 - Dr Wily no Saigo!",
+            "system": "NES",
+            "filename": "rockman3.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman 4 - Aratanaru Yabou!!",
+            "system": "NES",
+            "filename": "rockman4.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman 5 - Blues no Wana!",
+            "system": "NES",
+            "filename": "rockman5.nes",
+            "notes": []
+        },
+        {
+            "game": "Rockman 6 - Shijou Saidai no Tatakai!!",
+            "system": "NES",
+            "filename": "rockman6.nes",
+            "notes": []
+        },
+    ]
+    _out_file_notes = {}
+    _default_input_folder = helpers.gen_steam_app_default_folder("Suzy")
     _input_folder_desc = "'Suzy' Folder (Steam MMLC install folder)"
     _short_description = ""
 

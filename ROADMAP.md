@@ -1,14 +1,10 @@
 # Roadmap
 
 ## Future / Other Tools
-- Atari Vault
-  Files exist in game dir
-- Zombies ate my neighbor/Ghoul Patrol
-  https://www.gog.com/forum/general/rom_based_gog_games_compatible_with_third_party_emulators_thread/post127
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
-- Arcade Game Series (by Namco)
-  https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
+- Brave Battle Saga - The Legend of The Magic Warrior
+- Wonder Boy The Dragon's Trap
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
@@ -29,15 +25,24 @@
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
 
 
-## Under Investigation
+## Owned / Under Investigation
+- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
+  Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #17.
 - Capcom Arcade Stadium 1
+  Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
+  PLACEHOLDER ADDED. See #18.
 - Capcom Arcade Stadium 2
-- Pac-Man Museum+
+  Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
+  PLACEHOLDER ADDED. See #18.
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2
-- Mega Man Legacy Collection 2
-- Mortal Kombat Kollection
+- Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
+  Started stubbing, but no progress yet
+- Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
+
+
+## Not Yet Owned / Future Investigation
 - Neo Geo Pocket Color Selection Vol. 1
 - ColecoVision Flashback
   https://github.com/ZetTheLegendaryHero/Colecovision-Flashback-40-Game-Pack-ROM-Extractor
@@ -45,12 +50,28 @@
   https://gitlab.com/vaiski/romextract/-/blob/master/supported.csv
 - IREM Arcade Hits
 - R-Type Dimensions EX
+- CAVE: Mushihimesama
+  Recommended in #15.
+- CAVE: DoDonPachi Resurrection
+  Recommended in #15.
+- CAVE: Deathsmiles
+  Recommended in #15.
+- CAVE: Deathsmiles I + II
+  Recommended in #15.
+- Darius Cozmic Collection Arcade
 
 ## Upcoming Releases
-- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
 - Atari 50th: Anniversary Collection (Winter 2022)
 
-## Not Complete / Not ROMs
+## Not Complete ROMs (may add partial extraction later)
+- Mortal Kombat Kollection
+  Audio ROMs were replaced with a different audio solution.
+- Dungeons & Dragons: Chronicles of Mystara
+  Maincpu and Gfx ROMs are there, but audio is completely reworked.
+- Midway Arcade Treasures Vol. 1 (PS2)
+  Audio ROMs replaced. For example, Smash TV has all the game ROMs, but none of the sound ROMs.
+
+## Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
   Appears to be a Unity port
 - Mortal Kombat 1+2+3 (GOG)
@@ -59,6 +80,4 @@
   Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
-- Dungeons & Dragons: Chronicles of Mystara
-  Maincpu and Gfx ROMs are there, but audio is completely reworked.
 
