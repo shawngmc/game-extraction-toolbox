@@ -2,6 +2,7 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -13,21 +14,50 @@ class MegaManXLegacyCollection1Task(BaseTask):
 Based on: https://github.com/s3phir0th115/MMXLC1-Rom-Extractor/blob/master/mmxlc_rom_extract.py
 
 Mega Man X4 does not appear to be ROM based, but investigation is ongoing.
-
- **Game**                                   | **Region**      | **Filename**          
----------------------------------------|-------------|----------------  
- **Mega Man X**                             | US          | megamanx.sfc   
- **Mega Man X2**                            | US          | megamanx2.sfc  
- **Mega Man X3**                            | US          | megamanx3.sfc   
- **Rockman X**                              | Japan       | rockmanx.sfc  
- **Rockman X2**                             | Japan       | rockmanx2.sfc  
- **Rockman X3**                             | Japan       | rockmanx3.sfc  
-
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Mega Man X Legacy Collection"
+'''
+    _default_input_folder = helpers.gen_steam_app_default_folder("Mega Man X Legacy Collection")
     _input_folder_desc = "Steam MMxLC install folder"
     _short_description = ""
 
+    _out_file_list = [
+        {
+            "game": "Mega Man X",
+            "system": "SNES",
+            "filename": "megamanx.sfc",
+            "notes": []
+        },
+        {
+            "game": "Mega Man X2",
+            "system": "SNES",
+            "filename": "megamanx2.sfc",
+            "notes": []
+        },
+        {
+            "game": "Mega Man X3",
+            "system": "SNES",
+            "filename": "megamanx3.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rockman X",
+            "system": "SNES",
+            "filename": "rockmanx.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rockman X2",
+            "system": "SNES",
+            "filename": "rockmanx2.sfc",
+            "notes": []
+        },
+        {
+            "game": "Rockman X3",
+            "system": "SNES",
+            "filename": "rockmanx3.sfc",
+            "notes": []
+        }
+    ]
+    _out_file_notes = {}
     _game_info_list = [
         {
             'filename': 'rockmanx.sfc',

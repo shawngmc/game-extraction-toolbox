@@ -39,9 +39,20 @@ pipx ensurepath
 
 
 ## Usage
-```gametoolbox --help```
+```gextoolbox --help```
 You can get --help on any command or subcommand, for example:
-```gametoolbox file --help```
+```gextoolbox file --help```
+
+### Extracting Known Game Collections
+This tool has scripts for a substantial number of game rereleases.
+To get a list of the known rereleases:
+```gextoolbox tasks list```
+To get details, including configurable properties:
+```gextoolbox tasks details --task TASKNAME```
+To run a task with default settings, extracting into the current directory:
+```gextoolbox tasks extract --task TASKNAME --destdir ./```
+To run a task with a custom input folder and an example property:
+```gextoolbox tasks extract --task TASKNAME --srcdir /path/to/rerelease/ --destdir ./ --prop "include-partials=True"```
 
 ## FAQ
 
@@ -93,11 +104,16 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ## Collections
 
+### Playable
+
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1**                    | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
+ **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
@@ -106,7 +122,17 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Double Dragon Trilogy**                      | 100%   |  
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
+ **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
+ **Arcade Collection Anniversary Classics**     | 30%    | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **SNK 40th Anniversary Collection**            | 80%    | A bunch of games are missing PROMs
+ **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
+ **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
+
+
+### Completely Unplayable
+**Collection**                             | **Status**     | **Notes**           
+--------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Arcade Collection Anniversary Classics**     | 5%     | Stubbed out some, but no playable yet due to extraction issues.
+ **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  

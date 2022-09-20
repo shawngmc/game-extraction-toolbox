@@ -8,6 +8,9 @@ from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 
+# TODO: Split class into a few smaller classes
+# TODO: Add extraction of incomplete roms
+
 logger = logging.getLogger('gextoolbox')
 
 class SF30ACTask(BaseTask):
@@ -24,45 +27,188 @@ Beyond the usual QSound dl-1425.bin and decryption keys, some of the CRC matches
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 
 Note that this does NOT extract the Japanese ROMs as those are only included in SF30AC International Edition. As a US player, I can't get them - I've tried!
+'''
 
- **Game**                                         | **MAME Ver.**     | **FB Neo**     | **Filename**         | **CRC**         | **Notes**  
----------------------------------------------|---------------|------------|------------------|-------------|-------------------  
- **Street Fighter**                               | MAME 0.246    | Y          | sf.zip           | Bad         |  
- **Street Fighter 2**                             | MAME 0.78     | N          | sf2ub.zip        | Bad         | (2) (3)  
- **Street Fighter 2 Championship Edition**        | MAME 0.78     |           | sf2ceua.zip      | Bad         | (2) (3)  
- **Street Fighter 2 Hyper Fighting**              | MAME 0.78     | N          | sf2t.zip         | Bad         | (2) (3)  
- **Street Fighter Alpha**                         | MAME 0.139    | N          | sfau.zip         | Bad         | (1)  
- **Street Fighter Alpha 2**                       | MAME 0.139    | N          | sfa2u.zip        | Bad         | (1) (3)  
- **Street Fighter Alpha 3**                       | MAME 0.139    | N          | sfa3u.zip        | Bad         | (1)  
- **Street Fighter 3**                             | MAME 0.246    | Y          | sfiiina.zip      | OK          |  
- **Street Fighter 3: 2nd Impact**                 | MAME 0.246    | Y          | sfiii2n.zip      | OK          |  
- **Street Fighter 3: 3rd Strike**                 | MAME 0.246    | Y          | sfiii3nr1.zip    | OK          |  
- **Super Street Fighter 2**                       | MAME 0.139    | N          | ssf2u.zip        | Bad         | (1) (3)  
- **Super Street Fighter 2 Turbo**                 | MAME 0.139    | N          | ssf2tu.zip       | Bad         | (1) (3)  
- **Street Fighter (J)**                           | MAME 0.246    |            | sfj.zip          | Bad         | (4)   
- **Street Fighter 2 (JA)**                        | MAME 0.78     |           | sf2ja.zip        | Bad         | (2) (3) (4)  
- **Street Fighter 2 (JL)**                        | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
- **Street Fighter 2 Championship Edition (JB)**   | MAME 0.78     |           | sf2cejb.zip      | Bad         | (2) (3) (4)   
- **Street Fighter 2 Championship Edition (JC)**   | N/A           | N/A        | N/A              | Bad         | (2) (3) (4) (5)  
- **Street Fighter 2 Hyper Fighting (J)**          | MAME 0.78     |            | sf2tj.zip        | Bad         | (2) (3) (4)  
- **Street Fighter Alpha (J)**                     | MAME 0.139    |           | sfzj.zip         | Bad         | (1) (4)  
- **Street Fighter Alpha (JR2)**                   | MAME 0.139    |           | sfzjr2.zip       | Bad         | (1) (4)  
- **Street Fighter Alpha 2 (J)**                   | MAME 0.139    |           | sfa2u.zip        | Bad         | (1) (3) (4)
- **Street Fighter Alpha 2 (JR1)**                 | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)
- **Street Fighter Alpha 3 (J)**                   | MAME 0.139    |           | sfz3j.zip        | Bad         | (1) (4)  
- **Street Fighter Alpha 3 (JR2)**                 | MAME 0.139    |           | sfz3jr2.zip      | Bad         | (1) (4)  
- **Super Street Fighter 2 (J)**                   | MAME 0.139    |           | ssf2u.zip        | Bad         | (1) (3) (4)  
- **Super Street Fighter 2 (JR1)**                 | MAME 0.139    |           | ssf2u.zip        | Bad         | (1) (3) (4)  
- **Super Street Fighter 2 Turbo (J)**             | MAME 0.139    |           | ssf2tu.zip       | Bad         | (1) (3) (4)  
- **Super Street Fighter 2 Turbo (JR1)**           | N/A           | N/A        | N/A              | Bad         | (1) (3) (4) (5)  
-
-1. These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.
-2. These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.
-3. These are using an older naming convention to allow recognition by the targeted MAME version.
-4. These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.
-5. This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split.
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\Street Fighter 30th Anniversary Collection"
+    _out_file_list = [
+        {
+            "game": "Street Fighter 2 (U)",
+            "system": "Arcade",
+            "filename": "sf2ub.zip",
+            "notes": [2, 3]
+        },
+        {
+            "game": "Street Fighter 2 Championship Edition (U)",
+            "system": "Arcade",
+            "filename": "sf2ceua.zip",
+            "notes": [2, 3]
+        },
+        {
+            "game": "Street Fighter 2 Hyper Fighting (U)",
+            "system": "Arcade",
+            "filename": "sf2t.zip",
+            "notes": [2, 3]
+        },
+        {
+            "game": "Super Street Fighter 2 (U)",
+            "system": "Arcade",
+            "filename": "ssf2u.zip",
+            "notes": [1, 3]
+        },
+        {
+            "game": "Super Street Fighter 2 Turbo (U)",
+            "system": "Arcade",
+            "filename": "ssf2tu.zip",
+            "notes": [1, 3]
+        },
+        {
+            "game": "Street Fighter (W)",
+            "system": "Arcade",
+            "filename": "sf.zip",
+            "notes": []
+        },
+        {
+            "game": "Street Fighter (J)",
+            "system": "Arcade",
+            "filename": "sfj.zip",
+            "notes": [4]
+        },
+        {
+            "game": "Street Fighter 3",
+            "system": "Arcade",
+            "filename": "sfiiina.zip",
+            "notes": []
+        },
+        {
+            "game": "Street Fighter 3: 2nd Impact",
+            "system": "Arcade",
+            "filename": "sfiii2n.zip",
+            "notes": []
+        },
+        {
+            "game": "Street Fighter 3: 3rd Strike",
+            "system": "Arcade",
+            "filename": "sfiii3nr1.zip",
+            "notes": []
+        },
+        {
+            "game": "Street Fighter 2 (JA)",
+            "system": "Arcade",
+            "filename": "sf2ja.zip",
+            "notes": [2, 3, 4]
+        },
+        {
+            "game": "Street Fighter 2 (JL)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [2, 3, 4, 5]
+        },
+        {
+            "game": "Street Fighter 2 Championship Edition (JB)",
+            "system": "Arcade",
+            "filename": "sf2cejb.zip",
+            "notes": [2, 3, 4]
+        },
+        {
+            "game": "Street Fighter 2 Championship Edition (JC)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [2, 3, 4, 5]
+        },
+        {
+            "game": "Street Fighter 2 Hyper Fighting (J)",
+            "system": "Arcade",
+            "filename": "sf2tj.zip",
+            "notes": [2, 3, 4]
+        },
+        {
+            "game": "Street Fighter Alpha (U)",
+            "system": "Arcade",
+            "filename": "sfau.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Street Fighter Alpha (J)",
+            "system": "Arcade",
+            "filename": "sfzj.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Street Fighter Alpha (JR2)",
+            "system": "Arcade",
+            "filename": "sfzjr2.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Street Fighter Alpha 2 (U)",
+            "system": "Arcade",
+            "filename": "sfa2u.zip",
+            "notes": [1, 3]
+        },
+        {
+            "game": "Street Fighter Alpha 2 (J)",
+            "system": "Arcade",
+            "filename": "sfz2j.zip",
+            "notes": [1, 3, 4]
+        },
+        {
+            "game": "Street Fighter Alpha 2 (JR1)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [1, 3, 4, 5]
+        },
+        {
+            "game": "Street Fighter Alpha 3 (J)",
+            "system": "Arcade",
+            "filename": "sfz3j.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Street Fighter Alpha 3 (JR2)",
+            "system": "Arcade",
+            "filename": "sfz3jr2.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Street Fighter Alpha 3 (U)",
+            "system": "Arcade",
+            "filename": "sfa3u.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Super Street Fighter 2 (J)",
+            "system": "Arcade",
+            "filename": "ssf2.zip",
+            "notes": [1, 3, 4]
+        },
+        {
+            "game": "Super Street Fighter 2 (JR1)",
+            "system": "Arcade",
+            "filename": "ssf2u.zip",
+            "notes": [1, 3, 4]
+        },
+        {
+            "game": "Super Street Fighter 2 Turbo (J)",
+            "system": "Arcade",
+            "filename": "ssf2tu.zip",
+            "notes": [1, 3, 4]
+        },
+        {
+            "game": "Super Street Fighter 2 Turbo (JR1)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [1, 3, 4, 5]
+        }
+    ]
+    _out_file_notes = {
+        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). "\
+            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+        "2": "These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). "\
+            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+        "3": "These are using an older naming convention to allow recognition by the targeted MAME version.",
+        "4": "These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.",
+        "5": "This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split."
+    }
+    _default_input_folder = helpers.gen_steam_app_default_folder("Street Fighter 30th Anniversary Collection")
     _input_folder_desc = "SF30AC Steam folder"
     _short_description = ""
 
@@ -159,17 +305,18 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     def _cps2_gfx_deinterleave(self, contents, num_ways=4, word_size=2):
         interleave_group_length = num_ways * word_size
         num_interleave_groups = len(contents)//interleave_group_length
+        contents = capcom.common_gfx_deshuffle(contents)
         temp_chunks = [bytearray() for i in range(num_ways)]
         for i in range(0, num_interleave_groups):
             offset = i * interleave_group_length
             interleave_group = contents[offset:offset+interleave_group_length]
-            interleave_group = capcom.common_gfx_deshuffle(interleave_group)
             interleave_offset = 0
             for j in range(0, num_ways):
                 interleave_end = interleave_offset + word_size
-                temp_chunks[j].extend(interleave_group[interleave_offset:interleave_end])
+                temp_chunks[j] += interleave_group[interleave_offset:interleave_end]
                 interleave_offset = interleave_end
         return temp_chunks
+        
 
     ################################################################################
     # Street Fighter                                                               #

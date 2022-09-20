@@ -22,7 +22,6 @@ def deinterleave(in_file, out_file_base, num_ways, word_size):
 
     for idx, chunk in enumerate(deinterleaved_chunks):
         filename = f'{out_file_base}.{idx}'
-        print(filename)
         write_bin_file(chunk, filename)
 
     logger.info("Done.")

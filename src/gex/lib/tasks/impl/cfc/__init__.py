@@ -5,7 +5,6 @@ import logging
 import os
 
 from gex.lib.archive import arc
-from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import capcom
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
@@ -20,28 +19,119 @@ class CFCTask(BaseTask):
 This is reverse-engineered based on the CBEYB work from https://web.archive.org/web/20220213232104/http://blog.livedoor.jp/scrap_a/archives/23114141.html.
 This was a Japanese set of shell scripts and odd generic operation executables. There is some weird encoding here too.
 
-This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
-
- **Game**                                         | **MAME Ver.**     | **FB Neo**     | **ENG Filename**     | **ENG CRC**     | **JP Filename**      | **JP CRC**     | **Notes**    
----------------------------------------------|---------------|------------|------------------|-------------|------------------|------------|-----------------    
- **Darkstalkers: The Night Warriors**             | MAME 0.139    | N          | dstlku.zip       | Bad         | vampj.zip        | Bad        | (1)  
- **Night Warriors:Darkstalkers' Revenge**         | MAME 0.139    | N          | nwarru.zip       | Bad         | vhuntjr2.zip     | Bad        | (1)  
- **Vampire Savior: The Lord of Vampire**          | MAME 0.139    | N          | vsavj.zip        | Bad         | vsavu.zip        | Bad        | (1)  
- **Vampire Hunter 2: Darkstalkers Revenge**       | MAME 0.139    | N          | N/A              | N/A         | vhunt2,zip       | Bad        | (1)  
- **Vampire Savior 2: The Lord of Vampire**        | MAME 0.139    | N          | N/A              | N/A         | vsav2.zip        | Bad        | (1)  
- **Cyberbots: Fullmetal Madness**                 | MAME 0.139    | N          | cybotsj.zip      | Bad         | cybotsu.zip      | Bad        | (1)  
- **Super Puzzle Fighter II Turbo**                | MAME 0.139    | N          | spf2xj.zip       | Bad         | spf2tu.zip       | Bad        | (1) (3)  
- **Super Gem Fighter Mini Mix**                   | MAME 0.139    | N          | pfghtj.zip       | Bad         | sgemf.zip        | Bad        | (1)  
- **Hyper Street Fighter II: Anniversary Edition** | MAME 0.139    | N          | hsf2j.zip        | Bad         | hsf2.zip         | Bad        | (1) (4)  
- **Red Earth**                                    | N/A           | N/A        | redearth         | N/A         | warzard          | N/A        | (2)  
-
-
-1. These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require
-2. This CPS3 game cannot yet be extracted.
-3. The US version of does not have a valid MAME release.
-4. The JP version of is using an older internal file naming convention.
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\CAPCOM FIGHTING COLLECTION"
+This script will extract and prep the ROMs. Some per-rom errata are in the notes below. All CRCs are currently mismatched.
+'''
+    _out_file_list = [
+        {
+            "game": "Darkstalkers: The Night Warriors (U)",
+            "system": "Arcade",
+            "filename": "dstlku.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Darkstalkers: The Night Warriors (J)",
+            "system": "Arcade",
+            "filename": "vampj.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Night Warriors:Darkstalkers' Revenge (U)",
+            "system": "Arcade",
+            "filename": "nwarru.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Night Warriors:Darkstalkers' Revenge (J)",
+            "system": "Arcade",
+            "filename": "vhuntjr2.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Vampire Savior: The Lord of Vampire (U)",
+            "system": "Arcade",
+            "filename": "vsavu.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Vampire Hunter 2: Darkstalkers Revenge (J)",
+            "system": "Arcade",
+            "filename": "vhunt2.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Vampire Savior 2: The Lord of Vampire (J)",
+            "system": "Arcade",
+            "filename": "vsav2.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Cyberbots: Fullmetal Madness (U)",
+            "system": "Arcade",
+            "filename": "cybotsj.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Cyberbots: Fullmetal Madness (J)",
+            "system": "Arcade",
+            "filename": "cybotsu.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Super Puzzle Fighter II Turbo (U)",
+            "system": "Arcade",
+            "filename": "spf2tu.zip",
+            "notes": [1, 3]
+        },
+        {
+            "game": "Super Puzzle Fighter II Turbo (J)",
+            "system": "Arcade",
+            "filename": "spf2xj.zip",
+            "notes": [1, 3]
+        },
+        {
+            "game": "Super Gem Fighter Mini Mix (U)",
+            "system": "Arcade",
+            "filename": "sgemf.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Super Gem Fighter Mini Mix (J)",
+            "system": "Arcade",
+            "filename": "pfghtj.zip",
+            "notes": [1]
+        },
+        {
+            "game": "Hyper Street Fighter II: Anniversary Edition (U)",
+            "system": "Arcade",
+            "filename": "hsf2.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Hyper Street Fighter II: Anniversary Edition (J)",
+            "system": "Arcade",
+            "filename": "hsf2j.zip",
+            "notes": [1, 4]
+        },
+        {
+            "game": "Red Earth (U)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [2]
+        },
+        {
+            "game": "Warzard (J)",
+            "system": "Arcade",
+            "filename": "N/A",
+            "notes": [2]
+        }
+    ]
+    _out_file_notes = {
+        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
+        "2": "This CPS3 game cannot yet be extracted.",
+        "3": "The US version of does not have a valid MAME release.",
+        "4": "The JP version of is using an older internal file naming convention."
+    }
+    _default_input_folder = helpers.gen_steam_app_default_folder("CAPCOM FIGHTING COLLECTION")
     _input_folder_desc = "CFC Steam folder"
     _short_description = ""
 

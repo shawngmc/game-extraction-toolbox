@@ -73,6 +73,26 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Profile SF30AC",
+            "type": "python",
+            "request": "launch",
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "-o",
+                "\"${workspaceFolder}\\out\\sf30ac.prof\"",
+                "${workspaceFolder}\\src\\gex\\toolbox.py",
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30ac\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SNK40",
             "type": "python",
             "request": "launch",
@@ -86,7 +106,11 @@
                 "--task", 
                 "snk40", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\snk40\""
+                "\"${workspaceFolder}\\out\\snk40\"",
+                "--srcdir", 
+                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\"",
+                "--prop",
+                "include-partials=True"
             ]
         },
         {
@@ -117,6 +141,26 @@
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
             "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas1_old", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas1_old\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Profile CAS1 Old",
+            "type": "python",
+            "request": "launch",
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "-o",
+                "\"${workspaceFolder}\\out\\cas1_old.prof\"",
+                "${workspaceFolder}\\src\\gex\\toolbox.py",
                 "tasks", 
                 "extract", 
                 "--task", 
@@ -276,6 +320,152 @@
                 "sadxgg", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\sadxgg\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing ZAMN",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "zamn", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\zamn\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Atari Vault",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "atarivault", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\atarivault\"",
+                "--prop",
+                "include-arcade-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing MKAK",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mkak", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mkak\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing ACAC",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "acac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\acac\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing pacmanmplus",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "pacmanmplus", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\pacmanmplus\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CAS1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas1\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing CAS2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "cas2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\cas2\"",
+                "--prop",
+                "include-partials=True"
             ]
         }
     ]

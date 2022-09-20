@@ -2,6 +2,7 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
+from gex.lib.tasks import helpers
 
 logger = logging.getLogger('gextoolbox')
 
@@ -11,17 +12,47 @@ class DisneyAfternoonCollectionTask(BaseTask):
     _title = "Disney Afternoon Collection"
     _details_markdown = '''
 Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
-
- **Game**                                   |  **Filename**          
----------------------------------------|--------------------------  
- **Chip n Dale - Rescue Rangers**           |  Chip n Dale - Rescue Rangers (DAC).nes   
- **Chip n Dale - Rescue Rangers 2**         |  Chip n Dale - Rescue Rangers 2 (DAC).nes  
- **Darkwing Duck**                          |  Darkwing Duck (DAC).nes  
- **DuckTales**                              |  DuckTales (DAC).nes  
- **DuckTales 2**                            |  DuckTales 2 (DAC).nes  
- **TaleSpin**                               |  TaleSpin (DAC).nes   
-    '''
-    _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\common\DisneyAfternoon"
+'''
+    _out_file_list = [
+        {
+            "game": "Chip n Dale - Rescue Rangers",
+            "system": "NES",
+            "filename": "Chip n Dale - Rescue Rangers (DAC).nes",
+            "notes": []
+        },
+        {
+            "game": "Chip n Dale - Rescue Rangers 2",
+            "system": "NES",
+            "filename": "Chip n Dale - Rescue Rangers 2 (DAC).nes",
+            "notes": []
+        },
+        {
+            "game": "Darkwing Duck",
+            "system": "NES",
+            "filename": "Darkwing Duck (DAC).nes",
+            "notes": []
+        },
+        {
+            "game": "DuckTales",
+            "system": "NES",
+            "filename": "DuckTales (DAC).nes",
+            "notes": []
+        },
+        {
+            "game": "DuckTales 2",
+            "system": "NES",
+            "filename": "DuckTales 2 (DAC).nes",
+            "notes": []
+        },
+        {
+            "game": "TaleSpin",
+            "system": "NES",
+            "filename": "TaleSpin (DAC).nes",
+            "notes": []
+        },
+    ]
+    _out_file_notes = {}
+    _default_input_folder = helpers.gen_steam_app_default_folder("DisneyAfternoon")
     _input_folder_desc = "DisneyAfternoon Folder (Steam install folder)"
     _short_description = ""
 
