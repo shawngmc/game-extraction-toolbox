@@ -28,107 +28,34 @@ class PacManMuseumPlusTask(BaseTask):
         {
             "name": "PAC Land",
             "system": "Arcade",
-            "filename": "pacland.zip",
+            "filename": "paclandj.zip",
             "in": {
                 "filename": "GamePacland_pacmuseum2021_windows_x64_Release.dll",
                 "start": 170352,
                 "length": 116880
             },
             "out": [
-                {
-                    "filename": "pl1-2.1t",
-                    "start": 0x00000,
-                    "length": 0x400,
-                },
-                {
-                    "filename": "pl1-1.1r",
-                    "start": 0x00400,
-                    "length": 0x400,
-                },
-                {
-                    "filename": "pl1-5.5t",
-                    "start": 0x00800,
-                    "length": 0x400,
-                },
-                {
-                    "filename": "pl1-4.4n",
-                    "start": 0x00C00,
-                    "length": 0x400,
-                },
-                {
-                    "filename": "pl1-3.6l",
-                    "start": 0x01000,
-                    "length": 0x400,
-                },
-                {
-                    "filename": "pl5_01b.8b",
-                    "start": 0x1400,
-                    "length": 0x4000,
-                }, # Bad checksum
-                {
-                    "filename": "pl5_02.8d",
-                    "start": 0x5400,
-                    "length": 0x4000,
-                }, # Bad checksum
-                {
-                    "filename": "pl1_3.8e",
-                    "start": 0x09400,
-                    "length": 0x4000,
-                },
-                {
-                    "filename": "pl1_4.8f",
-                    "start": 0x0D400,
-                    "length": 0x4000,
-                },
-                {
-                    "filename": "pl1_5.8h",
-                    "start": 0x11400,
-                    "length": 0x4000,
-                },
-                {
-                    "filename": "pl3_6.8j",
-                    "start": 0x15400,
-                    "length": 0x4000,
-                },  # Bad checksum
-                {
-                    "filename": "pl1_7.3e",
-                    "start": 0x19400,
-                    "length": 0x2000,
-                },
-                {
-                    "filename": "cus60-60a1.mcu",
-                    "start": 0x1B400,
-                    "length": 0x1000,
-                },
-                {
-                    "filename": "pl2_12.6n",
-                    "start": 0x1C400,
-                    "length": 0x2000,
-                }, # Bad checksum
-                {
-                    "filename": "pl4_13.6t",
-                    "start": 0x1E400,
-                    "length": 0x2000,
-                },
-                {
-                    "filename": "pl1-9.6f",
-                    "start": 0x20400,
-                    "length": 0x4000,
-                }, # Bad checksum
-                {
-                    "filename": "pl1-8.6e",
-                    "start": 0x24400,
-                    "length": 0x4000,
-                }, # Bad checksum
-                {
-                    "filename": "pl1-11.7f",
-                    "start": 0x2C400,
-                    "length": 0x4000,
-                } # Bad checksum
-                # Missing pl1-10.7e
+                { "filename": "pl1-2.1t", "start": 0x00000, "length": 0x400 },
+                { "filename": "pl1-1.1r", "start": 0x00400, "length": 0x400 },
+                { "filename": "pl1-5.5t", "start": 0x00800, "length": 0x400 },
+                { "filename": "pl1-4.4n", "start": 0x00C00, "length": 0x400 },
+                { "filename": "pl1-3.6l", "start": 0x01000, "length": 0x400 },
+                { "filename": "pl6_01.8b", "start": 0x01400, "length": 0x4000 },
+                { "filename": "pl6_02.8d", "start": 0x05400, "length": 0x4000 },
+                { "filename": "pl1_3.8e", "start": 0x09400, "length": 0x4000 },
+                { "filename": "pl1_4.8f", "start": 0x0D400, "length": 0x4000 },
+                { "filename": "pl1_5.8h", "start": 0x11400, "length": 0x4000 },
+                { "filename": "pl1_6.8j", "start": 0x15400, "length": 0x4000 },
+                { "filename": "pl1_7.3e", "start": 0x19400, "length": 0x2000 },
+                { "filename": "cus60-60a1.mcu", "start": 0x1B400, "length": 0x1000 },
+                { "filename": "pl6_12.6n", "start": 0x1C400, "length": 0x2000 },
+                { "filename": "pl1_13.6t", "start": 0x1E400, "length": 0x2000 },
+                { "filename": "pl1_9b.6f", "start": 0x20400, "length": 0x4000 },
+                { "filename": "pl1_8.6e", "start": 0x24400, "length": 0x4000 },
+                { "filename": "pl1_10b.7e", "start": 0x28400, "length": 0x4000 },
+                { "filename": "pl1_11.7f", "start": 0x2C400, "length": 0x4000 }
             ],
-            "status": 'partial',
-            "notes": [1]
+            "notes": [9]
         },
         {
             "name": "PAC Attack",
@@ -205,7 +132,7 @@ class PacManMuseumPlusTask(BaseTask):
             "filename": "pacintime.zip",
             "in": {
                 "filename": "GameSFC_Pacintime_pacmuseum2021_windows_x64_Release.dll",
-                "start": 52440,
+                "start": 0,
                 "length": 1062400
             },
             "out": [],
@@ -333,7 +260,8 @@ class PacManMuseumPlusTask(BaseTask):
         "5": "MAME does not appear to support this Arcade title, which was originally part of Namco Classic Collection Vol. 2.",
         "6": "This title is likely a native/DirectX port for XBox 360, and not a packagable ROM.",
         "7": "This title appears to launch with a Bandai Namco splash and is likely a native/DirectX port.",
-        "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted."
+        "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted.",
+        "9": "There are minor CRC mismatches, but this ROM works properly."
     }
 
     def __init__(self):
