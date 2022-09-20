@@ -90,6 +90,7 @@ def _handle_bbusters(bundle_contents):
     func_map['scale_table4'] = helpers.name_file_helper('bbusters.scale_table', 'bb-9.c14')
     func_map['audiocpu'] = helpers.name_file_helper('bbusters.audiocpu', 'bb-1.e6')
     func_map['ymsnd'] = helpers.name_file_helper('bbusters.ymsnd', 'bb-pcma.l5')
+    func_map['eeprom'] = helpers.name_file_helper('bbusters.eeprom', 'bbusters-eeprom.bin')
 
     logger.info("Processing bbusters common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)
