@@ -2,6 +2,7 @@
 - Updated Collections:
   - PAC MAN Museum Plus
     - pacland: Fixed; properly ID'd as modified paclandj
+    - Fix entry in README
   - SNK 40th Anniversary Collection
     - bbusters/bbustersj/bbustersu: Added missing EEPROM
 
