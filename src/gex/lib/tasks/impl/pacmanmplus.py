@@ -141,7 +141,7 @@ class PacManMuseumPlusTask(BaseTask):
             },
             "out": [],
             "status": 'partial',
-            "notes": [1]
+            "notes": [1, 8]
         },
         {
             "name": "Super PAC-MAN",
@@ -194,18 +194,23 @@ class PacManMuseumPlusTask(BaseTask):
             "status": 'no-rom',
             "notes": [2]
         },
+        # PAC-IN-TIME
+        # Official ROM is 1,048,576
+        # DLL is 1,062,400
+        # So, it really does need to be compressed!
+        # binwalk -e -M doesn't find anything
         {
             "name": "PAC-IN-TIME",
             "system": "SNES",
             "filename": "pacintime.zip",
             "in": {
                 "filename": "GameSFC_Pacintime_pacmuseum2021_windows_x64_Release.dll",
-                "start": 0,
+                "start": 52440,
                 "length": 1062400
             },
             "out": [],
             "status": 'partial',
-            "notes": [1]
+            "notes": [1, 8]
         },
         {
             "name": "PAC and Pal",
@@ -326,8 +331,9 @@ class PacManMuseumPlusTask(BaseTask):
         "3": "Along with some CRC mismatches, this game renders upside-down. MAME and RetroArchMAME have slightly different ways to fix this per game.",
         "4": "A missing PROM and bad CRC on a couple files prevent this from starting at all.",
         "5": "MAME does not appear to support this Arcade title, which was originally part of Namco Classic Collection Vol. 2.",
-        "6": "It's currently not know what console this version is from - it could be GBA, PSP, PS2, PS3, Xbox, X360...",
-        "7": "This title appears to launch with a Bandai Namco splash and is likely a native/DirectX port."
+        "6": "This title is likely a native/DirectX port for XBox 360, and not a packagable ROM.",
+        "7": "This title appears to launch with a Bandai Namco splash and is likely a native/DirectX port.",
+        "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted."
     }
 
     def __init__(self):
@@ -360,7 +366,6 @@ class PacManMuseumPlusTask(BaseTask):
                 contents = dll_file.read()
                 zip_files = {}
 
-                
                 contents = transforms.cut(contents, game['in']['start'], length=game['in']['length'])
                 if game['system'] == "Arcade":
                     lzd = lzma.LZMADecompressor()
@@ -368,18 +373,18 @@ class PacManMuseumPlusTask(BaseTask):
                     if is_partial:
                         zip_files["decompressed_blob"] = contents
 
-                    for work_file in game['out']:
+                    for work_file in game.get('out') or []:
                         zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
                 else:
                     if is_partial:
                         zip_files["blob"] = contents
 
+                    for work_file in game.get('out') or []:
+                        zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
 
-
-
-
-                logger.info(f"Saving {game['filename']}...")
-                with open(os.path.join(out_dir, game['filename']), "wb") as out_file:
+                filename = f"partial_{game['filename']}" if  is_partial else game['filename']
+                logger.info(f"Saving {filename}...")
+                with open(os.path.join(out_dir, filename), "wb") as out_file:
                     out_file.write(helpers.build_zip(zip_files))
 
         logger.info("Processing complete.")
