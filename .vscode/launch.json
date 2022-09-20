@@ -395,6 +395,42 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing ACAC",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "acac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\acac\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing pacmanmplus",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "pacmanmplus", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\pacmanmplus\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS1",
             "type": "python",
             "request": "launch",
