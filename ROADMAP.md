@@ -3,6 +3,8 @@
 ## Future / Other Tools
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
+- Brave Battle Saga - The Legend of The Magic Warrior
+- Wonder Boy The Dragon's Trap
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
@@ -40,6 +42,8 @@
 - Mega Man X Legacy Collection 2
 - Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
+- Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
+
 
 ## Not Yet Owned / Future Investigation
 - Neo Geo Pocket Color Selection Vol. 1
@@ -57,6 +61,7 @@
   Recommended in #15.
 - CAVE: Deathsmiles I + II
   Recommended in #15.
+- Darius Cozmic Collection Arcade
 
 ## Upcoming Releases
 - Atari 50th: Anniversary Collection (Winter 2022)
@@ -66,6 +71,8 @@
   Audio ROMs were replaced with a different audio solution.
 - Dungeons & Dragons: Chronicles of Mystara
   Maincpu and Gfx ROMs are there, but audio is completely reworked.
+- Midway Arcade Treasures Vol. 1 (PS2)
+  Audio ROMs replaced. For example, Smash TV has all the game ROMs, but none of the sound ROMs.
 
 ## Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
