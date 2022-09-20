@@ -1,3 +1,9 @@
+# 0.1.1
+- Updated Collections:
+  - SNK 40th Anniversary Collection
+    - bbusters/bbustersj/bbustersu: Added missing EEPROM
+
+
 # 0.1.0
 - Added Games/Collections:
   - Atari Vault
