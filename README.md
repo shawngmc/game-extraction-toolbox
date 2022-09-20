@@ -123,7 +123,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
- **Arcade Collection Anniversary Classics**     | 30%    | Some progress, but there are a lot of non-extractable titles.
+ **Pac Man Museum Plus**                        | 40%    | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
