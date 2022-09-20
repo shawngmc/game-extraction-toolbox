@@ -34,14 +34,11 @@
 - Capcom Arcade Stadium 2
   Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
   PLACEHOLDER ADDED. See #18.
-- Pac-Man Museum+
-  There appears to be a DLL for each game in INSTALL_DIR\PAC-MAN MUSEUM+_Data\Plugins\x86_64
-  However, these DLLs do not contain the game ROMs directly from what I can tell - some sort of obfuscation/encryption/reformatting is in play.
-  Loading as a DLL, there is a CreateGameModule function that looks promising.
 - Mega Man Zero / ZX Collection
 - Mega Man X Legacy Collection 2
 - Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
+  Started stubbing, but no progress yet
 - Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
 
 
