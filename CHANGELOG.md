@@ -9,6 +9,10 @@
     - Fix entry in README
   - SNK 40th Anniversary Collection
     - bbusters/bbustersj/bbustersu: Playable -> Good: Added missing EEPROM
+    - bermudata: Playable -> Playable: Removed unnecessary placeholders
+    - legofair: Playable -> Playable: Added missing placeholders
+    - psychosj: Broken -> Playable: Added missing Sound ROM
+    - worldwar: Partial -> Playable: Added missing ADPCM ROM, removed unnecessary placeholders
 - Improvements:
   - More consistent 'ROM Status' field (#29)
 - Internal:

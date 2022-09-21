@@ -127,7 +127,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Pac Man Museum Plus**                        | 40%    | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
+ **SNK 40th Anniversary Collection**            | 100%   | All games supported by an emulator are extracted!
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
  **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
 
