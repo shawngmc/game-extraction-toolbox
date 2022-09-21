@@ -7,8 +7,7 @@
   - SNK 40th Anniversary Collection
     - bbusters/bbustersj/bbustersu: Playable -> Good: Added missing EEPROM
 - Improvements:
-  - More consistent 'ROM Status' field
-
+  - More consistent 'ROM Status' field (#29)
 
 # 0.1.0
 - Added Games/Collections:
