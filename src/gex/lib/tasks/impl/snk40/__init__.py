@@ -49,7 +49,8 @@ Based on:
     _out_file_notes = {
         "1": "This is not extracted as there are missing files, such as Missing PROMs. Add '--prop include-partials=True' to include these.",
         "2": "This is playable, but is a bad dump, 1+ files with a bad CRC, and/or 1+ files with empty placeholders.",
-        "3": "This requires MAME 0.139 to play."
+        "3": "This requires MAME 0.139 to play.",
+        "4": "There are some variants that MAME does not have info on - this partial contains all the Bermuda Triangle/World Wars files for research."
     }
 
     def execute(self, in_dir, out_dir):

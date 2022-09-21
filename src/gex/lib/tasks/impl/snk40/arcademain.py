@@ -11,204 +11,238 @@ out_file_info = [
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "aso.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "alphamis.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "arian.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "TNKIII",
         "system": "Arcade",
         "filename": "tnk3.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "TNKIII (J)",
         "system": "Arcade",
         "filename": "tnk3j.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Athena",
         "system": "Arcade",
-        "filename": "N/A",
+        "filename": "athena.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "gensitou.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "prehisle.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "prehisleu.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsm.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsm1.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsmj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsmw.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3j.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3k.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3u.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "P.O.W",
         "system": "Arcade",
         "filename": "pow.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "P.O.W",
         "system": "Arcade",
         "filename": "powj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguard.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguardc.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguardj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Guerilla War",
         "system": "Arcade",
         "filename": "gwar.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guerilla War (A)",
         "system": "Arcade",
         "filename": "gwara.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guerilla War (B)",
         "system": "Arcade",
         "filename": "gwarb.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guevara (Guerilla War (J))",
         "system": "Arcade",
         "filename": "gwarj.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Psycho Soldier",
         "system": "Arcade",
         "filename": "psychos.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Psycho Soldier (J)",
         "system": "Arcade",
         "filename": "psychosj.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I",
         "system": "Arcade",
         "filename": "ikari.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (US Alt.)",
         "system": "Arcade",
         "filename": "ikaria.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (J, No Continues)",
         "system": "Arcade",
         "filename": "ikarijp.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (No Continues)",
         "system": "Arcade",
         "filename": "ikarinc.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari 2 Victory Road",
         "system": "Arcade",
         "filename": "victroad.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Dogou Souken (Ikari 2 Victory Road (J))",
         "system": "Arcade",
         "filename": "dogosoke.zip",
+        'status': 'playable',
         "notes": [2]
     }
 ]
@@ -1039,14 +1073,12 @@ def _handle_guerilla(bundle_contents):
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
     out_files.append(utils.build_snk_rom("gwara.zip", bundle_contents, func_map))
 
-    # GWARB
+    # GWARAB
     func_map = {}
     func_map['tx'] = helpers.name_file_helper("GuerillaWar.tx", "gv5.3a")
-    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.b.0.z80", "g01")
-    func_map['audio'] = helpers.common_rename_helper(audio_common_file_map, {
-        "2.6g": "g02",
-        "3.7g": "g03"
-    })
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.b.0.z80", "gv3 ver 1.4p")
+    func_map['sub'] = helpers.name_file_helper("GuerillaWar.a.1.z80", "gv4.8p")
+    func_map['audiocpu'] = helpers.name_file_helper("GuerillaWar.a.2.z80", "gv2.7k")
     func_map['common'] = helpers.common_rename_helper(common_file_map, {
         "4.2j": "gv1.5g",
         "gw6.2j": "gv9.3g",
@@ -1071,7 +1103,14 @@ def _handle_guerilla(bundle_contents):
         "1.9u": "2.1l",
         "2.9v": "3.2l"
     })
-    out_files.append(utils.build_snk_rom("gwarb.zip", bundle_contents, func_map))
+    ph_files = {
+        'l.1x': 0x1000,
+        'l.1w': 0x1000,
+        'horizon.8j': 0x400,
+        'vertical.8k': 0x400
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    out_files.append(utils.build_snk_rom("gwarab.zip", bundle_contents, func_map))
 
     # GWARJ
     func_map = {}
@@ -1160,7 +1199,7 @@ def _handle_psycho(bundle_contents):
         "ps3.5d",
         "ps4.5f"
     ]
-    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
+    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.j.adpcm', adpcm_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
     out_files.append(utils.build_snk_rom("psychosj.zip", bundle_contents, func_map))
 

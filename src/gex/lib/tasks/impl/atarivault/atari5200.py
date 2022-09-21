@@ -45,6 +45,7 @@ def get_game_list():
         'filename': x['filename'],
         'game': f"{x['name']}",
         'system': "Atari 5200",
+        'status': "good",
         "notes": []},
         game_info_map.values())
 
@@ -70,7 +71,8 @@ def copy(in_dir, out_dir):
             try:
                 shutil.copyfile(file_path, os.path.join(
                     out_dir, game_info['filename']))
-            except Exception as _:
+            except OSError as error:
                 logger.warning(f'Error while processing {file_path}!')
+                logger.warning(error)
         else:
             logger.debug(f'Skipping unmatched file {file_path}!')

@@ -11,36 +11,42 @@ out_file_info = [
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbusters.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbustersj.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbustersu.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searchar.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searcharj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searcharu.zip",
+        'status': 'good',
         "notes": []
     }
 ]
@@ -90,6 +96,7 @@ def _handle_bbusters(bundle_contents):
     func_map['scale_table4'] = helpers.name_file_helper('bbusters.scale_table', 'bb-9.c14')
     func_map['audiocpu'] = helpers.name_file_helper('bbusters.audiocpu', 'bb-1.e6')
     func_map['ymsnd'] = helpers.name_file_helper('bbusters.ymsnd', 'bb-pcma.l5')
+    func_map['eeprom'] = helpers.name_file_helper('bbusters.eeprom', 'bbusters-eeprom.bin')
 
     logger.info("Processing bbusters common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)

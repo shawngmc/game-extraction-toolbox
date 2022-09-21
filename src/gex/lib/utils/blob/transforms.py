@@ -3,7 +3,7 @@ import itertools
 from bitarray import bitarray
 
 
-def cut(contents, start, length=None, end=None):
+def cut(contents: bytes, start: int, length: int=None, end: int=None) -> bytearray:
     '''Select a chunk out of a blob'''
     if length is None and end is None:
         raise Exception(
@@ -16,14 +16,14 @@ def cut(contents, start, length=None, end=None):
 
     return bytearray(contents[start:end])
 
-def merge(chunks):
+def merge(chunks: list[bytes]) -> bytearray:
     '''Merge an array of blobs into a single blob'''
     new_content = bytearray()
     for chunk in chunks:
         new_content += chunk
     return new_content
 
-def pad(contents, new_length, pad_byte=b'\0'):
+def pad(contents: bytes, new_length: int, pad_byte=b'\0') -> bytearray:
     '''Pad a blob to a specific size'''
     new_content = bytearray()
     new_content.extend(contents)
@@ -31,7 +31,7 @@ def pad(contents, new_length, pad_byte=b'\0'):
     new_content.extend(bytearray(pad_byte * pad_size))
     return new_content
 
-def custom_split(contents, chunk_sizes):
+def custom_split(contents: bytes, chunk_sizes: list[int]) -> list[bytearray]:
     '''Split a blob into an array of blobs with specified sizes'''
     if len(contents) != sum(chunk_sizes):
         raise Exception(
@@ -47,7 +47,7 @@ def custom_split(contents, chunk_sizes):
     return temp_chunks
 
 
-def equal_split(contents, num_chunks=None, chunk_size=None):
+def equal_split(contents: bytes, num_chunks: int=None, chunk_size: int=None) -> list[bytearray]:
     '''Split a blob in an array of blobs with equal sizes'''
     if num_chunks is None and chunk_size is None:
         raise Exception("Equal split num_chunks or chunk_Size required")
@@ -70,7 +70,7 @@ def equal_split(contents, num_chunks=None, chunk_size=None):
     return temp_chunks
 
 
-def interleave(chunks, word_size):
+def interleave(chunks: list[bytes], word_size: int) -> bytearray:
     '''Interleave an array of blobs together into a single blob, word_size bytes at a time'''
     if len(chunks) < 2:
         raise Exception("Interleave requires at least 2 chunks to interleave.")
@@ -92,7 +92,7 @@ def interleave(chunks, word_size):
     return new_contents
 
 
-def deinterleave(contents, num_ways, word_size):
+def deinterleave(contents: bytes, num_ways: int, word_size: int) -> list[bytearray]:
     '''Deinterleave a blob into an array of num_ways blobs, word_size bytes at a time'''
     interleave_group_length = num_ways * word_size
     temp_chunks = []
@@ -108,7 +108,7 @@ def deinterleave(contents, num_ways, word_size):
             contents, itertools.cycle(flag_arr))))
     return temp_chunks
 
-def deinterleave_nibble(contents, num_ways, bit_prefix=bitarray('0000')):
+def deinterleave_nibble(contents: bytes, num_ways: int, bit_prefix: bitarray=bitarray('0000')) -> list[bytearray]:
     '''Deinterleave a blob into an array of num_ways blobs, 4 bits at a time; must be an even num_ways'''
     interleave_group_length = int(num_ways * .5)
     num_interleave_groups = len(contents) // interleave_group_length
@@ -126,7 +126,7 @@ def deinterleave_nibble(contents, num_ways, bit_prefix=bitarray('0000')):
 
     return [bytearray(temp_bit_chunk.tobytes()) for temp_bit_chunk in temp_bit_chunks]
 
-def deinterleave_all(chunks, num_ways, word_size):
+def deinterleave_all(chunks: list[bytes], num_ways: int, word_size: int) -> list[bytes]:
     '''Convenience wrapper for deinterleave() to handle multiple input blobs at once'''
     # Note: A list comprehension like the following would be more pythonic here, but...
     # It's actually harder to read AND oddly slightly less performant (typically .1-.2s at the most)
@@ -139,12 +139,12 @@ def deinterleave_all(chunks, num_ways, word_size):
     return temp_chunks
 
 
-def truncate(contents, max_length):
+def truncate(contents: bytes, max_length: int) -> bytes:
     '''Remove all content from a blob after max_length bytes'''
     return contents[0:max_length]
 
 
-def splice_out(contents, start, length=None, end=None):
+def splice_out(contents: bytes, start: int, length: int=None, end: int=None) -> bytearray:
     '''Remove an inner section of a blob'''
     if length is None and end is None:
         raise Exception(
@@ -158,7 +158,7 @@ def splice_out(contents, start, length=None, end=None):
     return bytearray(contents[0:start] + contents[end:len(contents)])
 
 
-def swap_endian(contents):
+def swap_endian(contents: bytes) -> list[bytearray]:
     '''Swap the a blob from little endian to big or vice versa'''
     new_contents = bytearray(len(contents))
     new_contents[0::2] = contents[1::2]
@@ -166,7 +166,7 @@ def swap_endian(contents):
     return new_contents
 
 
-def swap_endian_all(chunks):
+def swap_endian_all(chunks: list[bytes]) -> list[bytearray]:
     '''Convenience wrapper for swap_endian() to handle multiple input blobs at once'''
     temp_chunks = []
     for chunk in chunks:
@@ -174,7 +174,7 @@ def swap_endian_all(chunks):
     return temp_chunks
 
 
-def bit_shuffle(contents, word_size_bytes, bit_order):
+def bit_shuffle(contents: bytes, word_size_bytes: int, bit_order: list[int]) -> bytearray:
     '''Reshuffle bits in a blob using the specified order'''
     # This is a SLOW operation no matter what.
     # Given an example from SFA1:
@@ -216,7 +216,7 @@ def bit_shuffle(contents, word_size_bytes, bit_order):
     return new_content
 
 
-def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
+def split_bit_shuffle(contents: bytes, word_size_bytes: int, bit_order: list[int], num_ways: int) -> list[bytearray]:
     '''Reshuffle bits in a blob using the specified order into an array of blobs'''
     new_chunks = []
     for curr_way in range(0, num_ways):
@@ -246,7 +246,7 @@ def split_bit_shuffle(contents, word_size_bytes, bit_order, num_ways):
     return new_chunks
 
 
-def byte_shuffle(contents, word_size_bytes, byte_order):
+def byte_shuffle(contents: bytes, word_size_bytes: int, byte_order: list[int]) -> bytearray:
     '''Reshuffle bytes in a blob using the specified order'''
     new_content = bytearray()
     num_shuffles = len(contents)//word_size_bytes
