@@ -30,7 +30,7 @@ class ACACTask(BaseTask):
             "name": "ajax",
             "filename": "ajax.zip",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x11B610,
                 "length": 3473920
@@ -140,7 +140,7 @@ class ACACTask(BaseTask):
             "name": "nemesis",
             "filename": "nemesis.zip",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x22E110,
                 "length": 74752
@@ -150,7 +150,7 @@ class ACACTask(BaseTask):
             "name": "salamand.zip",
             "filename": "salamand",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x4165D0,
                 "length": 4415040
@@ -166,7 +166,7 @@ class ACACTask(BaseTask):
             "name": "thunderx",
             "filename": "thunderx.zip",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x4D13D0,
                 "length": 1900800
@@ -176,7 +176,7 @@ class ACACTask(BaseTask):
             "name": "twinbee",
             "filename": "twinbee.zip",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x2F2DE0,
                 "length": 541184
@@ -186,7 +186,7 @@ class ACACTask(BaseTask):
             "name": "vulcan",
             "filename": "vulcan.zip",
             'status': 'partial',
-            "notes": [1]
+            "notes": [1],
             "in": {
                 "start": 0x37C280,
                 "length": 3080192
