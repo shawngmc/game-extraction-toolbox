@@ -151,3 +151,4 @@ These are noted in the documentation for each script. If you think a ROM is misi
  * The ROM has missing files that can be filled with placeholders or left out.
  * Files are present that work as normal, but have bad CRCs. This may be due to copyright changes, etc., but ultimately does not match a known good source.
  * Publishers may offer modified ROMs - such as increased difficulty, theming, or new game modes - which are often not publicly tracked.
+ * It may only work in older versions of emulators due to odd dumps, missing files, etc.
