@@ -11,7 +11,7 @@ logger = logging.getLogger('gextoolbox')
 
 class ACACTask(BaseTask):
     '''Implements acac: Arcade Classics Anniversary Collection'''
-    _task_name = "ags"
+    _task_name = "acac"
     _title = "Arcade Classics Anniversary Collection"
     _details_markdown = ''''''
     _default_input_folder = helpers.gen_steam_app_default_folder("Arcade Classics Anniversary Collection")
