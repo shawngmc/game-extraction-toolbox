@@ -19,7 +19,8 @@ games = [
             "035144.02",
             "035143.02",
             "035127.02"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Asteroids Deluxe",
@@ -34,7 +35,8 @@ games = [
             "036433.03",
             "036800.02",
             "036799.01"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Black Widow",
@@ -55,6 +57,7 @@ games = [
             "136017.105": 4096,
             "136017.106": 4096
         },
+        "status": "playable",
         "notes": [2]
     },
     {
@@ -66,7 +69,7 @@ games = [
         ],
         "mame_name": "canyon",
         # "handler": "_handle_canyon",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -76,7 +79,7 @@ games = [
             "Centipede.bmp"
         ],
         "mame_name": "centiped",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -86,7 +89,7 @@ games = [
             "Crystal Castles.bmp"
         ],
         "mame_name": "ccastles",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Gravitar",
@@ -107,6 +110,7 @@ games = [
             "136010.305": 4096,
             "136010.306": 4096
         },
+        "status": "good",
         "notes": []
     },
     {
@@ -117,7 +121,7 @@ games = [
             "Liberator Projection.bin"
         ],
         "mame_name": "liberatr",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -135,6 +139,7 @@ games = [
             "034570.01",
             "034569.02"
         ],
+        "status": "playable",
         "notes": [2]
     },
     {
@@ -145,8 +150,10 @@ games = [
             "Major Havoc vector banks.bin",
             "Major Havoc.bin"
         ],
+        "status": "good",
         "mame_name": "mhavoc",
-        "handler": "_handle_mhavoc"
+        "handler": "_handle_mhavoc",
+        "notes": []
     },
     {
         "name": "Millipede",
@@ -155,7 +162,7 @@ games = [
             "Millipede.bmp"
         ],
         "mame_name": "milliped",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -171,7 +178,8 @@ games = [
             "035823.02",
             "035824.02",
             "035825.02"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Red Baron",
@@ -179,7 +187,8 @@ games = [
             "Red Baron.bin"
         ],
         "mame_name": "redbaron",
-        "handler": "_handle_redbaron"
+        "handler": "_handle_redbaron",
+        "status": "good"
     },
     {
         "name": "Space Duel",
@@ -195,7 +204,8 @@ games = [
             "136006.103": 4096,
             "136006.104": 4096,
             "136006.105": 4096
-        }
+        },
+        "status": "good"
     },
     {
         "name": "Sprint2",
@@ -206,6 +216,7 @@ games = [
         ],
         "mame_name": "sprint2",
         "handler": "_handle_sprint2",
+        "status": "good",
         "notes": [6]
     },
     {
@@ -216,7 +227,7 @@ games = [
             "Super Breakout.bmp"
         ],
         "mame_name": "sbrkout",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -232,7 +243,8 @@ games = [
             "134.002",
             "133.002",
             "138.002"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Warlords",
@@ -242,7 +254,7 @@ games = [
             "Warlords.bmp"
         ],
         "mame_name": "warlords",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -250,6 +262,7 @@ games = [
         "files": [
             "Avalanche.bin"
         ],
+        "status": "good",
         "mame_name": "avalnche",
         "handler": "_handle_avalnche"
     },
@@ -261,7 +274,7 @@ games = [
             "AtariBaseballTiles2.bmp"
         ],
         "mame_name": "abaseb",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -272,7 +285,7 @@ games = [
             "AtariBasketballSprites.bmp"
         ],
         "mame_name": "bsktball",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Destroyer",
@@ -284,7 +297,7 @@ games = [
             "DestroyerWaves.bmp"
         ],
         "mame_name": "destroyr1",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Dominos",
@@ -293,7 +306,7 @@ games = [
             "DominosTiles.bmp"
         ],
         "mame_name": "dominos",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -306,7 +319,7 @@ games = [
             "FireTruckTiles2.bmp"
         ],
         "mame_name": "firetrk",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -317,7 +330,7 @@ games = [
             "AtariFootballTiles2.bmp"
         ],
         "mame_name": "atarifb",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -327,7 +340,7 @@ games = [
             "MazeInvaders.bmp"
         ],
         "mame_name": "mazeinv",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -342,7 +355,7 @@ games = [
         ],
         "mame_name": "montecar",
         "handler": "_handle_montecar",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -353,7 +366,7 @@ games = [
             "PoolsharkTiles.bmp"
         ],
         "mame_name": "poolshrk",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -364,7 +377,7 @@ games = [
             "SkydiverTiles.bmp"
         ],
         "mame_name": "skydiver",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -376,7 +389,7 @@ games = [
             "AtariSoccerTiles2.bmp"
         ],
         "mame_name": "soccer",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -388,7 +401,7 @@ games = [
             "SuperBugTiles2.bmp"
         ],
         "mame_name": "superbug",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     }
 ]
@@ -397,9 +410,10 @@ games = [
 def get_game_list():
     '''Transform the game map for documentation'''
     return map(lambda x: {
-        'filename': f"{x['mame_name']}{'-partial' if 'partial' in x and x['partial'] is True else ''}.zip",
+        'filename': f"{x['mame_name']}{'-partial' if x['status'] == 'partial' else ''}.zip",
         'game': x['name'],
         'system': "Arcade",
+        'status': x['status'],
         "notes": [[1] if 'mame_name' in x else None] + [[5] if 'unextractable' in x and x['unextractable'] else None] + [x['notes'] if 'notes' in x else None]}, games)
 
 def _handle_mhavoc(in_dir, game_desc):
@@ -453,7 +467,7 @@ def _handle_montecar(in_dir, game_desc):
         contents = bytearray(curr_file.read())
         zip_files['35785-01.e7'] = contents
 
-    # Bitmaps    
+    # Bitmaps
     bitmaps = [
         "MonteCarloSprites1.bmp",
         "MonteCarloSprites2.bmp",
@@ -510,7 +524,7 @@ def _handle_sprint2(in_dir, game_desc):
     with open(os.path.join(in_dir, "Sprint2Sprites.bmp"), "rb") as curr_file:
         contents = bytearray(curr_file.read())
         contents = gfx_rebuilder.reverse_bmp(contents)
-        _SPRINT2_CAR_LAYOUT = {
+        sprint2_car_layout = {
             'width': 16,
             'height': 8,
             'total': 32,
@@ -521,7 +535,7 @@ def _handle_sprint2(in_dir, game_desc):
             'yoffset': [0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70],
             'charincrement': 0x80
         }
-        contents = gfx_rebuilder.reencode_gfx(contents, _SPRINT2_CAR_LAYOUT)
+        contents = gfx_rebuilder.reencode_gfx(contents, sprint2_car_layout)
         chunks = transforms.deinterleave_nibble(contents, 2)
         zip_files['6399-01.j6'] = chunks[0]
         zip_files['6398-01.k6'] = chunks[1]
@@ -530,7 +544,7 @@ def _handle_sprint2(in_dir, game_desc):
     with open(os.path.join(in_dir, "Sprint2Tiles.bmp"), "rb") as curr_file:
         contents = bytearray(curr_file.read())
         contents = gfx_rebuilder.reverse_bmp(contents)
-        _SPRINT2_TILE_LAYOUT = {
+        sprint2_tile_layout = {
             'width': 8,
             'height': 8,
             'total': 64,
@@ -540,7 +554,7 @@ def _handle_sprint2(in_dir, game_desc):
             'yoffset': [0x00, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38],
             'charincrement': 0x40
         }
-        contents = gfx_rebuilder.reencode_gfx(contents, _SPRINT2_TILE_LAYOUT)
+        contents = gfx_rebuilder.reencode_gfx(contents, sprint2_tile_layout)
         chunks = transforms.deinterleave_nibble(contents, 2)
         zip_files['6396-01.p4'] = chunks[0]
         zip_files['6397-01.r4'] = chunks[1]
@@ -589,7 +603,8 @@ def _handle_sprint2(in_dir, game_desc):
 #         zip_files['9506-01.m5'] = chunks[1]
 
 #     # CanyonBomberTiles.bmp
-#     # TODO: Something is wrong with the math on this one, and I think it's a discrepancy vs. the mame tile layout
+#     # Something is wrong with the math on this one,
+#     # and I think it's a discrepancy vs. the mame tile layout
 #     with open(os.path.join(in_dir, "CanyonBomberTiles.bmp"), "rb") as curr_file:
 #         contents = bytearray(curr_file.read())
 #         contents = gfx_rebuilder.reverse_bmp(contents)
@@ -612,7 +627,6 @@ def _handle_sprint2(in_dir, game_desc):
 #         'contents': helpers.build_zip(zip_files)
 #     }]
 
-    
 def _handle_avalnche(in_dir, game_desc):
     # Avalanche.bin
     with open(os.path.join(in_dir, "Avalanche.bin"), "rb") as curr_file:
@@ -673,9 +687,9 @@ def extract_partials(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if 'partial' in game and game['partial'] is True:
+        if game['status'] == 'partial':
             logger.info(f"Copying partially extracted {game['name']}...")
-            
+
             if 'handler' in game:
                 handler_func = funcs[game['handler']]
                 output_files += handler_func(rom_path, game)
@@ -685,10 +699,11 @@ def extract_partials(in_dir, out_dir):
                     with open(os.path.join(rom_path, filename), "rb") as curr_file:
                         contents = bytearray(curr_file.read())
                         zip_files[filename] = contents
-                
-                with open(os.path.join(out_dir, f"{game['mame_name']}-partial.zip"), "wb") as out_file:
+
+                out_path = os.path.join(out_dir, f"{game['mame_name']}-partial.zip")
+                with open(out_path, "wb") as out_file:
                     out_file.write(helpers.build_zip(zip_files))
-                        
+
     for output_file in output_files:
         logger.info(f"Writing {output_file['filename']}...")
         out_path = os.path.join(out_dir, output_file['filename'])
@@ -704,7 +719,7 @@ def extract(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if 'partial' not in game or game['partial'] is False:
+        if game['status'] == 'partial':
             logger.info(f"Extracting {game['name']}...")
             if 'handler' in game:
                 handler_func = funcs[game['handler']]

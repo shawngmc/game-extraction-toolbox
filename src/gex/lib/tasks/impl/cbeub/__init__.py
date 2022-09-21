@@ -27,84 +27,98 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "game": "Final Fight (U)",
             "system": "Arcade",
             "filename": "ffight.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "Final Fight (J)",
             "system": "Arcade",
             "filename": "ffightj.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "King of Dragons (U)",
             "system": "Arcade",
             "filename": "kod.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "King of Dragons (J)",
             "system": "Arcade",
             "filename": "kodf.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "Captain Commando (U)",
             "system": "Arcade",
             "filename": "captcomm.zip",
+            "status": "playable",
             "notes": [2, 3]
         },
         {
             "game": "Captain Commando (J)",
             "system": "Arcade",
             "filename": "captcommj.zip",
+            "status": "playable",
             "notes": [2, 3]
         },
         {
             "game": "Knights of the Round (U)",
             "system": "Arcade",
             "filename": "knights.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "Knights of the Round (J)",
             "system": "Arcade",
             "filename": "knightsj.zip",
+            "status": "playable",
             "notes": [2]
         },
         {
             "game": "Warriors of Fate (U)",
             "system": "Arcade",
             "filename": "wof.zip",
+            "status": "playable",
             "notes": [2, 4]
         },
         {
             "game": "Warriors of Fate (J)",
             "system": "Arcade",
             "filename": "wofj.zip",
+            "status": "playable",
             "notes": [2, 4]
         },
         {
             "game": "Powered Gear (U)",
             "system": "Arcade",
             "filename": "pgear.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Powered Gear (J)",
             "system": "Arcade",
             "filename": "armwar.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Battle Circuit (U)",
             "system": "Arcade",
             "filename": "batcir.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Battle Circuit (J)",
             "system": "Arcade",
             "filename": "batcirj.zip",
+            "status": "playable",
             "notes": [1]
         }
     ]

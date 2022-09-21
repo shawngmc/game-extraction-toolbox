@@ -108,6 +108,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Arcade Collection Anniversary Classics**     | 15%    | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
@@ -123,16 +124,30 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
- **Arcade Collection Anniversary Classics**     | 30%    | Some progress, but there are a lot of non-extractable titles.
+ **Pac Man Museum Plus**                        | 40%    | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **SNK 40th Anniversary Collection**            | 99%    | Only some WorldWar/BermudaTriangle issues remain
+ **SNK 40th Anniversary Collection**            | 100%   | All games supported by an emulator are extracted!
  **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
+ **Wonder Boy: The Dragon's Trap**              | 100%   |  
  **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
 
 
 ### Completely Unplayable
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 5%     | Stubbed out some, but no playable yet due to extraction issues.
  **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
+
+
+## ROM Status Guide
+**Status**      | **Notes**           
+------------|-------------|---------------------------------------------------------------------  
+ **No ROM**     | This title in this collection does not appear to be ROM based; it's a port, remake, remaster, rebuild, etc.  
+ **Partial**    | Some extraction has been done for this title, but it is still unusable. Typically only good for research or combining with other ROMs. 
+ **Playable**   | This ROM is not perfect, but is functional in at least some emulators. 
+ **Good**       | This game is a verifiable, functional ROM.  
+
+ ### What makes a ROM 'Playable' instead of 'Good'?
+ * The ROM has missing files that can be filled with placeholders or left out.
+ * Files are present that work as normal, but have bad CRCs. This may be due to copyright changes, etc., but ultimately does not match a known good source.
+ * Publishers may offer modified ROMs - such as increased difficulty, theming, or new game modes - which are often not publicly tracked.

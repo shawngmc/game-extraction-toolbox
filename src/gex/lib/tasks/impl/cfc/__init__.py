@@ -26,110 +26,127 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
             "game": "Darkstalkers: The Night Warriors (U)",
             "system": "Arcade",
             "filename": "dstlku.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Darkstalkers: The Night Warriors (J)",
             "system": "Arcade",
             "filename": "vampj.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Night Warriors:Darkstalkers' Revenge (U)",
             "system": "Arcade",
             "filename": "nwarru.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Night Warriors:Darkstalkers' Revenge (J)",
             "system": "Arcade",
             "filename": "vhuntjr2.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Vampire Savior: The Lord of Vampire (U)",
             "system": "Arcade",
             "filename": "vsavu.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Vampire Hunter 2: Darkstalkers Revenge (J)",
             "system": "Arcade",
             "filename": "vhunt2.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Vampire Savior 2: The Lord of Vampire (J)",
             "system": "Arcade",
             "filename": "vsav2.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Cyberbots: Fullmetal Madness (U)",
             "system": "Arcade",
             "filename": "cybotsj.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Cyberbots: Fullmetal Madness (J)",
             "system": "Arcade",
             "filename": "cybotsu.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Super Puzzle Fighter II Turbo (U)",
             "system": "Arcade",
             "filename": "spf2tu.zip",
+            "status": "playable",
             "notes": [1, 3]
         },
         {
             "game": "Super Puzzle Fighter II Turbo (J)",
             "system": "Arcade",
             "filename": "spf2xj.zip",
+            "status": "playable",
             "notes": [1, 3]
         },
         {
             "game": "Super Gem Fighter Mini Mix (U)",
             "system": "Arcade",
             "filename": "sgemf.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Super Gem Fighter Mini Mix (J)",
             "system": "Arcade",
             "filename": "pfghtj.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Hyper Street Fighter II: Anniversary Edition (U)",
             "system": "Arcade",
             "filename": "hsf2.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Hyper Street Fighter II: Anniversary Edition (J)",
             "system": "Arcade",
             "filename": "hsf2j.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Red Earth (U)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [2]
         },
         {
             "game": "Warzard (J)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [2]
         }
     ]
     _out_file_notes = {
         "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
         "2": "This CPS3 game cannot yet be extracted.",
-        "3": "The US version of does not have a valid MAME release.",
-        "4": "The JP version of is using an older internal file naming convention."
+        "3": "The US version of this does not have a valid MAME release.",
+        "4": "The JP version of this is using an older internal file naming convention."
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("CAPCOM FIGHTING COLLECTION")
     _input_folder_desc = "CFC Steam folder"

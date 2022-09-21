@@ -93,6 +93,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing wonderboy3",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "wonderboy3", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\wonderboy3\"",
+                "--srcdir", 
+                "\"C:\\Program Files\\Epic Games\\WonderBoyTheDragonsTFUa87\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing SNK40",
             "type": "python",
             "request": "launch",
@@ -408,7 +427,9 @@
                 "--task", 
                 "acac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\acac\""
+                "\"${workspaceFolder}\\out\\acac\"",
+                "--prop",
+                "include-partials=True"
             ]
         },
         {

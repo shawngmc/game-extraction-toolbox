@@ -39,10 +39,10 @@ def get_output_display(task_class):
     '''Get a display table for the output files for this task'''
     out_file_info = task_class.get_out_file_info()
     table = Texttable()
-    table.add_row(["Game", "System", "Filename", "Notes"])
+    table.add_row(["Game", "System", "Status", "Filename", "Notes"])
     for item in out_file_info['files']:
         notes = " ".join([str(note) for note in item['notes']])
-        table.add_row([item['game'], item['system'], item['filename'], notes])
+        table.add_row([item['game'], item['system'], item['status'], item['filename'], notes])
     output = table.draw()
 
     if out_file_info['notes']:

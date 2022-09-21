@@ -16,22 +16,20 @@ class DoubleDragonTrilogyTask(BaseTask):
     _details_markdown = '''
 Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf8894f
 '''
-    _out_file_list = [
+    _game_info_list = [
         {
             "game": "Double Dragon",
-            "system": "Arcade",
             "filename": "ddragon.zip",
             "notes": []
         },
         {
             "game": "Double Dragon 2: The Revenge",
-            "system": "Arcade",
             "filename": "ddragon2.zip",
             "notes": []
         },
         {
             "game": "Double Dragon 3: The Rosetta Stone",
-            "system": "Arddragon3.zip",
+            "filename": "dragon3.zip",
             "notes": [1]
         }
     ]
@@ -42,6 +40,15 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
     _short_description = ""
 
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': x['game'],
+            'status': "good",
+            'system': "Arcade",
+            "notes": x['notes']},
+            self._game_info_list)
 
     def execute(self, in_dir, out_dir):
         all_ddragon_trio_files = self._read_all_files(in_dir)
@@ -77,7 +84,6 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
             chunks = transforms.equal_split(contents, num_chunks=len(filenames))
             return dict(zip(filenames, chunks))
         return encode
-
 
     _DDRAGON_CHAR_LAYOUT = {
         'width': 8,

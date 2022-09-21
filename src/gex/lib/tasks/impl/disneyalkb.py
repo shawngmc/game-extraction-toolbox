@@ -20,96 +20,112 @@ Based on https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Alad
             "game": "Aladdin",
             "system": "Game Boy",
             "filename": "Aladdin.gb",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Jungle Book",
             "system": "Game Boy",
             "filename": "JungleBook.gb",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Lion King",
             "system": "Game Boy",
             "filename": "LionKing.gb",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Aladdin (4F7A Patch)",
             "system": "Genesis",
             "filename": "Aladdin.4F7A.PATCHED.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Aladdin (9CB2 Patch)",
             "system": "Genesis",
             "filename": "Aladdin.9CB2.PATCHED.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Aladdin (CES Patch)",
             "system": "Genesis",
             "filename": "Aladdin.CES.PATCHED.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Aladdin Remix",
             "system": "Genesis",
             "filename": "Aladdin-Remix.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Jungle Book",
             "system": "Genesis",
             "filename": "JungleBook.md",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Jungle Book (Patched)",
             "system": "Genesis",
             "filename": "JUNGLEBOOK.PATCHED.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Lion King (0D3D Patch)",
             "system": "Genesis",
             "filename": "LionKing.0D3D.PATCHED.md",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Jungle Book",
             "system": "NES",
             "filename": "JungleBook.sfc",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Aladdin",
             "system": "SNES",
             "filename": "Aladdin.sfc",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Jungle Book",
             "system": "SNES",
             "filename": "JungleBook.sfc",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Jungle Book Music",
             "system": "SNES",
             "filename": "JungleBookMusicROM.sfc",
+            'status': "good",
             "notes": []
         },
         {
             "game": "Lion King (919A Patch)",
             "system": "SNES",
             "filename": "LionKing.919A.PATCHED.sfc",
+            'status': "playable",
             "notes": []
         },
         {
             "game": "Lion King (DE6E Patch)",
             "system": "SNES",
             "filename": "LionKing.DE6E.PATCHED.sfc",
+            'status': "playable",
             "notes": []
         }
     ]

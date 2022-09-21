@@ -34,168 +34,196 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
             "game": "Street Fighter 2 (U)",
             "system": "Arcade",
             "filename": "sf2ub.zip",
+            "status": "playable",
             "notes": [2, 3]
         },
         {
             "game": "Street Fighter 2 Championship Edition (U)",
             "system": "Arcade",
             "filename": "sf2ceua.zip",
+            "status": "playable",
             "notes": [2, 3]
         },
         {
             "game": "Street Fighter 2 Hyper Fighting (U)",
             "system": "Arcade",
             "filename": "sf2t.zip",
+            "status": "playable",
             "notes": [2, 3]
         },
         {
             "game": "Super Street Fighter 2 (U)",
             "system": "Arcade",
             "filename": "ssf2u.zip",
+            "status": "playable",
             "notes": [1, 3]
         },
         {
             "game": "Super Street Fighter 2 Turbo (U)",
             "system": "Arcade",
             "filename": "ssf2tu.zip",
+            "status": "playable",
             "notes": [1, 3]
         },
         {
             "game": "Street Fighter (W)",
             "system": "Arcade",
             "filename": "sf.zip",
+            "status": "playable",
             "notes": []
         },
         {
             "game": "Street Fighter (J)",
             "system": "Arcade",
             "filename": "sfj.zip",
+            "status": "playable",
             "notes": [4]
         },
         {
             "game": "Street Fighter 3",
             "system": "Arcade",
             "filename": "sfiiina.zip",
+            "status": "good",
             "notes": []
         },
         {
             "game": "Street Fighter 3: 2nd Impact",
             "system": "Arcade",
             "filename": "sfiii2n.zip",
+            "status": "good",
             "notes": []
         },
         {
             "game": "Street Fighter 3: 3rd Strike",
             "system": "Arcade",
             "filename": "sfiii3nr1.zip",
+            "status": "good",
             "notes": []
         },
         {
             "game": "Street Fighter 2 (JA)",
             "system": "Arcade",
             "filename": "sf2ja.zip",
+            "status": "playable",
             "notes": [2, 3, 4]
         },
         {
             "game": "Street Fighter 2 (JL)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [2, 3, 4, 5]
         },
         {
             "game": "Street Fighter 2 Championship Edition (JB)",
             "system": "Arcade",
             "filename": "sf2cejb.zip",
+            "status": "playable",
             "notes": [2, 3, 4]
         },
         {
             "game": "Street Fighter 2 Championship Edition (JC)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [2, 3, 4, 5]
         },
         {
             "game": "Street Fighter 2 Hyper Fighting (J)",
             "system": "Arcade",
             "filename": "sf2tj.zip",
+            "status": "playable",
             "notes": [2, 3, 4]
         },
         {
             "game": "Street Fighter Alpha (U)",
             "system": "Arcade",
             "filename": "sfau.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Street Fighter Alpha (J)",
             "system": "Arcade",
             "filename": "sfzj.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Street Fighter Alpha (JR2)",
             "system": "Arcade",
             "filename": "sfzjr2.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Street Fighter Alpha 2 (U)",
             "system": "Arcade",
             "filename": "sfa2u.zip",
+            "status": "playable",
             "notes": [1, 3]
         },
         {
             "game": "Street Fighter Alpha 2 (J)",
             "system": "Arcade",
             "filename": "sfz2j.zip",
+            "status": "playable",
             "notes": [1, 3, 4]
         },
         {
             "game": "Street Fighter Alpha 2 (JR1)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [1, 3, 4, 5]
         },
         {
             "game": "Street Fighter Alpha 3 (J)",
             "system": "Arcade",
             "filename": "sfz3j.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Street Fighter Alpha 3 (JR2)",
             "system": "Arcade",
             "filename": "sfz3jr2.zip",
+            "status": "playable",
             "notes": [1, 4]
         },
         {
             "game": "Street Fighter Alpha 3 (U)",
             "system": "Arcade",
             "filename": "sfa3u.zip",
+            "status": "playable",
             "notes": [1]
         },
         {
             "game": "Super Street Fighter 2 (J)",
             "system": "Arcade",
             "filename": "ssf2.zip",
+            "status": "playable",
             "notes": [1, 3, 4]
         },
         {
             "game": "Super Street Fighter 2 (JR1)",
             "system": "Arcade",
             "filename": "ssf2u.zip",
+            "status": "playable",
             "notes": [1, 3, 4]
         },
         {
             "game": "Super Street Fighter 2 Turbo (J)",
             "system": "Arcade",
             "filename": "ssf2tu.zip",
+            "status": "playable",
             "notes": [1, 3, 4]
         },
         {
             "game": "Super Street Fighter 2 Turbo (JR1)",
             "system": "Arcade",
             "filename": "N/A",
+            "status": "no-rom",
             "notes": [1, 3, 4, 5]
         }
     ]
@@ -212,6 +240,20 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     _input_folder_desc = "SF30AC Steam folder"
     _short_description = ""
 
+    _pkg_name_map = {
+        'bundleStreetFighter.mbundle': 'sf',
+        'bundleStreetFighterAlpha.mbundle': 'sfa',
+        'bundleStreetFighterAlpha2.mbundle': 'sfa2',
+        'bundleStreetFighterAlpha3.mbundle': 'sfa3',
+        'bundleStreetFighterII.mbundle': 'sf2',
+        'bundleStreetFighterIII.mbundle': 'sf3',
+        'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
+        'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
+        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
+        'bundleStreetFighterII_HF.mbundle': 'sf2hf',
+        'bundleSuperStreetFighterII.mbundle': 'ssf2',
+        'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
+    }
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
         for file_path in bundle_files:
@@ -239,22 +281,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                 else:
                     logger.info(f'Skipping {file_name} as it contains no known roms...')
         logger.info("Processing complete.")
-
-
-    _pkg_name_map = {
-        'bundleStreetFighter.mbundle': 'sf',
-        'bundleStreetFighterAlpha.mbundle': 'sfa',
-        'bundleStreetFighterAlpha2.mbundle': 'sfa2',
-        'bundleStreetFighterAlpha3.mbundle': 'sfa3',
-        'bundleStreetFighterII.mbundle': 'sf2',
-        'bundleStreetFighterIII.mbundle': 'sf3',
-        'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
-        'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
-        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
-        'bundleStreetFighterII_HF.mbundle': 'sf2hf',
-        'bundleSuperStreetFighterII.mbundle': 'ssf2',
-        'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
-    }
 
     def _find_files(self, base_path):
         bundle_path = os.path.join(base_path, "Bundle", '*.mbundle')
@@ -316,7 +342,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                 temp_chunks[j] += interleave_group[interleave_offset:interleave_end]
                 interleave_offset = interleave_end
         return temp_chunks
-        
 
     ################################################################################
     # Street Fighter                                                               #

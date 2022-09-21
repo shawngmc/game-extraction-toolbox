@@ -60,7 +60,8 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
         'filename': "N/A",
         'game': "Pong",
         'system': "Arcade",
-        "notes": [4]
+        "notes": [4],
+        'status': "no-rom"
         })
 
     _out_file_notes = {
