@@ -1194,7 +1194,7 @@ def _handle_psycho(bundle_contents):
         "ps3.5d",
         "ps4.5f"
     ]
-    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.adpcm', adpcm_filenames)
+    func_map['adpcm'] = helpers.equal_split_helper('PsychoSoldier.j.adpcm', adpcm_filenames)
     func_map['common'] = helpers.existing_files_helper(common_file_map)
     out_files.append(utils.build_snk_rom("psychosj.zip", bundle_contents, func_map))
 
