@@ -11,204 +11,238 @@ out_file_info = [
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "aso.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "alphamis.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "ASO: ArmoredScrumObject",
         "system": "Arcade",
         "filename": "arian.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "TNKIII",
         "system": "Arcade",
         "filename": "tnk3.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "TNKIII (J)",
         "system": "Arcade",
         "filename": "tnk3j.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Athena",
         "system": "Arcade",
-        "filename": "N/A",
+        "filename": "athena.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "gensitou.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "prehisle.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Prehistoric Isle",
         "system": "Arcade",
         "filename": "prehisleu.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsm.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsm1.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsmj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Street Smart",
         "system": "Arcade",
         "filename": "streetsmw.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3j.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3k.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ikari III: The Rescue",
         "system": "Arcade",
         "filename": "ikari3u.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "P.O.W",
         "system": "Arcade",
         "filename": "pow.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "P.O.W",
         "system": "Arcade",
         "filename": "powj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguard.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguardc.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Vanguard",
         "system": "Arcade",
         "filename": "vanguardj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Guerilla War",
         "system": "Arcade",
         "filename": "gwar.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guerilla War (A)",
         "system": "Arcade",
         "filename": "gwara.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guerilla War (B)",
         "system": "Arcade",
         "filename": "gwarb.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Guevara (Guerilla War (J))",
         "system": "Arcade",
         "filename": "gwarj.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Psycho Soldier",
         "system": "Arcade",
         "filename": "psychos.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Psycho Soldier (J)",
         "system": "Arcade",
         "filename": "psychosj.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I",
         "system": "Arcade",
         "filename": "ikari.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (US Alt.)",
         "system": "Arcade",
         "filename": "ikaria.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (J, No Continues)",
         "system": "Arcade",
         "filename": "ikarijp.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari I (No Continues)",
         "system": "Arcade",
         "filename": "ikarinc.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Ikari 2 Victory Road",
         "system": "Arcade",
         "filename": "victroad.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Dogou Souken (Ikari 2 Victory Road (J))",
         "system": "Arcade",
         "filename": "dogosoke.zip",
+        'status': 'playable',
         "notes": [2]
     }
 ]

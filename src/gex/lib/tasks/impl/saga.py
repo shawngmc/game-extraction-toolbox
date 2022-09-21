@@ -16,49 +16,10 @@ class SagaTask(BaseTask):
 These are extracted from the Unity asset bundle files.
 See https://github.com/farmerbb/RED-Project/issues/39 for more info.
 '''
-    _out_file_list = [
-        {
-            "game": "Final Fantasy Legend",
-            "system": "Game Boy",
-            "filename": "FinalFantasyLegend.gb",
-            "notes": []
-        },
-        {
-            "game": "Final Fantasy Legend 2",
-            "system": "Game Boy",
-            "filename": "FinalFantasyLegend2.gb",
-            "notes": []
-        },
-        {
-            "game": "Final Fantasy Legend 3",
-            "system": "Game Boy",
-            "filename": "FinalFantasyLegend3.gb",
-            "notes": []
-        },
-        {
-            "game": "SaGa",
-            "system": "Game Boy",
-            "filename": "SaGa.gb",
-            "notes": []
-        },
-        {
-            "game": "SaGa 2",
-            "system": "Game Boy",
-            "filename": "SaGa2.gb",
-            "notes": []
-        },
-        {
-            "game": "SaGa 3",
-            "system": "Game Boy",
-            "filename": "SaGa3.gb",
-            "notes": []
-        },
-    ]
     _out_file_notes = {}
     _default_input_folder = helpers.gen_steam_app_default_folder("Sa・Ga COLLECTION")
     _input_folder_desc = "Collection of SaGa Steam folder"
     _short_description = ""
-
 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)
@@ -86,6 +47,17 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
             'aa', 'Windows', 'StandaloneWindows64', 'rom*.bundle')
         archive_list = glob.glob(bundle_path)
         return archive_list
+
+
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': f"{x['name']}",
+            'status': "good",
+            'system': "Game Boy",
+            "notes": []},
+            self._game_info_map.values())
 
     _game_info_map = {
         "romffl1_assets_all_e8aea7590909c1eb45f3809e4f3da68f.bundle": {

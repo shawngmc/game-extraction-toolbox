@@ -55,6 +55,7 @@ These ROMs are pulled out of the main executable.
             'filename': x['filename'],
             'game': f"{x['name']}",
             'system': "SNES",
+            'status': 'good',
             "notes": []},
             self._game_info_map)
         self._out_file_notes = {}

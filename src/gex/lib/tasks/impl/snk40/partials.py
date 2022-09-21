@@ -10,6 +10,7 @@ out_file_info = [
         "game": "World Wars",
         "system": "Arcade",
         "filename": "worldwar.zip",
+        "status": "partial",
         "notes": [2] # PH files, not working
     }
 ]

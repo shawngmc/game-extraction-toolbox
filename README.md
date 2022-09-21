@@ -136,3 +136,12 @@ These are noted in the documentation for each script. If you think a ROM is misi
 --------------------------------------------|-------------|---------------------------------------------------------------------  
  **Arcade Collection Anniversary Classics**     | 5%     | Stubbed out some, but no playable yet due to extraction issues.
  **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
+
+
+# ROM Status Guide
+**Status**      | **Notes**           
+------------|-------------|---------------------------------------------------------------------  
+ **No ROM**     | This title in this collection does not appear to be ROM based; it's a port, remake, remaster, rebuild, etc.  
+ **Partial**    | Some extraction has been done for this title, but it is still unusable. Typically only good for research or combining with other ROMs. 
+ **Playable**   | This ROM is not perfect, but is functional in at least some emulators. It may have bad CRCs or placeholder files. CRC differences might be due to copyright changes, but the ROM doesn't match a known good source.  
+ **Good**       | This game is a verifiable, functional ROM.  

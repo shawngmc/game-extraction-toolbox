@@ -110,6 +110,7 @@ def get_game_list():
         'filename': x['filename'],
         'game': f"{x['name']}",
         'system': "Atari 2600",
+        'status': "good",
         "notes": []},
         game_info_map.values())
 

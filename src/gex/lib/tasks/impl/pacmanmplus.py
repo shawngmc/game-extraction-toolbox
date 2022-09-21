@@ -55,7 +55,8 @@ class PacManMuseumPlusTask(BaseTask):
                 { "filename": "pl1_10b.7e", "start": 0x28400, "length": 0x4000 },
                 { "filename": "pl1_11.7f", "start": 0x2C400, "length": 0x4000 }
             ],
-            "notes": [9]
+            "status": "playable",
+            "notes": [4]
         },
         {
             "name": "PAC Attack",
@@ -208,15 +209,19 @@ class PacManMuseumPlusTask(BaseTask):
                 {"filename": "pm1_prg6.6n", "start": 0x02800, "length": 0x800},
                 {"filename": "pm1_prg7.6j", "start": 0x03000, "length": 0x800},
                 {"filename": "pm1_prg8.6p", "start": 0x03800, "length": 0x800},
+                # 0x04000 - 0x10000: Empty
                 {"filename": "pm1-3.1m", "start": 0x10000, "length": 0x100},
                 {"filename": "pm1-1.7f", "start": 0x10100, "length": 0x20},
                 {"filename": "pm1-4.4a", "start": 0x10120, "length": 0x100},
+                # 0x10220 - 0x10A20: ???
                 {"filename": "pm1_chg1.5e", "start": 0x10A20, "length": 0x800},
                 {"filename": "pm1_chg2.5h", "start": 0x11220, "length": 0x800},
                 {"filename": "pm1_chg3.5f", "start": 0x11A20, "length": 0x800},
-                {"filename": "pm1_chg4.5j", "start": 0x12220, "length": 0x800}
+                {"filename": "pm1_chg4.5j", "start": 0x12220, "length": 0x800},
+                {"filename": "pm1-2.3m", "start": 0x12A20, "length": 0x100},
+                # 0x12A20 - 0x12E20: ???
             ],
-            "status": 'partial',
+            "status": 'playable',
             "notes": [4]
         },
         {
@@ -229,7 +234,7 @@ class PacManMuseumPlusTask(BaseTask):
                 "length": 7864320
             },
             "status": 'partial',
-            "notes": [4, 5]
+            "notes": [1, 5]
         },
         {
             "name": "PAC-MAN ARRANGEMENT Console Ver.",
@@ -241,7 +246,7 @@ class PacManMuseumPlusTask(BaseTask):
                 "length": 7864320
             },
             "status": 'partial',
-            "notes": [4, 6]
+            "notes": [1, 6]
         },
         {
             "name": "PAC-MAN CHAMPIONSHIP EDITION",
@@ -256,19 +261,19 @@ class PacManMuseumPlusTask(BaseTask):
         "1": "This tool cannot create a playable extraction for this title.",
         "2": "This title not ROM-based (a rebuild or a native Windows port), so no extraction is possible.",
         "3": "Along with some CRC mismatches, this game renders upside-down. MAME and RetroArchMAME have slightly different ways to fix this per game.",
-        "4": "A missing PROM and bad CRC on a couple files prevent this from starting at all.",
+        "4": "There are minor CRC mismatches, but this ROM works properly.",
         "5": "MAME does not appear to support this Arcade title, which was originally part of Namco Classic Collection Vol. 2.",
         "6": "This title is likely a native/DirectX port for XBox 360, and not a packagable ROM.",
         "7": "This title appears to launch with a Bandai Namco splash and is likely a native/DirectX port.",
-        "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted.",
-        "9": "There are minor CRC mismatches, but this ROM works properly."
+        "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted."
     }
 
     def __init__(self):
         super().__init__()
         self._out_file_list = map(lambda x: {
             'filename': x['filename'],
-            'game': f"{x['name']}",
+            'game': x['name'],
+            'status': x['status'],
             'system': x['system'],
             "notes": x['notes']},
             self._game_info_map)

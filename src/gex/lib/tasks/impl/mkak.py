@@ -30,24 +30,26 @@ class BubsyTask(BaseTask):
             "game": "Mortal Kombat",
             "system": "Arcade",
             "filename": "mkla4.zip",
+            "status": "partial",
             "notes": [1]
         },
         {
             "game": "Mortal Kombat 2",
             "system": "Arcade",
-            "filename": "N/A",
-            "notes": [2]
+            "filename": "mk2.zip",
+            "status": "partial",
+            "notes": [1]
         },
         {
             "game": "Ultimate Mortal Kombat 3",
             "system": "Arcade",
-            "system": "N/A",
-            "notes": [2]
+            "filename": "umk3.zip",
+            "status": "partial",
+            "notes": [1]
         }
     ]
     _out_file_notes = {
-        "1": "This ROM is missing the Audio ROM files. MKAK appears to replace it with a different audio solution.",
-        "2": "This title has not yet been extracted at all."
+        "1": "This ROM is missing the Audio ROM files. MKAK appears to replace it with a different audio solution."
     }
     _game_info_map = {
     }
@@ -126,12 +128,38 @@ class BubsyTask(BaseTask):
         ]
         zip_files.update(dict(zip(gfx_filenames, chunks)))
 
-        return [{'filename': "mkla4.zip", 'contents': helpers.build_zip(zip_files)}]
+        return [{'filename': "partial_mkla4.zip", 'contents': helpers.build_zip(zip_files)}]
 
     def _handle_mk2(self, in_dir):
-        print("NYI")
-        return []
+        file_path = r"BINARIES\WIN32\DATA\MK2"
+        in_filenames = [
+            "MK2.BIN",
+            "MK2AUDIO.BIN",
+            "MK2COMP.BIN",
+            "MK2IMAGE.BIN"
+        ]
+
+        zip_files = {}
+        for in_filename in in_filenames:
+            with open(os.path.join(in_dir, file_path, in_filename), 'rb') as in_file:
+                zip_files[in_filename] = in_file.read()
+
+
+        return [{'filename': "partial_mk2.zip", 'contents': helpers.build_zip(zip_files)}]
 
     def _handle_umk3(self, in_dir):
-        print("NYI")
-        return []
+        file_path = r"BINARIES\WIN32\DATA\MK2"
+        in_filenames = [
+            "UMK3.BIN",
+            "UMK3AUDIO.BIN",
+            "MK4COMP.BIN",
+            "UMK3IMAGE.BIN"
+        ]
+
+        zip_files = {}
+        for in_filename in in_filenames:
+            with open(os.path.join(in_dir, file_path, in_filename), 'rb') as in_file:
+                zip_files[in_filename] = in_file.read()
+
+
+        return [{'filename': "partial_umk3.zip", 'contents': helpers.build_zip(zip_files)}]

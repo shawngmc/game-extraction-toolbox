@@ -1,10 +1,13 @@
 # 0.1.1
 - Updated Collections:
   - PAC MAN Museum Plus
-    - pacland: Fixed; properly ID'd as modified paclandj
+    - pacland: Partial -> Good: properly ID'd as modified paclandj and found missing ROM
+    - puckman: Partial -> Playable: Added placeholder for missing PROM
     - Fix entry in README
   - SNK 40th Anniversary Collection
-    - bbusters/bbustersj/bbustersu: Added missing EEPROM
+    - bbusters/bbustersj/bbustersu: Playable -> Good: Added missing EEPROM
+- Improvements:
+  - More consistent 'ROM Status' field
 
 
 # 0.1.0
