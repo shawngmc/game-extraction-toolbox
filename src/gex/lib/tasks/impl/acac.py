@@ -266,12 +266,12 @@ class ACACTask(BaseTask):
             if game.get('status') == "no-rom":
                 logger.info(f"Skipping {game['name']} as there is no ROM to extract...")
                 continue
-            
+
             is_partial = game.get('status') == "partial"
             if not self._props.get('include-partials') and is_partial:
                 logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
                 continue
-            
+
             logger.info(f"Extracting {game['name']}...")
             zip_files = {}
 

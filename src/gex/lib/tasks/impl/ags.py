@@ -372,7 +372,7 @@ These are pulled out of the plugin DLL.
             if not self._props.get('include-partials') and game.get('partial'):
                 logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
                 continue
-            
+
             src_file = os.path.join(in_dir, game['src_path'])
             if not os.path.exists(src_file):
                 logger.info(f"Skipping {game['name']} as this tool cannot find it in the given Steam library folder...")

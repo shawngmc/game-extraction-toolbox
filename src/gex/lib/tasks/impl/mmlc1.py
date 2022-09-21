@@ -117,7 +117,7 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
             'header': b'\x4E\x45\x53\x1A\x20\x00\x40\x00\x00\x00\x00\x00\x00\x00\x00\x00'
         }
     ]
-    
+
     def __init__(self):
         super().__init__()
         self._out_file_list = map(lambda x: {

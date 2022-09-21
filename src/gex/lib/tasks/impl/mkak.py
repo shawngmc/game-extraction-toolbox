@@ -1,5 +1,4 @@
 '''Implementation of mkak: Mortal Kombat Arcade Kollection'''
-import shutil
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
@@ -86,7 +85,7 @@ class BubsyTask(BaseTask):
         else:
             logger.error("mkak is not fully implemented - the audio ROMs are missing and have been replaced!")
             logger.error("To help investigate/pull partial contents, add --prop 'include-partials=True' to extract the game and graphics ROMs.")
-        
+
     def _handle_mk1(self, in_dir):
         file_path = r"BINARIES\WIN32\DATA\MK1"
         in_filenames = [
