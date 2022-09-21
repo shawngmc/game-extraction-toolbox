@@ -408,7 +408,9 @@
                 "--task", 
                 "acac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\acac\""
+                "\"${workspaceFolder}\\out\\acac\"",
+                "--prop",
+                "include-partials=True"
             ]
         },
         {
