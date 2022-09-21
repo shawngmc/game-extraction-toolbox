@@ -198,6 +198,11 @@ def _handle_chopper(bundle_contents):
     func_map['sp32'] = helpers.equal_split_helper("chopper.sp32_tiles", sp32_file_names)
     func_map['ym2'] = helpers.name_file_helper("chopper.ym2", "kk2.5b")
     func_map['plds'] = helpers.name_file_helper("chopper.plds", "p-a1.8b")
+    ph_files = {
+        'horizon.6h': 0x400,
+        'vertical.7h': 0x400
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
     out_files.append(utils.build_snk_rom("legofair.zip", bundle_contents, func_map))
 
     return out_files
