@@ -95,7 +95,7 @@ These are pulled out of the plugin DLL.
                 }
             ],
             "filename": "mspacman.zip",
-            'partial': True,
+            'status': "partial",
             "notes": []
         },
         {
@@ -183,6 +183,7 @@ These are pulled out of the plugin DLL.
                     "length": 0x400
                 }
             ],
+            'status': "playable",
             "filename": "galaga.zip",
             "notes": [1]
         },
@@ -286,6 +287,7 @@ These are pulled out of the plugin DLL.
                     "length": 0x100
                 }
             ],
+            'status': "playable",
             "filename": "digdug.zip",
             "notes": [2]
         },
@@ -344,6 +346,7 @@ These are pulled out of the plugin DLL.
                     "length": 0x100
                 },
             ],
+            'status': "good",
             "filename": "pacman.zip",
             "notes": []
         }
@@ -360,6 +363,7 @@ These are pulled out of the plugin DLL.
             'filename': x['filename'],
             'game': f"{x['name']}",
             'system': "Arcade",
+            "status": x['status'],
             "notes": x['notes']},
             self._game_info_map)
 

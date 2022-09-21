@@ -27,7 +27,8 @@ There are a few more regional variants that are only available in PAK files, but
             'filename': x['filename'],
             'game': f"{x['name']} ({x['region']})",
             'system': "Genesis",
-            "notes": []},
+            'status': 'good'
+,            "notes": []},
             self._game_info_map.values())
         self._out_file_notes = {}
 

@@ -18,22 +18,6 @@ These are the ROMs just sitting in the install folder.
     _input_folder_desc = "Bubsy Two-Fur Steam Folder"
     _short_description = ""
 
-    _out_file_list = [
-        {
-            "game": "Bubsy",
-            "system": "SNES",
-            "filename": "Bubsy.sfc",
-            "notes": []
-        },
-        {
-            "game": "Bubsy 2",
-            "system": "SNES",
-            "filename": "Bubsy2.sfc",
-            "notes": []
-        }
-    ]
-    _out_file_notes = {}
-
     _game_info_map = {
         'bubsy_1': {
             'filename': 'Bubsy.sfc',
@@ -44,6 +28,16 @@ These are the ROMs just sitting in the install folder.
             'name': 'Bubsy 2'
         }
     }
+
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': x['name'],
+            'status': "good",
+            'system': "SNES",
+            "notes": []},
+            self._game_info_map.values())
 
     def _find_files(self, base_path):
         new_paths = []

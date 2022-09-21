@@ -11,36 +11,42 @@ out_file_info = [
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbusters.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbustersj.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Beast Busters",
         "system": "Arcade",
         "filename": "bbustersu.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searchar.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searcharj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Search and Rescue",
         "system": "Arcade",
         "filename": "searcharu.zip",
+        'status': 'good',
         "notes": []
     }
 ]

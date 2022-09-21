@@ -19,92 +19,6 @@ Romextract.sh - https://gitlab.com/vaiski/romextract/tree/master
 However, this doesn't use an external PRS tool and is intended to target Sonic Adventure DX from Steam.
 PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
 '''
-    _out_file_list = [
-        {
-            "game": "G-Sonic - Sonic Blast (World)",
-            "system": "Game Gear",
-            "filename": "G-Sonic - Sonic Blast (World).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic Labyrinth (World)",
-            "system": "Game Gear",
-            "filename": "Sonic Labyrinth (World).gg",
-            "notes": []
-        },
-        {
-            "game": "Dr. Robotnik's Mean Bean Machine (USA,Europe)",
-            "system": "Game Gear",
-            "filename": "Dr. Robotnik's Mean Bean Machine (USA,Europe).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic Drift 2 (Japan,USA)",
-            "system": "Game Gear",
-            "filename": "Sonic Drift 2 (Japan,USA).gg",
-            "notes": []
-        },
-        {
-            "game": "Tails no Skypatrol (Japan)",
-            "system": "Game Gear",
-            "filename": "Tails no Skypatrol (Japan).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic The Hedgehog 2 (World)",
-            "system": "Game Gear",
-            "filename": "Sonic The Hedgehog 2 (World).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic Chaos (USA,Europe)",
-            "system": "Game Gear",
-            "filename": "Sonic Chaos (USA,Europe).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic Drift (Japan)",
-            "system": "Game Gear",
-            "filename": "Sonic Drift (Japan).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic The Hedgehog (Rev 1) (World)",
-            "system": "Game Gear",
-            "filename": "Sonic The Hedgehog (Rev 1) (World).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic & Tails (Japan)",
-            "system": "Game Gear",
-            "filename": "Sonic & Tails (Japan).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic & Tails 2 (Japan)",
-            "system": "Game Gear",
-            "filename": "Sonic & Tails 2 (Japan).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic Spinball (USA,Europe)",
-            "system": "Game Gear",
-            "filename": "Sonic Spinball (USA,Europe).gg",
-            "notes": []
-        },
-        {
-            "game": "Sonic The Hedgehog - Triple Trouble (USA,Europe)",
-            "system": "Game Gear",
-            "filename": "Sonic The Hedgehog - Triple Trouble (USA,Europe).gg",
-            "notes": []
-        },
-        {
-            "game": "Tails Adventures (World)",
-            "system": "Game Gear",
-            "filename": "Tails Adventures (World).gg",
-            "notes": []
-        }
-    ]
     _out_file_notes = {}
     _default_input_folder = helpers.gen_steam_app_default_folder("Sonic Adventure DX")
     _input_folder_desc = "Sonic Adventure DX Steam folder"
@@ -139,61 +53,127 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
                 logging.warning(f"Could not find {filename} in {base_path}")
         return new_paths
 
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': f"{x['name']} ({x['region']})",
+            'status': x['status'],
+            'system': x['system'],
+            "notes": x['notes']},
+            self._game_info_map.values())
+
     _game_info_map = {
         "g-sonic.prs": {
             'name': "G-Sonic - Sonic Blast",
-            'region': "World"
+            'region': "World",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "G-Sonic - Sonic Blast (World).gg",
+            "notes": []
         },
         "labylin.prs": {
             'name': "Sonic Labyrinth",
-            'region': "World"
+            'region': "World",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic Labyrinth (World).gg",
+            "notes": []
         },
         "mbmachin.prs": {
             'name': "Dr. Robotnik's Mean Bean Machine",
-            'region': "USA,Europe"
+            'region': "USA,Europe",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Dr. Robotnik's Mean Bean Machine (USA,Europe).gg",
+            "notes": []
         },
         "s-drift2.prs": {
             'name': "Sonic Drift 2",
-            'region': "Japan,USA"
+            'region': "Japan,USA",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic Drift 2 (Japan,USA).gg",
+            "notes": []
         },
         "skypat.prs": {
             'name': "Tails no Skypatrol",
-            'region': "Japan"
+            'region': "Japan",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Tails no Skypatrol (Japan).gg",
+            "notes": []
         },
         "sonic2.prs": {
             'name': "Sonic The Hedgehog 2",
-            'region': "World"
+            'region': "World",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic The Hedgehog 2 (World).gg",
+            "notes": []
         },
         "sonic-ch.prs": {
             'name': "Sonic Chaos",
-            'region': "USA,Europe"
+            'region': "USA,Europe",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic Chaos (USA,Europe).gg",
+            "notes": []
         },
         "sonicdri.prs": {
             'name': "Sonic Drift",
-            'region': "Japan"
+            'region': "Japan",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic Drift (Japan).gg",
+            "notes": []
         },
         "sonic.prs": {
             'name': "Sonic The Hedgehog (Rev 1)",
-            'region': "World"
+            'region': "World",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic The Hedgehog (Rev 1) (World).gg",
+            "notes": []
         },
         "sonictai.prs": {
             'name': "Sonic & Tails",
-            'region': "Japan"
+            'region': "Japan",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic & Tails (Japan).gg",
+            "notes": []
         },
         "sonic_tt.prs": {
             'name': "Sonic & Tails 2",
-            'region': "Japan"
+            'region': "Japan",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic & Tails 2 (Japan).gg",
+            "notes": []
         },
         "spinball.prs": {
             'name': "Sonic Spinball",
-            'region': "USA,Europe"
+            'region': "USA,Europe",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic Spinball (USA,Europe).gg",
+            "notes": []
         },
         "s-tail2.prs": {
             'name': "Sonic The Hedgehog - Triple Trouble",
-            'region': "USA,Europe"
+            'region': "USA,Europe",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Sonic The Hedgehog - Triple Trouble (USA,Europe).gg",
+            "notes": []
         },
         "tailsadv.prs": {
             'name': "Tails Adventures",
-            'region': "World"
+            'region': "World",
+            "system": "Game Gear",
+            "status": "good",
+            "filename": "Tails Adventures (World).gg",
+            "notes": []
         }
     }

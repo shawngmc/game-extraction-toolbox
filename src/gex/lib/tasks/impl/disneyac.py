@@ -13,44 +13,6 @@ class DisneyAfternoonCollectionTask(BaseTask):
     _details_markdown = '''
 Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 '''
-    _out_file_list = [
-        {
-            "game": "Chip n Dale - Rescue Rangers",
-            "system": "NES",
-            "filename": "Chip n Dale - Rescue Rangers (DAC).nes",
-            "notes": []
-        },
-        {
-            "game": "Chip n Dale - Rescue Rangers 2",
-            "system": "NES",
-            "filename": "Chip n Dale - Rescue Rangers 2 (DAC).nes",
-            "notes": []
-        },
-        {
-            "game": "Darkwing Duck",
-            "system": "NES",
-            "filename": "Darkwing Duck (DAC).nes",
-            "notes": []
-        },
-        {
-            "game": "DuckTales",
-            "system": "NES",
-            "filename": "DuckTales (DAC).nes",
-            "notes": []
-        },
-        {
-            "game": "DuckTales 2",
-            "system": "NES",
-            "filename": "DuckTales 2 (DAC).nes",
-            "notes": []
-        },
-        {
-            "game": "TaleSpin",
-            "system": "NES",
-            "filename": "TaleSpin (DAC).nes",
-            "notes": []
-        },
-    ]
     _out_file_notes = {}
     _default_input_folder = helpers.gen_steam_app_default_folder("DisneyAfternoon")
     _input_folder_desc = "DisneyAfternoon Folder (Steam install folder)"
@@ -108,6 +70,15 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
         }
     ]
 
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': x['name'],
+            'status': "good",
+            'system': "NES",
+            "notes": []},
+            self._game_info_list)
 
     def execute(self, in_dir, out_dir):
         exe_path = os.path.join(in_dir, 'capcom_disney_afternoon.exe')

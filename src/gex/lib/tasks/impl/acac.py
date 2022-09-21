@@ -16,70 +16,55 @@ class ACACTask(BaseTask):
     _input_folder_desc = "Arcade Classics Anniversary Collection install folder"
     _short_description = ""
 
-    # _prop_info = {
-    #     "include-partials": {
-    #         "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
-    #         "default": False,
-    #         "type": "Boolean"
-    #     }
-    # }
+    _prop_info = {
+        "include-partials": {
+            "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
+            "default": False,
+            "type": "Boolean"
+        }
+    }
 
     _game_info_map = [
-        # {
-        #     "name": "Ms. Pac-Man",
-        #     "src_path": r"Ms. PAC-MAN\Ms. PAC-MAN_Data\Plugins\Release_2.dll",
-        #     "files": [
-        #         {
-        #             "filename": "82s126.1m",
-        #             "start": 0x1AE30,
-        #             "length": 0x100
-        #         }
-        #     ],
-        #     "filename": "mspacman.zip",
-        #     'partial': True,
-        #     "notes": []
-        # },
         {
             "name": "ajax",
-            "files": [
-            ],
+            "files": [],
             "filename": "ajax.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "hcastle",
             "files": [],
             "filename": "hcastle.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "nemesis",
             "files": [],
             "filename": "nemesis.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "salamand.zip",
-            "files": [1],
+            "files": [],
             "filename": "salamand",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "scramble",
             "files": [],
             "filename": "scramble.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "thunderx",
-            "files": [1],
+            "files": [],
             "filename": "thunderx.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
@@ -89,16 +74,17 @@ class ACACTask(BaseTask):
                     "filename": "",
                     "start": "",
                     "length": ""
-                }],
+                }
+            ],
             "filename": "twinbee.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         },
         {
             "name": "vulcan",
             "files": [],
             "filename": "vulcan.zip",
-            'partial': True,
+            'status': 'partial',
             "notes": [1]
         }
     ]
@@ -113,12 +99,13 @@ class ACACTask(BaseTask):
             'filename': x['filename'],
             'game': f"{x['name']}",
             'system': "Arcade",
+            "status": x['status'],
             "notes": x['notes']},
             self._game_info_map)
 
     def execute(self, in_dir, out_dir):
         for game in self._game_info_map:
-            if not self._props.get('include-partials') and game.get('partial'):
+            if not self._props.get('include-partials') and game.get('status') == 'partial':
                 logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
                 continue
             

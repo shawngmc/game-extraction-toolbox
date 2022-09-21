@@ -19,7 +19,8 @@ games = [
             "035144.02",
             "035143.02",
             "035127.02"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Asteroids Deluxe",
@@ -34,7 +35,8 @@ games = [
             "036433.03",
             "036800.02",
             "036799.01"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Black Widow",
@@ -55,6 +57,7 @@ games = [
             "136017.105": 4096,
             "136017.106": 4096
         },
+        "status": "playable",
         "notes": [2]
     },
     {
@@ -66,7 +69,7 @@ games = [
         ],
         "mame_name": "canyon",
         # "handler": "_handle_canyon",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -76,7 +79,7 @@ games = [
             "Centipede.bmp"
         ],
         "mame_name": "centiped",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -86,7 +89,7 @@ games = [
             "Crystal Castles.bmp"
         ],
         "mame_name": "ccastles",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Gravitar",
@@ -107,6 +110,7 @@ games = [
             "136010.305": 4096,
             "136010.306": 4096
         },
+        "status": "good",
         "notes": []
     },
     {
@@ -117,7 +121,7 @@ games = [
             "Liberator Projection.bin"
         ],
         "mame_name": "liberatr",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -135,6 +139,7 @@ games = [
             "034570.01",
             "034569.02"
         ],
+        "status": "playable",
         "notes": [2]
     },
     {
@@ -145,8 +150,10 @@ games = [
             "Major Havoc vector banks.bin",
             "Major Havoc.bin"
         ],
+        "status": "good",
         "mame_name": "mhavoc",
-        "handler": "_handle_mhavoc"
+        "handler": "_handle_mhavoc",
+        "notes": []
     },
     {
         "name": "Millipede",
@@ -155,7 +162,7 @@ games = [
             "Millipede.bmp"
         ],
         "mame_name": "milliped",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -171,7 +178,8 @@ games = [
             "035823.02",
             "035824.02",
             "035825.02"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Red Baron",
@@ -179,7 +187,8 @@ games = [
             "Red Baron.bin"
         ],
         "mame_name": "redbaron",
-        "handler": "_handle_redbaron"
+        "handler": "_handle_redbaron",
+        "status": "good"
     },
     {
         "name": "Space Duel",
@@ -195,7 +204,8 @@ games = [
             "136006.103": 4096,
             "136006.104": 4096,
             "136006.105": 4096
-        }
+        },
+        "status": "good"
     },
     {
         "name": "Sprint2",
@@ -206,6 +216,7 @@ games = [
         ],
         "mame_name": "sprint2",
         "handler": "_handle_sprint2",
+        "status": "good",
         "notes": [6]
     },
     {
@@ -216,7 +227,7 @@ games = [
             "Super Breakout.bmp"
         ],
         "mame_name": "sbrkout",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -232,7 +243,8 @@ games = [
             "134.002",
             "133.002",
             "138.002"
-        ]
+        ],
+        "status": "good"
     },
     {
         "name": "Warlords",
@@ -242,7 +254,7 @@ games = [
             "Warlords.bmp"
         ],
         "mame_name": "warlords",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -250,6 +262,7 @@ games = [
         "files": [
             "Avalanche.bin"
         ],
+        "status": "good",
         "mame_name": "avalnche",
         "handler": "_handle_avalnche"
     },
@@ -261,7 +274,7 @@ games = [
             "AtariBaseballTiles2.bmp"
         ],
         "mame_name": "abaseb",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -272,7 +285,7 @@ games = [
             "AtariBasketballSprites.bmp"
         ],
         "mame_name": "bsktball",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Destroyer",
@@ -284,7 +297,7 @@ games = [
             "DestroyerWaves.bmp"
         ],
         "mame_name": "destroyr1",
-        "partial": True
+        "status": "partial"
     },
     {
         "name": "Dominos",
@@ -293,7 +306,7 @@ games = [
             "DominosTiles.bmp"
         ],
         "mame_name": "dominos",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -306,7 +319,7 @@ games = [
             "FireTruckTiles2.bmp"
         ],
         "mame_name": "firetrk",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -317,7 +330,7 @@ games = [
             "AtariFootballTiles2.bmp"
         ],
         "mame_name": "atarifb",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -327,7 +340,7 @@ games = [
             "MazeInvaders.bmp"
         ],
         "mame_name": "mazeinv",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -342,7 +355,7 @@ games = [
         ],
         "mame_name": "montecar",
         "handler": "_handle_montecar",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -353,7 +366,7 @@ games = [
             "PoolsharkTiles.bmp"
         ],
         "mame_name": "poolshrk",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -364,7 +377,7 @@ games = [
             "SkydiverTiles.bmp"
         ],
         "mame_name": "skydiver",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -376,7 +389,7 @@ games = [
             "AtariSoccerTiles2.bmp"
         ],
         "mame_name": "soccer",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     },
     {
@@ -388,7 +401,7 @@ games = [
             "SuperBugTiles2.bmp"
         ],
         "mame_name": "superbug",
-        "partial": True,
+        "status": "partial",
         "notes": [6]
     }
 ]
@@ -397,9 +410,10 @@ games = [
 def get_game_list():
     '''Transform the game map for documentation'''
     return map(lambda x: {
-        'filename': f"{x['mame_name']}{'-partial' if 'partial' in x and x['partial'] is True else ''}.zip",
+        'filename': f"{x['mame_name']}{'-partial' if x['status'] == 'partial' else ''}.zip",
         'game': x['name'],
         'system': "Arcade",
+        'status': x['status'],
         "notes": [[1] if 'mame_name' in x else None] + [[5] if 'unextractable' in x and x['unextractable'] else None] + [x['notes'] if 'notes' in x else None]}, games)
 
 def _handle_mhavoc(in_dir, game_desc):
@@ -673,7 +687,7 @@ def extract_partials(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if 'partial' in game and game['partial'] is True:
+        if game['status'] == 'partial':
             logger.info(f"Copying partially extracted {game['name']}...")
             
             if 'handler' in game:
@@ -704,7 +718,7 @@ def extract(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if 'partial' not in game or game['partial'] is False:
+        if game['status'] == 'partial':
             logger.info(f"Extracting {game['name']}...")
             if 'handler' in game:
                 handler_func = funcs[game['handler']]

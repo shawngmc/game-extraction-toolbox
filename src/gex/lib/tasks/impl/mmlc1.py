@@ -13,80 +13,6 @@ class MegaManLegacyCollection1Task(BaseTask):
     _details_markdown = '''
 Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
 '''
-    _out_file_list = [
-        {
-            "game": "Mega Man",
-            "system": "NES",
-            "filename": "megaman.nes",
-            "notes": []
-        },
-        {
-            "game": "Mega Man 2",
-            "system": "NES",
-            "filename": "megaman2.nes",
-            "notes": []
-        },
-        {
-            "game": "Mega Man 3",
-            "system": "NES",
-            "filename": "megaman3.nes",
-            "notes": []
-        },
-        {
-            "game": "Mega Man 4",
-            "system": "NES",
-            "filename": "megaman4.nes",
-            "notes": []
-        },
-        {
-            "game": "Mega Man 5",
-            "system": "NES",
-            "filename": "megaman5.nes",
-            "notes": []
-        },
-        {
-            "game": "Mega Man 6",
-            "system": "NES",
-            "filename": "megaman6.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman",
-            "system": "NES",
-            "filename": "rockman.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman 2 - Dr Wily no Nazo",
-            "system": "NES",
-            "filename": "rockman2.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman 3 - Dr Wily no Saigo!",
-            "system": "NES",
-            "filename": "rockman3.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman 4 - Aratanaru Yabou!!",
-            "system": "NES",
-            "filename": "rockman4.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman 5 - Blues no Wana!",
-            "system": "NES",
-            "filename": "rockman5.nes",
-            "notes": []
-        },
-        {
-            "game": "Rockman 6 - Shijou Saidai no Tatakai!!",
-            "system": "NES",
-            "filename": "rockman6.nes",
-            "notes": []
-        },
-    ]
     _out_file_notes = {}
     _default_input_folder = helpers.gen_steam_app_default_folder("Suzy")
     _input_folder_desc = "'Suzy' Folder (Steam MMLC install folder)"
@@ -191,7 +117,16 @@ Based on MMLC & DAC Extractor - https://github.com/HTV04/mmlc-dac-extractor
             'header': b'\x4E\x45\x53\x1A\x20\x00\x40\x00\x00\x00\x00\x00\x00\x00\x00\x00'
         }
     ]
-
+    
+    def __init__(self):
+        super().__init__()
+        self._out_file_list = map(lambda x: {
+            'filename': x['filename'],
+            'game': x['name'],
+            'status': "good",
+            'system': "NES",
+            "notes": []},
+            self._game_info_list)
 
     def execute(self, in_dir, out_dir):
         exe_path = os.path.join(in_dir, 'Proteus.exe')

@@ -11,78 +11,91 @@ out_file_info = [
         "game": "Chopper I",
         "system": "Arcade",
         "filename": "chopperb.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Chopper I",
         "system": "Arcade",
         "filename": "legofair.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Fantasy",
         "system": "Arcade",
         "filename": "fantasyj.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Fantasy",
         "system": "Arcade",
         "filename": "fantasyu.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Time Soldiers",
         "system": "Arcade",
         "filename": "btlfield.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Time Soldiers",
         "system": "Arcade",
         "filename": "timesold.zip",
+        'status': 'good',
         "notes": [3]
     },
     {
         "game": "Munch Mobile (Joyful Road)",
         "system": "Arcade",
         "filename": "mnchmobl.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Munch Mobile (Joyful Road)",
         "system": "Arcade",
         "filename": "joyfulr.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Sasuke vs. Commander",
         "system": "Arcade",
         "filename": "sasuke.zip",
+        'status': 'good',
         "notes": []
     },
     {
         "game": "Ozma Wars",
         "system": "Arcade",
         "filename": "ozmawars.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Paddle Mania",
         "system": "Arcade",
         "filename": "paddlema.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "Bermuda Triangle",
         "system": "Arcade",
         "filename": "bermudata.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
         "game": "MarvinsMaze",
         "system": "Arcade",
-        "filename": "N/A",
+        "filename": "marvins.zip",
+        'status': 'good',
         "notes": []
     }
 ]
