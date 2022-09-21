@@ -1,4 +1,6 @@
 # 0.1.1
+- Added Games/Collections:
+  - Wonder Boy The Dragon's Trap
 - Updated Collections:
   - Arcade Collection Anniversary Classics
     - ajaxj/typhoon: No-ROM -> Good
