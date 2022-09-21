@@ -1,5 +1,8 @@
 # 0.1.1
 - Updated Collections:
+  - Arcade Collection Anniversary Classics
+    - ajaxj/typhoon: No-ROM -> Good
+    - hcastle/hcastlee/hcastlek/akumajoun: No-ROM -> Good
   - PAC MAN Museum Plus
     - pacland: Partial -> Good: properly ID'd as modified paclandj and found missing ROM
     - puckman: Partial -> Playable: Added placeholder for missing PROM
@@ -8,6 +11,8 @@
     - bbusters/bbustersj/bbustersu: Playable -> Good: Added missing EEPROM
 - Improvements:
   - More consistent 'ROM Status' field (#29)
+- Internal:
+  - Started adding typing hints to util classes
 
 # 0.1.0
 - Added Games/Collections:

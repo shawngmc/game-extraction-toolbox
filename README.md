@@ -108,6 +108,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
+ **Arcade Collection Anniversary Classics**     | 15%    | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
@@ -134,7 +135,6 @@ These are noted in the documentation for each script. If you think a ROM is misi
 ### Completely Unplayable
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 5%     | Stubbed out some, but no playable yet due to extraction issues.
  **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
 
 
