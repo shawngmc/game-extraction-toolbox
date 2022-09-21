@@ -2,6 +2,7 @@
 import logging
 import lzma
 import os
+from gex.lib.utils.blob import hash as hash_helper
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
@@ -195,8 +196,8 @@ class ACACTask(BaseTask):
             },
         },
         {
-            "name": "salamand.zip",
-            "filename": "salamand",
+            "name": "salamand",
+            "filename": "salamand.zip",
             'status': 'partial',
             "notes": [1],
             "in": {
@@ -204,12 +205,12 @@ class ACACTask(BaseTask):
                 "length": 4415040
             },
         },
-        {
-            "name": "scramble",
-            "filename": "scramble.zip",
-            'status': 'partial',
-            "notes": [1]
-        },
+        # { # Investigate!
+        #     "name": "scramble",
+        #     "filename": "scramble.zip",
+        #     'status': 'no-rom',
+        #     "notes": [1]
+        # },
         {
             "name": "thunderx",
             "filename": "thunderx.zip",
@@ -261,6 +262,15 @@ class ACACTask(BaseTask):
         src_file = os.path.join(in_dir, "AA_AC_ArcadeClassics.exe")
         with open(src_file, 'rb') as src_file:
             src_contents = src_file.read()
+            src_contents_decomp = lzma_multi_decomp(src_contents)
+            # src_decomp_hash = hash_helper.get_crc(src_contents_decomp)
+            # if (src_decomp_hash == '0xb4f2f51b'):
+            #     print(f"CRC MATCH {src_decomp_hash}")
+            # else:
+            #     print(f"CRC MISMATCH! OH NOOOOOOOOOOOOOO! {src_decomp_hash}")
+
+        with open(os.path.join(out_dir, 'decompressed_blob'), "wb") as out_file:
+            out_file.write(src_contents_decomp)
 
         for game in self._game_info_map:
             if game.get('status') == "no-rom":
@@ -278,13 +288,11 @@ class ACACTask(BaseTask):
             # Get the specified decompression section
             contents = transforms.cut(src_contents, game['in']['start'], length=game['in']['length'])
 
-            lzd = lzma.LZMADecompressor()
-            contents = lzd.decompress(contents)
             if is_partial:
                 zip_files["decompressed_blob"] = contents
-
-            for work_file in game.get('out') or []:
-                zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
+            else:
+                for work_file in game.get('out') or []:
+                    zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
 
             filename = f"partial_{game['filename']}" if  is_partial else game['filename']
             logger.info(f"Saving {filename}...")
@@ -292,3 +300,121 @@ class ACACTask(BaseTask):
                 out_file.write(helpers.build_zip(zip_files))
 
         logger.info("Processing complete.")
+
+# def _handle_twinbee(decomp_merged, out_dir):
+#     zip_files = {}
+    
+    # There are two versions: ROM and Bubble System
+    # Both are in the Arcade Archives: https://www.nintendo.com/store/products/arcade-archives-twinbee-switch/
+    # Neither appears to have a full fileset in ACAC.
+
+    # TWINBEE (ROM): http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=twinbee&search_id=1
+    
+    # filename = "twinbee.zip"
+    # zip_files["400-a01.fse"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
+    # zip_files["400-a02.fse"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
+    # "400-a04.10l" NOT PRESENT
+    # "400-a06.15l" NOT PRESENT
+    # Checked for 10l and 15l interleave like 12l and 17l - no match!
+    # "400-e03.5l" NOT PRESENT
+    # temp = transforms.cut(decomp_merged, 0x1358AA6, length=0x40000)
+    # temp = transforms.deinterleave(temp, 2, 1)
+    # zip_files["412-a05.12l"] = temp[0]
+    # zip_files["412-a07.17l"] = temp[1]
+
+    # TWINBEEB (BUBSYS): http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=twinbeeb&search_id=1
+    # zip_files["400-a01.fse"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
+    # zip_files["400-a02.fse"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
+    # "400-e03.5l" NOT PRESENT
+    # "boot.bin" NOT PRESENT
+    # "mcu" NOT PRESENT
+    # zip_files["twinbee.bin""] = transforms.cut(decomp_merged, 0x1358A2A, length=0x402F0)
+
+    # BUBSYS Base ROM: http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=bubsys&back_games=twinbeeb;&search_id=1
+    # zip_files["400a1.2b"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
+    # zip_files["400a2.1b"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
+    # "400b03.8g" NOT PRESENT
+    # "boot.bin" NOT PRESENT
+    # "mcu" NOT PRESENT
+
+    # logger.info(f"Saving {filename}...")
+    # with open(os.path.join(out_dir, filename), "wb") as out_file:
+    #     out_file.write(helpers.build_zip(zip_files))
+
+
+def lzma_multi_decomp(in_data):
+    out_data = b''
+
+    offset = 0
+    while True:
+        offset = in_data.find(b']\x00\x00', offset)
+        if offset == -1:
+            print("out of input")
+            break
+
+        # Check LZMA header
+        # 1 => 5d 00 00 01 00
+        # 2 => 5d 00 00 10 00
+        # 3 => 5d 00 00 08 00
+        # 4 => 5d 00 00 10 00
+        # 5 => 5d 00 00 20 00
+        # 6 => 5d 00 00 40 00
+        # 7 => 5d 00 00 80 00
+        # 8 => 5d 00 00 00 01
+        # 9 => 5d 00 00 00 02
+        comp_mode = in_data[offset+3:offset+5]
+        valid_modes = [
+            b'\x01\x00',
+            b'\x10\x00',
+            b'\x08\x00',
+            b'\x18\x00',
+            b'\x20\x00',
+            b'\x40\x00',
+            b'\x80\x00',
+            b'\x00\x01',
+            b'\x00\x02'
+        ]
+        if comp_mode not in valid_modes:
+            print(f'offset {offset}: skipping, invalid comp_type')
+            offset += 1
+        else:
+            try:
+                target = in_data[offset:]
+                before_len = len(target)
+                magic_bytes = in_data[offset:offset+5]
+                lzd = lzma.LZMADecompressor()
+                out_data += lzd.decompress(target)
+                after_len = len(lzd.unused_data)
+                consumed_bytes = before_len - after_len
+                offset += consumed_bytes
+                print(f'offset {offset}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
+            except lzma.LZMAError:
+                print(f'offset {offset}: magic {magic_bytes}, invalid')
+                offset += 1
+    return out_data
+
+# def lzma_multi_decomp(in_data):
+#     out_data = b''
+#     i = 1
+#     while(in_data):
+#         if i % 100 == 0:
+#             print(f"pass: {i}   len: {len(in_data)}")
+#         # Decompress this chunk
+#         # print(len(in_data))
+#         # print(in_data[0:10])
+#         lzd = lzma.LZMADecompressor()
+#         try:
+#             out_data += lzd.decompress(in_data)
+#             in_data = bytearray(lzd.unused_data)
+#         except lzma.LZMAError:
+#             in_data = in_data[1:]
+
+#         # print(len(out_data))
+
+#         # Prep the next chunk of data by stripping b'00's
+#         while len(in_data) > 0 and in_data[0] != 0x5d:
+#             # print('remove')
+#             in_data = in_data[1:]
+#         i += 1
+
+#     return out_data
