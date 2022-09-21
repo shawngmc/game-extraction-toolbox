@@ -1073,14 +1073,12 @@ def _handle_guerilla(bundle_contents):
     func_map['placeholders'] = helpers.placeholder_helper(ph_files)
     out_files.append(utils.build_snk_rom("gwara.zip", bundle_contents, func_map))
 
-    # GWARB
+    # GWARAB
     func_map = {}
     func_map['tx'] = helpers.name_file_helper("GuerillaWar.tx", "gv5.3a")
-    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.b.0.z80", "g01")
-    func_map['audio'] = helpers.common_rename_helper(audio_common_file_map, {
-        "2.6g": "g02",
-        "3.7g": "g03"
-    })
+    func_map['maincpu'] = helpers.name_file_helper("GuerillaWar.b.0.z80", "gv3 ver 1.4p")
+    func_map['sub'] = helpers.name_file_helper("GuerillaWar.a.1.z80", "gv4.8p")
+    func_map['audiocpu'] = helpers.name_file_helper("GuerillaWar.a.2.z80", "gv2.7k")
     func_map['common'] = helpers.common_rename_helper(common_file_map, {
         "4.2j": "gv1.5g",
         "gw6.2j": "gv9.3g",
@@ -1105,7 +1103,14 @@ def _handle_guerilla(bundle_contents):
         "1.9u": "2.1l",
         "2.9v": "3.2l"
     })
-    out_files.append(utils.build_snk_rom("gwarb.zip", bundle_contents, func_map))
+    ph_files = {
+        'l.1x': 0x1000,
+        'l.1w': 0x1000,
+        'horizon.8j': 0x400,
+        'vertical.8k': 0x400
+    }
+    func_map['placeholders'] = helpers.placeholder_helper(ph_files)
+    out_files.append(utils.build_snk_rom("gwarab.zip", bundle_contents, func_map))
 
     # GWARJ
     func_map = {}
