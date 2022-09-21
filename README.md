@@ -138,10 +138,15 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
 
 
-# ROM Status Guide
+## ROM Status Guide
 **Status**      | **Notes**           
 ------------|-------------|---------------------------------------------------------------------  
  **No ROM**     | This title in this collection does not appear to be ROM based; it's a port, remake, remaster, rebuild, etc.  
  **Partial**    | Some extraction has been done for this title, but it is still unusable. Typically only good for research or combining with other ROMs. 
- **Playable**   | This ROM is not perfect, but is functional in at least some emulators. It may have bad CRCs or placeholder files. CRC differences might be due to copyright changes, but the ROM doesn't match a known good source.  
+ **Playable**   | This ROM is not perfect, but is functional in at least some emulators. 
  **Good**       | This game is a verifiable, functional ROM.  
+
+ ### What makes a ROM 'Playable' instead of 'Good'?
+ * The ROM has missing files that can be filled with placeholders or left out.
+ * Files are present that work as normal, but have bad CRCs. This may be due to copyright changes, etc., but ultimately does not match a known good source.
+ * Publishers may offer modified ROMs - such as increased difficulty, theming, or new game modes - which are often not publicly tracked.
