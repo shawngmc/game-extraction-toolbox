@@ -49,7 +49,6 @@ indicating file type. Note that the file order can differ between KPKA files; th
         return glob.glob(os.path.join(in_path, "**", "*.pak"), recursive=True)
 
     def execute(self, in_dir, out_dir):
-        
         if self._props.get('include-partials'):
             pak_files = self._find_files(in_dir)
             for file in pak_files:

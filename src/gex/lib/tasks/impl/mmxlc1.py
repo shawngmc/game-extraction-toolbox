@@ -96,7 +96,7 @@ Mega Man X4 does not appear to be ROM based, but investigation is ongoing.
             'status': x['status'],
             'system': x['system'],
             "notes": []},
-            self._game_info_list) 
+            self._game_info_list)
 
     def execute(self, in_dir, out_dir):
         exe_path = os.path.join(in_dir, 'RXC1.exe')

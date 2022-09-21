@@ -342,7 +342,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                 temp_chunks[j] += interleave_group[interleave_offset:interleave_end]
                 interleave_offset = interleave_end
         return temp_chunks
-        
 
     ################################################################################
     # Street Fighter                                                               #
