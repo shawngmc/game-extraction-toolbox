@@ -291,30 +291,4 @@ class ACACTask(BaseTask):
             with open(os.path.join(out_dir, filename), "wb") as out_file:
                 out_file.write(helpers.build_zip(zip_files))
 
-        # for game in self._game_info_map:
-        #     if not self._props.get('include-partials') and game.get('status') == 'partial':
-        #         logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
-        #         continue
-            
-        #     src_file = os.path.join(in_dir, "AA_AC_ArcadeClassics.exe")
-        #     if not os.path.exists(src_file):
-        #         logger.error(f"Cannot find {self._title} executable at {src_file}; exiting!")
-        #         exit
-        #     with open(src_file, 'rb') as dll_file:
-        #         contents = dll_file.read()
-
-        #         logger.info(f"Extracting {game['name']}...")
-        #         zip_files = {}
-        #         for file in game['files']:
-        #             if file['start'] == 'placeholder':
-        #                 file_content = bytearray(b'0' * file['length'])
-        #             else:
-        #                 file_content = transforms.cut(contents, file['start'], length=file['length'])
-
-        #             zip_files[file['filename']] = file_content
-
-        #         logger.info(f"Saving {game['filename']}...")
-        #         with open(os.path.join(out_dir, game['filename']), "wb") as out_file:
-        #             out_file.write(helpers.build_zip(zip_files))
-
         logger.info("Processing complete.")
