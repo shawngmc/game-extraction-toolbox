@@ -38,7 +38,7 @@
 - Mega Man X Legacy Collection 2
 - Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
-  Started stubbing, but no progress yet
+  A couple are extracted, but many aren't matching...
 - Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
 
 

@@ -467,7 +467,9 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\cas1\"",
                 "--prop",
-                "include-partials=True"
+                "include-partials=True",
+                "--verbosity",
+                "DEBUG"
             ]
         },
         {
