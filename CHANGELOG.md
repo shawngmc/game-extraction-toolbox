@@ -1,3 +1,7 @@
+# 0.1.2
+- Added Games/Collections:
+  - Psikyo Shooter Collector's Bundle (Partial Only)
+
 # 0.1.1
 - Added Games/Collections:
   - Wonder Boy The Dragon's Trap
