@@ -1,6 +1,11 @@
 # 0.1.2
 - Added Games/Collections:
   - Psikyo Shooter Collector's Bundle (Partial Only)
+- Updated Collections:
+  - Namco Arcade Game Series
+    - Fixed partial support
+  - SNK 40th Anniversary Collection
+    - victroad: Playable -> Playable: Added missing PID ROM that is in chopperb (was placeholder)
 
 # 0.1.1
 - Added Games/Collections:

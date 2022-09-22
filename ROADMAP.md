@@ -13,12 +13,16 @@
 ### Uses .PSB.M/.BIN File Container?
 - Contra Anniversary Collection
   https://github.com/farmerbb/RED-Project/wiki/Contra-Anniversary-Collection
+  Key is in executable at 0x272AF0, 13 bytes
 - Castlevania Advance Collection
   https://github.com/farmerbb/RED-Project/wiki/Castlevania-Advance-Collection - needs audio fix
+  Key is in executable at 0x224FA4, 13 bytes
 - Castlevania Anniversary Collection
   https://github.com/farmerbb/RED-Project/wiki/Castlevania-Anniversary-Collection
+  Key is in executable at 0x251CF0, 13 bytes
 - Namco Museum Archives (Vol 1 and Vol 2)
   https://github.com/farmerbb/RED-Project/wiki/Namco-Museum-Archives
+  Key is in executable at 0x1DC894, 13 bytes   (in both!)
 
 ### Uses dotemu2mame.js
 - Raiden Legacy
@@ -70,6 +74,24 @@
   Maincpu and Gfx ROMs are there, but audio is completely reworked.
 - Midway Arcade Treasures Vol. 1 (PS2)
   Audio ROMs replaced. For example, Smash TV has all the game ROMs, but none of the sound ROMs.
+  Klax
+    - Missing OKI sound roms
+    - Missing Pals
+    - pfrom.klx
+      split
+      0x00000 0x1000 136075-2010.17x
+      0x10000 0x1000 136075-2012.12x
+      0x20000 0x1000 136075-2014.17y
+      0x30000 0x1000 136075-2009.17u
+      0x40000 0x1000 136075-2011.12u
+      0x50000 0x1000 136075-2013.17w
+    - fixedcpu.klx
+      cut in half
+      deinterleave each, 1 byte
+      136075-6006.3k
+      136075-6005.1k
+      136075-6008.3k
+      136075-6007.1k
 
 ## Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
