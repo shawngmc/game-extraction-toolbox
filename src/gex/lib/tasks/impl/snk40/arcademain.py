@@ -257,7 +257,7 @@ def extract(bundle_contents):
     out_files.extend(_handle_vanguard(contents))
     out_files.extend(_handle_pow(contents))
     out_files.extend(_handle_psycho(contents))
-    out_files.extend(_handle_victoryroad(contents))
+    out_files.extend(_handle_victoryroad(contents, bundle_contents['patch']))
     out_files.extend(_handle_ikari(contents))
     out_files.extend(_handle_guerilla(contents))
     out_files.extend(_handle_tnk3(contents))
@@ -711,7 +711,7 @@ def _handle_pow(bundle_contents):
 
     return out_files
 
-def _handle_victoryroad(bundle_contents):
+def _handle_victoryroad(bundle_contents, patch_contents):
     '''Extract Ikari 2 Victory Road'''
     out_files = []
 
@@ -736,6 +736,13 @@ def _handle_victoryroad(bundle_contents):
     func_map['bg'] = helpers.equal_split_helper('VictoryRoad.bg', bg_filenames)
     logger.info("Processing Victory Road common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)
+
+    # VICTROAD PID Special copy from CHOPPERB
+    # Missing victroad:a5004-1.6d is chopperb:p-a1.2c
+    func_map = {}
+    func_map['plds'] = helpers.name_file_helper("chopper.plds", "a5004-1.6d")
+    logger.info("Processing Victory Road common files...")
+    victroad_pid_file_map = helpers.process_rom_files(patch_contents, func_map)
 
     # DOGOSOKE
     func_map = {}
@@ -769,6 +776,7 @@ def _handle_victoryroad(bundle_contents):
 
     # VICTROAD
     func_map = {}
+    func_map['pid'] = helpers.existing_files_helper(victroad_pid_file_map)
     func_map['maincpu'] = helpers.name_file_helper("VictoryRoad.0.z80", "p1.4p")
     func_map['audiocpu'] = helpers.name_file_helper("VictoryRoad.2.z80", "p3.7k")
     adpcm_filenames = [
@@ -787,7 +795,6 @@ def _handle_victoryroad(bundle_contents):
     ph_files = {
         "1.1d": 4096,
         "1.2d": 4096,
-        "a5004-1.6d": 260,
         "a5004-4.8s": 260,
         "a6002-2.5r": 324,
         "a6002-3.2p": 260
