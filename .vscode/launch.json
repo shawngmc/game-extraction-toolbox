@@ -473,6 +473,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Psikyo",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "psikyo", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\psikyo\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing CAS2",
             "type": "python",
             "request": "launch",

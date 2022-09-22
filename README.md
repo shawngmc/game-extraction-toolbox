@@ -112,9 +112,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
- **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
- **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
@@ -135,8 +133,11 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ### Completely Unplayable
 **Collection**                             | **Status**     | **Notes**           
---------------------------------------------|-------------|---------------------------------------------------------------------  
- **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
+--------------------------------------------|-------------|---------------------------------------------------------------------   
+ **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title
+ **Psikyo Shooter Collector's Bundle**          | 1%     | SE ROMs appear to be missing
 
 
 ## ROM Status Guide
