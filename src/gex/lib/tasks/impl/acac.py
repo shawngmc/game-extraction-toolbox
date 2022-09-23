@@ -37,28 +37,7 @@ class ACACTask(BaseTask):
             "name": "AJAX (J)",
             "filename": "ajaxj.zip",
             'status': 'good',
-            "notes": [],
-            "in": {
-                "start": 0x11B610,
-                "length": 3473920
-            },
-            "out": [
-                {"filename": "770_l01.n11", "start": 0x000000, "length": 0x10000},
-                {"filename": "770_l02.n12", "start": 0x020000, "length": 0x10000},
-                {"filename": "770_l05.i16", "start": 0x030000, "length": 0x8000},
-                {"filename": "770_f04.g16", "start": 0x038000, "length": 0x10000},
-                {"filename": "770_f03.f16", "start": 0x048000, "length": 0x8000},
-                {"filename": "770c13.n22", "start": 0x090000, "length": 0x40000},
-                {"filename": "770c12.k22", "start": 0x0D0000, "length": 0x40000},
-                {"filename": "770c09.n4", "start": 0x110000, "length": 0x80000},
-                {"filename": "770c08.k4", "start": 0x190000, "length": 0x80000},
-                {"filename": "770c06.f4", "start": 0x210000, "length": 0x40000},
-                {"filename": "770c07.h4", "start": 0x250000, "length": 0x40000},
-                {"filename": "770c10", "start": 0x290000, "length": 0x40000},
-                {"filename": "770c11", "start": 0x2D0000, "length": 0x80000},
-                {"filename": "63s241.j11", "start": 0x350000, "length": 0x200},
-            ],
-            "handler": "_handle_generic_copy"
+            "notes": []
         },
         {
             "name": "AJAX",
