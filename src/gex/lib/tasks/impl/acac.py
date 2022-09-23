@@ -98,6 +98,24 @@ class ACACTask(BaseTask):
             'status': 'good',
             "notes": []
         },
+        {
+            "name": "Thunder Cross (Set 1)",
+            "filename": "thunderx.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Thunder Cross (Set 2)",
+            "filename": "thunderxa.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Thunder Cross (Set 3)",
+            "filename": "thunderxb.zip",
+            'status': 'good',
+            "notes": []
+        },
         # {
         #     "name": "salamand",
         #     "filename": "salamand.zip",
@@ -147,7 +165,7 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_hcastle(src_contents))
         out_files.extend(self._handle_ajax(src_contents))
         out_files.extend(self._handle_vulcan(src_contents))
-        out_files.extend(self._handle_thunderxj(src_contents))
+        out_files.extend(self._handle_thunderx(src_contents))
         # out_files.extend(self._handle_twinbee(src_contents))
 
         if out_files:
@@ -521,20 +539,33 @@ class ACACTask(BaseTask):
 
 
 
-    def _handle_thunderxj(self, contents):
+    def _handle_thunderx(self, contents):
         contents = transforms.cut(contents, 0x4D13D0, length=455549)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
 
-        # thunderx
+        # 0x000000 0x020000     maincpu - thunderxj
+        # 0x020000 0x008000     audiocpu -thunderxj/xb/x
+        # 0x028000 0x020000     maincpu - thunderxb
+        # 0x048000 0x020000     maincpu - thunderx
+        # 0x068000 0x050000     mystery junk data
+        #    BK header kinda looks like maincpu, but no idea what it could match
+        #    We have every thunderx variant MAME knows, and the other games for this driver are very different
+        # 0x048000 0x020000     maincpu - thunderxa
+        # 0x0C8000 0c008000     audiocpu -thunderxa
+        # 0x0D0000 0x080000     tiles
+        # 0x150000 0x080000     sprites
+        # 0x1D0000 0x000100     prom
+
+        # thunderx common
         func_map = {}
-        def thunderxj_proms(contents):
+        def thunderx_common_proms(contents):
             out_chunks = {}
             out_chunks["873a08.f20"] = transforms.cut(contents, 0x1D0000, length = 0x100)
             return out_chunks
-        func_map['proms'] = thunderxj_proms
-        def thunderxj_sprites(contents):
+        func_map['proms'] = thunderx_common_proms
+        def thunderx_common_sprites(contents):
             sets = [
                 {
                     'filenames': [
@@ -576,9 +607,9 @@ class ACACTask(BaseTask):
                 chunks = transforms.deinterleave(temp_contents, 2, 1)
                 out_tiles.update(dict(zip(curr_set['filenames'], chunks)))
             return out_tiles
-        func_map['sprites'] = thunderxj_sprites
+        func_map['sprites'] = thunderx_common_sprites
         
-        def thunderxj_tiles(contents):
+        def thunderx_common_tiles(contents):
             sets = [
                 {
                     'filenames': [
@@ -620,9 +651,19 @@ class ACACTask(BaseTask):
                 chunks = transforms.deinterleave(temp_contents, 2, 1)
                 out_tiles.update(dict(zip(curr_set['filenames'], chunks)))
             return out_tiles
-        func_map['tiles'] = thunderxj_tiles
+        func_map['tiles'] = thunderx_common_tiles
+        common_file_map = helpers.process_rom_files(contents, func_map)
 
-        
+        # thunderx common audio
+        func_map = {}
+        def thunderx_common_audiocpu(contents):
+            contents = transforms.cut(contents, 0x20000, length = 0x8000)
+            return {"873-f01.f8": contents}
+        func_map['audiocpu'] = thunderx_common_audiocpu
+        common_audio_file_map = helpers.process_rom_files(contents, func_map)
+
+        # thunderxj
+        func_map = {}
         def thunderxj_maincpu(contents):
             filenames = [
                 "873-n02.k13",
@@ -632,11 +673,57 @@ class ACACTask(BaseTask):
             chunks = transforms.equal_split(contents, 2)
             return dict(zip(filenames, chunks))
         func_map['maincpu'] = thunderxj_maincpu
-        def thunderxj_audiocpu(contents):
-            contents = transforms.cut(contents, 0x20000, length = 0x8000)
-            return {"873-f01.f8": contents}
-        func_map['audiocpu'] = thunderxj_audiocpu
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        func_map['audio'] = helpers.existing_files_helper(common_audio_file_map)
         out_files.append({'filename': 'thunderxj.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # thunderxb
+        func_map = {}
+        def thunderxb_maincpu(contents):
+            filenames = [
+                "873-02.k13",
+                "873-03.k15"
+            ]
+            contents = transforms.cut(contents, 0x28000, length = 0x20000)
+            chunks = transforms.equal_split(contents, 2)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = thunderxb_maincpu
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        func_map['audio'] = helpers.existing_files_helper(common_audio_file_map)
+        out_files.append({'filename': 'thunderxb.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # thunderx
+        func_map = {}
+        def thunderx_maincpu(contents):
+            filenames = [
+                "873-s02.k13",
+                "873-s03.k15"
+            ]
+            contents = transforms.cut(contents, 0x48000, length = 0x20000)
+            chunks = transforms.equal_split(contents, 2)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = thunderx_maincpu
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        func_map['audio'] = helpers.existing_files_helper(common_audio_file_map)
+        out_files.append({'filename': 'thunderx.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # thunderxa
+        func_map = {}
+        def thunderxa_maincpu(contents):
+            filenames = [
+                "873-k02.k13",
+                "873-k03.k15"
+            ]
+            contents = transforms.cut(contents, 0xA8000, length = 0x20000)
+            chunks = transforms.equal_split(contents, 2)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = thunderxa_maincpu
+        def thunderxa_audiocpu(contents):
+            contents = transforms.cut(contents, 0xC8000, length = 0x8000)
+            return {"873-h01.f8": contents}
+        func_map['audiocpu'] = thunderxa_audiocpu
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        out_files.append({'filename': 'thunderxa.zip', 'contents': helpers.build_rom(contents, func_map)})
 
         return out_files
 
