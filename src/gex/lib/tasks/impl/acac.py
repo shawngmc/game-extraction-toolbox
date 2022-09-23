@@ -161,6 +161,7 @@ class ACACTask(BaseTask):
         out_files = []
         out_files.extend(self._handle_nemesis(src_contents))
         out_files.extend(self._handle_hcastle(src_contents))
+        out_files.extend(self._handle_ajax(src_contents))
 
         if out_files:
             for out_file_entry in out_files:
@@ -210,7 +211,7 @@ class ACACTask(BaseTask):
             zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
         return [{'filename': game['filename'], 'contents': helpers.build_zip(zip_files)}]
 
-    def _handle_ajax(self, contents, game):
+    def _handle_ajax(self, contents):
         contents = transforms.cut(contents, 0x11B610, length=3473920)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
