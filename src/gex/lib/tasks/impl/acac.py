@@ -40,12 +40,6 @@ class ACACTask(BaseTask):
             "notes": []
         },
         {
-            "name": "AJAX",
-            "filename": "ajax.zip",
-            'status': 'no-rom',
-            "notes": [],
-        },
-        {
             "name": "Typhoon",
             "filename": "typhoon.zip",
             'status': 'playable',
@@ -137,10 +131,7 @@ class ACACTask(BaseTask):
         # }
     ]
 
-    _out_file_notes = {
-        "1": "This game has one or more CRC mismatches but is completely playable.",
-        "2": "This variant does not appear to be present in this collection.",
-    }
+    _out_file_notes = {}
 
     def __init__(self):
         super().__init__()
