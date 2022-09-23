@@ -2,7 +2,6 @@
 import logging
 import lzma
 import os
-from gex.lib.utils.blob import hash as hash_helper
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
@@ -93,6 +92,12 @@ class ACACTask(BaseTask):
             'status': 'playable',
             "notes": []
         },
+        {
+            "name": "Thunder Cross (J)",
+            "filename": "thunderxj.zip",
+            'status': 'good',
+            "notes": []
+        },
         # {
         #     "name": "salamand",
         #     "filename": "salamand.zip",
@@ -119,19 +124,13 @@ class ACACTask(BaseTask):
         #         "length": 1900800
         #     },
         # },
-        # {
-        #     "name": "twinbee",
-        #     "filename": "twinbee.zip",
-        #     'status': 'partial',
-        #     "notes": [],
-        #     "in": {
-        #         "start": 0x2F2DE0,
-        #         "length": 541184
-        #     },
-        # }
+        # TWINBEE - can find bits and pieces
+        # SCRAMBLE - no sign of it
     ]
 
-    _out_file_notes = {}
+    _out_file_notes = {
+        "1": "This game has a placeholder file and may be missing some sound samples."
+    }
 
     def __init__(self):
         super().__init__()
@@ -158,6 +157,8 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_hcastle(src_contents))
         out_files.extend(self._handle_ajax(src_contents))
         out_files.extend(self._handle_vulcan(src_contents))
+        out_files.extend(self._handle_thunderxj(src_contents))
+        # out_files.extend(self._handle_twinbee(src_contents))
 
         if out_files:
             for out_file_entry in out_files:
@@ -434,7 +435,6 @@ class ACACTask(BaseTask):
         # 0x0E8000   0x004000     fixed - gradius2
         # 0x0EB000   0x004000     fixed - vulcan
         # 0x0F0000   0x200000     gfx
-
         
         # 785_f02.7c MISSING 0x20000
 
@@ -527,11 +527,183 @@ class ACACTask(BaseTask):
         func_map['common'] = helpers.existing_files_helper(common_file_map)
         out_files.append({'filename': 'vulcan.zip', 'contents': helpers.build_rom(contents, func_map)})
 
+        return out_files
+
+
+
+    def _handle_thunderxj(self, contents):
+        contents = transforms.cut(contents, 0x4D13D0, length=455549)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        out_files = []
+
+        # thunderx
+        func_map = {}
+        def thunderxj_proms(contents):
+            out_chunks = {}
+            out_chunks["873a08.f20"] = transforms.cut(contents, 0x1D0000, length = 0x100)
+            return out_chunks
+        func_map['proms'] = thunderxj_proms
+        def thunderxj_sprites(contents):
+            sets = [
+                {
+                    'filenames': [
+                        "873c04a.f11",
+                        "873c04c.f10"
+                    ],
+                    'start': 0x150000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c05a.f9",
+                        "873c05c.f8"
+                    ],
+                    'start': 0x190000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c04b.e11",
+                        "873c04d.e10"
+                    ],
+                    'start': 0x170000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c05b.e9",
+                        "873c05d.e8"
+                    ],
+                    'start': 0x1B0000,
+                    'length': 0x20000
+                },
+
+            ]
+            out_tiles = {}
+            for curr_set in sets:
+                temp_contents = transforms.cut(contents, curr_set['start'], length = curr_set['length'])
+                chunks = transforms.deinterleave(temp_contents, 2, 1)
+                out_tiles.update(dict(zip(curr_set['filenames'], chunks)))
+            return out_tiles
+        func_map['sprites'] = thunderxj_sprites
+        
+        def thunderxj_tiles(contents):
+            sets = [
+                {
+                    'filenames': [
+                        "873c06a.f6",
+                        "873c06c.f5"
+                    ],
+                    'start': 0x0D0000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c07a.f4",
+                        "873c07c.f3"
+                    ],
+                    'start': 0x110000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c06b.e6",
+                        "873c06d.e5",
+                    ],
+                    'start': 0x0F0000,
+                    'length': 0x20000
+                },
+                {
+                    'filenames': [
+                        "873c07b.e4",
+                        "873c07d.e3",
+                    ],
+                    'start': 0x130000,
+                    'length': 0x20000
+                },
+
+            ]
+            out_tiles = {}
+            for curr_set in sets:
+                temp_contents = transforms.cut(contents, curr_set['start'], length = curr_set['length'])
+                chunks = transforms.deinterleave(temp_contents, 2, 1)
+                out_tiles.update(dict(zip(curr_set['filenames'], chunks)))
+            return out_tiles
+        func_map['tiles'] = thunderxj_tiles
+
+        
+        def thunderxj_maincpu(contents):
+            filenames = [
+                "873-n02.k13",
+                "873-n03.k15"
+            ]
+            contents = transforms.cut(contents, 0x00000, length = 0x20000)
+            chunks = transforms.equal_split(contents, 2)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = thunderxj_maincpu
+        def thunderxj_audiocpu(contents):
+            contents = transforms.cut(contents, 0x20000, length = 0x8000)
+            return {"873-f01.f8": contents}
+        func_map['audiocpu'] = thunderxj_audiocpu
+        out_files.append({'filename': 'thunderxj.zip', 'contents': helpers.build_rom(contents, func_map)})
 
         return out_files
 
 
-    # def _handle_twinbee(decomp_merged, out_dir):
+
+
+    def _handle_twinbee(self, contents):
+        # Get FSE files Nemesis
+        contents = transforms.cut(contents, 0x2F2DE0, length=541168)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        out_files = []
+
+        func_map = {}
+        # k005289
+        def k_rom(contents):
+            filenames = [
+                "400-a01.fse",
+                "400-a02.fse"
+            ]
+            contents = transforms.cut(contents, 0x84000, length = 0x200)
+            chunks = transforms.equal_split(contents, len(filenames))
+            return dict(zip(filenames, chunks))
+        func_map['k005289'] = k_rom
+        fse_file_map = helpers.process_rom_files(contents, func_map)
+
+        # Now, extract Twinbee
+
+        contents = transforms.cut(contents, 0x5407E0, length=67191)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        out_files = []
+
+        func_map = {}
+        def maincpu1(contents):
+            filenames = [
+                "412-a05.12l",
+                "412-a07.17l"
+            ]
+            contents = transforms.cut(contents, 0x00000, length = 0x40000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu1'] = maincpu1
+        func_map['fse'] = helpers.existing_files_helper(fse_file_map)
+        out_files.append({'filename': 'twinbee.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # Bubble ROM
+        func_map = {}
+        def main(contents):
+            contents = transforms.cut(contents, 0x00000, length = 0x40000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(['twinbee.bin'], chunks))
+        func_map['main'] = main
+        out_files.append({'filename': 'twinbeeb.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+
+        return out_files
     #     zip_files = {}
         
         # There are two versions: ROM and Bubble System
@@ -605,7 +777,7 @@ class ACACTask(BaseTask):
                 b'\x00\x02'
             ]
             if comp_mode not in valid_modes:
-                print(f'offset {offset}: skipping, invalid comp_type')
+                print(f'offset {hex(offset)}: skipping, invalid comp_type')
                 offset += 1
             else:
                 try:
@@ -616,12 +788,12 @@ class ACACTask(BaseTask):
                     curr_chunk = lzd.decompress(target)
                     after_len = len(lzd.unused_data)
                     consumed_bytes = before_len - after_len
-                    print(f'offset {offset}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
+                    print(f'offset {hex(offset)}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
                     with open(os.path.join(out_dir, f'decompressed_blob_{hex(offset)}'), "wb") as out_file:
                         out_file.write(curr_chunk)
                     out_data += curr_chunk
                     offset += consumed_bytes
                 except lzma.LZMAError:
-                    print(f'offset {offset}: magic {magic_bytes}, invalid')
+                    print(f'offset {hex(offset)}: magic {magic_bytes}, invalid')
                     offset += 1
         return out_data
