@@ -114,16 +114,6 @@ class ACACTask(BaseTask):
         #     'status': 'no-rom',
         #     "notes": []
         # },
-        # {
-        #     "name": "thunderx",
-        #     "filename": "thunderx.zip",
-        #     'status': 'partial',
-        #     "notes": [],
-        #     "in": {
-        #         "start": 0x4D13D0,
-        #         "length": 1900800
-        #     },
-        # },
         # TWINBEE - can find bits and pieces
         # SCRAMBLE - no sign of it
     ]
