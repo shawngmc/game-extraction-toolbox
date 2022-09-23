@@ -261,6 +261,8 @@ class ACACTask(BaseTask):
         func_map['maincpu'] = typhoon_maincpu
         func_map['common'] = helpers.existing_files_helper(common_file_map)
         out_files.append({'filename': 'typhoon.zip', 'contents': helpers.build_rom(contents, func_map)})
+        
+        return out_files
 
     def _handle_nemesis(self, contents):
         contents = transforms.cut(contents, 0x2F2DE0, length=541168)
