@@ -36,19 +36,19 @@ class ACACTask(BaseTask):
         {
             "name": "AJAX (J)",
             "filename": "ajaxj.zip",
-            'status': 'good',
+            'status': 'playable',
             "notes": []
         },
         {
             "name": "AJAX",
             "filename": "ajax.zip",
             'status': 'no-rom',
-            "notes": [2],
+            "notes": [],
         },
         {
             "name": "Typhoon",
             "filename": "typhoon.zip",
-            'status': 'good',
+            'status': 'playable',
             "notes": []
         },
         {
@@ -78,18 +78,32 @@ class ACACTask(BaseTask):
         {
             "name": "Nemesis (World?)",
             "filename": "nemesisuk.zip",
+            'status': 'good',
             "notes": []
         },
         {
             "name": "Nemesis",
             "filename": "nemesis.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Gradius 2",
+            "filename": "gradius2.zip",
+            'status': 'playable',
+            "notes": []
+        },
+        {
+            "name": "Vulcan Venture",
+            "filename": "vulcan.zip",
+            'status': 'playable',
             "notes": []
         },
         # {
         #     "name": "salamand",
         #     "filename": "salamand.zip",
         #     'status': 'partial',
-        #     "notes": [1],
+        #     "notes": [],
         #     "in": {
         #         "start": 0x4165D0,
         #         "length": 4415040
@@ -99,13 +113,13 @@ class ACACTask(BaseTask):
         #     "name": "scramble",
         #     "filename": "scramble.zip",
         #     'status': 'no-rom',
-        #     "notes": [1]
+        #     "notes": []
         # },
         # {
         #     "name": "thunderx",
         #     "filename": "thunderx.zip",
         #     'status': 'partial',
-        #     "notes": [1],
+        #     "notes": [],
         #     "in": {
         #         "start": 0x4D13D0,
         #         "length": 1900800
@@ -115,27 +129,17 @@ class ACACTask(BaseTask):
         #     "name": "twinbee",
         #     "filename": "twinbee.zip",
         #     'status': 'partial',
-        #     "notes": [1],
+        #     "notes": [],
         #     "in": {
         #         "start": 0x2F2DE0,
         #         "length": 541184
-        #     },
-        # },
-        # {
-        #     "name": "vulcan",
-        #     "filename": "vulcan.zip",
-        #     'status': 'partial',
-        #     "notes": [1],
-        #     "in": {
-        #         "start": 0x37C280,
-        #         "length": 3080192
         #     },
         # }
     ]
 
     _out_file_notes = {
-        "1": "This game is not yet extractable; it might not be implemented as a usable ROM.",
-        "2": "This variant does not appear to be present in this collection."
+        "1": "This game has one or more CRC mismatches but is completely playable.",
+        "2": "This variant does not appear to be present in this collection.",
     }
 
     def __init__(self):
@@ -162,6 +166,7 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_nemesis(src_contents))
         out_files.extend(self._handle_hcastle(src_contents))
         out_files.extend(self._handle_ajax(src_contents))
+        out_files.extend(self._handle_vulcan(src_contents))
 
         if out_files:
             for out_file_entry in out_files:
@@ -212,7 +217,7 @@ class ACACTask(BaseTask):
         return [{'filename': game['filename'], 'contents': helpers.build_zip(zip_files)}]
 
     def _handle_ajax(self, contents):
-        contents = transforms.cut(contents, 0x11B610, length=3473920)
+        contents = transforms.cut(contents, 0x11B610, length=1124930)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
@@ -245,6 +250,12 @@ class ACACTask(BaseTask):
             out_chunks["770_f03.f16"] = transforms.cut(contents, 0x048000, length = 0x8000)
             return out_chunks
         func_map['maincpu'] = ajaxj_maincpu
+        def ajaxj_krom(contents):
+            out_chunks = {}
+            out_chunks["770c13.n22"] = transforms.cut(contents, 0x090000, length = 0x40000)
+            out_chunks["770c12.k22"] = transforms.cut(contents, 0x0D0000, length = 0x40000)
+            return out_chunks
+        func_map['k_roms'] = ajaxj_krom
         func_map['common'] = helpers.existing_files_helper(common_file_map)
         out_files.append({'filename': 'ajaxj.zip', 'contents': helpers.build_rom(contents, func_map)})
 
@@ -259,6 +270,7 @@ class ACACTask(BaseTask):
             out_chunks["770_h03.f16"] = transforms.cut(contents, 0x048000, length = 0x8000)
             return out_chunks
         func_map['maincpu'] = typhoon_maincpu
+        func_map['k_roms'] = ajaxj_krom
         func_map['common'] = helpers.existing_files_helper(common_file_map)
         out_files.append({'filename': 'typhoon.zip', 'contents': helpers.build_rom(contents, func_map)})
         
@@ -338,9 +350,10 @@ class ACACTask(BaseTask):
 
 
     def _handle_hcastle(self, contents):
-        contents = transforms.cut(contents, 0x2F2DE0, length=541168)
+        contents = transforms.cut(contents, 0x22E110, length=798376)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
+
         out_files = []
 
         # HCastle Common
@@ -363,11 +376,11 @@ class ACACTask(BaseTask):
             out_chunks["768b12.d20"] = transforms.cut(contents, 0x328400, length = 0x100)
             return out_chunks
         func_map['proms'] = proms
-        def proms(contents):
+        def audiocpu(contents):
             out_chunks = {}
             out_chunks["768e01.e4"] = transforms.cut(contents, 0x0A0000, length = 0x8000)
             return out_chunks
-        func_map['proms'] = proms
+        func_map['audiocpu'] = audiocpu
         common_file_map = helpers.process_rom_files(contents, func_map)
 
         # HCASTLE
@@ -416,6 +429,117 @@ class ACACTask(BaseTask):
 
         return out_files
 
+    def _handle_vulcan(self, contents):
+        contents = transforms.cut(contents, 0x37C280, length=3080192)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        out_files = []
+
+        # 0x000000   0x040000     maincpu - gradius2
+        # 0x040000   0x040000     maincpu - vulcan
+        # 0x080000   0x040000     sub
+        # 0x0C0000   0x008000     audiocpu
+        # 0x0C8000   0x020000     k_rom
+        # 0x0E8000   0x004000     fixed - gradius2
+        # 0x0EB000   0x004000     fixed - vulcan
+        # 0x0F0000   0x200000     gfx
+
+        
+        # 785_f02.7c MISSING 0x20000
+
+        # VULCAN Common
+        func_map = {}
+        def audiocpu(contents):
+            out_chunks = {}
+            out_chunks["785_g03.10a"] = transforms.cut(contents, 0x0C0000, length = 0x8000)
+            return out_chunks
+        func_map['audiocpu'] = audiocpu
+        def gfx(contents):
+            filenames = [
+                "785f15.p13",
+                "785f17.p16",
+                "785f16.p15",
+                "785f18.p18"
+            ]
+            contents = transforms.cut(contents, 0x0F0000, length = 0x200000)
+            chunks = transforms.equal_split(contents, 2)
+            chunks = transforms.deinterleave_all(chunks, 2, 2)
+            chunks = transforms.swap_endian_all(chunks)
+            return dict(zip(filenames, chunks))
+        func_map['gfx'] = gfx
+        def sub(contents):
+            filenames = [
+                "785_p07.10n",
+                "785_p06.8n",
+                "785_p13.10s",
+                "785_p12.8s",
+            ]
+            contents = transforms.cut(contents, 0x080000, length = 0x040000)
+            chunks = transforms.equal_split(contents, 2)
+            chunks = transforms.deinterleave_all(chunks, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['sub'] = sub
+        def k_rom(contents):
+            out_chunks = {}
+            out_chunks["785_f01.5a"] = transforms.cut(contents, 0x0C8000, length = 0x20000)
+            return out_chunks
+        func_map['k_rom'] = k_rom
+        ph_files = {
+            "785_f02.7c": 0x20000
+        }
+        func_map['ph'] = helpers.placeholder_helper(ph_files)
+        common_file_map = helpers.process_rom_files(contents, func_map)
+
+        # GRADIUS2
+        func_map = {}
+        #maincpu
+        def gradius2_maincpu(contents):
+            filenames = [
+                "785_x05.6n",
+                "785_x04.4n",
+                "785_x09.6r",
+                "785_x08.4r",
+            ]
+            contents = transforms.cut(contents, 0x00000, length = 0x40000)
+            chunks = transforms.equal_split(contents, len(filenames) // 2)
+            chunks = transforms.deinterleave_all(chunks, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = gradius2_maincpu
+        def fixed(contents):
+            out_chunks = {}
+            out_chunks["785_g14.d8"] = transforms.cut(contents, 0x0E8000, length = 0x4000)
+            return out_chunks
+        func_map['fixed'] = fixed
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        out_files.append({'filename': 'gradius2.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        
+        # VULCAN
+        func_map = {}
+        def vulcan_maincpu(contents):
+            filenames = [
+                "785_w05.6n",
+                "785_w04.4n",
+                "785_w09.6r",
+                "785_w08.4r",
+            ]
+            contents = transforms.cut(contents, 0x40000, length = 0x40000)
+            chunks = transforms.equal_split(contents, len(filenames) // 2)
+            chunks = transforms.deinterleave_all(chunks, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu'] = vulcan_maincpu
+        def vulcan_fixed(contents):
+            out_chunks = {}
+            out_chunks["785_h14.d8"] = transforms.cut(contents, 0x0EC000, length = 0x4000)
+            return out_chunks
+        func_map['fixed'] = vulcan_fixed
+        func_map['common'] = helpers.existing_files_helper(common_file_map)
+        out_files.append({'filename': 'vulcan.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+
+        return out_files
+
+
     # def _handle_twinbee(decomp_merged, out_dir):
     #     zip_files = {}
         
@@ -443,7 +567,7 @@ class ACACTask(BaseTask):
         # "400-e03.5l" NOT PRESENT
         # "boot.bin" NOT PRESENT
         # "mcu" NOT PRESENT
-        # zip_files["twinbee.bin""] = transforms.cut(decomp_merged, 0x1358A2A, length=0x402F0)
+        # zip_files["twinbee.bin"] = transforms.cut(decomp_merged, 0x1358A2A, length=0x402F0)
 
         # BUBSYS Base ROM: http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=bubsys&back_games=twinbeeb;&search_id=1
         # zip_files["400a1.2b"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
@@ -499,13 +623,13 @@ class ACACTask(BaseTask):
                     magic_bytes = in_data[offset:offset+5]
                     lzd = lzma.LZMADecompressor()
                     curr_chunk = lzd.decompress(target)
-                    with open(os.path.join(out_dir, f'decompressed_blob_{offset}'), "wb") as out_file:
-                        out_file.write(curr_chunk)
-                    out_data += curr_chunk
                     after_len = len(lzd.unused_data)
                     consumed_bytes = before_len - after_len
-                    offset += consumed_bytes
                     print(f'offset {offset}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
+                    with open(os.path.join(out_dir, f'decompressed_blob_{hex(offset)}'), "wb") as out_file:
+                        out_file.write(curr_chunk)
+                    out_data += curr_chunk
+                    offset += consumed_bytes
                 except lzma.LZMAError:
                     print(f'offset {offset}: magic {magic_bytes}, invalid')
                     offset += 1
