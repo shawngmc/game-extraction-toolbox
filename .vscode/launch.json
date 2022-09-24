@@ -414,6 +414,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing IREM",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "irem", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\irem\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing ACAC",
             "type": "python",
             "request": "launch",
