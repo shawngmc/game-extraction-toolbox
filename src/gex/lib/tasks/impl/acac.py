@@ -116,16 +116,30 @@ class ACACTask(BaseTask):
             'status': 'good',
             "notes": []
         },
-        # {
-        #     "name": "salamand",
-        #     "filename": "salamand.zip",
-        #     'status': 'partial',
-        #     "notes": [],
-        #     "in": {
-        #         "start": 0x4165D0,
-        #         "length": 4415040
-        #     },
-        # },
+        {
+            "name": "Salamander",
+            "filename": "salamand.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Salamander (J)",
+            "filename": "salamandj.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Lifeforce",
+            "filename": "lifefrce.zip",
+            'status': 'good',
+            "notes": []
+        },
+        {
+            "name": "Lifeforce (J)",
+            "filename": "lifefrcejzip",
+            'status': 'playable',
+            "notes": []
+        },
         # { # Investigate!
         #     "name": "scramble",
         #     "filename": "scramble.zip",
@@ -137,7 +151,8 @@ class ACACTask(BaseTask):
     ]
 
     _out_file_notes = {
-        "1": "This game has a placeholder file and may be missing some sound samples."
+        "1": "This game has a placeholder file and may be missing some sound samples.",
+        "2": "This game has a bad dump, but is fully playable."
     }
 
     def __init__(self):
@@ -166,6 +181,7 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_ajax(src_contents))
         out_files.extend(self._handle_vulcan(src_contents))
         out_files.extend(self._handle_thunderx(src_contents))
+        out_files.extend(self._handle_salamand(src_contents))
         # out_files.extend(self._handle_twinbee(src_contents))
 
         if out_files:
@@ -284,7 +300,6 @@ class ACACTask(BaseTask):
 
         # Nemesis Common
         func_map = {}
-        # k005289
         def k_rom(contents):
             filenames = [
                 "400-a01.fse",
@@ -728,7 +743,156 @@ class ACACTask(BaseTask):
         return out_files
 
 
+    def _handle_salamand(self, contents):
+        contents = transforms.cut(contents, 0x4165D0, length=752816)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        out_files = []
 
+        #                                   salamand        salamandj       lifefrce        lifefrcej
+        # 0x000000  0x20000     maincpu2                    X
+        # 0x020000  0x40000     
+        # 0x060000  0x08000     audiocpu    X               X
+        # 0x068000  0x20000     krom        X               X               X               X
+        # 0x088000  0x20000     maincpu2    X
+        # 0x0A8000  0x40000     maincpu1    X               X               X
+        # 0x0E8000  0x20000     maincpu2                                    X
+        # 0x108000  0x40000     ???
+        # 0x148000  0x08000     audiocpu                                    X
+        # 0x150000  0x20000     ???
+        # 0x170000  0x20000     maincpu2                                                    X
+        # 0x170000  0x20000     maincpu1                                                    X
+        # 0x1D0000  0x08000     audiocpu                                                    X
+        # 0x1D8000  0x04000     vlm         X               X
+        # 0x1DC000  0x04000     vlm                                         X               X
+
+        # all common
+        func_map = {}
+        def krom(contents):
+            out_chunks = {}
+            out_chunks["587-c01.10a"] = transforms.cut(contents, 0x068000, length = 0x20000)
+            return out_chunks
+        func_map['krom'] = krom
+        all_common_file_map = helpers.process_rom_files(contents, func_map)
+
+        # salamand common
+        func_map = {}
+        def salamand_vlm(contents):
+            out_chunks = {}
+            out_chunks["587-d08.8g"] = transforms.cut(contents, 0x1D8000, length = 0x4000)
+            return out_chunks
+        func_map['vlm'] = salamand_vlm
+        def salamand_audiocpu(contents):
+            out_chunks = {}
+            out_chunks["587-d09.11j"] = transforms.cut(contents, 0x060000, length = 0x8000)
+            return out_chunks
+        func_map['audiocpu'] = salamand_audiocpu
+        salamand_common_file_map = helpers.process_rom_files(contents, func_map)
+
+        # common maincpu1
+        func_map = {}
+        def common_maincpu1(contents):
+            filenames = [
+                "587-c03.17b",
+                "587-c06.17c",
+            ]
+            contents = transforms.cut(contents, 0xA8000, length = 0x40000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu1'] = common_maincpu1
+        common_maincpu1_file_map = helpers.process_rom_files(contents, func_map)
+
+        # salamand
+        func_map = {}
+        def salamand_maincpu2(contents):
+            filenames = [
+                "587-d02.18b",
+                "587-d05.18c",
+            ]
+            contents = transforms.cut(contents, 0x88000, length = 0x20000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu2'] = salamand_maincpu2
+        func_map['all'] = helpers.existing_files_helper(all_common_file_map)
+        func_map['salamand-common'] = helpers.existing_files_helper(salamand_common_file_map)
+        func_map['common-maincpu1'] = helpers.existing_files_helper(common_maincpu1_file_map)
+        out_files.append({'filename': 'salamand.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # salamandj
+        func_map = {}
+        def salamandj_maincpu2(contents):
+            filenames = [
+                "587-j02.18b",
+                "587-j05.18c",
+            ]
+            contents = transforms.cut(contents, 0x00000, length = 0x20000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu2'] = salamandj_maincpu2
+        func_map['all'] = helpers.existing_files_helper(all_common_file_map)
+        func_map['salamand-common'] = helpers.existing_files_helper(salamand_common_file_map)
+        func_map['common-maincpu1'] = helpers.existing_files_helper(common_maincpu1_file_map)
+        out_files.append({'filename': 'salamandj.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # lifefrce
+        func_map = {}
+        def lifefrce_maincpu2(contents):
+            filenames = [
+                "587-k02.18b",
+                "587-k05.18c",
+            ]
+            contents = transforms.cut(contents, 0xE8000, length = 0x20000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu2'] = lifefrce_maincpu2
+        func_map['all'] = helpers.existing_files_helper(all_common_file_map)
+        def lifefrce_vlm(contents):
+            out_chunks = {}
+            out_chunks["587-k08.8g"] = transforms.cut(contents, 0x1DC000, length = 0x4000)
+            return out_chunks
+        func_map['vlm'] = lifefrce_vlm
+        def lifefrce_audiocpu(contents):
+            out_chunks = {}
+            out_chunks["587-k09.11j"] = transforms.cut(contents, 0x148000, length = 0x8000)
+            return out_chunks
+        func_map['audiocpu'] = lifefrce_audiocpu
+        func_map['common-maincpu1'] = helpers.existing_files_helper(common_maincpu1_file_map)
+        out_files.append({'filename': 'lifefrce.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        # lifefrcej
+        func_map = {}
+        def lifefrcej_maincpu2(contents):
+            filenames = [
+                "587-n02.18b",
+                "587-n05.18c",
+            ]
+            contents = transforms.cut(contents, 0x170000, length = 0x20000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu2'] = lifefrcej_maincpu2
+        func_map['all'] = helpers.existing_files_helper(all_common_file_map)
+        def lifefrcej_vlm(contents):
+            out_chunks = {}
+            out_chunks["587-n08.8g"] = transforms.cut(contents, 0x1DC000, length = 0x4000)
+            return out_chunks
+        func_map['vlm'] = lifefrcej_vlm
+        def lifefrcej_audiocpu(contents):
+            out_chunks = {}
+            out_chunks["587-n09.11j"] = transforms.cut(contents, 0x1D0000, length = 0x8000)
+            return out_chunks
+        func_map['audiocpu'] = lifefrcej_audiocpu
+        def lifefrcej_maincpu1(contents):
+            filenames = [
+                "587-n03.17b",
+                "587-n06.17c",
+            ]
+            contents = transforms.cut(contents, 0x190000, length = 0x40000)
+            chunks = transforms.deinterleave(contents, 2, 1)
+            return dict(zip(filenames, chunks))
+        func_map['maincpu1'] = lifefrcej_maincpu1
+        out_files.append({'filename': 'lifefrcej.zip', 'contents': helpers.build_rom(contents, func_map)})
+
+        return out_files
 
     def _handle_twinbee(self, contents):
         # Get FSE files Nemesis
