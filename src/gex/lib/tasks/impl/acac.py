@@ -138,7 +138,7 @@ class ACACTask(BaseTask):
             "name": "Lifeforce (J)",
             "filename": "lifefrcejzip",
             'status': 'playable',
-            "notes": []
+            "notes": [2]
         },
         # TWINBEE - can find bits and pieces
         # SCRAMBLE - no sign of it
@@ -176,7 +176,8 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_vulcan(src_contents))
         out_files.extend(self._handle_thunderx(src_contents))
         out_files.extend(self._handle_salamand(src_contents))
-        # out_files.extend(self._handle_twinbee(src_contents))
+        if self._props.get('include-partials'):
+            out_files.extend(self._handle_twinbee(src_contents))
 
         if out_files:
             for out_file_entry in out_files:
@@ -888,15 +889,15 @@ class ACACTask(BaseTask):
 
         return out_files
 
-    def _handle_twinbee(self, contents):
+    def _handle_twinbee(self, full_contents):
+        out_files = []
+        
         # Get FSE files Nemesis
-        contents = transforms.cut(contents, 0x2F2DE0, length=541168)
+        contents = transforms.cut(full_contents, 0x2F2DE0, length=541168)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
-        out_files = []
 
         func_map = {}
-        # k005289
         def k_rom(contents):
             filenames = [
                 "400-a01.fse",
@@ -908,34 +909,36 @@ class ACACTask(BaseTask):
         func_map['k005289'] = k_rom
         fse_file_map = helpers.process_rom_files(contents, func_map)
 
-        # Now, extract Twinbee
-
-        contents = transforms.cut(contents, 0x5407E0, length=67191)
+        # Get the maincpu1
+        contents = transforms.cut(full_contents, 0x5407E0, length=67191)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
-        out_files = []
 
         func_map = {}
         def maincpu1(contents):
             filenames = [
-                "412-a05.12l",
-                "412-a07.17l"
+                "412-a05.17l",
+                "412-a07.12l"
             ]
-            contents = transforms.cut(contents, 0x00000, length = 0x40000)
             chunks = transforms.deinterleave(contents, 2, 1)
             return dict(zip(filenames, chunks))
         func_map['maincpu1'] = maincpu1
+        maincpu1_file_map = helpers.process_rom_files(contents, func_map)
+
+
+        func_map = {}
         func_map['fse'] = helpers.existing_files_helper(fse_file_map)
+        func_map['maincpu1'] = helpers.existing_files_helper(maincpu1_file_map)
         out_files.append({'filename': 'twinbee.zip', 'contents': helpers.build_rom(contents, func_map)})
 
-        # Bubble ROM
-        func_map = {}
-        def main(contents):
-            contents = transforms.cut(contents, 0x00000, length = 0x40000)
-            chunks = transforms.deinterleave(contents, 2, 1)
-            return dict(zip(['twinbee.bin'], chunks))
-        func_map['main'] = main
-        out_files.append({'filename': 'twinbeeb.zip', 'contents': helpers.build_rom(contents, func_map)})
+        # # Bubble ROM
+        # func_map = {}
+        # def main(contents):
+        #     contents = transforms.cut(contents, 0x00000, length = 0x40000)
+        #     chunks = transforms.deinterleave(contents, 2, 1)
+        #     return dict(zip(['twinbee.bin'], chunks))
+        # func_map['main'] = main
+        # out_files.append({'filename': 'twinbeeb.zip', 'contents': helpers.build_rom(contents, func_map)})
 
 
         return out_files

@@ -2,6 +2,13 @@
 - Added Games/Collections:
   - Psikyo Shooter Collector's Bundle (Partial Only)
 - Updated Collections:
+  - Arcade Collection Anniversary Classics
+    - hcastle/akumajoun: Partial -> Good
+    - nemesis: Partial -> Good
+    - vulcan/gradius2: Partial -> Good
+    - thunderx: Partial -> Good
+    - salamand/lifeforce: Partial -> Good
+      - lifefrcej has a known bad dump, but runs fine
   - Namco Arcade Game Series
     - Fixed partial support
   - SNK 40th Anniversary Collection
