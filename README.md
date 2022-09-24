@@ -108,7 +108,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 15%    | A couple games are good extractions so far...
+ **Arcade Collection Anniversary Classics**     | 75%    | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
