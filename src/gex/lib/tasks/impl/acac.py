@@ -140,12 +140,6 @@ class ACACTask(BaseTask):
             'status': 'playable',
             "notes": []
         },
-        # { # Investigate!
-        #     "name": "scramble",
-        #     "filename": "scramble.zip",
-        #     'status': 'no-rom',
-        #     "notes": []
-        # },
         # TWINBEE - can find bits and pieces
         # SCRAMBLE - no sign of it
     ]
