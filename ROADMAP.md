@@ -27,6 +27,8 @@
 ### Uses dotemu2mame.js
 - Raiden Legacy
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
+- IREM Arcade Hits
+  https://www.gamefools.com/pc-games/irem-arcade-hits.html
 
 
 ## Owned / Under Investigation
@@ -42,7 +44,7 @@
 - Mega Man X Legacy Collection 2
 - Mega Man Legacy Collection 
 - Arcade Collection Anniversary Classics
-  A couple are extracted, but many aren't matching...
+  Mostly working, but 2 titles remain...
 - Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
 
 
@@ -52,7 +54,6 @@
   https://github.com/ZetTheLegendaryHero/Colecovision-Flashback-40-Game-Pack-ROM-Extractor
 - 8-bit Adventure Anthology: Volume I	(Shadowgate, The Uninvited, Deja Vu)
   https://gitlab.com/vaiski/romextract/-/blob/master/supported.csv
-- IREM Arcade Hits
 - R-Type Dimensions EX
 - CAVE: Mushihimesama
   Recommended in #15.

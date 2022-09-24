@@ -15,7 +15,6 @@ These are the ROMs just sitting in the assets/roms folder.
 '''
     _default_input_folder = r"C:\Program Files (x86)\Blizzard Arcade Collection"
     _input_folder_desc = "Blizzard Arcade Collection install folder"
-    _short_description = ""
 
     _game_info_map = {
         'Blackthorne (U) (32X) [patched].32x': {

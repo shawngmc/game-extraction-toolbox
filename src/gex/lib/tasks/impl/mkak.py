@@ -22,7 +22,6 @@ class BubsyTask(BaseTask):
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Mortal Kombat Arcade Kollection")
     _input_folder_desc = "Mortal Kombat Arcade Kollection Steam Folder"
-    _short_description = ""
 
     _out_file_list = [
         {

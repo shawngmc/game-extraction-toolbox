@@ -18,7 +18,6 @@ These are pulled out of the plugin DLL.
     '''
     _default_input_folder = helpers.STEAM_APP_ROOT
     _input_folder_desc = "Steam library root"
-    _short_description = ""
 
 
     _prop_info = {
