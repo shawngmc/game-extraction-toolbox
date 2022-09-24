@@ -719,7 +719,7 @@ def extract(in_dir, out_dir):
     output_files = []
     funcs = globals()
     for game in games:
-        if game['status'] == 'partial':
+        if game['status'] != 'partial':
             logger.info(f"Extracting {game['name']}...")
             if 'handler' in game:
                 handler_func = funcs[game['handler']]
