@@ -20,7 +20,6 @@ Based on:
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("SNK 40th Anniversary Collection")
     _input_folder_desc = "SNK 40th install folder"
-    _short_description = ""
     _prop_info = {
         "include-arcade": {
             "description": "Include the fully-formed arcade games that are in SNK 40th",

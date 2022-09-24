@@ -36,7 +36,6 @@ indicating file type. Note that the file order can differ between KPKA files; th
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("Capcom Arcade 2nd Stadium")
     _input_folder_desc = "CAS 2 Folder"
-    _short_description = ""
     _prop_info = {
         "include-partials": {
             "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",

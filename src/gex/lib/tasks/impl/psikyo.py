@@ -139,7 +139,6 @@ class PsikyoTask(BaseTask):
     _out_file_notes = {}
     _default_input_folder = helpers.STEAM_APP_ROOT
     _input_folder_desc = "Steam library root"
-    _short_description = ""
 
     def __init__(self):
         super().__init__()

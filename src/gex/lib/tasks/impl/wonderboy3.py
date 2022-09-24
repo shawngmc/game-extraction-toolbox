@@ -18,7 +18,6 @@ Note that the white box instead of the Sega logo is an intentional change for th
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Wonder Boy The Dragon's Trap")
     _input_folder_desc = "Wonder Boy The Dragon's Trap Steam Folder"
-    _short_description = ""
 
     _game_info_map = {
         'wb3.sms': {

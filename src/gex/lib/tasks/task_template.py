@@ -14,7 +14,6 @@ class MyTask(BaseTask):
     '''
     _default_input_folder = r""
     _input_folder_desc = ""
-    _short_description = ""
 
 
     def execute(self, in_dir, out_dir):

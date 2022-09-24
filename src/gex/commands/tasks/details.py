@@ -29,8 +29,6 @@ def details(task):
 def get_header_display(task_class):
     '''Get a markdown-formatted header for this task for help, etc.'''
     markdown_text = f'# {task_class.get_task_name()}: {task_class.get_title()}\n'
-    if len(task_class.get_short_description()) > 0:
-        markdown_text += f'  {task_class.get_short_description()}\n\n'
     markdown_text += f'  Expected input dir: {task_class.get_input_folder_description()}\n\n'
     markdown_text += f'  Default input dir: "{task_class.get_default_input_folder()}"\n'
     return markdown_text

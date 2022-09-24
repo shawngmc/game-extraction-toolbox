@@ -17,7 +17,6 @@ Mega Man X4 does not appear to be ROM based, but investigation is ongoing.
 '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Mega Man X Legacy Collection")
     _input_folder_desc = "Steam MMxLC install folder"
-    _short_description = ""
     _out_file_notes = {}
     _game_info_list = [
         {

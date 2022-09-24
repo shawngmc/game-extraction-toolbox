@@ -38,7 +38,6 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("Double Dragon Trilogy")
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
-    _short_description = ""
 
     def __init__(self):
         super().__init__()

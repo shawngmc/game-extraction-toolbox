@@ -15,7 +15,6 @@ class PacManMuseumPlusTask(BaseTask):
     _details_markdown = ''''''
     _default_input_folder = helpers.gen_steam_app_default_folder("PAC-MAN MUSEUM PLUS")
     _input_folder_desc = "Pac Man Museum Plus install folder"
-    _short_description = ""
 
     _prop_info = {
         "include-partials": {

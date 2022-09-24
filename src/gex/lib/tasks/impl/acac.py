@@ -21,7 +21,6 @@ class ACACTask(BaseTask):
     _details_markdown = ''''''
     _default_input_folder = helpers.gen_steam_app_default_folder("Arcade Classics Anniversary Collection")
     _input_folder_desc = "Arcade Classics Anniversary Collection install folder"
-    _short_description = ""
 
     _prop_info = {
         "include-partials": {
