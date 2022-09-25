@@ -1,3 +1,8 @@
+# 0.1.4
+- Updated Collections:
+  - IREM Arcade Classics
+    - Fix bug preventing details output
+
 # 0.1.3
 - Improvements:
   - Fixed forgotten version number roll
