@@ -131,7 +131,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("CBEUB")
     _input_folder_desc = "CBEUB Steam folder"
-    _short_description = ""
 
     def execute(self, in_dir, out_dir):
         pak_files = self._find_files(in_dir)

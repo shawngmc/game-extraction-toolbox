@@ -133,7 +133,6 @@ Based on https://github.com/farmerbb/RED-Project/wiki/Disney-Classic-Games:-Alad
     _default_input_folder = helpers.gen_steam_app_default_folder(
         "Disney Classic Games Aladdin and the Lion King")
     _input_folder_desc = "Disney Classics Steam folder"
-    _short_description = ""
 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)

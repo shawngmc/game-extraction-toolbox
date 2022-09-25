@@ -1,5 +1,6 @@
 '''Common operations for blobs (binary contents) and arrays of blobs'''
 import itertools
+from typing import Callable
 from bitarray import bitarray
 
 
@@ -138,6 +139,13 @@ def deinterleave_all(chunks: list[bytes], num_ways: int, word_size: int) -> list
         temp_chunks.extend(deinterleave(chunk, num_ways, word_size))
     return temp_chunks
 
+def transform_all(chunks: list[bytes], transform_function: Callable,
+    *function_args, **function_kwargs) -> list[bytes]:
+    '''Apply an existing transformation function to all objects in chunks'''
+    temp_chunks = []
+    for chunk in chunks:
+        temp_chunks.extend(transform_function(chunk, *function_args, **function_kwargs))
+    return temp_chunks
 
 def truncate(contents: bytes, max_length: int) -> bytes:
     '''Remove all content from a blob after max_length bytes'''

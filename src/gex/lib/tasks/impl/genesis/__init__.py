@@ -19,7 +19,6 @@ There are a few more regional variants that are only available in PAK files, but
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Sega Classics")
     _input_folder_desc = "Sega Classics Steam Folder"
-    _short_description = ""
 
     def __init__(self):
         super().__init__()

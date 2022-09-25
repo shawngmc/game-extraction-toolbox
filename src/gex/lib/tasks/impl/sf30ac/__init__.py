@@ -238,7 +238,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("Street Fighter 30th Anniversary Collection")
     _input_folder_desc = "SF30AC Steam folder"
-    _short_description = ""
 
     _pkg_name_map = {
         'bundleStreetFighter.mbundle': 'sf',

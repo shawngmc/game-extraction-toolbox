@@ -108,19 +108,18 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 15%    | A couple games are good extractions so far...
+ **Arcade Collection Anniversary Classics**     | 75%    | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   |   
  **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs...  
- **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
- **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
  **Disney Afternoon Collection**                | 100%   |  
  **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%   |  
+ **IREM Arcade Classics**                       | 100%   |  
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
@@ -135,8 +134,11 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ### Completely Unplayable
 **Collection**                             | **Status**     | **Notes**           
---------------------------------------------|-------------|---------------------------------------------------------------------  
- **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title  
+--------------------------------------------|-------------|---------------------------------------------------------------------   
+ **Capcom Arcade Stadium 1**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Capcom Arcade Stadium 2**                    | 0%     | We can only unwrap KPKA at this time!  
+ **Mortal Kombat Arcade Kollection**            | 1%     | Audio ROMs are stripped from this title
+ **Psikyo Shooter Collector's Bundle**          | 1%     | SE ROMs appear to be missing
 
 
 ## ROM Status Guide
@@ -151,3 +153,4 @@ These are noted in the documentation for each script. If you think a ROM is misi
  * The ROM has missing files that can be filled with placeholders or left out.
  * Files are present that work as normal, but have bad CRCs. This may be due to copyright changes, etc., but ultimately does not match a known good source.
  * Publishers may offer modified ROMs - such as increased difficulty, theming, or new game modes - which are often not publicly tracked.
+ * It may only work in older versions of emulators due to odd dumps, missing files, etc.

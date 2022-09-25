@@ -9,7 +9,6 @@ class BaseTask:
     _details_markdown = None
     _default_input_folder = None
     _input_folder_desc = None
-    _short_description = None
     _out_file_list = []
     _out_file_notes = {}
     _prop_info = {}
@@ -51,10 +50,6 @@ class BaseTask:
     def get_title(self):
         '''Get the nicely formatted name of this task'''
         return self._title
-
-    def get_short_description(self):
-        '''Get a short description/note for this task'''
-        return self._short_description
 
     def get_default_input_folder(self):
         '''Get the default input folder for this task'''

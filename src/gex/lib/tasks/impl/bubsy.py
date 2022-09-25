@@ -16,7 +16,6 @@ These are the ROMs just sitting in the install folder.
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Bubsy Two-Fur")
     _input_folder_desc = "Bubsy Two-Fur Steam Folder"
-    _short_description = ""
 
     _game_info_map = {
         'bubsy_1': {
