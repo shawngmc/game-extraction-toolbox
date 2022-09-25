@@ -4,7 +4,6 @@
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Brave Battle Saga - The Legend of The Magic Warrior
-- Wonder Boy The Dragon's Trap
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection

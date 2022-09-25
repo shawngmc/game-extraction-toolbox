@@ -1,3 +1,8 @@
+# 0.1.3
+- Improvements:
+  - Fixed forgotten version number roll
+  - Added badges to readme
+
 # 0.1.2
 - Added Games/Collections:
   - Psikyo Shooter Collector's Bundle (Partial Only)
