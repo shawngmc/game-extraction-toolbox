@@ -5,6 +5,7 @@ import os
 from zipfile import ZipFile
 from gex.lib.tasks import helpers
 from gex.lib.utils.blob import transforms
+from gex.lib.utils import gfx_rebuilder
 from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
@@ -147,8 +148,6 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
                 logger.info(f"Saving {game['name']} as {filename}...")
                 with open(os.path.join(out_dir, filename), "wb") as out_file:
                     out_file.write(contents)
-
-
 
     def _handle_airduel(self, in_files):
         func_map = {}
@@ -680,7 +679,46 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
     def _handle_mrheli(self, in_files):
         func_map = {}
-        print("NYI")
+
+        # maincpu
+        maincpu_filenames = [
+            'mh-c-l0.bin', 'mh-c-l1.bin', 'mh-c-l3.bin',
+            'mh-c-h0.bin', 'mh-c-h1.bin', 'mh-c-h3.bin'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU.BIN']
+            contents = transforms.cut(contents, 0, length=0x80000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.equal_split, 4)
+            del chunks[6]
+            del chunks[2]
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+
+        # GFX1 - Sprites
+        func_map['gfx1'] = helpers.equal_split_helper(
+            'GFX1.BIN',
+            ['mh-c-00.bin', 'mh-c-10.bin', 'mh-c-20.bin', 'mh-c-30.bin']
+        )
+
+        # GFX2
+        func_map['gfx2'] = helpers.equal_split_helper(
+            'GFX2.BIN',
+            ['mh-b-a0.bin', 'mh-b-a1.bin', 'mh-b-a2.bin', 'mh-b-a3.bin']
+        )
+
+        # GFX3
+        func_map['gfx3'] = helpers.equal_split_helper(
+            'GFX3.BIN',
+            ['b-b0-.rom', 'b-b1-.bin', 'b-b2-.rom', 'b-b3-.rom']
+        )
+
+        # Samples
+        func_map['samples'] = helpers.name_file_helper(
+            'SAMPLES.BIN',
+            'c-v0-b.rom'
+        )
+
         return helpers.build_rom(in_files, func_map)
 
     def _handle_mysticri(self, in_files):
@@ -835,20 +873,288 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
     def _handle_ssoldier(self, in_files):
         func_map = {}
-        print("NYI")
+        
+        # maincpu
+        maincpu_filenames = [
+            'f3-l0-h.bin', 'f3-l1-a.bin', 'f3-h0-h.bin', 'f3-h1-a.bin'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU1.BIN']
+            contents = transforms.cut(contents, 0, length=0xC0000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.custom_split, [0x40000, 0x20000])
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+        
+        # soundcpu
+        soundcpu_filenames = [
+            'f3_sl0.sl0', 'f3_sh0.sh0'
+        ]
+        def soundcpu(in_files):
+            contents = in_files['CPU2.BIN']
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            return dict(zip(soundcpu_filenames, chunks))
+        func_map['soundcpu'] = soundcpu
+
+        # GFX1
+        gfx1_filenames = [
+            'f3_w50.c0', 'f3_w51.c1', 'f3_w52.c2', 'f3_w53.c3'
+        ]
+        def gfx1(in_files):
+            contents = in_files['GFX1.BIN']
+            contents = transforms.cut(contents, 0, length=0x100000)
+            chunks = transforms.equal_split(contents, 4)
+            return dict(zip(gfx1_filenames, chunks))
+        func_map['gfx1'] = gfx1
+
+        # GFX2
+        gfx2_filenames = [
+            'f3_w38.001', 'f3_w40.011', 'f3_w42.021', 'f3_w44.031',
+            'f3_w37.000', 'f3_w39.010', 'f3_w41.020', 'f3_w43.030'
+        ]
+        def gfx2(in_files):
+            contents = in_files['GFX2.BIN']
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.equal_split, 4)
+            return dict(zip(gfx2_filenames, chunks))
+        func_map['gfx2'] = gfx2
+
+        # Sound
+        func_map['sound'] = helpers.name_file_helper(
+            'SOUND.BIN',
+            'f3_w95.da'
+        )
+
         return helpers.build_rom(in_files, func_map)
 
     def _handle_uccops(self, in_files):
         func_map = {}
-        print("NYI")
+        
+        # maincpu
+        maincpu_filenames = [
+            'uc_l0.rom', 'uc_l1.rom', 'uc_h0.rom', 'uc_h1.rom'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU1.BIN']
+            contents = transforms.cut(contents, 0, length=0xC0000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.custom_split, [0x40000, 0x20000])
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+        
+        # soundcpu
+        soundcpu_filenames = [
+            'uc_sl0.rom', 'uc_sh0.rom'
+        ]
+        def soundcpu(in_files):
+            contents = in_files['CPU2.BIN']
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            return dict(zip(soundcpu_filenames, chunks))
+        func_map['soundcpu'] = soundcpu
+
+        # GFX1
+        func_map['gfx1'] = helpers.equal_split_helper(
+            'GFX1.BIN',
+            ['uc_w38m.rom', 'uc_w39m.rom', 'uc_w40m.rom', 'uc_w41m.rom']
+        )
+
+        # GFX2
+        func_map['gfx2'] = helpers.equal_split_helper(
+            'GFX2.BIN',
+            ['uc_k16m.rom', 'uc_k17m.rom', 'uc_k18m.rom', 'uc_k19m.rom']
+        )
+
+        # Sound
+        func_map['sound'] = helpers.name_file_helper(
+            'SOUND.BIN',
+            'uc_w42.rom'
+        )
         return helpers.build_rom(in_files, func_map)
 
     def _handle_uccopsj(self, in_files):
         func_map = {}
-        print("NYI")
+        
+        # maincpu
+        maincpu_filenames = [
+            'uc_l0_a.ic39', 'uc_l1_a.ic38', 'uc_h0_a.ic28', 'uc_h1_a.ic27'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU1.BIN']
+            contents = transforms.cut(contents, 0, length=0xC0000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.custom_split, [0x40000, 0x20000])
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+        
+        # soundcpu
+        soundcpu_filenames = [
+            'uc_sl0.ic31', 'uc_sh0.ic30'
+        ]
+        def soundcpu(in_files):
+            contents = in_files['CPU2.BIN']
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            return dict(zip(soundcpu_filenames, chunks))
+        func_map['soundcpu'] = soundcpu
+
+        # GFX1
+        func_map['gfx1'] = helpers.equal_split_helper(
+            'GFX1.BIN',
+            ['uc_c0.ic26', 'uc_c1.ic25', 'uc_c2.ic24', 'uc_c3.ic23']
+        )
+
+        # GFX2
+        func_map['gfx2'] = helpers.equal_split_helper(
+            'GFX2.BIN',
+            ["uc_000.ic34", "uc_010.ic35", "uc_020.ic36", "uc_030.ic37"]
+        )
+
+        # Sound
+        func_map['sound'] = helpers.name_file_helper(
+            'SOUND.BIN',
+            'uc_da.bin'
+        )
         return helpers.build_rom(in_files, func_map)
 
     def _handle_vigilant(self, in_files):
         func_map = {}
-        print("NYI")
+        
+        # maincpu
+        maincpu_filenames = [
+            'g07_c03.bin', 'j07_c04.bin'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU1.BIN']
+            contents = transforms.cut(contents, 0, length=0x80000)
+            chunks = transforms.custom_split(contents, [0x8000, 0x8000, 0x10000])
+            del chunks[1]
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+        
+        # soundcpu
+        func_map['soundcpu'] = helpers.name_file_helper(
+            'CPU2.BIN',
+            'g05_c02.bin'
+        )
+
+        # GFX1
+        def gfx1(in_files):
+            filenames = [
+                'f05_c08.bin', 'h05_c09.bin'
+            ]
+            contents = in_files['GFX1.BIN']
+            contents = gfx_rebuilder.reencode_gfx(contents, self._VIGILANT_TEXT_LAYOUT)
+            chunks = transforms.equal_split(contents, num_chunks=len(filenames))
+            return dict(zip(filenames, chunks))
+        func_map['gfx1'] = gfx1
+
+        # GFX2
+        def gfx2(in_files):
+            filenames = [
+                'n07_c12.bin', 'k07_c10.bin', 'o07_c13.bin', 'l07_c11.bin',
+                't07_c16.bin', 'p07_c14.bin', 'v07_c17.bin', 's07_c15.bin'
+            ]
+            contents = in_files['GFX2.BIN']
+            contents = gfx_rebuilder.reencode_gfx(contents, self._VIGILANT_SPRITE_LAYOUT)
+            chunks = transforms.equal_split(contents, num_chunks=len(filenames))
+            return dict(zip(filenames, chunks))
+        func_map['gfx2'] = gfx2
+
+        # GFX3 - BAD
+        def gfx3(in_files):
+            def vigilant_reorder(src):
+                pages = 4
+                width = 512
+                height = 256
+                dst = bytearray(len(src)//2)
+
+                i = 0
+                for page in range(0, pages):
+                    for curr_height in range(0, height):
+                        j = (width*pages*curr_height + width*page) * 2
+                        for _ in range(0, width):
+                            dst[i] = src[j] & 0xf
+                            i += 1
+                            j += 2
+                return dst
+
+            filenames = [
+                'd01_c05.bin', 'e01_c06.bin', 'f01_c07.bin'
+            ]
+            contents = in_files['GFX_BG.BIN']
+            contents = vigilant_reorder(contents)
+            contents = gfx_rebuilder.reencode_gfx(contents, self._VIGILANT_BACK_LAYOUT)
+            contents = transforms.cut(contents, 0, length=0x30000)
+            chunks = transforms.equal_split(contents, num_chunks=len(filenames))
+            return dict(zip(filenames, chunks))
+        func_map['gfx3'] = gfx3
+
+        # Samples
+        func_map['samples'] = helpers.name_file_helper(
+            'SAMPLES.BIN',
+            'd04_c01.bin'
+        )
+
+        # PIDS (Placeholder)
+        func_map['ph'] = helpers.placeholder_helper({
+            'pal16l8.8r': 0x104,
+            'pal16l8.4m': 0x104,
+            'pal16l8.1b': 0x104
+        })
+
         return helpers.build_rom(in_files, func_map)
+
+
+    def _dotemu_reencode_gfx_helper(self, in_file_name, filenames, layout):
+        def encode(in_files):
+            contents = in_files[in_file_name]
+            contents = gfx_rebuilder.reencode_gfx(contents, layout)
+            chunks = transforms.equal_split(contents, num_chunks=len(filenames))
+            return dict(zip(filenames, chunks))
+        return encode
+
+    _VIGILANT_TEXT_LAYOUT = {
+        "width": 8,
+        "height": 8,
+        "total": [1,2],
+        "planes": 4,
+        "planeoffset": [[1,2], [1,2,4], 0, 4],
+        "xoffset": [0,1,2,3, 64+0,64+1,64+2,64+3],
+        "yoffset": [0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8],
+        "charincrement": 128
+    }
+
+    _VIGILANT_SPRITE_LAYOUT = {
+        "width": 16,
+        "height": 16,
+        "total": [1,2],
+        "planes": 4,
+        "planeoffset": [[1,2], [1,2,4], 0, 4],
+        "xoffset": [
+            0x00*8+0,0x00*8+1,0x00*8+2,0x00*8+3,
+            0x10*8+0,0x10*8+1,0x10*8+2,0x10*8+3,
+            0x20*8+0,0x20*8+1,0x20*8+2,0x20*8+3,
+            0x30*8+0,0x30*8+1,0x30*8+2,0x30*8+3
+        ],
+        "yoffset": [
+            0x00*8, 0x01*8, 0x02*8, 0x03*8,
+            0x04*8, 0x05*8, 0x06*8, 0x07*8,
+            0x08*8, 0x09*8, 0x0A*8, 0x0B*8,
+            0x0C*8, 0x0D*8, 0x0E*8, 0x0F*8
+        ],
+        "charincrement": 0x40*8
+    }
+
+    _VIGILANT_BACK_LAYOUT = {
+        "width": 32,
+        "height": 1,
+        "total": [1,1],
+        "planes": 4,
+        "planeoffset": [0,2,4,6],
+        "xoffset": [
+            0*8+1, 0*8,  1*8+1, 1*8, 2*8+1, 2*8, 3*8+1, 3*8, 4*8+1, 4*8, 5*8+1, 5*8,
+            6*8+1,6*8, 7*8+1,7*8, 8*8+1,8*8, 9*8+1,9*8, 10*8+1,10*8, 11*8+1,11*8,
+            12*8+1, 12*8, 13*8+1, 13*8, 14*8+1, 14*8, 15*8+1, 15*8
+        ],
+        "yoffset": [0],
+        "charincrement": 16*8
+    }
