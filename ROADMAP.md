@@ -27,9 +27,6 @@
 ### Uses dotemu2mame.js
 - Raiden Legacy
   https://github.com/farmerbb/RED-Project/wiki/Raiden-Legacy
-- IREM Arcade Hits
-  https://www.gamefools.com/pc-games/irem-arcade-hits.html
-
 
 ## Owned / Under Investigation
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)

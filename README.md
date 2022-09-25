@@ -119,6 +119,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Disney Afternoon Collection**                | 100%   |  
  **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%   |  
+ **IREM Arcade Classics**                       | 100%   |  
  **Mega Man Legacy Collection 1**               | 100%   |  
  **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
  **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted

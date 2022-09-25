@@ -1,6 +1,7 @@
 # 0.1.2
 - Added Games/Collections:
   - Psikyo Shooter Collector's Bundle (Partial Only)
+  - IREM Arcade Classics
 - Updated Collections:
   - Arcade Collection Anniversary Classics
     - hcastle/akumajoun: Partial -> Good
@@ -9,6 +10,8 @@
     - thunderx: Partial -> Good
     - salamand/lifeforce: Partial -> Good
       - lifefrcej has a known bad dump, but runs fine
+  - Atari Vault
+    - Fixed a bug preventing this script from completing
   - Namco Arcade Game Series
     - Fixed partial support
   - SNK 40th Anniversary Collection
