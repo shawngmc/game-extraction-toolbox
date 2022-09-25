@@ -18,7 +18,6 @@ These are pulled out of the plugin DLL.
     '''
     _default_input_folder = helpers.STEAM_APP_ROOT
     _input_folder_desc = "Steam library root"
-    _short_description = ""
 
 
     _prop_info = {
@@ -369,7 +368,8 @@ These are pulled out of the plugin DLL.
 
     def execute(self, in_dir, out_dir):
         for game in self._game_info_map:
-            if not self._props.get('include-partials') and game.get('partial'):
+            is_partial = game.get('status') == 'partial'
+            if not self._props.get('include-partials') and is_partial:
                 logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
                 continue
 
@@ -389,6 +389,8 @@ These are pulled out of the plugin DLL.
                         file_content = transforms.cut(contents, file['start'], length=file['length'])
 
                     zip_files[file['filename']] = file_content
+                if is_partial:
+                    zip_files['full_dump'] = contents
 
                 logger.info(f"Saving {game['filename']}...")
                 with open(os.path.join(out_dir, game['filename']), "wb") as out_file:

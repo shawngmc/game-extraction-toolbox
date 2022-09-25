@@ -18,6 +18,8 @@ class CAS1OldTask(BaseTask):
     _task_name = 'cas1_old'
     _title = "Capcom Arcade Stadium 1 (OLD)"
     _details_markdown = '''
+Capcom Arcade Stadium 1, ~30 arcade games, as downloaded from depot using old manifests
+
 Pulling CAS1 via old Steam Depots:
 
 The notes I found were at https://retropie.org.uk/forum/topic/10918/where-to-legally-acquire-content-to-play-on-retropie/606?lang=en-US. 
@@ -79,7 +81,6 @@ After that, this script will extract and prep the ROMs. Some per-rom errata are 
     }
     _default_input_folder = r"C:\Program Files (x86)\Steam\steamapps\content"
     _input_folder_desc = "SteamApps Content Folder"
-    _short_description = "Capcom Arcade Stadium 1, ~30 arcade games, as downloaded from depot using old manifests"
 
     _pkg_name_map = {
         "1515951": "1943",

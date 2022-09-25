@@ -19,7 +19,6 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
     _out_file_notes = {}
     _default_input_folder = helpers.gen_steam_app_default_folder("Sa・Ga COLLECTION")
     _input_folder_desc = "Collection of SaGa Steam folder"
-    _short_description = ""
 
     def execute(self, in_dir, out_dir):
         bundle_files = self._find_files(in_dir)

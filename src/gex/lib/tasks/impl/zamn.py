@@ -17,7 +17,6 @@ These ROMs are pulled out of the main executable.
     '''
     _default_input_folder = r"C:\Program Files (x86)\GOG Galaxy\Games\Zombies Ate My Neighbour & Ghoul Patrol"
     _input_folder_desc = "ZAMN folder"
-    _short_description = ""
 
     _game_info_map = [
         {

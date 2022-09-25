@@ -16,7 +16,6 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Atari Vault")
     _input_folder_desc = "Atari Vault install folder"
-    _short_description = ""
     _prop_info = {
         "include-2600": {
             "description": "Include Atari 2600 Games",

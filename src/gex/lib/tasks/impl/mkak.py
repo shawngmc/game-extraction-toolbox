@@ -22,7 +22,6 @@ class BubsyTask(BaseTask):
     '''
     _default_input_folder = helpers.gen_steam_app_default_folder("Mortal Kombat Arcade Kollection")
     _input_folder_desc = "Mortal Kombat Arcade Kollection Steam Folder"
-    _short_description = ""
 
     _out_file_list = [
         {
@@ -147,7 +146,7 @@ class BubsyTask(BaseTask):
         return [{'filename': "partial_mk2.zip", 'contents': helpers.build_zip(zip_files)}]
 
     def _handle_umk3(self, in_dir):
-        file_path = r"BINARIES\WIN32\DATA\MK2"
+        file_path = r"BINARIES\WIN32\DATA\UMK3"
         in_filenames = [
             "UMK3.BIN",
             "UMK3AUDIO.BIN",

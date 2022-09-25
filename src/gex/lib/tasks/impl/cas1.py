@@ -58,7 +58,6 @@ It is definitely different than the CAS1 PSB, but only about 30% of the file is 
     }
     _default_input_folder = helpers.gen_steam_app_default_folder("Capcom Arcade Stadium")
     _input_folder_desc = "CAS 1 Folder"
-    _short_description = ""
     _prop_info = {
         "include-partials": {
             "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
