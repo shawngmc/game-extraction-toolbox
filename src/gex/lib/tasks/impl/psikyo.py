@@ -25,116 +25,116 @@ class PsikyoTask(BaseTask):
             "handler": "_handle_dragnblz",
             "notes": []
         },
-        {
-            "game": "Strikers 1945",
-            "in": {
-                "base_dir": "STRIKERS1945\\Data"
-            },
-            "filename": "s1945.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "Strikers 1945 II",
-            "in": {
-                "base_dir": "STRIKERS1945 Ⅱ\\Data"
-            },
-            "filename": "s1945ii.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "Strikers 1945 III",
-            "in": {
-                "base_dir": "STRIKERS1945 III\\Data"
-            },
-            "filename": "s1945iii.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "GUNBARICH",
-            "in": {
-                "base_dir": "GUNBARICH\\Data"
-            },
-            "filename": "gnbarich.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "GUNBIRD",
-            "in": {
-                "base_dir": "GUNBIRD\\Data"
-            },
-            "filename": "gunbird.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "GUNBIRD 2",
-            "in": {
-                "base_dir": "GUNBIRD2\\Data"
-            },
-            "filename": "gunbird2.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "SOL DIVIDE -SWORD OF DARKNESS-",
-            "in": {
-                "base_dir": "SOL DIVIDE -SWORD OF DARKNESS-\\Data"
-            },
-            "filename": "soldivid.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "ZERO GUNNER 2",
-            "in": {
-                "base_dir": "ZERO GUNNER 2-\\Data"
-            },
-            "filename": "zerogu2.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "TENGAI",
-            "in": {
-                "base_dir": "TENGAI\\Data"
-            },
-            "filename": "tengai.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "Samurai Aces",
-            "in": {
-                "base_dir": "Samurai Aces\\Data"
-            },
-            "filename": "samuraia.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        },
-        {
-            "game": "Samurai Aces III: Sengoku Cannon",
-            "in": {
-                "base_dir": "SENGOKU CANNON\\Data"
-            },
-            "filename": "sngkace.zip",
-            "status": "partial",
-            "handler": "_handle_copyorig",
-            "notes": []
-        }
+        # {
+        #     "game": "Strikers 1945",
+        #     "in": {
+        #         "base_dir": "STRIKERS1945\\Data"
+        #     },
+        #     "filename": "s1945.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "Strikers 1945 II",
+        #     "in": {
+        #         "base_dir": "STRIKERS1945 Ⅱ\\Data"
+        #     },
+        #     "filename": "s1945ii.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "Strikers 1945 III",
+        #     "in": {
+        #         "base_dir": "STRIKERS1945 III\\Data"
+        #     },
+        #     "filename": "s1945iii.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "GUNBARICH",
+        #     "in": {
+        #         "base_dir": "GUNBARICH\\Data"
+        #     },
+        #     "filename": "gnbarich.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "GUNBIRD",
+        #     "in": {
+        #         "base_dir": "GUNBIRD\\Data"
+        #     },
+        #     "filename": "gunbird.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "GUNBIRD 2",
+        #     "in": {
+        #         "base_dir": "GUNBIRD2\\Data"
+        #     },
+        #     "filename": "gunbird2.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "SOL DIVIDE -SWORD OF DARKNESS-",
+        #     "in": {
+        #         "base_dir": "SOL DIVIDE -SWORD OF DARKNESS-\\Data"
+        #     },
+        #     "filename": "soldivid.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "ZERO GUNNER 2",
+        #     "in": {
+        #         "base_dir": "ZERO GUNNER 2-\\Data"
+        #     },
+        #     "filename": "zerogu2.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "TENGAI",
+        #     "in": {
+        #         "base_dir": "TENGAI\\Data"
+        #     },
+        #     "filename": "tengai.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "Samurai Aces",
+        #     "in": {
+        #         "base_dir": "Samurai Aces\\Data"
+        #     },
+        #     "filename": "samuraia.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # },
+        # {
+        #     "game": "Samurai Aces III: Sengoku Cannon",
+        #     "in": {
+        #         "base_dir": "SENGOKU CANNON\\Data"
+        #     },
+        #     "filename": "sngkace.zip",
+        #     "status": "partial",
+        #     "handler": "_handle_copyorig",
+        #     "notes": []
+        # }
     ]
     _out_file_notes = {}
     _default_input_folder = helpers.STEAM_APP_ROOT
@@ -199,7 +199,7 @@ class PsikyoTask(BaseTask):
             return {f'orig/{k}':v for (k,v) in in_files.items()}
         func_map["raw"] = raw_files
 
-        # maincpu - identical, but 426b missing at the end of each file
+        # maincpu - identical, but 426 bytes missing at the end of each file
         def maincpu(in_files): 
             contents = in_files['SH922.BIN']
             contents = transforms.swap_endian(contents)
@@ -211,16 +211,32 @@ class PsikyoTask(BaseTask):
             return dict(zip(filenames, chunks))
         func_map['maincpu'] = maincpu
 
-        # # gfx1_1
-        # def gfx1_1(in_files): 
-        #     contents = in_files['CGCMN.BIN']
-        #     chunks = transforms.deinterleave(contents, num_ways=2, word_size=2)
-        #     filenames = [
-        #         "2prog_h.u21",
-        #         "1prog_l.u22"
-        #     ]
-        #     return dict(zip(filenames, chunks))
-        # func_map['gfx1_1'] = gfx1_1
+        # gfx1_1
+        def gfx1_1(in_files): 
+            contents = in_files['CGCMN.IMG']
+            chunks = []
+            filenames = [
+                # Identical
+                "1l.u4",
+                "1h.u12",
+
+                # Appears to have matches, but junk thrown in?
+                "2l.u5",
+                "2h.u13",
+            ]
+
+            # 1l.u4 / 1h.u12 - easy
+            temp_contents = transforms.cut(contents, 0, 0x400000)
+            temp_chunks = transforms.deinterleave(temp_contents, num_ways=2, word_size=2)
+            chunks += temp_chunks
+
+            # filenames = [
+            #     "odd",
+            #     "even"
+            # ]
+            # chunks = transforms.deinterleave(contents, num_ways=2, word_size=2)
+            return dict(zip(filenames, chunks))
+        func_map['gfx1_1'] = gfx1_1
 
         return {'filename': game_info['filename'], 'contents': helpers.build_rom(in_files, func_map)}
 
