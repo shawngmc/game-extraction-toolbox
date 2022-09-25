@@ -45,63 +45,63 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         },
         "gunforce": {
             "name": "Gunforce",
-            "status": "NYI"
+            "status": "playable",
         },
         "gunforc2": {
             "name": "Gunforce 2",
-            "status": "NYI"
+            "status": "playable",
         },
         "hharry": {
             "name": "Hammerin' Harry",
-            "status": "NYI"
+            "status": "playable",
         },
         "imgfight": {
             "name": "Image Fight",
-            "status": "NYI"
+            "status": "playable",
         },
         "inthunt": {
             "name": "In the Hunt",
-            "status": "NYI"
+            "status": "playable",
         },
         "kungfum": {
             "name": "Kung-Fu Master", # ("b-6f-.bin" is missing)
-            "status": "NYI"
+            "status": "playable",
         },
         "loht": {
             "name": "Legend of Hero Tonma",
-            "status": "NYI"
+            "status": "playable",
         },
         "mrheli": {
             "name": "Mr. HELI no Daibouken",
-            "status": "NYI"
+            "status": "playable",
         },
         "mysticri": {
             "name": "Mystic Riders",
-            "status": "NYI"
+            "status": "playable",
         },
         "nspirit": {
             "name": "Ninja Spirit", # ("proms" and "plds" ROMs are missing)
-            "status": "NYI"
+            "status": "playable",
         },
         "rtypeleo": {
             "name": "R-Type Leo",
-            "status": "NYI"
+            "status": "playable",
         },
         "ssoldier": {
             "name": "Superior Soldiers",
-            "status": "NYI"
+            "status": "playable",
         },
         "uccops": {
             "name": "Undercover Cops",
-            "status": "NYI"
+            "status": "playable",
         },
         "uccopsj": {
             "name": "Undercover Cops (J)",
-            "status": "NYI"
+            "status": "playable",
         },
         "vigilant": {
             "name": "Vigilante", # ("plds" ROMs are missing)
-            "status": "NYI"
+            "status": "playable",
         }
     }
 
@@ -111,13 +111,14 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
     def __init__(self):
         super().__init__()
-        self._out_file_list = map(lambda in_name, game: {
-            'filename': f"{game['mame_name'] if 'mame_name' in game else in_name}.zip",
+        game_info_list =  [(lambda d: d.update(in_name=key) or d)(val) for (key, val) in self._game_info_map.items()]
+        self._out_file_list = list(map(lambda game: {
+            'filename': f"{game['mame_name'] if 'mame_name' in game else game['in_name']}.zip",
             'game': f"{game['name']}",
             'system': "Arcade",
             "status": game['status'],
             "notes": [1]},
-            self._game_info_map.items())
+            game_info_list))
 
     def _read_irem_game(self, name, in_dir):
         '''Handle the zip-in-zip packaging format'''
