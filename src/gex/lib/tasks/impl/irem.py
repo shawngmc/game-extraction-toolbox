@@ -22,140 +22,140 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
     _game_info_list = [
         {
-            "game":"Air Duel",
+            "game": "Air Duel",
             "in_name": "airduel",
             "mame_name": "airduel",
             "status": "playable",
             "notes": [1]
         },
+        {
+            "game": "Battle Chopper",
+            "in_name": "bchopper",
+            "mame_name": "bchopper",
+            "status": "NYI",
+            "notes": [1]
+        },
+        {
+            "game": "Battle Master",
+            "in_name": "bmaster",
+            "mame_name": "bmaster",
+            "status": "NYI",
+            "notes": []
+        },
         # {
-        #     "game":"",
-        #     "in_name": "bchopper",
-        #     "mame_name": "",
-        #     "status": "NYI",
-        #     "notes": []
-        # },
-        # {
-        #     "game":"",
-        #     "in_name": "bmaster",
-        #     "mame_name": "",
-        #     "status": "NYI",
-        #     "notes": []
-        # },
-        # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "cosmccop",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "dbreed72",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "gunforc2",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "gunforce",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "hharry",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "imgfight",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "inthunt",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "kungfum",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "loht",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "mrheli",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "mysticri",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "nspirit",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "rtypeleo",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "ssoldier",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "uccops",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "uccopsj",
         #     "mame_name": "",
         #     "status": "NYI",
         #     "notes": []
         # },
         # {
-        #     "game":"",
+        #     "game": "",
         #     "in_name": "vigilant",
         #     "mame_name": "",
         #     "status": "NYI",
@@ -164,7 +164,7 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     ]
 
     _out_file_notes = {
-        "1": "This game requires MAME 2010 due to an older input file structure/variant."
+        "1": "This game requires MAME 2010 due to an older input file structure/variant. They are also missing an MCU rom, but play OK."
     }
 
 
@@ -263,12 +263,133 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         return helpers.build_rom(in_files, func_map)
 
     def _handle_bchopper(self, in_files):
-        print("NYI")
-        return []
+        func_map = {}
+
+        # maincpu
+        maincpu_filenames = [
+            'c-l0-b.rom',
+            'c-l1-b.rom',
+            'c-l3-b.rom',
+            'c-h0-b.rom',
+            'c-h1-b.rom',
+            'c-h3-b.rom'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU.BIN']
+            contents = transforms.cut(contents, 0, length=0x80000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.equal_split, 4)
+            del chunks[6]
+            del chunks[2]
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+
+        # GFX1 - Sprites
+        gfx1_filenames = [
+            'c-00-a.rom',
+            'c-01-b.rom',
+            'c-10-a.rom',
+            'c-11-b.rom',
+            'c-20-a.rom',
+            'c-21-b.rom',
+            'c-30-a.rom',
+            'c-31-b.rom'
+        ]
+        func_map['gfx1'] = helpers.equal_split_helper(
+            'GFX1.BIN',
+            gfx1_filenames
+        )
+
+        # GFX2
+        gfx2_filenames = [
+            'b-a0-b.rom',
+            'b-a1-b.rom',
+            'b-a2-b.rom',
+            'b-a3-b.rom'
+        ]
+        func_map['gfx2'] = helpers.equal_split_helper(
+            'GFX2.BIN',
+            gfx2_filenames
+        )
+
+        # GFX3
+        gfx3_filenames = [
+            'b-b0-.rom',
+            'b-b1-.rom',
+            'b-b2-.rom',
+            'b-b3-.rom'
+        ]
+        func_map['gfx3'] = helpers.equal_split_helper(
+            'GFX3.BIN',
+            gfx3_filenames
+        )
+
+        # Samples
+        func_map['samples'] = helpers.name_file_helper(
+            'SAMPLES.BIN',
+            'c-v0-b.rom'
+        )
+
+        return helpers.build_rom(in_files, func_map)
 
     def _handle_bmaster(self, in_files):
-        print("NYI")
-        return []
+        func_map = {}
+
+        # maincpu
+        maincpu_filenames = [
+            'bm_d-l0-b.5f',
+            'bm_d-l1-b.5j',
+            'bm_d-h0-b.5m',
+            'bm_d-h1-b.5l'
+        ]
+        def maincpu(in_files):
+            contents = in_files['CPU1.BIN']
+            contents = transforms.cut(contents, 0, length=0xa0000)
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            chunks = transforms.transform_all(chunks, transforms.custom_split, [0x40000, 0x10000])
+            return dict(zip(maincpu_filenames, chunks))
+        func_map['maincpu'] = maincpu
+
+        # soundcpu
+        soundcpu_filenames = [
+            'bm_d-sl0.rom',
+            'bm_d-sh0.rom'
+        ]
+        def soundcpu(in_files):
+            contents = in_files['CPU2.BIN']
+            chunks = transforms.deinterleave(contents, num_ways=2, word_size=1)
+            return dict(zip(soundcpu_filenames, chunks))
+        func_map['soundcpu'] = soundcpu
+
+        # GFX1 - Sprites
+        gfx1_filenames = [
+            'bm_c0.rom', 'bm_c1.rom',
+                     'bm_c2.rom', 'bm_c3.rom'
+        ]
+        func_map['gfx1'] = helpers.equal_split_helper(
+            'GFX1.BIN',
+            gfx1_filenames
+        )
+
+        # GFX2
+        gfx2_filenames = [
+            'bm_000.rom',
+            'bm_010.rom',
+            'bm_020.rom',
+            'bm_030.rom'
+        ]
+        func_map['gfx2'] = helpers.equal_split_helper(
+            'GFX2.BIN',
+            gfx2_filenames
+        )
+
+        # Samples
+        func_map['sound'] = helpers.name_file_helper(
+            'SOUND.BIN',
+            'bm_da.rom'
+        )
+
+        return helpers.build_rom(in_files, func_map)
 
     def _handle_cosmccop(self, in_files):
         print("NYI")
