@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/game-extraction-toolbox.svg)](https://badge.fury.io/py/game-extraction-toolbox)
+
 # Game Extraction Toolbox
 
 CLI Tools for investigating game files and extracting known packages
