@@ -25,116 +25,116 @@ class PsikyoTask(BaseTask):
             "handler": "_handle_dragnblz",
             "notes": []
         },
-        # {
-        #     "game": "Strikers 1945",
-        #     "in": {
-        #         "base_dir": "STRIKERS1945\\Data"
-        #     },
-        #     "filename": "s1945.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "Strikers 1945 II",
-        #     "in": {
-        #         "base_dir": "STRIKERS1945 Ⅱ\\Data"
-        #     },
-        #     "filename": "s1945ii.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "Strikers 1945 III",
-        #     "in": {
-        #         "base_dir": "STRIKERS1945 III\\Data"
-        #     },
-        #     "filename": "s1945iii.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "GUNBARICH",
-        #     "in": {
-        #         "base_dir": "GUNBARICH\\Data"
-        #     },
-        #     "filename": "gnbarich.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "GUNBIRD",
-        #     "in": {
-        #         "base_dir": "GUNBIRD\\Data"
-        #     },
-        #     "filename": "gunbird.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "GUNBIRD 2",
-        #     "in": {
-        #         "base_dir": "GUNBIRD2\\Data"
-        #     },
-        #     "filename": "gunbird2.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "SOL DIVIDE -SWORD OF DARKNESS-",
-        #     "in": {
-        #         "base_dir": "SOL DIVIDE -SWORD OF DARKNESS-\\Data"
-        #     },
-        #     "filename": "soldivid.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "ZERO GUNNER 2",
-        #     "in": {
-        #         "base_dir": "ZERO GUNNER 2-\\Data"
-        #     },
-        #     "filename": "zerogu2.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "TENGAI",
-        #     "in": {
-        #         "base_dir": "TENGAI\\Data"
-        #     },
-        #     "filename": "tengai.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "Samurai Aces",
-        #     "in": {
-        #         "base_dir": "Samurai Aces\\Data"
-        #     },
-        #     "filename": "samuraia.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # },
-        # {
-        #     "game": "Samurai Aces III: Sengoku Cannon",
-        #     "in": {
-        #         "base_dir": "SENGOKU CANNON\\Data"
-        #     },
-        #     "filename": "sngkace.zip",
-        #     "status": "partial",
-        #     "handler": "_handle_copyorig",
-        #     "notes": []
-        # }
+        {
+            "game": "Strikers 1945",
+            "in": {
+                "base_dir": "STRIKERS1945\\Data"
+            },
+            "filename": "s1945.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "Strikers 1945 II",
+            "in": {
+                "base_dir": "STRIKERS1945 Ⅱ\\Data"
+            },
+            "filename": "s1945ii.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "Strikers 1945 III",
+            "in": {
+                "base_dir": "STRIKERS1945 III\\Data"
+            },
+            "filename": "s1945iii.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "GUNBARICH",
+            "in": {
+                "base_dir": "GUNBARICH\\Data"
+            },
+            "filename": "gnbarich.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "GUNBIRD",
+            "in": {
+                "base_dir": "GUNBIRD\\Data"
+            },
+            "filename": "gunbird.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "GUNBIRD 2",
+            "in": {
+                "base_dir": "GUNBIRD2\\Data"
+            },
+            "filename": "gunbird2.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "SOL DIVIDE -SWORD OF DARKNESS-",
+            "in": {
+                "base_dir": "SOL DIVIDE -SWORD OF DARKNESS-\\Data"
+            },
+            "filename": "soldivid.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "ZERO GUNNER 2",
+            "in": {
+                "base_dir": "ZERO GUNNER 2-\\Data"
+            },
+            "filename": "zerogu2.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "TENGAI",
+            "in": {
+                "base_dir": "TENGAI\\Data"
+            },
+            "filename": "tengai.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "Samurai Aces",
+            "in": {
+                "base_dir": "Samurai Aces\\Data"
+            },
+            "filename": "samuraia.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        },
+        {
+            "game": "Samurai Aces III: Sengoku Cannon",
+            "in": {
+                "base_dir": "SENGOKU CANNON\\Data"
+            },
+            "filename": "sngkace.zip",
+            "status": "partial",
+            "handler": "_handle_copyorig",
+            "notes": []
+        }
     ]
     _out_file_notes = {}
     _default_input_folder = helpers.STEAM_APP_ROOT
