@@ -4,6 +4,8 @@
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Brave Battle Saga - The Legend of The Magic Warrior
+- Activision Anthology Remix PC
+  https://forums.atariage.com/topic/336118-how-to-extract-roms-from-the-activision-anthology-for-pc-and-a-request-for-info-on-the-included-roms/
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
@@ -60,9 +62,14 @@
 - CAVE: Deathsmiles I + II
   Recommended in #15.
 - Darius Cozmic Collection Arcade
+- Taito Legends 1 and 2
 
 ## Upcoming Releases
 - Atari 50th: Anniversary Collection (Winter 2022)
+
+## Unlikely
+- Williams Arcade Classics (PC CD-ROM, 1995)
+  Initial research shows that this is likely not ROM based.
 
 ## Not Complete ROMs (may add partial extraction later)
 - Mortal Kombat Kollection
