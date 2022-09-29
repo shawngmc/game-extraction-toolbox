@@ -16,7 +16,6 @@ def list_files(in_file):
         with open(in_file, "rb") as curr_file:
             file_content = bytearray(curr_file.read())
             zip_metas = zip_lib.get_metadata(file_content)
-            print(zip_metas)
 
             table = Texttable()
             table.add_row(["Filename", "Size", "CRC"])
