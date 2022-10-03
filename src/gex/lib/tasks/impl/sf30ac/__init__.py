@@ -66,11 +66,6 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
                 logger.warning("Could not find matching handler function.")
         logger.info("Processing complete.")
 
-    def _find_files(self, base_path):
-        bundle_path = os.path.join(base_path, "Bundle", '*.mbundle')
-        archive_list = glob.glob(bundle_path)
-        return archive_list
-
     def _process_simm_common(self, simm_id, simm_prefix, simm_size_bytes):
         def process_simm(in_files):
             contents = in_files[simm_id]

@@ -1,0 +1,34 @@
+{
+    "in": {
+        "files": {
+            "wonderboy3": {
+                "rel_path": ["bin_pc", "rom"],
+                "filename": "wb3.sms",
+                "copy_to": "Wonder Boy 3",
+                "versions": {
+                    "Steam": {
+                        "crc": "525F4F3D",
+                        "size": 262144
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Wonder Boy 3",
+                "system": "SMS",
+                "filename": "Wonder Boy 3.sms",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "525F4F3D",
+                    "size": 262144
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

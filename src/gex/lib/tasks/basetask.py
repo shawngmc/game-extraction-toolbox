@@ -58,7 +58,8 @@ class BaseTask:
 
     def read_datafile(self, in_dir, file_metadata):
         '''Read a specific data file as defined in the metadata, including CRC/Size check/version identification'''
-        data_path = os.path.join(in_dir, *file_metadata['rel_path'], file_metadata['filename'])
+        rel_path = file_metadata.get('rel_path') or []
+        data_path = os.path.join(in_dir, *rel_path, file_metadata['filename'])
         if os.path.exists(data_path):
             # consider switching this to mmap bytearray/readablefile memory-mapped file hybrids to improve memory usage
             with open(data_path, 'rb') as data_file:
@@ -91,6 +92,7 @@ class BaseTask:
             return None
     
     def verify_out_file(self, file_name, contents):
+        '''Verify an output file using the method specified in the metadata'''
         # Find out_file entry
         out_file = next((x for x in self._metadata['out']['files'] if x['filename'] == file_name), None)
         if out_file is None:
@@ -101,8 +103,8 @@ class BaseTask:
 
         # Check verify type
         if verify_obj['type'] == 'crc':
-            crc = hash_helper.get_crc(contents)
-            return crc == verify_obj['crc']
+            crc = hash_helper.get_crc(contents)[2:].upper()
+            return crc == verify_obj['crc'] and len(contents) == verify_obj['size']
         elif verify_obj['type'] == 'zip':
             zip_metas = zip_lib.get_metadata(contents)
             # Ensure the file name lists are the same
