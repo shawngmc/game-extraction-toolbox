@@ -1,0 +1,1170 @@
+{
+    "in": {
+        "files": {
+            "sf": {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighter.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "02081BAD",
+                        "size": 99609526
+                    },
+                    "US Steam": {
+                        "crc": "A3B4810D",
+                        "size": 98954064
+                    }
+                }
+            },
+            "sfa" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterAlpha.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "5A000965",
+                        "size": 214324885
+                    },
+                    "US Steam": {
+                        "crc": "CF2234A2",
+                        "size": 208033038
+                    }
+                }
+            },
+            "sfa2" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterAlpha2.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "47A0FA5C",
+                        "size": 324015815
+                    },
+                    "US Steam": {
+                        "crc": "8EDDC428",
+                        "size": 315626811
+                    }
+                }
+            },
+            "sfa3" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterAlpha3.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "D79C8587",
+                        "size": 319979257
+                    },
+                    "US Steam": {
+                        "crc": "FBB39E77",
+                        "size": 309493101
+                    }
+                }
+            },
+            "sf2" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterII.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "E8555FEB",
+                        "size": 124213735
+                    },
+                    "US Steam": {
+                        "crc": "7F422388",
+                        "size": 122116483
+                    }
+                }
+            },
+            "sf3" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterIII.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "DED0A6DB",
+                        "size": 236824264
+                    },
+                    "US Steam": {
+                        "crc": "07EC4BDF",
+                        "size": 236824087
+                    }
+                }
+            },
+            "sf3_2i" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterIII_2ndImpact.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "6966CEDB",
+                        "size": 67643260
+                    },
+                    "US Steam": {
+                        "crc": "77699200",
+                        "size": 67643073
+                    }
+                }
+            },
+            "sf3_3s" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterIII_3rdStrike.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "F3295D6D",
+                        "size": 344116252
+                    },
+                    "US Steam": {
+                        "crc": "E4005712",
+                        "size": 344116065
+                    }
+                }
+            },
+            "sf2ce" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterII_CE.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "A0F1D1B8",
+                        "size": 139982211
+                    },
+                    "US Steam": {
+                        "crc": "AF9DCF75",
+                        "size": 136836377
+                    }
+                }
+            },
+            "sf2hf" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleStreetFighterII_HF.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "9651BB3C",
+                        "size": 16062864
+                    },
+                    "US Steam": {
+                        "crc": "299CE4F8",
+                        "size": 8198431
+                    }
+                }
+            },
+            "ssf2" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleSuperStreetFighterII.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "8CFA2A0C",
+                        "size": 286763564
+                    },
+                    "US Steam": {
+                        "crc": "B39C0B73",
+                        "size": 276277403
+                    }
+                }
+            },
+            "ssf2t" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleSuperStreetFighterIITurbo.mbundle",
+                "versions": {
+                    "International Steam": {
+                        "crc": "38397825",
+                        "size": 307175293
+                    },
+                    "US Steam": {
+                        "crc": "BFED9077",
+                        "size": 292494803
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Street Fighter (W)",
+                "system": "Arcade",
+                "filename": "sf.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfu-00.1h": {"size": 131072, "crc": "A7CCE903"},
+                        "sf-01.1k": {"size": 131072, "crc": "86E0F0D5"},
+                        "sfd-19.2a": {"size": 65536, "crc": "FAAF6255"},
+                        "sfd-22.2c": {"size": 65536, "crc": "E1FE3519"},
+                        "sfd-20.3a": {"size": 65536, "crc": "44B915BD"},
+                        "sfd-23.3c": {"size": 65536, "crc": "79C43FF8"},
+                        "sfd-21.4a": {"size": 65536, "crc": "E8DB799B"},
+                        "sfd-24.4c": {"size": 65536, "crc": "466A3440"},
+                        "mb7114h.12k": {"size": 256, "crc": "0D968558"},
+                        "mb7114h.11h": {"size": 256, "crc": "0D968558"},
+                        "mb7114h.12j": {"size": 256, "crc": "0D968558"},
+                        "mmi-7603.13h": {"size": 32, "crc": "190A55AD"},
+                        "sf-39.2k": {"size": 131072, "crc": "CEE3D292"},
+                        "sf-38.1k": {"size": 131072, "crc": "2EA99676"},
+                        "sf-41.4k": {"size": 131072, "crc": "E0280495"},
+                        "sf-40.3k": {"size": 131072, "crc": "C70B30DE"},
+                        "sf-25.1d": {"size": 131072, "crc": "7F23042E"},
+                        "sf-28.1e": {"size": 131072, "crc": "92F8B91C"},
+                        "sf-30.1g": {"size": 131072, "crc": "B1399856"},
+                        "sf-34.1h": {"size": 131072, "crc": "96B6AE2E"},
+                        "sf-26.2d": {"size": 131072, "crc": "54EDE9F5"},
+                        "sf-29.2e": {"size": 131072, "crc": "F0649A67"},
+                        "sf-31.2g": {"size": 131072, "crc": "8F4DD71A"},
+                        "sf-35.2h": {"size": 131072, "crc": "70C00FB4"},
+                        "sf-15.1m": {"size": 131072, "crc": "FC0113DB"},
+                        "sf-16.2m": {"size": 131072, "crc": "82E4A6D3"},
+                        "sf-11.1k": {"size": 131072, "crc": "E112DF1B"},
+                        "sf-12.2k": {"size": 131072, "crc": "42D52299"},
+                        "sf-07.1h": {"size": 131072, "crc": "49F340D9"},
+                        "sf-08.2h": {"size": 131072, "crc": "95ECE9B1"},
+                        "sf-03.1f": {"size": 131072, "crc": "5CA05781"},
+                        "sf-17.3m": {"size": 131072, "crc": "69FAC48E"},
+                        "sf-18.4m": {"size": 131072, "crc": "71CFD18D"},
+                        "sf-13.3k": {"size": 131072, "crc": "FA2EB24B"},
+                        "sf-14.4k": {"size": 131072, "crc": "AD955C95"},
+                        "sf-09.3h": {"size": 131072, "crc": "41B73A31"},
+                        "sf-10.4h": {"size": 131072, "crc": "91C41C50"},
+                        "sf-05.3f": {"size": 131072, "crc": "538C7CBE"},
+                        "sf-27.4d": {"size": 16384, "crc": "2B09B36D"},
+                        "sf-37.4h": {"size": 65536, "crc": "23D09D3D"},
+                        "sf-36.3h": {"size": 65536, "crc": "EA16DF6C"},
+                        "sf-32.3g": {"size": 65536, "crc": "72DF2BD9"},
+                        "sf-33.4g": {"size": 65536, "crc": "3E99D3D5"},
+                        "sf-02.7k": {"size": 32768, "crc": "4A9AC534"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter (J)",
+                "system": "Arcade",
+                "filename": "sfj.zip",
+                "status": "playable",
+                "notes": [4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sf-00.1h": {"size": 131072, "crc": "4B733845"},
+                        "sf-01.1k": {"size": 131072, "crc": "86E0F0D5"},
+                        "sfd-19.2a": {"size": 65536, "crc": "116027D7"},
+                        "sfd-22.2c": {"size": 65536, "crc": "D3CBD09E"},
+                        "sfd-20.3a": {"size": 65536, "crc": "FE07E83F"},
+                        "sfd-23.3c": {"size": 65536, "crc": "1E435D33"},
+                        "sfd-21.4a": {"size": 65536, "crc": "E086BC4C"},
+                        "sfd-24.4c": {"size": 65536, "crc": "13A6696B"},
+                        "mb7114h.12j": {"size": 256, "crc": "0D968558"},
+                        "sfb00.bin": {"size": 256, "crc": "0D968558"},
+                        "sfb05.bin": {"size": 256, "crc": "0D968558"},
+                        "mmi-7603.13h": {"size": 32, "crc": "190A55AD"},
+                        "sf_s.id8751h-8.14f": {"size": 4096, "crc": "C71C0011"},
+                        "sf-39.2k": {"size": 131072, "crc": "CEE3D292"},
+                        "sf-38.1k": {"size": 131072, "crc": "2EA99676"},
+                        "sf-41.4k": {"size": 131072, "crc": "E0280495"},
+                        "sf-40.3k": {"size": 131072, "crc": "C70B30DE"},
+                        "sf-25.1d": {"size": 131072, "crc": "7F23042E"},
+                        "sf-28.1e": {"size": 131072, "crc": "92F8B91C"},
+                        "sf-30.1g": {"size": 131072, "crc": "B1399856"},
+                        "sf-34.1h": {"size": 131072, "crc": "96B6AE2E"},
+                        "sf-26.2d": {"size": 131072, "crc": "54EDE9F5"},
+                        "sf-29.2e": {"size": 131072, "crc": "F0649A67"},
+                        "sf-31.2g": {"size": 131072, "crc": "8F4DD71A"},
+                        "sf-35.2h": {"size": 131072, "crc": "70C00FB4"},
+                        "sf-15.1m": {"size": 131072, "crc": "FC0113DB"},
+                        "sf-16.2m": {"size": 131072, "crc": "82E4A6D3"},
+                        "sf-11.1k": {"size": 131072, "crc": "E112DF1B"},
+                        "sf-12.2k": {"size": 131072, "crc": "42D52299"},
+                        "sf-07.1h": {"size": 131072, "crc": "49F340D9"},
+                        "sf-08.2h": {"size": 131072, "crc": "95ECE9B1"},
+                        "sf-03.1f": {"size": 131072, "crc": "5CA05781"},
+                        "sf-17.3m": {"size": 131072, "crc": "69FAC48E"},
+                        "sf-18.4m": {"size": 131072, "crc": "71CFD18D"},
+                        "sf-13.3k": {"size": 131072, "crc": "FA2EB24B"},
+                        "sf-14.4k": {"size": 131072, "crc": "AD955C95"},
+                        "sf-09.3h": {"size": 131072, "crc": "41B73A31"},
+                        "sf-10.4h": {"size": 131072, "crc": "91C41C50"},
+                        "sf-05.3f": {"size": 131072, "crc": "538C7CBE"},
+                        "sf-27.4d": {"size": 16384, "crc": "2B09B36D"},
+                        "sf-37.4h": {"size": 65536, "crc": "23D09D3D"},
+                        "sf-36.3h": {"size": 65536, "crc": "EA16DF6C"},
+                        "sf-32.3g": {"size": 65536, "crc": "72DF2BD9"},
+                        "sf-33.4g": {"size": 65536, "crc": "3E99D3D5"},
+                        "sf-02.7k": {"size": 32768, "crc": "4A9AC534"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 (U)",
+                "system": "Arcade",
+                "filename": "sf2ub.zip",
+                "status": "playable",
+                "notes": [2, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sf2_30a.bin": {"size": 131072, "crc": "57BD7051"},
+                        "sf2u.37b": {"size": 131072, "crc": "4A54D479"},
+                        "sf2_31a.bin": {"size": 131072, "crc": "A673143D"},
+                        "sf2_38a.bin": {"size": 131072, "crc": "4C2CCEF7"},
+                        "sf2_28a.bin": {"size": 131072, "crc": "4009955E"},
+                        "sf2_35a.bin": {"size": 131072, "crc": "8C1F3994"},
+                        "sf2_29a.bin": {"size": 131072, "crc": "BB4AF315"},
+                        "sf2_36a.bin": {"size": 131072, "crc": "C02A13EB"},
+                        "sf2_9.12a": {"size": 65536, "crc": "A4823A1B"},
+                        "sf2_06.bin": {"size": 524288, "crc": "22C9CC8E"},
+                        "sf2_08.bin": {"size": 524288, "crc": "57213BE8"},
+                        "sf2_05.bin": {"size": 524288, "crc": "BA529B4F"},
+                        "sf2_07.bin": {"size": 524288, "crc": "4B1B33A8"},
+                        "sf2_15.bin": {"size": 524288, "crc": "2C7E2229"},
+                        "sf2_17.bin": {"size": 524288, "crc": "B5548F17"},
+                        "sf2_14.bin": {"size": 524288, "crc": "14B84312"},
+                        "sf2_16.bin": {"size": 524288, "crc": "5E9CD89A"},
+                        "sf2_25.bin": {"size": 524288, "crc": "00F1835D"},
+                        "sf2_27.bin": {"size": 524288, "crc": "C1B85E35"},
+                        "sf2_24.bin": {"size": 524288, "crc": "4D872721"},
+                        "sf2_26.bin": {"size": 524288, "crc": "0EFB4EFC"},
+                        "sf2_18.11c": {"size": 131072, "crc": "7F162009"},
+                        "sf2_19.12c": {"size": 131072, "crc": "BEADE53F"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "stf29.1a": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 Championship Edition (U)",
+                "system": "Arcade",
+                "filename": "sf2ceua.zip",
+                "status": "playable",
+                "notes": [2, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s92u-23a": {"size": 524288, "crc": "AC44415B"},
+                        "sf2ce.22": {"size": 524288, "crc": "99F1CCA4"},
+                        "s92_21a.bin": {"size": 524288, "crc": "925A7877"},
+                        "s92_09.bin": {"size": 65536, "crc": "08F6B60E"},
+                        "s92_01.bin": {"size": 524288, "crc": "03B0D852"},
+                        "s92_02.bin": {"size": 524288, "crc": "840289EC"},
+                        "s92_03.bin": {"size": 524288, "crc": "CDB5F027"},
+                        "s92_04.bin": {"size": 524288, "crc": "E2799472"},
+                        "s92_05.bin": {"size": 524288, "crc": "BA8A2761"},
+                        "s92_06.bin": {"size": 524288, "crc": "E584BFB5"},
+                        "s92_07.bin": {"size": 524288, "crc": "21E3F87D"},
+                        "s92_08.bin": {"size": 524288, "crc": "BEFC47DF"},
+                        "s92_10.bin": {"size": 524288, "crc": "0FBCFED0"},
+                        "s92_11.bin": {"size": 524288, "crc": "68503EB0"},
+                        "s92_12.bin": {"size": 524288, "crc": "5AD54783"},
+                        "s92_13.bin": {"size": 524288, "crc": "E5F0E13B"},
+                        "s92_18.bin": {"size": 131072, "crc": "7F162009"},
+                        "s92_19.bin": {"size": 131072, "crc": "BEADE53F"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 Hyper Fighting (U)",
+                "system": "Arcade",
+                "filename": "sf2t.zip",
+                "status": "playable",
+                "notes": [2, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sf2_23a": {"size": 524288, "crc": "89A1FC38"},
+                        "sf2_22.bin": {"size": 524288, "crc": "AEA6E035"},
+                        "sf2_21.bin": {"size": 524288, "crc": "FD200288"},
+                        "s92_01.bin": {"size": 524288, "crc": "03B0D852"},
+                        "s92_02.bin": {"size": 524288, "crc": "840289EC"},
+                        "s92_03.bin": {"size": 524288, "crc": "CDB5F027"},
+                        "s92_04.bin": {"size": 524288, "crc": "E2799472"},
+                        "s92_05.bin": {"size": 524288, "crc": "BA8A2761"},
+                        "s92_06.bin": {"size": 524288, "crc": "E584BFB5"},
+                        "s92_07.bin": {"size": 524288, "crc": "21E3F87D"},
+                        "s92_08.bin": {"size": 524288, "crc": "BEFC47DF"},
+                        "s2t_10.bin": {"size": 524288, "crc": "0FBCFED0"},
+                        "s2t_11.bin": {"size": 524288, "crc": "68503EB0"},
+                        "s2t_12.bin": {"size": 524288, "crc": "5AD54783"},
+                        "s2t_13.bin": {"size": 524288, "crc": "E5F0E13B"},
+                        "s92_09.bin": {"size": 65536, "crc": "08F6B60E"},
+                        "s92_18.bin": {"size": 131072, "crc": "7F162009"},
+                        "s92_19.bin": {"size": 131072, "crc": "BEADE53F"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 (U)",
+                "system": "Arcade",
+                "filename": "ssf2u.zip",
+                "status": "playable",
+                "notes": [1, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ssfu.03a": {"size": 524288, "crc": "72F29C33"},
+                        "ssfu.04a": {"size": 524288, "crc": "935CEA44"},
+                        "ssfu.05": {"size": 524288, "crc": "A0ACB28A"},
+                        "ssfu.06": {"size": 524288, "crc": "47413DCF"},
+                        "ssfu.07": {"size": 524288, "crc": "E6066077"},
+                        "ssf.01": {"size": 131072, "crc": "71FCDFC9"},
+                        "ssf.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "ssf.14m": {"size": 1048576, "crc": "89129D74"},
+                        "ssf.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "ssf.16m": {"size": 1048576, "crc": "5429A630"},
+                        "ssf.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "ssf.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "ssf.19m": {"size": 2097152, "crc": "4352A965"},
+                        "ssf.20m": {"size": 1048576, "crc": "43415401"},
+                        "ssf.q01": {"size": 524288, "crc": "A6F9DA5C"},
+                        "ssf.q02": {"size": 524288, "crc": "8C66AE26"},
+                        "ssf.q03": {"size": 524288, "crc": "695CC2CA"},
+                        "ssf.q04": {"size": 524288, "crc": "9D9EBE32"},
+                        "ssf.q05": {"size": 524288, "crc": "4770E7B7"},
+                        "ssf.q06": {"size": 524288, "crc": "4E79C951"},
+                        "ssf.q07": {"size": 524288, "crc": "CDD14313"},
+                        "ssf.q08": {"size": 524288, "crc": "6F5A088C"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 Turbo (U)",
+                "system": "Arcade",
+                "filename": "ssf2tu.zip",
+                "status": "playable",
+                "notes": [1, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfxu.03e": {"size": 524288, "crc": "D6FF689E"},
+                        "sfxu.04a": {"size": 524288, "crc": "532B5FFD"},
+                        "sfxu.05": {"size": 524288, "crc": "FFA3C6DE"},
+                        "sfxu.06b": {"size": 524288, "crc": "83F9382B"},
+                        "sfxu.07a": {"size": 524288, "crc": "6AB673E8"},
+                        "sfxu.08": {"size": 524288, "crc": "B3C71810"},
+                        "sfx.09": {"size": 524288, "crc": "642FAE3F"},
+                        "sfx.01": {"size": 131072, "crc": "B47B8835"},
+                        "sfx.02": {"size": 131072, "crc": "0022633F"},
+                        "sfx.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "sfx.14m": {"size": 1048576, "crc": "89129D74"},
+                        "sfx.21m": {"size": 1048576, "crc": "E32854AF"},
+                        "sfx.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "sfx.16m": {"size": 1048576, "crc": "5429A630"},
+                        "sfx.23m": {"size": 1048576, "crc": "760F2927"},
+                        "sfx.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "sfx.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "sfx.25m": {"size": 1048576, "crc": "1EE90208"},
+                        "sfx.19m": {"size": 2097152, "crc": "4352A965"},
+                        "sfx.20m": {"size": 1048576, "crc": "43415401"},
+                        "sfx.27m": {"size": 1048576, "crc": "F814400F"},
+                        "sfx.11m": {"size": 2097152, "crc": "7E4812CC"},
+                        "sfx.12m": {"size": 2097152, "crc": "7B010899"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 3",
+                "system": "Arcade",
+                "filename": "sfiiina.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfiii-simm1.0": {"size": 2097152, "crc": "CFC9E45A"},
+                        "sfiii-simm1.1": {"size": 2097152, "crc": "57920546"},
+                        "sfiii-simm1.2": {"size": 2097152, "crc": "0D8F2680"},
+                        "sfiii-simm1.3": {"size": 2097152, "crc": "EA4CA054"},
+                        "sfiii-simm3.0": {"size": 2097152, "crc": "080B3BD3"},
+                        "sfiii-simm3.1": {"size": 2097152, "crc": "5C356F2F"},
+                        "sfiii-simm3.2": {"size": 2097152, "crc": "F9C97A45"},
+                        "sfiii-simm3.3": {"size": 2097152, "crc": "09DE3EAD"},
+                        "sfiii-simm3.4": {"size": 2097152, "crc": "7DD7E1F3"},
+                        "sfiii-simm3.5": {"size": 2097152, "crc": "47A03A3A"},
+                        "sfiii-simm3.6": {"size": 2097152, "crc": "E9EB7A26"},
+                        "sfiii-simm3.7": {"size": 2097152, "crc": "7F44395C"},
+                        "sfiii-simm4.0": {"size": 2097152, "crc": "9AC080FC"},
+                        "sfiii-simm4.1": {"size": 2097152, "crc": "6E2C4C94"},
+                        "sfiii-simm4.2": {"size": 2097152, "crc": "8AFC22D4"},
+                        "sfiii-simm4.3": {"size": 2097152, "crc": "9F3873B8"},
+                        "sfiii-simm4.4": {"size": 2097152, "crc": "166B3C97"},
+                        "sfiii-simm4.5": {"size": 2097152, "crc": "E5EA2547"},
+                        "sfiii-simm4.6": {"size": 2097152, "crc": "E85B9FDD"},
+                        "sfiii-simm4.7": {"size": 2097152, "crc": "362C01B7"},
+                        "sfiii-simm5.0": {"size": 2097152, "crc": "9BC108B2"},
+                        "sfiii-simm5.1": {"size": 2097152, "crc": "C6F1C066"},
+                        "sfiii_asia_nocd.29f400.u2": {"size": 524288, "crc": "73E32463"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 3: 2nd Impact",
+                "system": "Arcade",
+                "filename": "sfiii2n.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfiii2-simm1.0": {"size": 2097152, "crc": "2D666F0B"},
+                        "sfiii2-simm1.1": {"size": 2097152, "crc": "2A3A8EF6"},
+                        "sfiii2-simm1.2": {"size": 2097152, "crc": "161D2206"},
+                        "sfiii2-simm1.3": {"size": 2097152, "crc": "87DED8A3"},
+                        "sfiii2-simm2.0": {"size": 2097152, "crc": "94A4CE0F"},
+                        "sfiii2-simm2.1": {"size": 2097152, "crc": "67585033"},
+                        "sfiii2-simm2.2": {"size": 2097152, "crc": "FABFFCD5"},
+                        "sfiii2-simm2.3": {"size": 2097152, "crc": "623C09CA"},
+                        "sfiii2-simm3.0": {"size": 2097152, "crc": "DAB2D766"},
+                        "sfiii2-simm3.1": {"size": 2097152, "crc": "1F2AA34B"},
+                        "sfiii2-simm3.2": {"size": 2097152, "crc": "6F1A04EB"},
+                        "sfiii2-simm3.3": {"size": 2097152, "crc": "E05EF205"},
+                        "sfiii2-simm3.4": {"size": 2097152, "crc": "AFFB074F"},
+                        "sfiii2-simm3.5": {"size": 2097152, "crc": "6962872E"},
+                        "sfiii2-simm3.6": {"size": 2097152, "crc": "6EED87DE"},
+                        "sfiii2-simm3.7": {"size": 2097152, "crc": "E18F479E"},
+                        "sfiii2-simm4.0": {"size": 2097152, "crc": "764C2503"},
+                        "sfiii2-simm4.1": {"size": 2097152, "crc": "3E16AF6E"},
+                        "sfiii2-simm4.2": {"size": 2097152, "crc": "215705E6"},
+                        "sfiii2-simm4.3": {"size": 2097152, "crc": "E30CBD9C"},
+                        "sfiii2-simm4.4": {"size": 2097152, "crc": "4185DED9"},
+                        "sfiii2-simm4.5": {"size": 2097152, "crc": "4E8DB013"},
+                        "sfiii2-simm4.6": {"size": 2097152, "crc": "08DF48CE"},
+                        "sfiii2-simm4.7": {"size": 2097152, "crc": "BB8F80A5"},
+                        "sfiii2-simm5.0": {"size": 2097152, "crc": "EBDC4787"},
+                        "sfiii2-simm5.1": {"size": 2097152, "crc": "6B7C550E"},
+                        "sfiii2-simm5.2": {"size": 2097152, "crc": "56FF8C50"},
+                        "sfiii2-simm5.3": {"size": 2097152, "crc": "3F2AC3E9"},
+                        "sfiii2-simm5.4": {"size": 2097152, "crc": "48CDA50E"},
+                        "sfiii2-simm5.5": {"size": 2097152, "crc": "520C0AF6"},
+                        "sfiii2-simm5.6": {"size": 2097152, "crc": "2EDC5986"},
+                        "sfiii2-simm5.7": {"size": 2097152, "crc": "93FFA199"},
+                        "sfiii2_asia_nocd.29f400.u2": {"size": 524288, "crc": "FD297C0D"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 3: 3rd Strike",
+                "system": "Arcade",
+                "filename": "sfiii3nr1.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfiii3-simm1.0": {"size": 2097152, "crc": "66E66235"},
+                        "sfiii3-simm1.1": {"size": 2097152, "crc": "186E8C5F"},
+                        "sfiii3-simm1.2": {"size": 2097152, "crc": "BCE18CAB"},
+                        "sfiii3-simm1.3": {"size": 2097152, "crc": "129DC2C9"},
+                        "sfiii3-simm2.0": {"size": 2097152, "crc": "06EB969E"},
+                        "sfiii3-simm2.1": {"size": 2097152, "crc": "E7039F82"},
+                        "sfiii3-simm2.2": {"size": 2097152, "crc": "645C96F7"},
+                        "sfiii3-simm2.3": {"size": 2097152, "crc": "610EFAB1"},
+                        "sfiii3-simm3.0": {"size": 2097152, "crc": "7BAA1F79"},
+                        "sfiii3-simm3.1": {"size": 2097152, "crc": "234BF8FE"},
+                        "sfiii3-simm3.2": {"size": 2097152, "crc": "D9EBC308"},
+                        "sfiii3-simm3.3": {"size": 2097152, "crc": "293CBA77"},
+                        "sfiii3-simm3.4": {"size": 2097152, "crc": "6055E747"},
+                        "sfiii3-simm3.5": {"size": 2097152, "crc": "499AA6FC"},
+                        "sfiii3-simm3.6": {"size": 2097152, "crc": "6C13879E"},
+                        "sfiii3-simm3.7": {"size": 2097152, "crc": "CF4F8EDE"},
+                        "sfiii3-simm4.0": {"size": 2097152, "crc": "091FD5BA"},
+                        "sfiii3-simm4.1": {"size": 2097152, "crc": "0BCA8917"},
+                        "sfiii3-simm4.2": {"size": 2097152, "crc": "A0FD578B"},
+                        "sfiii3-simm4.3": {"size": 2097152, "crc": "4BF8C699"},
+                        "sfiii3-simm4.4": {"size": 2097152, "crc": "137B8785"},
+                        "sfiii3-simm4.5": {"size": 2097152, "crc": "4FB70671"},
+                        "sfiii3-simm4.6": {"size": 2097152, "crc": "832374A4"},
+                        "sfiii3-simm4.7": {"size": 2097152, "crc": "1C88576D"},
+                        "sfiii3-simm5.0": {"size": 2097152, "crc": "C67D9190"},
+                        "sfiii3-simm5.1": {"size": 2097152, "crc": "6CB79868"},
+                        "sfiii3-simm5.2": {"size": 2097152, "crc": "DF69930E"},
+                        "sfiii3-simm5.3": {"size": 2097152, "crc": "333754E0"},
+                        "sfiii3-simm5.4": {"size": 2097152, "crc": "78F6D417"},
+                        "sfiii3-simm5.5": {"size": 2097152, "crc": "8CCAD9B1"},
+                        "sfiii3-simm5.6": {"size": 2097152, "crc": "85DE59E5"},
+                        "sfiii3-simm5.7": {"size": 2097152, "crc": "EE7E29B3"},
+                        "sfiii3-simm6.0": {"size": 2097152, "crc": "8DA69042"},
+                        "sfiii3-simm6.1": {"size": 2097152, "crc": "1C8C7AC4"},
+                        "sfiii3-simm6.2": {"size": 2097152, "crc": "A671341D"},
+                        "sfiii3-simm6.3": {"size": 2097152, "crc": "1A990249"},
+                        "sfiii3-simm6.4": {"size": 2097152, "crc": "20CB39AC"},
+                        "sfiii3-simm6.5": {"size": 2097152, "crc": "5F844B2F"},
+                        "sfiii3-simm6.6": {"size": 2097152, "crc": "450E8D28"},
+                        "sfiii3-simm6.7": {"size": 2097152, "crc": "CC5F4187"},
+                        "sfiii3_japan_nocd.29f400.u2": {"size": 524288, "crc": "1EDC6366"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 (JA)",
+                "system": "Arcade",
+                "filename": "sf2ja.zip",
+                "status": "playable",
+                "notes": [2, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sf2j_30a.11e": {"size": 131072, "crc": "57BD7051"},
+                        "sf2u.37b": {"size": 131072, "crc": "1E1F6844"},
+                        "sf2_31a.bin": {"size": 131072, "crc": "A673143D"},
+                        "sf2_38a.bin": {"size": 131072, "crc": "4C2CCEF7"},
+                        "sf2_28a.bin": {"size": 131072, "crc": "4009955E"},
+                        "sf2_35a.bin": {"size": 131072, "crc": "8C1F3994"},
+                        "sf2_29a.bin": {"size": 131072, "crc": "BB4AF315"},
+                        "sf2_36a.bin": {"size": 131072, "crc": "C02A13EB"},
+                        "sf2_9.12a": {"size": 65536, "crc": "A4823A1B"},
+                        "sf2_06.bin": {"size": 524288, "crc": "22C9CC8E"},
+                        "sf2_08.bin": {"size": 524288, "crc": "57213BE8"},
+                        "sf2_05.bin": {"size": 524288, "crc": "BA529B4F"},
+                        "sf2_07.bin": {"size": 524288, "crc": "4B1B33A8"},
+                        "sf2_15.bin": {"size": 524288, "crc": "2C7E2229"},
+                        "sf2_17.bin": {"size": 524288, "crc": "B5548F17"},
+                        "sf2_14.bin": {"size": 524288, "crc": "14B84312"},
+                        "sf2_16.bin": {"size": 524288, "crc": "5E9CD89A"},
+                        "sf2_25.bin": {"size": 524288, "crc": "00F1835D"},
+                        "sf2_27.bin": {"size": 524288, "crc": "C1B85E35"},
+                        "sf2_24.bin": {"size": 524288, "crc": "4D872721"},
+                        "sf2_26.bin": {"size": 524288, "crc": "0EFB4EFC"},
+                        "sf2_18.11c": {"size": 131072, "crc": "7F162009"},
+                        "sf2_19.12c": {"size": 131072, "crc": "BEADE53F"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "stf29.1a": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 (JL)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2, 3, 4, 5]
+            },
+            {
+                "game": "Street Fighter 2 Championship Edition (JB)",
+                "system": "Arcade",
+                "filename": "sf2cej.zip",
+                "status": "playable",
+                "notes": [2, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s92j_23b.bin": {"size": 524288, "crc": "140876C5"},
+                        "s92j_22b.bin": {"size": 524288, "crc": "2FBB3BFE"},
+                        "s92_21a.bin": {"size": 524288, "crc": "925A7877"},
+                        "s92_09.bin": {"size": 65536, "crc": "08F6B60E"},
+                        "s92_01.bin": {"size": 524288, "crc": "03B0D852"},
+                        "s92_02.bin": {"size": 524288, "crc": "840289EC"},
+                        "s92_03.bin": {"size": 524288, "crc": "CDB5F027"},
+                        "s92_04.bin": {"size": 524288, "crc": "E2799472"},
+                        "s92_05.bin": {"size": 524288, "crc": "BA8A2761"},
+                        "s92_06.bin": {"size": 524288, "crc": "E584BFB5"},
+                        "s92_07.bin": {"size": 524288, "crc": "21E3F87D"},
+                        "s92_08.bin": {"size": 524288, "crc": "BEFC47DF"},
+                        "s92_10.bin": {"size": 524288, "crc": "0FBCFED0"},
+                        "s92_11.bin": {"size": 524288, "crc": "68503EB0"},
+                        "s92_12.bin": {"size": 524288, "crc": "5AD54783"},
+                        "s92_13.bin": {"size": 524288, "crc": "E5F0E13B"},
+                        "s92_18.bin": {"size": 131072, "crc": "7F162009"},
+                        "s92_19.bin": {"size": 131072, "crc": "BEADE53F"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter 2 Championship Edition (JC)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2, 3, 4, 5]
+            },
+            {
+                "game": "Street Fighter 2 Hyper Fighting (J)",
+                "system": "Arcade",
+                "filename": "sf2tj.zip",
+                "status": "playable",
+                "notes": [2, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s2tj_23.bin": {"size": 524288, "crc": "EA73B4DC"},
+                        "sft_22.bin": {"size": 524288, "crc": "AEA6E035"},
+                        "sft_21.bin": {"size": 524288, "crc": "FD200288"},
+                        "s92_01.bin": {"size": 524288, "crc": "03B0D852"},
+                        "s92_02.bin": {"size": 524288, "crc": "840289EC"},
+                        "s92_03.bin": {"size": 524288, "crc": "CDB5F027"},
+                        "s92_04.bin": {"size": 524288, "crc": "E2799472"},
+                        "s92_05.bin": {"size": 524288, "crc": "BA8A2761"},
+                        "s92_06.bin": {"size": 524288, "crc": "E584BFB5"},
+                        "s92_07.bin": {"size": 524288, "crc": "21E3F87D"},
+                        "s92_08.bin": {"size": 524288, "crc": "BEFC47DF"},
+                        "s2t_10.bin": {"size": 524288, "crc": "A5BE5F83"},
+                        "s2t_11.bin": {"size": 524288, "crc": "74A0822B"},
+                        "s2t_12.bin": {"size": 524288, "crc": "A5055505"},
+                        "s2t_13.bin": {"size": 524288, "crc": "8CF7B369"},
+                        "s92_09.bin": {"size": 65536, "crc": "08F6B60E"},
+                        "s92_18.bin": {"size": 131072, "crc": "7F162009"},
+                        "s92_19.bin": {"size": 131072, "crc": "BEADE53F"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha (U)",
+                "system": "Arcade",
+                "filename": "sfau.zip",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfz.14m": {"size": 2097152, "crc": "90FEFDB3"},
+                        "sfz.16m": {"size": 2097152, "crc": "5354C948"},
+                        "sfz.18m": {"size": 2097152, "crc": "41A1E790"},
+                        "sfz.20m": {"size": 2097152, "crc": "A549DF98"},
+                        "sfz.01": {"size": 131072, "crc": "FFFFEC7D"},
+                        "sfz.02": {"size": 131072, "crc": "45F46A08"},
+                        "sfz.11m": {"size": 2097152, "crc": "C4B093CD"},
+                        "sfz.12m": {"size": 2097152, "crc": "8BDBC4B4"},
+                        "sfzu.03a": {"size": 524288, "crc": "49FC7DB9"},
+                        "sfz.04a": {"size": 524288, "crc": "5F99E9A5"},
+                        "sfz.05a": {"size": 524288, "crc": "0810544D"},
+                        "sfz.06": {"size": 524288, "crc": "806E8F38"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha (J)",
+                "system": "Arcade",
+                "filename": "sfzj.zip",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfzj.03c": {"size": 524288, "crc": "F5444120"},
+                        "sfz.04b": {"size": 524288, "crc": "8B73B0E5"},
+                        "sfz.05a": {"size": 524288, "crc": "0810544D"},
+                        "sfz.06": {"size": 524288, "crc": "806E8F38"},
+                        "sfz.14m": {"size": 2097152, "crc": "90FEFDB3"},
+                        "sfz.16m": {"size": 2097152, "crc": "5354C948"},
+                        "sfz.18m": {"size": 2097152, "crc": "41A1E790"},
+                        "sfz.20m": {"size": 2097152, "crc": "A549DF98"},
+                        "sfz.01": {"size": 131072, "crc": "FFFFEC7D"},
+                        "sfz.02": {"size": 131072, "crc": "45F46A08"},
+                        "sfz.11m": {"size": 2097152, "crc": "C4B093CD"},
+                        "sfz.12m": {"size": 2097152, "crc": "8BDBC4B4"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha (JR2)",
+                "system": "Arcade",
+                "filename": "sfzjr2.zip",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfzj.03b": {"size": 524288, "crc": "3CFCE93C"},
+                        "sfz.04a": {"size": 524288, "crc": "0C436D30"},
+                        "sfz.05a": {"size": 524288, "crc": "1F363612"},
+                        "sfz.06": {"size": 524288, "crc": "806E8F38"},
+                        "sfz.14m": {"size": 2097152, "crc": "90FEFDB3"},
+                        "sfz.16m": {"size": 2097152, "crc": "5354C948"},
+                        "sfz.18m": {"size": 2097152, "crc": "41A1E790"},
+                        "sfz.20m": {"size": 2097152, "crc": "A549DF98"},
+                        "sfz.01": {"size": 131072, "crc": "FFFFEC7D"},
+                        "sfz.02": {"size": 131072, "crc": "45F46A08"},
+                        "sfz.11m": {"size": 2097152, "crc": "C4B093CD"},
+                        "sfz.12m": {"size": 2097152, "crc": "8BDBC4B4"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha 2 (U)",
+                "system": "Arcade",
+                "filename": "sfa2u.zip",
+                "status": "playable",
+                "notes": [1, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sz2u.03": {"size": 524288, "crc": "84A09006"},
+                        "sz2u.04": {"size": 524288, "crc": "AC46E5ED"},
+                        "sz2u.05": {"size": 524288, "crc": "6C0C79D3"},
+                        "sz2u.06": {"size": 524288, "crc": "C5C8EB63"},
+                        "sz2u.07": {"size": 524288, "crc": "5DE01CC5"},
+                        "sz2u.08": {"size": 524288, "crc": "BEA11D56"},
+                        "sz2.13m": {"size": 4194304, "crc": "C1B32915"},
+                        "sz2.14m": {"size": 1048576, "crc": "0560C6AA"},
+                        "sz2.15m": {"size": 4194304, "crc": "0B17985B"},
+                        "sz2.16m": {"size": 1048576, "crc": "AE940F87"},
+                        "sz2.17m": {"size": 4194304, "crc": "12ADEEF9"},
+                        "sz2.18m": {"size": 1048576, "crc": "4BC3C8BC"},
+                        "sz2.19m": {"size": 4194304, "crc": "03F03CE5"},
+                        "sz2.20m": {"size": 1048576, "crc": "39E674C0"},
+                        "sz2.01a": {"size": 131072, "crc": "1BC323CF"},
+                        "sz2.02a": {"size": 131072, "crc": "BA6A5013"},
+                        "sz2.11m": {"size": 2097152, "crc": "AA47A601"},
+                        "sz2.12m": {"size": 2097152, "crc": "2237BC53"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha 2 (J)",
+                "system": "Arcade",
+                "filename": "sfz2j.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sz2j.03a": {"size": 524288, "crc": "3E1E2E85"},
+                        "sz2j.04a": {"size": 524288, "crc": "F53D6C45"},
+                        "sz2.05a": {"size": 524288, "crc": "DD224156"},
+                        "sz2.06": {"size": 524288, "crc": "A45A75A6"},
+                        "sz2j.07a": {"size": 524288, "crc": "6352F038"},
+                        "sz2.08": {"size": 524288, "crc": "92B66E01"},
+                        "sz2.13m": {"size": 4194304, "crc": "C1B32915"},
+                        "sz2.14m": {"size": 1048576, "crc": "0560C6AA"},
+                        "sz2.15m": {"size": 4194304, "crc": "0B17985B"},
+                        "sz2.16m": {"size": 1048576, "crc": "AE940F87"},
+                        "sz2.17m": {"size": 4194304, "crc": "12ADEEF9"},
+                        "sz2.18m": {"size": 1048576, "crc": "4BC3C8BC"},
+                        "sz2.19m": {"size": 4194304, "crc": "03F03CE5"},
+                        "sz2.20m": {"size": 1048576, "crc": "39E674C0"},
+                        "sz2.01a": {"size": 131072, "crc": "1BC323CF"},
+                        "sz2.02a": {"size": 131072, "crc": "BA6A5013"},
+                        "sz2.11m": {"size": 2097152, "crc": "AA47A601"},
+                        "sz2.12m": {"size": 2097152, "crc": "2237BC53"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha 2 (JR1)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [1, 3, 4, 5]
+            },
+            {
+                "game": "Street Fighter Alpha 3 (J)",
+                "system": "Arcade",
+                "filename": "sfz3j.zip",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sz3j.03c": {"size": 524288, "crc": "CADF4A51"},
+                        "sz3j.04c": {"size": 524288, "crc": "FCB31228"},
+                        "sz3.05c": {"size": 524288, "crc": "57FD0A40"},
+                        "sz3.06c": {"size": 524288, "crc": "F6305F8B"},
+                        "sz3.07c": {"size": 524288, "crc": "6EAB0F6F"},
+                        "sz3.08c": {"size": 524288, "crc": "910C4A3B"},
+                        "sz3.09c": {"size": 524288, "crc": "B29E5199"},
+                        "sz3.10b": {"size": 524288, "crc": "DEB2FF52"},
+                        "sz3.13m": {"size": 4194304, "crc": "58666062"},
+                        "sz3.14m": {"size": 4194304, "crc": "AE296D65"},
+                        "sz3.15m": {"size": 4194304, "crc": "B9BFDE30"},
+                        "sz3.16m": {"size": 4194304, "crc": "6E267EAE"},
+                        "sz3.17m": {"size": 4194304, "crc": "D37CCDDD"},
+                        "sz3.18m": {"size": 4194304, "crc": "78B39BFE"},
+                        "sz3.19m": {"size": 4194304, "crc": "1B6C1A4F"},
+                        "sz3.20m": {"size": 4194304, "crc": "4EE48C9F"},
+                        "sz3.01": {"size": 131072, "crc": "DE810084"},
+                        "sz3.02": {"size": 131072, "crc": "72445DC4"},
+                        "sz3.11m": {"size": 4194304, "crc": "1C89EED1"},
+                        "sz3.12m": {"size": 4194304, "crc": "F392B13A"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha 3 (JR2)",
+                "system": "Arcade",
+                "filename": "sfz3jr2.zip",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sz3j.03": {"size": 524288, "crc": "F7CB4B13"},
+                        "sz3j.04": {"size": 524288, "crc": "0846C29D"},
+                        "sz3.05": {"size": 524288, "crc": "9B21518A"},
+                        "sz3.06": {"size": 524288, "crc": "E7A6C3A7"},
+                        "sz3.07": {"size": 524288, "crc": "EC4C0CFD"},
+                        "sz3.08": {"size": 524288, "crc": "5C7E7240"},
+                        "sz3.09": {"size": 524288, "crc": "C5589553"},
+                        "sz3.10": {"size": 524288, "crc": "A9717252"},
+                        "sz3.13m": {"size": 4194304, "crc": "58666062"},
+                        "sz3.14m": {"size": 4194304, "crc": "AE296D65"},
+                        "sz3.15m": {"size": 4194304, "crc": "B9BFDE30"},
+                        "sz3.16m": {"size": 4194304, "crc": "6E267EAE"},
+                        "sz3.17m": {"size": 4194304, "crc": "D37CCDDD"},
+                        "sz3.18m": {"size": 4194304, "crc": "78B39BFE"},
+                        "sz3.19m": {"size": 4194304, "crc": "1B6C1A4F"},
+                        "sz3.20m": {"size": 4194304, "crc": "4EE48C9F"},
+                        "sz3.01": {"size": 131072, "crc": "DE810084"},
+                        "sz3.02": {"size": 131072, "crc": "72445DC4"},
+                        "sz3.11m": {"size": 4194304, "crc": "1C89EED1"},
+                        "sz3.12m": {"size": 4194304, "crc": "F392B13A"}
+                    }
+                }
+            },
+            {
+                "game": "Street Fighter Alpha 3 (U)",
+                "system": "Arcade",
+                "filename": "sfa3u.zip",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sz3u.03c": {"size": 524288, "crc": "E007DA2E"},
+                        "sz3u.04c": {"size": 524288, "crc": "5F78F0E7"},
+                        "sz3.05c": {"size": 524288, "crc": "57FD0A40"},
+                        "sz3.06c": {"size": 524288, "crc": "F6305F8B"},
+                        "sz3.07c": {"size": 524288, "crc": "6EAB0F6F"},
+                        "sz3.08c": {"size": 524288, "crc": "910C4A3B"},
+                        "sz3.09c": {"size": 524288, "crc": "B29E5199"},
+                        "sz3.10b": {"size": 524288, "crc": "DEB2FF52"},
+                        "sz3.13m": {"size": 4194304, "crc": "58666062"},
+                        "sz3.14m": {"size": 4194304, "crc": "AE296D65"},
+                        "sz3.15m": {"size": 4194304, "crc": "B9BFDE30"},
+                        "sz3.16m": {"size": 4194304, "crc": "6E267EAE"},
+                        "sz3.17m": {"size": 4194304, "crc": "D37CCDDD"},
+                        "sz3.18m": {"size": 4194304, "crc": "78B39BFE"},
+                        "sz3.19m": {"size": 4194304, "crc": "1B6C1A4F"},
+                        "sz3.20m": {"size": 4194304, "crc": "4EE48C9F"},
+                        "sz3.01": {"size": 131072, "crc": "DE810084"},
+                        "sz3.02": {"size": 131072, "crc": "72445DC4"},
+                        "sz3.11m": {"size": 4194304, "crc": "1C89EED1"},
+                        "sz3.12m": {"size": 4194304, "crc": "F392B13A"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 (J)",
+                "system": "Arcade",
+                "filename": "ssf2j.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ssfj.03b": {"size": 524288, "crc": "5C2E356D"},
+                        "ssfj.04a": {"size": 524288, "crc": "013BD55C"},
+                        "ssfj.05": {"size": 524288, "crc": "0918D19A"},
+                        "ssfj.06b": {"size": 524288, "crc": "014E0C6D"},
+                        "ssfj.07": {"size": 524288, "crc": "EB6A9B1B"},
+                        "ssf.01": {"size": 131072, "crc": "71FCDFC9"},
+                        "ssf.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "ssf.14m": {"size": 1048576, "crc": "89129D74"},
+                        "ssf.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "ssf.16m": {"size": 1048576, "crc": "5429A630"},
+                        "ssf.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "ssf.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "ssf.19m": {"size": 2097152, "crc": "4352A965"},
+                        "ssf.20m": {"size": 1048576, "crc": "43415401"},
+                        "ssf.q01": {"size": 524288, "crc": "A6F9DA5C"},
+                        "ssf.q02": {"size": 524288, "crc": "8C66AE26"},
+                        "ssf.q03": {"size": 524288, "crc": "695CC2CA"},
+                        "ssf.q04": {"size": 524288, "crc": "9D9EBE32"},
+                        "ssf.q05": {"size": 524288, "crc": "4770E7B7"},
+                        "ssf.q06": {"size": 524288, "crc": "4E79C951"},
+                        "ssf.q07": {"size": 524288, "crc": "CDD14313"},
+                        "ssf.q08": {"size": 524288, "crc": "6F5A088C"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 (JR1)",
+                "system": "Arcade",
+                "filename": "ssf2jr1.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ssfj.03a": {"size": 524288, "crc": "0BBF1304"},
+                        "ssfj.04a": {"size": 524288, "crc": "013BD55C"},
+                        "ssfj.05": {"size": 524288, "crc": "0918D19A"},
+                        "ssfj.06": {"size": 524288, "crc": "D808A6CD"},
+                        "ssfj.07": {"size": 524288, "crc": "EB6A9B1B"},
+                        "ssf.01": {"size": 131072, "crc": "71FCDFC9"},
+                        "ssf.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "ssf.14m": {"size": 1048576, "crc": "89129D74"},
+                        "ssf.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "ssf.16m": {"size": 1048576, "crc": "5429A630"},
+                        "ssf.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "ssf.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "ssf.19m": {"size": 2097152, "crc": "4352A965"},
+                        "ssf.20m": {"size": 1048576, "crc": "43415401"},
+                        "ssf.q01": {"size": 524288, "crc": "A6F9DA5C"},
+                        "ssf.q02": {"size": 524288, "crc": "8C66AE26"},
+                        "ssf.q03": {"size": 524288, "crc": "695CC2CA"},
+                        "ssf.q04": {"size": 524288, "crc": "9D9EBE32"},
+                        "ssf.q05": {"size": 524288, "crc": "4770E7B7"},
+                        "ssf.q06": {"size": 524288, "crc": "4E79C951"},
+                        "ssf.q07": {"size": 524288, "crc": "CDD14313"},
+                        "ssf.q08": {"size": 524288, "crc": "6F5A088C"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 (JR1)",
+                "system": "Arcade",
+                "filename": "ssf2u.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ssfu.03a": {"size": 524288, "crc": "72F29C33"},
+                        "ssfu.04a": {"size": 524288, "crc": "935CEA44"},
+                        "ssfu.05": {"size": 524288, "crc": "A0ACB28A"},
+                        "ssfu.06": {"size": 524288, "crc": "47413DCF"},
+                        "ssfu.07": {"size": 524288, "crc": "E6066077"},
+                        "ssf.01": {"size": 131072, "crc": "71FCDFC9"},
+                        "ssf.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "ssf.14m": {"size": 1048576, "crc": "89129D74"},
+                        "ssf.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "ssf.16m": {"size": 1048576, "crc": "5429A630"},
+                        "ssf.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "ssf.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "ssf.19m": {"size": 2097152, "crc": "4352A965"},
+                        "ssf.20m": {"size": 1048576, "crc": "43415401"},
+                        "ssf.q01": {"size": 524288, "crc": "A6F9DA5C"},
+                        "ssf.q02": {"size": 524288, "crc": "8C66AE26"},
+                        "ssf.q03": {"size": 524288, "crc": "695CC2CA"},
+                        "ssf.q04": {"size": 524288, "crc": "9D9EBE32"},
+                        "ssf.q05": {"size": 524288, "crc": "4770E7B7"},
+                        "ssf.q06": {"size": 524288, "crc": "4E79C951"},
+                        "ssf.q07": {"size": 524288, "crc": "CDD14313"},
+                        "ssf.q08": {"size": 524288, "crc": "6F5A088C"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 Turbo (J)",
+                "system": "Arcade",
+                "filename": "ssf2xj.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfxj.03c": {"size": 524288, "crc": "50B52B37"},
+                        "sfxj.04a": {"size": 524288, "crc": "AF7767B4"},
+                        "sfxj.05": {"size": 524288, "crc": "F4FF18F5"},
+                        "sfxj.06a": {"size": 524288, "crc": "413477C2"},
+                        "sfxj.07": {"size": 524288, "crc": "A18B3D83"},
+                        "sfxj.08": {"size": 524288, "crc": "2DE76F10"},
+                        "sfx.09": {"size": 524288, "crc": "642FAE3F"},
+                        "sfx.01": {"size": 131072, "crc": "B47B8835"},
+                        "sfx.02": {"size": 131072, "crc": "0022633F"},
+                        "sfx.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "sfx.14m": {"size": 1048576, "crc": "89129D74"},
+                        "sfx.21m": {"size": 1048576, "crc": "E32854AF"},
+                        "sfx.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "sfx.16m": {"size": 1048576, "crc": "5429A630"},
+                        "sfx.23m": {"size": 1048576, "crc": "760F2927"},
+                        "sfx.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "sfx.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "sfx.25m": {"size": 1048576, "crc": "1EE90208"},
+                        "sfx.19m": {"size": 2097152, "crc": "4352A965"},
+                        "sfx.20m": {"size": 1048576, "crc": "43415401"},
+                        "sfx.27m": {"size": 1048576, "crc": "F814400F"},
+                        "sfx.11m": {"size": 2097152, "crc": "7E4812CC"},
+                        "sfx.12m": {"size": 2097152, "crc": "7B010899"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 Turbo (J)",
+                "system": "Arcade",
+                "filename": "ssf2tu.zip",
+                "status": "playable",
+                "notes": [1, 3, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sfxu.03e": {"size": 524288, "crc": "D6FF689E"},
+                        "sfxu.04a": {"size": 524288, "crc": "532B5FFD"},
+                        "sfxu.05": {"size": 524288, "crc": "FFA3C6DE"},
+                        "sfxu.06b": {"size": 524288, "crc": "83F9382B"},
+                        "sfxu.07a": {"size": 524288, "crc": "6AB673E8"},
+                        "sfxu.08": {"size": 524288, "crc": "B3C71810"},
+                        "sfx.09": {"size": 524288, "crc": "642FAE3F"},
+                        "sfx.01": {"size": 131072, "crc": "B47B8835"},
+                        "sfx.02": {"size": 131072, "crc": "0022633F"},
+                        "sfx.13m": {"size": 2097152, "crc": "059FA4C1"},
+                        "sfx.14m": {"size": 1048576, "crc": "89129D74"},
+                        "sfx.21m": {"size": 1048576, "crc": "E32854AF"},
+                        "sfx.15m": {"size": 2097152, "crc": "0BD0CB66"},
+                        "sfx.16m": {"size": 1048576, "crc": "5429A630"},
+                        "sfx.23m": {"size": 1048576, "crc": "760F2927"},
+                        "sfx.17m": {"size": 2097152, "crc": "A80D2ABF"},
+                        "sfx.18m": {"size": 1048576, "crc": "C603CB42"},
+                        "sfx.25m": {"size": 1048576, "crc": "1EE90208"},
+                        "sfx.19m": {"size": 2097152, "crc": "4352A965"},
+                        "sfx.20m": {"size": 1048576, "crc": "43415401"},
+                        "sfx.27m": {"size": 1048576, "crc": "F814400F"},
+                        "sfx.11m": {"size": 2097152, "crc": "7E4812CC"},
+                        "sfx.12m": {"size": 2097152, "crc": "7B010899"}
+                    }
+                }
+            },
+            {
+                "game": "Super Street Fighter 2 Turbo (JR1)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [1, 3, 4, 5]
+            }
+        ],
+        "notes": {
+            "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+            "2": "These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
+            "3": "These are using an older naming convention to allow recognition by the targeted MAME version.",
+            "4": "These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.",
+            "5": "This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split."
+        }
+    }
+}

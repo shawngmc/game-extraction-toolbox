@@ -29,256 +29,41 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 Note that this does NOT extract the Japanese ROMs as those are only included in SF30AC International Edition. As a US player, I can't get them - I've tried!
 '''
 
-    _out_file_list = [
-        {
-            "game": "Street Fighter 2 (U)",
-            "system": "Arcade",
-            "filename": "sf2ub.zip",
-            "status": "playable",
-            "notes": [2, 3]
-        },
-        {
-            "game": "Street Fighter 2 Championship Edition (U)",
-            "system": "Arcade",
-            "filename": "sf2ceua.zip",
-            "status": "playable",
-            "notes": [2, 3]
-        },
-        {
-            "game": "Street Fighter 2 Hyper Fighting (U)",
-            "system": "Arcade",
-            "filename": "sf2t.zip",
-            "status": "playable",
-            "notes": [2, 3]
-        },
-        {
-            "game": "Super Street Fighter 2 (U)",
-            "system": "Arcade",
-            "filename": "ssf2u.zip",
-            "status": "playable",
-            "notes": [1, 3]
-        },
-        {
-            "game": "Super Street Fighter 2 Turbo (U)",
-            "system": "Arcade",
-            "filename": "ssf2tu.zip",
-            "status": "playable",
-            "notes": [1, 3]
-        },
-        {
-            "game": "Street Fighter (W)",
-            "system": "Arcade",
-            "filename": "sf.zip",
-            "status": "playable",
-            "notes": []
-        },
-        {
-            "game": "Street Fighter (J)",
-            "system": "Arcade",
-            "filename": "sfj.zip",
-            "status": "playable",
-            "notes": [4]
-        },
-        {
-            "game": "Street Fighter 3",
-            "system": "Arcade",
-            "filename": "sfiiina.zip",
-            "status": "good",
-            "notes": []
-        },
-        {
-            "game": "Street Fighter 3: 2nd Impact",
-            "system": "Arcade",
-            "filename": "sfiii2n.zip",
-            "status": "good",
-            "notes": []
-        },
-        {
-            "game": "Street Fighter 3: 3rd Strike",
-            "system": "Arcade",
-            "filename": "sfiii3nr1.zip",
-            "status": "good",
-            "notes": []
-        },
-        {
-            "game": "Street Fighter 2 (JA)",
-            "system": "Arcade",
-            "filename": "sf2ja.zip",
-            "status": "playable",
-            "notes": [2, 3, 4]
-        },
-        {
-            "game": "Street Fighter 2 (JL)",
-            "system": "Arcade",
-            "filename": "N/A",
-            "status": "no-rom",
-            "notes": [2, 3, 4, 5]
-        },
-        {
-            "game": "Street Fighter 2 Championship Edition (JB)",
-            "system": "Arcade",
-            "filename": "sf2cejb.zip",
-            "status": "playable",
-            "notes": [2, 3, 4]
-        },
-        {
-            "game": "Street Fighter 2 Championship Edition (JC)",
-            "system": "Arcade",
-            "filename": "N/A",
-            "status": "no-rom",
-            "notes": [2, 3, 4, 5]
-        },
-        {
-            "game": "Street Fighter 2 Hyper Fighting (J)",
-            "system": "Arcade",
-            "filename": "sf2tj.zip",
-            "status": "playable",
-            "notes": [2, 3, 4]
-        },
-        {
-            "game": "Street Fighter Alpha (U)",
-            "system": "Arcade",
-            "filename": "sfau.zip",
-            "status": "playable",
-            "notes": [1]
-        },
-        {
-            "game": "Street Fighter Alpha (J)",
-            "system": "Arcade",
-            "filename": "sfzj.zip",
-            "status": "playable",
-            "notes": [1, 4]
-        },
-        {
-            "game": "Street Fighter Alpha (JR2)",
-            "system": "Arcade",
-            "filename": "sfzjr2.zip",
-            "status": "playable",
-            "notes": [1, 4]
-        },
-        {
-            "game": "Street Fighter Alpha 2 (U)",
-            "system": "Arcade",
-            "filename": "sfa2u.zip",
-            "status": "playable",
-            "notes": [1, 3]
-        },
-        {
-            "game": "Street Fighter Alpha 2 (J)",
-            "system": "Arcade",
-            "filename": "sfz2j.zip",
-            "status": "playable",
-            "notes": [1, 3, 4]
-        },
-        {
-            "game": "Street Fighter Alpha 2 (JR1)",
-            "system": "Arcade",
-            "filename": "N/A",
-            "status": "no-rom",
-            "notes": [1, 3, 4, 5]
-        },
-        {
-            "game": "Street Fighter Alpha 3 (J)",
-            "system": "Arcade",
-            "filename": "sfz3j.zip",
-            "status": "playable",
-            "notes": [1, 4]
-        },
-        {
-            "game": "Street Fighter Alpha 3 (JR2)",
-            "system": "Arcade",
-            "filename": "sfz3jr2.zip",
-            "status": "playable",
-            "notes": [1, 4]
-        },
-        {
-            "game": "Street Fighter Alpha 3 (U)",
-            "system": "Arcade",
-            "filename": "sfa3u.zip",
-            "status": "playable",
-            "notes": [1]
-        },
-        {
-            "game": "Super Street Fighter 2 (J)",
-            "system": "Arcade",
-            "filename": "ssf2.zip",
-            "status": "playable",
-            "notes": [1, 3, 4]
-        },
-        {
-            "game": "Super Street Fighter 2 (JR1)",
-            "system": "Arcade",
-            "filename": "ssf2u.zip",
-            "status": "playable",
-            "notes": [1, 3, 4]
-        },
-        {
-            "game": "Super Street Fighter 2 Turbo (J)",
-            "system": "Arcade",
-            "filename": "ssf2tu.zip",
-            "status": "playable",
-            "notes": [1, 3, 4]
-        },
-        {
-            "game": "Super Street Fighter 2 Turbo (JR1)",
-            "system": "Arcade",
-            "filename": "N/A",
-            "status": "no-rom",
-            "notes": [1, 3, 4, 5]
-        }
-    ]
-    _out_file_notes = {
-        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). "\
-            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
-        "2": "These ROMs require an older version MAME. They test fine in MAME 0.78 (Mame 2003 in RetroArch). "\
-            "This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require.",
-        "3": "These are using an older naming convention to allow recognition by the targeted MAME version.",
-        "4": "These ROMs are only present if your Street Fighter 30th Anniversary Collection says it is 'International'.",
-        "5": "This ROM is not extracted as no known emulators can play it as is due to the missing key and being a newer post-MAME2010 split."
-    }
     _default_input_folder = helpers.gen_steam_app_default_folder("Street Fighter 30th Anniversary Collection")
     _input_folder_desc = "SF30AC Steam folder"
 
-    _pkg_name_map = {
-        'bundleStreetFighter.mbundle': 'sf',
-        'bundleStreetFighterAlpha.mbundle': 'sfa',
-        'bundleStreetFighterAlpha2.mbundle': 'sfa2',
-        'bundleStreetFighterAlpha3.mbundle': 'sfa3',
-        'bundleStreetFighterII.mbundle': 'sf2',
-        'bundleStreetFighterIII.mbundle': 'sf3',
-        'bundleStreetFighterIII_2ndImpact.mbundle': 'sf3_2i',
-        'bundleStreetFighterIII_3rdStrike.mbundle': 'sf3_3s',
-        'bundleStreetFighterII_CE.mbundle': 'sf2ce',
-        'bundleStreetFighterII_HF.mbundle': 'sf2hf',
-        'bundleSuperStreetFighterII.mbundle': 'ssf2',
-        'bundleSuperStreetFighterIITurbo.mbundle': 'ssf2t'
-    }
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
+
     def execute(self, in_dir, out_dir):
-        bundle_files = self._find_files(in_dir)
-        for file_path in bundle_files:
-            with open(file_path, 'rb') as in_file:
-                file_name = os.path.basename(file_path)
-                pkg_name = self._pkg_name_map.get(file_name)
-                if pkg_name is not None:
-                    logger.info(f'Reading files for {file_name}...')
-                    contents = in_file.read()
-                    reader = BPListReader(contents)
-                    parsed = reader.parse()
+        for file_ref, file_metadata in self._metadata['in']['files'].items():
+            resolved_file = self.read_datafile(in_dir, file_metadata)
+            reader = BPListReader(resolved_file['contents'])
+            is_international = resolved_file['version'] == "International Steam"
+            parsed = reader.parse()
 
-                    handler_func = self.find_handler_func(pkg_name)
-                    if parsed is not None and handler_func is not None:
-                        output_files = handler_func(parsed)
+            handler_func = self.find_handler_func(file_ref)
+            if parsed is not None and handler_func is not None:
+                output_files = handler_func(parsed, is_international)
 
-                        for out_file_entry in output_files:
-                            out_path = os.path.join(out_dir, out_file_entry['filename'])
-                            with open(out_path, "wb") as out_file:
-                                out_file.write(out_file_entry['contents'])
-                    elif parsed is None:
-                        logger.warning("Could not find merged rom data in mbundle.")
-                    elif handler_func is None:
-                        logger.warning("Could not find matching handler function.")
-                else:
-                    logger.info(f'Skipping {file_name} as it contains no known roms...')
+                for out_file_entry in output_files:
+                    filename = out_file_entry['filename']
+                    verified = self.verify_out_file(filename, out_file_entry['contents'])
+                    if verified:
+                        logger.info(f"Verified {filename}.")
+                    else:
+                        logger.info(f"Could NOT verify {filename}.")
+                    out_path = os.path.join(out_dir, filename)
+                    with open(out_path, "wb") as out_file:
+                        out_file.write(out_file_entry['contents'])
+            elif parsed is None:
+                logger.warning("Could not find merged rom data in mbundle.")
+            elif handler_func is None:
+                logger.warning("Could not find matching handler function.")
         logger.info("Processing complete.")
 
     def _find_files(self, base_path):
@@ -346,7 +131,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter                                                               #
     ################################################################################
 
-    def _handle_sf(self, mbundle_entries):
+    def _handle_sf(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -457,8 +242,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        # See if the J ROM is present
-        if in_files['j-68k'] is not None and in_files['j-samples'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map['maincpu'] = sf_maincpu('j-68k', maincpu_filenames)
             samples_filenames_j = [
@@ -490,7 +275,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     #  Street Fighter 2                                                            #
     ################################################################################
 
-    def _handle_sf2(self, mbundle_entries):
+    def _handle_sf2(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -595,8 +380,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         logger.info(f"Extracted {mame_name}.")
 
 
-        # See if the J ROM is present
-        if in_files['ja-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_ja = [
@@ -629,7 +414,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter Alpha                                                         #
     ################################################################################
 
-    def _handle_sfa(self, mbundle_entries):
+    def _handle_sfa(self, mbundle_entries, is_international):
         out_files = []
         func_map = {}
         in_files = {}
@@ -700,8 +485,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        # See if the J ROM is present
-        if in_files['j-68k'] is not None and in_files['jr2-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_j = [
@@ -744,7 +529,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter Alpha 2                                                       #
     ################################################################################
 
-    def _handle_sfa2(self, mbundle_entries):
+    def _handle_sfa2(self, mbundle_entries, is_international):
         out_files = []
         func_map = {}
         in_files = {}
@@ -821,8 +606,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        # See if the J ROM is present
-        if in_files['j-68k'] is not None and in_files['jr1-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_j = [
@@ -854,7 +639,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter Alpha 3                                                       #
     ################################################################################
 
-    def _handle_sfa3(self, mbundle_entries):
+    def _handle_sfa3(self, mbundle_entries, is_international):
         out_files = []
         func_map = {}
         in_files = {}
@@ -936,8 +721,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        # See if the J ROM is present
-        if in_files['j-68k'] is not None and in_files['jr2-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames_j = [
@@ -1005,7 +790,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
         return out_files
 
-    def _handle_sf3(self, mbundle_entries):
+    def _handle_sf3(self, mbundle_entries, _):
         in_prefix = "StreetFighterIII"
         in_simm_bank_nums = [1, 3, 4, 5]
         in_simm_files = dict(zip(in_simm_bank_nums,
@@ -1024,7 +809,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter 3 2nd Impact                                                  #
     ################################################################################
 
-    def _handle_sf3_2i(self, mbundle_entries):
+    def _handle_sf3_2i(self, mbundle_entries, _):
         in_prefix = "StreetFighterIII_2ndImpact"
         in_simm_bank_nums = list(range(1,6))
         in_simm_files = dict(zip(in_simm_bank_nums,
@@ -1043,7 +828,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter 3 3rd Strike                                                  #
     ################################################################################
 
-    def _handle_sf3_3s(self, mbundle_entries):
+    def _handle_sf3_3s(self, mbundle_entries, _):
         in_prefix = "StreetFighterIII_3rdStrike"
         in_simm_files = {
             1: f'{in_prefix}.r1.s1',
@@ -1067,7 +852,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter 2 Championship Edition                                        #
     ################################################################################
 
-    def _handle_sf2ce(self, mbundle_entries):
+    def _handle_sf2ce(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -1162,24 +947,25 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        if in_files['jb-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
-            maincpu_filenames_jb = [
+            maincpu_filenames = [
                 "s92j_23b.bin",
                 "s92j_22b.bin",
                 "s92_21a.bin"
             ]
-            func_map['maincpu'] = sf2ce_maincpu('jb-68k', maincpu_filenames_jb)
+            func_map['maincpu'] = sf2ce_maincpu('jb-68k', maincpu_filenames)
             func_map['common'] = helpers.existing_files_helper(common_file_map)
-            mame_name_jb = 'sf2cej.zip'
-            logger.info(f"Building {mame_name_jb}...")
+            mame_name = 'sf2cej.zip'
+            logger.info(f"Building {mame_name}...")
             out_files.append(
-                {'filename': mame_name_jb, 'contents': helpers.build_rom(in_files, func_map)}
+                {'filename': mame_name, 'contents': helpers.build_rom(in_files, func_map)}
             )
-            logger.info(f"Extracted {mame_name_jb}.")
+            logger.info(f"Extracted {mame_name}.")
 
-            logger.info("Skipping sf2ceja.zip as it needs a key but isn't in an old keyless MAME.")
+            logger.info("Skipping sf2cej.zip as it needs a key but isn't in an old keyless MAME.")
         else:
             logger.info("Japanese ROMs not found, skipping.")
 
@@ -1189,7 +975,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Street Fighter 2 Hyper Fighting                                              #
     ################################################################################
 
-    def _handle_sf2hf(self, mbundle_entries):
+    def _handle_sf2hf(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -1288,7 +1074,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-        if in_files['j-68k'] is not None and in_files['j-vrom'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames = [
@@ -1330,7 +1117,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Super Street Fighter 2                                                       #
     ################################################################################
 
-    def _handle_ssf2(self, mbundle_entries):
+    def _handle_ssf2(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -1411,8 +1198,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-
-        if in_files['j-68k'] is not None and in_files['jr1-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames = [
@@ -1455,7 +1242,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
     # Super Street Fighter 2 Turbo                                                 #
     ################################################################################
 
-    def _handle_ssf2t(self, mbundle_entries):
+    def _handle_ssf2t(self, mbundle_entries, is_international):
         func_map = {}
         out_files = []
         in_files = {}
@@ -1537,8 +1324,8 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
         )
         logger.info(f"Extracted {mame_name}.")
 
-
-        if in_files['j-68k'] is not None:
+        # Handle international ROMs
+        if is_international:
             logger.info("Japanese ROMs found, extracting...")
             func_map = {}
             maincpu_filenames = [

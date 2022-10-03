@@ -36,6 +36,8 @@ def extract(src_dir, dest_dir, task, props):
     # Ensure the output folder exists or can be made
     helper.preparepath(dest_dir)
 
+    task_class.read_task_metadata()
+
     task_class.set_props(props)
 
     task_class.execute(src_dir, dest_dir)
