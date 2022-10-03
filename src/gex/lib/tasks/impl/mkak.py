@@ -7,7 +7,7 @@ from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
-class BubsyTask(BaseTask):
+class MKAKTask(BaseTask):
     '''Implements mkak: Mortal Kombat Arcade Kollection'''
     _task_name = "mkak"
     _title = "Mortal Kombat Arcade Kollection"
