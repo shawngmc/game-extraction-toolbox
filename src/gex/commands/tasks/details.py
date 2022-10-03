@@ -12,7 +12,7 @@ def details(task):
     task_class = helper.load_task(task)
     if task_class is None:
         raise Exception(f"Task {task} not found to describe.")
-
+    task_class.read_task_metadata()
     markdown_text = get_header_display(task_class)
     markdown_text += "\n\n"
     markdown_text += task_class.get_details_markdown()

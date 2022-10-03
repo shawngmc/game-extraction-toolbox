@@ -19,6 +19,7 @@ def list_files(in_file):
 
             table = Texttable()
             table.add_row(["Filename", "Size", "CRC"])
+            table.set_cols_dtype(["t", "t", "t"])
             for zip_meta in zip_metas.values():
                 table.add_row([zip_meta['filename'], zip_meta['size'], zip_meta['crc']])
             print(table.draw())

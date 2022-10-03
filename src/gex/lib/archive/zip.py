@@ -29,6 +29,6 @@ def get_metadata(bytes_obj):
             files[file_entry.filename] = {
                 "filename": file_entry.filename,
                 "size": file_entry.file_size,
-                "crc": f"{(file_entry.CRC):0{8}X}"
+                "crc": hex(file_entry.CRC)[2:].upper().rjust(8, "0")
             }
     return files
