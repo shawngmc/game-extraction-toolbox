@@ -108,30 +108,30 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ### Playable
 
-**Collection**                             | **Status**     | **Notes**           
+**Collection**                             | **Status**     | **Verification** | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 75%    | A couple games are good extractions so far...
- **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
- **Blizzard Arcade Collection**                 | 100%   |   
- **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs... 
- **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
- **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
- **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
- **Disney Afternoon Collection**                | 100%   |  
- **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Includes Jungle Book DLC
- **Double Dragon Trilogy**                      | 100%   |  
- **IREM Arcade Classics**                       | 100%   |  
- **Mega Man Legacy Collection 1**               | 100%   |  
- **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
- **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
- **Pac Man Museum Plus**                        | 40%    | Some progress, but there are a lot of non-extractable titles.
- **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
- **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **SNK 40th Anniversary Collection**            | 100%   | All games supported by an emulator are extracted!
- **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
- **Wonder Boy: The Dragon's Trap**              | 100%   |  
- **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
+ **Arcade Collection Anniversary Classics**     | 75%    | N | A couple games are good extractions so far...
+ **Atari Vault**                                | 90%    | N | Some arcade ROMs from this collection are incomplete.  
+ **Blizzard Arcade Collection**                 | 100%   | N |   
+ **Bubsy Two-Fur**                              | 100%   | Y |   
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | N | Requires Steam depot downloading, a couple shaky ROMs... 
+ **Capcom Beat 'Em Up Bundle**                  | 95%    | N | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
+ **Capcom Fighting Collection**                 | 90%    | N | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
+ **Collection of SaGa/Final Fantasy Legend**    | 100%   | N |  
+ **Disney Afternoon Collection**                | 100%   | N |  
+ **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | N | Includes Jungle Book DLC
+ **Double Dragon Trilogy**                      | 100%   | N |  
+ **IREM Arcade Classics**                       | 100%   | N |  
+ **Mega Man Legacy Collection 1**               | 100%   | Y |  
+ **Mega Man X Legacy Collection 1**             | 75%    | Y | X4 doesn't appear to be ROM based  
+ **Namco Arcade Game Series**                   | 75%    | N | Ms. Pac-Man cannot be cleanly extracted
+ **Pac Man Museum Plus**                        | 40%    | N | Some progress, but there are a lot of non-extractable titles.
+ **Sega Genesis and Mega Drive Collection**     | 90%    | N | Some compressed variants not yet extracted  
+ **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | Y | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
+ **SNK 40th Anniversary Collection**            | 100%   | N | All games supported by an emulator are extracted!
+ **Street Fighter 30th Anniversary Collection** | 90%    | Y | Now includes all playable international versions.
+ **Wonder Boy: The Dragon's Trap**              | 100%   | Y |  
+ **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   | Y |  
 
 
 ### Completely Unplayable

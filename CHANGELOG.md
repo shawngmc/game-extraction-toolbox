@@ -2,6 +2,10 @@
 - Updated Collections:
   - IREM Arcade Classics
     - Fix bug preventing details output
+- Improvements:
+  - Started adding input/output file verification to tasks
+- Internal:
+  - Made a generic reusable 'CopyTask' for copy-only jobs
 
 # 0.1.3
 - Improvements:
