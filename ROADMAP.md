@@ -6,6 +6,8 @@
 - Brave Battle Saga - The Legend of The Magic Warrior
 - Activision Anthology Remix PC
   https://forums.atariage.com/topic/336118-how-to-extract-roms-from-the-activision-anthology-for-pc-and-a-request-for-info-on-the-included-roms/
+- Sega Mega Drive & Genesis Classics
+  Compressed ROMS: https://github.com/farmerbb/RED-Project/wiki/Sega-Mega-Drive-&-Genesis-Classics
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
@@ -32,6 +34,7 @@
 ## Owned / Under Investigation
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
   Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #17.
+  https://github.com/Masquerade64/Cowabunga
 - Capcom Arcade Stadium 1
   Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
   PLACEHOLDER ADDED. See #18.
@@ -63,6 +66,8 @@
   Recommended in #15.
 - Darius Cozmic Collection Arcade
 - Taito Legends 1 and 2
+- Saturn Cotton Collection
+  https://gbatemp.net/threads/saturn-emulation-using-cotton-guardian-force-testing-and-debug.600756/
 
 ## Upcoming Releases
 - Atari 50th: Anniversary Collection (Winter 2022)
@@ -106,4 +111,7 @@
   Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
+- Disney's Hercules
+  https://www.gog.com/en/game/disneys_hercules
+  Native PC Game
 

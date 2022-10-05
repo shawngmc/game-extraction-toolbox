@@ -73,6 +73,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SF30AC (Verbose)",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30ac\"",
+                "-v",
+                "DEBUG"
+            ]
+        },
+        {
             "name": "Python: Toolbox - Profile SF30AC",
             "type": "python",
             "request": "launch",
