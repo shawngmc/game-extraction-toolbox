@@ -103,7 +103,7 @@ class BaseTask:
 
         # Check verify type
         if verify_obj['type'] == 'crc':
-            crc = hash_helper.get_crc(contents)[2:].upper()
+            crc = hash_helper.get_crc(contents)[2:].upper().rjust(8, "0")
             return crc == verify_obj['crc'] and len(contents) == verify_obj['size']
         elif verify_obj['type'] == 'zip':
             zip_metas = zip_lib.get_metadata(contents)
