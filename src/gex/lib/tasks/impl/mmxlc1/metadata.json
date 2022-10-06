@@ -1,7 +1,7 @@
 {
     "in": {
         "files": {
-            "RXC1": {
+            "source": {
                 "filename": "RXC1.exe",
                 "versions": {
                     "Steam": {

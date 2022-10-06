@@ -1,7 +1,7 @@
 {
     "in": {
         "files": {
-            "proteus": {
+            "source": {
                 "filename": "Proteus.exe",
                 "versions": {
                     "Steam": {
