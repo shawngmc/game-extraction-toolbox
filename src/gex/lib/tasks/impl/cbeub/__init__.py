@@ -1,6 +1,4 @@
 '''Implementation of cbeub: Capcom Beat 'em Up Bundle'''
-import re
-import glob
 import logging
 import os
 
@@ -22,177 +20,58 @@ The notes I found were at https://web.archive.org/web/20220213232104/http://blog
 This was a Japanese set of shell scripts and odd generic operation executables. There is some weird encoding here too.
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 '''
-    _out_file_list = [
-        {
-            "game": "Final Fight (U)",
-            "system": "Arcade",
-            "filename": "ffight.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "Final Fight (J)",
-            "system": "Arcade",
-            "filename": "ffightj.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "King of Dragons (U)",
-            "system": "Arcade",
-            "filename": "kod.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "King of Dragons (J)",
-            "system": "Arcade",
-            "filename": "kodf.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "Captain Commando (U)",
-            "system": "Arcade",
-            "filename": "captcomm.zip",
-            "status": "playable",
-            "notes": [2, 3]
-        },
-        {
-            "game": "Captain Commando (J)",
-            "system": "Arcade",
-            "filename": "captcommj.zip",
-            "status": "playable",
-            "notes": [2, 3]
-        },
-        {
-            "game": "Knights of the Round (U)",
-            "system": "Arcade",
-            "filename": "knights.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "Knights of the Round (J)",
-            "system": "Arcade",
-            "filename": "knightsj.zip",
-            "status": "playable",
-            "notes": [2]
-        },
-        {
-            "game": "Warriors of Fate (U)",
-            "system": "Arcade",
-            "filename": "wof.zip",
-            "status": "playable",
-            "notes": [2, 4]
-        },
-        {
-            "game": "Warriors of Fate (J)",
-            "system": "Arcade",
-            "filename": "wofj.zip",
-            "status": "playable",
-            "notes": [2, 4]
-        },
-        {
-            "game": "Powered Gear (U)",
-            "system": "Arcade",
-            "filename": "pgear.zip",
-            "status": "playable",
-            "notes": [1]
-        },
-        {
-            "game": "Powered Gear (J)",
-            "system": "Arcade",
-            "filename": "armwar.zip",
-            "status": "playable",
-            "notes": [1]
-        },
-        {
-            "game": "Battle Circuit (U)",
-            "system": "Arcade",
-            "filename": "batcir.zip",
-            "status": "playable",
-            "notes": [1]
-        },
-        {
-            "game": "Battle Circuit (J)",
-            "system": "Arcade",
-            "filename": "batcirj.zip",
-            "status": "playable",
-            "notes": [1]
-        }
-    ]
 
-    _out_file_notes = {
-        "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
-        "2": "These ROMs play fine, even in the current MAME, despite the bad CRCs. The bad CRCs are small ancillary files that aren't strictly required or included, but stubbed out to pass checks. ",
-        "3": "The JP version of this ROM is fine in modern MAME 0.246; the English version needs 0.139",
-        "4": "The Audio CPU ROM for this is not present in the expected format. Further investigation required."
-    }
     _default_input_folder = helpers.gen_steam_app_default_folder("CBEUB")
     _input_folder_desc = "CBEUB Steam folder"
 
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
+
     def execute(self, in_dir, out_dir):
-        pak_files = self._find_files(in_dir)
-        for file_path in pak_files:
-            file_name = os.path.basename(file_path)
-            pkg_name = self._pkg_name_map[file_name]
-            logger.info(f"Extracting {file_name}: {pkg_name}")
-            try:
-                with open(file_path, "rb") as curr_file:
-                    file_content = bytearray(curr_file.read())
-                    arc_contents = arc.extract(file_content)
-                    output_files = []
+        # for each output file entry
+        for out_file_entry in self._metadata['out']['files']:
+            pkg_name = out_file_entry['in_file']
+            # Check the status of it
+            if out_file_entry['status'] == 'no-rom':
+                logger.info(f"Skipping {pkg_name} - cannot extract...")
+            else:
+                logger.info(f"Extracting {pkg_name}...")
 
-                    # Get the bin entry
-                    merged_rom_contents = None
-                    for _, arc_content in arc_contents.items():
-                        if arc_content['path'].startswith('bin'):
-                            merged_rom_contents = arc_content['contents']
+                # read the matching input file
+                in_file_entry = self._metadata['in']['files'][pkg_name]
+                loaded_file = self.read_datafile(in_dir, in_file_entry)
 
-                    handler_func = self.find_handler_func(pkg_name)
-                    if merged_rom_contents is not None and handler_func is not None:
-                        output_files = handler_func(merged_rom_contents)
-                        for output_file in output_files:
-                            out_path = os.path.join(out_dir, output_file['filename'])
-                            with open(out_path, "wb") as out_file:
-                                out_file.write(output_file['contents'])
-                    elif merged_rom_contents is None:
-                        logger.warning(
-                            "Could not find merged rom data in arc.")
-                    elif handler_func is None:
-                        logger.warning(
-                            "Could not find matching handler function.")
-            except Exception as _:
-                logger.warning(f'Error while processing {file_path}!')
+                # extract the input file
+                arc_contents = arc.extract(loaded_file['contents'])
 
+                # Get the bin entry
+                merged_rom_contents = None
+                for _, arc_content in arc_contents.items():
+                    if arc_content['path'].startswith('bin'):
+                        merged_rom_contents = arc_content['contents']
+
+                # run the handler
+                handler_func = self.find_handler_func(pkg_name)
+                if merged_rom_contents is not None and handler_func is not None:
+                    output_contents = handler_func(merged_rom_contents)
+
+                    verified = self.verify_out_file(out_file_entry['filename'], output_contents)
+                    if verified:
+                        logger.info(f"Verified {out_file_entry['filename']}.")
+                    else:
+                        logger.info(f"Could NOT verify {out_file_entry['filename']}.")
+
+                    with open(os.path.join(out_dir, out_file_entry['filename']), "wb") as out_file:
+                        out_file.write(output_contents)
+                elif merged_rom_contents is None:
+                    logger.warning("Could not find merged rom data in arc.")
+                elif handler_func is None:
+                    logger.warning("Could not find matching handler function.")
         logger.info("Processing complete.")
-
-    _pkg_name_map = {
-        "game_00.arc": "ffightj",
-        "game_01.arc": "ffight",
-        "game_10.arc": "kodj",
-        "game_11.arc": "kod",
-        "game_20.arc": "captcommj",
-        "game_21.arc": "captcomm",
-        "game_30.arc": "knightsj",
-        "game_31.arc": "knights",
-        "game_40.arc": "wofj",
-        "game_41.arc": "wof",
-        "game_50.arc": "pgear",
-        "game_51.arc": "armwar",
-        "game_60.arc": "batcirj",
-        "game_61.arc": "batcir",
-    }
-
-    def _find_files(self, base_path):
-        arc_path = os.path.join(base_path, "nativeDX11x64", "arc")
-        candidate_files = glob.glob(arc_path + '/game_*.arc')
-        archive_list = []
-        for candidate in candidate_files:
-            if re.search(r'game_\d\d.arc', candidate):
-                archive_list.append(candidate)
-        return archive_list
 
     def _deshuffle_gfx_common(self, start, length, filenames, num_deinterleave_split, do_split):
         def gfx(contents):
@@ -246,7 +125,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
     ################################################################################
 
     def _handle_ffight(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -301,13 +179,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'ffight.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_ffightj(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -371,16 +245,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'ffightj.zip', 'contents': zip_contents})
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # The King of Dragons                                                          #
     ################################################################################
 
     def _handle_kod(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -440,13 +311,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'kod.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_kodj(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -506,16 +373,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'kodj.zip', 'contents': zip_contents})
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # Captain Commando                                                             #
     ################################################################################
 
     def _handle_captcomm(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -572,14 +436,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append(
-            {'filename': 'captcomm.zip', 'contents': zip_contents}
-        )
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_captcommj(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -638,18 +497,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append(
-            {'filename': 'captcommj.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # Knights of the Round                                                         #
     ################################################################################
 
     def _handle_knights(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -699,13 +553,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'knights.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_knightsj(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -755,11 +605,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append(
-            {'filename': 'knightsj.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # Warriors of Fate                                                             #
@@ -785,7 +631,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return audio
 
     def _handle_wof(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -839,13 +684,9 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'wof.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_wofj(self, merged_contents):
-        out_files = []
         func_map = {}
 
         maincpu_filenames = [
@@ -900,10 +741,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         }
         func_map['placeholders'] = helpers.placeholder_helper(ph_files)
 
-        zip_contents = helpers.build_rom(merged_contents, func_map)
-        out_files.append({'filename': 'wofj.zip', 'contents': zip_contents})
-
-        return out_files
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # Armored Warriors                                                             #
@@ -966,7 +804,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return dict(zip(filenames, chunks))
 
     def _handle_armwar(self, merged_contents):
-        out_files = []
 
         def maincpu(contents):
             contents = contents[0x40:0x400040]
@@ -987,12 +824,10 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'armwar.zip', 'contents': helpers.build_rom(
-            merged_contents, func_map)})
-        return out_files
+
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_pgear(self, merged_contents):
-        out_files = []
 
         def maincpu(contents):
             contents = contents[0x40:0x400040]
@@ -1013,9 +848,8 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._armwar_gfx
         func_map['audiocpu'] = self._armwar_audio
         func_map['qsound'] = self._armwar_qsound
-        out_files.append({'filename': 'pgear.zip', 'contents': helpers.build_rom(
-            merged_contents, func_map)})
-        return out_files
+
+        return helpers.build_rom(merged_contents, func_map)
 
     ################################################################################
     # Battle Circuit                                                               #
@@ -1069,7 +903,6 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         return dict(zip(filenames, chunks))
 
     def _handle_batcir(self, merged_contents):
-        out_files = []
 
         def maincpu(contents):
             contents = contents[0x40:0x380040]
@@ -1089,12 +922,10 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcir.zip', 'contents': helpers.build_rom(
-            merged_contents, func_map)})
-        return out_files
+        
+        return helpers.build_rom(merged_contents, func_map)
 
     def _handle_batcirj(self, merged_contents):
-        out_files = []
 
         def maincpu(contents):
             contents = contents[0x40:0x380040]
@@ -1114,6 +945,5 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
         func_map['gfx'] = self._batcir_gfx
         func_map['audiocpu'] = self._batcir_audio
         func_map['qsound'] = self._batcir_qsound
-        out_files.append({'filename': 'batcirj.zip', 'contents': helpers.build_rom(
-            merged_contents, func_map)})
-        return out_files
+        
+        return helpers.build_rom(merged_contents, func_map)
