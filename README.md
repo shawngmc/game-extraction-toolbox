@@ -112,7 +112,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 --------------------------------------------|-------------|---------------------------------------------------------------------  
  **Arcade Collection Anniversary Classics**     | 75%    | N | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | N | Some arcade ROMs from this collection are incomplete.  
- **Blizzard Arcade Collection**                 | 100%   | N |   
+ **Blizzard Arcade Collection**                 | 100%   | Y |   
  **Bubsy Two-Fur**                              | 100%   | Y |   
  **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | N | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%    | N | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
