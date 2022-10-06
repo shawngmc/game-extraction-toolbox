@@ -1,6 +1,4 @@
 '''Implementation of cfc: Capcom Fighting Collection'''
-import re
-import glob
 import logging
 import os
 
@@ -23,6 +21,13 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 '''
     _default_input_folder = helpers.gen_steam_app_default_folder("CAPCOM FIGHTING COLLECTION")
     _input_folder_desc = "CFC Steam folder"
+
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
 
     def execute(self, in_dir, out_dir):
         # for each output file entry
