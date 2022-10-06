@@ -1,0 +1,669 @@
+{
+    "in": {
+        "files": {
+            "vampj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_00.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 13447403,
+                        "crc": "0DFEC976"
+                    }
+                }
+            },
+            "dstlku": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_01.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 13702867,
+                        "crc": "292A64FD"
+                    }
+                }
+            },
+            "vhuntjr2": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_10.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17308161,
+                        "crc": "D8DB1572"
+                    }
+                }
+            },
+            "nwarru": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_11.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17310244,
+                        "crc": "DEB41B47"
+                    }
+                }
+            },
+            "vsavj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_20.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 20099042,
+                        "crc": "42116EF4"
+                    }
+                }
+            },
+            "vsavu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_21.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 20099071,
+                        "crc": "A327A39D"
+                    }
+                }
+            },
+            "vhunt2": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_30.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 20042507,
+                        "crc": "D131FEB7"
+                    }
+                }
+            },
+            "vsav2": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_40.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 19970806,
+                        "crc": "34FF1078"
+                    }
+                }
+            },
+            "cybotsj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_50.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17030696,
+                        "crc": "641D217A"
+                    }
+                }
+            },
+            "cybotsu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_51.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17030662,
+                        "crc": "666B2E29"
+                    }
+                }
+            },
+            "spf2xj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_60.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 4952375,
+                        "crc": " 2424C2BB"
+                    }
+                }
+            },
+            "spf2tu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_61.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 4952414,
+                        "crc": " 6005A159"
+                    }
+                }
+            },
+            "pfghtj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_70.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 14449803,
+                        "crc": "CA5FF893"
+                    }
+                }
+            },
+            "sgemf": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_71.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 14449785,
+                        "crc": "07BFDC17"
+                    }
+                }
+            },
+            "hsf2j": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_80.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 18395361,
+                        "crc": "E51FAB87"
+                    }
+                }
+            },
+            "hsf2": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_81.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 18395414,
+                        "crc": "F80EB2D7"
+                    }
+                }
+            },
+            "warzard": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_90.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 49730575,
+                        "crc": "2E3BD464"
+                    }
+                }
+            },
+            "redearth": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_91.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 49732507,
+                        "crc": "E515469E"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Darkstalkers: The Night Warriors (U)",
+                "system": "Arcade",
+                "filename": "dstlku.zip",
+                "in_file": "dstlku",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vamu.03b": {"size": 524288, "crc": "68A6343F"},
+                        "vamu.04b": {"size": 524288, "crc": "58161453"},
+                        "vamu.05b": {"size": 524288, "crc": "DFC038B8"},
+                        "vamu.06b": {"size": 524288, "crc": "C3842C89"},
+                        "vamu.07b": {"size": 524288, "crc": "25B60B6E"},
+                        "vamu.08b": {"size": 524288, "crc": "2113C596"},
+                        "vamu.09b": {"size": 524288, "crc": "2D1E9AE5"},
+                        "vamu.10b": {"size": 524288, "crc": "81145622"},
+                        "vam.13m": {"size": 4194304, "crc": "C51BAF99"},
+                        "vam.14m": {"size": 1048576, "crc": "BD87243C"},
+                        "vam.15m": {"size": 4194304, "crc": "3CE83C77"},
+                        "vam.16m": {"size": 1048576, "crc": "AFEC855F"},
+                        "vam.17m": {"size": 4194304, "crc": "4F2408E0"},
+                        "vam.18m": {"size": 1048576, "crc": "3A033625"},
+                        "vam.19m": {"size": 4194304, "crc": "9FF60250"},
+                        "vam.20m": {"size": 1048576, "crc": "2BFF6A89"},
+                        "vam.01": {"size": 131072, "crc": "64B685D5"},
+                        "vam.02": {"size": 131072, "crc": "CF7C97C7"},
+                        "vam.11m": {"size": 2097152, "crc": "4A39DEB2"},
+                        "vam.12m": {"size": 2097152, "crc": "1A3E5C03"}
+                    }
+                }
+            },
+            {
+                "game": "Darkstalkers: The Night Warriors (J)",
+                "system": "Arcade",
+                "filename": "vampj.zip",
+                "in_file": "vampj",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vamj.03a": {"size": 524288, "crc": "F55D3722"},
+                        "vamj.04b": {"size": 524288, "crc": "4D9C43C4"},
+                        "vamj.05a": {"size": 524288, "crc": "6C497E92"},
+                        "vamj.06a": {"size": 524288, "crc": "F1BBECB6"},
+                        "vamj.07a": {"size": 524288, "crc": "1067AD84"},
+                        "vamj.08a": {"size": 524288, "crc": "4B89F41F"},
+                        "vamj.09a": {"size": 524288, "crc": "FC0A4AAC"},
+                        "vamj.10a": {"size": 524288, "crc": "9270C26B"},
+                        "vam.13m": {"size": 4194304, "crc": "C51BAF99"},
+                        "vam.14m": {"size": 1048576, "crc": "BD87243C"},
+                        "vam.15m": {"size": 4194304, "crc": "3CE83C77"},
+                        "vam.16m": {"size": 1048576, "crc": "AFEC855F"},
+                        "vam.17m": {"size": 4194304, "crc": "4F2408E0"},
+                        "vam.18m": {"size": 1048576, "crc": "3A033625"},
+                        "vam.19m": {"size": 4194304, "crc": "9FF60250"},
+                        "vam.20m": {"size": 1048576, "crc": "2BFF6A89"},
+                        "vam.01": {"size": 131072, "crc": "64B685D5"},
+                        "vam.02": {"size": 131072, "crc": "CF7C97C7"},
+                        "vam.11m": {"size": 2097152, "crc": "4A39DEB2"},
+                        "vam.12m": {"size": 2097152, "crc": "1A3E5C03"}
+
+                    }
+                }
+            },
+            {
+                "game": "Night Warriors:Darkstalkers' Revenge (U)",
+                "system": "Arcade",
+                "filename": "nwarru.zip",
+                "in_file": "nwarru",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vphu.03f": {"size": 524288, "crc": "85D6A359"},
+                        "vphu.04c": {"size": 524288, "crc": "CB7FCE77"},
+                        "vphu.05e": {"size": 524288, "crc": "E08F2BBA"},
+                        "vphu.06c": {"size": 524288, "crc": "08C04CDB"},
+                        "vphu.07b": {"size": 524288, "crc": "B5A5AB19"},
+                        "vphu.08b": {"size": 524288, "crc": "51BB20FB"},
+                        "vphu.09b": {"size": 524288, "crc": "41A64205"},
+                        "vphu.10b": {"size": 524288, "crc": "2B1D43AE"},
+                        "vph.13m": {"size": 4194304, "crc": "C51BAF99"},
+                        "vph.14m": {"size": 4194304, "crc": "7A0E1ADD"},
+                        "vph.15m": {"size": 4194304, "crc": "3CE83C77"},
+                        "vph.16m": {"size": 4194304, "crc": "2F41CA75"},
+                        "vph.17m": {"size": 4194304, "crc": "4F2408E0"},
+                        "vph.18m": {"size": 4194304, "crc": "64498EED"},
+                        "vph.19m": {"size": 4194304, "crc": "9FF60250"},
+                        "vph.20m": {"size": 4194304, "crc": "17F2433F"},
+                        "vph.01": {"size": 131072, "crc": "5045DCAC"},
+                        "vph.02": {"size": 131072, "crc": "86B60E59"},
+                        "vph.11m": {"size": 2097152, "crc": "E1837D33"},
+                        "vph.12m": {"size": 2097152, "crc": "FBD3CD90"}
+                    }
+                }
+            },
+            {
+                "game": "Night Warriors:Darkstalkers' Revenge (J)",
+                "system": "Arcade",
+                "filename": "vhuntjr2.zip",
+                "in_file": "vhuntjr2",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vphj.03b": {"size": 524288, "crc": "679C3FA9"},
+                        "vphj.04a": {"size": 524288, "crc": "EB6E71E4"},
+                        "vphj.05a": {"size": 524288, "crc": "EAF634EA"},
+                        "vphj.06a": {"size": 524288, "crc": "B70CC6BE"},
+                        "vphj.07a": {"size": 524288, "crc": "46AB907D"},
+                        "vphj.08a": {"size": 524288, "crc": "1C00355E"},
+                        "vphj.09a": {"size": 524288, "crc": "026E6F82"},
+                        "vphj.10a": {"size": 524288, "crc": "AADFB3EA"},
+                        "vph.13m": {"size": 4194304, "crc": "C51BAF99"},
+                        "vph.14m": {"size": 4194304, "crc": "7A0E1ADD"},
+                        "vph.15m": {"size": 4194304, "crc": "3CE83C77"},
+                        "vph.16m": {"size": 4194304, "crc": "2F41CA75"},
+                        "vph.17m": {"size": 4194304, "crc": "4F2408E0"},
+                        "vph.18m": {"size": 4194304, "crc": "64498EED"},
+                        "vph.19m": {"size": 4194304, "crc": "9FF60250"},
+                        "vph.20m": {"size": 4194304, "crc": "17F2433F"},
+                        "vph.01": {"size": 131072, "crc": "5045DCAC"},
+                        "vph.02": {"size": 131072, "crc": "86B60E59"},
+                        "vph.11m": {"size": 2097152, "crc": "E1837D33"},
+                        "vph.12m": {"size": 2097152, "crc": "FBD3CD90"}
+                    }
+                }
+            },
+            {
+                "game": "Vampire Savior: The Lord of Vampire (U)",
+                "system": "Arcade",
+                "filename": "vsavu.zip",
+                "in_file": "vsavu",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vm3u.03d": {"size": 524288, "crc": "1F295274"},
+                        "vm3u.04d": {"size": 524288, "crc": "C46ADF81"},
+                        "vm3.05a": {"size": 524288, "crc": "4118E00F"},
+                        "vm3.06a": {"size": 524288, "crc": "2F4FD3A9"},
+                        "vm3.07b": {"size": 524288, "crc": "CBDA91B8"},
+                        "vm3.08a": {"size": 524288, "crc": "6CA47259"},
+                        "vm3.09b": {"size": 524288, "crc": "F4A339E3"},
+                        "vm3.10b": {"size": 524288, "crc": "FFFBB5B8"},
+                        "vm3.13m": {"size": 4194304, "crc": "FD8A11EB"},
+                        "vm3.14m": {"size": 4194304, "crc": "C1A28E6C"},
+                        "vm3.15m": {"size": 4194304, "crc": "DD1E7D4E"},
+                        "vm3.16m": {"size": 4194304, "crc": "194A7304"},
+                        "vm3.17m": {"size": 4194304, "crc": "6B89445E"},
+                        "vm3.18m": {"size": 4194304, "crc": "DF9A9F47"},
+                        "vm3.19m": {"size": 4194304, "crc": "3830FDC7"},
+                        "vm3.20m": {"size": 4194304, "crc": "C22FC3D9"},
+                        "vm3.01": {"size": 131072, "crc": "F778769B"},
+                        "vm3.02": {"size": 131072, "crc": "CC09FAA1"},
+                        "vm3.11m": {"size": 4194304, "crc": "E80E956E"},
+                        "vm3.12m": {"size": 4194304, "crc": "9CD71557"}
+                    }
+                }
+            },
+            {
+                "game": "Vampire Hunter 2: Darkstalkers Revenge (J)",
+                "system": "Arcade",
+                "filename": "vhunt2.zip",
+                "in_file": "vhunt2",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vh2j.03a": {"size": 524288, "crc": "9AE8F186"},
+                        "vh2j.04a": {"size": 524288, "crc": "E2FABF53"},
+                        "vh2j.05": {"size": 524288, "crc": "DE34F624"},
+                        "vh2j.06": {"size": 524288, "crc": "6A3B9897"},
+                        "vh2j.07": {"size": 524288, "crc": "B021C029"},
+                        "vh2j.08": {"size": 524288, "crc": "AC873DFF"},
+                        "vh2j.09": {"size": 524288, "crc": "EAEFCE9C"},
+                        "vh2j.10": {"size": 524288, "crc": "11730952"},
+                        "vh2.13m": {"size": 4194304, "crc": "3B02DDAA"},
+                        "vh2.14m": {"size": 4194304, "crc": "CD09BD63"},
+                        "vh2.15m": {"size": 4194304, "crc": "4E40DE66"},
+                        "vh2.16m": {"size": 4194304, "crc": "E0182C15"},
+                        "vh2.17m": {"size": 4194304, "crc": "B31D00C9"},
+                        "vh2.18m": {"size": 4194304, "crc": "778DC4F6"},
+                        "vh2.19m": {"size": 4194304, "crc": "149BE3AB"},
+                        "vh2.20m": {"size": 4194304, "crc": "605D9D1D"},
+                        "vh2.01": {"size": 131072, "crc": "67B9F779"},
+                        "vh2.02": {"size": 131072, "crc": "AAF15FCB"},
+                        "vh2.11m": {"size": 4194304, "crc": "38922EFD"},
+                        "vh2.12m": {"size": 4194304, "crc": "6E2430AF"}
+                    }
+                }
+            },
+            {
+                "game": "Vampire Savior 2: The Lord of Vampire (J)",
+                "system": "Arcade",
+                "filename": "vsav2.zip",
+                "in_file": "vsav2",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vs2j.03": {"size": 524288, "crc": "89FD86B4"},
+                        "vs2j.04": {"size": 524288, "crc": "107C091B"},
+                        "vs2j.05": {"size": 524288, "crc": "61979638"},
+                        "vs2j.06": {"size": 524288, "crc": "F37C5BC2"},
+                        "vs2j.07": {"size": 524288, "crc": "8F885809"},
+                        "vs2j.08": {"size": 524288, "crc": "2018C120"},
+                        "vs2j.09": {"size": 524288, "crc": "FAC3C217"},
+                        "vs2j.10": {"size": 524288, "crc": "EB490213"},
+                        "vs2.13m": {"size": 4194304, "crc": "5C852F52"},
+                        "vs2.14m": {"size": 4194304, "crc": "CD09BD63"},
+                        "vs2.15m": {"size": 4194304, "crc": "A20F58AF"},
+                        "vs2.16m": {"size": 4194304, "crc": "E0182C15"},
+                        "vs2.17m": {"size": 4194304, "crc": "39DB59AD"},
+                        "vs2.18m": {"size": 4194304, "crc": "778DC4F6"},
+                        "vs2.19m": {"size": 4194304, "crc": "00C763A7"},
+                        "vs2.20m": {"size": 4194304, "crc": "605D9D1D"},
+                        "vs2.01": {"size": 131072, "crc": "35190139"},
+                        "vs2.02": {"size": 131072, "crc": "C32DBA09"},
+                        "vs2.11m": {"size": 4194304, "crc": "D67E47B7"},
+                        "vs2.12m": {"size": 4194304, "crc": "6D020A14"}
+                    }
+                }
+            },
+            {
+                "game": "Cyberbots: Fullmetal Madness (U)",
+                "system": "Arcade",
+                "filename": "cybotsj.zip",
+                "in_file": "cybotsj",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "cybj.03": {"size": 524288, "crc": "6096EADA"},
+                        "cybj.04": {"size": 524288, "crc": "7B0FFAA9"},
+                        "cyb.05": {"size": 524288, "crc": "EC40408E"},
+                        "cyb.06": {"size": 524288, "crc": "1AD0BED2"},
+                        "cyb.07": {"size": 524288, "crc": "6245A39A"},
+                        "cyb.08": {"size": 524288, "crc": "4B48E223"},
+                        "cyb.09": {"size": 524288, "crc": "E15238F6"},
+                        "cyb.10": {"size": 524288, "crc": "75F4003B"},
+                        "cyb.13m": {"size": 4194304, "crc": "F0DCE192"},
+                        "cyb.14m": {"size": 4194304, "crc": "C1537957"},
+                        "cyb.15m": {"size": 4194304, "crc": "187AA39C"},
+                        "cyb.16m": {"size": 4194304, "crc": "15349E86"},
+                        "cyb.17m": {"size": 4194304, "crc": "8A0E4B12"},
+                        "cyb.18m": {"size": 4194304, "crc": "D83E977D"},
+                        "cyb.19m": {"size": 4194304, "crc": "34B62612"},
+                        "cyb.20m": {"size": 4194304, "crc": "77CDAD5C"},
+                        "cyb.01": {"size": 131072, "crc": "9C0FB079"},
+                        "cyb.02": {"size": 131072, "crc": "51CB0C4E"},
+                        "cyb.11m": {"size": 2097152, "crc": "362CCAB2"},
+                        "cyb.12m": {"size": 2097152, "crc": "7066E9CC"}
+                    }
+                }
+            },
+            {
+                "game": "Cyberbots: Fullmetal Madness (J)",
+                "system": "Arcade",
+                "filename": "cybotsu.zip",
+                "in_file": "cybotsu",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "cybu.03": {"size": 524288, "crc": "DB4DA8F4"},
+                        "cybu.04": {"size": 524288, "crc": "1EEC68AC"},
+                        "cyb.05": {"size": 524288, "crc": "EC40408E"},
+                        "cyb.06": {"size": 524288, "crc": "1AD0BED2"},
+                        "cyb.07": {"size": 524288, "crc": "6245A39A"},
+                        "cyb.08": {"size": 524288, "crc": "4B48E223"},
+                        "cyb.09": {"size": 524288, "crc": "E15238F6"},
+                        "cyb.10": {"size": 524288, "crc": "75F4003B"},
+                        "cyb.13m": {"size": 4194304, "crc": "F0DCE192"},
+                        "cyb.14m": {"size": 4194304, "crc": "C1537957"},
+                        "cyb.15m": {"size": 4194304, "crc": "187AA39C"},
+                        "cyb.16m": {"size": 4194304, "crc": "15349E86"},
+                        "cyb.17m": {"size": 4194304, "crc": "8A0E4B12"},
+                        "cyb.18m": {"size": 4194304, "crc": "D83E977D"},
+                        "cyb.19m": {"size": 4194304, "crc": "34B62612"},
+                        "cyb.20m": {"size": 4194304, "crc": "77CDAD5C"},
+                        "cyb.01": {"size": 131072, "crc": "9C0FB079"},
+                        "cyb.02": {"size": 131072, "crc": "51CB0C4E"},
+                        "cyb.11m": {"size": 2097152, "crc": "362CCAB2"},
+                        "cyb.12m": {"size": 2097152, "crc": "7066E9CC"}
+                    }
+                }
+            },
+            {
+                "game": "Super Puzzle Fighter II Turbo (U)",
+                "system": "Arcade",
+                "filename": "spf2tu.zip",
+                "in_file": "spf2tu",
+                "status": "playable",
+                "notes": [1, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pzfu.03a": {"size": 524288, "crc": "346E62EF"},
+                        "pzf.04": {"size": 524288, "crc": "B80649E2"},
+                        "pzf.14m": {"size": 1048576, "crc": "2D4881CB"},
+                        "pzf.16m": {"size": 1048576, "crc": "4B0FD1BE"},
+                        "pzf.18m": {"size": 1048576, "crc": "E43AAC33"},
+                        "pzf.20m": {"size": 1048576, "crc": "7F536FF1"},
+                        "pzf.01": {"size": 131072, "crc": "600FB2A3"},
+                        "pzf.02": {"size": 131072, "crc": "496076E0"},
+                        "pzf.11m": {"size": 2097152, "crc": "78442743"},
+                        "pzf.12m": {"size": 2097152, "crc": "399D2C7B"}
+                    }
+                }
+            },
+            {
+                "game": "Super Puzzle Fighter II Turbo (J)",
+                "system": "Arcade",
+                "filename": "spf2xj.zip",
+                "in_file": "spf2xj",
+                "status": "playable",
+                "notes": [1, 3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pzfj.03a": {"size": 524288, "crc": "2070554A"},
+                        "pzf.04": {"size": 524288, "crc": "B80649E2"},
+                        "pzf.14m": {"size": 1048576, "crc": "2D4881CB"},
+                        "pzf.16m": {"size": 1048576, "crc": "4B0FD1BE"},
+                        "pzf.18m": {"size": 1048576, "crc": "E43AAC33"},
+                        "pzf.20m": {"size": 1048576, "crc": "7F536FF1"},
+                        "pzf.01": {"size": 131072, "crc": "600FB2A3"},
+                        "pzf.02": {"size": 131072, "crc": "496076E0"},
+                        "pzf.11m": {"size": 2097152, "crc": "78442743"},
+                        "pzf.12m": {"size": 2097152, "crc": "399D2C7B"}
+                    }
+                }
+            },
+            {
+                "game": "Super Gem Fighter Mini Mix (U)",
+                "system": "Arcade",
+                "filename": "sgemf.zip",
+                "in_file": "sgemf",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pcfu.03a": {"size": 524288, "crc": "AC2E8566"},
+                        "pcf.04": {"size": 524288, "crc": "F4314C96"},
+                        "pcf.13m": {"size": 4194304, "crc": "22D72AB9"},
+                        "pcf.14m": {"size": 1048576, "crc": "0383897C"},
+                        "pcf.15m": {"size": 4194304, "crc": "16A4813C"},
+                        "pcf.16m": {"size": 1048576, "crc": "76F91084"},
+                        "pcf.17m": {"size": 4194304, "crc": "1097E035"},
+                        "pcf.18m": {"size": 1048576, "crc": "756C3754"},
+                        "pcf.19m": {"size": 4194304, "crc": "D362D874"},
+                        "pcf.20m": {"size": 1048576, "crc": "9EC9277D"},
+                        "pcf.01": {"size": 131072, "crc": "254E5F33"},
+                        "pcf.02": {"size": 131072, "crc": "6902F4F9"},
+                        "pcf.11m": {"size": 4194304, "crc": "A5DEA005"},
+                        "pcf.12m": {"size": 4194304, "crc": "4CE235FE"}
+                    }
+                }
+            },
+            {
+                "game": "Super Gem Fighter Mini Mix (J)",
+                "system": "Arcade",
+                "filename": "pfghtj.zip",
+                "in_file": "pfghtj",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pcfj.03": {"size": 524288, "crc": "681DA43E"},
+                        "pcf.04": {"size": 524288, "crc": "F4314C96"},
+                        "pcf.05": {"size": 524288, "crc": "215655F6"},
+                        "pcf.06": {"size": 524288, "crc": "EA6F13EA"},
+                        "pcf.07": {"size": 524288, "crc": "5AC6D5EA"},
+                        "pcf.13m": {"size": 4194304, "crc": "22D72AB9"},
+                        "pcf.14m": {"size": 1048576, "crc": "0383897C"},
+                        "pcf.15m": {"size": 4194304, "crc": "16A4813C"},
+                        "pcf.16m": {"size": 1048576, "crc": "76F91084"},
+                        "pcf.17m": {"size": 4194304, "crc": "1097E035"},
+                        "pcf.18m": {"size": 1048576, "crc": "756C3754"},
+                        "pcf.19m": {"size": 4194304, "crc": "D362D874"},
+                        "pcf.20m": {"size": 1048576, "crc": "9EC9277D"},
+                        "pcf.01": {"size": 131072, "crc": "254E5F33"},
+                        "pcf.02": {"size": 131072, "crc": "6902F4F9"},
+                        "pcf.11m": {"size": 4194304, "crc": "A5DEA005"},
+                        "pcf.12m": {"size": 4194304, "crc": "4CE235FE"}
+                    }
+                }
+            },
+            {
+                "game": "Hyper Street Fighter II: Anniversary Edition (U)",
+                "system": "Arcade",
+                "filename": "hsf2.zip",
+                "in_file": "hsf2",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "hs2u.03": {"size": 524288, "crc": "B308151E"},
+                        "hs2u.04": {"size": 524288, "crc": "327AA49C"},
+                        "hs2.05": {"size": 524288, "crc": "DDE34A35"},
+                        "hs2.06": {"size": 524288, "crc": "F4E56DDA"},
+                        "hs2.07": {"size": 524288, "crc": "EE4420FC"},
+                        "hs2.08": {"size": 524288, "crc": "C9441533"},
+                        "hs2.09": {"size": 524288, "crc": "3FC638A8"},
+                        "hs2.10": {"size": 524288, "crc": "20D0F9E4"},
+                        "hs2.13m": {"size": 8388608, "crc": "A6ECAB17"},
+                        "hs2.15m": {"size": 8388608, "crc": "10A0AE4D"},
+                        "hs2.17m": {"size": 8388608, "crc": "ADFA7726"},
+                        "hs2.19m": {"size": 8388608, "crc": "BB3AE322"},
+                        "hs2.01": {"size": 131072, "crc": "C1A13786"},
+                        "hs2.02": {"size": 131072, "crc": "2D8794AA"},
+                        "hs2.11m": {"size": 8388608, "crc": "0E15C359"}
+                    }
+                }
+            },
+            {
+                "game": "Hyper Street Fighter II: Anniversary Edition (J)",
+                "system": "Arcade",
+                "filename": "hsf2j.zip",
+                "in_file": "hsf2j",
+                "status": "playable",
+                "notes": [1, 4],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "hs2j.03": {"size": 524288, "crc": "6EFE661F"},
+                        "hs2j.04": {"size": 524288, "crc": "93F2500A"},
+                        "hs2j.05": {"size": 524288, "crc": "DDE34A35"},
+                        "hs2j.06": {"size": 524288, "crc": "F4E56DDA"},
+                        "hs2j.07": {"size": 524288, "crc": "EE4420FC"},
+                        "hs2j.08": {"size": 524288, "crc": "C9441533"},
+                        "hs2j.09": {"size": 524288, "crc": "3FC638A8"},
+                        "hs2j.10": {"size": 524288, "crc": "20D0F9E4"},
+                        "hs2.13m": {"size": 8388608, "crc": "A6ECAB17"},
+                        "hs2.15m": {"size": 8388608, "crc": "10A0AE4D"},
+                        "hs2.17m": {"size": 8388608, "crc": "ADFA7726"},
+                        "hs2.19m": {"size": 8388608, "crc": "BB3AE322"},
+                        "hs2.01": {"size": 131072, "crc": "C1A13786"},
+                        "hs2.02": {"size": 131072, "crc": "2D8794AA"},
+                        "hs2.11m": {"size": 8388608, "crc": "0E15C359"}
+                    }
+                }
+            },
+            {
+                "game": "Red Earth (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "redearth",
+                "status": "no-rom",
+                "notes": [2]
+            },
+            {
+                "game": "Warzard (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "warzard",
+                "status": "no-rom",
+                "notes": [2]
+            }
+        ],
+        "notes": {
+            "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
+            "2": "This CPS3 game cannot yet be extracted.",
+            "3": "The US version of this does not have a valid MAME release.",
+            "4": "The JP version of this is using an older internal file naming convention."
+        }
+    }
+}
