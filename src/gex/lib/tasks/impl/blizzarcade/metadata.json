@@ -1,0 +1,287 @@
+{
+    "in": {
+        "files": {
+            "blackthorne32x": {
+                "rel_path": ["assets", "roms", "Sega", "32X"],
+                "filename": "Blackthorne (U) (32X) [patched].32x",
+                "copy_to": "Blackthorne (32X)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "BBA167E2",
+                        "size": 3145728
+                    }
+                }
+            },
+            "blackthornesnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "Blackthorne.bin",
+                "copy_to": "Blackthorne (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "E8735614",
+                        "size": 1048576
+                    }
+                }
+            },
+            "blackthornezpatchsnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "BlackthorneLZPatch.bin",
+                "copy_to": "Blackthorne Z-Patch (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "C5DBD672",
+                        "size": 1048576
+                    }
+                }
+            },
+            "lostvikingsgenesis": {
+                "rel_path": ["assets", "roms", "Sega", "Genesis"],
+                "filename": "Lost Vikings, The (U) [_].bin",
+                "copy_to": "Lost Vikings (Genesis)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "5CC41D7B",
+                        "size": 1048576
+                    }
+                }
+            },
+            "lostvikingssnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "LostVikings.bin",
+                "copy_to": "Lost Vikings (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "DF7C313A",
+                        "size": 1048576
+                    }
+                }
+            },
+            "lostvikingsdesnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "LostVikingsDE.bin",
+                "copy_to": "Lost Vikings Definitive Edition (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "894F8466",
+                        "size": 2097152
+                    }
+                }
+            },
+            "lostvikings2snes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "LostVikings2.bin",
+                "copy_to": "Lost Vikings 2 (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "FD18B3D1",
+                        "size": 1048576
+                    }
+                }
+            },
+            "rocknrollracinggenesis": {
+                "rel_path": ["assets", "roms", "Sega", "Genesis"],
+                "filename": "Rock n' Roll Racing (U) [_].bin",
+                "copy_to": "Rock n Roll Racing (Genesis)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "242AA285",
+                        "size": 1048576
+                    }
+                }
+            },
+            "rocknrollracingsnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "RockNRollRacing.bin",
+                "copy_to": "Rock n Roll Racing (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "60A07658",
+                        "size": 1048576
+                    }
+                }
+            },
+            "rocknrollracingdeasnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "RockNRollRacingDefinitiveA.bin",
+                "copy_to": "Rock n Roll Racing Definitive Edition (A) (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "B7DF9EB8",
+                        "size": 1040384
+                    }
+                }
+            },
+            "rocknrollracingdebsnes": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "RockNRollRacingDefinitiveB.bin",
+                "copy_to": "Rock n Roll Racing Definitive Edition (B) (SNES)",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "2A2D41AE",
+                        "size": 1040384
+                    }
+                }
+            },
+            "rpmracing": {
+                "rel_path": ["assets", "roms", "SNES"],
+                "filename": "RadicalPsychoMachineRacing.bin",
+                "copy_to": "Radical Psycho Machine Racing",
+                "versions": {
+                    "Battle.net": {
+                        "crc": "98BDED42",
+                        "size": 524288
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Blackthorne (32X)",
+                "system": "32X",
+                "filename": "Blackthorne_U_Patched.32x",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "BBA167E2",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Blackthorne (SNES)",
+                "system": "SNES",
+                "filename": "Blackthorne.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E8735614",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Blackthorne Z-Patch (SNES)",
+                "system": "SNES",
+                "filename": "Blackthorne_ZPatch.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C5DBD672",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Lost Vikings (Genesis)",
+                "system": "Genesis",
+                "filename": "LostVikings_U.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5CC41D7B",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Lost Vikings (SNES)",
+                "system": "SNES",
+                "filename": "LostVikings.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "DF7C313A",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Lost Vikings Definitive Edition (SNES)",
+                "system": "SNES",
+                "filename": "LostVikings_Definitive.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "894F8466",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Lost Vikings 2 (SNES)",
+                "system": "SNES",
+                "filename": "LostVikings2.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "FD18B3D1",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Rock n Roll Racing (Genesis)",
+                "system": "Genesis",
+                "filename": "RockAndRollRacing_U.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "242AA285",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Rock n Roll Racing (SNES)",
+                "system": "SNES",
+                "filename": "RockAndRollRacing.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "60A07658",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Rock n Roll Racing Definitive Edition (A) (SNES)",
+                "system": "SNES",
+                "filename": "RockAndRollRacing_DefinitiveA.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "B7DF9EB8",
+                    "size": 1040384
+                }
+            },
+            {
+                "game": "Rock n Roll Racing Definitive Edition (B) (SNES)",
+                "system": "SNES",
+                "filename": "RockAndRollRacing_DefinitiveB.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "2A2D41AE",
+                    "size": 1040384
+                }
+            },
+            {
+                "game": "Radical Psycho Machine Racing",
+                "system": "SNES",
+                "filename": "RadicalPsychoMachineRacing.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "98BDED42",
+                    "size": 524288
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
