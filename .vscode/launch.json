@@ -397,6 +397,74 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing AGS Galaga",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_galaga", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_galaga\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Dig Dug",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_digdug", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_digdug\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Pac-Man",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_pacman", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_pacman\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Ms. Pac-Man",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_mspacman", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_mspacman\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing AGS",
             "type": "python",
             "request": "launch",

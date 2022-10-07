@@ -1,0 +1,75 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "rel_path": ["DIG DUG_Data", "Plugins"],
+                "filename": "Release_0.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 394240,
+                        "crc": "AA58DC77"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Dig Dug",
+                "system": "Arcade",
+                "filename": "digdug.zip",
+                "status": "playable",
+                "notes": [1],
+                "zip_files": {
+                    "digdug.spr": {"start": "0x1D9F0", "length": "0x100"},
+                    "dd1.10b": {"start": "0x1DAF0", "length": "0x1000"},
+                    "digdug.5n": {"start": "0x1EAF0", "length": "0x20"},
+                    "digdug.1c": {"start": "0x1EB10", "length": "0x100"},
+                    "digdug.2n": {"start": "0x1EC10", "length": "0x100"},
+                    "136007.116": {"start": "0x1ED10", "length": "0x1000"},
+                    "dd1.14": {"start": "0x1FD10", "length": "0x1000"},
+                    "136007.118": {"start": "0x20D10", "length": "0x1000"},
+                    "136007.119": {"start": "0x21D10", "length": "0x1000"},
+                    "dd1.9": {"start": "0x22D10", "length": "0x800"},
+                    "dd1.11": {"start": "0x23510", "length": "0x1000"},
+                    "136007.107": {"start": "0x35420", "length": "0x1000"},
+                    "dd1.5b": {"start": "0x36420", "length": "0x1000"},
+                    "dd1.6b": {"start": "0x37420", "length": "0x1000"},
+                    "136007.101": {"start": "0x38420", "length": "0x1000"},
+                    "136007.102": {"start": "0x39420", "length": "0x1000"},
+                    "136007.103": {"start": "0x3A420", "length": "0x1000"},
+                    "dd1.4b": {"start": "0x3B420", "length": "0x1000"},
+                    "136007.109": {"type": "placeholder", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "digdug.spr": { "size": 256, "crc": "7A2815B4"},
+                        "dd1.10b": { "size": 4096, "crc": "2CF399C2"},
+                        "digdug.5n": { "size": 32, "crc": "4CB9DA99"},
+                        "digdug.1c": { "size": 256, "crc": "00C7C419"},
+                        "digdug.2n": { "size": 256, "crc": "E9B3E08E"},
+                        "136007.116": { "size": 4096, "crc": "E22957C8"},
+                        "dd1.14": { "size": 4096, "crc": "2829EC99"},
+                        "136007.118": { "size": 4096, "crc": "458499E9"},
+                        "136007.119": { "size": 4096, "crc": "C58252A0"},
+                        "dd1.9": { "size": 2048, "crc": "F14A6FE1"},
+                        "dd1.11": { "size": 4096, "crc": "7B383983"},
+                        "136007.107": { "size": 4096, "crc": "A41BCE72"},
+                        "dd1.5b": { "size": 4096, "crc": "370EF9B4"},
+                        "dd1.6b": { "size": 4096, "crc": "361EEB71"},
+                        "136007.101": { "size": 4096, "crc": "B9198079"},
+                        "136007.102": { "size": 4096, "crc": "B2ACBE49"},
+                        "136007.103": { "size": 4096, "crc": "D6407B49"},
+                        "dd1.4b": { "size": 4096, "crc": "F4CEBC16"},
+                        "136007.109": { "size": 256, "crc": "8889DEB7"}
+                    }
+                }
+            }
+        ],
+        "notes": {
+            "1": "This extraction requires MAME 2003/0.78 due to the NAMCO base ROMs."
+        }
+    }
+}
