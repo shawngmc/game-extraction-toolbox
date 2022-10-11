@@ -1,4 +1,4 @@
-'''Implementation of ags: Namco Arcade Game Series'''
+'''Implementation of ags_galaga: Namco Arcade Game Series: Galaga'''
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
@@ -8,16 +8,16 @@ from gex.lib.utils.blob import transforms
 logger = logging.getLogger('gextoolbox')
 
 class AGSTask(BaseTask):
-    '''Implements ags: Namco Arcade Game Series'''
-    _task_name = "ags"
-    _title = "Namco Arcade Game Series"
+    '''Implements ags_galaga: Namco Arcade Game Series: Galaga'''
+    _task_name = "ags_galaga"
+    _title = "Namco Arcade Game Series: Galaga"
     _details_markdown = '''
 Based on: https://github.com/farmerbb/RED-Project/blob/master/ROM%20Extraction/namco-ags-extract.sh
 
 These are pulled out of the plugin DLL.
     '''
-    _default_input_folder = helpers.STEAM_APP_ROOT
-    _input_folder_desc = "Steam library root"
+    _default_input_folder = helpers.gen_steam_app_default_folder("GALAGA")
+    _input_folder_desc = "AGS Galaga install folder"
 
 
     _prop_info = {
@@ -383,7 +383,7 @@ These are pulled out of the plugin DLL.
                 contents = dll_file.read()
                 zip_files = {}
                 for file in game['files']:
-                    if file['start'] == 'placeholder':
+                    if file['type'] == 'placeholder':
                         file_content = bytearray(b'0' * file['length'])
                     else:
                         file_content = transforms.cut(contents, file['start'], length=file['length'])

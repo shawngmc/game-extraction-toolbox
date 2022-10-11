@@ -36,6 +36,11 @@ class ZipSpliceTask(BaseTask):
                     length = int(section['length'], 16)
                     file_content = transforms.cut(source_data, start, length=length)
 
+                patches = section.get('patch')
+                if patches and len(patches.keys()) > 0:
+                    for loc, data in patches.items():
+                        file_content[int(loc)] = data.to_bytes(1, 'little')[0]
+
                 zip_files[filename] = file_content
 
             game_data = helpers.build_zip(zip_files)
