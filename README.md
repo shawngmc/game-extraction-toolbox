@@ -73,6 +73,10 @@ I prefer not to be artificially locked to specific platforms - why play a 25 yea
 ### Why not just download the ROMs?
 It is illegal. One can discuss economic moral implications all day, but at the end of the day, it's theft. As a software developer myself, I don't want my code stolen - so I can't claim a moral high ground there. Equally importantly, showing classic game owners that the market will support rereleases increases the liklihood of rereleases, and I want people who can't/won't download ROMs to enjoy these titles as well.
 
+### What artificial limitations does this tool have to prevent copyright claims?
+* This tool will not hold decryption keys.
+* This tool will not hold any 'whole' files, nor substantial parts of files. A limited 'patch' capability is allowed for less than 1% of a file, but this should be very limited.
+
 ### This MAME ROM is actually XXXXYY, not XXXXZZ - why do you have it that way?
 The goal of this tool is not to create a perfect ROM set for the latest MAME, because it can't. A few factors go into what version of MAME we target:
 
@@ -124,7 +128,10 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **IREM Arcade Classics**                       | 100%   | N |  
  **Mega Man Legacy Collection 1**               | 100%   | Y |  
  **Mega Man X Legacy Collection 1**             | 75%    | Y | X4 doesn't appear to be ROM based  
- **Namco Arcade Game Series**                   | 75%    | N | Ms. Pac-Man cannot be cleanly extracted
+ **Namco Arcade Game Series: Dig Dug**          | 100%   | Y |   
+ **Namco Arcade Game Series: Galaga**           | 100%   | Y |   
+ **Namco Arcade Game Series: Ms. Pac-Man**      | 100%   | Y |   
+ **Namco Arcade Game Series: Pacman**           | 100%   | Y |   
  **Pac Man Museum Plus**                        | 40%    | N | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | N | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | Y | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!

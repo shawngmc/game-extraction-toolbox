@@ -1,0 +1,52 @@
+{
+    "in": {
+        "files": {
+            "ffightj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_00.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 1320360,
+                        "crc": "AA975CFE"
+                    }
+                }
+            }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Final Fight (U)",
+                "system": "Arcade",
+                "filename": "ffight.zip",
+                "in_file": "ffight",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ff_42.11h": {"size": 131072, "crc": "65F11215"},
+                        "ffe_43.12h": {"size": 131072, "crc": "995E968A"},
+                        "ff_36.11f": {"size": 131072, "crc": "F9A5CE83"},
+                        "ff_37.12f": {"size": 131072, "crc": "E1033784"},
+                        "ff-32m.8h": {"size": 524288, "crc": "C747696E"},
+                        "ff-5m.7a": {"size": 524288, "crc": "9C284108"},
+                        "ff-7m.9a": {"size": 524288, "crc": "A7584DFB"},
+                        "ff-1m.3a": {"size": 524288, "crc": "0B605E44"},
+                        "ff-3m.5a": {"size": 524288, "crc": "52291CD2"},
+                        "ff_09.12b": {"size": 65536, "crc": "B8367EB5"},
+                        "ff_18.11c": {"size": 131072, "crc": "375C66E7"},
+                        "ff_19.12c": {"size": 131072, "crc": "1EF137F9"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "s224b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11e": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+        ],
+        "notes": {}
+    }
+}
