@@ -121,7 +121,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | N | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%    | Y | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%    | Y | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
- **Collection of SaGa/Final Fantasy Legend**    | 100%   | N |  
+ **Collection of SaGa/Final Fantasy Legend**    | 100%   | Y |  
  **Disney Afternoon Collection**                | 100%   | Y |  
  **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | N | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%   | N |  
@@ -132,7 +132,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Namco Arcade Game Series: Galaga**           | 100%   | Y |   
  **Namco Arcade Game Series: Ms. Pac-Man**      | 100%   | Y |   
  **Namco Arcade Game Series: Pacman**           | 100%   | Y |   
- **Pac Man Museum Plus**                        | 40%    | N | Some progress, but there are a lot of non-extractable titles.
+ **Pac Man Museum Plus**                        | 40%    | Y | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%    | N | Some compressed variants not yet extracted  
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | Y | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **SNK 40th Anniversary Collection**            | 100%   | N | All games supported by an emulator are extracted!

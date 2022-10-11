@@ -19,6 +19,13 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
     _default_input_folder = helpers.gen_steam_app_default_folder("Sa・Ga COLLECTION")
     _input_folder_desc = "Collection of SaGa Steam folder"
 
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
+
     def execute(self, in_dir, out_dir):
         # for each output file entry
         for out_file_entry in self._metadata['out']['files']:
