@@ -21,115 +21,22 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
     _default_input_folder = r"C:\Program Files (x86)\GameFools\Irem Arcade Hits"
     _input_folder_desc = "Irem Arcade Hits install folder"
 
-    _game_info_map = {
-        "airduel": {
-            "name": "Air Duel",
-            "status": "playable"
-        },
-        "bchopper": {
-            "name": "Battle Chopper",
-            "status": "NYI"
-        },
-        "bmaster": {
-            "name": "Battle Master",
-            "status": "playable"
-        },
-        "cosmccop": {
-            "name": "Cosmic Cop",
-            "status": "playable"
-        },
-        "dbreed72": {
-            "name": "Dragon Breed",
-            "status": "playable",
-            "mame_name": 'dbreedm72'
-        },
-        "gunforce": {
-            "name": "Gunforce",
-            "status": "playable",
-        },
-        "gunforc2": {
-            "name": "Gunforce 2",
-            "status": "playable",
-        },
-        "hharry": {
-            "name": "Hammerin' Harry",
-            "status": "playable",
-        },
-        "imgfight": {
-            "name": "Image Fight",
-            "status": "playable",
-        },
-        "inthunt": {
-            "name": "In the Hunt",
-            "status": "playable",
-        },
-        "kungfum": {
-            "name": "Kung-Fu Master", # ("b-6f-.bin" is missing)
-            "status": "playable",
-        },
-        "loht": {
-            "name": "Legend of Hero Tonma",
-            "status": "playable",
-        },
-        "mrheli": {
-            "name": "Mr. HELI no Daibouken",
-            "status": "playable",
-        },
-        "mysticri": {
-            "name": "Mystic Riders",
-            "status": "playable",
-        },
-        "nspirit": {
-            "name": "Ninja Spirit", # ("proms" and "plds" ROMs are missing)
-            "status": "playable",
-        },
-        "rtypeleo": {
-            "name": "R-Type Leo",
-            "status": "playable",
-        },
-        "ssoldier": {
-            "name": "Superior Soldiers",
-            "status": "playable",
-        },
-        "uccops": {
-            "name": "Undercover Cops",
-            "status": "playable",
-        },
-        "uccopsj": {
-            "name": "Undercover Cops (J)",
-            "status": "playable",
-        },
-        "vigilant": {
-            "name": "Vigilante", # ("plds" ROMs are missing)
-            "status": "playable",
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
         }
-    }
 
-    _out_file_notes = {
-        "1": "This game requires MAME 2010 due to an older input file structure/variant. Some are also missing an MCU or PIDS rom, but play OK."
-    }
-
-    def __init__(self):
-        super().__init__()
-        game_info_list =  [(lambda d: d.update(in_name=key) or d)(val) for (key, val) in self._game_info_map.items()]
-        self._out_file_list = list(map(lambda game: {
-            'filename': f"{game['mame_name'] if 'mame_name' in game else game['in_name']}.zip",
-            'game': f"{game['name']}",
-            'system': "Arcade",
-            "status": game['status'],
-            "notes": [1]},
-            game_info_list))
-
-    def _read_irem_game(self, name, in_dir):
+    def _read_irem_game(self, in_name, in_dir):
         '''Handle the zip-in-zip packaging format'''
-        file_name = f"arcade_{name}.zip"
-        file_path = os.path.join(in_dir, "gamefiles", "Games", "roms", file_name)
-        with ZipFile(file_path, 'r') as outer_zip:
-            inner_zip_bytes = outer_zip.read(file_name)
+        outer_zip = self.read_datafile(in_dir, self._metadata['in']['files'][in_name])
+        outer_zip_bytes = outer_zip['contents']
+        with ZipFile(BytesIO(outer_zip_bytes), 'r') as outer_zip:
+            inner_zip_bytes = outer_zip.read(f"arcade_{in_name}.zip")
 
-        inner_zip_file = BytesIO(inner_zip_bytes)
         out_files = {}
-        with ZipFile(inner_zip_file, 'r') as inner_zip:
+        with ZipFile(BytesIO(inner_zip_bytes), 'r') as inner_zip:
             for filename in inner_zip.namelist():
                 out_files[filename] = inner_zip.read(filename)
 
@@ -139,14 +46,16 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
         '''Main implementation call for the extraction task'''
         logger.info("Processing complete.")
 
-        for in_name, game in self._game_info_map.items():
-            logger.info(f"Extracting {game['name']}...")
+        for game in self._metadata['out']['files']:
+            logger.info(f"Extracting {game['game']}...")
+            in_name = game['extract']['in_file']
             in_files = self._read_irem_game(in_name, in_dir)
             handler_func = self.find_handler_func(in_name)
             contents = handler_func(in_files)
             if contents:
-                filename = f"{game['mame_name'] if 'mame_name' in game else in_name}.zip"
-                logger.info(f"Saving {game['name']} as {filename}...")
+                filename = game['filename']
+                logger.info(f"Saving {game['game']} as {filename}...")
+                _ = self.verify_out_file(filename, contents)
                 with open(os.path.join(out_dir, filename), "wb") as out_file:
                     out_file.write(contents)
 
