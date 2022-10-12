@@ -1,0 +1,67 @@
+{
+    "in": {
+        "files": {
+            "zamngp": {
+                "filename": "ZAMN_GP.exe",
+                "versions": {
+                    "Steam1.1": {
+                        "sha": "f6a9bdf8da5bc107307ea80a5813dfe413b0599f"
+                    },
+                    "GOG1.1": {
+                        "crc": "753DE8C8",
+                        "size": 44352432
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Zombies Ate My Neighbor",
+                "system": "SNES",
+                "filename": "ZombiesAteMyNeighbor.sfc",
+                "status": "good",
+                "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam1.0": { "start": "0x1B0974C" },
+                        "Steam1.1": { "start": "0x1B0BD4C" },
+                        "GOG1.0": { "start": "0x1B0654C" },
+                        "GOG1.1": { "start": "0x1B0894C" }
+                    },
+                    "length": 1048576,
+                    "header_bytes": "02 FE C2 10 E2 20 A2 00 00 9B"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "7CFC0C7C",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Ghoul Patrol",
+                "system": "SNES",
+                "filename": "GhoulPatrol.sfc",
+                "status": "good",
+                "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam1.0": { "start": "0x19A03C0" },
+                        "Steam1.1": { "start": "0x19A29C0" },
+                        "GOG1.0": { "start": "0x199D1C0" },
+                        "GOG1.1": { "start": "0x199F5C0" }
+                    },
+                    "length": 1048576,
+                    "header_bytes": "80 FE C2 10 E2 20 A2 00 00 9B"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "EA16B5A2",
+                    "size": 1048576
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

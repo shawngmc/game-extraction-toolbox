@@ -67,14 +67,31 @@ class BaseTask:
 
             size = len(contents)
             crc = hash_helper.get_crc(contents)
-            logging.debug(f"Read {data_path} with size {size} and crc {crc}")
+            sha = hash_helper.get_sha1(contents)
+            logging.debug(f"Read {data_path} with size {size}, crc {crc} and sha {sha}")
 
             versions = file_metadata.get("versions") or []
             file_ver_tag = None
             for version_tag, version_meta in versions.items():
-                if hex(int(version_meta['crc'], base=16)) == crc and version_meta['size'] == size:
-                    file_ver_tag = version_tag
-                    break
+                # Check size first if we have it
+                if 'size' in version_meta:
+                    if version_meta['size'] != size:
+                        continue
+
+                if 'sha' in version_meta:
+                    if hex(int(version_meta['sha'], base=16)) == sha:
+                        file_ver_tag = version_tag
+                        break
+                    else:
+                        continue
+                
+                if 'crc' in version_meta:
+                    if hex(int(version_meta['crc'], base=16)) == crc:
+                        file_ver_tag = version_tag
+                        break
+                    else:
+                        continue
+
 
             if file_ver_tag:
                 logging.debug(f"Identified {data_path} as version {file_ver_tag}")
@@ -109,7 +126,15 @@ class BaseTask:
         # Check verify type
         if verify_obj['type'] == 'crc':
             crc = hash_helper.get_crc(contents)[2:].upper().rjust(8, "0")
-            return crc == verify_obj['crc'] and len(contents) == verify_obj['size']
+            if len(contents) != verify_obj['size']:
+                logger.info(f"Could NOT verify {file_name}: File size doesn't match!")
+                return False
+            elif crc != verify_obj['crc']:
+                logger.info(f"Could NOT verify {file_name}: CRC doesn't match!")
+                return False
+            else:
+                logger.info(f"Verified {file_name}.")
+                return True
         elif verify_obj['type'] == 'zip':
             zip_metas = zip_lib.get_metadata(contents)
             # Ensure the file name lists are the same
