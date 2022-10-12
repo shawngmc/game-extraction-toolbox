@@ -30,133 +30,12 @@ class ACACTask(BaseTask):
         }
     }
 
-    _game_info_map = [
-        {
-            "name": "AJAX (J)",
-            "filename": "ajaxj.zip",
-            'status': 'playable',
-            "notes": []
-        },
-        {
-            "name": "Typhoon",
-            "filename": "typhoon.zip",
-            'status': 'playable',
-            "notes": []
-        },
-        {
-            "name": "Haunted Castle (Version M)",
-            "filename": "hcastle.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Haunted Castle (Version E)",
-            "filename": "hcastlee.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Haunted Castle (Version K)",
-            "filename": "hcastlek.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Akuma-Jou Dracula (Version N)",
-            "filename": "akumajoun.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Nemesis (World?)",
-            "filename": "nemesisuk.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Nemesis",
-            "filename": "nemesis.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Gradius 2",
-            "filename": "gradius2.zip",
-            'status': 'playable',
-            "notes": []
-        },
-        {
-            "name": "Vulcan Venture",
-            "filename": "vulcan.zip",
-            'status': 'playable',
-            "notes": []
-        },
-        {
-            "name": "Thunder Cross (J)",
-            "filename": "thunderxj.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Thunder Cross (Set 1)",
-            "filename": "thunderx.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Thunder Cross (Set 2)",
-            "filename": "thunderxa.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Thunder Cross (Set 3)",
-            "filename": "thunderxb.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Salamander",
-            "filename": "salamand.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Salamander (J)",
-            "filename": "salamandj.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Lifeforce",
-            "filename": "lifefrce.zip",
-            'status': 'good',
-            "notes": []
-        },
-        {
-            "name": "Lifeforce (J)",
-            "filename": "lifefrcejzip",
-            'status': 'playable',
-            "notes": [2]
-        },
-        # TWINBEE - can find bits and pieces
-        # SCRAMBLE - no sign of it
-    ]
-
-    _out_file_notes = {
-        "1": "This game has a placeholder file and may be missing some sound samples.",
-        "2": "This game has a bad dump, but is fully playable."
-    }
-
-    def __init__(self):
-        super().__init__()
-        self._out_file_list = map(lambda x: {
-            'filename': x['filename'],
-            'game': f"{x['name']}",
-            'system': "Arcade",
-            "status": x['status'],
-            "notes": x['notes']},
-            self._game_info_map)
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
 
     def execute(self, in_dir, out_dir):
         src_file = os.path.join(in_dir, "AA_AC_ArcadeClassics.exe")
@@ -166,7 +45,6 @@ class ACACTask(BaseTask):
 
         with open(os.path.join(out_dir, 'merged_decomp_blob'), "wb") as out_file:
             out_file.write(src_contents_decomp)
-
 
         out_files = []
         out_files.extend(self._handle_nemesis(src_contents))
@@ -180,51 +58,14 @@ class ACACTask(BaseTask):
 
         if out_files:
             for out_file_entry in out_files:
-                out_path = os.path.join(out_dir, out_file_entry['filename'])
+                filename = out_file_entry['filename']
+                _ = self.verify_out_file(filename, out_file_entry['contents'])
+                out_path = os.path.join(out_dir, filename)
                 with open(out_path, "wb") as out_file:
                     logger.info(f"Writing {out_file_entry['filename']}...")
                     out_file.write(out_file_entry['contents'])
-        # for game in self._game_info_map:
-        #     if game.get('status') == "no-rom":
-        #         logger.info(f"Skipping {game['name']} as there is no ROM to extract...")
-        #         continue
-
-        #     is_partial = game.get('status') == "partial"
-        #     if not self._props.get('include-partials') and is_partial:
-        #         logger.info(f"Skipping {game['name']} as this tool cannot extract a working copy...")
-        #         continue
-
-        #     logger.info(f"Extracting {game['name']}...")
-
-        #     # Get the specified decompression section
-        #     contents = transforms.cut(src_contents, game['in']['start'], length=game['in']['length'])
-        #     lzd = lzma.LZMADecompressor()
-        #     contents = lzd.decompress(contents)
-
-        #     output_files = []
-        #     if 'handler' in game:
-        #         handler_func = getattr(self, game['handler'])
-        #         output_files.extend(handler_func(contents, game))
-        #     else:
-        #         logger.warning(f"No handler defined for {game['name']}; dumping contents")
-        #         output_files.extend(self._handle_copyorig(contents, game))
-
-        #     for output_file in output_files:
-        #         filename = f"partial_{output_file['filename']}" if is_partial else output_file['filename']
-        #         logger.info(f"Saving {filename}...")
-        #         with open(os.path.join(out_dir, filename), "wb") as out_file:
-        #             out_file.write(output_file['contents'])
 
         logger.info("Processing complete.")
-
-    def _handle_copyorig(self, contents, game):
-        return [{'filename': game['filename'], 'contents': helpers.build_zip({ "decompressed_blob": contents })}]
-
-    def _handle_generic_copy(self, contents, game):
-        zip_files = {}
-        for work_file in game.get('out') or []:
-            zip_files[work_file['filename']] = transforms.cut(contents, work_file['start'], length=work_file['length'])
-        return [{'filename': game['filename'], 'contents': helpers.build_zip(zip_files)}]
 
     def _handle_ajax(self, contents):
         contents = transforms.cut(contents, 0x11B610, length=1124930)
@@ -1014,7 +855,7 @@ class ACACTask(BaseTask):
                 b'\x00\x02'
             ]
             if comp_mode not in valid_modes:
-                print(f'offset {hex(offset)}: skipping, invalid comp_type')
+                logger.debug(f'offset {hex(offset)}: skipping, invalid comp_type')
                 offset += 1
             else:
                 try:
@@ -1025,12 +866,12 @@ class ACACTask(BaseTask):
                     curr_chunk = lzd.decompress(target)
                     after_len = len(lzd.unused_data)
                     consumed_bytes = before_len - after_len
-                    print(f'offset {hex(offset)}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
+                    logger.debug(f'offset {hex(offset)}: magic {magic_bytes}, consumed {consumed_bytes} bytes')
                     with open(os.path.join(out_dir, f'decompressed_blob_{hex(offset)}'), "wb") as out_file:
                         out_file.write(curr_chunk)
                     out_data += curr_chunk
                     offset += consumed_bytes
                 except lzma.LZMAError:
-                    print(f'offset {hex(offset)}: magic {magic_bytes}, invalid')
+                    logger.debug(f'offset {hex(offset)}: magic {magic_bytes}, invalid')
                     offset += 1
         return out_data

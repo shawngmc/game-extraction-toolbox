@@ -79,11 +79,7 @@ class PacManMuseumPlusTask(BaseTask):
             game_data = helpers.build_zip(zip_files)
             filename = f"partial_{game['filename']}" if is_partial else game['filename']
             if not is_partial:
-                verified = self.verify_out_file(filename, game_data)
-                if verified:
-                    logger.info(f"Verified {filename}.")
-                else:
-                    logger.info(f"Could NOT verify {filename}.")
+                _ = self.verify_out_file(filename, game_data)
             else:
                 logger.info(f"Skipping verification for partial extract {filename}.")
             out_path = os.path.join(out_dir, filename)

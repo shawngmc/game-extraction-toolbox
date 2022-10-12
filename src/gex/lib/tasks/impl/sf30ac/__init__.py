@@ -52,11 +52,7 @@ Note that this does NOT extract the Japanese ROMs as those are only included in 
 
                 for out_file_entry in output_files:
                     filename = out_file_entry['filename']
-                    verified = self.verify_out_file(filename, out_file_entry['contents'])
-                    if verified:
-                        logger.info(f"Verified {filename}.")
-                    else:
-                        logger.info(f"Could NOT verify {filename}.")
+                    _ = self.verify_out_file(filename, out_file_entry['contents'])
                     out_path = os.path.join(out_dir, filename)
                     with open(out_path, "wb") as out_file:
                         out_file.write(out_file_entry['contents'])
