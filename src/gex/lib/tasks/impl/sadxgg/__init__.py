@@ -43,11 +43,7 @@ PRS Code from: https://forums.qhimm.com/index.php?topic=11225.0
             filename = out_file_entry['filename']
 
             logger.info(f"Verifying {out_file_entry['game']}...")
-            verified = self.verify_out_file(filename, contents)
-            if verified:
-                logger.info(f"Verified {filename}.")
-            else:
-                logger.info(f"Could NOT verify {filename}.")
+            _ = self.verify_out_file(filename, contents)
             out_path = os.path.join(out_dir, filename)
             with open(out_path, "wb") as out_file:
                 out_file.write(contents)

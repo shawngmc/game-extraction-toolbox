@@ -96,6 +96,11 @@ class BaseTask:
         # Find out_file entry
         out_file = next((x for x in self._metadata['out']['files'] if x['filename'] == file_name), None)
         if out_file is None:
+            logger.info(f"Could not find entry to verify {file_name}")
+            return None
+
+        if out_file['status'] == 'partial' or out_file['status'] == 'no-rom':
+            logger.info(f"Verification not available for partial ROM {file_name}")
             return None
 
         # Get verify object
@@ -111,17 +116,18 @@ class BaseTask:
             real_filenames = set(zip_metas.keys())
             expected_filenames = set(verify_obj['entries'].keys())
             if real_filenames != expected_filenames:
-                logger.debug(f"File lists don't match for {file_name}")
+                logger.info(f"Could NOT verify {file_name}: File lists don't match!")
                 return False
             # Compare file size/CRC
-            for filename, zip_meta in zip_metas.items():
-                verify_entry = verify_obj['entries'][filename]
+            for inner_filename, zip_meta in zip_metas.items():
+                verify_entry = verify_obj['entries'][inner_filename]
                 if zip_meta['crc'] != verify_entry['crc'] or zip_meta['size'] != verify_entry['size'] :
-                    logger.debug(f"File {filename} doesn't match for {file_name}")
+                    logger.info(f"Could NOT verify {file_name}: {inner_filename} should be {verify_entry['crc']} at {verify_entry['size']} bytes, found {zip_meta['crc']} at {zip_meta['size']}")
                     return False
+            logger.info(f"Verified {file_name}.")
             return True
         else:
-            logger.debug(f"Unknown verify type: {verify_obj['type']}")
+            logger.info(f"Unknown verify type: {verify_obj['type']}")
             return None
 
     def set_props(self, in_props):

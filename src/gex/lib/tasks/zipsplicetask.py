@@ -45,11 +45,7 @@ class ZipSpliceTask(BaseTask):
 
             game_data = helpers.build_zip(zip_files)
             filename = file_meta['filename']
-            verified = self.verify_out_file(filename, game_data)
-            if verified:
-                logger.info(f"Verified {filename}.")
-            else:
-                logger.info(f"Could NOT verify {filename}.")
+            _ = self.verify_out_file(filename, game_data)
             out_path = os.path.join(out_dir, filename)
             with open(out_path, "wb") as out_file:
                 out_file.write(game_data)

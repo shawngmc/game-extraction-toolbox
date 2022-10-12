@@ -22,11 +22,7 @@ class CopyTask(BaseTask):
             out_file_entry = [x for x in self._metadata['out']['files'] if x['game'] == file_metadata['copy_to']][0]
 
             filename = out_file_entry['filename']
-            verified = self.verify_out_file(filename, resolved_file['contents'])
-            if verified:
-                logger.info(f"Verified {filename}.")
-            else:
-                logger.info(f"Could NOT verify {filename}.")
+            _ = self.verify_out_file(filename, resolved_file['contents'])
             out_path = os.path.join(out_dir, filename)
             with open(out_path, "wb") as out_file:
                 out_file.write(resolved_file['contents'])

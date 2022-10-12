@@ -59,11 +59,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
                 if merged_rom_contents is not None and handler_func is not None:
                     output_contents = handler_func(merged_rom_contents)
 
-                    verified = self.verify_out_file(out_file_entry['filename'], output_contents)
-                    if verified:
-                        logger.info(f"Verified {out_file_entry['filename']}.")
-                    else:
-                        logger.info(f"Could NOT verify {out_file_entry['filename']}.")
+                    _ = self.verify_out_file(out_file_entry['filename'], output_contents)
 
                     with open(os.path.join(out_dir, out_file_entry['filename']), "wb") as out_file:
                         out_file.write(output_contents)

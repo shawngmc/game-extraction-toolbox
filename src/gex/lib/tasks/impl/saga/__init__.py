@@ -50,11 +50,7 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
                 if rom_asset is None:
                     logger.warning("Could not find rom asset in archive.")
                 else:
-                    verified = self.verify_out_file(out_file_entry['filename'], rom_data)
-                    if verified:
-                        logger.info(f"Verified {out_file_entry['filename']}.")
-                    else:
-                        logger.info(f"Could NOT verify {out_file_entry['filename']}.")
+                    _ = self.verify_out_file(out_file_entry['filename'], rom_data)
 
                     with open(os.path.join(out_dir, out_file_entry['filename']), "wb") as out_file:
                         out_file.write(rom_data)
