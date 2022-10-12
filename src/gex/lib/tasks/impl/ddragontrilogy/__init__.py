@@ -16,41 +16,19 @@ class DoubleDragonTrilogyTask(BaseTask):
     _details_markdown = '''
 Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf8894f
 '''
-    _game_info_list = [
-        {
-            "game": "Double Dragon",
-            "filename": "ddragon.zip",
-            "notes": []
-        },
-        {
-            "game": "Double Dragon 2: The Revenge",
-            "filename": "ddragon2.zip",
-            "notes": []
-        },
-        {
-            "game": "Double Dragon 3: The Rosetta Stone",
-            "filename": "dragon3.zip",
-            "notes": [1]
-        }
-    ]
-    _out_file_notes = {
-        "1": "This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo."
-    }
     _default_input_folder = helpers.gen_steam_app_default_folder("Double Dragon Trilogy")
     _input_folder_desc = "Double Dragon Trilogy Steam folder"
 
-    def __init__(self):
-        super().__init__()
-        self._out_file_list = map(lambda x: {
-            'filename': x['filename'],
-            'game': x['game'],
-            'status': "good",
-            'system': "Arcade",
-            "notes": x['notes']},
-            self._game_info_list)
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
 
     def execute(self, in_dir, out_dir):
-        all_ddragon_trio_files = self._read_all_files(in_dir)
+        verified_in_files = self.read_all_datafiles(in_dir)
+        in_files = {k: v['contents'] for k,v in verified_in_files.items()}
 
         funcs = [
             self._ddragon,
@@ -60,21 +38,12 @@ Based on dotemu2mame.js: https://gist.github.com/cxx/81b9f45eb5b3cb87b4f3783ccdf
 
         for func in funcs:
             logger.info(f"Extracting {func.__name__[1:]}...")
-            rom_package = func(all_ddragon_trio_files)
+            rom_package = func(in_files)
+            _ = self.verify_out_file(rom_package['filename'], rom_package['contents'])
             with open(os.path.join(out_dir, rom_package['filename']), "wb") as out_file:
                 out_file.write(rom_package['contents'])
 
         logger.info("Processing complete.")
-
-    def _read_all_files(self, base_path):
-        files_path = os.path.join(base_path, "resources", "game")
-        file_paths = glob.glob(files_path +'/*.*')
-        files = {}
-        for file_path in file_paths:
-            with open(file_path, 'rb') as file_obj:
-                file_data = file_obj.read()
-                files[os.path.basename(file_path)] = file_data
-        return files
 
     def _dotemu_reencode_gfx_helper(self, in_file_name, filenames, layout):
         def encode(in_files):

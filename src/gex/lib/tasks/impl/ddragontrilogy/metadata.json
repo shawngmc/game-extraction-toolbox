@@ -1,0 +1,308 @@
+{
+    "in": {
+        "files": {
+            "ddragon2_gfxdata1.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_gfxdata1.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "CBFF4713",
+                        "size": 131072
+                    }
+                }
+            },
+            "ddragon2_gfxdata2.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_gfxdata2.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "FF97392E",
+                        "size": 1572864
+                    }
+                }
+            },
+            "ddragon2_gfxdata3.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_gfxdata3.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "D1696A65",
+                        "size": 524288
+                    }
+                }
+            },
+            "ddragon2_hd6309.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_hd6309.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "6A11D7EE",
+                        "size": 131072
+                    }
+                }
+            },
+            "ddragon2_oki.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_oki.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "F0A160D6",
+                        "size": 262144
+                    }
+                }
+            },
+            "ddragon2_z80sound.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_z80sound.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "75E36CD6",
+                        "size": 32768
+                    }
+                }
+            },
+            "ddragon2_z80sub.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon2_z80sub.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "EA437867",
+                        "size": 65536
+                    }
+                }
+            },
+            "ddragon3_gfxdata1.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon3_gfxdata1.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "C82ECFE4",
+                        "size": 2097152
+                    }
+                }
+            },
+            "ddragon3_gfxdata2.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon3_gfxdata2.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "4E1FF192",
+                        "size": 4718592
+                    }
+                }
+            },
+            "ddragon3_m68k.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon3_m68k.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "C4EDC727",
+                        "size": 524288
+                    }
+                }
+            },
+            "ddragon3_oki.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon3_oki.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "C3AD40F3",
+                        "size": 524288
+                    }
+                }
+            },
+            "ddragon3_z80.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon3_z80.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "1E974D9B",
+                        "size": 65536
+                    }
+                }
+            },
+            "ddragon_adpcm.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_adpcm.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "CF003BD6",
+                        "size": 131072
+                    }
+                }
+            },
+            "ddragon_gfxdata1.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_gfxdata1.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "60D388CE",
+                        "size": 65536
+                    }
+                }
+            },
+            "ddragon_gfxdata2.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_gfxdata2.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "E39C0594",
+                        "size": 1048576
+                    }
+                }
+            },
+            "ddragon_gfxdata3.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_gfxdata3.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "C7844D5C",
+                        "size": 524288
+                    }
+                }
+            },
+            "ddragon_hd6309.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_hd6309.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "BFD3CBB5",
+                        "size": 131072
+                    }
+                }
+            },
+            "ddragon_hd63701.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_hd63701.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "F5232D03",
+                        "size": 16384
+                    }
+                }
+            },
+            "ddragon_m6809.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "ddragon_m6809.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "9EFA95BB",
+                        "size": 32768
+                    }
+                }
+            },
+            "proms.bin": {
+                "rel_path": ["resources", "game"],
+                "filename": "proms.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "35C1DB1C",
+                        "size": 768
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Double Dragon",
+                "filename": "ddragon.zip",
+                "notes": [],
+                "status": "good",
+                "system": "Arcade",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "21j-1-5.26": {"size": 32768, "crc": "42045DFD"},
+                        "21j-2-3.25": {"size": 32768, "crc": "5779705E"},
+                        "21j-3.24": {"size": 32768, "crc": "3BDEA613"},
+                        "21j-4-1.23": {"size": 32768, "crc": "728F87B9"},
+                        "21jm-0.ic55": {"size": 16384, "crc": "F5232D03"},
+                        "21j-0-1": {"size": 32768, "crc": "9EFA95BB"},
+                        "21j-5": {"size": 32768, "crc": "7A8B8DB4"},
+                        "21j-a": {"size": 65536, "crc": "574FACE3"},
+                        "21j-b": {"size": 65536, "crc": "40507A76"},
+                        "21j-c": {"size": 65536, "crc": "BB0BC76F"},
+                        "21j-d": {"size": 65536, "crc": "CB4F231B"},
+                        "21j-e": {"size": 65536, "crc": "A0A0C261"},
+                        "21j-f": {"size": 65536, "crc": "6BA152F6"},
+                        "21j-g": {"size": 65536, "crc": "3220A0B6"},
+                        "21j-h": {"size": 65536, "crc": "65C7517D"},
+                        "21j-8": {"size": 65536, "crc": "7C435887"},
+                        "21j-9": {"size": 65536, "crc": "C6640AED"},
+                        "21j-i": {"size": 65536, "crc": "5EFFB0A0"},
+                        "21j-j": {"size": 65536, "crc": "5FB42E7C"},
+                        "21j-6": {"size": 65536, "crc": "34755DE3"},
+                        "21j-7": {"size": 65536, "crc": "904DE6F8"},
+                        "21j-k-0": {"size": 256, "crc": "FDB130A9"},
+                        "21j-l-0": {"size": 512, "crc": "46339529"}
+                    }
+                }
+            },
+            {
+                "game": "Double Dragon 2: The Revenge",
+                "filename": "ddragon2.zip",
+                "notes": [],
+                "status": "good",
+                "system": "Arcade",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "26a9-04.bin": {"size": 32768, "crc": "F2CFC649"},
+                        "26aa-03.bin": {"size": 32768, "crc": "44DD5D4B"},
+                        "26ab-0.bin": {"size": 32768, "crc": "49DDDDCD"},
+                        "26ac-0e.63": {"size": 32768, "crc": "57ACAD2C"},
+                        "26ae-0.bin": {"size": 65536, "crc": "EA437867"},
+                        "26ad-0.bin": {"size": 32768, "crc": "75E36CD6"},
+                        "26a8-0e.19": {"size": 65536, "crc": "4E80CD36"},
+                        "26j0-0.bin": {"size": 131072, "crc": "DB309C84"},
+                        "26j1-0.bin": {"size": 131072, "crc": "C3081E0C"},
+                        "26af-0.bin": {"size": 131072, "crc": "3A615AAD"},
+                        "26j2-0.bin": {"size": 131072, "crc": "589564AE"},
+                        "26j3-0.bin": {"size": 131072, "crc": "DAF040D6"},
+                        "26a10-0.bin": {"size": 131072, "crc": "6D16D889"},
+                        "26j4-0.bin": {"size": 131072, "crc": "A8C93E76"},
+                        "26j5-0.bin": {"size": 131072, "crc": "EE555237"},
+                        "26j6-0.bin": {"size": 131072, "crc": "A84B2A29"},
+                        "26j7-0.bin": {"size": 131072, "crc": "BC6A48D5"},
+                        "21j-k-0": {"size": 256, "crc": "FDB130A9"},
+                        "prom.16": {"size": 512, "crc": "46339529"}
+                    }
+                }
+            },
+            {
+                "game": "Double Dragon 3: The Rosetta Stone",
+                "filename": "ddragon3.zip",
+                "notes": [1],
+                "status": "good",
+                "system": "Arcade",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "30a15-0.ic79": {"size": 131072, "crc": "AD50E92C"},
+                        "30a14-0.ic78": {"size": 262144, "crc": "F42FE016"},
+                        "30a13-0.ic43": {"size": 65536, "crc": "1E974D9B"},
+                        "30j-6.ic5": {"size": 262144, "crc": "9BF1538E"},
+                        "30j-4.ic7": {"size": 262144, "crc": "0F74EA1C"},
+                        "30j-7.ic4": {"size": 262144, "crc": "89D58D32"},
+                        "30j-5.ic6": {"size": 262144, "crc": "8F671A62"},
+                        "30j-3.ic9": {"size": 524288, "crc": "B3151871"},
+                        "30a12-0.ic8": {"size": 65536, "crc": "20D64BEA"},
+                        "30j-2.ic11": {"size": 524288, "crc": "41C6FB08"},
+                        "30a11-0.ic10": {"size": 65536, "crc": "785D71B0"},
+                        "30j-1.ic13": {"size": 524288, "crc": "67A6F114"},
+                        "30a10-0.ic12": {"size": 65536, "crc": "15E43D12"},
+                        "30j-0.ic15": {"size": 524288, "crc": "F15DAFBE"},
+                        "30a9-0.ic14": {"size": 65536, "crc": "5A47E7A4"},
+                        "30j-8.ic73": {"size": 524288, "crc": "C3AD40F3"},
+                        "mb7114h.ic38": {"size": 256, "crc": "0D968558"}
+                    }
+                }
+            }
+        ],
+        "notes": {
+            "1": "This ROM is missing the PROM file. A placeholder allows it to work for MAME, but this doesn't work for FB Neo."
+        }
+    }
+}
