@@ -114,7 +114,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 **Collection**                             | **Status**     | **Verification** | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 75%    | N | A couple games are good extractions so far...
+ **Arcade Collection Anniversary Classics**     | 75%    | Y | A couple games are good extractions so far...
  **Atari Vault**                                | 90%    | N | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%   | Y |   
  **Bubsy Two-Fur**                              | 100%   | Y |   
@@ -124,7 +124,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Collection of SaGa/Final Fantasy Legend**    | 100%   | Y |  
  **Disney Afternoon Collection**                | 100%   | Y |  
  **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | N | Includes Jungle Book DLC
- **Double Dragon Trilogy**                      | 100%   | N |  
+ **Double Dragon Trilogy**                      | 100%   | Y |  
  **IREM Arcade Classics**                       | 100%   | N |  
  **Mega Man Legacy Collection 1**               | 100%   | Y |  
  **Mega Man X Legacy Collection 1**             | 75%    | Y | X4 doesn't appear to be ROM based  
