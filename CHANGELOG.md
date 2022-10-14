@@ -1,5 +1,7 @@
 # 0.1.4
 - Updated Collections:
+  - Genesis and Mega Drive Collection
+    - Fixed mislabeled Super Thunder Blade ROM
   - IREM Arcade Classics
     - Fix bug preventing details output
 - Improvements:
