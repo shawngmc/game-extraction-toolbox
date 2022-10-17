@@ -85,7 +85,7 @@ out_file_info = [
         "notes": [2]
     },
     {
-        "game": "Bermuda Triangle",
+        "game": "World Wars (J)",
         "system": "Arcade",
         "filename": "bermudata.zip",
         'status': 'playable',
@@ -96,6 +96,20 @@ out_file_info = [
         "system": "Arcade",
         "filename": "worldwar.zip",
         "status": "playable",
+        "notes": [2]
+    },
+    {
+        "game": "Bermuda Triangle",
+        "system": "Arcade",
+        "filename": "bermudat.zip",
+        'status': 'playable',
+        "notes": [2]
+    },
+    {
+        "game": "Bermuda Triangle",
+        "system": "Arcade",
+        "filename": "bermudatj.zip",
+        'status': 'playable',
         "notes": [2]
     },
     {
@@ -534,55 +548,83 @@ def _handle_bermuda(bundle_contents):
     '''Extract Bermuda Triangle / World Wars'''
     out_files = []
 
-    # World Wars Common
+    # Bermuda Triangle Common
     func_map = {}
-    bg_filenames = [
-        "ww11.1e",
-        "ww12.1d",
-        "ww13.1b",
-        "ww14.1a"
-    ]
-    func_map['bg'] = helpers.equal_split_helper('WorldWars.bg', bg_filenames)
     sp_filenames = [
-        "ww10.3g",
-        "ww9.3e",
-        "ww8.3d",
-        "ww7.3b"
+        "p9.3b",
+        "p8.3d",
+        "p7.3e",
+        "p6.3g"
     ]
-    func_map['sp'] = helpers.equal_split_helper('WorldWars.sp', sp_filenames)
+    func_map['sp'] = helpers.equal_split_helper('BermudaTriangle.sp', sp_filenames)
     sp32_filenames = [
-        "ww21.7p",
-        "ww22.7s",
-        "ww19.8h",
-        "ww20.8k",
-        "ww15.8m",
-        "ww16.8n",
-        "ww17.8p",
-        "ww18.8s"
+        "p11.7p",
+        "p12.7s",
+        "p13.8h",
+        "p14.8k",
+        "p15.8m",
+        "p16.8n",
+        "p17.8p",
+        "p18.8s"
     ]
-    func_map['sp32'] = helpers.equal_split_helper('WorldWars.sp32', sp32_filenames)
+    func_map['sp32'] = helpers.equal_split_helper('BermudaTriangle.sp32', sp32_filenames)
+    bg_filenames = [
+        "p19.1", 
+        "p20.1b",
+        "p21.1d",
+        "p22.1e"
+    ]
+    func_map['bg'] = helpers.equal_split_helper('BermudaTriangle.bg', bg_filenames)
+    pal_filenames = [
+        "2.1l",
+        "1.1k",
+        "3.2l"
+    ]
+    func_map['pal'] = utils.simple_palette_helper('BermudaTriangle.pal', pal_filenames)
     ph_files = {
-        'horizon.5h': 0x400,
+        'horizon.6h': 0x400,
         'vertical.7h': 0x400
     }
+    func_map['tx'] = helpers.name_file_helper("BermudaTriangle.tx", "p10.3a")
+    func_map['sub'] = helpers.name_file_helper("BermudaTriangle.1.z80", "p2.8p")
     func_map['ph'] = helpers.placeholder_helper(ph_files)
-    logger.info("Processing World Wars common files...")
+    logger.info("Processing Bermudat Triangle common files...")
     common_file_map = helpers.process_rom_files(bundle_contents, func_map)
 
-    # BERMUDATA
+    # BERMUDAT
     func_map = {}
-    func_map['maincpu'] = helpers.name_file_helper("WorldWars.j.0.z80", "wwu4.4p")
-    func_map['sub'] = helpers.name_file_helper("WorldWars.j.1.z80", "wwu5.8p")
-    func_map['audiocpu'] = helpers.name_file_helper("WorldWars.j.2.z80", "wwu3.7k")
-    func_map['tx'] = helpers.name_file_helper("WorldWars.j.tx", "wwu6.3a")
-    func_map['common'] = helpers.existing_files_helper(common_file_map)
-    pal_filenames = [
-        "u2bt.2l",
-        "u1bt.1k",
-        "u3bt.1l"
+    func_map['maincpu'] = helpers.name_file_helper("BermudaTriangle.0.z80", "p1.4p")
+    func_map['audiocpu'] = helpers.name_file_helper("BermudaTriangle.2.z80", "p3.7k")
+    adpcm_filenames = [
+        "p4.5e",
+        "p5.5g"
     ]
-    func_map['pal'] = utils.simple_palette_helper('WorldWars.j.pal', pal_filenames)
-    out_files.append(utils.build_snk_rom("bermudata.zip", bundle_contents, func_map))
+    func_map['adpcm'] = helpers.equal_split_helper('BermudaTriangle.adpcm', adpcm_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    mame_name = "bermudat.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
+
+
+    # BERMUDATJ
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("BermudaTriangle.j.0.z80", "p1.4p")
+    func_map['audiocpu'] = helpers.name_file_helper("BermudaTriangle.j.2.z80", "p3.7k")
+    adpcm_filenames = [
+        "p4.5e",
+        "p5.5g"
+    ]
+    func_map['adpcm'] = helpers.equal_split_helper('BermudaTriangle.j.adpcm', adpcm_filenames)
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    mame_name = "bermudatj.zip"
+    logger.info(f"Building {mame_name}...")
+    out_files.append(
+        {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
+    )
+    logger.info(f"Extracted {mame_name}.")
 
     return out_files
 
@@ -649,6 +691,21 @@ def _handle_worldwars(bundle_contents):
         {'filename': mame_name, 'contents': helpers.build_rom(bundle_contents, func_map)}
     )
     logger.info(f"Extracted {mame_name}.")
+
+    # BERMUDATA - This is actually World Wars (J)!
+    func_map = {}
+    func_map['maincpu'] = helpers.name_file_helper("WorldWars.j.0.z80", "wwu4.4p")
+    func_map['sub'] = helpers.name_file_helper("WorldWars.j.1.z80", "wwu5.8p")
+    func_map['audiocpu'] = helpers.name_file_helper("WorldWars.j.2.z80", "wwu3.7k")
+    func_map['tx'] = helpers.name_file_helper("WorldWars.j.tx", "wwu6.3a")
+    func_map['common'] = helpers.existing_files_helper(common_file_map)
+    pal_filenames = [
+        "u2bt.2l",
+        "u1bt.1k",
+        "u3bt.1l"
+    ]
+    func_map['pal'] = utils.simple_palette_helper('WorldWars.j.pal', pal_filenames)
+    out_files.append(utils.build_snk_rom("bermudata.zip", bundle_contents, func_map))
 
     return out_files
 

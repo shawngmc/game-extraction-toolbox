@@ -146,9 +146,7 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\snk40\"",
                 "--srcdir", 
-                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\"",
-                "--prop",
-                "include-partials=True"
+                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\""
             ]
         },
         {
