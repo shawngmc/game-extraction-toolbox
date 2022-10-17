@@ -5,7 +5,7 @@ import os
 from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
-from gex.lib.tasks.impl.snk40 import partials, nes, arcadedlc, arcademain, arcadepatch
+from gex.lib.tasks.impl.snk40 import nes, arcadedlc, arcademain, arcadepatch
 
 logger = logging.getLogger('gextoolbox')
 
@@ -30,11 +30,6 @@ Based on:
             "description": "Include the NES ports that are included in SNK 40th",
             "default": True,
             "type": "Boolean"
-        },
-        "include-partials": {
-            "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
-            "default": False,
-            "type": "Boolean"
         }
     }
 
@@ -43,13 +38,11 @@ Based on:
     _out_file_list.extend(arcademain.out_file_info)
     _out_file_list.extend(arcadepatch.out_file_info)
     _out_file_list.extend(nes.out_file_info)
-    _out_file_list.extend(partials.out_file_info)
 
     _out_file_notes = {
         "1": "This is not extracted as there are missing files, such as Missing PROMs. Add '--prop include-partials=True' to include these.",
         "2": "This is playable, but is a bad dump, 1+ files with a bad CRC, and/or 1+ files with empty placeholders.",
-        "3": "This requires MAME 0.139 to play.",
-        "4": "There are some variants that MAME does not have info on - this partial contains all the Bermuda Triangle/World Wars files for research."
+        "3": "This requires MAME 0.139 to play."
     }
 
     def execute(self, in_dir, out_dir):
@@ -64,8 +57,6 @@ Based on:
             out_files.extend(arcademain.extract(bundle_contents))
             out_files.extend(arcadedlc.extract(bundle_contents))
             out_files.extend(arcadepatch.extract(bundle_contents))
-        if self._props.get('include-partials'):
-            out_files.extend(partials.extract(bundle_contents))
 
         if out_files:
             for out_file_entry in out_files:
