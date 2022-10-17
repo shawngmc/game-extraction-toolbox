@@ -123,7 +123,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Capcom Fighting Collection**                 | 90%    | Y | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
  **Collection of SaGa/Final Fantasy Legend**    | 100%   | Y |  
  **Disney Afternoon Collection**                | 100%   | Y |  
- **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | N | Includes Jungle Book DLC
+ **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Y | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%   | Y |  
  **IREM Arcade Classics**                       | 100%   | Y |  
  **Mega Man Legacy Collection 1**               | 100%   | Y |  
