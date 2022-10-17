@@ -1,0 +1,243 @@
+{
+    "in": {
+        "files": {
+            "aladdin": {
+                "rel_path": ["Bundle"],
+                "filename": "bundleAladdin.mbundle",
+                "versions": {
+                    "Steam": {
+                        "crc": "62C5484D",
+                        "size": 953025346
+                    }
+                }
+            },
+            "dlc" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleDLC1.mbundle",
+                "versions": {
+                    "Steam": {
+                        "crc": "B8EA48BB",
+                        "size": 395996529
+                    }
+                }
+            },
+            "lionking" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleLionKing.mbundle",
+                "versions": {
+                    "Steam": {
+                        "crc": "85DAC996",
+                        "size": 385352264
+                    }
+                }
+            },
+            "main" : {
+                "rel_path": ["Bundle"],
+                "filename": "bundleMain.mbundle",
+                "versions": {
+                    "Steam": {
+                        "crc": "2C46726B",
+                        "size": 859395319
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Aladdin Remix",
+                "system": "Genesis",
+                "filename": "Aladdin-Remix.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2384052,
+                    "crc": "DD66B3FA"
+                }
+            },
+            {
+                "game": "Aladdin (4F7A Patch)",
+                "system": "Genesis",
+                "filename": "Aladdin.4F7A.PATCHED.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "E4A7AA54"
+                }
+            },
+            {
+                "game": "Aladdin (9CB2 Patch)",
+                "system": "Genesis",
+                "filename": "Aladdin.9CB2.PATCHED.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "C4616DCB"
+                }
+            },
+            {
+                "game": "Aladdin (CES Patch)",
+                "system": "Genesis",
+                "filename": "Aladdin.CES.PATCHED.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4194304,
+                    "crc": "404930F5"
+                }
+            },
+            {
+                "game": "Aladdin",
+                "system": "Game Boy",
+                "filename": "Aladdin.gb",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262144,
+                    "crc": "53918941"
+                }
+            },
+            {
+                "game": "Aladdin",
+                "system": "SNES",
+                "filename": "Aladdin.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 1572864,
+                    "crc": "C997AED1"
+                }
+            },
+            {
+                "game": "Jungle Book",
+                "system": "Game Boy",
+                "filename": "JungleBook.gb",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 131072,
+                    "crc": "4A2C16FF"
+                }
+            },
+            {
+                "game": "Jungle Book",
+                "system": "Genesis",
+                "filename": "JungleBook.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "F48EB5DA"
+                }
+            },
+            {
+                "game": "Jungle Book",
+                "system": "NES",
+                "filename": "JungleBook.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "93477495"
+                }
+            },
+            {
+                "game": "Jungle Book (Patched)",
+                "system": "Genesis",
+                "filename": "JUNGLEBOOK.PATCHED.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "F48EB5DA"
+                }
+            },
+            {
+                "game": "Jungle Book",
+                "system": "SNES",
+                "filename": "JungleBook.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "A690CF68"
+                }
+            },
+            {
+                "game": "Jungle Book Music",
+                "system": "SNES",
+                "filename": "JungleBookMusicROM.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2097152,
+                    "crc": "E6F93C72"
+                }
+            },
+            {
+                "game": "Lion King (0D3D Patch)",
+                "system": "Genesis",
+                "filename": "LionKing.0D3D.PATCHED.md",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 3145728,
+                    "crc": "5D4287E6"
+                }
+            },
+            {
+                "game": "Lion King (919A Patch)",
+                "system": "SNES",
+                "filename": "LionKing.919A.PATCHED.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4194304,
+                    "crc": "E04B0914"
+                }
+            },
+            {
+                "game": "Lion King (DE6E Patch)",
+                "system": "SNES",
+                "filename": "LionKing.DE6E.PATCHED.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4194304,
+                    "crc": "881CE80A"
+                }
+            },
+            {
+                "game": "Lion King",
+                "system": "Game Boy",
+                "filename": "LionKing.gb",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 524288,
+                    "crc": "E435ED72"
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

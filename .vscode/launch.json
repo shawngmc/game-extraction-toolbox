@@ -327,7 +327,7 @@
             ]
         },
         {
-            "name": "Python: Toolbox - Testing Disney Classics Aladding and Lion King w/ DLC",
+            "name": "Python: Toolbox - Testing Disney Classics Aladdin and Lion King w/ DLC",
             "type": "python",
             "request": "launch",
             "program": "toolbox.py",

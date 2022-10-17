@@ -42,7 +42,7 @@
                 "system": "SNES",
                 "filename": "Bubsy2.sfc",
                 "status": "good",
-                "notes": [4],
+                "notes": [],
                 "verify": {
                     "type": "crc",
                     "crc": "9582F89F",
