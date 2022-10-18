@@ -4,10 +4,12 @@
     - Fixed mislabeled Super Thunder Blade ROM
   - IREM Arcade Classics
     - Fix bug preventing details output
+  - SNK 40th Anniversary Edition
+    - Bermuda Triangle: Completed extraction on actual Bermuda Triangle (#37)
 - Improvements:
-  - Started adding input/output file verification to tasks
+  - Added input/output file verification to tasks (#36)
 - Internal:
-  - Made a generic reusable 'CopyTask' for copy-only jobs
+  - Made a few reusable tasks - 'CopyTask', 'ZipSpliceTask', 'SpliceTask'
 
 # 0.1.3
 - Improvements:
