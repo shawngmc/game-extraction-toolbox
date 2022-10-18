@@ -26,7 +26,7 @@ Beyond the usual QSound dl-1425.bin and decryption keys, some of the CRC matches
 
 This script will extract and prep the ROMs. Some per-rom errata are in the notes below.
 
-Note that this does NOT extract the Japanese ROMs as those are only included in SF30AC International Edition. As a US player, I can't get them - I've tried!
+This will only extract the Japanese ROMs if you have SF30AC International Edition.
 '''
 
     _default_input_folder = helpers.gen_steam_app_default_folder("Street Fighter 30th Anniversary Collection")
