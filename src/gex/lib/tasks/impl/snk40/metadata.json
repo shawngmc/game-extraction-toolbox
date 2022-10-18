@@ -1,0 +1,2063 @@
+{
+    "in": {
+        "files": {
+            "dlc": {
+                "rel_path": ["Bundle"],
+                "filename": "bundleDLC1.mbundle",
+                "versions": {
+                    "Steam": {
+                        "size": 71304979,
+                        "crc": "8EA7DC84"
+                    }
+                }
+            },
+            "main": {
+                "rel_path": ["Bundle"],
+                "filename": "bundleMain.mbundle",
+                "versions": {
+                    "Steam": {
+                        "size": 1016376903,
+                        "crc": "16BE6EC4"
+                    }
+                }
+            },
+            "patch": {
+                "rel_path": ["Bundle"],
+                "filename": "bundlePatch1.mbundle",
+                "versions": {
+                    "Steam": {
+                        "size": 167049215,
+                        "crc": "B6E39078"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Beast Busters",
+                "system": "Arcade",
+                "filename": "bbusters.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bb-3.k10": {"size": 131072, "crc": "04DA1820"},
+                        "bb-5.k12": {"size": 131072, "crc": "777E0611"},
+                        "bb-2.k8": {"size": 131072, "crc": "20141805"},
+                        "bb-4.k11": {"size": 131072, "crc": "D482E0E9"},
+                        "bb-pcmb.l3": {"size": 524288, "crc": "C8D5DD53"},
+                        "bb-10.l9": {"size": 131072, "crc": "490C0D9B"},
+                        "bb-f11.m16": {"size": 524288, "crc": "39FDF9C0"},
+                        "bb-f12.m13": {"size": 524288, "crc": "69EE046B"},
+                        "bb-f13.m12": {"size": 524288, "crc": "F5EF840E"},
+                        "bb-f14.m11": {"size": 524288, "crc": "1A7DF3BB"},
+                        "bb-f21.l10": {"size": 524288, "crc": "530F595B"},
+                        "bb-f22.l12": {"size": 524288, "crc": "889C562E"},
+                        "bb-f23.l13": {"size": 524288, "crc": "C89FE0DA"},
+                        "bb-f24.l15": {"size": 524288, "crc": "E0D81359"},
+                        "bb-back1.m4": {"size": 524288, "crc": "B5445313"},
+                        "bb-back2.m6": {"size": 524288, "crc": "8BE996F6"},
+                        "bb-6.e7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-7.h7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-8.a14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-9.c14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-1.e6": {"size": 65536, "crc": "4360F2EE"},
+                        "bb-pcma.l5": {"size": 524288, "crc": "44CD5BFE"},
+                        "bbusters-eeprom.bin": {"size": 256, "crc": "A52EBD66"}
+                    }
+                }
+            },
+            {
+                "game": "Beast Busters",
+                "system": "Arcade",
+                "filename": "bbustersj.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bb3_ver2_j3.k10": {"size": 131072, "crc": "6A1CD941"},
+                        "bb5_ver2_j3.k12": {"size": 131072, "crc": "7B180752"},
+                        "bb-2.k8": {"size": 131072, "crc": "20141805"},
+                        "bb-4.k11": {"size": 131072, "crc": "D482E0E9"},
+                        "bb-pcmb.l3": {"size": 524288, "crc": "C8D5DD53"},
+                        "bb-10.l9": {"size": 131072, "crc": "490C0D9B"},
+                        "bb-f11.m16": {"size": 524288, "crc": "39FDF9C0"},
+                        "bb-f12.m13": {"size": 524288, "crc": "69EE046B"},
+                        "bb-f13.m12": {"size": 524288, "crc": "F5EF840E"},
+                        "bb-f14.m11": {"size": 524288, "crc": "1A7DF3BB"},
+                        "bb-f21.l10": {"size": 524288, "crc": "530F595B"},
+                        "bb-f22.l12": {"size": 524288, "crc": "889C562E"},
+                        "bb-f23.l13": {"size": 524288, "crc": "C89FE0DA"},
+                        "bb-f24.l15": {"size": 524288, "crc": "E0D81359"},
+                        "bb-back1.m4": {"size": 524288, "crc": "B5445313"},
+                        "bb-back2.m6": {"size": 524288, "crc": "8BE996F6"},
+                        "bb-6.e7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-7.h7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-8.a14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-9.c14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-1.e6": {"size": 65536, "crc": "4360F2EE"},
+                        "bb-pcma.l5": {"size": 524288, "crc": "44CD5BFE"},
+                        "bbusters-eeprom.bin": {"size": 256, "crc": "A52EBD66"}
+                    }
+                }
+            },
+            {
+                "game": "Beast Busters",
+                "system": "Arcade",
+                "filename": "bbustersu.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bb-ver3-u3.k10": {"size": 131072, "crc": "C80EC3BC"},
+                        "bb-ver3-u5.k12": {"size": 131072, "crc": "5DED86D1"},
+                        "bb-2.k8": {"size": 131072, "crc": "20141805"},
+                        "bb-4.k11": {"size": 131072, "crc": "D482E0E9"},
+                        "bb-10.l9": {"size": 131072, "crc": "490C0D9B"},
+                        "bb-f11.m16": {"size": 524288, "crc": "39FDF9C0"},
+                        "bb-f12.m13": {"size": 524288, "crc": "69EE046B"},
+                        "bb-f13.m12": {"size": 524288, "crc": "F5EF840E"},
+                        "bb-f14.m11": {"size": 524288, "crc": "1A7DF3BB"},
+                        "bb-f21.l10": {"size": 524288, "crc": "530F595B"},
+                        "bb-f22.l12": {"size": 524288, "crc": "889C562E"},
+                        "bb-f23.l13": {"size": 524288, "crc": "C89FE0DA"},
+                        "bb-f24.l15": {"size": 524288, "crc": "E0D81359"},
+                        "bb-back1.m4": {"size": 524288, "crc": "B5445313"},
+                        "bb-back2.m6": {"size": 524288, "crc": "8BE996F6"},
+                        "bb-6.e7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-7.h7": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-8.a14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-9.c14": {"size": 65536, "crc": "61F3DE03"},
+                        "bb-1.e6": {"size": 65536, "crc": "4360F2EE"},
+                        "bb-pcma.l5": {"size": 524288, "crc": "44CD5BFE"},
+                        "bbusters-eeprom.bin": {"size": 256, "crc": "A52EBD66"}
+                    }
+                }
+            },
+            {
+                "game": "Search and Rescue",
+                "system": "Arcade",
+                "filename": "searchar.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bhw.2": {"size": 131072, "crc": "E1430138"},
+                        "bhw.3": {"size": 131072, "crc": "EE1F9374"},
+                        "bhw.1": {"size": 131072, "crc": "62B60066"},
+                        "bhw.4": {"size": 131072, "crc": "16D8525C"},
+                        "bh.5": {"size": 65536, "crc": "53E2FA76"},
+                        "bh.7": {"size": 32768, "crc": "B0F1B049"},
+                        "bh.8": {"size": 32768, "crc": "174DDBA7"},
+                        "bh.c1": {"size": 524288, "crc": "1FB8F0AE"},
+                        "bh.c3": {"size": 524288, "crc": "FD8BC407"},
+                        "bh.c5": {"size": 524288, "crc": "1D30ACC3"},
+                        "bh.c2": {"size": 524288, "crc": "7C803767"},
+                        "bh.c4": {"size": 524288, "crc": "EEDE7C43"},
+                        "bh.c6": {"size": 524288, "crc": "9F785CD9"},
+                        "bh.v1": {"size": 131072, "crc": "07A6114B"}
+                    }
+                }
+            },
+            {
+                "game": "Search and Rescue",
+                "system": "Arcade",
+                "filename": "searcharj.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bh2ver3j.9c": {"size": 131072, "crc": "7EF7B172"},
+                        "bh3ver3j.10c": {"size": 131072, "crc": "3FDEA793"},
+                        "bhw.1": {"size": 131072, "crc": "62B60066"},
+                        "bhw.4": {"size": 131072, "crc": "16D8525C"},
+                        "bh.5": {"size": 65536, "crc": "53E2FA76"},
+                        "bh.7": {"size": 32768, "crc": "B0F1B049"},
+                        "bh.8": {"size": 32768, "crc": "174DDBA7"},
+                        "bh.c1": {"size": 524288, "crc": "1FB8F0AE"},
+                        "bh.c3": {"size": 524288, "crc": "FD8BC407"},
+                        "bh.c5": {"size": 524288, "crc": "1D30ACC3"},
+                        "bh.c2": {"size": 524288, "crc": "7C803767"},
+                        "bh.c4": {"size": 524288, "crc": "EEDE7C43"},
+                        "bh.c6": {"size": 524288, "crc": "9F785CD9"},
+                        "bh.v1": {"size": 131072, "crc": "07A6114B"}
+                    }
+                }
+            },
+            {
+                "game": "Search and Rescue",
+                "system": "Arcade",
+                "filename": "searcharu.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bh.2": {"size": 131072, "crc": "C852E2E2"},
+                        "bh.3": {"size": 131072, "crc": "BC04A4A1"},
+                        "bh.1": {"size": 131072, "crc": "BA9CA70B"},
+                        "bh.4": {"size": 131072, "crc": "EABC5DDF"},
+                        "bh.5": {"size": 65536, "crc": "53E2FA76"},
+                        "bh.7": {"size": 32768, "crc": "B0F1B049"},
+                        "bh.8": {"size": 32768, "crc": "174DDBA7"},
+                        "bh.c1": {"size": 524288, "crc": "1FB8F0AE"},
+                        "bh.c3": {"size": 524288, "crc": "FD8BC407"},
+                        "bh.c5": {"size": 524288, "crc": "1D30ACC3"},
+                        "bh.c2": {"size": 524288, "crc": "7C803767"},
+                        "bh.c4": {"size": 524288, "crc": "EEDE7C43"},
+                        "bh.c6": {"size": 524288, "crc": "9F785CD9"},
+                        "bh.v1": {"size": 131072, "crc": "07A6114B"}
+                    }
+                }
+            },
+            {
+                "game": "ASO: ArmoredScrumObject",
+                "system": "Arcade",
+                "filename": "aso.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.8d": {"size": 16384, "crc": "84981F3C"},
+                        "p2.7d": {"size": 16384, "crc": "CFE912A6"},
+                        "p3.5d": {"size": 16384, "crc": "39A666D2"},
+                        "p4.3d": {"size": 16384, "crc": "A4122355"},
+                        "p5.2d": {"size": 16384, "crc": "9879E506"},
+                        "p6.1d": {"size": 16384, "crc": "C0BFDF1F"},
+                        "p14.1h": {"size": 8192, "crc": "8BAA2253"},
+                        "p10.14h": {"size": 32768, "crc": "00DFF996"},
+                        "p7.4f": {"size": 16384, "crc": "DBC19736"},
+                        "p8.3f": {"size": 16384, "crc": "537726A9"},
+                        "p9.2f": {"size": 16384, "crc": "AEF5A4F4"},
+                        "p11.11h": {"size": 32768, "crc": "7FEAC86C"},
+                        "p12.9h": {"size": 32768, "crc": "6895990B"},
+                        "p13.8h": {"size": 32768, "crc": "87A81CE1"},
+                        "mb7122h.13f": {"size": 1024, "crc": "37E28DD8"},
+                        "mb7122h.12f": {"size": 1024, "crc": "5B0A0059"},
+                        "mb7122h.14f": {"size": 1024, "crc": "C3FD1DD3"},
+                        "pal16l8a-1.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16l8a-2.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16r6a.15b": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "ASO: ArmoredScrumObject",
+                "system": "Arcade",
+                "filename": "alphamis.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.8d": {"size": 16384, "crc": "69AF874B"},
+                        "p2.7d": {"size": 16384, "crc": "7707BFE3"},
+                        "p3.5d": {"size": 16384, "crc": "B970D642"},
+                        "p4.3d": {"size": 16384, "crc": "91A89D3C"},
+                        "p5.2d": {"size": 16384, "crc": "9879E506"},
+                        "p6.1d": {"size": 16384, "crc": "C0BFDF1F"},
+                        "p14.1h": {"size": 8192, "crc": "ACBE29B2"},
+                        "p10.14h": {"size": 32768, "crc": "00DFF996"},
+                        "p7.4f": {"size": 16384, "crc": "DBC19736"},
+                        "p8.3f": {"size": 16384, "crc": "537726A9"},
+                        "p9.2f": {"size": 16384, "crc": "AEF5A4F4"},
+                        "p11.11h": {"size": 32768, "crc": "7FEAC86C"},
+                        "p12.9h": {"size": 32768, "crc": "6895990B"},
+                        "p13.8h": {"size": 32768, "crc": "87A81CE1"},
+                        "mb7122h.13f": {"size": 1024, "crc": "37E28DD8"},
+                        "mb7122h.12f": {"size": 1024, "crc": "5B0A0059"},
+                        "mb7122h.14f": {"size": 1024, "crc": "C3FD1DD3"},
+                        "pal16l8a-1.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16l8a-2.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16r6a.15b": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "ASO: ArmoredScrumObject",
+                "system": "Arcade",
+                "filename": "arian.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.8d": {"size": 16384, "crc": "0CA89307"},
+                        "p2.7d": {"size": 16384, "crc": "724518C3"},
+                        "p3.5d": {"size": 16384, "crc": "4D8DB650"},
+                        "p4.3d": {"size": 16384, "crc": "47BAF1DB"},
+                        "p5.2d": {"size": 16384, "crc": "9879E506"},
+                        "p6.1d": {"size": 16384, "crc": "C0BFDF1F"},
+                        "p14.1h": {"size": 8192, "crc": "E599BD30"},
+                        "p10.14h": {"size": 32768, "crc": "00DFF996"},
+                        "p7.4f": {"size": 16384, "crc": "DBC19736"},
+                        "p8.3f": {"size": 16384, "crc": "537726A9"},
+                        "p9.2f": {"size": 16384, "crc": "AEF5A4F4"},
+                        "p11.11h": {"size": 32768, "crc": "7FEAC86C"},
+                        "p12.9h": {"size": 32768, "crc": "6895990B"},
+                        "p13.8h": {"size": 32768, "crc": "87A81CE1"},
+                        "mb7122h.13f": {"size": 1024, "crc": "37E28DD8"},
+                        "mb7122h.12f": {"size": 1024, "crc": "5B0A0059"},
+                        "mb7122h.14f": {"size": 1024, "crc": "C3FD1DD3"},
+                        "pal16l8a-1.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16l8a-2.bin": {"size": 260, "crc": "91A9701B"},
+                        "pal16r6a.15b": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "TNKIII",
+                "system": "Arcade",
+                "filename": "tnk3.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4e": {"size": 16384, "crc": "0D2A8CA9"},
+                        "p2.4f": {"size": 16384, "crc": "0AE0A483"},
+                        "p3.4h": {"size": 16384, "crc": "D16DD4DB"},
+                        "p14.1e": {"size": 8192, "crc": "1FD18C43"},
+                        "p4.2e": {"size": 16384, "crc": "01B45A90"},
+                        "p5.2f": {"size": 16384, "crc": "60DB6667"},
+                        "p6.2h": {"size": 16384, "crc": "4761FDE7"},
+                        "p10.6f": {"size": 16384, "crc": "7BF0A517"},
+                        "p11.6d": {"size": 16384, "crc": "0569CE27"},
+                        "p12.3d": {"size": 16384, "crc": "FF495A16"},
+                        "p13.3c": {"size": 16384, "crc": "F8344843"},
+                        "p7.7h": {"size": 16384, "crc": "06B92C88"},
+                        "p8.7f": {"size": 16384, "crc": "63D0E2EB"},
+                        "p9.7e": {"size": 16384, "crc": "872E3FAC"},
+                        "1.5g": {"size": 1024, "crc": "6D0AC66A"},
+                        "2.5f": {"size": 1024, "crc": "34C06BC6"},
+                        "0.5h": {"size": 1024, "crc": "4662B4C8"}
+                    }
+                }
+            },
+            {
+                "game": "TNKIII (J)",
+                "system": "Arcade",
+                "filename": "tnk3j.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4e": {"size": 16384, "crc": "03ACA147"},
+                        "p2.4f": {"size": 16384, "crc": "0AE0A483"},
+                        "p3.4h": {"size": 16384, "crc": "D16DD4DB"},
+                        "p14.1e": {"size": 8192, "crc": "6BD575CA"},
+                        "p4.2e": {"size": 16384, "crc": "01B45A90"},
+                        "p5.2f": {"size": 16384, "crc": "60DB6667"},
+                        "p6.2h": {"size": 16384, "crc": "4761FDE7"},
+                        "p10.6f": {"size": 16384, "crc": "7BF0A517"},
+                        "p11.6d": {"size": 16384, "crc": "0569CE27"},
+                        "p12.3d": {"size": 16384, "crc": "FF495A16"},
+                        "p13.3c": {"size": 16384, "crc": "F8344843"},
+                        "p7.7h": {"size": 16384, "crc": "06B92C88"},
+                        "p8.7f": {"size": 16384, "crc": "63D0E2EB"},
+                        "p9.7e": {"size": 16384, "crc": "872E3FAC"},
+                        "1.5g": {"size": 1024, "crc": "6D0AC66A"},
+                        "2.5f": {"size": 1024, "crc": "34C06BC6"},
+                        "0.5h": {"size": 1024, "crc": "4662B4C8"}
+                    }
+                }
+            },
+            {
+                "game": "Athena",
+                "system": "Arcade",
+                "filename": "athena.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p3.8p": {"size": 16384, "crc": "DF50AF7E"},
+                        "p4.8m": {"size": 32768, "crc": "F3C933DF"},
+                        "p5.6g": {"size": 16384, "crc": "42DBE029"},
+                        "p6.6k": {"size": 32768, "crc": "596F1C8A"},
+                        "p7.2p": {"size": 32768, "crc": "C63A871F"},
+                        "p8.2s": {"size": 32768, "crc": "760568D8"},
+                        "p9.2t": {"size": 32768, "crc": "57B35C73"},
+                        "p1.4p": {"size": 16384, "crc": "900A113C"},
+                        "p2.4m": {"size": 32768, "crc": "61C69474"},
+                        "p11.2d": {"size": 16384, "crc": "18B4BCCA"},
+                        "p10.2b": {"size": 32768, "crc": "F269C0EB"},
+                        "2.1b": {"size": 1024, "crc": "D25C9099"},
+                        "3.2c": {"size": 1024, "crc": "294279AE"},
+                        "1.1c": {"size": 1024, "crc": "A4A4E7DC"}
+                    }
+                }
+            },
+            {
+                "game": "Prehistoric Isle",
+                "system": "Arcade",
+                "filename": "gensitou.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gt-j2.2h": {"size": 131072, "crc": "A2DA0B6B"},
+                        "gt-j3.3h": {"size": 131072, "crc": "C1A0AE8E"},
+                        "gt1.1": {"size": 65536, "crc": "80A4C093"},
+                        "gt15.b15": {"size": 32768, "crc": "AC652412"},
+                        "pi8914.b14": {"size": 262144, "crc": "207D6187"},
+                        "pi8916.h16": {"size": 262144, "crc": "7CFFE0F6"},
+                        "pi8910.k14": {"size": 524288, "crc": "5A101B0B"},
+                        "gt5.5": {"size": 131072, "crc": "3D3AB273"},
+                        "gt11.11": {"size": 65536, "crc": "B4F0FCF0"},
+                        "gt4.4": {"size": 131072, "crc": "85DFB9EC"}
+                    }
+                }
+            },
+            {
+                "game": "Prehistoric Isle",
+                "system": "Arcade",
+                "filename": "prehisle.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gt-e2.2h": {"size": 131072, "crc": "7083245A"},
+                        "gt-e3.3h": {"size": 131072, "crc": "6D8CDF58"},
+                        "gt1.1": {"size": 65536, "crc": "80A4C093"},
+                        "gt15.b15": {"size": 32768, "crc": "AC652412"},
+                        "pi8914.b14": {"size": 262144, "crc": "207D6187"},
+                        "pi8916.h16": {"size": 262144, "crc": "7CFFE0F6"},
+                        "pi8910.k14": {"size": 524288, "crc": "5A101B0B"},
+                        "gt5.5": {"size": 131072, "crc": "3D3AB273"},
+                        "gt11.11": {"size": 65536, "crc": "B4F0FCF0"},
+                        "gt4.4": {"size": 131072, "crc": "85DFB9EC"}
+                    }
+                }
+            },
+            {
+                "game": "Prehistoric Isle",
+                "system": "Arcade",
+                "filename": "prehisleu.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gt-u2.2h": {"size": 131072, "crc": "A14F49BB"},
+                        "gt-u3.3h": {"size": 131072, "crc": "F165757E"},
+                        "gt1.1": {"size": 65536, "crc": "80A4C093"},
+                        "gt15.b15": {"size": 32768, "crc": "AC652412"},
+                        "pi8914.b14": {"size": 262144, "crc": "207D6187"},
+                        "pi8916.h16": {"size": 262144, "crc": "7CFFE0F6"},
+                        "pi8910.k14": {"size": 524288, "crc": "5A101B0B"},
+                        "gt5.5": {"size": 131072, "crc": "3D3AB273"},
+                        "gt11.11": {"size": 65536, "crc": "B4F0FCF0"},
+                        "gt4.4": {"size": 131072, "crc": "85DFB9EC"}
+                    }
+                }
+            },
+            {
+                "game": "Street Smart",
+                "system": "Arcade",
+                "filename": "streetsm.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s2-1ver2.14h": {"size": 131072, "crc": "655F4773"},
+                        "s2-2ver2.14k": {"size": 131072, "crc": "EFAE4823"},
+                        "s2-9.25l": {"size": 32768, "crc": "09B6AC67"},
+                        "s2-10.25m": {"size": 32768, "crc": "89E4EE6F"},
+                        "s2-5.16c": {"size": 65536, "crc": "CA4B171E"},
+                        "s2-6.18d": {"size": 131072, "crc": "47DB1605"},
+                        "stsmart.900": {"size": 524288, "crc": "A8279A7E"},
+                        "stsmart.902": {"size": 524288, "crc": "2F021AA1"},
+                        "stsmart.904": {"size": 524288, "crc": "167346F7"},
+                        "stsmart.901": {"size": 524288, "crc": "C305AF12"},
+                        "stsmart.903": {"size": 524288, "crc": "73C16D35"},
+                        "stsmart.905": {"size": 524288, "crc": "A5BEB4E2"}
+                    }
+                }
+            },
+            {
+                "game": "Street Smart",
+                "system": "Arcade",
+                "filename": "streetsm1.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s2-1ver1.9c": {"size": 131072, "crc": "B59354C5"},
+                        "s2-2ver1.10c": {"size": 131072, "crc": "E448B68B"},
+                        "s2-7.15l": {"size": 32768, "crc": "22BEDFE5"},
+                        "s2-8.15m": {"size": 32768, "crc": "6A1C70AB"},
+                        "s2-5.16c": {"size": 65536, "crc": "CA4B171E"},
+                        "s2-6.18d": {"size": 131072, "crc": "47DB1605"},
+                        "stsmart.900": {"size": 524288, "crc": "A8279A7E"},
+                        "stsmart.902": {"size": 524288, "crc": "2F021AA1"},
+                        "stsmart.904": {"size": 524288, "crc": "167346F7"},
+                        "stsmart.901": {"size": 524288, "crc": "C305AF12"},
+                        "stsmart.903": {"size": 524288, "crc": "73C16D35"},
+                        "stsmart.905": {"size": 524288, "crc": "A5BEB4E2"}
+                    }
+                }
+            },
+            {
+                "game": "Street Smart",
+                "system": "Arcade",
+                "filename": "streetsmj.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s2v1j_01.bin": {"size": 131072, "crc": "F031413C"},
+                        "s2v1j_02.bin": {"size": 131072, "crc": "E403A40B"},
+                        "s2-7.15l": {"size": 32768, "crc": "22BEDFE5"},
+                        "s2-8.15m": {"size": 32768, "crc": "6A1C70AB"},
+                        "s2-5.16c": {"size": 65536, "crc": "CA4B171E"},
+                        "s2-6.18d": {"size": 131072, "crc": "47DB1605"},
+                        "stsmart.900": {"size": 524288, "crc": "A8279A7E"},
+                        "stsmart.902": {"size": 524288, "crc": "2F021AA1"},
+                        "stsmart.904": {"size": 524288, "crc": "167346F7"},
+                        "stsmart.901": {"size": 524288, "crc": "C305AF12"},
+                        "stsmart.903": {"size": 524288, "crc": "73C16D35"},
+                        "stsmart.905": {"size": 524288, "crc": "A5BEB4E2"}
+                    }
+                }
+            },
+            {
+                "game": "Street Smart",
+                "system": "Arcade",
+                "filename": "streetsmw.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "s-smart1.bin": {"size": 131072, "crc": "A1F5CEAB"},
+                        "s-smart2.bin": {"size": 131072, "crc": "263F615D"},
+                        "s2-7.15l": {"size": 32768, "crc": "22BEDFE5"},
+                        "s2-8.15m": {"size": 32768, "crc": "6A1C70AB"},
+                        "s2-5.16c": {"size": 65536, "crc": "CA4B171E"},
+                        "s2-6.18d": {"size": 131072, "crc": "47DB1605"},
+                        "stsmart.900": {"size": 524288, "crc": "A8279A7E"},
+                        "stsmart.902": {"size": 524288, "crc": "2F021AA1"},
+                        "stsmart.904": {"size": 524288, "crc": "167346F7"},
+                        "stsmart.901": {"size": 524288, "crc": "C305AF12"},
+                        "stsmart.903": {"size": 524288, "crc": "73C16D35"},
+                        "stsmart.905": {"size": 524288, "crc": "A5BEB4E2"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "Arcade",
+                "filename": "ikari3.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ik3-2-ver1.c10": {"size": 131072, "crc": "1BAE8023"},
+                        "ik3-3-ver1.c9": {"size": 131072, "crc": "10E38B66"},
+                        "ik3-7.16l": {"size": 32768, "crc": "0B4804DF"},
+                        "ik3-8.16m": {"size": 32768, "crc": "10AB4E50"},
+                        "ik3-23.bin": {"size": 131072, "crc": "D0FD5C77"},
+                        "ik3-13.bin": {"size": 131072, "crc": "9A56BD32"},
+                        "ik3-22.bin": {"size": 131072, "crc": "4878D883"},
+                        "ik3-12.bin": {"size": 131072, "crc": "0CE6A10A"},
+                        "ik3-21.bin": {"size": 131072, "crc": "50D0FBF0"},
+                        "ik3-11.bin": {"size": 131072, "crc": "E4E2BE43"},
+                        "ik3-20.bin": {"size": 131072, "crc": "9A851EFC"},
+                        "ik3-10.bin": {"size": 131072, "crc": "AC222372"},
+                        "ik3-19.bin": {"size": 131072, "crc": "4EBDBA89"},
+                        "ik3-9.bin": {"size": 131072, "crc": "C33971C2"},
+                        "ik3-14.bin": {"size": 131072, "crc": "453BEA77"},
+                        "ik3-24.bin": {"size": 131072, "crc": "E9B26D68"},
+                        "ik3-15.bin": {"size": 131072, "crc": "781A81FC"},
+                        "ik3-25.bin": {"size": 131072, "crc": "073B03F1"},
+                        "ik3-16.bin": {"size": 131072, "crc": "80BA400B"},
+                        "ik3-26.bin": {"size": 131072, "crc": "9C613561"},
+                        "ik3-17.bin": {"size": 131072, "crc": "0CC3CE4A"},
+                        "ik3-27.bin": {"size": 131072, "crc": "16DD227E"},
+                        "ik3-18.bin": {"size": 131072, "crc": "BA106245"},
+                        "ik3-28.bin": {"size": 131072, "crc": "711715AE"},
+                        "ik3-5.16d": {"size": 65536, "crc": "CE6706FC"},
+                        "ik3-6.18e": {"size": 131072, "crc": "59D256A4"},
+                        "ik3-1.c8": {"size": 65536, "crc": "47E4D256"},
+                        "ik3-4.c12": {"size": 65536, "crc": "A43AF6B5"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "Arcade",
+                "filename": "ikari3j.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ik3-2-j.c10": {"size": 131072, "crc": "7B1B4BE4"},
+                        "ik3-3-j.c9": {"size": 131072, "crc": "8E6E2AA9"},
+                        "ik3-7.16l": {"size": 32768, "crc": "0B4804DF"},
+                        "ik3-8.16m": {"size": 32768, "crc": "10AB4E50"},
+                        "ik3-23.bin": {"size": 131072, "crc": "D0FD5C77"},
+                        "ik3-13.bin": {"size": 131072, "crc": "9A56BD32"},
+                        "ik3-22.bin": {"size": 131072, "crc": "4878D883"},
+                        "ik3-12.bin": {"size": 131072, "crc": "0CE6A10A"},
+                        "ik3-21.bin": {"size": 131072, "crc": "50D0FBF0"},
+                        "ik3-11.bin": {"size": 131072, "crc": "E4E2BE43"},
+                        "ik3-20.bin": {"size": 131072, "crc": "9A851EFC"},
+                        "ik3-10.bin": {"size": 131072, "crc": "AC222372"},
+                        "ik3-19.bin": {"size": 131072, "crc": "4EBDBA89"},
+                        "ik3-9.bin": {"size": 131072, "crc": "C33971C2"},
+                        "ik3-14.bin": {"size": 131072, "crc": "453BEA77"},
+                        "ik3-24.bin": {"size": 131072, "crc": "E9B26D68"},
+                        "ik3-15.bin": {"size": 131072, "crc": "781A81FC"},
+                        "ik3-25.bin": {"size": 131072, "crc": "073B03F1"},
+                        "ik3-16.bin": {"size": 131072, "crc": "80BA400B"},
+                        "ik3-26.bin": {"size": 131072, "crc": "9C613561"},
+                        "ik3-17.bin": {"size": 131072, "crc": "0CC3CE4A"},
+                        "ik3-27.bin": {"size": 131072, "crc": "16DD227E"},
+                        "ik3-18.bin": {"size": 131072, "crc": "BA106245"},
+                        "ik3-28.bin": {"size": 131072, "crc": "711715AE"},
+                        "ik3-5.16d": {"size": 65536, "crc": "CE6706FC"},
+                        "ik3-6.18e": {"size": 131072, "crc": "59D256A4"},
+                        "ik3-1.c8": {"size": 65536, "crc": "47E4D256"},
+                        "ik3-4.c12": {"size": 65536, "crc": "A43AF6B5"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "Arcade",
+                "filename": "ikari3k.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ik3-2k.c10": {"size": 131072, "crc": "A15D2222"},
+                        "ik3-3k.c9": {"size": 131072, "crc": "E3FC006E"},
+                        "ik3-7k.16l": {"size": 32768, "crc": "8BFB399B"},
+                        "ik3-8k.16m": {"size": 32768, "crc": "3F0FE576"},
+                        "ikari-880d_t53.d2": {"size": 524288, "crc": "5855D95E"},
+                        "ikari-880c_t54.c2": {"size": 524288, "crc": "6D728362"},
+                        "ik12.d1": {"size": 131072, "crc": "4EBDBA89"},
+                        "ik11.c1": {"size": 131072, "crc": "C33971C2"},
+                        "ikari-880d_t52.b2": {"size": 524288, "crc": "E25380E6"},
+                        "ikari-880c_t51.a2": {"size": 524288, "crc": "87607772"},
+                        "ik10.b1": {"size": 131072, "crc": "BA106245"},
+                        "ik9.a1": {"size": 131072, "crc": "711715AE"},
+                        "ik3-5.16d": {"size": 65536, "crc": "CE6706FC"},
+                        "ik3-6.18e": {"size": 131072, "crc": "59D256A4"},
+                        "ik3-1.c8": {"size": 65536, "crc": "47E4D256"},
+                        "ik3-4.c12": {"size": 65536, "crc": "A43AF6B5"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "Arcade",
+                "filename": "ikari3u.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ik3-2.c10": {"size": 131072, "crc": "A7B34DCD"},
+                        "ik3-3.c9": {"size": 131072, "crc": "50F2B83D"},
+                        "ik3-7.16l": {"size": 32768, "crc": "0B4804DF"},
+                        "ik3-8.16m": {"size": 32768, "crc": "10AB4E50"},
+                        "ik3-23.bin": {"size": 131072, "crc": "D0FD5C77"},
+                        "ik3-13.bin": {"size": 131072, "crc": "9A56BD32"},
+                        "ik3-22.bin": {"size": 131072, "crc": "4878D883"},
+                        "ik3-12.bin": {"size": 131072, "crc": "0CE6A10A"},
+                        "ik3-21.bin": {"size": 131072, "crc": "50D0FBF0"},
+                        "ik3-11.bin": {"size": 131072, "crc": "E4E2BE43"},
+                        "ik3-20.bin": {"size": 131072, "crc": "9A851EFC"},
+                        "ik3-10.bin": {"size": 131072, "crc": "AC222372"},
+                        "ik3-19.bin": {"size": 131072, "crc": "4EBDBA89"},
+                        "ik3-9.bin": {"size": 131072, "crc": "C33971C2"},
+                        "ik3-14.bin": {"size": 131072, "crc": "453BEA77"},
+                        "ik3-24.bin": {"size": 131072, "crc": "E9B26D68"},
+                        "ik3-15.bin": {"size": 131072, "crc": "781A81FC"},
+                        "ik3-25.bin": {"size": 131072, "crc": "073B03F1"},
+                        "ik3-16.bin": {"size": 131072, "crc": "80BA400B"},
+                        "ik3-26.bin": {"size": 131072, "crc": "9C613561"},
+                        "ik3-17.bin": {"size": 131072, "crc": "0CC3CE4A"},
+                        "ik3-27.bin": {"size": 131072, "crc": "16DD227E"},
+                        "ik3-18.bin": {"size": 131072, "crc": "BA106245"},
+                        "ik3-28.bin": {"size": 131072, "crc": "711715AE"},
+                        "ik3-5.15d": {"size": 65536, "crc": "CE6706FC"},
+                        "ik3-6.18e": {"size": 131072, "crc": "59D256A4"},
+                        "ik3-1.c8": {"size": 65536, "crc": "47E4D256"},
+                        "ik3-4.c12": {"size": 65536, "crc": "A43AF6B5"}
+                    }
+                }
+            },
+            {
+                "game": "P.O.W",
+                "system": "Arcade",
+                "filename": "pow.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "dg1ver1.j14": {"size": 131072, "crc": "8E71A8AF"},
+                        "dg2ver1.l14": {"size": 131072, "crc": "4287AFFC"},
+                        "dg9.l25": {"size": 32768, "crc": "DF864A08"},
+                        "dg10.m25": {"size": 32768, "crc": "9E470D53"},
+                        "dg8.e25": {"size": 65536, "crc": "D1D61DA3"},
+                        "dg7.d20": {"size": 65536, "crc": "ABA9A9D3"},
+                        "pal20l10.a6": {"size": 204, "crc": "C3D9E729"},
+                        "snk88011a.1a": {"size": 131072, "crc": "E70FD906"},
+                        "snk88015a.2a": {"size": 131072, "crc": "7A90E957"},
+                        "snk88012a.1b": {"size": 131072, "crc": "628B1AED"},
+                        "snk88016a.2b": {"size": 131072, "crc": "E40A6C13"},
+                        "snk88013a.1c": {"size": 131072, "crc": "19DC8868"},
+                        "snk88017a.2c": {"size": 131072, "crc": "C7931CC2"},
+                        "snk88014a.1d": {"size": 131072, "crc": "47CD498B"},
+                        "snk88018a.2d": {"size": 131072, "crc": "EED72232"},
+                        "snk88019a.3a": {"size": 131072, "crc": "1775B8DD"},
+                        "snk88023a.4a": {"size": 131072, "crc": "ADB6AD68"},
+                        "snk88020a.3b": {"size": 131072, "crc": "F8E752EC"},
+                        "snk88024a.4b": {"size": 131072, "crc": "DD41865A"},
+                        "snk88021a.3c": {"size": 131072, "crc": "27E9FFFE"},
+                        "snk88025a.4c": {"size": 131072, "crc": "055759AD"},
+                        "snk88022a.3d": {"size": 131072, "crc": "AA9C00D8"},
+                        "snk88026a.4d": {"size": 131072, "crc": "9BC261C5"}
+                    }
+                }
+            },
+            {
+                "game": "P.O.W",
+                "system": "Arcade",
+                "filename": "powj.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "1-2": {"size": 131072, "crc": "2F17BFB0"},
+                        "2-2": {"size": 131072, "crc": "BAA32354"},
+                        "dg9.l25": {"size": 32768, "crc": "DF864A08"},
+                        "dg10.m25": {"size": 32768, "crc": "9E470D53"},
+                        "dg8.e25": {"size": 65536, "crc": "D1D61DA3"},
+                        "dg7.d20": {"size": 65536, "crc": "ABA9A9D3"},
+                        "pal20l10.a6": {"size": 204, "crc": "C3D9E729"},
+                        "snk88011a.1a": {"size": 131072, "crc": "E70FD906"},
+                        "snk88015a.2a": {"size": 131072, "crc": "7A90E957"},
+                        "snk88012a.1b": {"size": 131072, "crc": "628B1AED"},
+                        "snk88016a.2b": {"size": 131072, "crc": "E40A6C13"},
+                        "snk88013a.1c": {"size": 131072, "crc": "19DC8868"},
+                        "snk88017a.2c": {"size": 131072, "crc": "C7931CC2"},
+                        "snk88014a.1d": {"size": 131072, "crc": "47CD498B"},
+                        "snk88018a.2d": {"size": 131072, "crc": "EED72232"},
+                        "snk88019a.3a": {"size": 131072, "crc": "1775B8DD"},
+                        "snk88023a.4a": {"size": 131072, "crc": "ADB6AD68"},
+                        "snk88020a.3b": {"size": 131072, "crc": "F8E752EC"},
+                        "snk88024a.4b": {"size": 131072, "crc": "DD41865A"},
+                        "snk88021a.3c": {"size": 131072, "crc": "27E9FFFE"},
+                        "snk88025a.4c": {"size": 131072, "crc": "055759AD"},
+                        "snk88022a.3d": {"size": 131072, "crc": "AA9C00D8"},
+                        "snk88026a.4d": {"size": 131072, "crc": "9BC261C5"}
+                    }
+                }
+            },
+            {
+                "game": "Vanguard",
+                "system": "Arcade",
+                "filename": "vanguard.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sk4_ic07.bin": {"size": 4096, "crc": "6A29E354"},
+                        "sk4_ic08.bin": {"size": 4096, "crc": "302BBA54"},
+                        "sk4_ic09.bin": {"size": 4096, "crc": "424755F6"},
+                        "sk4_ic10.bin": {"size": 4096, "crc": "54603274"},
+                        "sk4_ic13.bin": {"size": 4096, "crc": "FDE157D0"},
+                        "sk4_ic14.bin": {"size": 4096, "crc": "0D5B47D0"},
+                        "sk4_ic15.bin": {"size": 4096, "crc": "8549B8F8"},
+                        "sk4_ic16.bin": {"size": 4096, "crc": "062E0BE2"},
+                        "sk5_ic50.bin": {"size": 2048, "crc": "E7D4315B"},
+                        "sk5_ic51.bin": {"size": 2048, "crc": "96E87858"},
+                        "sk5_ic7.bin": {"size": 32, "crc": "AD782A73"},
+                        "sk5_ic6.bin": {"size": 32, "crc": "7DC9D450"},
+                        "sk4_ic51.bin": {"size": 2048, "crc": "D2A64006"},
+                        "sk4_ic52.bin": {"size": 2048, "crc": "CC4A0B6F"},
+                        "sk6_ic07.bin": {"size": 2048, "crc": "2B7CBAE9"},
+                        "sk6_ic08.bin": {"size": 2048, "crc": "3B7E9D7C"},
+                        "sk6_ic11.bin": {"size": 2048, "crc": "C36DF041"}
+                    }
+                }
+            },
+            {
+                "game": "Vanguard",
+                "system": "Arcade",
+                "filename": "vanguardc.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sk4_ic07.bin": {"size": 4096, "crc": "6A29E354"},
+                        "sk4_ic08.bin": {"size": 4096, "crc": "302BBA54"},
+                        "sk4_ic09.bin": {"size": 4096, "crc": "424755F6"},
+                        "4": {"size": 4096, "crc": "770F9714"},
+                        "5": {"size": 4096, "crc": "3445CBA6"},
+                        "sk4_ic14.bin": {"size": 4096, "crc": "0D5B47D0"},
+                        "sk4_ic15.bin": {"size": 4096, "crc": "8549B8F8"},
+                        "8": {"size": 4096, "crc": "4B825BC8"},
+                        "sk5_ic50.bin": {"size": 2048, "crc": "E7D4315B"},
+                        "sk5_ic51.bin": {"size": 2048, "crc": "96E87858"},
+                        "sk5_ic7.bin": {"size": 32, "crc": "AD782A73"},
+                        "sk5_ic6.bin": {"size": 32, "crc": "7DC9D450"},
+                        "sk4_ic51.bin": {"size": 2048, "crc": "D2A64006"},
+                        "sk4_ic52.bin": {"size": 2048, "crc": "CC4A0B6F"},
+                        "sk6_ic07.bin": {"size": 2048, "crc": "2B7CBAE9"},
+                        "sk6_ic08.bin": {"size": 2048, "crc": "3B7E9D7C"},
+                        "sk6_ic11.bin": {"size": 2048, "crc": "C36DF041"}
+                    }
+                }
+            },
+            {
+                "game": "Vanguard",
+                "system": "Arcade",
+                "filename": "vanguardj.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sk4_ic07.bin": {"size": 4096, "crc": "6A29E354"},
+                        "sk4_ic08.bin": {"size": 4096, "crc": "302BBA54"},
+                        "sk4_ic09.bin": {"size": 4096, "crc": "424755F6"},
+                        "vgj4ic10.bin": {"size": 4096, "crc": "0A91A5D1"},
+                        "vgj5ic13.bin": {"size": 4096, "crc": "06601A40"},
+                        "sk4_ic14.bin": {"size": 4096, "crc": "0D5B47D0"},
+                        "sk4_ic15.bin": {"size": 4096, "crc": "8549B8F8"},
+                        "sk4_ic16.bin": {"size": 4096, "crc": "062E0BE2"},
+                        "sk5_ic50.bin": {"size": 2048, "crc": "E7D4315B"},
+                        "sk5_ic51.bin": {"size": 2048, "crc": "96E87858"},
+                        "sk5_ic7.bin": {"size": 32, "crc": "AD782A73"},
+                        "sk5_ic6.bin": {"size": 32, "crc": "7DC9D450"},
+                        "sk4_ic51.bin": {"size": 2048, "crc": "D2A64006"},
+                        "sk4_ic52.bin": {"size": 2048, "crc": "CC4A0B6F"},
+                        "sk6_ic07.bin": {"size": 2048, "crc": "2B7CBAE9"},
+                        "sk6_ic08.bin": {"size": 2048, "crc": "3B7E9D7C"},
+                        "sk6_ic11.bin": {"size": 2048, "crc": "C36DF041"}
+                    }
+                }
+            },
+            {
+                "game": "Guerilla War",
+                "system": "Arcade",
+                "filename": "gwar.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gw5.8p": {"size": 32768, "crc": "80F73E2E"},
+                        "1.2g": {"size": 65536, "crc": "5BCFA7DC"},
+                        "gw6.2j": {"size": 65536, "crc": "58600F7D"},
+                        "7.2l": {"size": 65536, "crc": "A3F9B463"},
+                        "gw8.2m": {"size": 65536, "crc": "092501BE"},
+                        "gw9.2p": {"size": 65536, "crc": "25801EA6"},
+                        "16.2ab": {"size": 65536, "crc": "2B46EDFF"},
+                        "17.2ad": {"size": 65536, "crc": "BE19888D"},
+                        "14.2y": {"size": 65536, "crc": "2D653F0C"},
+                        "15.2aa": {"size": 65536, "crc": "EBBF3BA2"},
+                        "12.2v": {"size": 65536, "crc": "AEB3707F"},
+                        "13.2w": {"size": 65536, "crc": "0808F95F"},
+                        "10.2s": {"size": 65536, "crc": "8DFC7B87"},
+                        "11.2t": {"size": 65536, "crc": "06822AAC"},
+                        "18.8x": {"size": 65536, "crc": "F1DCDAEF"},
+                        "19.8z": {"size": 65536, "crc": "326E4E5E"},
+                        "gw20.8aa": {"size": 65536, "crc": "0AA70967"},
+                        "21.8ac": {"size": 65536, "crc": "B7686336"},
+                        "4.2j": {"size": 65536, "crc": "2255F8DD"},
+                        "2.6g": {"size": 65536, "crc": "86D931BF"},
+                        "3.7g": {"size": 65536, "crc": "EB544AB9"},
+                        "2.9v": {"size": 1024, "crc": "9147DE69"},
+                        "3.9w": {"size": 1024, "crc": "090236A3"},
+                        "1.9u": {"size": 1024, "crc": "7F9C839E"},
+                        "l.1x": {"size": 4096, "crc": "C71C0011"},
+                        "l.1w": {"size": 4096, "crc": "C71C0011"}
+                    }
+                }
+            },
+            {
+                "game": "Guerilla War (A)",
+                "system": "Arcade",
+                "filename": "gwara.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gv5.3a": {"size": 32768, "crc": "80F73E2E"},
+                        "gv3_1.4p": {"size": 65536, "crc": "24936D83"},
+                        "gv4.8p": {"size": 65536, "crc": "26335A55"},
+                        "gv2.7k": {"size": 65536, "crc": "896682DD"},
+                        "gv1.5g": {"size": 65536, "crc": "2255F8DD"},
+                        "gv9.3g": {"size": 65536, "crc": "58600F7D"},
+                        "gv8.3e": {"size": 65536, "crc": "A3F9B463"},
+                        "gv7.3d": {"size": 65536, "crc": "092501BE"},
+                        "gv6.3b": {"size": 65536, "crc": "25801EA6"},
+                        "gv14.8l": {"size": 65536, "crc": "2B46EDFF"},
+                        "gv15.8n": {"size": 65536, "crc": "BE19888D"},
+                        "gv16.8p": {"size": 65536, "crc": "2D653F0C"},
+                        "gv17.8s": {"size": 65536, "crc": "EBBF3BA2"},
+                        "gv18.7p": {"size": 65536, "crc": "AEB3707F"},
+                        "gv19.7s": {"size": 65536, "crc": "0808F95F"},
+                        "gv20.8j": {"size": 65536, "crc": "8DFC7B87"},
+                        "gv21.8k": {"size": 65536, "crc": "06822AAC"},
+                        "gv13.2a": {"size": 65536, "crc": "F1DCDAEF"},
+                        "gv12.2b": {"size": 65536, "crc": "326E4E5E"},
+                        "gv11.2d": {"size": 65536, "crc": "0AA70967"},
+                        "gv10.2e": {"size": 65536, "crc": "B7686336"},
+                        "1.1k": {"size": 1024, "crc": "090236A3"},
+                        "2.1l": {"size": 1024, "crc": "7F9C839E"},
+                        "3.2l": {"size": 1024, "crc": "9147DE69"},
+                        "l.1x": {"size": 4096, "crc": "C71C0011"},
+                        "l.1w": {"size": 4096, "crc": "C71C0011"},
+                        "horizon.8j": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.8k": {"size": 1024, "crc": "EFB5AF2E"}
+                    }
+                }
+            },
+            {
+                "game": "Guerilla War (B)",
+                "system": "Arcade",
+                "filename": "gwarab.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gv5.3a": {"size": 32768, "crc": "80F73E2E"},
+                        "gv3 ver 1.4p": {"size": 65536, "crc": "ABEC5EEB"},
+                        "gv4.8p": {"size": 65536, "crc": "26335A55"},
+                        "gv2.7k": {"size": 65536, "crc": "896682DD"},
+                        "gv1.5g": {"size": 65536, "crc": "2255F8DD"},
+                        "gv9.3g": {"size": 65536, "crc": "58600F7D"},
+                        "gv8.3e": {"size": 65536, "crc": "A3F9B463"},
+                        "gv7.3d": {"size": 65536, "crc": "092501BE"},
+                        "gv6.3b": {"size": 65536, "crc": "25801EA6"},
+                        "gv14.8l": {"size": 65536, "crc": "2B46EDFF"},
+                        "gv15.8n": {"size": 65536, "crc": "BE19888D"},
+                        "gv16.8p": {"size": 65536, "crc": "2D653F0C"},
+                        "gv17.8s": {"size": 65536, "crc": "EBBF3BA2"},
+                        "gv18.7p": {"size": 65536, "crc": "AEB3707F"},
+                        "gv19.7s": {"size": 65536, "crc": "0808F95F"},
+                        "gv20.8j": {"size": 65536, "crc": "8DFC7B87"},
+                        "gv21.8k": {"size": 65536, "crc": "06822AAC"},
+                        "gv13.2a": {"size": 65536, "crc": "F1DCDAEF"},
+                        "gv12.2b": {"size": 65536, "crc": "326E4E5E"},
+                        "gv11.2d": {"size": 65536, "crc": "0AA70967"},
+                        "gv10.2e": {"size": 65536, "crc": "B7686336"},
+                        "1.1k": {"size": 1024, "crc": "090236A3"},
+                        "2.1l": {"size": 1024, "crc": "7F9C839E"},
+                        "3.2l": {"size": 1024, "crc": "9147DE69"},
+                        "l.1x": {"size": 4096, "crc": "C71C0011"},
+                        "l.1w": {"size": 4096, "crc": "C71C0011"},
+                        "horizon.8j": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.8k": {"size": 1024, "crc": "EFB5AF2E"}
+                    }
+                }
+            },
+            {
+                "game": "Guevara (Guerilla War (J))",
+                "system": "Arcade",
+                "filename": "gwarj.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gw5.8p": {"size": 32768, "crc": "99D7DDF3"},
+                        "1.2g": {"size": 65536, "crc": "7F8A880C"},
+                        "2.6g": {"size": 65536, "crc": "86D931BF"},
+                        "3.7g": {"size": 65536, "crc": "EB544AB9"},
+                        "gw6.2j": {"size": 65536, "crc": "58600F7D"},
+                        "7.2l": {"size": 65536, "crc": "A3F9B463"},
+                        "gw8.2m": {"size": 65536, "crc": "092501BE"},
+                        "gw9.2p": {"size": 65536, "crc": "25801EA6"},
+                        "16.2ab": {"size": 65536, "crc": "2B46EDFF"},
+                        "17.2ad": {"size": 65536, "crc": "BE19888D"},
+                        "14.2y": {"size": 65536, "crc": "2D653F0C"},
+                        "15.2aa": {"size": 65536, "crc": "EBBF3BA2"},
+                        "12.2v": {"size": 65536, "crc": "AEB3707F"},
+                        "13.2w": {"size": 65536, "crc": "0808F95F"},
+                        "10.2s": {"size": 65536, "crc": "8DFC7B87"},
+                        "11.2t": {"size": 65536, "crc": "06822AAC"},
+                        "18.8x": {"size": 65536, "crc": "F1DCDAEF"},
+                        "19.8z": {"size": 65536, "crc": "326E4E5E"},
+                        "gw20.8aa": {"size": 65536, "crc": "0AA70967"},
+                        "21.8ac": {"size": 65536, "crc": "B7686336"},
+                        "4.2j": {"size": 65536, "crc": "2255F8DD"},
+                        "2.9v": {"size": 1024, "crc": "9147DE69"},
+                        "3.9w": {"size": 1024, "crc": "090236A3"},
+                        "1.9u": {"size": 1024, "crc": "7F9C839E"},
+                        "l.1x": {"size": 4096, "crc": "C71C0011"},
+                        "l.1w": {"size": 4096, "crc": "C71C0011"}
+                    }
+                }
+            },
+            {
+                "game": "Psycho Soldier",
+                "system": "Arcade",
+                "filename": "psychos.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ps7.4m": {"size": 65536, "crc": "562809F4"},
+                        "ps5.6j": {"size": 65536, "crc": "64503283"},
+                        "ps1.5b": {"size": 65536, "crc": "58F1683F"},
+                        "ps2.5c": {"size": 65536, "crc": "DA3ABDA1"},
+                        "ps3.5d": {"size": 65536, "crc": "F3683AE8"},
+                        "ps4.5f": {"size": 65536, "crc": "437D775A"},
+                        "ps6.8m": {"size": 65536, "crc": "5F426DDB"},
+                        "ps8.3a": {"size": 32768, "crc": "11A71919"},
+                        "ps16.1f": {"size": 65536, "crc": "167E5765"},
+                        "ps15.1d": {"size": 65536, "crc": "8B0FE8D0"},
+                        "ps14.1c": {"size": 65536, "crc": "F4361C50"},
+                        "ps13.1a": {"size": 65536, "crc": "E4B0B95E"},
+                        "ps12.3g": {"size": 32768, "crc": "F96F82DB"},
+                        "ps11.3e": {"size": 32768, "crc": "2B007733"},
+                        "ps10.3c": {"size": 32768, "crc": "EFA830E1"},
+                        "ps9.3b": {"size": 32768, "crc": "24559EE1"},
+                        "ps17.10f": {"size": 65536, "crc": "2BAC250E"},
+                        "ps18.10h": {"size": 65536, "crc": "5E1BA353"},
+                        "ps19.10j": {"size": 65536, "crc": "9FF91A97"},
+                        "ps20.10l": {"size": 65536, "crc": "AE1965EF"},
+                        "ps21.10m": {"size": 65536, "crc": "DF283B67"},
+                        "ps22.10n": {"size": 65536, "crc": "914F051F"},
+                        "ps23.10r": {"size": 65536, "crc": "C4488472"},
+                        "ps24.10s": {"size": 65536, "crc": "8EC7FE18"},
+                        "horizon.8j": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.8k": {"size": 1024, "crc": "EFB5AF2E"},
+                        "psc3.1l": {"size": 1024, "crc": "40E78C9E"},
+                        "psc1.1k": {"size": 1024, "crc": "27B8CA8C"},
+                        "psc2.2k": {"size": 1024, "crc": "D845D5AC"}
+                    }
+                }
+            },
+            {
+                "game": "Psycho Soldier (J)",
+                "system": "Arcade",
+                "filename": "psychosj.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ps7.4m": {"size": 65536, "crc": "05DFB409"},
+                        "ps5.6j": {"size": 65536, "crc": "BBD0A8E3"},
+                        "ps1.5b": {"size": 65536, "crc": "0F8E8276"},
+                        "ps2.5c": {"size": 65536, "crc": "34E41DFB"},
+                        "ps3.5d": {"size": 65536, "crc": "AA583C5E"},
+                        "ps4.5f": {"size": 65536, "crc": "7E8BCE7A"},
+                        "ps6.8m": {"size": 65536, "crc": "5F426DDB"},
+                        "ps8.3a": {"size": 32768, "crc": "11A71919"},
+                        "ps16.1f": {"size": 65536, "crc": "167E5765"},
+                        "ps15.1d": {"size": 65536, "crc": "8B0FE8D0"},
+                        "ps14.1c": {"size": 65536, "crc": "F4361C50"},
+                        "ps13.1a": {"size": 65536, "crc": "E4B0B95E"},
+                        "ps12.3g": {"size": 32768, "crc": "F96F82DB"},
+                        "ps11.3e": {"size": 32768, "crc": "2B007733"},
+                        "ps10.3c": {"size": 32768, "crc": "EFA830E1"},
+                        "ps9.3b": {"size": 32768, "crc": "24559EE1"},
+                        "ps17.10f": {"size": 65536, "crc": "2BAC250E"},
+                        "ps18.10h": {"size": 65536, "crc": "5E1BA353"},
+                        "ps19.10j": {"size": 65536, "crc": "9FF91A97"},
+                        "ps20.10l": {"size": 65536, "crc": "AE1965EF"},
+                        "ps21.10m": {"size": 65536, "crc": "DF283B67"},
+                        "ps22.10n": {"size": 65536, "crc": "914F051F"},
+                        "ps23.10r": {"size": 65536, "crc": "C4488472"},
+                        "ps24.10s": {"size": 65536, "crc": "8EC7FE18"},
+                        "horizon.8j": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.8k": {"size": 1024, "crc": "EFB5AF2E"},
+                        "psc3.1l": {"size": 1024, "crc": "40E78C9E"},
+                        "psc1.1k": {"size": 1024, "crc": "27B8CA8C"},
+                        "psc2.2k": {"size": 1024, "crc": "D845D5AC"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari I",
+                "system": "Arcade",
+                "filename": "ikari.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "1.4p": {"size": 65536, "crc": "52A8B2DD"},
+                        "2.8p": {"size": 65536, "crc": "45364D55"},
+                        "3.7k": {"size": 65536, "crc": "56A26699"},
+                        "p11.4m": {"size": 32768, "crc": "5C75EA8F"},
+                        "p14.2m": {"size": 32768, "crc": "3293FDE4"},
+                        "p12.4p": {"size": 32768, "crc": "95138498"},
+                        "p15.2p": {"size": 32768, "crc": "65A61C99"},
+                        "p13.4r": {"size": 32768, "crc": "315383D7"},
+                        "p16.2r": {"size": 32768, "crc": "E9B03E07"},
+                        "p7.3b": {"size": 16384, "crc": "A7EB4917"},
+                        "p8.3d": {"size": 32768, "crc": "9827C14A"},
+                        "p9.3f": {"size": 32768, "crc": "545C790C"},
+                        "p10.3h": {"size": 32768, "crc": "EC9BA07E"},
+                        "p17.4d": {"size": 32768, "crc": "E0DBA976"},
+                        "p18.2d": {"size": 32768, "crc": "24947D5F"},
+                        "p19.4b": {"size": 32768, "crc": "9EE59E91"},
+                        "p20.2b": {"size": 32768, "crc": "5DA7EC1A"},
+                        "a6002-2.2l": {"size": 1024, "crc": "0703A770"},
+                        "a6002-1.1k": {"size": 1024, "crc": "B9BF2C2C"},
+                        "a6002-3.1l": {"size": 1024, "crc": "0A11CDDE"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari I (US Alt.)",
+                "system": "Arcade",
+                "filename": "ikaria.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4l": {"size": 16384, "crc": "AD0E440E"},
+                        "p2.4k": {"size": 32768, "crc": "B585E931"},
+                        "p3.8l": {"size": 16384, "crc": "8A9BD1F0"},
+                        "p4.8k": {"size": 32768, "crc": "F4101CB4"},
+                        "p5.6e": {"size": 16384, "crc": "863448FA"},
+                        "p6.6f": {"size": 32768, "crc": "9B16AA57"},
+                        "p11.4m": {"size": 32768, "crc": "5C75EA8F"},
+                        "p14.2m": {"size": 32768, "crc": "3293FDE4"},
+                        "p12.4p": {"size": 32768, "crc": "95138498"},
+                        "p15.2p": {"size": 32768, "crc": "65A61C99"},
+                        "p13.4r": {"size": 32768, "crc": "315383D7"},
+                        "p16.2r": {"size": 32768, "crc": "E9B03E07"},
+                        "p7.3b": {"size": 16384, "crc": "A7EB4917"},
+                        "p8.3d": {"size": 32768, "crc": "9827C14A"},
+                        "p9.3f": {"size": 32768, "crc": "545C790C"},
+                        "p10.3h": {"size": 32768, "crc": "EC9BA07E"},
+                        "p17.4d": {"size": 32768, "crc": "E0DBA976"},
+                        "p18.2d": {"size": 32768, "crc": "24947D5F"},
+                        "p19.4b": {"size": 32768, "crc": "9EE59E91"},
+                        "p20.2b": {"size": 32768, "crc": "5DA7EC1A"},
+                        "2.2j": {"size": 1024, "crc": "0703A770"},
+                        "1.1h": {"size": 1024, "crc": "B9BF2C2C"},
+                        "3.1j": {"size": 1024, "crc": "0A11CDDE"},
+                        "ampal16l8a-a5004-3.2n": {"size": 260, "crc": "91A9701B"},
+                        "ampal16l8a-a5004-4.8s": {"size": 260, "crc": "91A9701B"},
+                        "pal20l8a-a5004-2.6m": {"size": 324, "crc": "0D15F915"},
+                        "ampal16r6a-a5004-1.6d": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari I (J, No Continues)",
+                "system": "Arcade",
+                "filename": "ikarijp.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4l": {"size": 16384, "crc": "CDE006BE"},
+                        "p2.4k": {"size": 32768, "crc": "26948850"},
+                        "p3.8l": {"size": 16384, "crc": "9BB385F8"},
+                        "p4.8k": {"size": 32768, "crc": "3A144BCA"},
+                        "p5.6e": {"size": 16384, "crc": "863448FA"},
+                        "p6.6f": {"size": 32768, "crc": "9B16AA57"},
+                        "p11.4m": {"size": 32768, "crc": "5C75EA8F"},
+                        "p14.2m": {"size": 32768, "crc": "3293FDE4"},
+                        "p12.4p": {"size": 32768, "crc": "95138498"},
+                        "p15.2p": {"size": 32768, "crc": "65A61C99"},
+                        "p13.4r": {"size": 32768, "crc": "315383D7"},
+                        "p16.2r": {"size": 32768, "crc": "E9B03E07"},
+                        "p7.3b": {"size": 16384, "crc": "9E88F536"},
+                        "p8.3d": {"size": 32768, "crc": "75D796D0"},
+                        "p9.3f": {"size": 32768, "crc": "2C34903B"},
+                        "p10.3h": {"size": 32768, "crc": "DA9CCC94"},
+                        "p17.4d": {"size": 32768, "crc": "E0DBA976"},
+                        "p18.2d": {"size": 32768, "crc": "24947D5F"},
+                        "p19.4b": {"size": 32768, "crc": "566242EC"},
+                        "p20.2b": {"size": 32768, "crc": "5DA7EC1A"},
+                        "2.2j": {"size": 1024, "crc": "0703A770"},
+                        "1.1h": {"size": 1024, "crc": "B9BF2C2C"},
+                        "3.1j": {"size": 1024, "crc": "0A11CDDE"},
+                        "ampal16l8a-a5004-3.2n": {"size": 260, "crc": "91A9701B"},
+                        "ampal16l8a-a5004-4.8s": {"size": 260, "crc": "91A9701B"},
+                        "pal20l8a-a5004-2.6m": {"size": 324, "crc": "0D15F915"},
+                        "ampal16r6a-a5004-1.6d": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari I (No Continues)",
+                "system": "Arcade",
+                "filename": "ikarinc.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4l": {"size": 16384, "crc": "738FCEC4"},
+                        "p2.4k": {"size": 32768, "crc": "89F7945A"},
+                        "p3.8l": {"size": 16384, "crc": "8A9BD1F0"},
+                        "p4.8k": {"size": 32768, "crc": "F4101CB4"},
+                        "p5.6e": {"size": 16384, "crc": "863448FA"},
+                        "p6.6f": {"size": 32768, "crc": "9B16AA57"},
+                        "p11.4m": {"size": 32768, "crc": "5C75EA8F"},
+                        "p14.2m": {"size": 32768, "crc": "3293FDE4"},
+                        "p12.4p": {"size": 32768, "crc": "95138498"},
+                        "p15.2p": {"size": 32768, "crc": "65A61C99"},
+                        "p13.4r": {"size": 32768, "crc": "315383D7"},
+                        "p16.2r": {"size": 32768, "crc": "E9B03E07"},
+                        "p7.3b": {"size": 16384, "crc": "A7EB4917"},
+                        "p8.3d": {"size": 32768, "crc": "9827C14A"},
+                        "p9.3f": {"size": 32768, "crc": "545C790C"},
+                        "p10.3h": {"size": 32768, "crc": "EC9BA07E"},
+                        "p17.4d": {"size": 32768, "crc": "E0DBA976"},
+                        "p18.2d": {"size": 32768, "crc": "24947D5F"},
+                        "p19.4b": {"size": 32768, "crc": "9EE59E91"},
+                        "p20.2b": {"size": 32768, "crc": "5DA7EC1A"},
+                        "2.2j": {"size": 1024, "crc": "0703A770"},
+                        "1.1h": {"size": 1024, "crc": "B9BF2C2C"},
+                        "3.1j": {"size": 1024, "crc": "0A11CDDE"},
+                        "ampal16l8a-a5004-3.2n": {"size": 260, "crc": "91A9701B"},
+                        "ampal16l8a-a5004-4.8s": {"size": 260, "crc": "91A9701B"},
+                        "pal20l8a-a5004-2.6m": {"size": 324, "crc": "0D15F915"},
+                        "ampal16r6a-a5004-1.6d": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            },
+            {
+                "game": "Ikari 2 Victory Road",
+                "system": "Arcade",
+                "filename": "victroad.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "a5004-1.6d": {"size": 260, "crc": "311E5AE6"},
+                        "p1.4p": {"size": 65536, "crc": "E334ACEF"},
+                        "p3.7k": {"size": 65536, "crc": "BAC745F6"},
+                        "p4.5e": {"size": 65536, "crc": "E10FB8CC"},
+                        "p5.5g": {"size": 65536, "crc": "93E5F110"},
+                        "p7.3b": {"size": 16384, "crc": "2B6ED95B"},
+                        "p8.3d": {"size": 32768, "crc": "DF7F252A"},
+                        "p9.3f": {"size": 32768, "crc": "9897BC05"},
+                        "p10.3h": {"size": 32768, "crc": "ECD3C0EA"},
+                        "p2.8p": {"size": 65536, "crc": "907FAC83"},
+                        "p11.4m": {"size": 32768, "crc": "668B25A4"},
+                        "p14.2m": {"size": 32768, "crc": "A7031D4A"},
+                        "p12.4p": {"size": 32768, "crc": "F44E95FA"},
+                        "p15.2p": {"size": 32768, "crc": "120D2450"},
+                        "p13.4r": {"size": 32768, "crc": "980CA3D8"},
+                        "p16.2r": {"size": 32768, "crc": "9F820E8A"},
+                        "p17.4c": {"size": 32768, "crc": "19D4518C"},
+                        "p18.2c": {"size": 32768, "crc": "D818BE43"},
+                        "p19.4b": {"size": 32768, "crc": "D64E0F89"},
+                        "p20.2b": {"size": 32768, "crc": "EDBA0F31"},
+                        "1.1d": {"size": 4096, "crc": "C71C0011"},
+                        "1.2d": {"size": 4096, "crc": "C71C0011"},
+                        "a5004-4.8s": {"size": 260, "crc": "91A9701B"},
+                        "a6002-2.5r": {"size": 324, "crc": "0D15F915"},
+                        "a6002-3.2p": {"size": 260, "crc": "91A9701B"},
+                        "c2.2l": {"size": 1024, "crc": "8FECA424"},
+                        "c1.1k": {"size": 1024, "crc": "491AB831"},
+                        "c3.1l": {"size": 1024, "crc": "220076CA"}
+                    }
+                }
+            },
+            {
+                "game": "Dogou Souken (Ikari 2 Victory Road (J))",
+                "system": "Arcade",
+                "filename": "dogosoke.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4p": {"size": 65536, "crc": "37867AD2"},
+                        "p3.7k": {"size": 65536, "crc": "173FA571"},
+                        "p4.5e": {"size": 65536, "crc": "5B43FE9F"},
+                        "p5.5g": {"size": 65536, "crc": "AAE30CD6"},
+                        "p7.3b": {"size": 16384, "crc": "51A4EC83"},
+                        "p8.3d": {"size": 32768, "crc": "D43044F8"},
+                        "p9.3f": {"size": 32768, "crc": "365ED2D8"},
+                        "p10.3h": {"size": 32768, "crc": "92579BF3"},
+                        "p2.8p": {"size": 65536, "crc": "907FAC83"},
+                        "p11.4m": {"size": 32768, "crc": "668B25A4"},
+                        "p14.2m": {"size": 32768, "crc": "A7031D4A"},
+                        "p12.4p": {"size": 32768, "crc": "F44E95FA"},
+                        "p15.2p": {"size": 32768, "crc": "120D2450"},
+                        "p13.4r": {"size": 32768, "crc": "980CA3D8"},
+                        "p16.2r": {"size": 32768, "crc": "9F820E8A"},
+                        "p17.4c": {"size": 32768, "crc": "19D4518C"},
+                        "p18.2c": {"size": 32768, "crc": "D818BE43"},
+                        "p19.4b": {"size": 32768, "crc": "D64E0F89"},
+                        "p20.2b": {"size": 32768, "crc": "EDBA0F31"},
+                        "1.1d": {"size": 4096, "crc": "C71C0011"},
+                        "1.2d": {"size": 4096, "crc": "C71C0011"},
+                        "c2.2l": {"size": 1024, "crc": "99DC9792"},
+                        "c1.1k": {"size": 1024, "crc": "10A2CE2B"},
+                        "c3.1l": {"size": 1024, "crc": "E7213160"}
+                    }
+                }
+            },
+            {
+                "game": "Chopper I",
+                "system": "Arcade",
+                "filename": "chopperb.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kk1.8g": {"size": 65536, "crc": "8FA2F839"},
+                        "kk4.6g": {"size": 65536, "crc": "004F7D9A"},
+                        "1.9w": {"size": 1024, "crc": "7F07A45C"},
+                        "3.9u": {"size": 1024, "crc": "15359FC3"},
+                        "2.9v": {"size": 1024, "crc": "79B50F7D"},
+                        "kk3.3d": {"size": 65536, "crc": "DBAAFB87"},
+                        "kk5.8p": {"size": 32768, "crc": "DEFC0987"},
+                        "kk10.8y": {"size": 65536, "crc": "5CF4D22B"},
+                        "kk11.8z": {"size": 65536, "crc": "9AF4CAD0"},
+                        "kk12.8ab": {"size": 65536, "crc": "02FEC778"},
+                        "kk13.8ac": {"size": 65536, "crc": "2756817D"},
+                        "kk9.3k": {"size": 32768, "crc": "653C4342"},
+                        "kk8.3l": {"size": 32768, "crc": "2DA45894"},
+                        "kk7.3n": {"size": 32768, "crc": "A0EBEBDF"},
+                        "kk6.3p": {"size": 32768, "crc": "284FAD9E"},
+                        "kk18.3ab": {"size": 65536, "crc": "6ABBFF36"},
+                        "kk19.2ad": {"size": 65536, "crc": "5283B4D3"},
+                        "kk20.3y": {"size": 65536, "crc": "6403DDF2"},
+                        "kk21.3aa": {"size": 65536, "crc": "9F411940"},
+                        "kk14.3v": {"size": 65536, "crc": "9BAD9E25"},
+                        "kk15.3x": {"size": 65536, "crc": "89FAF590"},
+                        "kk16.3s": {"size": 65536, "crc": "EFB1FB6C"},
+                        "kk17.3t": {"size": 65536, "crc": "6B7FB0A5"},
+                        "kk2.3j": {"size": 65536, "crc": "06169AE0"},
+                        "p-a1.2c": {"size": 260, "crc": "311E5AE6"}
+                    }
+                }
+            },
+            {
+                "game": "Chopper I",
+                "system": "Arcade",
+                "filename": "legofair.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kk1.4m": {"size": 65536, "crc": "79A485C0"},
+                        "kk4.8m": {"size": 65536, "crc": "96D3A4D9"},
+                        "1.1k": {"size": 1024, "crc": "7F07A45C"},
+                        "2.1l": {"size": 1024, "crc": "15359FC3"},
+                        "3.2k": {"size": 1024, "crc": "79B50F7D"},
+                        "kk3.6j": {"size": 65536, "crc": "DBAAFB87"},
+                        "kk5.3a": {"size": 32768, "crc": "DEFC0987"},
+                        "kk10.1a": {"size": 65536, "crc": "5CF4D22B"},
+                        "kk11.1b": {"size": 65536, "crc": "9AF4CAD0"},
+                        "kk12.1d": {"size": 65536, "crc": "02FEC778"},
+                        "kk13.1e": {"size": 65536, "crc": "2756817D"},
+                        "kk9.3g": {"size": 32768, "crc": "653C4342"},
+                        "kk8.3e": {"size": 32768, "crc": "2DA45894"},
+                        "kk7.3d": {"size": 32768, "crc": "A0EBEBDF"},
+                        "kk6.3b": {"size": 32768, "crc": "284FAD9E"},
+                        "kk18.8m": {"size": 65536, "crc": "6ABBFF36"},
+                        "kk19.8n": {"size": 65536, "crc": "5283B4D3"},
+                        "kk20.8p": {"size": 65536, "crc": "6403DDF2"},
+                        "kk21.8s": {"size": 65536, "crc": "9F411940"},
+                        "kk14.7p": {"size": 65536, "crc": "9BAD9E25"},
+                        "kk15.7s": {"size": 65536, "crc": "89FAF590"},
+                        "kk16.8j": {"size": 65536, "crc": "EFB1FB6C"},
+                        "kk17.8k": {"size": 65536, "crc": "6B7FB0A5"},
+                        "kk2.5b": {"size": 65536, "crc": "06169AE0"},
+                        "p-a1.8b": {"size": 260, "crc": "311E5AE6"},
+                        "horizon.6h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.7h": {"size": 1024, "crc": "EFB5AF2E"}
+                    }
+                }
+            },
+            {
+                "game": "Fantasy",
+                "system": "Arcade",
+                "filename": "fantasyj.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "prom-8.bpr": {"size": 32, "crc": "1AA9285A"},
+                        "prom-7.bpr": {"size": 32, "crc": "7A6F7DC3"},
+                        "fs5jic12.bin": {"size": 4096, "crc": "DD1EAC89"},
+                        "fs1jic7.bin": {"size": 4096, "crc": "7B8115AE"},
+                        "fs2jic8.bin": {"size": 4096, "crc": "61531DD1"},
+                        "fs3jic9.bin": {"size": 4096, "crc": "36A12617"},
+                        "fs4jic10.bin": {"size": 4096, "crc": "DBF7C347"},
+                        "fs6jic14.bin": {"size": 4096, "crc": "BF59A33A"},
+                        "fs7jic15.bin": {"size": 4096, "crc": "CC18428E"},
+                        "fs8jic16.bin": {"size": 4096, "crc": "AE5BF727"},
+                        "fs9jic17.bin": {"size": 4096, "crc": "FA6903E2"},
+                        "fs10ic50.bin": {"size": 4096, "crc": "86A801C3"},
+                        "fs11ic51.bin": {"size": 4096, "crc": "9DFFF71C"},
+                        "fs_b_51.bin": {"size": 2048, "crc": "48094EC5"},
+                        "fs_a_52.bin": {"size": 2048, "crc": "1D0316E8"},
+                        "fs_c_53.bin": {"size": 2048, "crc": "49FD4AE8"},
+                        "fs_d_7.bin": {"size": 2048, "crc": "A7EF4CC6"},
+                        "fs_e_8.bin": {"size": 2048, "crc": "19B8FB3E"},
+                        "fs_f_11.bin": {"size": 2048, "crc": "3A352E1F"}
+                    }
+                }
+            },
+            {
+                "game": "Fantasy",
+                "system": "Arcade",
+                "filename": "fantasyu.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "fantasy.ic7": {"size": 32, "crc": "361A5E99"},
+                        "fantasy.ic6": {"size": 32, "crc": "33D974F7"},
+                        "ic12.cpu": {"size": 4096, "crc": "22CB2249"},
+                        "ic07.cpu": {"size": 4096, "crc": "0E2880B6"},
+                        "ic08.cpu": {"size": 4096, "crc": "4C331317"},
+                        "ic09.cpu": {"size": 4096, "crc": "6AC1DBFC"},
+                        "ic10.cpu": {"size": 4096, "crc": "C796A406"},
+                        "ic14.cpu": {"size": 4096, "crc": "6F1F0698"},
+                        "ic15.cpu": {"size": 4096, "crc": "5534D57E"},
+                        "ic16.cpu": {"size": 4096, "crc": "6C2AEB6E"},
+                        "ic17.cpu": {"size": 4096, "crc": "F6AA5DE1"},
+                        "fs10ic50.bin": {"size": 4096, "crc": "86A801C3"},
+                        "fs11ic51.bin": {"size": 4096, "crc": "9DFFF71C"},
+                        "fs_b_51.bin": {"size": 2048, "crc": "48094EC5"},
+                        "fs_a_52.bin": {"size": 2048, "crc": "1D0316E8"},
+                        "fs_c_53.bin": {"size": 2048, "crc": "49FD4AE8"},
+                        "fs_d_7.bin": {"size": 2048, "crc": "A7EF4CC6"},
+                        "fs_e_8.bin": {"size": 2048, "crc": "19B8FB3E"},
+                        "fs_f_11.bin": {"size": 2048, "crc": "3A352E1F"}
+                    }
+                }
+            },
+            {
+                "game": "Time Soldiers",
+                "system": "Arcade",
+                "filename": "btlfield.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bfv1_03.bin": {"size": 65536, "crc": "8720AF0D"},
+                        "bfv1_04.bin": {"size": 65536, "crc": "7DCCCBE6"},
+                        "bf.1": {"size": 65536, "crc": "158F4CB3"},
+                        "bf.2": {"size": 65536, "crc": "AF01A718"},
+                        "bfv1_06.bin": {"size": 32768, "crc": "022B9DE9"},
+                        "bfv1_05.bin": {"size": 32768, "crc": "BE269DBF"},
+                        "bf.7": {"size": 65536, "crc": "F8B293B5"},
+                        "bf.8": {"size": 65536, "crc": "8A43497B"},
+                        "bf.9": {"size": 65536, "crc": "1408416F"},
+                        "bf.10": {"size": 131072, "crc": "613313BA"},
+                        "bf.14": {"size": 131072, "crc": "EFDA5C45"},
+                        "bf.18": {"size": 131072, "crc": "E886146A"},
+                        "bf.11": {"size": 131072, "crc": "92B42EBA"},
+                        "bf.15": {"size": 131072, "crc": "BA3B9F5A"},
+                        "bf.19": {"size": 131072, "crc": "8994BF10"},
+                        "bf.12": {"size": 131072, "crc": "7CA8BB32"},
+                        "bf.16": {"size": 131072, "crc": "2AA74125"},
+                        "bf.20": {"size": 131072, "crc": "BAB6A7C5"},
+                        "bf.13": {"size": 131072, "crc": "56A3A26A"},
+                        "bf.17": {"size": 131072, "crc": "6B37D048"},
+                        "bf.21": {"size": 131072, "crc": "BC3B3944"}
+                    }
+                }
+            },
+            {
+                "game": "Time Soldiers",
+                "system": "Arcade",
+                "filename": "timesold.zip",
+                "status": "good",
+                "notes": [3],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bf.3": {"size": 65536, "crc": "A491E533"},
+                        "bf.4": {"size": 65536, "crc": "34EBACCC"},
+                        "bf.1": {"size": 65536, "crc": "158F4CB3"},
+                        "bf.2": {"size": 65536, "crc": "AF01A718"},
+                        "bf.6": {"size": 32768, "crc": "086A364D"},
+                        "bf.5": {"size": 32768, "crc": "3CEC2F55"},
+                        "bf.7": {"size": 65536, "crc": "F8B293B5"},
+                        "bf.8": {"size": 65536, "crc": "8A43497B"},
+                        "bf.9": {"size": 65536, "crc": "1408416F"},
+                        "bf.10": {"size": 131072, "crc": "613313BA"},
+                        "bf.14": {"size": 131072, "crc": "EFDA5C45"},
+                        "bf.18": {"size": 131072, "crc": "E886146A"},
+                        "bf.11": {"size": 131072, "crc": "92B42EBA"},
+                        "bf.15": {"size": 131072, "crc": "BA3B9F5A"},
+                        "bf.19": {"size": 131072, "crc": "8994BF10"},
+                        "bf.12": {"size": 131072, "crc": "7CA8BB32"},
+                        "bf.16": {"size": 131072, "crc": "2AA74125"},
+                        "bf.20": {"size": 131072, "crc": "BAB6A7C5"},
+                        "bf.13": {"size": 131072, "crc": "56A3A26A"},
+                        "bf.17": {"size": 131072, "crc": "6B37D048"},
+                        "bf.21": {"size": 131072, "crc": "BC3B3944"}
+                    }
+                }
+            },
+            {
+                "game": "Munch Mobile (Joyful Road)",
+                "system": "Arcade",
+                "filename": "mnchmobl.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "m1.10e": {"size": 8192, "crc": "A4BEBC6A"},
+                        "m2.10d": {"size": 8192, "crc": "F502D466"},
+                        "f1.1g": {"size": 8192, "crc": "B75411D4"},
+                        "f2.3g": {"size": 8192, "crc": "539A43BA"},
+                        "f3.5g": {"size": 8192, "crc": "EC996706"},
+                        "mu.2j": {"size": 8192, "crc": "420ADBD4"},
+                        "a2001.clr": {"size": 256, "crc": "1B16B907"},
+                        "s1.10a": {"size": 4096, "crc": "C0BCC301"},
+                        "s2.10b": {"size": 4096, "crc": "96AA11CA"},
+                        "b1.2c": {"size": 4096, "crc": "8CE3A403"},
+                        "b2.2b": {"size": 4096, "crc": "0DF28913"},
+                        "h": {"size": 8192, "crc": "332584DE"}
+                    }
+                }
+            },
+            {
+                "game": "Munch Mobile (Joyful Road)",
+                "system": "Arcade",
+                "filename": "joyfulr.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "m1j.10e": {"size": 8192, "crc": "1FE86E25"},
+                        "m2j.10d": {"size": 8192, "crc": "B144B9A6"},
+                        "f1j.1g": {"size": 8192, "crc": "93C3C17E"},
+                        "f2j.3g": {"size": 8192, "crc": "B3FB5BD2"},
+                        "f3j.5g": {"size": 8192, "crc": "772A7527"},
+                        "mu.2j": {"size": 8192, "crc": "420ADBD4"},
+                        "a2001.clr": {"size": 256, "crc": "1B16B907"},
+                        "s1.10a": {"size": 4096, "crc": "C0BCC301"},
+                        "s2.10b": {"size": 4096, "crc": "96AA11CA"},
+                        "b1.2c": {"size": 4096, "crc": "8CE3A403"},
+                        "b2.2b": {"size": 4096, "crc": "0DF28913"},
+                        "h": {"size": 8192, "crc": "332584DE"}
+                    }
+                }
+            },
+            {
+                "game": "Sasuke vs. Commander",
+                "system": "Arcade",
+                "filename": "sasuke.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sc1": {"size": 2048, "crc": "34CBBE03"},
+                        "sc2": {"size": 2048, "crc": "38CC14F0"},
+                        "sc3": {"size": 2048, "crc": "54C41285"},
+                        "sc4": {"size": 2048, "crc": "23EDAFCF"},
+                        "sc5": {"size": 2048, "crc": "CA410E4F"},
+                        "sc6": {"size": 2048, "crc": "80406AFB"},
+                        "sc7": {"size": 2048, "crc": "04D0F104"},
+                        "sc8": {"size": 2048, "crc": "0219104B"},
+                        "sc9": {"size": 2048, "crc": "D6FF889A"},
+                        "sc10": {"size": 2048, "crc": "19DF6B9A"},
+                        "mcs_c": {"size": 2048, "crc": "AFF9743D"},
+                        "mcs_d": {"size": 2048, "crc": "9C805120"},
+                        "sasuke.clr": {"size": 32, "crc": "B70F34C1"},
+                        "sc11": {"size": 2048, "crc": "24A0E121"}
+                    }
+                }
+            },
+            {
+                "game": "Ozma Wars",
+                "system": "Arcade",
+                "filename": "ozmawars.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "mw01": {"size": 2048, "crc": "31F4397D"},
+                        "mw02": {"size": 2048, "crc": "D8E77C62"},
+                        "mw03": {"size": 2048, "crc": "3BFA418F"},
+                        "mw04": {"size": 2048, "crc": "E190CE6C"},
+                        "mw05": {"size": 2048, "crc": "3BC7D4C7"},
+                        "mw06": {"size": 2048, "crc": "99CA2EAE"},
+                        "01.1": {"size": 1024, "crc": "AAC24F34"},
+                        "02.2": {"size": 1024, "crc": "2BDF83A0"}
+                    }
+                }
+            },
+            {
+                "game": "Paddle Mania",
+                "system": "Arcade",
+                "filename": "paddlema.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "padlem.a": {"size": 256, "crc": "CAE6BCD6"},
+                        "padlem.b": {"size": 256, "crc": "B6DF8DCB"},
+                        "padlem.c": {"size": 256, "crc": "39CA9B86"},
+                        "padlem.17j": {"size": 1024, "crc": "86170069"},
+                        "padlem.16j": {"size": 1024, "crc": "8DA58E2C"},
+                        "padlem.18c": {"size": 65536, "crc": "9269778D"},
+                        "padlem.18n": {"size": 32768, "crc": "06506200"},
+                        "padlem.6g": {"size": 65536, "crc": "C227A6E8"},
+                        "padlem.3g": {"size": 65536, "crc": "F11A21AA"},
+                        "padlem.6h": {"size": 65536, "crc": "8897555F"},
+                        "padlem.3h": {"size": 65536, "crc": "F0FE9B9D"},
+                        "padlem.9m": {"size": 65536, "crc": "4EE4970D"},
+                        "padlem.16m": {"size": 65536, "crc": "0984FB4D"},
+                        "padlem.9n": {"size": 65536, "crc": "A1756F15"},
+                        "padlem.16n": {"size": 65536, "crc": "4249E047"},
+                        "padlem.6m": {"size": 65536, "crc": "3F47910C"},
+                        "padlem.13m": {"size": 65536, "crc": "FD9DBC27"},
+                        "padlem.6n": {"size": 65536, "crc": "FE337655"},
+                        "padlem.13n": {"size": 65536, "crc": "1D460486"}
+                    }
+                }
+            },
+            {
+                "game": "World Wars (J)",
+                "system": "Arcade",
+                "filename": "bermudata.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "wwu4.4p": {"size": 65536, "crc": "4DE39D01"},
+                        "wwu5.8p": {"size": 65536, "crc": "76158E94"},
+                        "wwu3.7k": {"size": 65536, "crc": "C79134A8"},
+                        "wwu6.3a": {"size": 32768, "crc": "A0E6710C"},
+                        "ww11.1e": {"size": 65536, "crc": "603DDCB5"},
+                        "ww12.1d": {"size": 65536, "crc": "388093FF"},
+                        "ww13.1b": {"size": 65536, "crc": "83A7EF62"},
+                        "ww14.1a": {"size": 65536, "crc": "04C784BE"},
+                        "ww10.3g": {"size": 32768, "crc": "F68A2D51"},
+                        "ww9.3e": {"size": 32768, "crc": "D9D35911"},
+                        "ww8.3d": {"size": 32768, "crc": "0EC15086"},
+                        "ww7.3b": {"size": 32768, "crc": "53C4B24E"},
+                        "ww21.7p": {"size": 65536, "crc": "BE974FBE"},
+                        "ww22.7s": {"size": 65536, "crc": "9914972A"},
+                        "ww19.8h": {"size": 65536, "crc": "C39AC1A7"},
+                        "ww20.8k": {"size": 65536, "crc": "8504170F"},
+                        "ww15.8m": {"size": 65536, "crc": "D55CE063"},
+                        "ww16.8n": {"size": 65536, "crc": "A2D19CE5"},
+                        "ww17.8p": {"size": 65536, "crc": "A9A6B128"},
+                        "ww18.8s": {"size": 65536, "crc": "C712D24C"},
+                        "horizon.5h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.7h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "u2bt.2l": {"size": 1024, "crc": "23CE9707"},
+                        "u1bt.1k": {"size": 1024, "crc": "1E8FC4C3"},
+                        "u3bt.1l": {"size": 1024, "crc": "26CAF985"}
+                    }
+                }
+            },
+            {
+                "game": "World Wars",
+                "system": "Arcade",
+                "filename": "worldwar.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ww4.4p": {"size": 65536, "crc": "BC29D09F"},
+                        "ww5.8p": {"size": 65536, "crc": "8DC15909"},
+                        "ww3.7k": {"size": 65536, "crc": "8B74C951"},
+                        "ww6.3a": {"size": 32768, "crc": "D57570AB"},
+                        "ww11.1e": {"size": 65536, "crc": "603DDCB5"},
+                        "ww12.1d": {"size": 65536, "crc": "388093FF"},
+                        "ww13.1b": {"size": 65536, "crc": "83A7EF62"},
+                        "ww14.1a": {"size": 65536, "crc": "04C784BE"},
+                        "ww10.3g": {"size": 32768, "crc": "F68A2D51"},
+                        "ww9.3e": {"size": 32768, "crc": "D9D35911"},
+                        "ww8.3d": {"size": 32768, "crc": "0EC15086"},
+                        "ww7.3b": {"size": 32768, "crc": "53C4B24E"},
+                        "ww21.7p": {"size": 65536, "crc": "BE974FBE"},
+                        "ww22.7s": {"size": 65536, "crc": "9914972A"},
+                        "ww19.8h": {"size": 65536, "crc": "C39AC1A7"},
+                        "ww20.8k": {"size": 65536, "crc": "8504170F"},
+                        "ww15.8m": {"size": 65536, "crc": "D55CE063"},
+                        "ww16.8n": {"size": 65536, "crc": "A2D19CE5"},
+                        "ww17.8p": {"size": 65536, "crc": "A9A6B128"},
+                        "ww18.8s": {"size": 65536, "crc": "C712D24C"},
+                        "horizon.5h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.7h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "2.1l": {"size": 1024, "crc": "5E1616B2"},
+                        "1.1k": {"size": 1024, "crc": "B88E95F0"},
+                        "3.2l": {"size": 1024, "crc": "E9770796"},
+                        "p4.5e": {"size": 65536, "crc": "4BC83229"},
+                        "p5.5g": {"size": 65536, "crc": "817BD62C"}
+                    }
+                }
+            },
+            {
+                "game": "Bermuda Triangle",
+                "system": "Arcade",
+                "filename": "bermudat.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4p": {"size": 65536, "crc": "43DEC5E9"},
+                        "p3.7k": {"size": 65536, "crc": "53A82E50"},
+                        "p4.5e": {"size": 65536, "crc": "4BC83229"},
+                        "p5.5g": {"size": 65536, "crc": "817BD62C"},
+                        "p9.3b": {"size": 32768, "crc": "8FFDF969"},
+                        "p8.3d": {"size": 32768, "crc": "268D10DF"},
+                        "p7.3e": {"size": 32768, "crc": "3E39E9DD"},
+                        "p6.3g": {"size": 32768, "crc": "BF56DA61"},
+                        "p11.7p": {"size": 65536, "crc": "AAE7410E"},
+                        "p12.7s": {"size": 65536, "crc": "18914F70"},
+                        "p13.8h": {"size": 65536, "crc": "CD79CE81"},
+                        "p14.8k": {"size": 65536, "crc": "EDC57117"},
+                        "p15.8m": {"size": 65536, "crc": "448BF9F4"},
+                        "p16.8n": {"size": 65536, "crc": "119999EB"},
+                        "p17.8p": {"size": 65536, "crc": "B5462139"},
+                        "p18.8s": {"size": 65536, "crc": "CB416227"},
+                        "p19.1": {"size": 65536, "crc": "8DAF7DF4"},
+                        "p20.1b": {"size": 65536, "crc": "B7689599"},
+                        "p21.1d": {"size": 65536, "crc": "AB6217B7"},
+                        "p22.1e": {"size": 65536, "crc": "8ED759A0"},
+                        "2.1l": {"size": 1024, "crc": "BAAC139E"},
+                        "1.1k": {"size": 1024, "crc": "F4B54D06"},
+                        "3.2l": {"size": 1024, "crc": "2EDF2E0B"},
+                        "p10.3a": {"size": 32768, "crc": "D3650211"},
+                        "p2.8p": {"size": 65536, "crc": "0E193265"},
+                        "horizon.6h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.7h": {"size": 1024, "crc": "EFB5AF2E"}
+                    }
+                }
+            },
+            {
+                "game": "Bermuda Triangle",
+                "system": "Arcade",
+                "filename": "bermudatj.zip",
+                "status": "playable",
+                "notes": [2],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "p1.4p": {"size": 65536, "crc": "EDA75F36"},
+                        "p3.7k": {"size": 65536, "crc": "FEA8A096"},
+                        "p4.5e": {"size": 65536, "crc": "B2E01129"},
+                        "p5.5g": {"size": 65536, "crc": "924C24F7"},
+                        "p9.3b": {"size": 32768, "crc": "8FFDF969"},
+                        "p8.3d": {"size": 32768, "crc": "268D10DF"},
+                        "p7.3e": {"size": 32768, "crc": "3E39E9DD"},
+                        "p6.3g": {"size": 32768, "crc": "BF56DA61"},
+                        "p11.7p": {"size": 65536, "crc": "AAE7410E"},
+                        "p12.7s": {"size": 65536, "crc": "18914F70"},
+                        "p13.8h": {"size": 65536, "crc": "CD79CE81"},
+                        "p14.8k": {"size": 65536, "crc": "EDC57117"},
+                        "p15.8m": {"size": 65536, "crc": "448BF9F4"},
+                        "p16.8n": {"size": 65536, "crc": "119999EB"},
+                        "p17.8p": {"size": 65536, "crc": "B5462139"},
+                        "p18.8s": {"size": 65536, "crc": "CB416227"},
+                        "p19.1": {"size": 65536, "crc": "8DAF7DF4"},
+                        "p20.1b": {"size": 65536, "crc": "B7689599"},
+                        "p21.1d": {"size": 65536, "crc": "AB6217B7"},
+                        "p22.1e": {"size": 65536, "crc": "8ED759A0"},
+                        "2.1l": {"size": 1024, "crc": "BAAC139E"},
+                        "1.1k": {"size": 1024, "crc": "F4B54D06"},
+                        "3.2l": {"size": 1024, "crc": "2EDF2E0B"},
+                        "p10.3a": {"size": 32768, "crc": "D3650211"},
+                        "p2.8p": {"size": 65536, "crc": "0E193265"},
+                        "horizon.6h": {"size": 1024, "crc": "EFB5AF2E"},
+                        "vertical.7h": {"size": 1024, "crc": "EFB5AF2E"}
+                    }
+                }
+            },
+            {
+                "game": "MarvinsMaze",
+                "system": "Arcade",
+                "filename": "marvins.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pa1": {"size": 8192, "crc": "0008D791"},
+                        "pa2": {"size": 8192, "crc": "9457003C"},
+                        "pa3": {"size": 8192, "crc": "54C33ECB"},
+                        "pb1": {"size": 8192, "crc": "3B6941A5"},
+                        "m1": {"size": 8192, "crc": "2314C696"},
+                        "m2": {"size": 8192, "crc": "74BA5799"},
+                        "b2": {"size": 8192, "crc": "E528BC60"},
+                        "b1": {"size": 8192, "crc": "E528BC60"},
+                        "f1": {"size": 8192, "crc": "0BD6B4E5"},
+                        "f2": {"size": 8192, "crc": "8FC2B081"},
+                        "f3": {"size": 8192, "crc": "E55C9B83"},
+                        "s1": {"size": 8192, "crc": "327F70F3"},
+                        "marvmaze.j2": {"size": 1024, "crc": "D2B25665"},
+                        "marvmaze.j1": {"size": 1024, "crc": "92F5B06D"},
+                        "marvmaze.j3": {"size": 1024, "crc": "DF9E6005"}
+                    }
+                }
+            },
+            {
+                "game": "Alpha Mission",
+                "system": "NES",
+                "filename": "ASO.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 65552,
+                    "crc": "02E67223"
+                }
+            },
+            {
+                "game": "Alpha Mission",
+                "system": "NES",
+                "filename": "ASO_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 65552,
+                    "crc": "3AFDB6EE"
+                }
+            },
+            {
+                "game": "Athena",
+                "system": "NES",
+                "filename": "Athena.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 131088,
+                    "crc": "14D42113"
+                }
+            },
+            {
+                "game": "Athena",
+                "system": "NES",
+                "filename": "Athena_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 131088,
+                    "crc": "B8C436AE"
+                }
+            },
+            {
+                "game": "Crystalis",
+                "system": "NES",
+                "filename": "Crystalis.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 393232,
+                    "crc": "B305C8EC"
+                }
+            },
+            {
+                "game": "Crystalis",
+                "system": "NES",
+                "filename": "Crystalis_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 393232,
+                    "crc": "33739A62"
+                }
+            },
+            {
+                "game": "Guerrilla War",
+                "system": "NES",
+                "filename": "GuerrillaWar.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "005FF9A8"
+                }
+            },
+            {
+                "game": "Guerrilla War",
+                "system": "NES",
+                "filename": "GuerrillaWar_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "0E77C00C"
+                }
+            },
+            {
+                "game": "Ikari Warriors",
+                "system": "NES",
+                "filename": "Ikari.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 131088,
+                    "crc": "EED05076"
+                }
+            },
+            {
+                "game": "Ikari Warriors",
+                "system": "NES",
+                "filename": "Ikari_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 131088,
+                    "crc": "68B0CFDC"
+                }
+            },
+            {
+                "game": "Ikari II: Victory Road",
+                "system": "NES",
+                "filename": "Ikari2.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "1EAF333C"
+                }
+            },
+            {
+                "game": "Ikari II: Victory Road",
+                "system": "NES",
+                "filename": "Ikari2_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "8355C1DF"
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "NES",
+                "filename": "Ikari3.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "3BCD370E"
+                }
+            },
+            {
+                "game": "Ikari III: The Rescue",
+                "system": "NES",
+                "filename": "Ikari3_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "9A6120AF"
+                }
+            },
+            {
+                "game": "Iron Tank",
+                "system": "NES",
+                "filename": "IronTank.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "DCFD85FC"
+                }
+            },
+            {
+                "game": "Iron Tank",
+                "system": "NES",
+                "filename": "IronTank_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "7104EF6C"
+                }
+            },
+            {
+                "game": "P.O.W",
+                "system": "NES",
+                "filename": "POW.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "18967EA6"
+                }
+            },
+            {
+                "game": "P.O.W",
+                "system": "NES",
+                "filename": "POW_jp.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 262160,
+                    "crc": "5BB9899A"
+                }
+            }
+        ],
+        "notes": {
+            "1": "This is not extracted as there are missing files, such as Missing PROMs. Add '--prop include-partials=True' to include these.",
+            "2": "This is playable, but is a bad dump, 1+ files with a bad CRC, and/or 1+ files with empty placeholders.",
+            "3": "This requires MAME 0.139 to play."
+        }
+    }
+}
