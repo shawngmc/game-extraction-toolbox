@@ -6,7 +6,7 @@ from gex.lib.utils.blob import transforms
 
 logger = logging.getLogger('gextoolbox')
 
-class AGSGalagaTask(ZipSpliceTask):
+class AGSMsPacManTask(ZipSpliceTask):
     '''Implements ags_mspacman: Namco Arcade Game Series: Ms. Pac-Man'''
     _task_name = "ags_mspacman"
     _title = "Namco Arcade Game Series: Ms. Pac-Man"

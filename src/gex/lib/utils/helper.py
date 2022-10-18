@@ -30,8 +30,14 @@ def load_task(task):
     package = f'gex.lib.tasks.impl.{task}'
     transform_module = importlib.import_module(package)
     clsmembers = inspect.getmembers(transform_module, inspect.isclass)
+    exclude_list = [
+        'BaseTask',
+        'CopyTask',
+        'ZipSpliceTask',
+        'SpliceTask'
+    ]
     for name, typedef in clsmembers:
-        if not name == 'BaseTask' and issubclass(typedef, BaseTask):
+        if name not in exclude_list and issubclass(typedef, BaseTask):
             return typedef()
     return None
 
