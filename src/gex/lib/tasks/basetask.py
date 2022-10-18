@@ -107,7 +107,7 @@ class BaseTask:
         else:
             logging.warning(f"Could not find file at {data_path}!")
             return None
-    
+
     def verify_out_file(self, file_name, contents):
         '''Verify an output file using the method specified in the metadata'''
         # Find out_file entry
@@ -121,7 +121,10 @@ class BaseTask:
             return None
 
         # Get verify object
-        verify_obj = out_file['verify']
+        verify_obj = out_file.get('verify')
+        if verify_obj is None:
+            logger.info(f"Verification data not available for ROM {file_name}")
+            return None
 
         # Check verify type
         if verify_obj['type'] == 'crc':
