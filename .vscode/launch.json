@@ -611,6 +611,19 @@
                 "--prop",
                 "include-partials=True"
             ]
+        },
+        {
+            "name": "Python: Toolbox - List Tasks",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "list"
+            ]
         }
     ]
 }
