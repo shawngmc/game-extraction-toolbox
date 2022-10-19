@@ -259,7 +259,7 @@ def extract(in_dir, out_dir, class_ref, include_partials):
     '''Extract Atari Arcade ROMs'''
     funcs = globals()
     for game in class_ref._metadata['out']['files']:
-        if game['set'] == 'Arcade':
+        if game['set'] == 'Arcade' and game['status'] != 'no-rom':
             is_partial = game['status'] == 'partial'
             if is_partial and not include_partials:
                 continue
