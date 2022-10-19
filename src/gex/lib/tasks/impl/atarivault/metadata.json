@@ -1514,7 +1514,7 @@
                 "versions": {
                     "Steam": {
                         "size": 2048,
-                        "crc": "47592880"
+                        "crc": "6354FF4C"
                     }
                 }
             },
@@ -1525,7 +1525,7 @@
                 "versions": {
                     "Steam": {
                         "size": 2048,
-                        "crc": "6354FF4C"
+                        "crc": "47592880"
                     }
                 }
             },
@@ -1686,7 +1686,7 @@
             "asteroids.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "asteroids.bin",
-                "copy_to": "Asteroids",
+                "copy_to": "Asteroids (5200)",
                 "versions": {
                     "Steam": {
                         "size": 8192,
@@ -1697,7 +1697,7 @@
             "centipede.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "centipede.bin",
-                "copy_to": "Centipede",
+                "copy_to": "Centipede (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1708,7 +1708,7 @@
             "countermeasure.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "countermeasure.bin",
-                "copy_to": "Countermeasure",
+                "copy_to": "Countermeasure (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1719,29 +1719,7 @@
             "millipede.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "millipede.bin",
-                "copy_to": "Millipede",
-                "versions": {
-                    "Steam": {
-                        "size": 16384,
-                        "crc": "D3BD3221"
-                    }
-                }
-            },
-            "missile_command.bin": {
-                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "missile_command.bin",
-                "copy_to": "Missile Command",
-                "versions": {
-                    "Steam": {
-                        "size": 16384,
-                        "crc": "931A454A"
-                    }
-                }
-            },
-            "realsports_baseball.bin": {
-                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "realsports_baseball.bin",
-                "copy_to": "RealSports Baseball",
+                "copy_to": "Millipede (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1749,21 +1727,10 @@
                     }
                 }
             },
-            "realsports_basketball.bin": {
+            "missile_command.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "realsports_basketball.bin",
-                "copy_to": "RealSports Basketball",
-                "versions": {
-                    "Steam": {
-                        "size": 16384,
-                        "crc": "C597C087"
-                    }
-                }
-            },
-            "realsports_football.bin": {
-                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "realsports_football.bin",
-                "copy_to": "RealSports Football",
+                "filename": "missile_command.bin",
+                "copy_to": "Missile Command (5200)",
                 "versions": {
                     "Steam": {
                         "size": 8192,
@@ -1771,10 +1738,10 @@
                     }
                 }
             },
-            "realsports_soccer.bin": {
+            "realsports_baseball.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "realsports_soccer.bin",
-                "copy_to": "RealSports Soccer",
+                "filename": "realsports_baseball.bin",
+                "copy_to": "RealSports Baseball (5200)",
                 "versions": {
                     "Steam": {
                         "size": 32768,
@@ -1782,10 +1749,10 @@
                     }
                 }
             },
-            "realsports_tennis.bin": {
+            "realsports_basketball.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "realsports_tennis.bin",
-                "copy_to": "RealSports Tennis",
+                "filename": "realsports_basketball.bin",
+                "copy_to": "RealSports Basketball (5200)",
                 "versions": {
                     "Steam": {
                         "size": 32768,
@@ -1793,10 +1760,10 @@
                     }
                 }
             },
-            "star_raiders.bin": {
+            "realsports_football.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "star_raiders.bin",
-                "copy_to": "Star Raiders",
+                "filename": "realsports_football.bin",
+                "copy_to": "RealSports Football (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1804,10 +1771,10 @@
                     }
                 }
             },
-            "super_breakout.bin": {
+            "realsports_soccer.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "super_breakout.bin",
-                "copy_to": "Super Breakout",
+                "filename": "realsports_soccer.bin",
+                "copy_to": "RealSports Soccer (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1815,10 +1782,10 @@
                     }
                 }
             },
-            "final_legacy.bin": {
+            "realsports_tennis.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "final_legacy.bin",
-                "copy_to": "Final Legacy",
+                "filename": "realsports_tennis.bin",
+                "copy_to": "RealSports Tennis (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1826,10 +1793,10 @@
                     }
                 }
             },
-            "microgammon.bin": {
+            "star_raiders.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "microgammon.bin",
-                "copy_to": "Micro-Gammon",
+                "filename": "star_raiders.bin",
+                "copy_to": "Star Raiders (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1837,10 +1804,10 @@
                     }
                 }
             },
-            "miniature_golf.bin": {
+            "super_breakout.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
-                "filename": "miniature_golf.bin",
-                "copy_to": "Miniature Golf",
+                "filename": "super_breakout.bin",
+                "copy_to": "Super Breakout (5200)",
                 "versions": {
                     "Steam": {
                         "size": 4096,
@@ -1848,10 +1815,43 @@
                     }
                 }
             },
+            "final_legacy.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "final_legacy.bin",
+                "copy_to": "Final Legacy (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "D3BD3221"
+                    }
+                }
+            },
+            "microgammon.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "microgammon.bin",
+                "copy_to": "Micro-Gammon (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "931A454A"
+                    }
+                }
+            },
+            "miniature_golf.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "miniature_golf.bin",
+                "copy_to": "Miniature Golf (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "C597C087"
+                    }
+                }
+            },
             "xari_arena.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "xari_arena.bin",
-                "copy_to": "Xari Arena",
+                "copy_to": "Xari Arena (5200)",
                 "versions": {
                     "Steam": {
                         "size": 16384,
@@ -1862,7 +1862,7 @@
             "bios.bin": {
                 "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
                 "filename": "bios.bin",
-                "copy_to": "5200 BIOS",
+                "copy_to": "5200 BIOS (5200)",
                 "versions": {
                     "Steam": {
                         "size": 2048,
@@ -1871,7 +1871,7 @@
                 }
             },
             "airaidrs.bin": {
-                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "rel_path": ["AtariVault_Data", "StreamingAssets" , "FOCAL_Emulator", "vol3"],
                 "filename": "airaidrs.bin",
                 "copy_to": "Air Raiders",
                 "versions": {
@@ -3601,7 +3601,7 @@
                 "verify": {
                     "type": "crc",
                     "size": 2048,
-                    "crc": "47592880"
+                    "crc": "6354FF4C"
                 }
             },
             {
@@ -3614,7 +3614,7 @@
                 "verify": {
                     "type": "crc",
                     "size": 2048,
-                    "crc": "6354FF4C"
+                    "crc": "47592880"
                 }
             },
             {
@@ -3800,7 +3800,7 @@
                 }
             },
             {
-                "game": "Asteroids",
+                "game": "Asteroids (5200)",
                 "filename": "Asteroids.a52",
                 "system": "Atari 5200",
                 "set": "5200",
@@ -3813,7 +3813,7 @@
                 }
             },
             {
-                "game": "Centipede",
+                "game": "Centipede (5200)",
                 "filename": "Centipede.a52",
                 "system": "Atari 5200",
                 "set": "5200",
@@ -3826,7 +3826,7 @@
                 }
             },
             {
-                "game": "Countermeasure",
+                "game": "Countermeasure (5200)",
                 "filename": "Countermeasure.a52",
                 "system": "Atari 5200",
                 "set": "5200",
@@ -3839,34 +3839,8 @@
                 }
             },
             {
-                "game": "Millipede",
+                "game": "Millipede (5200)",
                 "filename": "Millipede.a52",
-                "system": "Atari 5200",
-                "set": "5200",
-                "status": "good",
-                "notes": [],
-                "verify": {
-                    "type": "crc",
-                    "size": 16384,
-                    "crc": "D3BD3221"
-                }
-            },
-            {
-                "game": "Missile Command",
-                "filename": "Missile_Command.a52",
-                "system": "Atari 5200",
-                "set": "5200",
-                "status": "good",
-                "notes": [],
-                "verify": {
-                    "type": "crc",
-                    "size": 16384,
-                    "crc": "931A454A"
-                }
-            },
-            {
-                "game": "RealSports Baseball",
-                "filename": "RealSports_Baseball.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3878,21 +3852,8 @@
                 }
             },
             {
-                "game": "RealSports Basketball",
-                "filename": "RealSports_Basketball.a52",
-                "system": "Atari 5200",
-                "set": "5200",
-                "status": "good",
-                "notes": [],
-                "verify": {
-                    "type": "crc",
-                    "size": 16384,
-                    "crc": "C597C087"
-                }
-            },
-            {
-                "game": "RealSports Football",
-                "filename": "RealSports_Football.a52",
+                "game": "Missile Command (5200)",
+                "filename": "Missile_Command.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3904,8 +3865,8 @@
                 }
             },
             {
-                "game": "RealSports Soccer",
-                "filename": "RealSports_Soccer.a52",
+                "game": "RealSports Baseball (5200)",
+                "filename": "RealSports_Baseball.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3917,8 +3878,8 @@
                 }
             },
             {
-                "game": "RealSports Tennis",
-                "filename": "RealSports_Tennis.a52",
+                "game": "RealSports Basketball (5200)",
+                "filename": "RealSports_Basketball.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3930,8 +3891,8 @@
                 }
             },
             {
-                "game": "Star Raiders",
-                "filename": "Star_Raiders.a52",
+                "game": "RealSports Football (5200)",
+                "filename": "RealSports_Football.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3943,8 +3904,8 @@
                 }
             },
             {
-                "game": "Super Breakout",
-                "filename": "Super_Breakout.a52",
+                "game": "RealSports Soccer (5200)",
+                "filename": "RealSports_Soccer.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3956,8 +3917,8 @@
                 }
             },
             {
-                "game": "Final Legacy",
-                "filename": "Final_Legacy.a52",
+                "game": "RealSports Tennis (5200)",
+                "filename": "RealSports_Tennis.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3969,8 +3930,8 @@
                 }
             },
             {
-                "game": "Micro-Gammon",
-                "filename": "Micro-Gammon.a52",
+                "game": "Star Raiders (5200)",
+                "filename": "Star_Raiders.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3982,8 +3943,8 @@
                 }
             },
             {
-                "game": "Miniature Golf",
-                "filename": "Miniature_Golf.a52",
+                "game": "Super Breakout (5200)",
+                "filename": "Super_Breakout.a52",
                 "system": "Atari 5200",
                 "set": "5200",
                 "status": "good",
@@ -3995,7 +3956,46 @@
                 }
             },
             {
-                "game": "Xari Arena",
+                "game": "Final Legacy (5200)",
+                "filename": "Final_Legacy.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "D3BD3221"
+                }
+            },
+            {
+                "game": "Micro-Gammon (5200)",
+                "filename": "Micro-Gammon.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "931A454A"
+                }
+            },
+            {
+                "game": "Miniature Golf (5200)",
+                "filename": "Miniature_Golf.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "C597C087"
+                }
+            },
+            {
+                "game": "Xari Arena (5200)",
                 "filename": "Xari_Arena.a52",
                 "system": "Atari 5200",
                 "set": "5200",
@@ -4008,7 +4008,7 @@
                 }
             },
             {
-                "game": "5200 BIOS",
+                "game": "5200 BIOS (5200)",
                 "filename": "5200_BIOS.a52",
                 "system": "Atari 5200",
                 "set": "5200",
@@ -4279,6 +4279,14 @@
                     "size": 8192,
                     "crc": "DAF83348"
                 }
+            },
+            {
+                "filename": "N/A",
+                "game": "Pong",
+                "system": "Arcade",
+                "set": "Arcade",
+                "notes": [4],
+                "status": "no-rom"
             }
         ],
         "notes": {
