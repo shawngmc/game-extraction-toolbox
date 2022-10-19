@@ -54,7 +54,6 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
     _out_file_list.extend(atari5200.get_game_list())
     _out_file_list.extend(prototype2600.get_game_list())
     _out_file_list.extend(mnetwork.get_game_list())
-    _out_file_list.extend(arcade.get_game_list())
     _out_file_list.append({
         'filename': "N/A",
         'game': "Pong",
@@ -72,6 +71,13 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
         "6": "The sprites and/or tiles for this ROM have been converted to bitmaps."
     }
 
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
+
     def execute(self, in_dir, out_dir):
         if self._props.get('include-2600'):
             atari2600.copy(in_dir, out_dir)
@@ -82,8 +88,7 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
         if self._props.get('include-mnetwork'):
             mnetwork.copy(in_dir, out_dir)
         if self._props.get('include-arcade'):
-            arcade.extract(in_dir, out_dir)
-        if self._props.get('include-arcade-partials'):
-            arcade.extract_partials(in_dir, out_dir)
+            include_partials = self._props.get('include-arcade-partials')
+            arcade.extract(in_dir, out_dir, self, include_partials)
 
         logger.info("Processing complete.")
