@@ -29,17 +29,52 @@ These are not playable ROMs!
 These appear to be KPKA archives, and it is reasonably certain that the extraction is correct, as most files have a 3-4 character allcaps header
 indicating file type. Note that the file order can differ between KPKA files; the size and header bytes are best used for identification.
 
-#### Example KPKA (1556708)
- - 1556708_0_1957557.dat - One of the ROM packages
- - 1556708_1_331.dat - has '.psb' at the beginning, but does not appear to be a valid M2 MArchive/PSB Archive
- - 1556708_2_1976307.dat - One of the ROM packages
- - 1556708_3_150.dat - Small MAME file describing ROM name?
- - 1556708_4_138.dat - Small file of null bytes
- - 1556708_5_667.dat - SCN file - Scene description?
- - 1556708_6_3828.dat - Moderate MMAC file listing ROM file names and possible keys?
- - 1556708_7_26.dat - Very small MMAC file
+### File Types
+It's more effective to actually categorize the files.
 
-### PSB
+#### ROM Data (New Only)
+ - Has no header
+ - Large (very similar to the extracted ZIP file sizes, but slightly smaller - perhaps diff compression)
+ - 1-2 per PAK (typically 2, but only 1 if the game didn't have a US release)
+ - Is this an encrypted version of the PKZIP file?
+
+#### Very Small MMAC
+ - MMAC Header
+ - Always 26 bytes
+ - 1-2 per PAK (does not necessarily match the number of ROM Data packages)
+
+#### Moderate MMAC
+ - MMAC Header
+ - Typically a couple K in size
+
+#### 'MAME' file
+ - MAME header
+ - Typically less than 1K
+ - Some internal paths, some also mention DSW1/DSW2 - could these be DIP Switches?
+ - Like a MAME engine config file for the ROM, to tell it MAME driver name, etc.?
+
+#### SCN
+ - SCN Header
+ - Typically less than 1K
+ - RE Engine Scene Description?
+ - Has paths for other related files
+
+#### PSB
+ - '.psb' header
+ - Always 331 bytes
+ - CAS1 - all PSBs are the same
+ - CAS2 - no per-pak PSB, 1 in the main archive
+ - CAS1 and CAS2 a little different
+   - 0x31-0x35 - 5 bytes
+   - 0x3A-0x46 - 13 bytes
+   - 0x6F-0x82 - 20 bytes
+   - 38/331 bytes - about 11%
+
+#### PKZIP (Old Depot Only)
+ - 'PK' Header
+ - Appears to be a standard ZIP file with the ROM
+
+##### Diff vs. M2 PSB
 In the example above, 1556708_1_331.dat appears to have ".psb" at the beginning; however, this doesn't match what we know about the PSB filetype.
  - If this was an uncompressed PSB file, we would expect the first three bytes to be "PSB"
  - If this were a compressed PSB file, we would expect the first three bytes to be a compression type indicator, like "mdf"
@@ -50,6 +85,29 @@ As such, 'PSB' is likely a coincidence or other dead end.
 For CAS1, every '.psb' file is identical. CAS2 does not have these '.psb' files (at least in the per-DLC packages). 
 However, there is a '.psb' file in the main package (look for the 331 byte file size/file 1888).
 It is definitely different than the CAS1 PSB, but only about 30% of the file is changed. (0x30-0x47, 0x6F-0x81)
+
+### Examples
+#### Example 1 -  (1556708)
+ - 1556708_0_1957557.dat - One of the ROM packages
+ - 1556708_1_331.dat - has '.psb' at the beginning, but does not appear to be a valid M2 MArchive/PSB Archive
+ - 1556708_2_1976307.dat - One of the ROM packages
+ - 1556708_3_150.dat - Small MAME file describing ROM name?
+ - 1556708_4_138.dat - Small file of null bytes
+ - 1556708_5_667.dat - SCN file - Scene description?
+ - 1556708_6_3828.dat - Moderate MMAC file listing ROM file names and possible keys?
+ - 1556708_7_26.dat - Very small MMAC file
+
+#### Example 2 - 1556700 (Vulgus)
+| Old                | New                 | Info                                                            | 
+|--------------------|---------------------|-----------------------------------------------------------------| 
+| 1_346.dat          | 1_346.dat           | MAME file; both 346 bytes, identical, for 'vulgus', has DSWs    | 
+| 6_134.dat          | 7_134.dat           | MAME file; both 134 bytes, identical, for 'vulgusj'             | 
+| 4_26.dat           | 5_26.dat            | Very Small MMAC; Both 26 bytes, 1 byte diff (0x08)              | 
+| 0_14.dat           | 0_26.dat            | Very Small MMAC; 14 vs 26 bytes                                 | 
+| 5_655.dat          | 6_655.dat           | SCN file; Both 655 bytes, identical                             | 
+| N/A                | 3_331.dat           | '.psb' file; only in new                                        | 
+| 2_71436.dat        | 2_70421.dat         | PK vs ??? file, guessing via size and orig this is vulgusj      | 
+| 3_71071.dat        | 4_70123.dat         | PK vs ??? file, guessing via size and orig this is vulgus       | 
     '''
     _out_file_list = [
     ]
@@ -77,11 +135,12 @@ It is definitely different than the CAS1 PSB, but only about 30% of the file is 
                 file_id = None
                 filename = os.path.basename(file)
                 if "patch" in filename:
-                    logger.info(f"Skipping patch file {filename}")
+                    # logger.info(f"Skipping patch file {filename}")
+                    file_id = "patch"
                 elif filename == "re_chunk_000.pak":
-                    file_id = "1515951"
+                    file_id = "chunk"
                 else:
-                    file_id = file[-11:-4]
+                    file_id = file.split(".")[0].split("_")[-1]
 
                 logger.info(f"Extracting {file}: {file_id}")
                 try:
