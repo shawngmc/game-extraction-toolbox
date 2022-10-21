@@ -1,8 +1,9 @@
 '''Implementation of atarivault: Atari Vault'''
 import logging
+import os
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
-from gex.lib.tasks.impl.atarivault import atari2600, atari5200, prototype2600, mnetwork, arcade
+from gex.lib.tasks.impl.atarivault import arcade
 
 logger = logging.getLogger('gextoolbox')
 
@@ -49,41 +50,43 @@ Some arcade ROMs based on https://gist.githubusercontent.com/cxx/6d1d44ce4a6107e
         }
     }
 
-    _out_file_list = []
-    _out_file_list.extend(atari2600.get_game_list())
-    _out_file_list.extend(atari5200.get_game_list())
-    _out_file_list.extend(prototype2600.get_game_list())
-    _out_file_list.extend(mnetwork.get_game_list())
-    _out_file_list.extend(arcade.get_game_list())
-    _out_file_list.append({
-        'filename': "N/A",
-        'game': "Pong",
-        'system': "Arcade",
-        "notes": [4],
-        'status': "no-rom"
-        })
-
-    _out_file_notes = {
-        "1": "Arcade ROMs require MAME 2003.",
-        "2": "This ROM has a CRC mismatch, but appears to work fine.",
-        "3": "This Arcade ROM is currently non-functional - too small, etc.",
-        "4": "This title uses TTL logic and does not have an associated ROM.",
-        "5": "This ROM cannot be extracted.",
-        "6": "The sprites and/or tiles for this ROM have been converted to bitmaps."
-    }
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
 
     def execute(self, in_dir, out_dir):
         if self._props.get('include-2600'):
-            atari2600.copy(in_dir, out_dir)
+            self.extract_console_set(in_dir, out_dir, '2600')
         if self._props.get('include-5200'):
-            atari5200.copy(in_dir, out_dir)
+            self.extract_console_set(in_dir, out_dir, '5200')
         if self._props.get('include-prototype'):
-            prototype2600.copy(in_dir, out_dir)
+            self.extract_console_set(in_dir, out_dir, 'prototype')
         if self._props.get('include-mnetwork'):
-            mnetwork.copy(in_dir, out_dir)
+            self.extract_console_set(in_dir, out_dir, 'mnetwork')
         if self._props.get('include-arcade'):
-            arcade.extract(in_dir, out_dir)
-        if self._props.get('include-arcade-partials'):
-            arcade.extract_partials(in_dir, out_dir)
+            include_partials = self._props.get('include-arcade-partials')
+            arcade.extract(in_dir, out_dir, self, include_partials)
 
         logger.info("Processing complete.")
+
+    
+    def extract_console_set(self, in_dir, out_dir, game_set):
+        '''Extract Atari Console ROMs'''
+            
+        for file_metadata in self._metadata['in']['files'].values():
+            resolved_file = self.read_datafile(in_dir, file_metadata)
+            if 'copy_to' in file_metadata:
+                out_file_entries = [x for x in self._metadata['out']['files'] if x['game'] == file_metadata['copy_to'] and x['set'] == game_set]
+                # Set isn't used in verification. Make 2600/5200/Arcade rom names unique, but keep the set match here
+                if len(out_file_entries) == 1:
+                    out_file_entry = out_file_entries[0]
+                    logger.info(f"Copying {out_file_entry['game']}...")
+                    filename = out_file_entry['filename']
+                    _ = self.verify_out_file(filename, resolved_file['contents'])
+                    out_path = os.path.join(out_dir, filename)
+                    with open(out_path, "wb") as out_file:
+                        out_file.write(resolved_file['contents'])
+

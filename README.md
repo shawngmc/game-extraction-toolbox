@@ -73,6 +73,10 @@ I prefer not to be artificially locked to specific platforms - why play a 25 yea
 ### Why not just download the ROMs?
 It is illegal. One can discuss economic moral implications all day, but at the end of the day, it's theft. As a software developer myself, I don't want my code stolen - so I can't claim a moral high ground there. Equally importantly, showing classic game owners that the market will support rereleases increases the liklihood of rereleases, and I want people who can't/won't download ROMs to enjoy these titles as well.
 
+### What artificial limitations does this tool have to prevent copyright claims?
+* This tool will not hold decryption keys.
+* This tool will not hold any 'whole' files, nor substantial parts of files. A limited 'patch' capability is allowed for less than 1% of a file, but this should be very limited.
+
 ### This MAME ROM is actually XXXXYY, not XXXXZZ - why do you have it that way?
 The goal of this tool is not to create a perfect ROM set for the latest MAME, because it can't. A few factors go into what version of MAME we target:
 
@@ -108,30 +112,33 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 ### Playable
 
-**Collection**                             | **Status**     | **Notes**           
+**Collection**                             | **Status**     | **Verification** | **Notes**           
 --------------------------------------------|-------------|---------------------------------------------------------------------  
- **Arcade Collection Anniversary Classics**     | 75%    | A couple games are good extractions so far...
- **Atari Vault**                                | 90%    | Some arcade ROMs from this collection are incomplete.  
- **Blizzard Arcade Collection**                 | 100%   |   
- **Bubsy Two-Fur**                              | 100%   |   
- **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | Requires Steam depot downloading, a couple shaky ROMs... 
- **Capcom Beat 'Em Up Bundle**                  | 95%    | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
- **Capcom Fighting Collection**                 | 90%    | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
- **Collection of SaGa/Final Fantasy Legend**    | 100%   |  
- **Disney Afternoon Collection**                | 100%   |  
- **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Includes Jungle Book DLC
- **Double Dragon Trilogy**                      | 100%   |  
- **IREM Arcade Classics**                       | 100%   |  
- **Mega Man Legacy Collection 1**               | 100%   |  
- **Mega Man X Legacy Collection 1**             | 75%    | X4 doesn't appear to be ROM based  
- **Namco Arcade Game Series**                   | 75%    | Ms. Pac-Man cannot be cleanly extracted
- **Pac Man Museum Plus**                        | 40%    | Some progress, but there are a lot of non-extractable titles.
- **Sega Genesis and Mega Drive Collection**     | 90%    | Some compressed variants not yet extracted  
- **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
- **SNK 40th Anniversary Collection**            | 100%   | All games supported by an emulator are extracted!
- **Street Fighter 30th Anniversary Collection** | 90%    | Now includes all playable international versions.
- **Wonder Boy: The Dragon's Trap**              | 100%   |  
- **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   |  
+ **Arcade Collection Anniversary Classics**     | 75%    | Y | A couple games are good extractions so far...
+ **Atari Vault**                                | 90%    | Y | Some arcade ROMs from this collection are incomplete.  
+ **Blizzard Arcade Collection**                 | 100%   | Y |   
+ **Bubsy Two-Fur**                              | 100%   | Y |   
+ **Capcom Arcade Stadium 1 (via Depot)**        | 95%    | N | Requires Steam depot downloading, a couple shaky ROMs... 
+ **Capcom Beat 'Em Up Bundle**                  | 95%    | Y | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
+ **Capcom Fighting Collection**                 | 90%    | Y | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
+ **Collection of SaGa/Final Fantasy Legend**    | 100%   | Y |  
+ **Disney Afternoon Collection**                | 100%   | Y |  
+ **Disney Classics Aladdin & Lion King w/DLC**  | 100%   | Y | Includes Jungle Book DLC
+ **Double Dragon Trilogy**                      | 100%   | Y |  
+ **IREM Arcade Classics**                       | 100%   | Y |  
+ **Mega Man Legacy Collection 1**               | 100%   | Y |  
+ **Mega Man X Legacy Collection 1**             | 75%    | Y | X4 doesn't appear to be ROM based  
+ **Namco Arcade Game Series: Dig Dug**          | 100%   | Y |   
+ **Namco Arcade Game Series: Galaga**           | 100%   | Y |   
+ **Namco Arcade Game Series: Ms. Pac-Man**      | 100%   | Y |   
+ **Namco Arcade Game Series: Pacman**           | 100%   | Y |   
+ **Pac Man Museum Plus**                        | 40%    | Y | Some progress, but there are a lot of non-extractable titles.
+ **Sega Genesis and Mega Drive Collection**     | 90%    | Y | Some compressed variants not yet extracted  
+ **Sonic Adventure DX (Hidden Game Gear games)**| 100%   | Y | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
+ **SNK 40th Anniversary Collection**            | 100%   | Y | All games supported by an emulator are extracted!
+ **Street Fighter 30th Anniversary Collection** | 90%    | Y | Now includes all playable international versions.
+ **Wonder Boy: The Dragon's Trap**              | 100%   | Y |  
+ **Zombies Ate My Neighbors and Ghoul Patrol**  | 100%   | Y |  
 
 
 ### Completely Unplayable

@@ -1,0 +1,173 @@
+{
+    "in": {
+        "files": {
+            "ffl1": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romffl1_assets_all_e8aea7590909c1eb45f3809e4f3da68f.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 109796,
+                        "crc": "385FE479"
+                    }
+                }
+            },
+            "ffl2": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romffl2_assets_all_5d8137a1fdbca63a9fa7b533aa1d9db0.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 203574,
+                        "crc": "C37F6B51"
+                    }
+                }
+            },
+            "ffl3": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romffl3_assets_all_5818995041c2c3cbe070bb00b1783274.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 220030,
+                        "crc": "1EEA387F"
+                    }
+                }
+            },
+            "saga1": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romjsg1_assets_all_c6047cf2db4f38cbc8f51d592e1a1c76.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 44015620,
+                        "crc": "1CA002C9"
+                    }
+                }
+            },
+            "saga2": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romjsg2_assets_all_148d5b61843deae44f69f2dfcc30e168.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 48237661,
+                        "crc": "5305CE5F"
+                    }
+                }
+            },
+            "saga3": {
+                "rel_path": ["Sa・Ga COLLECTION_Data", "StreamingAssets", "aa", "Windows", "StandaloneWindows64"],
+                "filename": "romjsg3_assets_all_942cc896cee03850dc45bfc837017e8f.bundle",
+                "versions": {
+                    "Steam": {
+                        "size": 49292895,
+                        "crc": "1C2CB802"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Final Fantasy Legend 1",
+                "filename": "FinalFantasyLegend.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "ffl1",
+                    "archive_path": "Assets/Roms/FFL1.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "00388844",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "Final Fantasy Legend 2",
+                "filename": "FinalFantasyLegend2.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "ffl2",
+                    "archive_path": "Assets/Roms/FFL2.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "E84E051A",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Final Fantasy Legend 3",
+                "filename": "FinalFantasyLegend3.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "ffl3",
+                    "archive_path": "Assets/Roms/FFL3.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "0C5171EF",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "SaGa 1",
+                "filename": "SaGa.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "saga1",
+                    "archive_path": "Assets/Roms/JSG1.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "0006612D",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "SaGa 2",
+                "filename": "SaGa2.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "saga2",
+                    "archive_path": "Assets/Roms/JSG2.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "2FE38E18",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "SaGa 3",
+                "filename": "SaGa3.gb",
+                "status": "good",
+                "system": "Game Boy",
+                "notes": [],
+                "extract": {
+                    "type": "unity",
+                    "in_file": "saga3",
+                    "archive_path": "Assets/Roms/JSG3.bytes"
+                },
+                "verify": {
+                    "type": "crc",
+                    "crc": "DC4F4E34",
+                    "size": 262144
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

@@ -1,0 +1,1619 @@
+{
+    "in": {
+        "files": {
+            "ALEXKIDD_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ALEXKIDD_U.68K",
+                "copy_to": "Alex Kidd in the Enchanted Castle (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "47DBA0AC",
+                        "size": 262144
+                    }
+                }
+            },
+            "AlienSoldier_Europe": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "AlienSoldier_Europe.SGD",
+                "copy_to": "Alien Soldier (Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "0496E06C",
+                        "size": 2097152
+                    }
+                }
+            },
+            "AlienStorm_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "AlienStorm_USA.SGD",
+                "copy_to": "Alien Storm (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5AB9C9F8",
+                        "size": 524288
+                    }
+                }
+            },
+            "ALTEREDB_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ALTEREDB_UE.68K",
+                "copy_to": "Altered Beast (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "154D59BB",
+                        "size": 524288
+                    }
+                }
+            },
+            "BEYONDOA_E": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_E.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (England)",
+                "versions": {
+                    "Steam": {
+                        "crc": "1110B0DB",
+                        "size": 3145728
+                    }
+                }
+            },
+            "BEYONDOA_F": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_F.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (France)",
+                "versions": {
+                    "Steam": {
+                        "crc": "B97CCA1C",
+                        "size": 3145728
+                    }
+                }
+            },
+            "BEYONDOA_G": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_G.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (Germany)",
+                "versions": {
+                    "Steam": {
+                        "crc": "FA20D011",
+                        "size": 3145728
+                    }
+                }
+            },
+            "BEYONDOA_J": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_J.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (Japan)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4F39783C",
+                        "size": 3145728
+                    }
+                }
+            },
+            "BEYONDOA_S": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_S.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (Spain)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4631F941",
+                        "size": 3145728
+                    }
+                }
+            },
+            "BEYONDOA_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BEYONDOA_U.68K",
+                "copy_to": "Beyond Oasis / Story of Thor (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C4728225",
+                        "size": 3145728
+                    }
+                }
+            },
+            "Crying_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "Crying_USA.SGD",
+                "copy_to": "Bio Hazard Battle (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "95B0EA2B",
+                        "size": 1048576
+                    }
+                }
+            },
+            "BONANZAB_JE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "BONANZAB_JE.68K",
+                "copy_to": "Bonanza Bros. (Japan/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C6AAC589",
+                        "size": 524288
+                    }
+                }
+            },
+            "COLUMNS_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "COLUMNS_W.68K",
+                "copy_to": "Columns (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "D783C244",
+                        "size": 131072
+                    }
+                }
+            },
+            "Columns3_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "Columns3_USA.SGD",
+                "copy_to": "Columns III (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "DC678F6D",
+                        "size": 524288
+                    }
+                }
+            },
+            "COMIXZON_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "COMIXZON_U.68K",
+                "copy_to": "Comix Zone (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "17DA0354",
+                        "size": 2097152
+                    }
+                }
+            },
+            "CrackDown_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "CrackDown_USA.SGD",
+                "copy_to": "Crack Down (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "B9CE9051",
+                        "size": 524288
+                    }
+                }
+            },
+            "DECAP_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "DECAP_UE.68K",
+                "copy_to": "Decap Attack (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "73DC0DD8",
+                        "size": 524288
+                    }
+                }
+            },
+            "ROBOTNIK_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ROBOTNIK_U.68K",
+                "copy_to": "Dr. Robotnik's Mean Bean Machine (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C7CA517F",
+                        "size": 1048576
+                    }
+                }
+            },
+            "DYNAHEAD_J": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "DYNAHEAD_J.68K",
+                "copy_to": "Dynamite Headdy (Japan)",
+                "versions": {
+                    "Steam": {
+                        "crc": "D03CDB53",
+                        "size": 2097152
+                    }
+                }
+            },
+            "DYNAHEAD_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "DYNAHEAD_UE.68K",
+                "copy_to": "Dynamite Headdy (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "3DFEEB77",
+                        "size": 2097152
+                    }
+                }
+            },
+            "eccojr": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "eccojr.smd",
+                "copy_to": "Ecco Jr.",
+                "versions": {
+                    "Steam": {
+                        "crc": "5B13FC7C",
+                        "size": 1049088
+                    }
+                }
+            },
+            "ECCO_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ECCO_UE.68K",
+                "copy_to": "Ecco the Dolphin (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "45547390",
+                        "size": 1048576
+                    }
+                }
+            },
+            "ECCO2_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ECCO2_U.68K",
+                "copy_to": "Ecco - The Tides of Time (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "CCB21F98",
+                        "size": 2097152
+                    }
+                }
+            },
+            "ESWAT_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ESWAT_U.68K",
+                "copy_to": "ESWAT - City Under Siege (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "E72F8A36",
+                        "size": 524288
+                    }
+                }
+            },
+            "EternalChampions_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "EternalChampions_USA.SGD",
+                "copy_to": "Eternal Champions (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "48F1A42E",
+                        "size": 3145728
+                    }
+                }
+            },
+            "FATALLAB_JU": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "FATALLAB_JU.68K",
+                "copy_to": "Fatal Labyrinth (Japan/US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5F0BD984",
+                        "size": 131072
+                    }
+                }
+            },
+            "FLICKY_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "FLICKY_UE.68K",
+                "copy_to": "Flicky (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4291C8AB",
+                        "size": 131072
+                    }
+                }
+            },
+            "GAING_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "GAING_UE.68K",
+                "copy_to": "Gain Ground (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "83E7B8AE",
+                        "size": 524288
+                    }
+                }
+            },
+            "GalaxyForceII_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "GalaxyForceII_UE.SGD",
+                "copy_to": "Galaxy Force II (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "E4D84E4A",
+                        "size": 1048576
+                    }
+                }
+            },
+            "GAXE_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "GAXE_W.68K",
+                "copy_to": "Golden Axe (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "665D7DF9",
+                        "size": 524288
+                    }
+                }
+            },
+            "GAXE2_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "GAXE2_W.68K",
+                "copy_to": "Golden Axe 2 (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "725E0A18",
+                        "size": 524288
+                    }
+                }
+            },
+            "GAXE3_J": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "GAXE3_J.68K",
+                "copy_to": "Golden Axe 3 (Japan)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C7862EA3",
+                        "size": 1048576
+                    }
+                }
+            },
+            "Gunstar Heroes U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "Gunstar Heroes U.bin",
+                "copy_to": "Gunstar Heroes (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "B813CF0D",
+                        "size": 1048576
+                    }
+                }
+            },
+            "KIDCHAM_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "KIDCHAM_UE.68K",
+                "copy_to": "Kid Chameleon (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "CE36E6CC",
+                        "size": 1048576
+                    }
+                }
+            },
+            "LandStalker_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "LandStalker_USA.SGD",
+                "copy_to": "Landstalker (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "FBBB5B97",
+                        "size": 2097152
+                    }
+                }
+            },
+            "LightCrusader_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "LightCrusader_USA.SGD",
+                "copy_to": "Light Crusader (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "BEB715DC",
+                        "size": 2097152
+                    }
+                }
+            },
+            "PhantasyStar2_UE_GreenCrossFix": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "PhantasyStar2_UE_GreenCrossFix.SGD",
+                "copy_to": "Phantasy Star 2 (Modded Green Cross Fix) (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "75AF3D59",
+                        "size": 1048576
+                    }
+                }
+            },
+            "PhantasyStar3_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "PhantasyStar3_USA.SGD",
+                "copy_to": "Phantasy Star 3 (Modded USA) (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "CC194AD8",
+                        "size": 1048576
+                    }
+                }
+            },
+            "PhantasyStar4": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "PhantasyStar4.SGD",
+                "copy_to": "Phantasy Star 4",
+                "versions": {
+                    "Steam": {
+                        "crc": "B23CD7AA",
+                        "size": 4194304
+                    }
+                }
+            },
+            "TheSuperShinobi_JUE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "TheSuperShinobi_JUE.SGD",
+                "copy_to": "Revenge of Shinobi (aka The Super Shinobi) (Japan/US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5CA24F66",
+                        "size": 524288
+                    }
+                }
+            },
+            "RISTAR_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "RISTAR_UE.68K",
+                "copy_to": "Ristar (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "6511AA61",
+                        "size": 2097152
+                    }
+                }
+            },
+            "ShadowDancer": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ShadowDancer.SGD",
+                "copy_to": "Shadow Dancer: The Secret of Shinobi (Shinobi 2)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5CD3E295",
+                        "size": 524288
+                    }
+                }
+            },
+            "SHININGF_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SHININGF_U.68K",
+                "copy_to": "Shining Force (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "E0594ABE",
+                        "size": 1572864
+                    }
+                }
+            },
+            "SHINING2_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SHINING2_U.68K",
+                "copy_to": "Shining Force 2 (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4815E075",
+                        "size": 2097152
+                    }
+                }
+            },
+            "SHININGD_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SHININGD_UE.68K",
+                "copy_to": "Shining in the Darkness (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4D2785BC",
+                        "size": 1048576
+                    }
+                }
+            },
+            "SHINOBI3_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SHINOBI3_U.68K",
+                "copy_to": "Shinobi 3 (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5381506F",
+                        "size": 1048576
+                    }
+                }
+            },
+            "SONIC_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SONIC_W.68K",
+                "copy_to": "Sonic the Hedgehog (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "AFE05EEE",
+                        "size": 524288
+                    }
+                }
+            },
+            "SONIC2_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SONIC2_W.68K",
+                "copy_to": "Sonic 2 (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "7B905383",
+                        "size": 1048576
+                    }
+                }
+            },
+            "Sonic_Knuckles_wSonic3": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "Sonic_Knuckles_wSonic3.bin",
+                "copy_to": "Sonic 3 & Knuckles",
+                "versions": {
+                    "Steam": {
+                        "crc": "0C06AA82",
+                        "size": 4194304
+                    }
+                }
+            },
+            "SONIC3D_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SONIC3D_UE.68K",
+                "copy_to": "Sonic 3D (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "44A2CA44",
+                        "size": 4194304
+                    }
+                }
+            },
+            "SONICSPI_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SONICSPI_U.68K",
+                "copy_to": "Sonic Spinball (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "677206CB",
+                        "size": 1048576
+                    }
+                }
+            },
+            "SPACEHARRIERII": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "SPACEHARRIERII.bin",
+                "copy_to": "Space Harrier II",
+                "versions": {
+                    "Steam": {
+                        "crc": "E5C9CBB0",
+                        "size": 524288
+                    }
+                }
+            },
+            "STREETS_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STREETS_W.68K",
+                "copy_to": "Streets of Rage (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "4052E845",
+                        "size": 524288
+                    }
+                }
+            },
+            "STREETS2_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STREETS2_U.68K",
+                "copy_to": "Streets of Rage 2 (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "E01FA526",
+                        "size": 2097152
+                    }
+                }
+            },
+            "STREETS3_E": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STREETS3_E.68K",
+                "copy_to": "Streets of Rage 3 (Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "90EF991E",
+                        "size": 3145728
+                    }
+                }
+            },
+            "STREETS3_J": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STREETS3_J.68K",
+                "copy_to": "Streets of Rage 3 (Japan)",
+                "versions": {
+                    "Steam": {
+                        "crc": "5D09236F",
+                        "size": 3145728
+                    }
+                }
+            },
+            "STREETS3_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STREETS3_U.68K",
+                "copy_to": "Streets of Rage 3 (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "D5BB15D9",
+                        "size": 3145728
+                    }
+                }
+            },
+            "STHUNDER_W": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "STHUNDER_W.68K",
+                "copy_to": "Super Thunder Blade (World)",
+                "versions": {
+                    "Steam": {
+                        "crc": "B13087EE",
+                        "size": 524288
+                    }
+                }
+            },
+            "sov": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "sov.smd",
+                "copy_to": "Sword of Vermillion",
+                "versions": {
+                    "Steam": {
+                        "crc": "36D2F822",
+                        "size": 655872
+                    }
+                }
+            },
+            "ToeJamEarl": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ToeJamEarl.SGD",
+                "copy_to": "ToeJam and Earl",
+                "versions": {
+                    "Steam": {
+                        "crc": "7A588F4B",
+                        "size": 1048576
+                    }
+                }
+            },
+            "ToeJamEarl2_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "ToeJamEarl2_USA.SGD",
+                "copy_to": "ToeJam and Earl In Panic On Funkotron (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "AA021BDD",
+                        "size": 2097152
+                    }
+                }
+            },
+            "VECTMAN_UE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "VECTMAN_UE.68K",
+                "copy_to": "VectorMan (US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "D38B3354",
+                        "size": 2097152
+                    }
+                }
+            },
+            "VECTMAN2_U": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "VECTMAN2_U.68K",
+                "copy_to": "VectorMan 2 (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C1A24088",
+                        "size": 3145728
+                    }
+                }
+            },
+            "VIRTUAFIGHTER2": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "VIRTUAFIGHTER2.bin",
+                "copy_to": "Virtua Fighter 2",
+                "versions": {
+                    "Steam": {
+                        "crc": "937380F3",
+                        "size": 4194304
+                    }
+                }
+            },
+            "MonsterLair_JUE": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "MonsterLair_JUE.SGD",
+                "copy_to": "Wonder Boy III - Monster Lair (Japan/US/Euro)",
+                "versions": {
+                    "Steam": {
+                        "crc": "C24BC5E4",
+                        "size": 524288
+                    }
+                }
+            },
+            "MonsterWorld3_USA": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "MonsterWorld3_USA.SGD",
+                "copy_to": "Wonder Boy in Monster World (US)",
+                "versions": {
+                    "Steam": {
+                        "crc": "1592F5B0",
+                        "size": 786432
+                    }
+                }
+            },
+            "MonsterWorld3": {
+                "rel_path": ["uncompressed ROMs"],
+                "filename": "MonsterWorld3.SGD",
+                "copy_to": "Wonder Boy V - Monster World III (Japan)",
+                "versions": {
+                    "Steam": {
+                        "crc": "45A50F96",
+                        "size": 655360
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Alex Kidd in the Enchanted Castle (US)",
+                "region": "US",
+                "title": "Alex Kidd in the Enchanted Castle",
+                "status": "good",
+                "notes": [],
+                "filename": "AlexKiddInTheEnchantedCastle.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "47DBA0AC",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Alien Soldier (Euro)",
+                "region": "Euro",
+                "title": "Alien Soldier",
+                "status": "good",
+                "notes": [],
+                "filename": "AlienSoldier.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "0496E06C",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Alien Storm (US)",
+                "region": "US",
+                "title": "Alien Storm",
+                "status": "good",
+                "notes": [],
+                "filename": "AlienStorm.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5AB9C9F8",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Altered Beast (US/Euro)",
+                "region": "US/Euro",
+                "title": "Altered Beast",
+                "status": "good",
+                "notes": [],
+                "filename": "AlteredBeast.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "154D59BB",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (England)",
+                "region": "England",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_E.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "1110B0DB",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (France)",
+                "region": "France",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_F.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "B97CCA1C",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (Germany)",
+                "region": "Germany",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_G.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "FA20D011",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (Japan)",
+                "region": "Japan",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_J.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4F39783C",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (Spain)",
+                "region": "Spain",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_S.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4631F941",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Beyond Oasis / Story of Thor (US)",
+                "region": "US",
+                "title": "Beyond Oasis / Story of Thor",
+                "status": "good",
+                "notes": [],
+                "filename": "BeyondOasisAKAStoryofThor_U.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C4728225",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Bio Hazard Battle (US)",
+                "region": "US",
+                "title": "Bio Hazard Battle",
+                "status": "good",
+                "notes": [],
+                "filename": "BioHazardBattle.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "95B0EA2B",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Bonanza Bros. (Japan/Euro)",
+                "region": "Japan/Euro",
+                "title": "Bonanza Bros.",
+                "status": "good",
+                "notes": [],
+                "filename": "BonanzaBros.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C6AAC589",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Columns (World)",
+                "region": "World",
+                "title": "Columns",
+                "status": "good",
+                "notes": [],
+                "filename": "Columns.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "D783C244",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "Columns III (US)",
+                "region": "US",
+                "title": "Columns III",
+                "status": "good",
+                "notes": [],
+                "filename": "ColumnsIII.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "DC678F6D",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Comix Zone (US)",
+                "region": "US",
+                "title": "Comix Zone",
+                "status": "good",
+                "notes": [],
+                "filename": "ComixZone.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "17DA0354",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Crack Down (US)",
+                "region": "US",
+                "title": "Crack Down",
+                "status": "good",
+                "notes": [],
+                "filename": "CrackDown.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "B9CE9051",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Decap Attack (US/Euro)",
+                "region": "US/Euro",
+                "title": "Decap Attack",
+                "status": "good",
+                "notes": [],
+                "filename": "DecapAttack.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "73DC0DD8",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Dr. Robotnik's Mean Bean Machine (US)",
+                "region": "US",
+                "title": "Dr. Robotnik's Mean Bean Machine",
+                "status": "good",
+                "notes": [],
+                "filename": "DrRobotniksMeanBeanMachine.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C7CA517F",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Dynamite Headdy (Japan)",
+                "region": "Japan",
+                "title": "Dynamite Headdy",
+                "status": "good",
+                "notes": [],
+                "filename": "DynamiteHeaddy_J.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "D03CDB53",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Dynamite Headdy (US/Euro)",
+                "region": "US/Euro",
+                "title": "Dynamite Headdy",
+                "status": "good",
+                "notes": [],
+                "filename": "DynamiteHeaddy_UE.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "3DFEEB77",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Ecco Jr.",
+                "region": "",
+                "title": "Ecco Jr.",
+                "status": "good",
+                "notes": [],
+                "filename": "EccoJr.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5B13FC7C",
+                    "size": 1049088
+                }
+            },
+            {
+                "game": "Ecco the Dolphin (US/Euro)",
+                "region": "US/Euro",
+                "title": "Ecco the Dolphin",
+                "status": "good",
+                "notes": [],
+                "filename": "EccoTheDolphin.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "45547390",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Ecco - The Tides of Time (US)",
+                "region": "US",
+                "title": "Ecco - The Tides of Time",
+                "status": "good",
+                "notes": [],
+                "filename": "EccoTheTidesOfTime.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "CCB21F98",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "ESWAT - City Under Siege (US)",
+                "region": "US",
+                "title": "ESWAT - City Under Siege",
+                "status": "good",
+                "notes": [],
+                "filename": "ESWATCityUnderSiege.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "E72F8A36",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Eternal Champions (US)",
+                "region": "US",
+                "title": "Eternal Champions",
+                "status": "good",
+                "notes": [],
+                "filename": "EternalChampions.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "48F1A42E",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Fatal Labyrinth (Japan/US)",
+                "region": "Japan/US",
+                "title": "Fatal Labyrinth",
+                "status": "good",
+                "notes": [],
+                "filename": "FatalLabyrinth.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5F0BD984",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "Flicky (US/Euro)",
+                "region": "US/Euro",
+                "title": "Flicky",
+                "status": "good",
+                "notes": [],
+                "filename": "Flicky.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4291C8AB",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "Gain Ground (US/Euro)",
+                "region": "US/Euro",
+                "title": "Gain Ground",
+                "status": "good",
+                "notes": [],
+                "filename": "GainGround.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "83E7B8AE",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Galaxy Force II (US/Euro)",
+                "region": "US/Euro",
+                "title": "Galaxy Force II",
+                "status": "good",
+                "notes": [],
+                "filename": "GalaxyForceII.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "E4D84E4A",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Golden Axe (World)",
+                "region": "World",
+                "title": "Golden Axe",
+                "status": "good",
+                "notes": [],
+                "filename": "GoldenAxe.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "665D7DF9",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Golden Axe 2 (World)",
+                "region": "World",
+                "title": "Golden Axe 2",
+                "status": "good",
+                "notes": [],
+                "filename": "GoldenAxe2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "725E0A18",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Golden Axe 3 (Japan)",
+                "region": "Japan",
+                "title": "Golden Axe 3",
+                "status": "good",
+                "notes": [],
+                "filename": "GoldenAxe3.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C7862EA3",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Gunstar Heroes (US)",
+                "region": "US",
+                "title": "Gunstar Heroes",
+                "status": "good",
+                "notes": [],
+                "filename": "GunstarHeroes.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "B813CF0D",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Kid Chameleon (US/Euro)",
+                "region": "US/Euro",
+                "title": "Kid Chameleon",
+                "status": "good",
+                "notes": [],
+                "filename": "KidChameleon.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "CE36E6CC",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Landstalker (US)",
+                "region": "US",
+                "title": "Landstalker",
+                "status": "good",
+                "notes": [],
+                "filename": "Landstalker.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "FBBB5B97",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Light Crusader (US)",
+                "region": "US",
+                "title": "Light Crusader",
+                "status": "good",
+                "notes": [],
+                "filename": "LightCrusader.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "BEB715DC",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Phantasy Star 2 (Modded Green Cross Fix) (US/Euro)",
+                "region": "US/Euro",
+                "title": "Phantasy Star 2 (Modded Green Cross Fix)",
+                "status": "good",
+                "notes": [],
+                "filename": "PhantasyStar2_ModdedCross.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "75AF3D59",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Phantasy Star 3 (Modded USA) (US)",
+                "region": "US",
+                "title": "Phantasy Star 3 (Modded USA)",
+                "status": "good",
+                "notes": [],
+                "filename": "PhantasyStar3_ModdedUSA.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "CC194AD8",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Phantasy Star 4",
+                "region": "",
+                "title": "Phantasy Star 4",
+                "status": "good",
+                "notes": [],
+                "filename": "PhantasyStar4.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "B23CD7AA",
+                    "size": 4194304
+                }
+            },
+            {
+                "game": "Revenge of Shinobi (aka The Super Shinobi) (Japan/US/Euro)",
+                "region": "Japan/US/Euro",
+                "title": "Revenge of Shinobi (aka The Super Shinobi)",
+                "status": "good",
+                "notes": [],
+                "filename": "RevengeOfShinobi.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5CA24F66",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Ristar (US/Euro)",
+                "region": "US/Euro",
+                "title": "Ristar",
+                "status": "good",
+                "notes": [],
+                "filename": "Ristar.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "6511AA61",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Shadow Dancer: The Secret of Shinobi (Shinobi 2)",
+                "region": "",
+                "title": "Shadow Dancer: The Secret of Shinobi (Shinobi 2)",
+                "status": "good",
+                "notes": [],
+                "filename": "ShadowDancerTheSecretofShinobi.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5CD3E295",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Shining Force (US)",
+                "region": "US",
+                "title": "Shining Force",
+                "status": "good",
+                "notes": [],
+                "filename": "ShiningForce.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "E0594ABE",
+                    "size": 1572864
+                }
+            },
+            {
+                "game": "Shining Force 2 (US)",
+                "region": "US",
+                "title": "Shining Force 2",
+                "status": "good",
+                "notes": [],
+                "filename": "ShiningForce2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4815E075",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Shining in the Darkness (US/Euro)",
+                "region": "US/Euro",
+                "title": "Shining in the Darkness",
+                "status": "good",
+                "notes": [],
+                "filename": "ShiningInTheDarkness.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4D2785BC",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Shinobi 3 (US)",
+                "region": "US",
+                "title": "Shinobi 3",
+                "status": "good",
+                "notes": [],
+                "filename": "Shinobi3.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5381506F",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Sonic the Hedgehog (World)",
+                "region": "World",
+                "title": "Sonic the Hedgehog",
+                "status": "good",
+                "notes": [],
+                "filename": "Sonic.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "AFE05EEE",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic 2 (World)",
+                "region": "World",
+                "title": "Sonic 2",
+                "status": "good",
+                "notes": [],
+                "filename": "Sonic2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "7B905383",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Sonic 3 & Knuckles",
+                "region": "",
+                "title": "Sonic 3 & Knuckles",
+                "status": "good",
+                "notes": [],
+                "filename": "Sonic3andKnuckles.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "0C06AA82",
+                    "size": 4194304
+                }
+            },
+            {
+                "game": "Sonic 3D (US/Euro)",
+                "region": "US/Euro",
+                "title": "Sonic 3D",
+                "status": "good",
+                "notes": [],
+                "filename": "Sonic3D.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "44A2CA44",
+                    "size": 4194304
+                }
+            },
+            {
+                "game": "Sonic Spinball (US)",
+                "region": "US",
+                "title": "Sonic Spinball",
+                "status": "good",
+                "notes": [],
+                "filename": "SonicSpinball.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "677206CB",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Space Harrier II",
+                "region": "",
+                "title": "Space Harrier II",
+                "status": "good",
+                "notes": [],
+                "filename": "SpaceHarrierII.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "E5C9CBB0",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Streets of Rage (World)",
+                "region": "World",
+                "title": "Streets of Rage",
+                "status": "good",
+                "notes": [],
+                "filename": "StreetsOfRage.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "4052E845",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Streets of Rage 2 (US)",
+                "region": "US",
+                "title": "Streets of Rage 2",
+                "status": "good",
+                "notes": [],
+                "filename": "StreetsOfRage2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "E01FA526",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Streets of Rage 3 (Euro)",
+                "region": "Euro",
+                "title": "Streets of Rage 3",
+                "status": "good",
+                "notes": [],
+                "filename": "StreetsOfRage3_E.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "90EF991E",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Streets of Rage 3 (Japan)",
+                "region": "Japan",
+                "title": "Streets of Rage 3",
+                "status": "good",
+                "notes": [],
+                "filename": "StreetsOfRage3_J.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "5D09236F",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Streets of Rage 3 (US)",
+                "region": "US",
+                "title": "Streets of Rage 3",
+                "status": "good",
+                "notes": [],
+                "filename": "StreetsOfRage3_U.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "D5BB15D9",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Super Thunder Blade (World)",
+                "region": "World",
+                "title": "Super Thunder Blade",
+                "status": "good",
+                "notes": [],
+                "filename": "SuperThunderBlade_W.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "B13087EE",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sword of Vermillion",
+                "region": "",
+                "title": "Sword of Vermillion",
+                "status": "good",
+                "notes": [],
+                "filename": "SwordOfVermillion.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "36D2F822",
+                    "size": 655872
+                }
+            },
+            {
+                "game": "ToeJam and Earl",
+                "region": "",
+                "title": "ToeJam and Earl",
+                "status": "good",
+                "notes": [],
+                "filename": "ToeJamAndEarl.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "7A588F4B",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "ToeJam and Earl In Panic On Funkotron (US)",
+                "region": "US",
+                "title": "ToeJam and Earl In Panic On Funkotron",
+                "status": "good",
+                "notes": [],
+                "filename": "ToeJamAndEarlInPanicOnFunkotron.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "AA021BDD",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "VectorMan (US/Euro)",
+                "region": "US/Euro",
+                "title": "VectorMan",
+                "status": "good",
+                "notes": [],
+                "filename": "VectorMan.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "D38B3354",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "VectorMan 2 (US)",
+                "region": "US",
+                "title": "VectorMan 2",
+                "status": "good",
+                "notes": [],
+                "filename": "VectorMan2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C1A24088",
+                    "size": 3145728
+                }
+            },
+            {
+                "game": "Virtua Fighter 2",
+                "region": "",
+                "title": "Virtua Fighter 2",
+                "status": "good",
+                "notes": [],
+                "filename": "VirtuaFighter2.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "937380F3",
+                    "size": 4194304
+                }
+            },
+            {
+                "game": "Wonder Boy III - Monster Lair (Japan/US/Euro)",
+                "region": "Japan/US/Euro",
+                "title": "Wonder Boy III - Monster Lair",
+                "status": "good",
+                "notes": [],
+                "filename": "WonderBoyIIIMonsterLair.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "C24BC5E4",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Wonder Boy in Monster World (US)",
+                "region": "US",
+                "title": "Wonder Boy in Monster World",
+                "status": "good",
+                "notes": [],
+                "filename": "WonderBoyInMonsterWorld.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "1592F5B0",
+                    "size": 786432
+                }
+            },
+            {
+                "game": "Wonder Boy V - Monster World III (Japan)",
+                "region": "Japan",
+                "title": "Wonder Boy V - Monster World III",
+                "status": "good",
+                "notes": [],
+                "filename": "WonderBoyVMonsterWorldIII.bin",
+                "verify": {
+                    "type": "crc",
+                    "crc": "45A50F96",
+                    "size": 655360
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

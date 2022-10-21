@@ -11,4 +11,6 @@ def list_cli():
     for task in impl.__all__:
         task_class = helper.load_task(task)
         if task_class:
-            logger.info(f"{task_class.get_task_name().rjust(15, ' ')}: {task_class.get_title()}")
+            name = task_class.get_task_name()
+            if name is not None:
+                logger.info(f"{name.rjust(15, ' ')}: {task_class.get_title()}")

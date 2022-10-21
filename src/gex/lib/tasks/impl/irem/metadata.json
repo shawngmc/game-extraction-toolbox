@@ -1,0 +1,863 @@
+{
+    "in": {
+        "files": {
+            "airduel": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_airduel.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1899225,
+                        "crc": "DC449913"
+                    }
+                }
+            },
+            "bchopper": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_bchopper.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1368898,
+                        "crc": "E3BF1297"
+                    }
+                }
+            },
+            "bmaster": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_bmaster.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 2654193,
+                        "crc": "D4C4EF82"
+                    }
+                }
+            },
+            "cosmccop": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_cosmccop.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1614303,
+                        "crc": "7EAC7AF9"
+                    }
+                }
+            },
+            "dbreed72": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_dbreed72.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1790070,
+                        "crc": "B298182E"
+                    }
+                }
+            },
+            "gunforc2": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_gunforc2.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 4872051,
+                        "crc": "F7ACDF33"
+                    }
+                }
+            },
+            "gunforce": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_gunforce.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1777103,
+                        "crc": "D699C554"
+                    }
+                }
+            },
+            "hharry": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_hharry.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1547440,
+                        "crc": "E3C972EE"
+                    }
+                }
+            },
+            "imgfight": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_imgfight.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1350568,
+                        "crc": "FF8BA655"
+                    }
+                }
+            },
+            "inthunt": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_inthunt.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 3655909,
+                        "crc": "A5F9D955"
+                    }
+                }
+            },
+            "kungfum": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_kungfum.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 959715,
+                        "crc": "1EA84611"
+                    }
+                }
+            },
+            "loht": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_loht.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1527575,
+                        "crc": "20207713"
+                    }
+                }
+            },
+            "mrheli": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_mrheli.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1369476,
+                        "crc": "30356B3E"
+                    }
+                }
+            },
+            "mysticri": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_mysticri.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 2223235,
+                        "crc": "CEA9332C"
+                    }
+                }
+            },
+            "nspirit": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_nspirit.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1346901,
+                        "crc": "4295FF2D"
+                    }
+                }
+            },
+            "rtypeleo": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_rtypeleo.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 2893161,
+                        "crc": "28A16AA8"
+                    }
+                }
+            },
+            "ssoldier": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_ssoldier.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 5516942,
+                        "crc": "A5E17320"
+                    }
+                }
+            },
+            "uccops": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_uccops.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 4417671,
+                        "crc": "75EA8818"
+                    }
+                }
+            },
+            "uccopsj": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_uccopsj.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 4662671,
+                        "crc": "32CD8181"
+                    }
+                }
+            },
+            "vigilant": {
+                "rel_path": ["gamefiles", "Games", "roms"],
+                "filename": "arcade_vigilant.zip",
+                "versions": {
+                    "GameFools": {
+                        "size": 1100561,
+                        "crc": "0439B213"
+                    }
+                }
+            } 
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Air Duel",
+                "status": "playable",
+                "filename": "airduel.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "airduel"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ad-c-l0.bin": {"size": 131072, "crc": "4AC0B91D"},
+                        "ad-c-l3.bin": {"size": 131072, "crc": "9DD343F7"},
+                        "ad-c-h0.bin": {"size": 131072, "crc": "12140276"},
+                        "ad-c-h3.bin": {"size": 131072, "crc": "9F7CFCA3"},
+                        "ad-00.bin": {"size": 131072, "crc": "2F0D599B"},
+                        "ad-10.bin": {"size": 131072, "crc": "9865856B"},
+                        "ad-20.bin": {"size": 131072, "crc": "D392AEF2"},
+                        "ad-30.bin": {"size": 131072, "crc": "923240C3"},
+                        "ad-a0.bin": {"size": 131072, "crc": "CE134B47"},
+                        "ad-a1.bin": {"size": 131072, "crc": "097FD853"},
+                        "ad-a2.bin": {"size": 131072, "crc": "6A94C1B9"},
+                        "ad-a3.bin": {"size": 131072, "crc": "6637C349"},
+                        "ad-b0.bin": {"size": 131072, "crc": "CE134B47"},
+                        "ad-b1.bin": {"size": 131072, "crc": "097FD853"},
+                        "ad-b2.bin": {"size": 131072, "crc": "6A94C1B9"},
+                        "ad-b3.bin": {"size": 131072, "crc": "6637C349"},
+                        "ad-v0.bin": {"size": 131072, "crc": "339F474D"}
+                    }
+                }
+            },
+            {
+                "game": "Battle Chopper",
+                "status": "playable",
+                "filename": "bchopper.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "bchopper"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "c-l0-b.rom": {"size": 65536, "crc": "9F887096"},
+                        "c-l1-b.rom": {"size": 65536, "crc": "41DDA999"},
+                        "c-l3-b.rom": {"size": 65536, "crc": "11562221"},
+                        "c-h0-b.rom": {"size": 65536, "crc": "F2FEAB16"},
+                        "c-h1-b.rom": {"size": 65536, "crc": "A995D64F"},
+                        "c-h3-b.rom": {"size": 65536, "crc": "AB9451CA"},
+                        "c-00-a.rom": {"size": 65536, "crc": "F6E6E660"},
+                        "c-01-b.rom": {"size": 65536, "crc": "708CDD37"},
+                        "c-10-a.rom": {"size": 65536, "crc": "292C8520"},
+                        "c-11-b.rom": {"size": 65536, "crc": "20904CF3"},
+                        "c-20-a.rom": {"size": 65536, "crc": "1AB50C23"},
+                        "c-21-b.rom": {"size": 65536, "crc": "C823D34C"},
+                        "c-30-a.rom": {"size": 65536, "crc": "11F6C56B"},
+                        "c-31-b.rom": {"size": 65536, "crc": "23134EC5"},
+                        "b-a0-b.rom": {"size": 65536, "crc": "E46ED7BF"},
+                        "b-a1-b.rom": {"size": 65536, "crc": "590605FF"},
+                        "b-a2-b.rom": {"size": 65536, "crc": "F8158226"},
+                        "b-a3-b.rom": {"size": 65536, "crc": "0F07B9B7"},
+                        "b-b0-.rom": {"size": 65536, "crc": "B5B95776"},
+                        "b-b1-.rom": {"size": 65536, "crc": "74CA16EE"},
+                        "b-b2-.rom": {"size": 65536, "crc": "B82CCA04"},
+                        "b-b3-.rom": {"size": 65536, "crc": "A7AFC920"},
+                        "c-v0-b.rom": {"size": 65536, "crc": "D0C27E58"}
+                    }
+                }
+            },
+            {
+                "game": "Battle Master",
+                "status": "playable",
+                "filename": "bmaster.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "bmaster"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "bm_d-l0-b.5f": {"size": 262144, "crc": "A873523E"},
+                        "bm_d-l1-b.5j": {"size": 65536, "crc": "6FF0C04E"},
+                        "bm_d-h0-b.5m": {"size": 262144, "crc": "49B257C7"},
+                        "bm_d-h1-b.5l": {"size": 65536, "crc": "082B7158"},
+                        "bm_d-sl0.rom": {"size": 65536, "crc": "1FA87C89"},
+                        "bm_d-sh0.rom": {"size": 65536, "crc": "9F7C075B"},
+                        "bm_c0.rom": {"size": 262144, "crc": "2CC966B8"},
+                        "bm_c1.rom": {"size": 262144, "crc": "46DF773E"},
+                        "bm_c2.rom": {"size": 262144, "crc": "05B867BD"},
+                        "bm_c3.rom": {"size": 262144, "crc": "0A2227A4"},
+                        "bm_000.rom": {"size": 524288, "crc": "339FC9F3"},
+                        "bm_010.rom": {"size": 524288, "crc": "6A14377D"},
+                        "bm_020.rom": {"size": 524288, "crc": "31532198"},
+                        "bm_030.rom": {"size": 524288, "crc": "D1A041D3"},
+                        "bm_da.rom": {"size": 524288, "crc": "62CE5798"}
+                    }
+                }
+            },
+            {
+                "game": "Cosmic Cop",
+                "status": "playable",
+                "filename": "cosmccop.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "cosmccop"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "cc-d-l0b.bin": {"size": 262144, "crc": "EFF87F70"},
+                        "cc-d-h0b.bin": {"size": 262144, "crc": "38958B01"},
+                        "cc-d-sp.bin": {"size": 65536, "crc": "3E3ACE60"},
+                        "cc-c-00.bin": {"size": 131072, "crc": "9D99DEAA"},
+                        "cc-c-10.bin": {"size": 131072, "crc": "7EB083ED"},
+                        "cc-c-20.bin": {"size": 131072, "crc": "9421489E"},
+                        "cc-c-30.bin": {"size": 131072, "crc": "920EC735"},
+                        "cc-d-g00.bin": {"size": 131072, "crc": "E7F3D772"},
+                        "cc-d-g10.bin": {"size": 131072, "crc": "418B4E4C"},
+                        "cc-d-g20.bin": {"size": 131072, "crc": "A4B558EB"},
+                        "cc-d-g30.bin": {"size": 131072, "crc": "F64A3166"},
+                        "cc-c-v0.bin": {"size": 131072, "crc": "6247BADE"}
+                    }
+                }
+            },
+            {
+                "game": "Dragon Breed",
+                "status": "playable",
+                "filename": "dbreedm72.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "dbreed72"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "db_c-l3.rom": {"size": 131072, "crc": "E4B89B79"},
+                        "db_c-l0.rom": {"size": 65536, "crc": "ED0F5E06"},
+                        "db_c-h3.rom": {"size": 131072, "crc": "4BF3063C"},
+                        "db_c-h0.rom": {"size": 65536, "crc": "5AA79FB2"},
+                        "db_k800m.00": {"size": 131072, "crc": "C027A8CF"},
+                        "db_k801m.10": {"size": 131072, "crc": "093FAF33"},
+                        "db_k802m.20": {"size": 131072, "crc": "055B4C59"},
+                        "db_k803m.30": {"size": 131072, "crc": "8ED63922"},
+                        "db_k804m.a0": {"size": 131072, "crc": "4C83E92E"},
+                        "db_k805m.a1": {"size": 131072, "crc": "835EF268"},
+                        "db_k806m.a2": {"size": 131072, "crc": "5117F114"},
+                        "db_k807m.a3": {"size": 131072, "crc": "8EB0C978"},
+                        "db_k804m.b0": {"size": 131072, "crc": "4C83E92E"},
+                        "db_k805m.b1": {"size": 131072, "crc": "835EF268"},
+                        "db_k806m.b2": {"size": 131072, "crc": "5117F114"},
+                        "db_k807m.b3": {"size": 131072, "crc": "8EB0C978"},
+                        "db_c-v0.rom": {"size": 131072, "crc": "312F7282"}
+                    }
+                }
+            },
+            {
+                "game": "Gunforce",
+                "status": "playable",
+                "filename": "gunforce.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "gunforce"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "gf_l0-c.5f": {"size": 131072, "crc": "1BEF6F7D"},
+                        "gf_l1-c.5j": {"size": 131072, "crc": "B189F72A"},
+                        "gf_h0-c.5m": {"size": 131072, "crc": "C09BB634"},
+                        "gf_h1-c.5l": {"size": 131072, "crc": "C84188B7"},
+                        "gf_sl0.rom": {"size": 65536, "crc": "DB0B13A3"},
+                        "gf_sh0.rom": {"size": 65536, "crc": "3F8F16E0"},
+                        "gf_c0.rom": {"size": 262144, "crc": "B3B74979"},
+                        "gf_c1.rom": {"size": 262144, "crc": "F5C8590A"},
+                        "gf_c2.rom": {"size": 262144, "crc": "30F9FB64"},
+                        "gf_c3.rom": {"size": 262144, "crc": "87B3E621"},
+                        "gf_000.rom": {"size": 262144, "crc": "209E8E8D"},
+                        "gf_010.rom": {"size": 262144, "crc": "6E6E7808"},
+                        "gf_020.rom": {"size": 262144, "crc": "6F5C3CB0"},
+                        "gf_030.rom": {"size": 262144, "crc": "18978A9F"},
+                        "gf-da.rom": {"size": 131072, "crc": "933BA935"}
+                    }
+                }
+            },
+            {
+                "game": "Gunforce 2",
+                "status": "playable",
+                "filename": "gunforc2.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "gunforc2"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "a2-l0-a.8h": {"size": 262144, "crc": "8C88B278"},
+                        "a2-l1-a.8f": {"size": 262144, "crc": "C8C13F51"},
+                        "a2-h0-a.6h": {"size": 262144, "crc": "49965E22"},
+                        "a2-h1-a.6f": {"size": 262144, "crc": "34280B88"},
+                        "a2_sl0.5l": {"size": 65536, "crc": "2287E0B3"},
+                        "a2_sh0.3l": {"size": 65536, "crc": "2E2D103D"},
+                        "a2_c0.1a": {"size": 524288, "crc": "68B8F574"},
+                        "a2_c1.1b": {"size": 524288, "crc": "0B9EFE67"},
+                        "a2_c2.3a": {"size": 524288, "crc": "7A9E9978"},
+                        "a2_c3.3b": {"size": 524288, "crc": "1395EE6D"},
+                        "a2_000.8a": {"size": 1048576, "crc": "38E03147"},
+                        "a2_010.8b": {"size": 1048576, "crc": "1D5B05F8"},
+                        "a2_020.8c": {"size": 1048576, "crc": "F2F461CC"},
+                        "a2_030.8d": {"size": 1048576, "crc": "97609D9D"},
+                        "a2_da.1l": {"size": 1048576, "crc": "3C8CDB6A"}
+                    }
+                }
+            },
+            {
+                "game": "Hammerin' Harry",
+                "status": "playable",
+                "filename": "hharry.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "hharry"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "a-l0-v.rom": {"size": 131072, "crc": "F463074C"},
+                        "a-l1-0.rom": {"size": 65536, "crc": "BC6AC5F9"},
+                        "a-h0-v.rom": {"size": 131072, "crc": "C52802A5"},
+                        "a-h1-0.rom": {"size": 65536, "crc": "3AE21335"},
+                        "a-sp-0.rom": {"size": 65536, "crc": "80E210E7"},
+                        "hh_00.rom": {"size": 131072, "crc": "EC5127EF"},
+                        "hh_10.rom": {"size": 131072, "crc": "DEF65294"},
+                        "hh_20.rom": {"size": 131072, "crc": "BB0D6AD4"},
+                        "hh_30.rom": {"size": 131072, "crc": "4351044E"},
+                        "hh_a0.rom": {"size": 131072, "crc": "C577BA5F"},
+                        "hh_a1.rom": {"size": 131072, "crc": "429D12AB"},
+                        "hh_a2.rom": {"size": 131072, "crc": "B5B163B0"},
+                        "hh_a3.rom": {"size": 131072, "crc": "8EF566A1"},
+                        "a-v0-0.rom": {"size": 131072, "crc": "FAAACAFF"}
+                    }
+                }
+            },
+            {
+                "game": "Image Fight",
+                "status": "playable",
+                "filename": "imgfight.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "imgfight"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "if-c-l0-a.bin": {"size": 65536, "crc": "87C534FE"},
+                        "if-c-l3.bin": {"size": 131072, "crc": "C66AE348"},
+                        "if-c-h0-a.bin": {"size": 65536, "crc": "F5C94464"},
+                        "if-c-h3.bin": {"size": 131072, "crc": "EA030541"},
+                        "if-c-00.bin": {"size": 131072, "crc": "745E6638"},
+                        "if-c-10.bin": {"size": 131072, "crc": "B7108449"},
+                        "if-c-20.bin": {"size": 131072, "crc": "AEF33CBA"},
+                        "if-c-30.bin": {"size": 131072, "crc": "1F98E695"},
+                        "if-a-a0.bin": {"size": 65536, "crc": "34EE2D77"},
+                        "if-a-a1.bin": {"size": 65536, "crc": "6BD2845B"},
+                        "if-a-a2.bin": {"size": 65536, "crc": "090D50E5"},
+                        "if-a-a3.bin": {"size": 65536, "crc": "3A8E3083"},
+                        "if-a-b0.bin": {"size": 65536, "crc": "B425C829"},
+                        "if-a-b1.bin": {"size": 65536, "crc": "E9BFE23E"},
+                        "if-a-b2.bin": {"size": 65536, "crc": "256E50F2"},
+                        "if-a-b3.bin": {"size": 65536, "crc": "4C682785"},
+                        "if-c-v0.bin": {"size": 65536, "crc": "CB64A194"},
+                        "if-c-v1.bin": {"size": 65536, "crc": "45B68BF5"}
+                    }
+                }
+            },
+            {
+                "game": "In the Hunt",
+                "status": "playable",
+                "filename": "inthunt.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "inthunt"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ith-l0-d.bin": {"size": 262144, "crc": "5DB79EB7"},
+                        "ith-l1-b.bin": {"size": 131072, "crc": "955A605A"},
+                        "ith-h0-d.bin": {"size": 262144, "crc": "52F8E7A6"},
+                        "ith-h1-b.bin": {"size": 131072, "crc": "FC2899DF"},
+                        "ith-sl0.rom": {"size": 65536, "crc": "18472D65"},
+                        "ith-sh0.rom": {"size": 65536, "crc": "209C8B7F"},
+                        "ith_ic26.rom": {"size": 524288, "crc": "4C1818CF"},
+                        "ith_ic25.rom": {"size": 524288, "crc": "91145BAE"},
+                        "ith_ic24.rom": {"size": 524288, "crc": "FC03FE3B"},
+                        "ith_ic23.rom": {"size": 524288, "crc": "EE156A0A"},
+                        "ith_ic34.rom": {"size": 1048576, "crc": "A019766E"},
+                        "ith_ic35.rom": {"size": 1048576, "crc": "3FCA3073"},
+                        "ith_ic36.rom": {"size": 1048576, "crc": "20D1B28B"},
+                        "ith_ic37.rom": {"size": 1048576, "crc": "90B6FD4B"},
+                        "ith_ic9.rom": {"size": 524288, "crc": "318EE71A"}
+                    }
+                }
+            },
+            {
+                "game": "Kung-Fu Master",
+                "status": "playable",
+                "filename": "kungfum.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "kungfum"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "a-4e-c.bin": {"size": 16384, "crc": "B6E2D083"},
+                        "a-4d-c.bin": {"size": 16384, "crc": "7532918E"},
+                        "a-3e-.bin": {"size": 8192, "crc": "58E87AB0"},
+                        "a-3f-.bin": {"size": 8192, "crc": "C81E31EA"},
+                        "a-3h-.bin": {"size": 8192, "crc": "D99FB995"},
+                        "g-4c-a.bin": {"size": 8192, "crc": "6B2CC9C8"},
+                        "g-4d-a.bin": {"size": 8192, "crc": "C648F558"},
+                        "g-4e-a.bin": {"size": 8192, "crc": "FBE9276E"},
+                        "b-4k-.bin": {"size": 8192, "crc": "16FB5150"},
+                        "b-4f-.bin": {"size": 8192, "crc": "67745A33"},
+                        "b-4l-.bin": {"size": 8192, "crc": "BD1C2261"},
+                        "b-4h-.bin": {"size": 8192, "crc": "8AC5ED3A"},
+                        "b-3n-.bin": {"size": 8192, "crc": "28A213AA"},
+                        "b-4n-.bin": {"size": 8192, "crc": "D5228DF3"},
+                        "b-4m-.bin": {"size": 8192, "crc": "B16DE4F2"},
+                        "b-3m-.bin": {"size": 8192, "crc": "EBA0D66B"},
+                        "b-4c-.bin": {"size": 8192, "crc": "01298885"},
+                        "b-4e-.bin": {"size": 8192, "crc": "C77B87D4"},
+                        "b-4d-.bin": {"size": 8192, "crc": "6A70615F"},
+                        "b-4a-.bin": {"size": 8192, "crc": "6189D626"},
+                        "b-5f-.bin": {"size": 32, "crc": "7A601C3D"},
+                        "g-1j-.bin": {"size": 256, "crc": "668E6BCA"},
+                        "b-1m-.bin": {"size": 256, "crc": "76C05A9C"},
+                        "g-1f-.bin": {"size": 256, "crc": "964B6495"},
+                        "b-1n-.bin": {"size": 256, "crc": "23F06B99"},
+                        "g-1h-.bin": {"size": 256, "crc": "550563E1"},
+                        "b-1l-.bin": {"size": 256, "crc": "35E45021"},
+                        "b-6f-.bin": {"size": 256, "crc": "0D968558"}
+                    }
+                }
+            },
+            {
+                "game": "Legend of Hero Tonma",
+                "status": "playable",
+                "filename": "loht.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "loht"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "tom_c-l0.rom": {"size": 131072, "crc": "E788002F"},
+                        "tom_c-l3-": {"size": 131072, "crc": "2F049B03"},
+                        "tom_c-h0.rom": {"size": 131072, "crc": "A63204B6"},
+                        "tom_c-h3-": {"size": 131072, "crc": "714778B5"},
+                        "tom_m53.rom": {"size": 131072, "crc": "0B83265F"},
+                        "tom_m51.rom": {"size": 131072, "crc": "8EC5F6F3"},
+                        "tom_m49.rom": {"size": 131072, "crc": "A41D3BFD"},
+                        "tom_m47.rom": {"size": 131072, "crc": "9D81A25B"},
+                        "tom_m21.rom": {"size": 65536, "crc": "3CA3E771"},
+                        "tom_m22.rom": {"size": 65536, "crc": "7A05EE2F"},
+                        "tom_m20.rom": {"size": 65536, "crc": "79AA2335"},
+                        "tom_m23.rom": {"size": 65536, "crc": "789E8B24"},
+                        "tom_m26.rom": {"size": 65536, "crc": "44626BF6"},
+                        "tom_m27.rom": {"size": 65536, "crc": "464952CF"},
+                        "tom_m25.rom": {"size": 65536, "crc": "3DB9B2C7"},
+                        "tom_m24.rom": {"size": 65536, "crc": "F01FE899"},
+                        "tom_m44.rom": {"size": 65536, "crc": "3ED51D1F"}
+                    }
+                }
+            },
+            {
+                "game": "Mr. HELI no Daibouken",
+                "status": "playable",
+                "filename": "mrheli.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "mrheli"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "mh-c-l0.bin": {"size": 65536, "crc": "643E23CD"},
+                        "mh-c-l1.bin": {"size": 65536, "crc": "5F8BDA69"},
+                        "mh-c-l3.bin": {"size": 65536, "crc": "C0982536"},
+                        "mh-c-h0.bin": {"size": 65536, "crc": "E2CA5646"},
+                        "mh-c-h1.bin": {"size": 65536, "crc": "8974E84D"},
+                        "mh-c-h3.bin": {"size": 65536, "crc": "143F596E"},
+                        "mh-c-00.bin": {"size": 131072, "crc": "DEC4E121"},
+                        "mh-c-10.bin": {"size": 131072, "crc": "7AAA151E"},
+                        "mh-c-20.bin": {"size": 131072, "crc": "EAE0DE74"},
+                        "mh-c-30.bin": {"size": 131072, "crc": "01D5052F"},
+                        "mh-b-a0.bin": {"size": 65536, "crc": "6A0DB256"},
+                        "mh-b-a1.bin": {"size": 65536, "crc": "14EC9795"},
+                        "mh-b-a2.bin": {"size": 65536, "crc": "DFCB510E"},
+                        "mh-b-a3.bin": {"size": 65536, "crc": "957E329B"},
+                        "b-b0-.rom": {"size": 65536, "crc": "B5B95776"},
+                        "b-b1-.bin": {"size": 65536, "crc": "74CA16EE"},
+                        "b-b2-.rom": {"size": 65536, "crc": "B82CCA04"},
+                        "b-b3-.rom": {"size": 65536, "crc": "A7AFC920"},
+                        "c-v0-b.rom": {"size": 65536, "crc": "D0C27E58"}
+                    }
+                }
+            },
+            {
+                "game": "Mystic Riders",
+                "status": "playable",
+                "filename": "mysticri.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "mysticri"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "mr-l0-b.bin": {"size": 262144, "crc": "A457AB44"},
+                        "mr-l1-b.bin": {"size": 65536, "crc": "A87C62B4"},
+                        "mr-h0-b.bin": {"size": 262144, "crc": "D529F887"},
+                        "mr-h1-b.bin": {"size": 65536, "crc": "E17649B9"},
+                        "mr-sl0.bin": {"size": 65536, "crc": "0FA32721"},
+                        "mr-sh0.bin": {"size": 65536, "crc": "50D335E4"},
+                        "mr-c0.bin": {"size": 262144, "crc": "872A8FAD"},
+                        "mr-c1.bin": {"size": 262144, "crc": "D2FFB27A"},
+                        "mr-c2.bin": {"size": 262144, "crc": "62BFF287"},
+                        "mr-c3.bin": {"size": 262144, "crc": "D0DA62AB"},
+                        "mr-o00.bin": {"size": 524288, "crc": "A0F9CE16"},
+                        "mr-o10.bin": {"size": 524288, "crc": "4E70A9E9"},
+                        "mr-o20.bin": {"size": 524288, "crc": "B9C468FC"},
+                        "mr-o30.bin": {"size": 524288, "crc": "CC32433A"},
+                        "mr-da.bin": {"size": 262144, "crc": "1A11FC59"}
+                    }
+                }
+            },
+            {
+                "game": "Ninja Spirit",
+                "status": "playable",
+                "filename": "nspirit.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "nspirit"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "nin_c-l0.6d": {"size": 65536, "crc": "9A405898"},
+                        "nin_c-l1.6c": {"size": 65536, "crc": "B75C9A4D"},
+                        "nin_c-l2.6b": {"size": 65536, "crc": "C52CA78C"},
+                        "nin_c-l3.6a": {"size": 65536, "crc": "FD7408B8"},
+                        "nin_c-h0.6h": {"size": 65536, "crc": "035692FA"},
+                        "nin_c-h1.6j": {"size": 65536, "crc": "CBC10586"},
+                        "nin_c-h2.6l": {"size": 65536, "crc": "8AD818FA"},
+                        "nin_c-h3.6m": {"size": 65536, "crc": "501104EF"},
+                        "nin-r00.7m": {"size": 131072, "crc": "5F61D30B"},
+                        "nin-r10.7j": {"size": 131072, "crc": "0CAAD107"},
+                        "nin-r20.7f": {"size": 131072, "crc": "EF3617D3"},
+                        "nin-r30.7d": {"size": 131072, "crc": "175D2A24"},
+                        "nin_b-a0.4c": {"size": 65536, "crc": "63F8F658"},
+                        "nin_b-a1.4d": {"size": 65536, "crc": "75EB8306"},
+                        "nin_b-a2.4b": {"size": 65536, "crc": "DF532172"},
+                        "nin_b-a3.4e": {"size": 65536, "crc": "4DEDD64C"},
+                        "b0.4j": {"size": 65536, "crc": "1B0E08A6"},
+                        "b1.4k": {"size": 65536, "crc": "728727F0"},
+                        "b2.4h": {"size": 65536, "crc": "F87EFD75"},
+                        "b3.4f": {"size": 65536, "crc": "98856CB4"},
+                        "nin-v0.7a": {"size": 65536, "crc": "A32E8CAF"},
+                        "m72_a-8l.8l": {"size": 256, "crc": "0D968558"},
+                        "m72_a-9l.9l": {"size": 256, "crc": "0D968558"},
+                        "nin_c-3f.3f": {"size": 256, "crc": "0D968558"},
+                        "m72_a-3d.3d": {"size": 256, "crc": "0D968558"},
+                        "m72_a-4d.4d": {"size": 256, "crc": "0D968558"}
+                    }
+                }
+            },
+            {
+                "game": "R-Type Leo",
+                "status": "playable",
+                "filename": "rtypeleo.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "rtypeleo"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "rtl-l0-c.bin": {"size": 262144, "crc": "8156456B"},
+                        "rtl-l1-d.bin": {"size": 131072, "crc": "FD34EA46"},
+                        "rtl-h0-c.bin": {"size": 262144, "crc": "5FEF7FA1"},
+                        "rtl-h1-d.bin": {"size": 131072, "crc": "352FF444"},
+                        "rtl-sl0a.bin": {"size": 65536, "crc": "896F0D36"},
+                        "rtl-sh0a.bin": {"size": 65536, "crc": "E518B4E3"},
+                        "rtl-c0.bin": {"size": 524288, "crc": "FB588D7C"},
+                        "rtl-c1.bin": {"size": 524288, "crc": "E5541BFF"},
+                        "rtl-c2.bin": {"size": 524288, "crc": "FAA9AE27"},
+                        "rtl-c3.bin": {"size": 524288, "crc": "3A2343F6"},
+                        "rtl-000.bin": {"size": 1048576, "crc": "82A06870"},
+                        "rtl-010.bin": {"size": 1048576, "crc": "417E7A56"},
+                        "rtl-020.bin": {"size": 1048576, "crc": "F9A3F3A1"},
+                        "rtl-030.bin": {"size": 1048576, "crc": "03528D95"},
+                        "rtl-da.bin": {"size": 524288, "crc": "DBEBD1FF"}
+                    }
+                }
+            },
+            {
+                "game": "Superior Soldiers",
+                "status": "playable",
+                "filename": "ssoldier.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "ssoldier"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "f3-l0-h.bin": {"size": 262144, "crc": "419361A2"},
+                        "f3-l1-a.bin": {"size": 131072, "crc": "8CB5C396"},
+                        "f3-h0-h.bin": {"size": 262144, "crc": "B63FB9DA"},
+                        "f3-h1-a.bin": {"size": 131072, "crc": "E3D9F619"},
+                        "f3_sl0.sl0": {"size": 65536, "crc": "77C16D57"},
+                        "f3_sh0.sh0": {"size": 65536, "crc": "90B55E5E"},
+                        "f3_w50.c0": {"size": 262144, "crc": "47E788EE"},
+                        "f3_w51.c1": {"size": 262144, "crc": "E20EEA22"},
+                        "f3_w52.c2": {"size": 262144, "crc": "8E535E3F"},
+                        "f3_w53.c3": {"size": 262144, "crc": "E20EEA22"},
+                        "f3_w38.001": {"size": 1048576, "crc": "755BAB10"},
+                        "f3_w40.011": {"size": 1048576, "crc": "2E906889"},
+                        "f3_w42.021": {"size": 1048576, "crc": "124589B9"},
+                        "f3_w44.031": {"size": 1048576, "crc": "D0FC84AC"},
+                        "f3_w37.000": {"size": 1048576, "crc": "FD4CDA03"},
+                        "f3_w39.010": {"size": 1048576, "crc": "B21CED92"},
+                        "f3_w41.020": {"size": 1048576, "crc": "02455D10"},
+                        "f3_w43.030": {"size": 1048576, "crc": "DAE7327A"},
+                        "f3_w95.da": {"size": 524288, "crc": "F7CA432B"}
+                    }
+                }
+            },
+            {
+                "game": "Undercover Cops",
+                "status": "playable",
+                "filename": "uccops.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "uccops"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "uc_l0.rom": {"size": 262144, "crc": "DF9A4826"},
+                        "uc_l1.rom": {"size": 131072, "crc": "A8A402D8"},
+                        "uc_h0.rom": {"size": 262144, "crc": "240AA5F7"},
+                        "uc_h1.rom": {"size": 131072, "crc": "8D29BCD6"},
+                        "uc_sl0.rom": {"size": 65536, "crc": "96C11AAC"},
+                        "uc_sh0.rom": {"size": 65536, "crc": "DF90B198"},
+                        "uc_w38m.rom": {"size": 524288, "crc": "130A40E5"},
+                        "uc_w39m.rom": {"size": 524288, "crc": "E42CA144"},
+                        "uc_w40m.rom": {"size": 524288, "crc": "C2961648"},
+                        "uc_w41m.rom": {"size": 524288, "crc": "F5334B80"},
+                        "uc_k16m.rom": {"size": 1048576, "crc": "4A225F09"},
+                        "uc_k17m.rom": {"size": 1048576, "crc": "E4ED9A54"},
+                        "uc_k18m.rom": {"size": 1048576, "crc": "A626EB12"},
+                        "uc_k19m.rom": {"size": 1048576, "crc": "5DF46549"},
+                        "uc_w42.rom": {"size": 524288, "crc": "D17D3FD6"}
+                    }
+                }
+            },
+            {
+                "game": "Undercover Cops (J)",
+                "status": "playable",
+                "filename": "uccopsj.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "uccopsj"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "uc_l0_a.ic39": {"size": 262144, "crc": "4A4E3208"},
+                        "uc_l1_a.ic38": {"size": 131072, "crc": "19628280"},
+                        "uc_h0_a.ic28": {"size": 262144, "crc": "9E17CADA"},
+                        "uc_h1_a.ic27": {"size": 131072, "crc": "83F78DEA"},
+                        "uc_sl0.ic31": {"size": 524288, "crc": "F04A5FD9"},
+                        "uc_sh0.ic30": {"size": 524288, "crc": "6982FE88"},
+                        "uc_c0.ic26": {"size": 524288, "crc": "6A419A36"},
+                        "uc_c1.ic25": {"size": 524288, "crc": "D703ECC7"},
+                        "uc_c2.ic24": {"size": 524288, "crc": "96397AC6"},
+                        "uc_c3.ic23": {"size": 524288, "crc": "5D07D10D"},
+                        "uc_000.ic34": {"size": 1048576, "crc": "97F7775E"},
+                        "uc_010.ic35": {"size": 1048576, "crc": "5E0B1D65"},
+                        "uc_020.ic36": {"size": 1048576, "crc": "BDC224B3"},
+                        "uc_030.ic37": {"size": 1048576, "crc": "7526DAEC"},
+                        "uc_da.bin": {"size": 524288, "crc": "0B2855E9"}
+                    }
+                }
+            },
+            {
+                "game": "Vigilante",
+                "status": "playable",
+                "filename": "vigilant.zip",
+                "system": "Arcade",
+                "notes": [1],
+                "extract": {
+                    "in_file": "vigilant"
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "g07_c03.bin": {"size": 32768, "crc": "9DCCA081"},
+                        "j07_c04.bin": {"size": 65536, "crc": "E0159105"},
+                        "g05_c02.bin": {"size": 65536, "crc": "10582B2D"},
+                        "f05_c08.bin": {"size": 65536, "crc": "01579D20"},
+                        "h05_c09.bin": {"size": 65536, "crc": "4F5872F0"},
+                        "n07_c12.bin": {"size": 65536, "crc": "10AF8EB2"},
+                        "k07_c10.bin": {"size": 65536, "crc": "9576F304"},
+                        "o07_c13.bin": {"size": 65536, "crc": "B1D9D4DC"},
+                        "l07_c11.bin": {"size": 65536, "crc": "4598BE4A"},
+                        "t07_c16.bin": {"size": 65536, "crc": "F5425E42"},
+                        "p07_c14.bin": {"size": 65536, "crc": "CB50A17C"},
+                        "v07_c17.bin": {"size": 65536, "crc": "959BA3C7"},
+                        "s07_c15.bin": {"size": 65536, "crc": "7F2E91C5"},
+                        "d01_c05.bin": {"size": 65536, "crc": "81B1EE5C"},
+                        "e01_c06.bin": {"size": 65536, "crc": "D0D33673"},
+                        "f01_c07.bin": {"size": 65536, "crc": "AAE81695"},
+                        "d04_c01.bin": {"size": 65536, "crc": "9B85101D"},
+                        "pal16l8.8r": {"size": 260, "crc": "91A9701B"},
+                        "pal16l8.4m": {"size": 260, "crc": "91A9701B"},
+                        "pal16l8.1b": {"size": 260, "crc": "91A9701B"}
+                    }
+                }
+            }
+        ],
+        "notes": {
+            "1": "This game requires MAME 2010 due to an older input file structure/variant. Some are also missing an MCU or PIDS rom, but play OK."
+        }
+    }
+}

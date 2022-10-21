@@ -1,0 +1,117 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "filename": "capcom_disney_afternoon.exe",
+                "versions": {
+                    "Steam": {
+                        "crc": "6F75A8A1",
+                        "size": 11639296
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Chip n Dale - Rescue Rangers",
+                "system": "NES",
+                "filename": "Chip n Dale - Rescue Rangers (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "F3396499",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x7F2F30", "length": "0x40000"}
+                },
+                "header": "4E45531A081010000000000000000000"
+            },
+            {
+                "game": "Chip n Dale - Rescue Rangers 2",
+                "system": "NES",
+                "filename": "Chip n Dale - Rescue Rangers 2 (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "A8D3A5F9",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x832F30", "length": "0x40000"}
+                },
+                "header": "4E45531A081010000000000000000000"
+            },
+            {
+                "game": "Darkwing Duck",
+                "system": "NES",
+                "filename": "Darkwing Duck (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "A8D3A5F9",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x792F30", "length": "0x20000"},
+                    "cha": {"start": "0x772F30", "length": "0x20000"}
+                },
+                "header": "4E45531A081010000000000000000000"
+            },
+            {
+                "game": "DuckTales",
+                "system": "NES",
+                "filename": "DuckTales (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "76CAE92F",
+                    "size": 131088
+                },
+                "sections": {
+                    "prg": {"start": "0x7B2F30", "length": "0x20000"}
+                },
+                "header": "4E45531A080021000000000000000000"
+            },
+            {
+                "game": "DuckTales 2",
+                "system": "NES",
+                "filename": "DuckTales 2 (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "64018A4D",
+                    "size": 131088
+                },
+                "sections": {
+                    "prg": {"start": "0x7D2F30", "length": "0x20000"}
+                },
+                "header": "4E45531A080021000000000000000000"
+            },
+            {
+                "game": "TaleSpin",
+                "system": "NES",
+                "filename": "TaleSpin (DAC).nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C4CDEF75",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x872F30", "length": "0x40000"}
+                },
+                "header": "4E45531A081010000000000000000000"
+            }
+        ],
+        "notes": {}
+    }
+}

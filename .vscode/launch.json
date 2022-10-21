@@ -73,6 +73,25 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing SF30AC (Verbose)",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "sf30ac", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\sf30ac\"",
+                "-v",
+                "DEBUG"
+            ]
+        },
+        {
             "name": "Python: Toolbox - Profile SF30AC",
             "type": "python",
             "request": "launch",
@@ -127,9 +146,7 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\snk40\"",
                 "--srcdir", 
-                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\"",
-                "--prop",
-                "include-partials=True"
+                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\""
             ]
         },
         {
@@ -308,7 +325,7 @@
             ]
         },
         {
-            "name": "Python: Toolbox - Testing Disney Classics Aladding and Lion King w/ DLC",
+            "name": "Python: Toolbox - Testing Disney Classics Aladdin and Lion King w/ DLC",
             "type": "python",
             "request": "launch",
             "program": "toolbox.py",
@@ -375,6 +392,74 @@
                 "\"${workspaceFolder}\\out\\atarivault\"",
                 "--prop",
                 "include-arcade-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Galaga",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_galaga", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_galaga\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Dig Dug",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_digdug", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_digdug\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Pac-Man",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_pacman", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_pacman\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing AGS Ms. Pac-Man",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ags_mspacman", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ags_mspacman\""
             ]
         },
         {
@@ -484,9 +569,7 @@
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\cas1\"",
                 "--prop",
-                "include-partials=True",
-                "--verbosity",
-                "DEBUG"
+                "include-partials=True"
             ]
         },
         {
@@ -525,6 +608,19 @@
                 "\"${workspaceFolder}\\out\\cas2\"",
                 "--prop",
                 "include-partials=True"
+            ]
+        },
+        {
+            "name": "Python: Toolbox - List Tasks",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "list"
             ]
         }
     ]
