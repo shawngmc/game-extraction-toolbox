@@ -1,0 +1,69 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "rel_path": ["GALAGA_Data", "Plugins"],
+                "filename": "Release_1.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 505344,
+                        "crc": "772CE8A9"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Galaga",
+                "system": "Arcade",
+                "filename": "galaga.zip",
+                "status": "playable",
+                "notes": [1],
+                "zip_files": {
+                    "prom-1.1d": {"start": "0x56710", "length": "0x100"},
+                    "prom-5.5n": {"start": "0x56810", "length": "0x20"},
+                    "prom-3.1c": {"start": "0x56830", "length": "0x100"},
+                    "prom-4.2n": {"start": "0x56930", "length": "0x100"},
+                    "gg1_11.4d": {"start": "0x56A30", "length": "0x1000"},
+                    "gg1_10.4f": {"start": "0x57A30", "length": "0x1000"},
+                    "gg1_9.4l": {"start": "0x58A30", "length": "0x1000"},
+                    "gg1_7b.2c": {"start": "0x64A00", "length": "0x1000"},
+                    "gg1_5b.3f": {"start": "0x65A00", "length": "0x1000"},
+                    "gg1_1b.3p": {"start": "0x66A00", "length": "0x1000"},
+                    "gg1_2b.3m": {"start": "0x67A00", "length": "0x1000"},
+                    "gg1_3.2m": {"start": "0x68A00", "length": "0x1000"},
+                    "gg1_4b.2l": {"start": "0x69A00", "length": "0x1000"},
+                    "prom-2.5c": {"type": "placeholder", "length": "0x100"},
+                    "51xx.bin": {"type": "placeholder", "length": "0x400"},
+                    "54xx.bin": {"type": "placeholder", "length": "0x400"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "prom-1.1d": {"size": 256, "crc": "7A2815B4"},
+                        "prom-5.5n": {"size": 32, "crc": "54603C6B"},
+                        "prom-3.1c": {"size": 256, "crc": "4A04BB6B"},
+                        "prom-4.2n": {"size": 256, "crc": "59B6EDAB"},
+                        "gg1_11.4d": {"size": 4096, "crc": "AD447C80"},
+                        "gg1_10.4f": {"size": 4096, "crc": "DD6F1AFC"},
+                        "gg1_9.4l": {"size": 4096, "crc": "58B2F47C"},
+                        "gg1_7b.2c": {"size": 4096, "crc": "D016686B"},
+                        "gg1_5b.3f": {"size": 4096, "crc": "BB5CAAE3"},
+                        "gg1_1b.3p": {"size": 4096, "crc": "AB036C9F"},
+                        "gg1_2b.3m": {"size": 4096, "crc": "D9232240"},
+                        "gg1_3.2m": {"size": 4096, "crc": "753CE503"},
+                        "gg1_4b.2l": {"size": 4096, "crc": "499FCC76"},
+                        "prom-2.5c": {"size": 256, "crc": "8889DEB7"},
+                        "51xx.bin": {"size": 1024, "crc": "ACDE76FC"},
+                        "54xx.bin": {"size": 1024, "crc": "ACDE76FC"}
+                    }
+                }
+            }
+        ],
+        "notes": {
+            "1": "This extraction requires MAME 2017/1.39 due to the NAMCO base ROMs, which have placeholders."
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "in": {
+        "files": {
+            "bubsy": {
+                "filename": "bubsy_1",
+                "copy_to": "Bubsy",
+                "versions": {
+                    "Steam": {
+                        "crc": "C19F0876",
+                        "size": 2097152
+                    }
+                }
+            },
+            "bubsy2" : {
+                "filename": "bubsy_2",
+                "copy_to": "Bubsy 2",
+                "versions": {
+                    "Steam": {
+                        "crc": "9582F89F",
+                        "size": 2097152
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Bubsy",
+                "system": "SNES",
+                "filename": "Bubsy.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C19F0876",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Bubsy 2",
+                "system": "SNES",
+                "filename": "Bubsy2.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "9582F89F",
+                    "size": 2097152
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

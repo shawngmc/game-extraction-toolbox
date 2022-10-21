@@ -1,0 +1,412 @@
+{
+    "in": {
+        "files": {
+            "pacattack": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GameSFC_Pacattack_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 547328,
+                        "crc": "A67D96C5"
+                    }
+                }
+            },
+            "pacandpal": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GamePacandpal_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 219648,
+                        "crc": "0BB49B8C"
+                    }
+                }
+            },
+            "pacintime": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GameSFC_Pacintime_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 1062400,
+                        "crc": "F7E1C4EB"
+                    }
+                }
+            },
+            "pacland": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GamePacland_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 287232,
+                        "crc": "AE20C3C8"
+                    }
+                }
+            },
+            "pacman": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GamePacman_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 222208,
+                        "crc": "0D7244FE"
+                    }
+                }
+            },
+            "pacmanarrangement": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GamePacmanarrangement_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 2687488,
+                        "crc": "3BCE84B8"
+                    }
+                }
+            },
+            "pacmania": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GamePacmania_Pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 478720,
+                        "crc": "98968FE2"
+                    }
+                }
+            },
+            "superpacman": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GameSuperpacman_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 214528,
+                        "crc": "4785DDC9"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "PAC and Pal",
+                "system": "Arcade",
+                "filename": "pacnpal.zip",
+                "status": "good",
+                "notes": [],
+                "extract": {
+                    "in_file": "pacandpal",
+                    "start": 141424,
+                    "length": 58144
+                },
+                "zip_files": {
+                    "pap1-3b.1d": {"start": "0x0000", "length": "0x2000"},
+                    "pap1-2b.1c": {"start": "0x2000", "length": "0x2000"},
+                    "pap3-1.1b": {"start": "0x4000", "length": "0x2000"},
+                    "pap1-4.1k": {"start": "0x6000", "length": "0x1000"},
+                    "pap1-6.3c": {"start": "0x8000", "length": "0x1000"},
+                    "pap1-5.3f": {"start": "0x9000", "length": "0x2000"},
+                    "pap1-6.4c": {"start": "0xE000", "length": "0x20"},
+                    "pap1-5.4e": {"start": "0xE020", "length": "0x100"},
+                    "pap1-4.3l": {"start": "0xE120", "length": "0x100"},
+                    "pap1-3.3m": {"start": "0xE220", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pap1-3b.1d": {"size": 8192, "crc": "ED64A565"},
+                        "pap1-2b.1c": {"size": 8192, "crc": "15308BCF"},
+                        "pap3-1.1b": {"size": 8192, "crc": "3CAC401C"},
+                        "pap1-4.1k": {"size": 4096, "crc": "330E20DE"},
+                        "pap1-6.3c": {"size": 4096, "crc": "A36B96CB"},
+                        "pap1-5.3f": {"size": 8192, "crc": "FB6F56E3"},
+                        "pap1-6.4c": {"size": 32, "crc": "52634B41"},
+                        "pap1-5.4e": {"size": 256, "crc": "AC46203C"},
+                        "pap1-4.3l": {"size": 256, "crc": "686BDE84"},
+                        "pap1-3.3m": {"size": 256, "crc": "94782DB5"}
+                    }
+                }
+            },
+            {
+                "game": "Pac Land",
+                "system": "Arcade",
+                "filename": "paclandj.zip",
+                "status": "playable",
+                "notes": [4],
+                "extract": {
+                    "in_file": "pacland",
+                    "start": 170352,
+                    "length": 116880
+                },
+                "zip_files": {
+                    "pl1-2.1t": { "start": "0x00000", "length": "0x400" },
+                    "pl1-1.1r": { "start": "0x00400", "length": "0x400" },
+                    "pl1-5.5t": { "start": "0x00800", "length": "0x400" },
+                    "pl1-4.4n": { "start": "0x00C00", "length": "0x400" },
+                    "pl1-3.6l": { "start": "0x01000", "length": "0x400" },
+                    "pl6_01.8b": { "start": "0x01400", "length": "0x4000" },
+                    "pl6_02.8d": { "start": "0x05400", "length": "0x4000" },
+                    "pl1_3.8e": { "start": "0x09400", "length": "0x4000" },
+                    "pl1_4.8f": { "start": "0x0D400", "length": "0x4000" },
+                    "pl1_5.8h": { "start": "0x11400", "length": "0x4000" },
+                    "pl1_6.8j": { "start": "0x15400", "length": "0x4000" },
+                    "pl1_7.3e": { "start": "0x19400", "length": "0x2000" },
+                    "cus60-60a1.mcu": { "start": "0x1B400", "length": "0x1000" },
+                    "pl6_12.6n": { "start": "0x1C400", "length": "0x2000" },
+                    "pl1_13.6t": { "start": "0x1E400", "length": "0x2000" },
+                    "pl1_9b.6f": { "start": "0x20400", "length": "0x4000" },
+                    "pl1_8.6e": { "start": "0x24400", "length": "0x4000" },
+                    "pl1_10b.7e": { "start": "0x28400", "length": "0x4000" },
+                    "pl1_11.7f": { "start": "0x2C400", "length": "0x4000" }
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pl1-2.1t": {"size": 1024, "crc": "472885DE"},
+                        "pl1-1.1r": {"size": 1024, "crc": "A78EBDAF"},
+                        "pl1-5.5t": {"size": 1024, "crc": "4B7EE712"},
+                        "pl1-4.4n": {"size": 1024, "crc": "3A7BE418"},
+                        "pl1-3.6l": {"size": 1024, "crc": "80558DA8"},
+                        "pl6_01.8b": {"size": 16384, "crc": "4C96E11C"},
+                        "pl6_02.8d": {"size": 16384, "crc": "8CF5BD8D"},
+                        "pl1_3.8e": {"size": 16384, "crc": "AA9FA739"},
+                        "pl1_4.8f": {"size": 16384, "crc": "2B895A90"},
+                        "pl1_5.8h": {"size": 16384, "crc": "7AF66200"},
+                        "pl1_6.8j": {"size": 16384, "crc": "B01E59A9"},
+                        "pl1_7.3e": {"size": 8192, "crc": "8C5BECAE"},
+                        "cus60-60a1.mcu": {"size": 4096, "crc": "076EA82A"},
+                        "pl6_12.6n": {"size": 8192, "crc": "C8CB61AB"},
+                        "pl1_13.6t": {"size": 8192, "crc": "3AE582FD"},
+                        "pl1_9b.6f": {"size": 16384, "crc": "3F564D17"},
+                        "pl1_8.6e": {"size": 16384, "crc": "417E1359"},
+                        "pl1_10b.7e": {"size": 16384, "crc": "A1C93FBB"},
+                        "pl1_11.7f": {"size": 16384, "crc": "0222CFBF"}
+                    }
+                }
+            },
+            {
+                "game": "PAC-MAN",
+                "system": "Arcade",
+                "filename": "puckman.zip",
+                "status": "playable",
+                "notes": [4],
+                "extract": {
+                    "in_file": "pacman",
+                    "start": 139008,
+                    "length": 77344
+                },
+                "zip_files": {
+                    "pm1_prg1.6e": {"start": "0x00000", "length": "0x800"},
+                    "pm1_prg2.6k": {"start": "0x00800", "length": "0x800"},
+                    "pm1_prg3.6f": {"start": "0x01000", "length": "0x800"},
+                    "pm1_prg4.6m": {"start": "0x01800", "length": "0x800"},
+                    "pm1_prg5.6h": {"start": "0x02000", "length": "0x800"},
+                    "pm1_prg6.6n": {"start": "0x02800", "length": "0x800"},
+                    "pm1_prg7.6j": {"start": "0x03000", "length": "0x800"},
+                    "pm1_prg8.6p": {"start": "0x03800", "length": "0x800"},
+                    "pm1-3.1m": {"start": "0x10000", "length": "0x100"},
+                    "pm1-1.7f": {"start": "0x10100", "length": "0x20"},
+                    "pm1-4.4a": {"start": "0x10120", "length": "0x100"},
+                    "pm1_chg1.5e": {"start": "0x10A20", "length": "0x800"},
+                    "pm1_chg2.5h": {"start": "0x11220", "length": "0x800"},
+                    "pm1_chg3.5f": {"start": "0x11A20", "length": "0x800"},
+                    "pm1_chg4.5j": {"start": "0x12220", "length": "0x800"},
+                    "pm1-2.3m": {"start": "0x12A20", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pm1_prg1.6e": {"size": 2048, "crc": "F36E88AB"},
+                        "pm1_prg2.6k": {"size": 2048, "crc": "618BD9B3"},
+                        "pm1_prg3.6f": {"size": 2048, "crc": "7D177853"},
+                        "pm1_prg4.6m": {"size": 2048, "crc": "D3E8914C"},
+                        "pm1_prg5.6h": {"size": 2048, "crc": "6BF4F625"},
+                        "pm1_prg6.6n": {"size": 2048, "crc": "A948CE83"},
+                        "pm1_prg7.6j": {"size": 2048, "crc": "3F7EDFC4"},
+                        "pm1_prg8.6p": {"size": 2048, "crc": "E941B680"},
+                        "pm1-3.1m": {"size": 256, "crc": "A9CC86BF"},
+                        "pm1-1.7f": {"size": 32, "crc": "2FC650BD"},
+                        "pm1-4.4a": {"size": 256, "crc": "3EB3A8E4"},
+                        "pm1_chg1.5e": {"size": 2048, "crc": "425808A4"},
+                        "pm1_chg2.5h": {"size": 2048, "crc": "3591B89D"},
+                        "pm1_chg3.5f": {"size": 2048, "crc": "9E39323A"},
+                        "pm1_chg4.5j": {"size": 2048, "crc": "1B1D9096"},
+                        "pm1-2.3m": {"size": 256, "crc": "5C0ABCD1"}
+                    }
+                }
+            },
+            {
+                "game": "PAC-MANIA",
+                "system": "Arcade",
+                "filename": "pacmania.zip",
+                "status": "playable",
+                "notes": [3],
+                "extract": {
+                    "in_file": "pacmania",
+                    "start": 208768,
+                    "length": 1445930
+                },
+                "zip_files": {
+                    "pn2_v0.bin": {"start": "0x000000", "length": "0x10000"},
+                    "pn_chr-0.bin": {"start": "0x01000A", "length": "0x20000"},
+                    "pn_chr-1.bin": {"start": "0x03000A", "length": "0x20000"},
+                    "pn_chr-2.bin": {"start": "0x05000A", "length": "0x20000"},
+                    "pn_chr-3.bin": {"start": "0x07000A", "length": "0x20000"},
+                    "pn2_c8.bin": {"start": "0x090012", "length": "0x10000"},
+                    "pn_obj-0.bin": {"start": "0x0A0012", "length": "0x20000"},
+                    "pnx_obj1.bin": {"start": "0x0C0012", "length": "0x20000"},
+                    "pn_prg-6.bin": {"start": "0x0E002A", "length": "0x20000"},
+                    "pn2_p7.bin": {"start": "0x10002A", "length": "0x10000"},
+                    "pn2_s0.bin": {"start": "0x11002A", "length": "0x10000"},
+                    "pn2_s1.bin": {"start": "0x127FF0", "length": "0x10000"},
+                    "cus64-64a1.mcu": {"start": "0x16002A", "length": "0x1000"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pn2_v0.bin": {"size": 65536, "crc": "E2689F79"},
+                        "pn_chr-0.bin": {"size": 131072, "crc": "7C57644C"},
+                        "pn_chr-1.bin": {"size": 131072, "crc": "7EAA67ED"},
+                        "pn_chr-2.bin": {"size": 131072, "crc": "27E739AC"},
+                        "pn_chr-3.bin": {"size": 131072, "crc": "1DFDA293"},
+                        "pn2_c8.bin": {"size": 65536, "crc": "F3AFD65D"},
+                        "pn_obj-0.bin": {"size": 131072, "crc": "FDA57E8B"},
+                        "pnx_obj1.bin": {"size": 131072, "crc": "4C08AFFE"},
+                        "pn_prg-6.bin": {"size": 131072, "crc": "FE94900C"},
+                        "pn2_p7.bin": {"size": 65536, "crc": "2AA99E2B"},
+                        "pn2_s0.bin": {"size": 65536, "crc": "D5EF5EEE"},
+                        "pn2_s1.bin": {"size": 65536, "crc": "9B5C73D6"},
+                        "cus64-64a1.mcu": {"size": 4096, "crc": "FFB5C0BD"}
+                    }
+                }
+            },
+            {
+                "game": "Super PAC-MAN",
+                "system": "Arcade",
+                "filename": "superpac.zip",
+                "status": "good",
+                "notes": [],
+                "extract": {
+                    "in_file": "superpacman",
+                    "start": 141616,
+                    "length": 58144
+                },
+                "zip_files": {
+                    "sp1-2.1c": { "start": "0x2000", "length": "0x2000"},
+                    "sp1-1.1b": { "start": "0x4000", "length": "0x2000"},
+                    "spc-3.1k": { "start": "0x6000", "length": "0x1000"},
+                    "sp1-6.3c": { "start": "0x8000", "length": "0x1000"},
+                    "spv-2.3f": { "start": "0x9000", "length": "0x2000"},
+                    "superpac.4c": { "start": "0xE000", "length": "0x20"},
+                    "superpac.4e": { "start": "0xE020", "length": "0x100"},
+                    "superpac.3l": { "start": "0xE120", "length": "0x100"},
+                    "superpac.3m": { "start": "0xE220", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sp1-2.1c": {"size": 8192, "crc": "4BB33D9C"},
+                        "sp1-1.1b": {"size": 8192, "crc": "846FBB4A"},
+                        "spc-3.1k": {"size": 4096, "crc": "04445DDB"},
+                        "sp1-6.3c": {"size": 4096, "crc": "91C5935C"},
+                        "spv-2.3f": {"size": 8192, "crc": "670A42F2"},
+                        "superpac.4c": {"size": 32, "crc": "9CE22C46"},
+                        "superpac.4e": {"size": 256, "crc": "1253C5C1"},
+                        "superpac.3l": {"size": 256, "crc": "D4D7026F"},
+                        "superpac.3m": {"size": 256, "crc": "AD43688F"}
+                    }
+                }
+            },
+            {
+                "game": "PAC Motos",
+                "system": "Wii",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2]
+            },
+            {
+                "game": "PAC'N Roll Remix",
+                "system": "Wii",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2]
+            },
+            {
+                "game": "PAC-MAN BATTLE ROYALE",
+                "system": "Arcade",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2]
+            },
+            {
+                "game": "PAC'N Roll Remix",
+                "system": "Mobile",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2]
+            },
+            {
+                "game": "PAC-MAN CHAMPIONSHIP EDITION",
+                "system": "Windows Port",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": [2, 7]
+            },
+            {
+                "game": "PAC Attack",
+                "system": "SNES",
+                "filename": "pacattack.zip",
+                "status": "partial",
+                "notes": [1, 8],
+                "extract": {
+                    "in_file": "pacattack",
+                    "start": 0,
+                    "length": 600000
+                }
+            },
+            {
+                "game": "PAC-IN-TIME",
+                "system": "SNES",
+                "filename": "pacintime.zip",
+                "status": "partial",
+                "notes": [1, 8],
+                "extract": {
+                    "in_file": "pacintime",
+                    "start": 0,
+                    "length": 1062400
+                }
+            },
+            {
+                "game": "PAC-MAN ARRANGEMENT Arcade Ver.",
+                "system": "Arcade",
+                "filename": "pacman_arrangement_arcade.zip",
+                "status": "partial",
+                "notes": [1, 5],
+                "extract": {
+                    "in_file": "pacmanarrangement",
+                    "start": 423008,
+                    "length": 7864320
+                }
+            },
+            {
+                "game": "PAC-MAN ARRANGEMENT Console Ver.",
+                "system": "???",
+                "filename": "pacman_arrangement_console.zip",
+                "status": "partial",
+                "notes": [1, 6],
+                "extract": {
+                    "in_file": "pacmanarrangement",
+                    "start": 423008,
+                    "length": 7864320
+                }
+            }
+        ],
+        "notes": {
+            "1": "This tool cannot create a playable extraction for this title.",
+            "2": "This title not ROM-based (a rebuild or a native Windows port), so no extraction is possible.",
+            "3": "Along with some CRC mismatches, this game renders upside-down. MAME and RetroArchMAME have slightly different ways to fix this per game.",
+            "4": "There are minor CRC mismatches, but this ROM works properly.",
+            "5": "MAME does not appear to support this Arcade title, which was originally part of Namco Classic Collection Vol. 2.",
+            "6": "This title is likely a native/DirectX port for XBox 360, and not a packagable ROM.",
+            "7": "This title appears to launch with a Bandai Namco splash and is likely a native/DirectX port.",
+            "8": "These SNES titles do not appear to be raw or LZMA compressed in the DLL, and cannot yet be extracted."
+        }
+    }
+}

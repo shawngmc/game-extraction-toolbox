@@ -1,0 +1,67 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "rel_path": ["Ms. PAC-MAN_Data", "Plugins"],
+                "filename": "Release_2.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 250368,
+                        "crc": "33F288DC"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Ms. Pac-Man",
+                "system": "Arcade",
+                "filename": "mspacmab.zip",
+                "status": "playable",
+                "notes": [],
+                "zip_files": {
+                    "82s126.1m": { "start": "0x1AE30", "length": "0x100"},
+                    "82s123.7f": { "start": "0x1AF30", "length": "0x20"},
+                    "82s126.4a": { "start": "0x1AF50", "length": "0x100"},
+                    "5f": { "start": "0x1B050", "length": "0x1000"},
+                    "5e": { "start": "0x1D050", "length": "0x1000"},
+                    "boot1": { "start": "0x28C20", "length": "0x1000",
+                        "patch": {"2": 0, "56": 195, "57": 155, "58": 31, "4087": 10, "4088": 237, "4089": 12, "4090": 20, "4091": 10, "4093": 8}
+                    },
+                    "boot2": { "start": "0x29C20", "length": "0x1000",
+                        "patch": {"3994": 33, "3995": 245, "3996": 237, "3997": 87, "3998": 183, "3999": 40, "4000": 4, "4001": 241, "4002": 195, "4003": 141, "4005": 241, "4006": 195, "4008": 48}
+                    },
+                    "boot3": { "start": "0x2AC20", "length": "0x1000",
+                        "patch": {"828": 86, "829": 0, "830": 0, "831": 0}
+                    },
+                    "boot4": { "start": "0x2BC20", "length": "0x1000",
+                        "patch": {"26": 0, "27": 0, "387": 237, "388": 71}
+                    },
+                    "boot5": { "start": "0x30C20", "length": "0x1000"},
+                    "boot6": { "start": "0x31C20", "length": "0x1000"},
+                    "82s126.3m": { "type": "placeholder", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "82s126.1m": { "size": 256, "crc": "A9CC86BF"},
+                        "82s123.7f": { "size": 32, "crc": "2FC650BD"},
+                        "82s126.4a": { "size": 256, "crc": "3EB3A8E4"},
+                        "5f": { "size": 4096, "crc": "615AF909"},
+                        "5e": { "size": 4096, "crc": "5C281D01"},
+                        "boot1": { "size": 4096, "crc": "D16B31B7"},
+                        "boot2": { "size": 4096, "crc": "0D32DE5E"},
+                        "boot3": { "size": 4096, "crc": "1821EE0B"},
+                        "boot4": { "size": 4096, "crc": "165A9DD8"},
+                        "boot5": { "size": 4096, "crc": "8C3E6DE6"},
+                        "boot6": { "size": 4096, "crc": "368CB165"},
+                        "82s126.3m": { "size": 256, "crc": "0D968558"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

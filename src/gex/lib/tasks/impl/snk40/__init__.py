@@ -5,7 +5,7 @@ import os
 from gex.lib.contrib.bputil import BPListReader
 from gex.lib.tasks.basetask import BaseTask
 from gex.lib.tasks import helpers
-from gex.lib.tasks.impl.snk40 import partials, nes, arcadedlc, arcademain, arcadepatch
+from gex.lib.tasks.impl.snk40 import nes, arcadedlc, arcademain, arcadepatch
 
 logger = logging.getLogger('gextoolbox')
 
@@ -30,31 +30,23 @@ Based on:
             "description": "Include the NES ports that are included in SNK 40th",
             "default": True,
             "type": "Boolean"
-        },
-        "include-partials": {
-            "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
-            "default": False,
-            "type": "Boolean"
         }
     }
 
-    _out_file_list = []
-    _out_file_list.extend(arcadedlc.out_file_info)
-    _out_file_list.extend(arcademain.out_file_info)
-    _out_file_list.extend(arcadepatch.out_file_info)
-    _out_file_list.extend(nes.out_file_info)
-    _out_file_list.extend(partials.out_file_info)
-
-    _out_file_notes = {
-        "1": "This is not extracted as there are missing files, such as Missing PROMs. Add '--prop include-partials=True' to include these.",
-        "2": "This is playable, but is a bad dump, 1+ files with a bad CRC, and/or 1+ files with empty placeholders.",
-        "3": "This requires MAME 0.139 to play.",
-        "4": "There are some variants that MAME does not have info on - this partial contains all the Bermuda Triangle/World Wars files for research."
-    }
+    def get_out_file_info(self):
+        '''Return a list of output files'''
+        return {
+            "files": self._metadata['out']['files'],
+            "notes": self._metadata['out']['notes']
+        }
 
     def execute(self, in_dir, out_dir):
-
-        bundle_contents = self._read_all_bundles(in_dir)
+        bundle_contents = {}
+        for file_ref, file_metadata in self._metadata['in']['files'].items():
+            resolved_file = self.read_datafile(in_dir, file_metadata)
+            reader = BPListReader(resolved_file['contents'])
+            parsed = reader.parse()
+            bundle_contents[file_ref] = parsed
 
         out_files = []
 
@@ -64,40 +56,14 @@ Based on:
             out_files.extend(arcademain.extract(bundle_contents))
             out_files.extend(arcadedlc.extract(bundle_contents))
             out_files.extend(arcadepatch.extract(bundle_contents))
-        if self._props.get('include-partials'):
-            out_files.extend(partials.extract(bundle_contents))
 
         if out_files:
             for out_file_entry in out_files:
-                out_path = os.path.join(out_dir, out_file_entry['filename'])
+                filename = out_file_entry['filename']
+                _ = self.verify_out_file(filename, out_file_entry ['contents'])
+                out_path = os.path.join(out_dir, filename)
                 with open(out_path, "wb") as out_file:
-                    logger.info(f"Writing {out_file_entry['filename']}...")
+                    logger.info(f"Writing {filename}...")
                     out_file.write(out_file_entry['contents'])
 
         logger.info("Processing complete.")
-
-    _pkg_name_map = {
-        'bundleMain.mbundle': 'main',
-        'bundleDLC1.mbundle': 'dlc',
-        'bundlePatch1.mbundle': 'patch'
-    }
-
-    def _read_all_bundles(self, in_dir):
-        bundle_contents = {}
-        bundle_files = self._find_files(in_dir)
-        for file_path in bundle_files:
-            with open(file_path, 'rb') as in_file:
-                file_name = os.path.basename(file_path)
-                pkg_name = self._pkg_name_map.get(file_name)
-                if pkg_name is not None:
-                    logger.info(f'Reading files for {file_name}...')
-                    contents = in_file.read()
-                    reader = BPListReader(contents)
-                    parsed = reader.parse()
-                    bundle_contents[pkg_name] = parsed
-        return bundle_contents
-
-    def _find_files(self, base_path):
-        bundle_path = os.path.join(base_path, "Bundle", '*.mbundle')
-        archive_list = glob.glob(bundle_path)
-        return archive_list

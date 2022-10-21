@@ -1,0 +1,4301 @@
+{
+    "in": {
+        "files": {
+            "Asteroids.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Asteroids.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "1143BA1E"
+                    }
+                }
+            },
+            "Asteroids Deluxe.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Asteroids Deluxe.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 12288,
+                        "crc": "B095201C"
+                    }
+                }
+            },
+            "Black Widow.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Black Widow.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 43008,
+                        "crc": "1FF6C231"
+                    }
+                }
+            },
+            "CanyonBomber.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "CanyonBomber.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "9B93E001"
+                    }
+                }
+            },
+            "CanyonBomberSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "CanyonBomberSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 2166,
+                        "crc": "58DCDED9"
+                    }
+                }
+            },
+            "CanyonBomberTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "CanyonBomberTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "F363205F"
+                    }
+                }
+            },
+            "Centipede.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Centipede.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "65445D14"
+                    }
+                }
+            },
+            "Centipede.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Centipede.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 24652,
+                        "crc": "3D5730A2"
+                    }
+                }
+            },
+            "Crystal Castles.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Crystal Castles.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 40960,
+                        "crc": "549C331F"
+                    }
+                }
+            },
+            "Crystal Castles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Crystal Castles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 32856,
+                        "crc": "7F3454BD"
+                    }
+                }
+            },
+            "Gravitar.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Gravitar.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 43008,
+                        "crc": "4A6EADAF"
+                    }
+                }
+            },
+            "Liberator.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Liberator.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 28672,
+                        "crc": "8F2DDE2B"
+                    }
+                }
+            },
+            "Liberator.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Liberator.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 196784,
+                        "crc": "CCF0891F"
+                    }
+                }
+            },
+            "Liberator Projection.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Liberator Projection.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 20634,
+                        "crc": "279B6269"
+                    }
+                }
+            },
+            "Lunar Lander.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Lunar Lander.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 14336,
+                        "crc": "27773A10"
+                    }
+                }
+            },
+            "Major Havoc alpha banks.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Major Havoc alpha banks.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 32768,
+                        "crc": "756B4074"
+                    }
+                }
+            },
+            "Major Havoc gamma.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Major Havoc gamma.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "93FAF210"
+                    }
+                }
+            },
+            "Major Havoc vector banks.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Major Havoc vector banks.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 32768,
+                        "crc": "59E92881"
+                    }
+                }
+            },
+            "Major Havoc.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Major Havoc.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 36864,
+                        "crc": "8C856F2F"
+                    }
+                }
+            },
+            "Millipede.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Millipede.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "EDC72E1D"
+                    }
+                }
+            },
+            "Millipede.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Millipede.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 49272,
+                        "crc": "01F40794"
+                    }
+                }
+            },
+            "Missile Command.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Missile Command.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 12288,
+                        "crc": "0992FB02"
+                    }
+                }
+            },
+            "Red Baron.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Red Baron.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 18432,
+                        "crc": "897EE08B"
+                    }
+                }
+            },
+            "Space Duel.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Space Duel.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 26624,
+                        "crc": "DE1668C8"
+                    }
+                }
+            },
+            "Sprint2.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Sprint2.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "59F85A0A"
+                    }
+                }
+            },
+            "Sprint2Sprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Sprint2Sprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "CAA4F9F7"
+                    }
+                }
+            },
+            "Sprint2Tiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Sprint2Tiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "D291DCE6"
+                    }
+                }
+            },
+            "Super Breakout.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Super Breakout.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 5120,
+                        "crc": "2D6D06E7"
+                    }
+                }
+            },
+            "Super Breakout vector.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Super Breakout vector.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 2422,
+                        "crc": "64FCFE15"
+                    }
+                }
+            },
+            "Super Breakout.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Super Breakout.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4176,
+                        "crc": "3BFBCF60"
+                    }
+                }
+            },
+            "Tempest.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Tempest.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 24576,
+                        "crc": "4FF276D2"
+                    }
+                }
+            },
+            "Warlords.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Warlords.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 12288,
+                        "crc": "7F2391FD"
+                    }
+                }
+            },
+            "Warlords Background.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Warlords Background.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 62520,
+                        "crc": "855CFB96"
+                    }
+                }
+            },
+            "Warlords.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Warlords.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 16456,
+                        "crc": "7B402A19"
+                    }
+                }
+            },
+            "Avalanche.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Avalanche.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 6144,
+                        "crc": "9478BC10"
+                    }
+                }
+            },
+            "AtariBaseball.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBaseball.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "F5B812DD"
+                    }
+                }
+            },
+            "AtariBaseballTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBaseballTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "63F56CC1"
+                    }
+                }
+            },
+            "AtariBaseballTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBaseballTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "0899E576"
+                    }
+                }
+            },
+            "AtariBasketball.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBasketball.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "49AC3012"
+                    }
+                }
+            },
+            "AtariBasketballTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBasketballTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "4D9D520C"
+                    }
+                }
+            },
+            "AtariBasketballSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariBasketballSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 16502,
+                        "crc": "0F8AE748"
+                    }
+                }
+            },
+            "Destroyer.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Destroyer.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "E560C712"
+                    }
+                }
+            },
+            "DestroyerSprites1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "DestroyerSprites1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "113FEB96"
+                    }
+                }
+            },
+            "DestroyerSprites2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "DestroyerSprites2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 12534,
+                        "crc": "CE8C6992"
+                    }
+                }
+            },
+            "DestroyerTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "DestroyerTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "886D701D"
+                    }
+                }
+            },
+            "DestroyerWaves.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "DestroyerWaves.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 374,
+                        "crc": "EBE88168"
+                    }
+                }
+            },
+            "Dominos.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Dominos.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "10354EFF"
+                    }
+                }
+            },
+            "DominosTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "DominosTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "E71C6BA0"
+                    }
+                }
+            },
+            "FireTruck.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "FireTruck.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "91A9982A"
+                    }
+                }
+            },
+            "FireTruckSprites1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "FireTruckSprites1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "F41F46EA"
+                    }
+                }
+            },
+            "FireTruckSprites2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "FireTruckSprites2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 32886,
+                        "crc": "F2CB2D34"
+                    }
+                }
+            },
+            "FireTruckTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "FireTruckTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "F3328F0E"
+                    }
+                }
+            },
+            "FireTruckTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "FireTruckTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 16502,
+                        "crc": "30C49BC4"
+                    }
+                }
+            },
+            "AtariFootball.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariFootball.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 6144,
+                        "crc": "DCACB14B"
+                    }
+                }
+            },
+            "AtariFootballTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariFootballTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "F3B1898B"
+                    }
+                }
+            },
+            "AtariFootballTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariFootballTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "664F35D0"
+                    }
+                }
+            },
+            "MazeInvaders.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MazeInvaders.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 20480,
+                        "crc": "DC8E2879"
+                    }
+                }
+            },
+            "MazeInvaders.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MazeInvaders.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 49272,
+                        "crc": "F7D1147C"
+                    }
+                }
+            },
+            "MonteCarlo.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarlo.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "EABF1C0E"
+                    }
+                }
+            },
+            "MonteCarloColors.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarloColors.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 512,
+                        "crc": "386C543A"
+                    }
+                }
+            },
+            "MonteCarloSprites1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarloSprites1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "CF51E071"
+                    }
+                }
+            },
+            "MonteCarloSprites2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarloSprites2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "A668C0F8"
+                    }
+                }
+            },
+            "MonteCarloTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarloTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "4B1CDDA7"
+                    }
+                }
+            },
+            "MonteCarloTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "MonteCarloTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 16502,
+                        "crc": "929999FB"
+                    }
+                }
+            },
+            "Poolshark.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Poolshark.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "067FCF82"
+                    }
+                }
+            },
+            "PoolsharkSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "PoolsharkSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "28773457"
+                    }
+                }
+            },
+            "PoolsharkTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "PoolsharkTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "D0BE43C0"
+                    }
+                }
+            },
+            "SkydiverROM.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SkydiverROM.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "3733D335"
+                    }
+                }
+            },
+            "SkydiverSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SkydiverSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "921F4FCC"
+                    }
+                }
+            },
+            "SkydiverTiles.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SkydiverTiles.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "A058FC30"
+                    }
+                }
+            },
+            "AtariSoccer.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariSoccer.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "A8818B3C"
+                    }
+                }
+            },
+            "AtariSoccerSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariSoccerSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "E4CDD1F3"
+                    }
+                }
+            },
+            "AtariSoccerTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariSoccerTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "5219EBD4"
+                    }
+                }
+            },
+            "AtariSoccerTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "AtariSoccerTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 4214,
+                        "crc": "E8E2D22B"
+                    }
+                }
+            },
+            "SuperBug.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SuperBug.bin",
+                "versions": {
+                    "Steam": {
+                        "size": 6144,
+                        "crc": "D0A12884"
+                    }
+                }
+            },
+            "SuperBugSprites.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SuperBugSprites.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 32884,
+                        "crc": "ED8D0E5F"
+                    }
+                }
+            },
+            "SuperBugTiles1.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SuperBugTiles1.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 8310,
+                        "crc": "661399EE"
+                    }
+                }
+            },
+            "SuperBugTiles2.bmp": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SuperBugTiles2.bmp",
+                "versions": {
+                    "Steam": {
+                        "size": 16502,
+                        "crc": "0FAE9384"
+                    }
+                }
+            },
+            "3d_tic.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "3d_tic.bin",
+                "copy_to": "3-D Tic-Tac-Toe",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "58805709"
+                    }
+                }
+            },
+            "advnture.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "advnture.bin",
+                "copy_to": "Adventure",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "A6DB4B3A"
+                    }
+                }
+            },
+            "airseabt.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "airseabt.bin",
+                "copy_to": "Air-Sea Battle",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "2A2A9F81"
+                    }
+                }
+            },
+            "asteroid.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "asteroid.bin",
+                "copy_to": "Asteroids",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "70A59647"
+                    }
+                }
+            },
+            "backgamn.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "backgamn.bin",
+                "copy_to": "Backgammon",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "E2A7FFA6"
+                    }
+                }
+            },
+            "basmath.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "basmath.bin",
+                "copy_to": "Basic Math",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "D48EBAC0"
+                    }
+                }
+            },
+            "basketbl.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "basketbl.bin",
+                "copy_to": "Basketball",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "32F60182"
+                    }
+                }
+            },
+            "black_j.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "black_j.bin",
+                "copy_to": "Blackjack",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "4B0EE010"
+                    }
+                }
+            },
+            "Bowling.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "Bowling.bin",
+                "copy_to": "Bowling",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "FEA0D6D5"
+                    }
+                }
+            },
+            "braingms.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "braingms.bin",
+                "copy_to": "Brain Games",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "150709C2"
+                    }
+                }
+            },
+            "breakout.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "breakout.bin",
+                "copy_to": "Breakout",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "3037638C"
+                    }
+                }
+            },
+            "canyonb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "canyonb.bin",
+                "copy_to": "Canyon Bomber",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "E914B8CA"
+                    }
+                }
+            },
+            "casino.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "casino.bin",
+                "copy_to": "Casino",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "420B8248"
+                    }
+                }
+            },
+            "centiped.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "centiped.bin",
+                "copy_to": "Centipede",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "77396102"
+                    }
+                }
+            },
+            "pelesocr.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "pelesocr.bin",
+                "copy_to": "Championship Soccer",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "3F59BB60"
+                    }
+                }
+            },
+            "vidcheck.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "vidcheck.bin",
+                "copy_to": "Checkers",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "3DF33335"
+                    }
+                }
+            },
+            "vidchess.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "vidchess.bin",
+                "copy_to": "Chess",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "B6226A54"
+                    }
+                }
+            },
+            "circatri.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "circatri.bin",
+                "copy_to": "Circus Atari",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "D2A330A3"
+                    }
+                }
+            },
+            "codebrk.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "codebrk.bin",
+                "copy_to": "Codebreaker",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "947EDB18"
+                    }
+                }
+            },
+            "combat.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "combat.bin",
+                "copy_to": "Combat",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "0D64A9C5"
+                    }
+                }
+            },
+            "combat2.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "combat2.bin",
+                "copy_to": "Combat 2",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "8CABE1FD"
+                    }
+                }
+            },
+            "concentr.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "concentr.bin",
+                "copy_to": "Concentration",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "17DE8070"
+                    }
+                }
+            },
+            "cryscast.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "cryscast.bin",
+                "copy_to": "Crystal Castles",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "9007B5AC"
+                    }
+                }
+            },
+            "demondim.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "demondim.bin",
+                "copy_to": "Demons to Diamonds",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "9B97C3DA"
+                    }
+                }
+            },
+            "dsrtfalc.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "dsrtfalc.bin",
+                "copy_to": "Desert Falcon",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "CAA0054E"
+                    }
+                }
+            },
+            "dodge_em.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "dodge_em.bin",
+                "copy_to": "Dodge Em",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "0C74479B"
+                    }
+                }
+            },
+            "doubdunk.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "doubdunk.bin",
+                "copy_to": "Double Dunk",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "6112CBF5"
+                    }
+                }
+            },
+            "fatalrun.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "fatalrun.bin",
+                "copy_to": "Fatal Run",
+                "versions": {
+                    "Steam": {
+                        "size": 32768,
+                        "crc": "826C2E3D"
+                    }
+                }
+            },
+            "flagcap.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "flagcap.bin",
+                "copy_to": "Flag Capture",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "8AA1C41E"
+                    }
+                }
+            },
+            "football.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "football.bin",
+                "copy_to": "Football",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "3B73EE02"
+                    }
+                }
+            },
+            "golf.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "golf.bin",
+                "copy_to": "Golf",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "46A9F200"
+                    }
+                }
+            },
+            "grav2600.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "grav2600.bin",
+                "copy_to": "Gravitar",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "C87FCCBE"
+                    }
+                }
+            },
+            "hangman.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "hangman.bin",
+                "copy_to": "Hangman",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "C2BCC789"
+                    }
+                }
+            },
+            "haunthse.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "haunthse.bin",
+                "copy_to": "Haunted House",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "AA62D961"
+                    }
+                }
+            },
+            "homerun.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "homerun.bin",
+                "copy_to": "Home Run",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "45ACE998"
+                    }
+                }
+            },
+            "human_cb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "human_cb.bin",
+                "copy_to": "Human Cannonball",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "F05A41E1"
+                    }
+                }
+            },
+            "mazecrz.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "mazecrz.bin",
+                "copy_to": "Maze Craze",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "0098E428"
+                    }
+                }
+            },
+            "milliped.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "milliped.bin",
+                "copy_to": "Millipede",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "CCC82DD0"
+                    }
+                }
+            },
+            "min_golf.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "min_golf.bin",
+                "copy_to": "Miniature Golf",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "28562315"
+                    }
+                }
+            },
+            "misscomm.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "misscomm.bin",
+                "copy_to": "Missile Command",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "CFF14904"
+                    }
+                }
+            },
+            "nightdrv.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "nightdrv.bin",
+                "copy_to": "Night Driver",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "600D8A96"
+                    }
+                }
+            },
+            "ofthwall.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "ofthwall.bin",
+                "copy_to": "Off the Wall",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "E425A1CF"
+                    }
+                }
+            },
+            "outlaw.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "outlaw.bin",
+                "copy_to": "Outlaw",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "68DD7ACD"
+                    }
+                }
+            },
+            "quadrun.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "quadrun.bin",
+                "copy_to": "Quadrun",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "A95CDD6F"
+                    }
+                }
+            },
+            "indy500.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "indy500.bin",
+                "copy_to": "Race",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "B43DA2A3"
+                    }
+                }
+            },
+            "radarlok.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "radarlok.bin",
+                "copy_to": "Radar Lock",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "C29F7285"
+                    }
+                }
+            },
+            "rs_baseb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rs_baseb.bin",
+                "copy_to": "RealSports Baseball",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "3C5A1B5F"
+                    }
+                }
+            },
+            "rsbasket.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rsbasket.bin",
+                "copy_to": "RealSports Basketball",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "364FEAA6"
+                    }
+                }
+            },
+            "rsboxing.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rsboxing.bin",
+                "copy_to": "RealSports Boxing",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "3398A1B2"
+                    }
+                }
+            },
+            "rs_footb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rs_footb.bin",
+                "copy_to": "RealSports Football",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "F89F64EF"
+                    }
+                }
+            },
+            "rssoccer.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rssoccer.bin",
+                "copy_to": "RealSports Soccer",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "02D89819"
+                    }
+                }
+            },
+            "rstennis.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rstennis.bin",
+                "copy_to": "RealSports Tennis",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "379001A0"
+                    }
+                }
+            },
+            "rs_volly.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "rs_volly.bin",
+                "copy_to": "RealSports Volleyball",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "54FC9EB2"
+                    }
+                }
+            },
+            "ret2hh.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "ret2hh.bin",
+                "copy_to": "Return to Haunted House",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "95D29756"
+                    }
+                }
+            },
+            "SaveMary_NTSC.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "SaveMary_NTSC.bin",
+                "copy_to": "Save Mary",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "01E18F53"
+                    }
+                }
+            },
+            "secretq.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "secretq.bin",
+                "copy_to": "Secret Quest",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "93C9EB47"
+                    }
+                }
+            },
+            "sentinel.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sentinel.bin",
+                "copy_to": "Sentinel",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "27ACC8A3"
+                    }
+                }
+            },
+            "skydiver.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "skydiver.bin",
+                "copy_to": "Sky Diver",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "00312EA9"
+                    }
+                }
+            },
+            "slotmach.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "slotmach.bin",
+                "copy_to": "Slot Machine",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "CB378D95"
+                    }
+                }
+            },
+            "slotrace.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "slotrace.bin",
+                "copy_to": "Slot Racers",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "177DBDF8"
+                    }
+                }
+            },
+            "spacewar.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "spacewar.bin",
+                "copy_to": "Space War",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "65622F2A"
+                    }
+                }
+            },
+            "sprntmas.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sprntmas.bin",
+                "copy_to": "Sprint Master",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "C495904E"
+                    }
+                }
+            },
+            "starraid.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "starraid.bin",
+                "copy_to": "Star Raiders",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "2AE193EE"
+                    }
+                }
+            },
+            "starship.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "starship.bin",
+                "copy_to": "Star Ship",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "6609267E"
+                    }
+                }
+            },
+            "steplchs.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "steplchs.bin",
+                "copy_to": "Steeplechase",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "5F6C32C3"
+                    }
+                }
+            },
+            "stlrtrak.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "stlrtrak.bin",
+                "copy_to": "Stellar Track",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "A76E93BF"
+                    }
+                }
+            },
+            "stunt.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "stunt.bin",
+                "copy_to": "Stunt Cycle",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "6354FF4C"
+                    }
+                }
+            },
+            "streetrc.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "streetrc.bin",
+                "copy_to": "Street Racer",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "47592880"
+                    }
+                }
+            },
+            "subcmdr.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "subcmdr.bin",
+                "copy_to": "Submarine Commander",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "3262960A"
+                    }
+                }
+            },
+            "sprbaseb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sprbaseb.bin",
+                "copy_to": "Super Baseball",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "2245F170"
+                    }
+                }
+            },
+            "superbrk.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "superbrk.bin",
+                "copy_to": "Super Breakout",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "171DBE92"
+                    }
+                }
+            },
+            "sprfootb.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sprfootb.bin",
+                "copy_to": "Super Football",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "C9B16F3C"
+                    }
+                }
+            },
+            "surround.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "surround.bin",
+                "copy_to": "Surround",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "DCB11F23"
+                    }
+                }
+            },
+            "sq_earth.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sq_earth.bin",
+                "copy_to": "Sword Quest Earthworld",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "D5E21B79"
+                    }
+                }
+            },
+            "sq_fire.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sq_fire.bin",
+                "copy_to": "Sword Quest Fireworld",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "6AE46A0C"
+                    }
+                }
+            },
+            "sq_water.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "sq_water.bin",
+                "copy_to": "Sword Quest Waterworld",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "CA7B4685"
+                    }
+                }
+            },
+            "temp2600.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "temp2600.bin",
+                "copy_to": "Tempest",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "E6DABC1B"
+                    }
+                }
+            },
+            "vidcube.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "vidcube.bin",
+                "copy_to": "Video Cube",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "8172299E"
+                    }
+                }
+            },
+            "vid_olym.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "vid_olym.bin",
+                "copy_to": "Video Olympics",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "E4BC89C4"
+                    }
+                }
+            },
+            "vidpin.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "vidpin.bin",
+                "copy_to": "Video Pinball",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "10D95426"
+                    }
+                }
+            },
+            "warl2600.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "warl2600.bin",
+                "copy_to": "Warlords",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "CF174B57"
+                    }
+                }
+            },
+            "yar_rev.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator"],
+                "filename": "yar_rev.bin",
+                "copy_to": "Yars Revenge",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "DFA1C825"
+                    }
+                }
+            },
+            "asteroids.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "asteroids.bin",
+                "copy_to": "Asteroids (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "38480891"
+                    }
+                }
+            },
+            "centipede.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "centipede.bin",
+                "copy_to": "Centipede (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "536A70FE"
+                    }
+                }
+            },
+            "countermeasure.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "countermeasure.bin",
+                "copy_to": "Countermeasure (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "FF7AF233"
+                    }
+                }
+            },
+            "millipede.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "millipede.bin",
+                "copy_to": "Millipede (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "969CFE1A"
+                    }
+                }
+            },
+            "missile_command.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "missile_command.bin",
+                "copy_to": "Missile Command (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "44D3FF6F"
+                    }
+                }
+            },
+            "realsports_baseball.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "realsports_baseball.bin",
+                "copy_to": "RealSports Baseball (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 32768,
+                        "crc": "44166592"
+                    }
+                }
+            },
+            "realsports_basketball.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "realsports_basketball.bin",
+                "copy_to": "RealSports Basketball (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 32768,
+                        "crc": "DD217276"
+                    }
+                }
+            },
+            "realsports_football.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "realsports_football.bin",
+                "copy_to": "RealSports Football (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "4336C2CC"
+                    }
+                }
+            },
+            "realsports_soccer.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "realsports_soccer.bin",
+                "copy_to": "RealSports Soccer (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "ECBD1853"
+                    }
+                }
+            },
+            "realsports_tennis.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "realsports_tennis.bin",
+                "copy_to": "RealSports Tennis (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "10F33C90"
+                    }
+                }
+            },
+            "star_raiders.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "star_raiders.bin",
+                "copy_to": "Star Raiders (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "7D819A9F"
+                    }
+                }
+            },
+            "super_breakout.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "super_breakout.bin",
+                "copy_to": "Super Breakout (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "A0642110"
+                    }
+                }
+            },
+            "final_legacy.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "final_legacy.bin",
+                "copy_to": "Final Legacy (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "D3BD3221"
+                    }
+                }
+            },
+            "microgammon.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "microgammon.bin",
+                "copy_to": "Micro-Gammon (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "931A454A"
+                    }
+                }
+            },
+            "miniature_golf.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "miniature_golf.bin",
+                "copy_to": "Miniature Golf (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "C597C087"
+                    }
+                }
+            },
+            "xari_arena.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "xari_arena.bin",
+                "copy_to": "Xari Arena (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "B8FAAEC3"
+                    }
+                }
+            },
+            "bios.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "5200"],
+                "filename": "bios.bin",
+                "copy_to": "5200 BIOS (5200)",
+                "versions": {
+                    "Steam": {
+                        "size": 2048,
+                        "crc": "4248D3E3"
+                    }
+                }
+            },
+            "airaidrs.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets" , "FOCAL_Emulator", "vol3"],
+                "filename": "airaidrs.bin",
+                "copy_to": "Air Raiders",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "BB16539D"
+                    }
+                }
+            },
+            "armambsh.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "armambsh.bin",
+                "copy_to": "Armor Ambush",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "FC35704B"
+                    }
+                }
+            },
+            "astrblst.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "astrblst.bin",
+                "copy_to": "Astroblast",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "1DE25331"
+                    }
+                }
+            },
+            "darkcvrn.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "darkcvrn.bin",
+                "copy_to": "Dark Cavern",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "0481078C"
+                    }
+                }
+            },
+            "frogflys.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "frogflys.bin",
+                "copy_to": "Frogs And Flies",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "6476C136"
+                    }
+                }
+            },
+            "pele_tw.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "pele_tw.bin",
+                "copy_to": "International Soccer",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "B9D549A2"
+                    }
+                }
+            },
+            "seabattle.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "seabattle.bin",
+                "copy_to": "Sea Battle",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "83B4EB19"
+                    }
+                }
+            },
+            "spacattk.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "spacattk.bin",
+                "copy_to": "Space Attack",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "B34A3E57"
+                    }
+                }
+            },
+            "starstrk.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "starstrk.bin",
+                "copy_to": "Star Strike",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "936A596D"
+                    }
+                }
+            },
+            "suprbase.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "suprbase.bin",
+                "copy_to": "Super Challenge Baseball",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "F7E88EC2"
+                    }
+                }
+            },
+            "suprfoot.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "suprfoot.bin",
+                "copy_to": "Super Challenge Football",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "55F02EFE"
+                    }
+                }
+            },
+            "swordfight.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "swordfight.bin",
+                "copy_to": "Swordfight",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "F1AD77BE"
+                    }
+                }
+            },
+            "adventureii.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "adventureii.bin",
+                "copy_to": "Adventure II",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "BFD846C5"
+                    }
+                }
+            },
+            "aquavent.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "aquavent.bin",
+                "copy_to": "Aquaventure",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "87A8CB8B"
+                    }
+                }
+            },
+            "frog_pond_8_27_82.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "frog_pond_8_27_82.bin",
+                "copy_to": "Frog Pond",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "5874385A"
+                    }
+                }
+            },
+            "holemole.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "holemole.bin",
+                "copy_to": "Holey Moley",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "3BB2E71D"
+                    }
+                }
+            },
+            "motorodeo_ntsc.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "motorodeo_ntsc.bin",
+                "copy_to": "Motorodeo",
+                "versions": {
+                    "Steam": {
+                        "size": 16384,
+                        "crc": "89998E29"
+                    }
+                }
+            },
+            "saboteur.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "saboteur.bin",
+                "copy_to": "Saboteur",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "C359C13D"
+                    }
+                }
+            },
+            "wizard.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "wizard.bin",
+                "copy_to": "Wizard",
+                "versions": {
+                    "Steam": {
+                        "size": 4096,
+                        "crc": "D2F5A554"
+                    }
+                }
+            },
+            "yarsreturn.bin": {
+                "rel_path": ["AtariVault_Data", "StreamingAssets", "FOCAL_Emulator", "vol3"],
+                "filename": "yarsreturn.bin",
+                "copy_to": "Yars Return",
+                "versions": {
+                    "Steam": {
+                        "size": 8192,
+                        "crc": "DAF83348"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Asteroids",
+                "filename": "asteroid.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Asteroids.bin"
+                ],
+                "split": [
+                    "035145.02",
+                    "035144.02",
+                    "035143.02",
+                    "035127.02"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "035145.02": {"size": 2048, "crc": "0CC75459"},
+                        "035144.02": {"size": 2048, "crc": "096ED35C"},
+                        "035143.02": {"size": 2048, "crc": "312CAA02"},
+                        "035127.02": {"size": 2048, "crc": "8B71FD9E"}
+                    }
+                }
+            },
+            {
+                "game": "Asteroids Deluxe",
+                "filename": "astdelux.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Asteroids Deluxe.bin"
+                ],
+                "split": [
+                    "036430.02",
+                    "036431.02",
+                    "036432.02",
+                    "036433.03",
+                    "036800.02",
+                    "036799.01"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "036430.02": {"size": 2048, "crc": "A4D7A525"},
+                        "036431.02": {"size": 2048, "crc": "D4004AAE"},
+                        "036432.02": {"size": 2048, "crc": "6D720C41"},
+                        "036433.03": {"size": 2048, "crc": "0DCC0BE6"},
+                        "036800.02": {"size": 2048, "crc": "BB8CABE1"},
+                        "036799.01": {"size": 2048, "crc": "7D511572"}
+                    }
+                }
+            },
+            {
+                "game": "Black Widow",
+                "filename": "bwidow.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "playable",
+                "notes": [2],
+                "in_files": [
+                    "Black Widow.bin"
+                ],
+                "truncate": 38912,
+                "split": {
+                    "136017.107": 2048,
+                    "136017.108": 4096,
+                    "136017.109": 4096,
+                    "136017.110": 4096,
+                    "136017.101": 4096,
+                    "136017.102": 4096,
+                    "136017.103": 4096,
+                    "136017.104": 4096,
+                    "136017.105": 4096,
+                    "136017.106": 4096
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "136017.107": {"size": 2048, "crc": "97F6000C"},
+                        "136017.108": {"size": 4096, "crc": "3DA354ED"},
+                        "136017.109": {"size": 4096, "crc": "2FC4CE79"},
+                        "136017.110": {"size": 4096, "crc": "0DD52987"},
+                        "136017.101": {"size": 4096, "crc": "FE3FEBB7"},
+                        "136017.102": {"size": 4096, "crc": "10AD0376"},
+                        "136017.103": {"size": 4096, "crc": "8A1430EE"},
+                        "136017.104": {"size": 4096, "crc": "44F9943F"},
+                        "136017.105": {"size": 4096, "crc": "1FDF801C"},
+                        "136017.106": {"size": 4096, "crc": "4DC28B22"}
+                    }
+                }
+            },
+            {
+                "game": "Canyon Bomber",
+                "filename": "canyon-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "CanyonBomber.bin",
+                    "CanyonBomberSprites.bmp",
+                    "CanyonBomberTiles.bmp"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "9503-01.p1": {"size": 1024, "crc": "1EDDBE28"},
+                        "9499-01.j1": {"size": 1024, "crc": "31800767"},
+                        "9496-01.d1": {"size": 2048, "crc": "8BE15080"},
+                        "9505-01.n5": {"size": 256, "crc": "60507C07"},
+                        "9506-01.m5": {"size": 256, "crc": "0D63396A"},
+                        "tiles_temp": {"size": 4096, "crc": "764C11C0"},
+                        "9492-01.n8": {"size": 512, "crc": "5127B727"}
+                    }
+                }
+            },
+            {
+                "game": "Centipede",
+                "filename": "centiped-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Centipede.bin",
+                    "Centipede.bmp"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "centiped.307": {"size": 2048, "crc": "5AB0D9DE"},
+                        "centiped.308": {"size": 2048, "crc": "4C07FD3E"},
+                        "centiped.309": {"size": 2048, "crc": "FF69B424"},
+                        "centiped.310": {"size": 2048, "crc": "44E40FA4"},
+                        "centiped.211": {"size": 6144, "crc": "00FCDBCD"},
+                        "centiped.212": {"size": 6144, "crc": "3B9955EC"}
+                    }
+                }
+            },
+            {
+                "game": "Crystal Castles",
+                "filename": "ccastles-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [],
+                "in_files": [
+                    "Crystal Castles.bin",
+                    "Crystal Castles.bmp"
+                ]
+            },
+            {
+                "game": "Gravitar",
+                "filename": "gravitar.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Gravitar.bin"
+                ],
+                "truncate": 38912,
+                "split": {
+                    "136010.210": 2048,
+                    "136010.207": 4096,
+                    "136010.208": 4096,
+                    "136010.309": 4096,
+                    "136010.301": 4096,
+                    "136010.302": 4096,
+                    "136010.303": 4096,
+                    "136010.304": 4096,
+                    "136010.305": 4096,
+                    "136010.306": 4096
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "136010.210": {"size": 2048, "crc": "DEBCB243"},
+                        "136010.207": {"size": 4096, "crc": "4135629A"},
+                        "136010.208": {"size": 4096, "crc": "358F25D9"},
+                        "136010.309": {"size": 4096, "crc": "4AC78DF4"},
+                        "136010.301": {"size": 4096, "crc": "A2A55013"},
+                        "136010.302": {"size": 4096, "crc": "D3700B3C"},
+                        "136010.303": {"size": 4096, "crc": "8E12E3E0"},
+                        "136010.304": {"size": 4096, "crc": "467AD5DA"},
+                        "136010.305": {"size": 4096, "crc": "840603AF"},
+                        "136010.306": {"size": 4096, "crc": "3F3805AD"}
+                    }
+                }
+            },
+            {
+                "game": "Liberator",
+                "filename": "liberatr-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Liberator.bin",
+                    "Liberator.bmp",
+                    "Liberator Projection.bin"
+                ]
+            },
+            {
+                "game": "Lunar Lander",
+                "filename": "llander.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "playable",
+                "notes": [2],
+                "in_files": [
+                    "Lunar Lander.bin"
+                ],
+                "split": [
+                    "034599.01",
+                    "034598.01",
+                    "034571.02",
+                    "034572.02",
+                    "034597.01",
+                    "034570.01",
+                    "034569.02"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "034599.01": {"size": 2048, "crc": "355A9371"},
+                        "034598.01": {"size": 2048, "crc": "9C4FFA68"},
+                        "034571.02": {"size": 2048, "crc": "3F55D17F"},
+                        "034572.02": {"size": 2048, "crc": "B8763EEA"},
+                        "034597.01": {"size": 2048, "crc": "77DA4B2F"},
+                        "034570.01": {"size": 2048, "crc": "2724E591"},
+                        "034569.02": {"size": 2048, "crc": "72837A4E"}
+                    }
+                }
+            },
+            {
+                "game": "Major Havoc",
+                "filename": "mhavoc.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "handler": "_handle_mhavoc",
+                "in_files": [
+                    "Major Havoc alpha banks.bin",
+                    "Major Havoc gamma.bin",
+                    "Major Havoc vector banks.bin",
+                    "Major Havoc.bin"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "136025.210": {"size": 8192, "crc": "C67284CA"},
+                        "136025.216": {"size": 16384, "crc": "522A9CC0"},
+                        "136025.217": {"size": 16384, "crc": "EA3D6877"},
+                        "136025.215": {"size": 16384, "crc": "A4D380CA"},
+                        "136025.318": {"size": 16384, "crc": "BA935067"},
+                        "136025.108": {"size": 16384, "crc": "93FAF210"},
+                        "136025.106": {"size": 16384, "crc": "2CA83C76"},
+                        "136025.107": {"size": 16384, "crc": "5F81C5F3"}
+                    }
+                }
+            },
+            {
+                "game": "Millipede",
+                "filename": "milliped-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Millipede.bin",
+                    "Millipede.bmp"
+                ]
+            },
+            {
+                "game": "Missile Command",
+                "filename": "missile.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Missile Command.bin"
+                ],
+                "split": [
+                    "035820.02",
+                    "035821.02",
+                    "035822.02",
+                    "035823.02",
+                    "035824.02",
+                    "035825.02"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "035820.02": {"size": 2048, "crc": "7A62CE6A"},
+                        "035821.02": {"size": 2048, "crc": "DF3BD57F"},
+                        "035822.02": {"size": 2048, "crc": "A1CD384A"},
+                        "035823.02": {"size": 2048, "crc": "82E552BB"},
+                        "035824.02": {"size": 2048, "crc": "606E42E0"},
+                        "035825.02": {"size": 2048, "crc": "F752EAEB"}
+                    }
+                }
+            },
+            {
+                "game": "Red Baron",
+                "filename": "redbaron.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Red Baron.bin"
+                ],
+                "handler": "_handle_redbaron",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "35763-01.h1": {"size": 2048, "crc": "B9486A6A"},
+                        "037587.01": {"size": 4096, "crc": "60F23983"},
+                        "037000.01e": {"size": 2048, "crc": "69BED808"},
+                        "036998.01e": {"size": 2048, "crc": "D1104DD7"},
+                        "036997.01e": {"size": 2048, "crc": "7434ACB4"},
+                        "036996.01e": {"size": 2048, "crc": "C0E7589E"},
+                        "036995.01e": {"size": 2048, "crc": "AD81D1DA"},
+                        "037006.01e": {"size": 2048, "crc": "9FCFFEA0"},
+                        "037007.01e": {"size": 2048, "crc": "60250EDE"}
+                    }
+                }
+            },
+            {
+                "game": "Space Duel",
+                "filename": "spacduel.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Space Duel.bin"
+                ],
+                "split": {
+                    "136006.106": 2048,
+                    "136006.107": 4096,
+                    "136006.201": 4096,
+                    "136006.102": 4096,
+                    "136006.103": 4096,
+                    "136006.104": 4096,
+                    "136006.105": 4096
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "136006.106": {"size": 2048, "crc": "691122FE"},
+                        "136006.107": {"size": 4096, "crc": "D8DD0461"},
+                        "136006.201": {"size": 4096, "crc": "F4037B6E"},
+                        "136006.102": {"size": 4096, "crc": "4C451E8A"},
+                        "136006.103": {"size": 4096, "crc": "EE72DA63"},
+                        "136006.104": {"size": 4096, "crc": "E41B38A3"},
+                        "136006.105": {"size": 4096, "crc": "5652710F"}
+                    }
+                }
+            },
+            {
+                "game": "Sprint2",
+                "filename": "sprint2.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [6],
+                "in_files": [
+                    "Sprint2.bin",
+                    "Sprint2Sprites.bmp",
+                    "Sprint2Tiles.bmp"
+                ],
+                "handler": "_handle_sprint2",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "6290-01.b1": {"size": 2048, "crc": "41FC985E"},
+                        "6291-01.c1": {"size": 2048, "crc": "07F7A920"},
+                        "6404.d1": {"size": 2048, "crc": "D2878FF6"},
+                        "6405.e1": {"size": 2048, "crc": "6C991C80"},
+                        "6399-01.j6": {"size": 512, "crc": "63D685B2"},
+                        "6398-01.k6": {"size": 512, "crc": "C9E1017E"},
+                        "6396-01.p4": {"size": 512, "crc": "801B42DD"},
+                        "6397-01.r4": {"size": 512, "crc": "135BA1AA"},
+                        "6400-01.m2": {"size": 256, "crc": "0D968558"},
+                        "6401-01.e2": {"size": 32, "crc": "190A55AD"}
+                    }
+                }
+            },
+            {
+                "game": "Super Breakout",
+                "filename": "sbrkout-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Super Breakout.bin",
+                    "Super Breakout vector.bmp",
+                    "Super Breakout.bmp"
+                ]
+            },
+            {
+                "game": "Tempest",
+                "filename": "tempest3.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Tempest.bin"
+                ],
+                "split": [
+                    "237.002",
+                    "136.002",
+                    "235.002",
+                    "134.002",
+                    "133.002",
+                    "138.002"
+                ],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "237.002": {"size": 4096, "crc": "1D0CC503"},
+                        "136.002": {"size": 4096, "crc": "C88E3524"},
+                        "235.002": {"size": 4096, "crc": "A4B2CE3F"},
+                        "134.002": {"size": 4096, "crc": "65A9A9F9"},
+                        "133.002": {"size": 4096, "crc": "DE4E9E34"},
+                        "138.002": {"size": 4096, "crc": "9995256D"}
+                    }
+                }
+            },
+            {
+                "game": "Warlords",
+                "filename": "warlords-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Warlords.bin",
+                    "Warlords Background.bmp",
+                    "Warlords.bmp"
+                ]
+            },
+            {
+                "game": "Avalanche",
+                "filename": "avalnche.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "good",
+                "notes": [],
+                "in_files": [
+                    "Avalanche.bin"
+                ],
+                "handler": "_handle_avalnche",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "30612.d2": {"size": 2048, "crc": "3F975171"},
+                        "30615.d3": {"size": 2048, "crc": "3E1A86B4"},
+                        "30613.e2": {"size": 2048, "crc": "47A224D3"},
+                        "30616.e3": {"size": 2048, "crc": "F620F0F8"},
+                        "30611.c2": {"size": 2048, "crc": "0AD07F85"},
+                        "30614.c3": {"size": 2048, "crc": "A12D5D64"}
+                    }
+                }
+            },
+            {
+                "game": "Atari Baseball",
+                "filename": "abaseb-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "AtariBaseball.bin",
+                    "AtariBaseballTiles1.bmp",
+                    "AtariBaseballTiles2.bmp"
+                ]
+            },
+            {
+                "game": "Atari Basketball",
+                "filename": "bsktball-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [],
+                "in_files": [
+                    "AtariBasketball.bin",
+                    "AtariBasketballTiles.bmp",
+                    "AtariBasketballSprites.bmp"
+                ]
+            },
+            {
+                "game": "Destroyer",
+                "filename": "destroyr1-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [],
+                "in_files": [
+                    "Destroyer.bin",
+                    "DestroyerSprites1.bmp",
+                    "DestroyerSprites2.bmp",
+                    "DestroyerTiles.bmp",
+                    "DestroyerWaves.bmp"
+                ]
+            },
+            {
+                "game": "Dominos",
+                "filename": "dominos-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Dominos.bin",
+                    "DominosTiles.bmp"
+                ]
+            },
+            {
+                "game": "Fire Truck",
+                "filename": "firetrk-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "FireTruck.bin",
+                    "FireTruckSprites1.bmp",
+                    "FireTruckSprites2.bmp",
+                    "FireTruckTiles1.bmp",
+                    "FireTruckTiles2.bmp"
+                ]
+            },
+            {
+                "game": "Atari Football",
+                "filename": "atarifb-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "AtariFootball.bin",
+                    "AtariFootballTiles1.bmp",
+                    "AtariFootballTiles2.bmp"
+                ]
+            },
+            {
+                "game": "Maze Invaders",
+                "filename": "mazeinv-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "MazeInvaders.bin",
+                    "MazeInvaders.bmp"
+                ]
+            },
+            {
+                "game": "Monte Carlo",
+                "filename": "montecar-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "handler": "_handle_montecar",
+                "notes": [6],
+                "in_files": [
+                    "MonteCarlo.bin",
+                    "MonteCarloColors.bin",
+                    "MonteCarloSprites1.bmp",
+                    "MonteCarloSprites2.bmp",
+                    "MonteCarloTiles1.bmp",
+                    "MonteCarloTiles2.bmp"
+                ]
+            },
+            {
+                "game": "Pool Shark",
+                "filename": "poolshrk-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "Poolshark.bin",
+                    "PoolsharkSprites.bmp",
+                    "PoolsharkTiles.bmp"
+                ]
+            },
+            {
+                "game": "Sky Diver",
+                "filename": "skydiver-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "SkydiverROM.bin",
+                    "SkydiverSprites.bmp",
+                    "SkydiverTiles.bmp"
+                ]
+            },
+            {
+                "game": "Atari Soccer",
+                "filename": "soccer-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "AtariSoccer.bin",
+                    "AtariSoccerSprites.bmp",
+                    "AtariSoccerTiles1.bmp",
+                    "AtariSoccerTiles2.bmp"
+                ]
+            },
+            {
+                "game": "Super Bug",
+                "filename": "superbug-partial.zip",
+                "system": "Arcade",
+                "set": "Arcade",
+                "status": "partial",
+                "notes": [6],
+                "in_files": [
+                    "SuperBug.bin",
+                    "SuperBugSprites.bmp",
+                    "SuperBugTiles1.bmp",
+                    "SuperBugTiles2.bmp"
+                ]
+            },
+            {
+                "game": "3-D Tic-Tac-Toe",
+                "filename": "3-D_Tic-Tac-Toe.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "58805709"
+                }
+            },
+            {
+                "game": "Adventure",
+                "filename": "Adventure.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "A6DB4B3A"
+                }
+            },
+            {
+                "game": "Air-Sea Battle",
+                "filename": "Air-Sea_Battle.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "2A2A9F81"
+                }
+            },
+            {
+                "game": "Asteroids",
+                "filename": "Asteroids.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "70A59647"
+                }
+            },
+            {
+                "game": "Backgammon",
+                "filename": "Backgammon.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "E2A7FFA6"
+                }
+            },
+            {
+                "game": "Basic Math",
+                "filename": "Basic_Math.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "D48EBAC0"
+                }
+            },
+            {
+                "game": "Basketball",
+                "filename": "Basketball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "32F60182"
+                }
+            },
+            {
+                "game": "Blackjack",
+                "filename": "Blackjack.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "4B0EE010"
+                }
+            },
+            {
+                "game": "Bowling",
+                "filename": "Bowling.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "FEA0D6D5"
+                }
+            },
+            {
+                "game": "Brain Games",
+                "filename": "Brain_Games.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "150709C2"
+                }
+            },
+            {
+                "game": "Breakout",
+                "filename": "Breakout.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "3037638C"
+                }
+            },
+            {
+                "game": "Canyon Bomber",
+                "filename": "Canyon_Bomber.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "E914B8CA"
+                }
+            },
+            {
+                "game": "Casino",
+                "filename": "Casino.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "420B8248"
+                }
+            },
+            {
+                "game": "Centipede",
+                "filename": "Centipede.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "77396102"
+                }
+            },
+            {
+                "game": "Championship Soccer",
+                "filename": "Championship_Soccer.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "3F59BB60"
+                }
+            },
+            {
+                "game": "Checkers",
+                "filename": "Checkers.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "3DF33335"
+                }
+            },
+            {
+                "game": "Chess",
+                "filename": "Chess.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "B6226A54"
+                }
+            },
+            {
+                "game": "Circus Atari",
+                "filename": "Circus_Atari.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "D2A330A3"
+                }
+            },
+            {
+                "game": "Codebreaker",
+                "filename": "Codebreaker.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "947EDB18"
+                }
+            },
+            {
+                "game": "Combat",
+                "filename": "Combat.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "0D64A9C5"
+                }
+            },
+            {
+                "game": "Combat 2",
+                "filename": "Combat_2.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "8CABE1FD"
+                }
+            },
+            {
+                "game": "Concentration",
+                "filename": "Concentration.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "17DE8070"
+                }
+            },
+            {
+                "game": "Crystal Castles",
+                "filename": "Crystal_Castles.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "9007B5AC"
+                }
+            },
+            {
+                "game": "Demons to Diamonds",
+                "filename": "Demons_to_Diamonds.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "9B97C3DA"
+                }
+            },
+            {
+                "game": "Desert Falcon",
+                "filename": "Desert_Falcon.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "CAA0054E"
+                }
+            },
+            {
+                "game": "Dodge Em",
+                "filename": "Dodge_Em.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "0C74479B"
+                }
+            },
+            {
+                "game": "Double Dunk",
+                "filename": "Double_Dunk.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "6112CBF5"
+                }
+            },
+            {
+                "game": "Fatal Run",
+                "filename": "Fatal_Run.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 32768,
+                    "crc": "826C2E3D"
+                }
+            },
+            {
+                "game": "Flag Capture",
+                "filename": "Flag_Capture.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "8AA1C41E"
+                }
+            },
+            {
+                "game": "Football",
+                "filename": "Football.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "3B73EE02"
+                }
+            },
+            {
+                "game": "Golf",
+                "filename": "Golf.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "46A9F200"
+                }
+            },
+            {
+                "game": "Gravitar",
+                "filename": "Gravitar.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "C87FCCBE"
+                }
+            },
+            {
+                "game": "Hangman",
+                "filename": "Hangman.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "C2BCC789"
+                }
+            },
+            {
+                "game": "Haunted House",
+                "filename": "Haunted_House.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "AA62D961"
+                }
+            },
+            {
+                "game": "Home Run",
+                "filename": "Home_Run.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "45ACE998"
+                }
+            },
+            {
+                "game": "Human Cannonball",
+                "filename": "Human_Cannonball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "F05A41E1"
+                }
+            },
+            {
+                "game": "Maze Craze",
+                "filename": "Maze_Craze.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "0098E428"
+                }
+            },
+            {
+                "game": "Millipede",
+                "filename": "Millipede.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "CCC82DD0"
+                }
+            },
+            {
+                "game": "Miniature Golf",
+                "filename": "Miniature_Golf.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "28562315"
+                }
+            },
+            {
+                "game": "Missile Command",
+                "filename": "Missile_Command.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "CFF14904"
+                }
+            },
+            {
+                "game": "Night Driver",
+                "filename": "Night_Driver.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "600D8A96"
+                }
+            },
+            {
+                "game": "Off the Wall",
+                "filename": "Off_the_Wall.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "E425A1CF"
+                }
+            },
+            {
+                "game": "Outlaw",
+                "filename": "Outlaw.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "68DD7ACD"
+                }
+            },
+            {
+                "game": "Quadrun",
+                "filename": "Quadrun.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "A95CDD6F"
+                }
+            },
+            {
+                "game": "Race",
+                "filename": "Race.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "B43DA2A3"
+                }
+            },
+            {
+                "game": "Radar Lock",
+                "filename": "Radar_Lock.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "C29F7285"
+                }
+            },
+            {
+                "game": "RealSports Baseball",
+                "filename": "RealSports_Baseball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "3C5A1B5F"
+                }
+            },
+            {
+                "game": "RealSports Basketball",
+                "filename": "RealSports_Basketball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "364FEAA6"
+                }
+            },
+            {
+                "game": "RealSports Boxing",
+                "filename": "RealSports_Boxing.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "3398A1B2"
+                }
+            },
+            {
+                "game": "RealSports Football",
+                "filename": "RealSports_Football.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "F89F64EF"
+                }
+            },
+            {
+                "game": "RealSports Soccer",
+                "filename": "RealSports_Soccer.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "02D89819"
+                }
+            },
+            {
+                "game": "RealSports Tennis",
+                "filename": "RealSports_Tennis.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "379001A0"
+                }
+            },
+            {
+                "game": "RealSports Volleyball",
+                "filename": "RealSports_Volleyball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "54FC9EB2"
+                }
+            },
+            {
+                "game": "Return to Haunted House",
+                "filename": "Return_to_Haunted_House.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "95D29756"
+                }
+            },
+            {
+                "game": "Save Mary",
+                "filename": "Save_Mary.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "01E18F53"
+                }
+            },
+            {
+                "game": "Secret Quest",
+                "filename": "Secret_Quest.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "93C9EB47"
+                }
+            },
+            {
+                "game": "Sentinel",
+                "filename": "Sentinel.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "27ACC8A3"
+                }
+            },
+            {
+                "game": "Sky Diver",
+                "filename": "Sky_Diver.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "00312EA9"
+                }
+            },
+            {
+                "game": "Slot Machine",
+                "filename": "Slot_Machine.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "CB378D95"
+                }
+            },
+            {
+                "game": "Slot Racers",
+                "filename": "Slot_Racers.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "177DBDF8"
+                }
+            },
+            {
+                "game": "Space War",
+                "filename": "Space_War.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "65622F2A"
+                }
+            },
+            {
+                "game": "Sprint Master",
+                "filename": "Sprint_Master.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "C495904E"
+                }
+            },
+            {
+                "game": "Star Raiders",
+                "filename": "Star_Raiders.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "2AE193EE"
+                }
+            },
+            {
+                "game": "Star Ship",
+                "filename": "Star_Ship.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "6609267E"
+                }
+            },
+            {
+                "game": "Steeplechase",
+                "filename": "Steeplechase.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "5F6C32C3"
+                }
+            },
+            {
+                "game": "Stellar Track",
+                "filename": "Stellar_Track.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "A76E93BF"
+                }
+            },
+            {
+                "game": "Stunt Cycle",
+                "filename": "Stunt_Cycle.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "6354FF4C"
+                }
+            },
+            {
+                "game": "Street Racer",
+                "filename": "Street_Racer.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "47592880"
+                }
+            },
+            {
+                "game": "Submarine Commander",
+                "filename": "Submarine_Commander.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "3262960A"
+                }
+            },
+            {
+                "game": "Super Baseball",
+                "filename": "Super_Baseball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "2245F170"
+                }
+            },
+            {
+                "game": "Super Breakout",
+                "filename": "Super_Breakout.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "171DBE92"
+                }
+            },
+            {
+                "game": "Super Football",
+                "filename": "Super_Football.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "C9B16F3C"
+                }
+            },
+            {
+                "game": "Surround",
+                "filename": "Surround.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "DCB11F23"
+                }
+            },
+            {
+                "game": "Sword Quest Earthworld",
+                "filename": "Sword_Quest_Earthworld.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "D5E21B79"
+                }
+            },
+            {
+                "game": "Sword Quest Fireworld",
+                "filename": "Sword_Quest_Fireworld.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "6AE46A0C"
+                }
+            },
+            {
+                "game": "Sword Quest Waterworld",
+                "filename": "Sword_Quest_Waterworld.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "CA7B4685"
+                }
+            },
+            {
+                "game": "Tempest",
+                "filename": "Tempest.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "E6DABC1B"
+                }
+            },
+            {
+                "game": "Video Cube",
+                "filename": "Video_Cube.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "8172299E"
+                }
+            },
+            {
+                "game": "Video Olympics",
+                "filename": "Video_Olympics.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "E4BC89C4"
+                }
+            },
+            {
+                "game": "Video Pinball",
+                "filename": "Video_Pinball.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "10D95426"
+                }
+            },
+            {
+                "game": "Warlords",
+                "filename": "Warlords.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "CF174B57"
+                }
+            },
+            {
+                "game": "Yars Revenge",
+                "filename": "Yars_Revenge.a26",
+                "system": "Atari 2600",
+                "set": "2600",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "DFA1C825"
+                }
+            },
+            {
+                "game": "Asteroids (5200)",
+                "filename": "Asteroids.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "38480891"
+                }
+            },
+            {
+                "game": "Centipede (5200)",
+                "filename": "Centipede.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "536A70FE"
+                }
+            },
+            {
+                "game": "Countermeasure (5200)",
+                "filename": "Countermeasure.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "FF7AF233"
+                }
+            },
+            {
+                "game": "Millipede (5200)",
+                "filename": "Millipede.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "969CFE1A"
+                }
+            },
+            {
+                "game": "Missile Command (5200)",
+                "filename": "Missile_Command.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "44D3FF6F"
+                }
+            },
+            {
+                "game": "RealSports Baseball (5200)",
+                "filename": "RealSports_Baseball.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 32768,
+                    "crc": "44166592"
+                }
+            },
+            {
+                "game": "RealSports Basketball (5200)",
+                "filename": "RealSports_Basketball.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 32768,
+                    "crc": "DD217276"
+                }
+            },
+            {
+                "game": "RealSports Football (5200)",
+                "filename": "RealSports_Football.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "4336C2CC"
+                }
+            },
+            {
+                "game": "RealSports Soccer (5200)",
+                "filename": "RealSports_Soccer.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "ECBD1853"
+                }
+            },
+            {
+                "game": "RealSports Tennis (5200)",
+                "filename": "RealSports_Tennis.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "10F33C90"
+                }
+            },
+            {
+                "game": "Star Raiders (5200)",
+                "filename": "Star_Raiders.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "7D819A9F"
+                }
+            },
+            {
+                "game": "Super Breakout (5200)",
+                "filename": "Super_Breakout.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "A0642110"
+                }
+            },
+            {
+                "game": "Final Legacy (5200)",
+                "filename": "Final_Legacy.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "D3BD3221"
+                }
+            },
+            {
+                "game": "Micro-Gammon (5200)",
+                "filename": "Micro-Gammon.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "931A454A"
+                }
+            },
+            {
+                "game": "Miniature Golf (5200)",
+                "filename": "Miniature_Golf.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "C597C087"
+                }
+            },
+            {
+                "game": "Xari Arena (5200)",
+                "filename": "Xari_Arena.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "B8FAAEC3"
+                }
+            },
+            {
+                "game": "5200 BIOS (5200)",
+                "filename": "5200_BIOS.a52",
+                "system": "Atari 5200",
+                "set": "5200",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 2048,
+                    "crc": "4248D3E3"
+                }
+            },
+            {
+                "game": "Air Raiders",
+                "filename": "Air_Raiders_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "BB16539D"
+                }
+            },
+            {
+                "game": "Armor Ambush",
+                "filename": "Armor_Ambush_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "FC35704B"
+                }
+            },
+            {
+                "game": "Astroblast",
+                "filename": "Astroblast_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "1DE25331"
+                }
+            },
+            {
+                "game": "Dark Cavern",
+                "filename": "Dark_Cavern_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "0481078C"
+                }
+            },
+            {
+                "game": "Frogs And Flies",
+                "filename": "Frogs_And_Flies_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "6476C136"
+                }
+            },
+            {
+                "game": "International Soccer",
+                "filename": "International_Soccer_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "B9D549A2"
+                }
+            },
+            {
+                "game": "Sea Battle",
+                "filename": "Sea_Battle_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "83B4EB19"
+                }
+            },
+            {
+                "game": "Space Attack",
+                "filename": "Space_Attack_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "B34A3E57"
+                }
+            },
+            {
+                "game": "Star Strike",
+                "filename": "Star_Strike_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "936A596D"
+                }
+            },
+            {
+                "game": "Super Challenge Baseball",
+                "filename": "Super_Challenge_Baseball_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "F7E88EC2"
+                }
+            },
+            {
+                "game": "Super Challenge Football",
+                "filename": "Super_Challenge_Football_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "55F02EFE"
+                }
+            },
+            {
+                "game": "Swordfight",
+                "filename": "Swordfight_MNetwork.a26",
+                "system": "Atari 2600",
+                "set": "MNetwork",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "F1AD77BE"
+                }
+            },
+            {
+                "game": "Adventure II",
+                "filename": "Adventure_II_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "BFD846C5"
+                }
+            },
+            {
+                "game": "Aquaventure",
+                "filename": "Aquaventure_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "87A8CB8B"
+                }
+            },
+            {
+                "game": "Frog Pond",
+                "filename": "Frog_Pond_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "5874385A"
+                }
+            },
+            {
+                "game": "Holey Moley",
+                "filename": "Holey_Moley_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "3BB2E71D"
+                }
+            },
+            {
+                "game": "Motorodeo",
+                "filename": "Motorodeo_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 16384,
+                    "crc": "89998E29"
+                }
+            },
+            {
+                "game": "Saboteur",
+                "filename": "Saboteur_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "C359C13D"
+                }
+            },
+            {
+                "game": "Wizard",
+                "filename": "Wizard_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 4096,
+                    "crc": "D2F5A554"
+                }
+            },
+            {
+                "game": "Yars Return",
+                "filename": "Yars_Return_Prototype.a26",
+                "system": "Atari 2600",
+                "set": "Prototype",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "size": 8192,
+                    "crc": "DAF83348"
+                }
+            },
+            {
+                "filename": "N/A",
+                "game": "Pong",
+                "system": "Arcade",
+                "set": "Arcade",
+                "notes": [4],
+                "status": "no-rom"
+            }
+        ],
+        "notes": {
+            "1": "Arcade ROMs require MAME 2003.",
+            "2": "This ROM has a CRC mismatch, but appears to work fine.",
+            "3": "This Arcade ROM is currently non-functional - too small, etc.",
+            "4": "This title uses TTL logic and does not have an associated ROM.",
+            "5": "This ROM cannot be extracted.",
+            "6": "The sprites and/or tiles for this ROM have been converted to bitmaps."
+        }
+    }
+}

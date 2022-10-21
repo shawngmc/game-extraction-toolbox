@@ -1,0 +1,55 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "rel_path": ["PAC-MAN_Data", "Plugins"],
+                "filename": "Release_3.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 394240,
+                        "crc": "AA58DC77"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Pac-Man",
+                "system": "Arcade",
+                "filename": "pacman.zip",
+                "status": "playable",
+                "notes": [],
+                "zip_files": {
+                    "82s126.1m": { "start": "0x1AA30", "length": "0x100"},
+                    "82s123.7f": { "start": "0x1AB30", "length": "0x20"},
+                    "82s126.4a": { "start": "0x1AB50", "length": "0x100"},
+                    "pacman.5f": { "start": "0x1AC50", "length": "0x1000"},
+                    "pacman.5e": { "start": "0x1C050", "length": "0x1000"},
+                    "pacman.6e": { "start": "0x28020", "length": "0x1000"},
+                    "pacman.6f": { "start": "0x29020", "length": "0x1000"},
+                    "pacman.6h": { "start": "0x2A020", "length": "0x1000"},
+                    "pacman.6j": { "start": "0x2B020", "length": "0x1000"},
+                    "82s126.3m": { "type": "placeholder", "length": "0x100"}
+                },
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "82s126.1m": {"size": 256, "crc": "A9CC86BF"},
+                        "82s123.7f": {"size": 32, "crc": "2FC650BD"},
+                        "82s126.4a": {"size": 256, "crc": "3EB3A8E4"},
+                        "pacman.5f": {"size": 4096, "crc": "958FEDF9"},
+                        "pacman.5e": {"size": 4096, "crc": "0C944964"},
+                        "pacman.6e": {"size": 4096, "crc": "C1E6AB10"},
+                        "pacman.6f": {"size": 4096, "crc": "1A6FB2D4"},
+                        "pacman.6h": {"size": 4096, "crc": "BCDD1BEB"},
+                        "pacman.6j": {"size": 4096, "crc": "817D94E3"},
+                        "82s126.3m": {"size": 256, "crc": "8889DEB7"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

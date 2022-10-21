@@ -1,0 +1,347 @@
+{
+    "in": {
+        "files": {
+            "G-SONIC": {
+                "rel_path": ["system"],
+                "copy_to": "G-Sonic - Sonic Blast",
+                "filename": "G-SONIC.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "17F6E4FE",
+                        "size": 545584
+                    }
+                }
+            },
+            "LABYLIN": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic Labyrinth",
+                "filename": "LABYLIN.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "40A6CAF5",
+                        "size": 243652
+                    }
+                }
+            },
+            "MBMACHIN": {
+                "rel_path": ["system"],
+                "copy_to": "Dr. Robotnik's Mean Bean Machine",
+                "filename": "MBMACHIN.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "FE029CBD",
+                        "size": 136360
+                    }
+                }
+            },
+            "S-DRIFT2": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic Drift 2",
+                "filename": "S-DRIFT2.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "91143FA1",
+                        "size": 335571
+                    }
+                }
+            },
+            "S-TAIL2": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic & Tails 2",
+                "filename": "SONIC_TT.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "D596831B",
+                        "size": 310691
+                    }
+                }
+            },
+            "SKYPAT": {
+                "rel_path": ["system"],
+                "copy_to": "Tails no Skypatrol",
+                "filename": "SKYPAT.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "3524A627",
+                        "size": 134122
+                    }
+                }
+            },
+            "SONIC-CH": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic Chaos (Sonic & Tails)",
+                "filename": "SONIC-CH.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "C32284D0",
+                        "size": 244378
+                    }
+                }
+            },
+            "SONIC": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic The Hedgehog (Rev 1)",
+                "filename": "SONIC.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "2CD62918",
+                        "size": 168536
+                    }
+                }
+            },
+            "SONIC2": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic The Hedgehog 2",
+                "filename": "SONIC2.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "1CDC8DB3",
+                        "size": 246137
+                    }
+                }
+            },
+            "SONICDRI": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic Drift",
+                "filename": "SONICDRI.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "FE50BC1F",
+                        "size": 210065
+                    }
+                }
+            },
+            "SONICTAI": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic & Tails",
+                "filename": "SONICTAI.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "CBEFD07C",
+                        "size": 243745
+                    }
+                }
+            },
+            "SONIC_TT": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic The Hedgehog - Triple Trouble (Sonic & Tails 2)",
+                "filename": "S-TAIL2.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "FDE9D4B0",
+                        "size": 311352
+                    }
+                }
+            },
+            "SPINBALL": {
+                "rel_path": ["system"],
+                "copy_to": "Sonic Spinball",
+                "filename": "SPINBALL.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "EA158744",
+                        "size": 258308
+                    }
+                }
+            },
+            "TAILSADV": {
+                "rel_path": ["system"],
+                "copy_to": "Tails Adventures",
+                "filename": "TAILSADV.PRS",
+                "versions": {
+                    "Steam": {
+                        "crc": "AFDAEDDD",
+                        "size": 267256
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "G-Sonic - Sonic Blast",
+                "region": "World",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "G-Sonic - Sonic Blast (World).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "031B9DA9",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Sonic Labyrinth",
+                "region": "World",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic Labyrinth (World).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5550173B",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Dr. Robotnik's Mean Bean Machine",
+                "region": "USA,Europe",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Dr. Robotnik's Mean Bean Machine (USA,Europe).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "3C2D4F48",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Sonic Drift 2",
+                "region": "Japan,USA",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic Drift 2 (Japan,USA).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "D6E8A305",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Tails no Skypatrol",
+                "region": "Japan",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Tails no Skypatrol (Japan).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "88618AFA",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Sonic The Hedgehog 2",
+                "region": "World",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic The Hedgehog 2 (World).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "95A18EC7",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic Chaos (Sonic & Tails)",
+                "region": "USA,Europe",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic Chaos (Sonic & Tails) (USA,Europe).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "663F2ABB",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic Drift",
+                "region": "Japan",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic Drift (Japan).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "68F0A776",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic The Hedgehog (Rev 1)",
+                "region": "World",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic The Hedgehog (Rev 1) (World).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "D163356E",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Sonic & Tails",
+                "region": "Japan",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic & Tails (Japan).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "8AC0DADE",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic & Tails 2",
+                "region": "Japan",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic & Tails 2 (Japan).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "496BCE64",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic Spinball",
+                "region": "USA,Europe",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic Spinball (USA,Europe).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "A9210434",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Sonic The Hedgehog - Triple Trouble (Sonic & Tails 2)",
+                "region": "USA,Europe",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Sonic The Hedgehog - Triple Trouble (Sonic & Tails 2) (USA,Europe).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "D23A2A93",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Tails Adventures",
+                "region": "World",
+                "system": "Game Gear",
+                "status": "good",
+                "filename": "Tails Adventures (World).gg",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5BB6E5D6",
+                    "size": 524288
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

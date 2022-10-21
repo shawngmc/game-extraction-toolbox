@@ -1,0 +1,124 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "filename": "RXC1.exe",
+                "versions": {
+                    "Steam": {
+                        "crc": "1D8902FE",
+                        "size": 24034944
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Rockman X",
+                "system": "SNES",
+                "filename": "rockmanx.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "94CA42BF",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg": {"start": "0xB8C4E0", "length": "0x180000"}
+                }
+            },
+            {
+                "game": "Rockman X2",
+                "system": "SNES",
+                "filename": "rockmanx2.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "011E5068",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg": {"start": "0xF8C4E0", "length": "0x180000"}
+                }
+            },
+            {
+                "game": "Rockman X3",
+                "system": "SNES",
+                "filename": "rockmanx3.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "741AB27B",
+                    "size": 2097152
+                },
+                "sections": {
+                    "prg": {"start": "0x128C4E0", "length": "0x200000"}
+                }
+            },
+            {
+                "game": "Mega Man X",
+                "system": "SNES",
+                "filename": "megamanx.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "97A10846",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg": {"start": "0xD8C4E0", "length": "0x180000"}
+                }
+            },
+            {
+                "game": "Mega Man X2",
+                "system": "SNES",
+                "filename": "megamanx2.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "8972DF65",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg": {"start": "0x110C4E0", "length": "0x180000"}
+                }
+            },
+            {
+                "game": "Mega Man X3",
+                "system": "SNES",
+                "filename": "megamanx3.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "1ACB643D",
+                    "size": 2097152
+                },
+                "sections": {
+                    "prg": {"start": "0x148C4E0", "length": "0x200000"}
+                }
+            },
+            {
+                "game": "Rockman X4",
+                "system": "Playstation",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Mega Man X4",
+                "system": "Playstation",
+                "filename": "N/A",
+                "status": "no-rom",
+                "notes": []
+            }
+        ],
+        "notes": {}
+    }
+}

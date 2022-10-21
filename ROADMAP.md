@@ -4,6 +4,10 @@
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Brave Battle Saga - The Legend of The Magic Warrior
+- Activision Anthology Remix PC
+  https://forums.atariage.com/topic/336118-how-to-extract-roms-from-the-activision-anthology-for-pc-and-a-request-for-info-on-the-included-roms/
+- Sega Mega Drive & Genesis Classics
+  Compressed ROMS: https://github.com/farmerbb/RED-Project/wiki/Sega-Mega-Drive-&-Genesis-Classics
 
 ### Uses BPList/Mbundle
 - Samuari Shodown Collection
@@ -30,6 +34,7 @@
 ## Owned / Under Investigation
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022)
   Assets are jammed into one file, but that file appears to be encrypted or compressed. Notes in #17.
+  https://github.com/Masquerade64/Cowabunga
 - Capcom Arcade Stadium 1
   Current versions have an odd archive format (unlike the CAS1_Old ZIP version).
   PLACEHOLDER ADDED. See #18.
@@ -42,6 +47,11 @@
 - Arcade Collection Anniversary Classics
   Mostly working, but 2 titles remain...
 - Psiyko Shooter Collector's Bundle https://store.steampowered.com/bundle/18805/PSIKYO_SHOOTER_Collectors_Bundle/
+- PSP: EA Replay
+  \PSP_GAME\USRDIR\data\roms.viv is an EA BIG4 archive that can be extracted via QuickBMS
+  It has sensible ROM filenames, but the files are too small and not in an expected format.
+  They don't appear to have REFPACK, zlib or gzip headers, nor use RAW DEFLATE.
+  
 
 
 ## Not Yet Owned / Future Investigation
@@ -60,35 +70,29 @@
 - CAVE: Deathsmiles I + II
   Recommended in #15.
 - Darius Cozmic Collection Arcade
+- Taito Legends 1 and 2
+- Saturn Cotton Collection
+  https://gbatemp.net/threads/saturn-emulation-using-cotton-guardian-force-testing-and-debug.600756/
 
 ## Upcoming Releases
 - Atari 50th: Anniversary Collection (Winter 2022)
+
+## Unlikely
+- Williams Arcade Classics (PC CD-ROM, 1995)
+  Initial research shows that this is likely not ROM based.
 
 ## Not Complete ROMs (may add partial extraction later)
 - Mortal Kombat Kollection
   Audio ROMs were replaced with a different audio solution.
 - Dungeons & Dragons: Chronicles of Mystara
   Maincpu and Gfx ROMs are there, but audio is completely reworked.
-- Midway Arcade Treasures Vol. 1 (PS2)
-  Audio ROMs replaced. For example, Smash TV has all the game ROMs, but none of the sound ROMs.
-  Klax
-    - Missing OKI sound roms
-    - Missing Pals
-    - pfrom.klx
-      split
-      0x00000 0x1000 136075-2010.17x
-      0x10000 0x1000 136075-2012.12x
-      0x20000 0x1000 136075-2014.17y
-      0x30000 0x1000 136075-2009.17u
-      0x40000 0x1000 136075-2011.12u
-      0x50000 0x1000 136075-2013.17w
-    - fixedcpu.klx
-      cut in half
-      deinterleave each, 1 byte
-      136075-6006.3k
-      136075-6005.1k
-      136075-6008.3k
-      136075-6007.1k
+
+### .SR Releases
+The SR archives can be extracted via QuickBMS script: https://forum.xentax.com/viewtopic.php?t=13718
+However, these seem to always use rebuilt audio, and some of the games have been rebuilt as native ELF executables.
+- PSP: Capcom Classics Collection: Remixed
+- PS2: Midway Arcade Treasures Vol. 1
+- PS2: Midway Arcade Treasures Vol. 2
 
 ## Not ROMs
 - Phoenix Wright Ace Attorney Trilogy
@@ -99,4 +103,7 @@
   Windows Version
 - Earthworm Jim 1 and 2 (Steam, GOG)
   DOS Version
+- Disney's Hercules
+  https://www.gog.com/en/game/disneys_hercules
+  Native PC Game
 

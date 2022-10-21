@@ -1,0 +1,213 @@
+{
+    "in": {
+        "files": {
+            "source": {
+                "filename": "Proteus.exe",
+                "versions": {
+                    "Steam": {
+                        "crc": "E70E4AA2",
+                        "size": 6083696
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Rockman",
+                "system": "NES",
+                "filename": "rockman.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E0141A24",
+                    "size": 131088
+                },
+                "sections": {
+                    "prg": {"start": "0x512230", "length": "0x20000"}
+                },
+                "header": "4E45531A080021000000000000000000"
+            },
+            {
+                "game": "Rockman 2 - Dr Wily no Nazo",
+                "system": "NES",
+                "filename": "rockman2.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "30B91650",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x2F20F0", "length": "0x40000"}
+                },
+                "header": "4E45531A100010000000000000000000"
+            },
+            {
+                "game": "Rockman 3 - Dr Wily no Saigo!",
+                "system": "NES",
+                "filename": "rockman3.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "07A6F576",
+                    "size": 393232
+                },
+                "sections": {
+                    "prg": {"start": "0x332130", "length": "0x60000"}
+                },
+                "header": "4E45531A101041000000000000000000"
+            },
+            {
+                "game": "Rockman 4 - Aratanaru Yabou!!",
+                "system": "NES",
+                "filename": "rockman4.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "F9EE29F8",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x392170", "length": "0x80000"}
+                },
+                "header": "4E45531A200041000000000000000000"
+            },
+            {
+                "game": "Rockman 5 - Blues no Wana!",
+                "system": "NES",
+                "filename": "rockman5.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "9D01E44C",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x4121B0", "length": "0x80000"}
+                },
+                "header": "4E45531A102040000000000000000000"
+            },
+            {
+                "game": "Rockman 6 - Shijou Saidai no Tatakai!!",
+                "system": "NES",
+                "filename": "rockman6.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "AB1D7979",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x4921F0", "length": "0x80000"}
+                },
+                "header": "4E45531A200040000000000000000000"
+            },
+            {
+                "game": "Mega Man",
+                "system": "NES",
+                "filename": "megaman.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "2F4E0136",
+                    "size": 131088
+                },
+                "sections": {
+                    "prg": {"start": "0x2AEEB0", "length": "0x20000"}
+                },
+                "header": "4E45531A080021000000000000000000"
+            },
+            {
+                "game": "Mega Man 2",
+                "system": "NES",
+                "filename": "megaman2.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "9EB4A590",
+                    "size": 262160
+                },
+                "sections": {
+                    "prg": {"start": "0x8ED70", "length": "0x40000"}
+                },
+                "header": "4E45531A100010000000000000000000"
+            },
+            {
+                "game": "Mega Man 3",
+                "system": "NES",
+                "filename": "megaman3.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "7C81030B",
+                    "size": 393232
+                },
+                "sections": {
+                    "prg": {"start": "0xCEDB0", "length": "0x40000"},
+                    "cha": {"start": "0x10EDB0", "length": "0x20000"}
+                },
+                "header": "4E45531A101040000000000000000000"
+            },
+            {
+                "game": "Mega Man 4",
+                "system": "NES",
+                "filename": "megaman4.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "89D1BB93",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x12EDF0", "length": "0x80000"}
+                },
+                "header": "4E45531A200040000000000000000000"
+            },
+            {
+                "game": "Mega Man 5",
+                "system": "NES",
+                "filename": "megaman5.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "08669C51",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x1AEE30", "length": "0x80000"}
+                },
+                "header": "4E45531A102040000000000000000000"
+            },
+            {
+                "game": "Mega Man 6",
+                "system": "NES",
+                "filename": "megaman6.nes",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5ABC7A12",
+                    "size": 524304
+                },
+                "sections": {
+                    "prg": {"start": "0x22EE70", "length": "0x80000"}
+                },
+                "header": "4E45531A200040000000000000000000"
+            }
+        ],
+        "notes": {}
+    }
+}

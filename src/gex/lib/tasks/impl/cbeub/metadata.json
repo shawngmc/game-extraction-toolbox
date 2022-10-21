@@ -1,0 +1,665 @@
+{
+    "in": {
+        "files": {
+            "ffightj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_00.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 1320360,
+                        "crc": "AA975CFE"
+                    }
+                }
+            },
+            "ffight": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_01.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 1319839,
+                        "crc": "DD55F271"
+                    }
+                }
+            },
+            "kodj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_10.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2105638,
+                        "crc": "82B472CF"
+                    }
+                }
+            },
+            "kod": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_11.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2105639,
+                        "crc": "03FD238D"
+                    }
+                }
+            },
+            "captcommj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_20.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2327988,
+                        "crc": "CB7601D4"
+                    }
+                }
+            },
+            "captcomm": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_21.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2327989,
+                        "crc": "1CFCBB3B"
+                    }
+                }
+            },
+            "knightsj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_30.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2160669,
+                        "crc": "A75849E0"
+                    }
+                }
+            },
+            "knights": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_31.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 2160706,
+                        "crc": "7149E39A"
+                    }
+                }
+            },
+            "wofj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_40.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 3732432,
+                        "crc": "96B1F3E9"
+                    }
+                }
+            },
+            "wof": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_41.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 3730773,
+                        "crc": "85A1E964"
+                    }
+                }
+            },
+            "pgear": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_50.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 13697509,
+                        "crc": "E1AA4F63"
+                    }
+                }
+            },
+            "armwar": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_51.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 13807321,
+                        "crc": "27CF4C63"
+                    }
+                }
+            },
+            "batcirj": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_60.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 11067807,
+                        "crc": "473FE92A"
+                    }
+                }
+            },
+            "batcir": {
+                "rel_path": ["nativeDX11x64", "arc"],
+                "filename": "game_61.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 11067778,
+                        "crc": "ED5DA76A"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Final Fight (U)",
+                "system": "Arcade",
+                "filename": "ffight.zip",
+                "in_file": "ffight",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ff_42.11h": {"size": 131072, "crc": "65F11215"},
+                        "ffe_43.12h": {"size": 131072, "crc": "995E968A"},
+                        "ff_36.11f": {"size": 131072, "crc": "F9A5CE83"},
+                        "ff_37.12f": {"size": 131072, "crc": "E1033784"},
+                        "ff-32m.8h": {"size": 524288, "crc": "C747696E"},
+                        "ff-5m.7a": {"size": 524288, "crc": "9C284108"},
+                        "ff-7m.9a": {"size": 524288, "crc": "A7584DFB"},
+                        "ff-1m.3a": {"size": 524288, "crc": "0B605E44"},
+                        "ff-3m.5a": {"size": 524288, "crc": "52291CD2"},
+                        "ff_09.12b": {"size": 65536, "crc": "B8367EB5"},
+                        "ff_18.11c": {"size": 131072, "crc": "375C66E7"},
+                        "ff_19.12c": {"size": 131072, "crc": "1EF137F9"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "s224b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11e": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Final Fight (J)",
+                "system": "Arcade",
+                "filename": "ffightj.zip",
+                "in_file": "ffightj",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ff42.bin": {"size": 131072, "crc": "65F11215"},
+                        "ff43.bin": {"size": 131072, "crc": "B6DEE1C3"},
+                        "ffj_40.10h": {"size": 131072, "crc": "8075BAB9"},
+                        "ffj_41.11h": {"size": 131072, "crc": "2AF68154"},
+                        "ff36.bin": {"size": 131072, "crc": "F9A5CE83"},
+                        "ff37.bin": {"size": 131072, "crc": "E1033784"},
+                        "ffj_34.10f": {"size": 131072, "crc": "0C8DC3FC"},
+                        "ffj_35.11f": {"size": 131072, "crc": "4A934121"},
+                        "ffj_09.4b": {"size": 131072, "crc": "5B116D0D"},
+                        "ffj_10.5b": {"size": 131072, "crc": "624A924A"},
+                        "ffj_01.4a": {"size": 131072, "crc": "815B1797"},
+                        "ffj_02.5a": {"size": 131072, "crc": "5D91F694"},
+                        "ffj_13.9b": {"size": 131072, "crc": "8721A7DA"},
+                        "ffj_14.10b": {"size": 131072, "crc": "0A2E9101"},
+                        "ffj_05.9a": {"size": 131072, "crc": "D0FCD4B5"},
+                        "ffj_06.10a": {"size": 131072, "crc": "1C18F042"},
+                        "ffj_24.5e": {"size": 131072, "crc": "A1AB607A"},
+                        "ffj_25.7e": {"size": 131072, "crc": "6E8181EA"},
+                        "ffj_17.5c": {"size": 131072, "crc": "2DC18CF4"},
+                        "ffj_18.7c": {"size": 131072, "crc": "B19EDE59"},
+                        "ffj_38.8h": {"size": 131072, "crc": "6535A57F"},
+                        "ffj_39.9h": {"size": 131072, "crc": "9416B477"},
+                        "ffj_32.8f": {"size": 131072, "crc": "C8BC4A57"},
+                        "ffj_33.9f": {"size": 131072, "crc": "7369FA07"},
+                        "ff_23.bin": {"size": 65536, "crc": "B8367EB5"},
+                        "ffj_30.bin": {"size": 131072, "crc": "375C66E7"},
+                        "ffj_31.bin": {"size": 131072, "crc": "1EF137F9"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "s222b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "lwio.12c": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "King of Dragons (U)",
+                "system": "Arcade",
+                "filename": "kod.zip",
+                "in_file": "kod",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kde_37a.11f": {"size": 131072, "crc": "F22E5266"},
+                        "kde_38a.12f": {"size": 131072, "crc": "57D6ED3A"},
+                        "kd_35.9f": {"size": 131072, "crc": "4CA6A48A"},
+                        "kd_36a.10f": {"size": 131072, "crc": "95A3CEF8"},
+                        "kde_30a.11e": {"size": 131072, "crc": "FCB5EFE2"},
+                        "kde_31a.12e": {"size": 131072, "crc": "C710D722"},
+                        "kd_28.9e": {"size": 131072, "crc": "9367BCD9"},
+                        "kd_29.10e": {"size": 131072, "crc": "0360FA72"},
+                        "kd-5m.4a": {"size": 524288, "crc": "E45B8701"},
+                        "kd-6m.4c": {"size": 524288, "crc": "113358F3"},
+                        "kd-7m.6a": {"size": 524288, "crc": "A7750322"},
+                        "kd-8m.6c": {"size": 524288, "crc": "38853C44"},
+                        "kd-1m.3a": {"size": 524288, "crc": "5F74BF78"},
+                        "kd-2m.3c": {"size": 524288, "crc": "9EF36604"},
+                        "kd-3m.5a": {"size": 524288, "crc": "5E5303BF"},
+                        "kd-4m.5c": {"size": 524288, "crc": "402B9B4F"},
+                        "kd_9.12a": {"size": 65536, "crc": "BAC6EC26"},
+                        "kd_18.11c": {"size": 131072, "crc": "4C63181D"},
+                        "kd_19.12c": {"size": 131072, "crc": "92941B80"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "kd29b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "King of Dragons (J)",
+                "system": "Arcade",
+                "filename": "kodj.zip",
+                "in_file": "kodj",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kdj_37a.11f": {"size": 131072, "crc": "E55C3529"},
+                        "kdj_38a.12f": {"size": 131072, "crc": "57D6ED3A"},
+                        "kdj_30a.11e": {"size": 131072, "crc": "EBC788AD"},
+                        "kdj_31a.12e": {"size": 131072, "crc": "C710D722"},
+                        "kd_33.6f": {"size": 524288, "crc": "9BD7AD4B"},
+                        "kd_06.8a": {"size": 524288, "crc": "E45B8701"},
+                        "kd_15.8c": {"size": 524288, "crc": "113358F3"},
+                        "kd_08.10a": {"size": 524288, "crc": "A7750322"},
+                        "kd_17.10c": {"size": 524288, "crc": "38853C44"},
+                        "kd_05.7a": {"size": 524288, "crc": "5F74BF78"},
+                        "kd_14.7c": {"size": 524288, "crc": "9EF36604"},
+                        "kd_07.9a": {"size": 524288, "crc": "5E5303BF"},
+                        "kd_16.9c": {"size": 524288, "crc": "402B9B4F"},
+                        "kd_09.12a": {"size": 65536, "crc": "BAC6EC26"},
+                        "kd_18.11c": {"size": 131072, "crc": "4C63181D"},
+                        "kd_19.12c": {"size": 131072, "crc": "92941B80"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "kd29b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Captain Commando (U)",
+                "system": "Arcade",
+                "filename": "captcomm.zip",
+                "in_file": "captcomm",
+                "status": "playable",
+                "notes": [2, 3],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "cce_23f.8f": {"size": 524288, "crc": "42C814C5"},
+                        "cc_28f.9f": {"size": 131072, "crc": "FC3C2906"},
+                        "cc_22f.7f": {"size": 524288, "crc": "0FD34195"},
+                        "cc_24f.9e": {"size": 131072, "crc": "3A794F25"},
+                        "cc-5m.3a": {"size": 524288, "crc": "7261D8BA"},
+                        "cc-6m.7a": {"size": 524288, "crc": "28718BED"},
+                        "cc-7m.5a": {"size": 524288, "crc": "6A60F949"},
+                        "cc-8m.9a": {"size": 524288, "crc": "D4ACC53A"},
+                        "cc-1m.4a": {"size": 524288, "crc": "00637302"},
+                        "cc-2m.8a": {"size": 524288, "crc": "0C69F151"},
+                        "cc-3m.6a": {"size": 524288, "crc": "CC87CF61"},
+                        "cc-4m.10a": {"size": 524288, "crc": "1F9EBB97"},
+                        "cc_09.11a": {"size": 65536, "crc": "698E8B58"},
+                        "cc_18.11c": {"size": 131072, "crc": "6DE2C2DB"},
+                        "cc_19.12c": {"size": 131072, "crc": "B99091AE"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "cc63b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "ccprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632b.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Captain Commando (J)",
+                "system": "Arcade",
+                "filename": "captcommj.zip",
+                "in_file": "captcommj",
+                "status": "playable",
+                "notes": [2, 3],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "ccj_23f.8f": {"size": 524288, "crc": "5B482B62"},
+                        "ccj_28f.9f": {"size": 131072, "crc": "FC3C2906"},
+                        "ccj_22f.7f": {"size": 524288, "crc": "0FD34195"},
+                        "ccj_24f.9e": {"size": 131072, "crc": "3A794F25"},
+                        "cc_01.3a": {"size": 524288, "crc": "7261D8BA"},
+                        "cc_05.7a": {"size": 524288, "crc": "28718BED"},
+                        "cc_02.4a": {"size": 524288, "crc": "6A60F949"},
+                        "cc_06.8a": {"size": 524288, "crc": "D4ACC53A"},
+                        "cc_03.5a": {"size": 524288, "crc": "00637302"},
+                        "cc_07.9a": {"size": 524288, "crc": "0C69F151"},
+                        "cc_04.6a": {"size": 524288, "crc": "CC87CF61"},
+                        "cc_08.10a": {"size": 524288, "crc": "1F9EBB97"},
+                        "ccj_09.12a": {"size": 65536, "crc": "698E8B58"},
+                        "ccj_18.11c": {"size": 131072, "crc": "6DE2C2DB"},
+                        "ccj_19.12c": {"size": 131072, "crc": "B99091AE"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "cc63b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "ccprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Knights of the Round (U)",
+                "system": "Arcade",
+                "filename": "knights.zip",
+                "in_file": "knights",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kr_23e.8f": {"size": 524288, "crc": "1B3997EB"},
+                        "kr_22.7f": {"size": 524288, "crc": "D0B671A9"},
+                        "kr-5m.3a": {"size": 524288, "crc": "9E36C1A4"},
+                        "kr-6m.7a": {"size": 524288, "crc": "1F4298D2"},
+                        "kr-7m.5a": {"size": 524288, "crc": "C5832CAE"},
+                        "kr-8m.9a": {"size": 524288, "crc": "37FA8751"},
+                        "kr-1m.4a": {"size": 524288, "crc": "F095BE2D"},
+                        "kr-2m.8a": {"size": 524288, "crc": "0200BC3D"},
+                        "kr-3m.6a": {"size": 524288, "crc": "179DFD96"},
+                        "kr-4m.10a": {"size": 524288, "crc": "0BB2B4E7"},
+                        "kr_09.11a": {"size": 65536, "crc": "5E44D9EE"},
+                        "kr_18.11c": {"size": 131072, "crc": "DA69D15F"},
+                        "kr_19.12c": {"size": 131072, "crc": "BFC654E9"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "kr63b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Knights of the Round (J)",
+                "system": "Arcade",
+                "filename": "knightsj.zip",
+                "in_file": "knightsj",
+                "status": "playable",
+                "notes": [2],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "kr_23j.8f": {"size": 524288, "crc": "EAE7417F"},
+                        "kr_22.7f": {"size": 524288, "crc": "D0B671A9"},
+                        "kr_01.3a": {"size": 524288, "crc": "9E36C1A4"},
+                        "kr_05.7a": {"size": 524288, "crc": "1F4298D2"},
+                        "kr_02.4a": {"size": 524288, "crc": "C5832CAE"},
+                        "kr_06.8a": {"size": 524288, "crc": "37FA8751"},
+                        "kr_03.5a": {"size": 524288, "crc": "F095BE2D"},
+                        "kr_07.9a": {"size": 524288, "crc": "0200BC3D"},
+                        "kr_04.6a": {"size": 524288, "crc": "179DFD96"},
+                        "kr_08.10a": {"size": 524288, "crc": "0BB2B4E7"},
+                        "kr_09.12a": {"size": 65536, "crc": "5E44D9EE"},
+                        "kr_18.11c": {"size": 131072, "crc": "DA69D15F"},
+                        "kr_19.12c": {"size": 131072, "crc": "BFC654E9"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "kr63b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic7": {"size": 260, "crc": "91A9701B"},
+                        "c632.ic1": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Warriors of Fate (U)",
+                "system": "Arcade",
+                "filename": "wof.zip",
+                "in_file": "wof",
+                "status": "playable",
+                "notes": [2, 4],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "tk2e_23c.8f": {"size": 524288, "crc": "0D708505"},
+                        "tk2e_22c.7f": {"size": 524288, "crc": "608C17E3"},
+                        "tk2-1m.3a": {"size": 524288, "crc": "0D9CB9BF"},
+                        "tk2-5m.7a": {"size": 524288, "crc": "291F0F0B"},
+                        "tk2-3m.5a": {"size": 524288, "crc": "45227027"},
+                        "tk2-7m.9a": {"size": 524288, "crc": "3EDEB949"},
+                        "tk2-2m.4a": {"size": 524288, "crc": "C5CA2460"},
+                        "tk2-6m.8a": {"size": 524288, "crc": "1ABD14D6"},
+                        "tk2-4m.6a": {"size": 524288, "crc": "E349551C"},
+                        "tk2-8m.10a": {"size": 524288, "crc": "B27948E3"},
+                        "tk2_qa.5k": {"size": 131072, "crc": "C1D7D477"},
+                        "tk2-q1.1k": {"size": 524288, "crc": "611268CF"},
+                        "tk2-q2.2k": {"size": 524288, "crc": "20F55CA9"},
+                        "tk2-q3.3k": {"size": 524288, "crc": "BFCF6F52"},
+                        "tk2-q4.4k": {"size": 524288, "crc": "36642E88"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg2": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "tk263b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic1": {"size": 260, "crc": "91A9701B"},
+                        "d7l1.7l": {"size": 279, "crc": "4BFEC235"},
+                        "d8l1.8l": {"size": 279, "crc": "4BFEC235"},
+                        "d9k1.9k": {"size": 279, "crc": "4BFEC235"},
+                        "d10f1.10f": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Warriors of Fate (J)",
+                "system": "Arcade",
+                "filename": "wofj.zip",
+                "in_file": "wofj",
+                "status": "playable",
+                "notes": [2, 4],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "tk2j_23c.8f": {"size": 524288, "crc": "9B215A68"},
+                        "tk2j_22c.7f": {"size": 524288, "crc": "B74B09AC"},
+                        "tk2_01.3a": {"size": 524288, "crc": "0D9CB9BF"},
+                        "tk2_05.7a": {"size": 524288, "crc": "E4A44D53"},
+                        "tk2_02.4a": {"size": 524288, "crc": "45227027"},
+                        "tk2_06.8a": {"size": 524288, "crc": "58066BA8"},
+                        "tk2_03.5a": {"size": 524288, "crc": "C5CA2460"},
+                        "tk2_07.9a": {"size": 524288, "crc": "D706568E"},
+                        "tk2_04.6a": {"size": 524288, "crc": "E349551C"},
+                        "tk2_08.10a": {"size": 524288, "crc": "D4A19A02"},
+                        "tk2_qa.5k": {"size": 131072, "crc": "C1D7D477"},
+                        "tk2-q1.1k": {"size": 524288, "crc": "611268CF"},
+                        "tk2-q2.2k": {"size": 524288, "crc": "20F55CA9"},
+                        "tk2-q3.3k": {"size": 524288, "crc": "BFCF6F52"},
+                        "tk2-q4.4k": {"size": 524288, "crc": "36642E88"},
+                        "buf1": {"size": 279, "crc": "4BFEC235"},
+                        "ioa1": {"size": 279, "crc": "4BFEC235"},
+                        "prg1": {"size": 279, "crc": "4BFEC235"},
+                        "sou1": {"size": 279, "crc": "4BFEC235"},
+                        "rom1": {"size": 279, "crc": "4BFEC235"},
+                        "tk263b.1a": {"size": 279, "crc": "4BFEC235"},
+                        "iob1.12d": {"size": 279, "crc": "4BFEC235"},
+                        "bprg1.11d": {"size": 279, "crc": "4BFEC235"},
+                        "ioc1.ic1": {"size": 260, "crc": "91A9701B"},
+                        "d7l1.7l": {"size": 279, "crc": "4BFEC235"},
+                        "d8l1.8l": {"size": 279, "crc": "4BFEC235"},
+                        "d9k1.9k": {"size": 279, "crc": "4BFEC235"},
+                        "d10f1.10f": {"size": 279, "crc": "4BFEC235"}
+                    }
+                }
+            },
+            {
+                "game": "Powered Gear (U)",
+                "system": "Arcade",
+                "filename": "pgear.zip",
+                "in_file": "pgear",
+                "status": "playable",
+                "notes": [1],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pwgj.03a": {"size": 524288, "crc": "C79C0C02"},
+                        "pwgj.04a": {"size": 524288, "crc": "167C6ED8"},
+                        "pwgj.05a": {"size": 524288, "crc": "A63FB400"},
+                        "pwg.06": {"size": 524288, "crc": "87A60CE8"},
+                        "pwg.07": {"size": 524288, "crc": "F7B148DF"},
+                        "pwg.08": {"size": 524288, "crc": "CC62823E"},
+                        "pwg.09a": {"size": 524288, "crc": "4C26BAEE"},
+                        "pwg.10": {"size": 524288, "crc": "07C4FB28"},
+                        "pwg.13m": {"size": 4194304, "crc": "AE8FE08E"},
+                        "pwg.14m": {"size": 1048576, "crc": "C3F9BA63"},
+                        "pwg.15m": {"size": 4194304, "crc": "DB560F58"},
+                        "pwg.16m": {"size": 1048576, "crc": "815B0E7B"},
+                        "pwg.17m": {"size": 4194304, "crc": "BC475B94"},
+                        "pwg.18m": {"size": 1048576, "crc": "0109C71B"},
+                        "pwg.19m": {"size": 4194304, "crc": "07439FF7"},
+                        "pwg.20m": {"size": 1048576, "crc": "EB75FFBE"},
+                        "pwg.01": {"size": 131072, "crc": "18A5C0E4"},
+                        "pwg.02": {"size": 131072, "crc": "C9DFFFA6"},
+                        "pwg.11m": {"size": 2097152, "crc": "A78F7433"},
+                        "pwg.12m": {"size": 2097152, "crc": "77438ED0"}
+                    }
+                }
+            },
+            {
+                "game": "Powered Gear (J)",
+                "system": "Arcade",
+                "filename": "armwar.zip",
+                "in_file": "armwar",
+                "status": "playable",
+                "notes": [1],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pwge.03c": {"size": 524288, "crc": "31F74931"},
+                        "pwge.04c": {"size": 524288, "crc": "16F34F5F"},
+                        "pwge.05b": {"size": 524288, "crc": "4403ED08"},
+                        "pwg.06": {"size": 524288, "crc": "87A60CE8"},
+                        "pwg.07": {"size": 524288, "crc": "F7B148DF"},
+                        "pwg.08": {"size": 524288, "crc": "CC62823E"},
+                        "pwg.09a": {"size": 524288, "crc": "4C26BAEE"},
+                        "pwg.10": {"size": 524288, "crc": "07C4FB28"},
+                        "pwg.13m": {"size": 4194304, "crc": "AE8FE08E"},
+                        "pwg.14m": {"size": 1048576, "crc": "C3F9BA63"},
+                        "pwg.15m": {"size": 4194304, "crc": "DB560F58"},
+                        "pwg.16m": {"size": 1048576, "crc": "815B0E7B"},
+                        "pwg.17m": {"size": 4194304, "crc": "BC475B94"},
+                        "pwg.18m": {"size": 1048576, "crc": "0109C71B"},
+                        "pwg.19m": {"size": 4194304, "crc": "07439FF7"},
+                        "pwg.20m": {"size": 1048576, "crc": "EB75FFBE"},
+                        "pwg.01": {"size": 131072, "crc": "18A5C0E4"},
+                        "pwg.02": {"size": 131072, "crc": "C9DFFFA6"},
+                        "pwg.11m": {"size": 2097152, "crc": "A78F7433"},
+                        "pwg.12m": {"size": 2097152, "crc": "77438ED0"}
+                    }
+                }
+            },
+            {
+                "game": "Battle Circuit (U)",
+                "system": "Arcade",
+                "filename": "batcir.zip",
+                "in_file": "batcir",
+                "status": "playable",
+                "notes": [1],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "btce.03": {"size": 524288, "crc": "BC60484B"},
+                        "btce.04": {"size": 524288, "crc": "457D55F6"},
+                        "btce.05": {"size": 524288, "crc": "E86560D7"},
+                        "btce.06": {"size": 524288, "crc": "F778E61B"},
+                        "btc.07": {"size": 524288, "crc": "7322D5DB"},
+                        "btc.08": {"size": 524288, "crc": "6AAC85AB"},
+                        "btc.09": {"size": 524288, "crc": "1203DB08"},
+                        "btc.13m": {"size": 4194304, "crc": "DC705BAD"},
+                        "btc.15m": {"size": 4194304, "crc": "E5779A3C"},
+                        "btc.17m": {"size": 4194304, "crc": "B33F4112"},
+                        "btc.19m": {"size": 4194304, "crc": "A6FCDB7E"},
+                        "btc.01": {"size": 131072, "crc": "1E194310"},
+                        "btc.02": {"size": 131072, "crc": "01AEB8E6"},
+                        "btc.11m": {"size": 2097152, "crc": "C27F2229"},
+                        "btc.12m": {"size": 2097152, "crc": "418A2E33"}
+                    }
+                }
+            },
+            {
+                "game": "Battle Circuit (J)",
+                "system": "Arcade",
+                "filename": "batcirj.zip",
+                "in_file": "batcirj",
+                "status": "playable",
+                "notes": [1],     
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "btcj.03": {"size": 524288, "crc": "6B7E168D"},
+                        "btcj.04": {"size": 524288, "crc": "46BA3467"},
+                        "btcj.05": {"size": 524288, "crc": "0E23A859"},
+                        "btcj.06": {"size": 524288, "crc": "A853B59C"},
+                        "btc.07": {"size": 524288, "crc": "7322D5DB"},
+                        "btc.08": {"size": 524288, "crc": "6AAC85AB"},
+                        "btc.09": {"size": 524288, "crc": "1203DB08"},
+                        "btc.13m": {"size": 4194304, "crc": "DC705BAD"},
+                        "btc.15m": {"size": 4194304, "crc": "E5779A3C"},
+                        "btc.17m": {"size": 4194304, "crc": "B33F4112"},
+                        "btc.19m": {"size": 4194304, "crc": "A6FCDB7E"},
+                        "btc.01": {"size": 131072, "crc": "1E194310"},
+                        "btc.02": {"size": 131072, "crc": "01AEB8E6"},
+                        "btc.11m": {"size": 2097152, "crc": "C27F2229"},
+                        "btc.12m": {"size": 2097152, "crc": "418A2E33"}
+                    }
+                }
+            }
+        ],
+        "notes": {
+            "1": "These ROMs require an older version MAME. They test fine in MAME 0.139 (Mame 2010 in RetroArch). This is typically due to a missing decryption key, dl-1425.bin qsound rom, or other ROM files that the older MAME did not strictly require",
+            "2": "These ROMs play fine, even in the current MAME, despite the bad CRCs. The bad CRCs are small ancillary files that aren't strictly required or included, but stubbed out to pass checks. ",
+            "3": "The JP version of this ROM is fine in modern MAME 0.246; the English version needs 0.139",
+            "4": "The Audio CPU ROM for this is not present in the expected format. Further investigation required."
+        }
+    }
+}
