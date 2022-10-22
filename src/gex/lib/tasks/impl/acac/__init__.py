@@ -10,7 +10,7 @@ logger = logging.getLogger('gextoolbox')
 
 # Implementation notes:
 # - This one is a very imprecise process. While it initally looks like there's one internal LZMA blob per title,
-#   this doesn't appear to actually 
+#   this doesn't appear to actually be the case.
 
 
 
@@ -22,13 +22,7 @@ class ACACTask(BaseTask):
     _default_input_folder = helpers.gen_steam_app_default_folder("Arcade Classics Anniversary Collection")
     _input_folder_desc = "Arcade Classics Anniversary Collection install folder"
 
-    _prop_info = {
-        "include-partials": {
-            "description": "Include the partial ROMs that are missing data; useful for mixing with other sources or investigation",
-            "default": False,
-            "type": "Boolean"
-        }
-    }
+    _prop_info = {}
 
     def get_out_file_info(self):
         '''Return a list of output files'''
@@ -53,8 +47,7 @@ class ACACTask(BaseTask):
         out_files.extend(self._handle_vulcan(src_contents))
         out_files.extend(self._handle_thunderx(src_contents))
         out_files.extend(self._handle_salamand(src_contents))
-        if self._props.get('include-partials'):
-            out_files.extend(self._handle_twinbee(src_contents))
+        out_files.extend(self._handle_twinbee(src_contents))
 
         if out_files:
             for out_file_entry in out_files:
@@ -738,15 +731,16 @@ class ACACTask(BaseTask):
         contents = lzd.decompress(contents)
 
         func_map = {}
-        def k_rom(contents):
+        def fse(contents):
             filenames = [
                 "400-a01.fse",
                 "400-a02.fse"
             ]
+            chunks = []
             contents = transforms.cut(contents, 0x84000, length = 0x200)
             chunks = transforms.equal_split(contents, len(filenames))
             return dict(zip(filenames, chunks))
-        func_map['k005289'] = k_rom
+        func_map['fse'] = fse
         fse_file_map = helpers.process_rom_files(contents, func_map)
 
         # Get the maincpu1
@@ -757,70 +751,40 @@ class ACACTask(BaseTask):
         func_map = {}
         def maincpu1(contents):
             filenames = [
-                "412-a05.17l",
-                "412-a07.12l"
+                "412-a07.12l",
+                "412-a05.17l"
             ]
             chunks = transforms.deinterleave(contents, 2, 1)
             return dict(zip(filenames, chunks))
         func_map['maincpu1'] = maincpu1
         maincpu1_file_map = helpers.process_rom_files(contents, func_map)
 
+        # Get the k rom
+        contents = transforms.cut(full_contents, 0x2F1050, length=67191)
+        lzd = lzma.LZMADecompressor()
+        contents = lzd.decompress(contents)
+        func_map = {}
+        def krom(contents):
+            filenames = [
+                "400-a06.15l",
+                "400-a04.10l",
+                "400-e03.5l"
+            ]
+            maincpu2_contents = transforms.cut(contents, 0x0, length=65536)
+            chunks = transforms.deinterleave(maincpu2_contents, 2, 1)
+            chunks.append(transforms.cut(contents, 0x10400, length=8192))
+            return dict(zip(filenames, chunks))
+        func_map['k005289'] = krom
+        krom_file_map = helpers.process_rom_files(contents, func_map)
+
 
         func_map = {}
         func_map['fse'] = helpers.existing_files_helper(fse_file_map)
         func_map['maincpu1'] = helpers.existing_files_helper(maincpu1_file_map)
+        func_map['krom'] = helpers.existing_files_helper(krom_file_map)
         out_files.append({'filename': 'twinbee.zip', 'contents': helpers.build_rom(contents, func_map)})
 
-        # # Bubble ROM
-        # func_map = {}
-        # def main(contents):
-        #     contents = transforms.cut(contents, 0x00000, length = 0x40000)
-        #     chunks = transforms.deinterleave(contents, 2, 1)
-        #     return dict(zip(['twinbee.bin'], chunks))
-        # func_map['main'] = main
-        # out_files.append({'filename': 'twinbeeb.zip', 'contents': helpers.build_rom(contents, func_map)})
-
-
         return out_files
-    #     zip_files = {}
-        
-        # There are two versions: ROM and Bubble System
-        # Both are in the Arcade Archives: https://www.nintendo.com/store/products/arcade-archives-twinbee-switch/
-        # Neither appears to have a full fileset in ACAC.
-
-        # TWINBEE (ROM): http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=twinbee&search_id=1
-        
-        # filename = "twinbee.zip"
-        # zip_files["400-a01.fse"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
-        # zip_files["400-a02.fse"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
-        # "400-a04.10l" NOT PRESENT
-        # "400-a06.15l" NOT PRESENT
-        # Checked for 10l and 15l interleave like 12l and 17l - no match!
-        # "400-e03.5l" NOT PRESENT
-        # temp = transforms.cut(decomp_merged, 0x1358AA6, length=0x40000)
-        # temp = transforms.deinterleave(temp, 2, 1)
-        # zip_files["412-a05.12l"] = temp[0]
-        # zip_files["412-a07.17l"] = temp[1]
-
-        # TWINBEEB (BUBSYS): http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=twinbeeb&search_id=1
-        # zip_files["400-a01.fse"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
-        # zip_files["400-a02.fse"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
-        # "400-e03.5l" NOT PRESENT
-        # "boot.bin" NOT PRESENT
-        # "mcu" NOT PRESENT
-        # zip_files["twinbee.bin"] = transforms.cut(decomp_merged, 0x1358A2A, length=0x402F0)
-
-        # BUBSYS Base ROM: http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=bubsys&back_games=twinbeeb;&search_id=1
-        # zip_files["400a1.2b"] = transforms.cut(decomp_merged, 0x6FC700, length=0x100)
-        # zip_files["400a2.1b"] = transforms.cut(decomp_merged, 0x6FC800, length=0x100)
-        # "400b03.8g" NOT PRESENT
-        # "boot.bin" NOT PRESENT
-        # "mcu" NOT PRESENT
-
-        # logger.info(f"Saving {filename}...")
-        # with open(os.path.join(out_dir, filename), "wb") as out_file:
-        #     out_file.write(helpers.build_zip(zip_files))
-
 
     def lzma_multi_decomp(self, in_data, out_dir):
         out_data = b''
