@@ -1,0 +1,172 @@
+{
+    "in": {
+        "files": {
+            "Comix Zone.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Comix Zone.kvq",
+                "copy_to": "Comix Zone",
+                "versions": {
+                    "CD": {
+                        "crc": "63D40052",
+                        "size": 2097160
+                    }
+                }
+            },
+            "Flicky.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Flicky.kvq",
+                "copy_to": "Flicky",
+                "versions": {
+                    "CD": {
+                        "crc": "4BFAEEED",
+                        "size": 262152
+                    }
+                }
+            },
+            "Kid Chameleon.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Kid Chameleon.kvq",
+                "copy_to": "Kid Chameleon",
+                "versions": {
+                    "CD": {
+                        "crc": "CF8C2F79",
+                        "size": 1048584
+                    }
+                }
+            },
+            "Shining Force.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Shining Force.kvq",
+                "copy_to": "Shining Force",
+                "versions": {
+                    "CD": {
+                        "crc": "D5EF4268",
+                        "size": 2097160
+                    }
+                }
+            },
+            "Sonic II.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Sonic II.kvq",
+                "copy_to": "Sonic 2",
+                "versions": {
+                    "CD": {
+                        "crc": "220A8CC5",
+                        "size": 1048584
+                    }
+                }
+            },
+            "Super Hang-On.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Super Hang-On.kvq",
+                "copy_to": "Super Hang-On",
+                "versions": {
+                    "CD": {
+                        "crc": "279A3F14",
+                        "size": 524296
+                    }
+                }
+            },
+            "Vectorman ii.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Vectorman ii.kvq",
+                "copy_to": "VectorMan 2",
+                "versions": {
+                    "CD": {
+                        "crc": "90D8317F",
+                        "size": 3145736
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Comix Zone",
+                "system": "Genesis",
+                "filename": "Comix Zone.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E45A15F4",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Flicky",
+                "system": "Genesis",
+                "filename": "Flicky.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "7BE41717",
+                    "size": 262144
+                }
+            },
+            {
+                "game": "Kid Chameleon",
+                "system": "Genesis",
+                "filename": "Kid Chameleon.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "CE36E6CC",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Shining Force",
+                "system": "Genesis",
+                "filename": "Shining Force.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E82ACDFC",
+                    "size": 2097152
+                }
+            },
+            {
+                "game": "Sonic 2",
+                "system": "Genesis",
+                "filename": "Sonic 2.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "7B905383",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Super Hang-On",
+                "system": "Genesis",
+                "filename": "Super Hang-On.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "7E892199",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "VectorMan 2",
+                "system": "Genesis",
+                "filename": "VectorMan 2.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C1A24088",
+                    "size": 3145728
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
