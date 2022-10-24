@@ -1,0 +1,117 @@
+{
+    "titles": {
+        "ART OF FIGHTING 2": {
+            
+        },
+        "BASEBALL STARS 2": {
+            
+        },
+        "BLAZING STAR": {
+
+        },
+        "FATAL FURY SPECIAL": {
+
+        },
+        "GAROU: MARK OF THE WOLVES": {
+
+        },
+        "IRONCLAD": {
+
+        },
+        "THE KING OF FIGHTERS 2000": {
+
+        },
+        "THE KING OF FIGHTERS 2002": {
+
+        },
+        "KING OF THE MONSTERS": {
+
+        },
+        "THE LAST BLADE": {
+
+        },
+        "METAL SLUG": {
+
+        },
+        "METAL SLUG 2": {
+
+        },
+        "METAL SLUG 3": {
+
+        },
+        "METAL SLUG X": {
+
+        },
+        "NEO TURF MASTERS": {
+
+        },
+        "PULSTAR": {
+
+        },
+        "REAL BOUT FATAL FURY 2: THE NEWCOMERS": {
+
+        },
+        "SAMURAI SHODOWN II": {
+
+        },
+        "SAMURAI SHODOWN V SPECIAL": {
+
+        },
+        "SENGOKU 2": {
+
+        },
+        "SENGOKU 3": {
+
+        },
+        "SHOCK TROOPERS": {
+
+        },
+        "SHOCK TROOPERS: 2nd SQUAD": {
+
+        },
+        "TWINKLE STAR SPRITES": {
+
+        }
+    },
+    "in": {
+        "files": {
+            "superpacman": {
+                "rel_path": ["PAC-MAN MUSEUM+_Data", "Plugins", "x86_64"],
+                "filename": "GameSuperpacman_pacmuseum2021_windows_x64_Release.dll",
+                "versions": {
+                    "Steam": {
+                        "size": 214528,
+                        "crc": "4785DDC9"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "PAC and Pal",
+                "system": "Arcade",
+                "filename": "pacnpal.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "pap1-3b.1d": {"size": 8192, "crc": "ED64A565"},
+                        "pap1-2b.1c": {"size": 8192, "crc": "15308BCF"},
+                        "pap3-1.1b": {"size": 8192, "crc": "3CAC401C"},
+                        "pap1-4.1k": {"size": 4096, "crc": "330E20DE"},
+                        "pap1-6.3c": {"size": 4096, "crc": "A36B96CB"},
+                        "pap1-5.3f": {"size": 8192, "crc": "FB6F56E3"},
+                        "pap1-6.4c": {"size": 32, "crc": "52634B41"},
+                        "pap1-5.4e": {"size": 256, "crc": "AC46203C"},
+                        "pap1-4.3l": {"size": 256, "crc": "686BDE84"},
+                        "pap1-3.3m": {"size": 256, "crc": "94782DB5"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

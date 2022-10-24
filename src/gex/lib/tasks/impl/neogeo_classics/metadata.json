@@ -1,0 +1,68 @@
+{
+    "titles": {
+        "SHOCK TROOPERS": {
+            "folders": [
+                "Shock Troopers",
+                "ShockTroopers",
+                "SHOCK TROOPERS"
+            ],
+            "zip_name": "shocktro.zip",
+            "resources_version": {
+                "path": ["resources", "game"],
+                "in_files": {
+
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Shock Troopers",
+                "system": "Neo Geo",
+                "filename": "shocktro.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "238-c1.c1": { "size": 4194304, "crc": "90C6A181"},
+                        "238-c2.c2": { "size": 4194304, "crc": "888720F0"},
+                        "238-c3.c3": { "size": 4194304, "crc": "2C393AA3"},
+                        "238-c4.c4": { "size": 4194304, "crc": "B9E909EB"},
+                        "238-c5.c5": { "size": 4194304, "crc": "C22C68EB"},
+                        "238-c6.c6": { "size": 4194304, "crc": "119323CD"},
+                        "238-c7.c7": { "size": 4194304, "crc": "A72CE7ED"},
+                        "238-c8.c8": { "size": 4194304, "crc": "1C7C2EFB"},
+                        "238-m1.m1": { "size": 131072, "crc": "075B9518"},
+                        "238-p1.p1": { "size": 1048576, "crc": "5677456F"},
+                        "238-p2.sp2": { "size": 4194304, "crc": "5B4A09C5"},
+                        "238-pg1.p1": { "size": 1048576, "crc": "EFEDF8DC"},
+                        "238-s1.s1": { "size": 131072, "crc": "1F95CEDB"},
+                        "238-v1.v1": { "size": 4194304, "crc": "260C0BEF"},
+                        "238-v2.v2": { "size": 2097152, "crc": "4AD7D59E"}
+                    }
+                }
+            },
+            {
+                "game": "Neo Geo BIOS",
+                "system": "Neo Geo",
+                "filename": "neogeo.zip",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "sm1.sm1": { "size": 131072, "crc": "94416D67"},
+                        "sp-e.sp1": { "size": 131072, "crc": "2723A5B5"},
+                        "sp-s2.sp1": { "size": 131072, "crc": "9036D879"},
+                        "sp-u2.sp1": { "size": 131072, "crc": "E72943DE"},
+                        "000-lo.lo": { "size": 131072, "crc": "5A86CFF2"},
+                        "sfix.sfix": { "size": 131072, "crc": "C2EA0CFD"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
