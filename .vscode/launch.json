@@ -235,10 +235,25 @@
                 "extract", 
                 "--task", 
                 "ssp1", 
-                "--srcdir",
-                "C:\\Sega\\Smash Pack",
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\ssp1\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Sega Smash Pack 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ssp2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ssp2\""
             ]
         },
         {
