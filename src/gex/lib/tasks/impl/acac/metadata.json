@@ -475,7 +475,7 @@
             {
                 "name": "Twinbee",
                 "filename": "twinbee.zip",
-                "status": "partial",
+                "status": "good",
                 "system": "Arcade",
                 "notes": [],
                 "verify": {
@@ -483,8 +483,11 @@
                     "entries": {
                         "400-a01.fse": {"size": 256, "crc": "5827B1E8"},
                         "400-a02.fse": {"size": 256, "crc": "2F44F970"},
-                        "412-a05.17l": {"size": 131072, "crc": "D93C5499"},
-                        "412-a07.12l": {"size": 131072, "crc": "2B357069"}
+                        "400-a04.10l": {"size": 32768, "crc": "D02C9552"},
+                        "400-a06.15l": {"size": 32768, "crc": "B99D8CFF"},
+                        "400-e03.5l": {"size": 8192, "crc": "A5A8E57D"},
+                        "412-a05.17l": {"size": 131072, "crc": "2B357069"},
+                        "412-a07.12l": {"size": 131072, "crc": "D93C5499"}
                     }
                 }
             },
