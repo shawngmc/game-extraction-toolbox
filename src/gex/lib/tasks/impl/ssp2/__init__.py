@@ -1,4 +1,4 @@
-'''Implementation of ssp1: Sega Smash Pack 1'''
+'''Implementation of ssp2: Sega Smash Pack 2'''
 import logging
 import os
 from gex.lib.archive.kvq import extract
@@ -6,18 +6,18 @@ from gex.lib.tasks.basetask import BaseTask
 
 logger = logging.getLogger('gextoolbox')
 
-ENCODE_STRING_BYTES = bytearray('Encoded for KGen Ultra / Sega Smash Pack / Snake KML 1999! ', 'ascii')
+ENCODE_STRING_BYTES = bytearray('Encoded for KGen Ultra / Sega Smash Pack II / Snake KML 1999! ', 'ascii')
 
 class SSPTask(BaseTask):
-    '''Implements ssp1: Sega Smash Pack 1'''
-    _task_name = "ssp1"
-    _title = "Sega Smash Pack 1"
+    '''Implements ssp2: Sega Smash Pack 2'''
+    _task_name = "ssp2"
+    _title = "Sega Smash Pack 2"
     _details_markdown = '''
 Based on: https://github.com/zZeck/SegaSmashPackPCUtils
 
 These ROMs are pulled out of kvq files. 
     '''
-    _default_input_folder = r"C:\Sega\Smash Pack"
+    _default_input_folder = r"C:\Sega\Smash Pack II"
     _input_folder_desc = "Sega Smash Pack 1 folder"
     _out_file_notes = {}
 
