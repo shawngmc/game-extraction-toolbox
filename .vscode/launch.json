@@ -223,6 +223,23 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Sega Smash Pack",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ssp", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ssp\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing BlizzArcade",
             "type": "python",
             "request": "launch",
