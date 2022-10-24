@@ -134,6 +134,8 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Namco Arcade Game Series: Pacman**           | 100%           | Y                |   
  **Pac Man Museum Plus**                        | 40%            | Y                | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%            | Y                | Some compressed variants not yet extracted  
+ **Sega Smash Pack 1**                          | 100%           | Y                | 
+ **Sega Smash Pack 1**                          | 100%           | Y                | All games except Sega Swirl!
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%           | Y                | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **SNK 40th Anniversary Collection**            | 100%           | Y                | All games supported by an emulator are extracted!
  **Street Fighter 30th Anniversary Collection** | 90%            | Y                | Now includes all playable international versions.
