@@ -1,3 +1,8 @@
+# 0.1.5
+ - Added Games/Collections
+   - Sega Smash Pack 1 (Thanks zZeck)
+   - Sega Smash Pack 2 (Thanks zZeck)
+
 # 0.1.4
 - Updated Collections:
   - Genesis and Mega Drive Collection
