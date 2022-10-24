@@ -223,7 +223,7 @@
             ]
         },
         {
-            "name": "Python: Toolbox - Testing Sega Smash Pack",
+            "name": "Python: Toolbox - Testing Sega Smash Pack 1",
             "type": "python",
             "request": "launch",
             "program": "toolbox.py",
@@ -234,9 +234,11 @@
                 "tasks", 
                 "extract", 
                 "--task", 
-                "ssp", 
+                "ssp1", 
+                "--srcdir",
+                "C:\\Sega\\Smash Pack",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp\""
+                "\"${workspaceFolder}\\out\\ssp1\""
             ]
         },
         {
