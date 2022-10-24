@@ -101,6 +101,10 @@ These are noted in the documentation for each script. If you think a ROM is misi
 
 1. Search for a closed issue - these will likely be brought up multiple times!
 2. If none exists, use a source like [Arcade Italia](http://adb.arcadeitalia.net/) to verify. Make sure you look at the original file we create, and watch for the following things:
+  * The MAME version we target
+  * Any missing files
+  * When a ROM was split
+  * CRCs for every file
 3. If you are solidly convinced that there's a misnaming, open a ticket and we'll take a look.
 
 
