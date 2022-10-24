@@ -1,0 +1,195 @@
+{
+    "in": {
+        "files": {
+            "Altered Beast.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Altered Beast.kvq",
+                "copy_to": "Altered Beast",
+                "versions": {
+                    "CD": {
+                        "crc": "64D662D8",
+                        "size": 524296
+                    }
+                }
+            },
+            "Columns.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Columns.kvq",
+                "copy_to": "Columns",
+                "versions": {
+                    "CD": {
+                        "crc": "B7CCF7B8",
+                        "size": 131080
+                    }
+                }
+            },
+            "Golden Axe.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Golden Axe.kvq",
+                "copy_to": "Golden Axe",
+                "versions": {
+                    "CD": {
+                        "crc": "B5785CD1",
+                        "size": 524296
+                    }
+                }
+            },
+            "Outrun.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Outrun.kvq",
+                "copy_to": "Outrun",
+                "versions": {
+                    "CD": {
+                        "crc": "050B6B26",
+                        "size": 1048584
+                    }
+                }
+            },
+            "Phantasy Star II.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Phantasy Star II.kvq",
+                "copy_to": "Phantasy Star 2",
+                "versions": {
+                    "CD": {
+                        "crc": "44106E56",
+                        "size": 1048584
+                    }
+                }
+            },
+            "Sonic Spinball.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Sonic Spinball.kvq",
+                "copy_to": "Sonic Spinball",
+                "versions": {
+                    "CD": {
+                        "crc": "D454F66F",
+                        "size": 1048584
+                    }
+                }
+            },
+            "Super Shinobi.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Super Shinobi.kvq",
+                "copy_to": "Revenge of Shinobi Beta",
+                "versions": {
+                    "CD": {
+                        "crc": "57E4E792",
+                        "size": 524296
+                    }
+                }
+            },
+            "Vectorman.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Vectorman.kvq",
+                "copy_to": "VectorMan",
+                "versions": {
+                    "CD": {
+                        "crc": "2478AED1",
+                        "size": 2097160
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Altered Beast",
+                "system": "Genesis",
+                "filename": "Altered Beast (US, Euro).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "154D59BB",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Columns",
+                "system": "Genesis",
+                "filename": "Columns (World).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "D783C244",
+                    "size": 131072
+                }
+            },
+            {
+                "game": "Golden Axe",
+                "system": "Genesis",
+                "filename": "Golden Axe (World).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "31227079",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "Outrun",
+                "system": "Genesis",
+                "filename": "Outrun (World).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E6821FB1",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Phantasy Star 2",
+                "system": "Genesis",
+                "filename": "Phantasy Star 2 (US, Euro).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "7E0290B4",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Sonic Spinball",
+                "system": "Genesis",
+                "filename": "Sonic Spinball (US).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "677206CB",
+                    "size": 1048576
+                }
+            },
+            {
+                "game": "Revenge of Shinobi Beta",
+                "system": "Genesis",
+                "filename": "Revenge of Shinobi (Beta) (Japan).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "FA1B8AEB",
+                    "size": 524288
+                }
+            },
+            {
+                "game": "VectorMan",
+                "system": "Genesis",
+                "filename": "VectorMan (US, Euro).bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5C680397",
+                    "size": 2097152
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
