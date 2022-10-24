@@ -223,6 +223,40 @@
             ]
         },
         {
+            "name": "Python: Toolbox - Testing Sega Smash Pack 1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ssp1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ssp1\""
+            ]
+        },
+        {
+            "name": "Python: Toolbox - Testing Sega Smash Pack 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "ssp2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ssp2\""
+            ]
+        },
+        {
             "name": "Python: Toolbox - Testing BlizzArcade",
             "type": "python",
             "request": "launch",
