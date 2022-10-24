@@ -389,6 +389,25 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing psikyo: Psikyo Shooter Collector's Bundle",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "psikyo", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\psikyo\"",
+                "--prop",
+                "include-partials=True"
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing sadxgg: Sonic Adventure DX (Game Gear only)",
             "type": "python",
             "request": "launch",
@@ -584,25 +603,6 @@
                 "zamn", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\zamn\""
-            ]
-        },
-        {
-            "name": "GEXToolbox - Testing Psikyo",
-            "type": "python",
-            "request": "launch",
-            "program": "toolbox.py",
-            "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/src/gex",
-            "justMyCode": true,
-            "args": [
-                "tasks", 
-                "extract", 
-                "--task", 
-                "psikyo", 
-                "--destdir", 
-                "\"${workspaceFolder}\\out\\psikyo\"",
-                "--prop",
-                "include-partials=True"
             ]
         },
         {
