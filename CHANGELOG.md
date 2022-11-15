@@ -1,3 +1,7 @@
+# 0.1.6
+ - Added Games/Collections
+   - NeoGeo Classics by SNK (Humble Store)
+
 # 0.1.5
  - Added Games/Collections
    - Sega Smash Pack 1 (Thanks zZeck)

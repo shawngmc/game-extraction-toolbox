@@ -370,6 +370,25 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing neogeo_classics_humble: SNK Playmore Neo Geo Classics (Humble)",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "neogeo_classics_humble",
+                "--srcdir",
+                "C:\\Program Files (x86)\\NeoGeo 25th Anniversery", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\neogeo_classics_humble\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing pacmanmplus: Pac Man Museum Plus",
             "type": "python",
             "request": "launch",
