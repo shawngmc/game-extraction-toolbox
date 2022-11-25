@@ -589,6 +589,40 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Columns III",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "spp_columnsiii", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\spp_columnsiii\""
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Dr. Robotnik's Mean Bean Machine",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "spp_drmbm", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\ssp_drmbm\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing wonderboy3: Wonder Boy 3",
             "type": "python",
             "request": "launch",

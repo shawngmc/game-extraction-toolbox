@@ -1,0 +1,34 @@
+{
+    "in": {
+        "files": {
+            "Dr. Robotnik's Mean Bean Machine.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Columns III.kvq",
+                "copy_to": "Columns III",
+                "versions": {
+                    "CD": {
+                        "crc": "A3424F95",
+                        "size": 524296
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Columns III",
+                "system": "Genesis",
+                "filename": "Columns III.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "DC678F6D",
+                    "size": 524288
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
