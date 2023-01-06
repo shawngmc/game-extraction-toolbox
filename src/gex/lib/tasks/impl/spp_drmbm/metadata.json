@@ -1,0 +1,34 @@
+{
+    "in": {
+        "files": {
+            "Dr. Robotnik's Mean Bean Machine.kvq": {
+                "rel_path": ["MyGames"],
+                "filename": "Dr. Robotnik's Mean Bean Machine.kvq",
+                "copy_to": "Dr. Robotnik's Mean Bean Machine",
+                "versions": {
+                    "CD": {
+                        "crc": "41CF6EF2",
+                        "size": 1048584
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Dr. Robotnik's Mean Bean Machine",
+                "system": "Genesis",
+                "filename": "Dr. Robotnik's Mean Bean Machine.bin",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C7CA517F",
+                    "size": 1048576
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
