@@ -1,0 +1,255 @@
+{
+    "in": {
+        "files": {
+            "230-m68k.swbin": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-m68k.swbin",
+                "versions": {
+                    "Steam": {
+                        "crc": "ED24A6E6",
+                        "size": 2097152
+                    }
+                }
+            },
+            "230-p1.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-p1.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "68D4AE76",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-p2.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-p2.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "FDEE05CD",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-p3.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-p3.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "645077F3",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-p4.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-p4.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "63AEB74C",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-sfix.dat": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-sfix.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "076FB64C",
+                        "size": 131072
+                    }
+                }
+            },
+            "230-snd1.pcm": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-snd1.pcm",
+                "versions": {
+                    "Steam": {
+                        "crc": "7F9ED279",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-snd2.pcm": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-snd2.pcm",
+                "versions": {
+                    "Steam": {
+                        "crc": "1D43E420",
+                        "size": 4194304
+                    }
+                }
+            },
+            "230-z80.bin": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakers"],
+                "filename": "230-z80.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "3951A1C1",
+                        "size": 131072
+                    }
+                }
+            },
+            "245-m68k.swbin": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-m68k.swbin",
+                "versions": {
+                    "Steam": {
+                        "crc": "C828876D",
+                        "size": 2097152
+                    }
+                }
+            },
+            "245-p1.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p1.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "68D4AE76",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-p2.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p2.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "FDEE05CD",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-p3.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p3.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "645077F3",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-p4.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p4.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "63AEB74C",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-p5.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p5.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "B5F40E7F",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-p6.spr": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-p6.spr",
+                "versions": {
+                    "Steam": {
+                        "crc": "D0337328",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-sfix.dat": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-sfix.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "E7660A5D",
+                        "size": 131072
+                    }
+                }
+            },
+            "245-snd1.pcm": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-snd1.pcm",
+                "versions": {
+                    "Steam": {
+                        "crc": "E255446C",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-snd2.pcm": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-snd2.pcm",
+                "versions": {
+                    "Steam": {
+                        "crc": "9068198A",
+                        "size": 4194304
+                    }
+                }
+            },
+            "245-z80.bin": {
+                "rel_path": ["BreakersCollection_Data", "StreamingAssets", "breakrev"],
+                "filename": "245-z80.bin",
+                "versions": {
+                    "Steam": {
+                        "crc": "00F31C66",
+                        "size": 131072
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Breakers",
+                "status": "good",
+                "filename": "breakers.zip",
+                "system": "Neo Geo",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "230-p1.p1": {"size": 2097152, "crc": "ED24A6E6"},
+                        "230-c1.c1": {"size": 4194304, "crc": "68D4AE76"},
+                        "230-c2.c2": {"size": 4194304, "crc": "FDEE05CD"},
+                        "230-c3.c3": {"size": 4194304, "crc": "645077F3"},
+                        "230-c4.c4": {"size": 4194304, "crc": "63AEB74C"},
+                        "230-s1.s1": {"size": 131072, "crc": "076FB64C"},
+                        "230-v1.v1": {"size": 4194304, "crc": "7F9ED279"},
+                        "230-v2.v2": {"size": 4194304, "crc": "1D43E420"},
+                        "230-m1.m1": {"size": 131072, "crc": "3951A1C1"}
+                    }
+                }
+            },
+            {
+                "game": "Breakers Revenge",
+                "status": "good",
+                "filename": "breakrev.zip",
+                "system": "Neo Geo",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "245-p1.p1": {"size": 2097152, "crc": "C828876D"},
+                        "245-c1.c1": {"size": 4194304, "crc": "68D4AE76"},
+                        "245-c2.c2": {"size": 4194304, "crc": "FDEE05CD"},
+                        "245-c3.c3": {"size": 4194304, "crc": "645077F3"},
+                        "245-c4.c4": {"size": 4194304, "crc": "63AEB74C"},
+                        "245-c5.c5": {"size": 4194304, "crc": "B5F40E7F"},
+                        "245-c6.c6": {"size": 4194304, "crc": "D0337328"},
+                        "245-s1.s1": {"size": 131072, "crc": "E7660A5D"},
+                        "245-v1.v1": {"size": 4194304, "crc": "E255446C"},
+                        "245-v2.v2": {"size": 4194304, "crc": "9068198A"},
+                        "245-m1.m1": {"size": 131072, "crc": "00F31C66"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

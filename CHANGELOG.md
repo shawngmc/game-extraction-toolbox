@@ -1,3 +1,9 @@
+# 0.1.7
+ - Added Games/Collections
+   - Breakers Collection (Thanks tydog98 and Feilakas)
+ - Fixes
+   - Requires Python 3.9+
+
 # 0.1.6
  - Added Games/Collections
    - NeoGeo Classics by SNK (Humble Store)

@@ -1,13 +1,13 @@
 [project]
 name = "game-extraction-toolbox"
-version = "0.1.6"
+version = "0.1.7"
 authors = [
   { name="Shawn McNaughton", email="shawngmc@gmail.com" },
 ]
 description = "CLI Tools for investigating game files and extracting known packages"
 readme = "README.md"
 license = { file="LICENSE" }
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 dependencies = [
   'bitarray >= 2.6.0',
   'click >= 8.1.3',
