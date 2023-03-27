@@ -1,6 +1,8 @@
 # 0.1.6
  - Added Games/Collections
    - NeoGeo Classics by SNK (Humble Store)
+ - Fixes
+   - Limit python-magic-bin dependency to Windows
 
 # 0.1.5
  - Added Games/Collections
