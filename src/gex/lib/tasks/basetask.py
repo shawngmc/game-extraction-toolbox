@@ -6,6 +6,7 @@ import logging
 import os
 from gex.lib.utils.blob import hash as hash_helper
 from gex.lib.archive import zip as zip_lib
+from gex.lib.utils.verify import verify_via_metadata
 
 logger = logging.getLogger('gextoolbox')
 
@@ -126,37 +127,15 @@ class BaseTask:
             logger.info(f"Verification data not available for ROM {file_name}")
             return None
 
-        # Check verify type
-        if verify_obj['type'] == 'crc':
-            crc = hash_helper.get_crc(contents)[2:].upper().rjust(8, "0")
-            if len(contents) != verify_obj['size']:
-                logger.info(f"Could NOT verify {file_name}: File size doesn't match!")
-                return False
-            elif crc != verify_obj['crc']:
-                logger.info(f"Could NOT verify {file_name}: CRC doesn't match!")
-                return False
+        errors, version = verify_via_metadata(contents, verify_obj)
+
+        if not errors:
+            if version:
+                return version
             else:
-                logger.info(f"Verified {file_name}.")
                 return True
-        elif verify_obj['type'] == 'zip':
-            zip_metas = zip_lib.get_metadata(contents)
-            # Ensure the file name lists are the same
-            real_filenames = set(zip_metas.keys())
-            expected_filenames = set(verify_obj['entries'].keys())
-            if real_filenames != expected_filenames:
-                logger.info(f"Could NOT verify {file_name}: File lists don't match!")
-                return False
-            # Compare file size/CRC
-            for inner_filename, zip_meta in zip_metas.items():
-                verify_entry = verify_obj['entries'][inner_filename]
-                if zip_meta['crc'] != verify_entry['crc'] or zip_meta['size'] != verify_entry['size'] :
-                    logger.info(f"Could NOT verify {file_name}: {inner_filename} should be {verify_entry['crc']} at {verify_entry['size']} bytes, found {zip_meta['crc']} at {zip_meta['size']}")
-                    return False
-            logger.info(f"Verified {file_name}.")
-            return True
-        else:
-            logger.info(f"Unknown verify type: {verify_obj['type']}")
-            return None
+
+        return errors
 
     def set_props(self, in_props):
         '''Set any additional props for this task'''
