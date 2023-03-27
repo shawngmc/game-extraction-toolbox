@@ -5,7 +5,7 @@
 CLI Tools for investigating game files and extracting known packages
 
 ## Requirements
-- Python 3.7 - 3.11
+- Python 3.9 - 3.11
   - This should be a final release, especially if on Windows / C++ build tools aren't installed
 - PIPx
 
@@ -16,7 +16,7 @@ pipx install game-extraction-toolbox
 ```
 
 ### Full
-#### Python 3.7+
+#### Python 3.9+
 Should be on Linux and MacOSX by default; for Windows, I recommend [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/install-python-windows-10)
 
 #### PIPX
@@ -117,6 +117,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Arcade Collection Anniversary Classics**     | 88%            | Y                | All games except scramble!
  **Atari Vault**                                | 90%            | Y                | Some arcade ROMs from this collection are incomplete.  
  **Blizzard Arcade Collection**                 | 100%           | Y                |   
+ **Breakers Collection**                        | 100%           | Y                |   
  **Bubsy Two-Fur**                              | 100%           | Y                |   
  **Capcom Arcade Stadium 1 (via Depot)**        | 95%            | N                | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%            | Y                | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
