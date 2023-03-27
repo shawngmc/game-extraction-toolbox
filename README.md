@@ -132,6 +132,7 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Namco Arcade Game Series: Galaga**           | 100%           | Y                |   
  **Namco Arcade Game Series: Ms. Pac-Man**      | 100%           | Y                |   
  **Namco Arcade Game Series: Pacman**           | 100%           | Y                |   
+ **NeoGeo Classics by SNK (Humble Store)**      | 95%            | Y                | Baseball Stars 2 is more complex 
  **Pac Man Museum Plus**                        | 40%            | Y                | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%            | Y                | Some compressed variants not yet extracted  
  **Sega Smash Pack 1**                          | 100%           | Y                | 

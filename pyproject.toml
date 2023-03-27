@@ -1,6 +1,6 @@
 [project]
 name = "game-extraction-toolbox"
-version = "0.1.5"
+version = "0.1.6"
 authors = [
   { name="Shawn McNaughton", email="shawngmc@gmail.com" },
 ]
@@ -13,7 +13,7 @@ dependencies = [
   'click >= 8.1.3',
   'click-log >= 0.4.0',
   'psutil >= 5.9.1',
-  'python-magic-bin >= 0.4.14',
+  'python-magic-bin >= 0.4.14; platform_system == "Windows"',
   'rich >= 12.5.1',
   'texttable >= 1.6.4',
   'UnityPy >= 1.9.12'
