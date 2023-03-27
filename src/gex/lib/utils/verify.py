@@ -67,6 +67,7 @@ def verify_zip(zip_data, known_entries):
 def verify_crc(contents, known_crc, known_size):
     size = len(contents)
     crc = hash_helper.get_crc(contents)
+    known_crc = hex(int(known_crc, base=16))
     errors = []
     if known_size != size:
         errors.append({VerifyErrors.SIZE_MISMATCH, {size, known_size}})
