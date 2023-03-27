@@ -65,7 +65,15 @@
     spritegen:zoomy	000-lo.lo
     fixedbios sfix.sfix
     audiobios sm1.sm1
-
+  - Vasara Collection
+    Partial roms exist in VasaraCollection_Data/StreamingData/VSR1.dat and VSR2.dat, but there's some missing, and the other files are UnityFS
+    VSR1.dat
+    0x00000000	0x001FFFFF	2MB	data.u34
+    0x00200000	0x002FFFFF	1MB	NULL
+    0x00300000	0x003FFFFF	1MB	deinterleave(1b) -> prg-l.u30, prg-h.u31
+    0x00400000	0x01FFFFFF	16MB	???
+    0x02000000	0x023FFFFF	4MB	NULL
+    Missing 36 MB of contents with 16MB of unidentified stuff?
   
 
 
