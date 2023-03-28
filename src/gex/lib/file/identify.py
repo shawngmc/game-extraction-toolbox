@@ -5,7 +5,8 @@ import magic
 
 KPKA = "KPKA Archive, Capcom RE Engine"
 IBIS = "IBIS Archive, Capcom ROM Releases"
-ARC = "ARC Archive, Capcom MT Engine"
+ARC = "ARC Archive, Capcom MT Framework"
+M2 = "M2 Archive, M2 (Developer/Publisher)"
 
 def enhanced_magic_from_path(in_file):
     '''Use libmagic and enhanced_look to id a file's contents'''
@@ -45,6 +46,8 @@ def enhanced_look(content_peek):
         return IBIS
     if content_peek[0:3] == b"ARC":
         return ARC
+    if content_peek[0:3] == b"mdf":
+        return M2
     return 'data'
 
 _PK_HEADER = "PK".encode('utf-8')
