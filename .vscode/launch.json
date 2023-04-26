@@ -128,6 +128,23 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing breakers: Breakers Collection",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "breakers",
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\breakers\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing bubsy: Bubsy Two-Fur Collection",
             "type": "python",
             "request": "launch",
@@ -316,6 +333,40 @@
                 "irem", 
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\irem\""
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing mmbnlc1: Mega Man Battle Network Legacy Collection 1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmbnlc1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmbnlc1\""
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing mmbnlc2: Mega Man Battle Network Legacy Collection 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmbnlc2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmbnlc2\""
             ]
         },
         {

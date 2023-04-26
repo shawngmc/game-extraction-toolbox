@@ -32,22 +32,23 @@ class ACACTask(BaseTask):
         }
 
     def execute(self, in_dir, out_dir):
-        src_file = os.path.join(in_dir, "AA_AC_ArcadeClassics.exe")
-        with open(src_file, 'rb') as src_file:
-            src_contents = src_file.read()
-            src_contents_decomp = self.lzma_multi_decomp(src_contents, out_dir)
+        src_file = self.read_all_datafiles(in_dir).get("source")
+        src_contents = src_file['contents']
+        file_ver = src_file['version']
 
-        with open(os.path.join(out_dir, 'merged_decomp_blob'), "wb") as out_file:
-            out_file.write(src_contents_decomp)
+        # src_contents_decomp = self.lzma_multi_decomp(src_contents, out_dir)
+
+        # with open(os.path.join(out_dir, 'merged_decomp_blob'), "wb") as out_file:
+        #     out_file.write(src_contents_decomp)
 
         out_files = []
-        out_files.extend(self._handle_nemesis(src_contents))
-        out_files.extend(self._handle_hcastle(src_contents))
-        out_files.extend(self._handle_ajax(src_contents))
-        out_files.extend(self._handle_vulcan(src_contents))
-        out_files.extend(self._handle_thunderx(src_contents))
-        out_files.extend(self._handle_salamand(src_contents))
-        out_files.extend(self._handle_twinbee(src_contents))
+        out_files.extend(self._handle_nemesis(src_contents, file_ver))
+        out_files.extend(self._handle_hcastle(src_contents, file_ver))
+        out_files.extend(self._handle_ajax(src_contents, file_ver))
+        out_files.extend(self._handle_vulcan(src_contents, file_ver))
+        out_files.extend(self._handle_thunderx(src_contents, file_ver))
+        out_files.extend(self._handle_salamand(src_contents, file_ver))
+        out_files.extend(self._handle_twinbee(src_contents, file_ver))
 
         if out_files:
             for out_file_entry in out_files:
@@ -60,8 +61,18 @@ class ACACTask(BaseTask):
 
         logger.info("Processing complete.")
 
-    def _handle_ajax(self, contents):
-        contents = transforms.cut(contents, 0x11B610, length=1124930)
+    def _get_extract_metadata(self, game_name):
+        for game in self._metadata['out']['files']:
+            if game['game'] == game_name:
+                return game['extract']
+
+        return None
+
+    def _handle_ajax(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Typhoon')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
@@ -120,8 +131,11 @@ class ACACTask(BaseTask):
         
         return out_files
 
-    def _handle_nemesis(self, contents):
-        contents = transforms.cut(contents, 0x2F2DE0, length=541168)
+    def _handle_nemesis(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Nemesis')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
@@ -192,8 +206,11 @@ class ACACTask(BaseTask):
         return out_files
 
 
-    def _handle_hcastle(self, contents):
-        contents = transforms.cut(contents, 0x22E110, length=798376)
+    def _handle_hcastle(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Haunted Castle (Version M)')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
 
@@ -272,8 +289,11 @@ class ACACTask(BaseTask):
 
         return out_files
 
-    def _handle_vulcan(self, contents):
-        contents = transforms.cut(contents, 0x37C280, length=3080192)
+    def _handle_vulcan(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Vulcan Venture')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
@@ -382,7 +402,11 @@ class ACACTask(BaseTask):
 
 
 
-    def _handle_thunderx(self, contents):
+    def _handle_thunderx(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Thunder Cross (Set 1)')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         contents = transforms.cut(contents, 0x4D13D0, length=455549)
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
@@ -571,8 +595,11 @@ class ACACTask(BaseTask):
         return out_files
 
 
-    def _handle_salamand(self, contents):
-        contents = transforms.cut(contents, 0x4165D0, length=752816)
+    def _handle_salamand(self, contents, version):
+        extract_metadata = self._get_extract_metadata('Salamander')
+        contents = transforms.cut(contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         out_files = []
@@ -722,11 +749,14 @@ class ACACTask(BaseTask):
 
         return out_files
 
-    def _handle_twinbee(self, full_contents):
+    def _handle_twinbee(self, full_contents, version):
         out_files = []
         
         # Get FSE files Nemesis
-        contents = transforms.cut(full_contents, 0x2F2DE0, length=541168)
+        extract_metadata = self._get_extract_metadata('Nemesis')
+        contents = transforms.cut(full_contents, 
+            int(extract_metadata['versions'][version]['start'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
 
@@ -743,8 +773,11 @@ class ACACTask(BaseTask):
         func_map['fse'] = fse
         fse_file_map = helpers.process_rom_files(contents, func_map)
 
+        extract_metadata = self._get_extract_metadata('Twinbee')
         # Get the maincpu1
-        contents = transforms.cut(full_contents, 0x5407E0, length=67191)
+        contents = transforms.cut(full_contents, 
+            int(extract_metadata['versions'][version]['start_maincpu'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
 
@@ -760,7 +793,9 @@ class ACACTask(BaseTask):
         maincpu1_file_map = helpers.process_rom_files(contents, func_map)
 
         # Get the k rom
-        contents = transforms.cut(full_contents, 0x2F1050, length=67191)
+        contents = transforms.cut(full_contents,
+            int(extract_metadata['versions'][version]['start_krom'], 0),
+            length=extract_metadata['length'])
         lzd = lzma.LZMADecompressor()
         contents = lzd.decompress(contents)
         func_map = {}
