@@ -3,6 +3,8 @@ Wrapper for python-magic that adds support for game extraction specific file typ
 '''
 import magic
 
+# Internally tracking these in https://docs.google.com/spreadsheets/d/1eMI9EIzopg1J9UZsMFOx5lLSMPsf7EYxovLM5VFoUjU/edit#gid=0
+
 KPKA = "KPKA Archive, Capcom RE Engine"
 IBIS = "IBIS Archive, Capcom ROM Releases"
 ARC = "ARC Archive, Capcom MT Framework"
