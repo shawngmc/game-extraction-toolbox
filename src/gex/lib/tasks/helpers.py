@@ -3,6 +3,7 @@ import io
 import os
 import zipfile
 from gex.lib.utils.blob import transforms
+import gex.lib.archive.zip as ziphelper
 
 STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
 def gen_steam_app_default_folder(app_folder, library_root=STEAM_APP_ROOT):
@@ -122,3 +123,18 @@ def common_rename_helper(common_file_map, rename_map):
 
         return out_files
     return pick
+
+def pull_files_from_archive(archive_data, archive_type, file_map):
+    out_files = []
+
+    archive_contents = None
+    if archive_type == "zip":
+        archive_contents = ziphelper.extract(archive_data)
+
+    for destination_name, archive_name in file_map.items():
+        out_files.append({
+            'filename': destination_name,
+            'contents': archive_contents[archive_name]['contents']
+        })
+
+    return out_files

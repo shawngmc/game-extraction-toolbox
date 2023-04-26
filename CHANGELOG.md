@@ -1,3 +1,12 @@
+# 0.1.7
+ - Added Games/Collections
+   - Breakers Collection (Thanks tydog98 and Feilakas)
+   - MegaMan Battle Network Legacy Collection 1 (Thanks Bad-Acetabulum, RealRelativeEase, and Seb)
+   - MegaMan Battle Network Legacy Collection 2 (Thanks Bad-Acetabulum, RealRelativeEase, and Seb)
+ - Fixes
+   - Requires Python 3.9+
+   - Fixed bug when tracking verification errors
+
 # 0.1.6
  - Added Games/Collections
    - NeoGeo Classics by SNK (Humble Store)

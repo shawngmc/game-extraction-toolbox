@@ -1,0 +1,147 @@
+{
+    "in": {
+        "files": {
+            "exe1.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe1.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "94163E60",
+                        "size": 24691358
+                    }
+                }
+            },
+            "exe2j.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe2j.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "D8F8296B",
+                        "size": 36040196
+                    }
+                }
+            },
+            "exe3.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe3.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "F1308950",
+                        "size": 57690496
+                    }
+                }
+            },
+            "exe3b.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe3b.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "9B635870",
+                        "size": 57633245
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "MegaMan Battle Network",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "1D347971",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE",
+                "system": "GBA",
+                "filename": "RockMan.EXE.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "D9516E50",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 2",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 2.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "6D961F82",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 2",
+                "system": "GBA",
+                "filename": "RockMan.EXE 2.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "046EED8D",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 3 White",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 3 White.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "0BE4410A",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 3",
+                "system": "GBA",
+                "filename": "RockMan.EXE 3.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "E48E6BC9",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 3 Blue",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 3 Blue.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C0C780F9",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 3 Black",
+                "system": "GBA",
+                "filename": "RockMan.EXE 3 Black.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "FD57493B",
+                    "size": 8388608
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
