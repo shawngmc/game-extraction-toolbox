@@ -128,6 +128,8 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Double Dragon Trilogy**                      | 100%           | Y                |  
  **IREM Arcade Classics**                       | 100%           | Y                |  
  **Mega Man Legacy Collection 1**               | 100%           | Y                |  
+ **Mega Man Battle Network Legacy Collection 1**| 100%           | Y                | 
+ **Mega Man Battle Network Legacy Collection 2**| 100%           | Y                | 
  **Mega Man X Legacy Collection 1**             | 75%            | Y                | X4 doesn't appear to be ROM based  
  **Namco Arcade Game Series: Dig Dug**          | 100%           | Y                |   
  **Namco Arcade Game Series: Galaga**           | 100%           | Y                |   
