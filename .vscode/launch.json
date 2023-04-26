@@ -336,6 +336,40 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing mmbnlc1: Mega Man Battle Network Legacy Collection 1",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmbnlc1", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmbnlc1\""
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing mmbnlc2: Mega Man Battle Network Legacy Collection 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mmbnlc2", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mmbnlc2\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing mmlc1: Mega Man Legacy Collection 1",
             "type": "python",
             "request": "launch",
