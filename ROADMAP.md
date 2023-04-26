@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Future / Other Tools
+- Mega Man Battle Network Collection Vol 1 + 2
+  
 - Retro Classix by Data East
   In title\title_Data\StreamingAssets folder
 - Brave Battle Saga - The Legend of The Magic Warrior
@@ -74,11 +76,16 @@
     0x00400000	0x01FFFFFF	16MB	???
     0x02000000	0x023FFFFF	4MB	NULL
     Missing 36 MB of contents with 16MB of unidentified stuff?
+  - Retro SNES Collection Vol. 1 (Jim Power, Legend, Iron Commando, Dorke and Ymp)
+  - S-Tribute (Metal Black S-Tribute, Puzzle Bobble 2x/3 and Bust-a-Move 2/3 S-Tribute)
+    - These appear to have a bin-cue file pair for each title
+    - However, these are not mountable - are they encrypted?
   
 
 
 ## Not Yet Owned / Future Investigation
 - Neo Geo Pocket Color Selection Vol. 1
+  This looks like NeoGeo Pocket emulation
 - ColecoVision Flashback
   https://github.com/ZetTheLegendaryHero/Colecovision-Flashback-40-Game-Pack-ROM-Extractor
 - 8-bit Adventure Anthology: Volume I	(Shadowgate, The Uninvited, Deja Vu)
@@ -98,6 +105,32 @@
   https://gbatemp.net/threads/saturn-emulation-using-cotton-guardian-force-testing-and-debug.600756/
 - Williams Arcade Classics (PC CD-ROM, 1995)
   Initial research shows that this is likely not ROM based.
+- Andro Dunos II
+  Likely a all-new build, as this is a new game
+- SNK VS. CAPCOM: THE MATCH OF THE MILLENNIUM
+  This looks like NeoGeo Pocket emulation
+- NEOGEO POCKET COLOR SELECTION Vol.2
+  This looks like NeoGeo Pocket emulation
+- Umihara Kawase
+  Slowdown is gone, so it might be a port
+- Super Kick Off
+  Has a bunch of diff 8/16-bit platforms
+- Videopac Collection 1
+  10 Magnavox Odyssey 2 games?
+- Actua Sports (Actua Tennis, Actua Ice Hockey, Actua Ice Hockey 2, Actua Golf, Actua Soccer 2)
+  All PS1 games?
+- Todd's Adventures in Slime World (Lynx/Mega Drive)
+- Buggy (PS1)
+- N2O
+- Summer Games (Atari 2600/CPC/Master System/Spectrum)
+- California Games II (SNES?)
+- Blue Lightning (Lynx)
+- Checkered Flag (Lynx)
+- Zarlor Mercenary (Lynx)
+- Electrocop (Lynx)
+- Gates of Zendocon (Lynx)
+- Elland: The Crystal Wars (GBA)
+
 
 ## Incomplete ROMs (may add partial extraction later)
 - Mortal Kombat Kollection

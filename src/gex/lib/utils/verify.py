@@ -58,9 +58,9 @@ def verify_zip(zip_data, known_entries):
         zip_meta = zip_metas.get(inner_filename)
         verify_entry = known_entries[inner_filename]
         if zip_meta['crc'] != verify_entry['crc']:
-            errors.append({VerifyErrors.CHECKSUM_MISMATCH, {zip_meta['crc'], verify_entry['crc'], "CRC", inner_filename}})
+            errors.append((VerifyErrors.CHECKSUM_MISMATCH, {zip_meta['crc'], verify_entry['crc'], "CRC", inner_filename}))
         if zip_meta['size'] != verify_entry['size']:
-            errors.append({VerifyErrors.SIZE_MISMATCH, {zip_meta['size'], verify_entry['size'], inner_filename}})
+            errors.append((VerifyErrors.SIZE_MISMATCH, {zip_meta['size'], verify_entry['size'], inner_filename}))
             
     return errors
 
@@ -70,10 +70,10 @@ def verify_crc(contents, known_crc, known_size):
     known_crc = hex(int(known_crc, base=16))
     errors = []
     if known_size != size:
-        errors.append({VerifyErrors.SIZE_MISMATCH, {size, known_size}})
+        errors.append((VerifyErrors.SIZE_MISMATCH, {size, known_size}))
 
     if known_crc != crc:
-        errors.append({VerifyErrors.CHECKSUM_MISMATCH, {crc, known_crc, "CRC"}})
+        errors.append((VerifyErrors.CHECKSUM_MISMATCH, {crc, known_crc, "CRC"}))
 
     return errors
 
@@ -82,10 +82,10 @@ def verify_sha(contents, known_sha, known_size):
     sha = hash_helper.get_sha1(contents)
     errors = []
     if known_size != size:
-        errors.append({VerifyErrors.SIZE_MISMATCH, {size, known_size}})
+        errors.append((VerifyErrors.SIZE_MISMATCH, {size, known_size}))
 
     if known_sha != sha:
-        errors.append({VerifyErrors.CHECKSUM_MISMATCH, {sha, known_sha, "SHA-1"}})
+        errors.append((VerifyErrors.CHECKSUM_MISMATCH, {sha, known_sha, "SHA-1"}))
 
     return errors
 

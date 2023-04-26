@@ -1,0 +1,215 @@
+{
+    "in": {
+        "files": {
+            "exe4.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe4.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "9BE6C02A",
+                        "size": 75716288
+                    }
+                }
+            },
+            "exe4b.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe4b.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "B00AC305",
+                        "size": 75706942
+                    }
+                }
+            },
+            "exe5.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe5.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "5CACDBEC",
+                        "size": 55981967
+                    }
+                }
+            },
+            "exe5k.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe5k.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "31B483FE",
+                        "size": 55978332
+                    }
+                }
+            },
+            "exe6.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe6.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "0DF75F0F",
+                        "size": 82745454
+                    }
+                }
+            },
+            "exe6f.dat": {
+                "rel_path": ["exe", "data"],
+                "filename": "exe6f.dat",
+                "versions": {
+                    "Steam": {
+                        "crc": "F5E543ED",
+                        "size": 82863131
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "MegaMan Battle Network 4 Red Sun",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 4 Red Sun.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "2120695C",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 4 Tournament Red Sun",
+                "system": "GBA",
+                "filename": "RockMan.EXE 4 Tournament Red Sun.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "CF0E8B05",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 4 Blue Moon",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 4 Blue Moon.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "758A46E9",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 4 Tournament Blue Moon",
+                "system": "GBA",
+                "filename": "RockMan.EXE 4 Tournament Blue Moon.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "709BBF07",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 5 Team Blue",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 5 Team Blue.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "A73E83A4",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 5 Tournament Team of Blues",
+                "system": "GBA",
+                "filename": "RockMan.EXE 5 Tournament Team of Blues.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "C73F23C0",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 5 Team Colonel",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 5 Team Colonel.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "A552F683",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 5 Tournament Team of Colonel",
+                "system": "GBA",
+                "filename": "RockMan.EXE 5 Tournament Team of Colonel.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "16842635",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 6 Cybeast Gregar",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 6 Cybeast Gregar.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "18792D11",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 6 Tournament Cyber Beast Glaga",
+                "system": "GBA",
+                "filename": "RockMan.EXE 6 Tournament Cyber Beast Glaga.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "EEDF8D4C",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "MegaMan Battle Network 6 Cybeast Falzar",
+                "system": "GBA",
+                "filename": "MegaMan Battle Network 6 Cybeast Falzar.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "DEE6F2A9",
+                    "size": 8388608
+                }
+            },
+            {
+                "game": "RockMan.EXE 6 Tournament Cyber Beast Falzer",
+                "system": "GBA",
+                "filename": "RockMan.EXE 6 Tournament Cyber Beast Falzer.gba",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "2DFB603E",
+                    "size": 8388608
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
