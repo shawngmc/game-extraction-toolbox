@@ -4,7 +4,11 @@
             "source": {
                 "filename": "AA_AC_ArcadeClassics.exe",
                 "versions": {
-                    "Steam": {
+                    "Steam2023": {
+                        "size": 6529816,
+                        "crc": "862DC1F5"
+                    },
+                    "Steam2022": {
                         "size": 6529856,
                         "crc": "35C2D2E7"
                     }
@@ -15,11 +19,18 @@
     "out": {
         "files": [
             {
-                "name": "AJAX (J)",
+                "game": "AJAX (J)",
                 "filename": "ajaxj.zip",
                 "status": "playable",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x11B6A0" },
+                        "Steam2022": { "start": "0x11B610" }
+                    },
+                    "length": 1124930
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -41,11 +52,18 @@
                 }
             },
             {
-                "name": "Typhoon",
+                "game": "Typhoon",
                 "filename": "typhoon.zip",
                 "status": "playable",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x11B6A0" },
+                        "Steam2022": { "start": "0x11B610" }
+                    },
+                    "length": 1124930
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -67,11 +85,18 @@
                 }
             },
             {
-                "name": "Haunted Castle (Version M)",
+                "game": "Haunted Castle (Version M)",
                 "filename": "hcastle.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x22E1A0" },
+                        "Steam2022": { "start": "0x22E110" }
+                    },
+                    "length": 798376
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -92,11 +117,18 @@
                 }
             },
             {
-                "name": "Haunted Castle (Version E)",
+                "game": "Haunted Castle (Version E)",
                 "filename": "hcastlee.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x22E1A0" },
+                        "Steam2022": { "start": "0x22E110" }
+                    },
+                    "length": 798376
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -117,11 +149,18 @@
                 }
             },
             {
-                "name": "Haunted Castle (Version K)",
+                "game": "Haunted Castle (Version K)",
                 "filename": "hcastlek.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x22E1A0" },
+                        "Steam2022": { "start": "0x22E110" }
+                    },
+                    "length": 798376
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -142,11 +181,18 @@
                 }
             },
             {
-                "name": "Akuma-Jou Dracula (Version N)",
+                "game": "Akuma-Jou Dracula (Version N)",
                 "filename": "akumajoun.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x22E1A0" },
+                        "Steam2022": { "start": "0x22E110" }
+                    },
+                    "length": 798376
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -167,11 +213,18 @@
                 }
             },
             {
-                "name": "Nemesis (World?)",
+                "game": "Nemesis (World?)",
                 "filename": "nemesisuk.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x2F2E70" },
+                        "Steam2022": { "start": "0x2F2DE0" }
+                    },
+                    "length": 541168
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -190,11 +243,18 @@
                 }
             },
             {
-                "name": "Nemesis",
+                "game": "Nemesis",
                 "filename": "nemesis.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x2F2E70" },
+                        "Steam2022": { "start": "0x2F2DE0" }
+                    },
+                    "length": 541168
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -213,11 +273,18 @@
                 }
             },
             {
-                "name": "Gradius 2",
+                "game": "Gradius 2",
                 "filename": "gradius2.zip",
                 "status": "playable",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x37C310" },
+                        "Steam2022": { "start": "0x37C280" }
+                    },
+                    "length": 3080192
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -241,11 +308,18 @@
                 }
             },
             {
-                "name": "Vulcan Venture",
+                "game": "Vulcan Venture",
                 "filename": "vulcan.zip",
                 "status": "playable",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x37C310" },
+                        "Steam2022": { "start": "0x37C280" }
+                    },
+                    "length": 3080192
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -269,11 +343,18 @@
                 }
             },
             {
-                "name": "Thunder Cross (J)",
+                "game": "Thunder Cross (J)",
                 "filename": "thunderxj.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x4D1460" },
+                        "Steam2022": { "start": "0x4D13D0" }
+                    },
+                    "length": 455549
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -301,11 +382,18 @@
                 }
             },
             {
-                "name": "Thunder Cross (Set 1)",
+                "game": "Thunder Cross (Set 1)",
                 "filename": "thunderx.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x4D1460" },
+                        "Steam2022": { "start": "0x4D13D0" }
+                    },
+                    "length": 455549
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -333,11 +421,18 @@
                 }
             },
             {
-                "name": "Thunder Cross (Set 2)",
+                "game": "Thunder Cross (Set 2)",
                 "filename": "thunderxa.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x4D1460" },
+                        "Steam2022": { "start": "0x4D13D0" }
+                    },
+                    "length": 455549
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -365,11 +460,18 @@
                 }
             },
             {
-                "name": "Thunder Cross (Set 3)",
+                "game": "Thunder Cross (Set 3)",
                 "filename": "thunderxb.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x4D1460" },
+                        "Steam2022": { "start": "0x4D13D0" }
+                    },
+                    "length": 455549
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -397,11 +499,18 @@
                 }
             },
             {
-                "name": "Salamander",
+                "game": "Salamander",
                 "filename": "salamand.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x416660" },
+                        "Steam2022": { "start": "0x4165D0" }
+                    },
+                    "length": 752816
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -416,11 +525,18 @@
                 }
             },
             {
-                "name": "Salamander (J)",
+                "game": "Salamander (J)",
                 "filename": "salamandj.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x416660" },
+                        "Steam2022": { "start": "0x4165D0" }
+                    },
+                    "length": 752816
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -435,11 +551,18 @@
                 }
             },
             {
-                "name": "Lifeforce",
+                "game": "Lifeforce",
                 "filename": "lifefrce.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x416660" },
+                        "Steam2022": { "start": "0x4165D0" }
+                    },
+                    "length": 752816
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -454,11 +577,18 @@
                 }
             },
             {
-                "name": "Lifeforce (J)",
+                "game": "Lifeforce (J)",
                 "filename": "lifefrcej.zip",
                 "status": "playable",
                 "system": "Arcade",
                 "notes": [2],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start": "0x416660" },
+                        "Steam2022": { "start": "0x4165D0" }
+                    },
+                    "length": 752816
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -473,11 +603,18 @@
                 }
             },
             {
-                "name": "Twinbee",
+                "game": "Twinbee",
                 "filename": "twinbee.zip",
                 "status": "good",
                 "system": "Arcade",
                 "notes": [],
+                "extract": {
+                    "versions": {
+                        "Steam2023": { "start_maincpu": "0x540870", "start_krom": "0x2F10E0" },
+                        "Steam2022": { "start_maincpu": "0x5407E0", "start_krom": "0x2F1050" }
+                    },
+                    "length": 67191
+                },
                 "verify": {
                     "type": "zip",
                     "entries": {
@@ -492,7 +629,7 @@
                 }
             },
             {
-                "name": "Scramble",
+                "game": "Scramble",
                 "filename": "N/A",
                 "status": "no-rom",
                 "system": "Arcade",
