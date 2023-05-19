@@ -1,12 +1,112 @@
 {
     "in": {
         "files": {
+            "bstars2_adpcm": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_bios_m68k": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_bios_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_bios_sfix": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_bios_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_game_m68k": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_game_sfix": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_game_z80": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_gfix_usage": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_gfix_usage",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_spr_usage": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_spr_usage",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_tiles": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
+            "bstars2_zoom_table": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 0,
+                        "crc": "12345678"
+                    }
+                }
+            },
             "aof2.zip": {
                 "rel_path": ["SNKTwitchArtOfFighting2_2020Jun18__1_"],
                 "filename": "aof2.zip",
                 "versions": {
                     "snk": {
-                        "size": 21364073,
+                        "size": 12408361,
                         "crc": "42493EBD"
                     }
                 }

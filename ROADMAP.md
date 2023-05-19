@@ -96,14 +96,10 @@
   - Iron Commando (SNES)
   - Dorke and Ymp (SNES)
   - Brave Battle Saga - The Legend of The Magic Warrior (Genesis)
-- CAVE (Recommended in #15)
-  - Mushihimesama
-  - DoDonPachi Resurrection
-  - Deathsmiles
   
 
 
-## Not Yet OwneD / Future Investigation
+## Not Yet Owned / Future Investigation
 - Darius Cozmic Collection Arcade
 - CAVE (Recommended in #15)
   - Deathsmiles I + II
@@ -183,7 +179,15 @@
   - Checkered Flag (Lynx)
   - Electrocop (Lynx)
   - Elland: The Crystal Wars (GBA)
-
+- City Connection
+  - Psyvariar Delta (Arcade)
+  - LAYER SECTION™ & GALACTIC ATTACK™ S-TRIBUTE
+  - ELEVATOR ACTION™ -RETURNS- S-TRIBUTE
+  - CLEOPATRA FORTUNE™ S-TRIBUTE
+  - COTTOn 2 Saturn TRIBUTE
+  - COTTOn Boomerang Saturn TRIBUTE
+  - Guardian Force Saturn TRIBUTE
+  - Akai Katana Shin
 
 
 ### .SR Releases
@@ -201,6 +205,9 @@ These titles require a major breakthrough.
 Dariusburst Chronicle Saviours                      | Does not appear ROM-based | based on Darius Another Chronicle EX Arcade?
 Dungeons & Dragons: Chronicles of Mystara           | Audio Reworked           | Maincpu and Gfx ROMs are there, but audio is completely reworked
 Mortal Kombat Kollection                            | Audio Reworked           | Audio ROMs were replaced with a different audio solution.
+DoDonPachi Resurrection                             | Does not appear ROM-based | Appears to be X360 Port re-ported?
+Mushihimesama                                       | Does not appear ROM-based | Appears to be X360 Port re-ported?
+Deathsmiles                                         | Does not appear ROM-based | Appears to be X360 Port re-ported?
 
 ## Will Not Cover
 
