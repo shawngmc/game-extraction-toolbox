@@ -56,6 +56,7 @@ As of right now, the only exception known is Samurai Shodown Neogeo Collection.
         out_files = {}
         for folder in found_folders:
             if folder == "Baseball Stars 2":
+                logger.info(f"Found {folder}; this release may take a while...")
                 title_in_files = [v for v in in_files.values() if v['rel_path'][0] == folder]
                 out_files['bstars2.zip'] = self._handle_bstars2(in_dir, title_in_files)
             else:

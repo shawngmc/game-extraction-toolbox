@@ -6,28 +6,8 @@
                 "filename": "bstars2_adpcm",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
-                    }
-                }
-            },
-            "bstars2_bios_m68k": {
-                "rel_path": ["Baseball Stars 2", "resources", "game"],
-                "filename": "bstars2_bios_m68k",
-                "versions": {
-                    "snk": {
-                        "size": 0,
-                        "crc": "12345678"
-                    }
-                }
-            },
-            "bstars2_bios_sfix": {
-                "rel_path": ["Baseball Stars 2", "resources", "game"],
-                "filename": "bstars2_bios_sfix",
-                "versions": {
-                    "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 2621440,
+                        "crc": "7CA7B41A"
                     }
                 }
             },
@@ -36,8 +16,8 @@
                 "filename": "bstars2_game_m68k",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 1048576,
+                        "crc": "DC2A6E5A"
                     }
                 }
             },
@@ -46,8 +26,8 @@
                 "filename": "bstars2_game_sfix",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 131072,
+                        "crc": "2B822628"
                     }
                 }
             },
@@ -56,28 +36,8 @@
                 "filename": "bstars2_game_z80",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
-                    }
-                }
-            },
-            "bstars2_gfix_usage": {
-                "rel_path": ["Baseball Stars 2", "resources", "game"],
-                "filename": "bstars2_gfix_usage",
-                "versions": {
-                    "snk": {
-                        "size": 0,
-                        "crc": "12345678"
-                    }
-                }
-            },
-            "bstars2_spr_usage": {
-                "rel_path": ["Baseball Stars 2", "resources", "game"],
-                "filename": "bstars2_spr_usage",
-                "versions": {
-                    "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 65536,
+                        "crc": "A415A9EA"
                     }
                 }
             },
@@ -86,8 +46,8 @@
                 "filename": "bstars2_tiles",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 4194304,
+                        "crc": "98CEBD9C"
                     }
                 }
             },
@@ -96,8 +56,8 @@
                 "filename": "bstars2_zoom_table",
                 "versions": {
                     "snk": {
-                        "size": 0,
-                        "crc": "12345678"
+                        "size": 131072,
+                        "crc": "5A86CFF2"
                     }
                 }
             },
@@ -569,6 +529,29 @@
                         "056-v1.v1": {"size": 2097152, "crc": "4628FDE0"},
                         "056-v2.v2": {"size": 2097152, "crc": "B710E2F2"},
                         "056-v3.v3": {"size": 1048576, "crc": "D168C301"}
+                    }
+                }
+            },
+            {
+                "game": "Baseball Stars 2",
+                "system": "NeoGeo",
+                "filename": "bstars2.zip",
+                "status": "playable",
+                "notes": ["Team names have been modified from the original release."],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "041-p1.p1": {"size": 524288, "crc": "EC922E91"},
+                        "041-v1.v1": {"size": 1048576, "crc": "BE77CF0A"},
+                        "041-v2.v2": {"size": 1048576, "crc": "A6E794D7"},
+                        "041-v3.v3": {"size": 524288, "crc": "AFAA0180"},
+                        "000-lo.lo": {"size": 131072, "crc": "5A86CFF2"},
+                        "041-m1.m1": {"size": 131072, "crc": "6CD7C5B4"},
+                        "041-c1.c1": {"size": 1048576, "crc": "B39A12E1"},
+                        "041-c2.c2": {"size": 1048576, "crc": "766CFC2F"},
+                        "041-c3.c3": {"size": 1048576, "crc": "FB31339D"},
+                        "041-c4.c4": {"size": 1048576, "crc": "70457A0C"},
+                        "041-s1.s1": {"size": 131072, "crc": "2F19F5F0"}
                     }
                 }
             },
