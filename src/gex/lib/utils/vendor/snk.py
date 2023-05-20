@@ -133,3 +133,43 @@ def handle_twinspri(bundle_contents):
     func_map['fixed'] = twinspri_fixed
 
     return helpers.build_rom(bundle_contents, func_map)
+
+def handle_lastblad(bundle_contents):
+    func_map = {}
+    maincpu_file_map = {
+        '234-p1.p1': 0x100000,
+        '234-p2.p2': 0x400000,
+    }
+    func_map['maincpu'] = helpers.custom_split_helper('lastblad_game_m68k', maincpu_file_map)
+    adpcm_file_map = {
+        '234-v1.v1': 0x400000,
+        '234-v2.v2': 0x400000,
+        '234-v3.v3': 0x400000,
+        '234-v4.v4': 0x400000
+    }
+    func_map['adpcm'] = helpers.custom_split_helper('lastblad_adpcm', adpcm_file_map)
+    func_map['zoom'] = helpers.name_file_helper("lastblad_zoom_table", "000-lo.lo")
+    func_map['audiocpu'] = helpers.name_file_helper("lastblad_game_z80", "234-m1.m1")
+
+    def lastblad_sprites(in_files):
+        contents = in_files['lastblad_tiles']
+        deoptimized = deoptimize_sprites(contents)
+        filenames = [
+            "234-c1.c1",
+            "234-c2.c2",
+            "234-c3.c3",
+            "234-c4.c4",
+            "234-c5.c5",
+            "234-c6.c6",
+        ]
+        chunks = transforms.custom_split(deoptimized, [0x1000000, 0x1000000, 0x800000])
+        chunks = transforms.deinterleave_all(chunks, 2, 1)
+        return dict(zip(filenames, chunks))
+    func_map['sprites'] = lastblad_sprites
+
+    def lastblad_fixed(in_files):
+        contents = in_files['lastblad_game_sfix']
+        return {"234-s1.s1": sfix_reorder(contents)}
+    func_map['fixed'] = lastblad_fixed
+
+    return helpers.build_rom(bundle_contents, func_map)

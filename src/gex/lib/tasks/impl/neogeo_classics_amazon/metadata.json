@@ -1,0 +1,1191 @@
+{
+    "in": {
+        "files": {
+            "bstars2_adpcm": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 2621440,
+                        "crc": "7CA7B41A"
+                    }
+                }
+            },
+            "bstars2_game_m68k": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 1048576,
+                        "crc": "DC2A6E5A"
+                    }
+                }
+            },
+            "bstars2_game_sfix": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "2B822628"
+                    }
+                }
+            },
+            "bstars2_game_z80": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 65536,
+                        "crc": "A415A9EA"
+                    }
+                }
+            },
+            "bstars2_tiles": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 4194304,
+                        "crc": "98CEBD9C"
+                    }
+                }
+            },
+            "bstars2_zoom_table": {
+                "rel_path": ["Baseball Stars 2", "resources", "game"],
+                "filename": "bstars2_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "5A86CFF2"
+                    }
+                }
+            },
+            "twinspri_adpcm": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 6291456,
+                        "crc": "2E5DA6DD"
+                    }
+                }
+            },
+            "twinspri_game_m68k": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 4194304,
+                        "crc": "C78FF6CD"
+                    }
+                }
+            },
+            "twinspri_game_sfix": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "9F4C5EAD"
+                    }
+                }
+            },
+            "twinspri_game_z80": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "364D6F96"
+                    }
+                }
+            },
+            "twinspri_tiles": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 10485760,
+                        "crc": "0862CA91"
+                    }
+                }
+            },
+            "twinspri_zoom_table": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "5A86CFF2"
+                    }
+                }
+            },
+            "lastblad_adpcm": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 16777216,
+                        "crc": "436E8345"
+                    }
+                }
+            },
+            "lastblad_game_m68k": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 5242880,
+                        "crc": "5DED714E"
+                    }
+                }
+            },
+            "lastblad_game_sfix": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "94AE3C25"
+                    }
+                }
+            },
+            "lastblad_game_z80": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "087628EA"
+                    }
+                }
+            },
+            "lastblad_tiles": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 41943040,
+                        "crc": "4A19CC24"
+                    }
+                }
+            },
+            "lastblad_zoom_table": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "5A86CFF2"
+                    }
+                }
+            },
+            "aof2.zip": {
+                "rel_path": ["Art of Fighting 2"],
+                "filename": "aof2.zip",
+                "versions": {
+                    "snk": {
+                        "size": 12408361,
+                        "crc": "42493EBD"
+                    }
+                }
+            },
+            "aof2_neogeo.zip": {
+                "rel_path": ["Art of Fighting 2"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "enhanced": {
+                        "size": 1346731,
+                        "crc": "AFCE86AC"
+                    }
+                }
+            },
+            "blazstar.zip": {
+                "rel_path": ["Blazing Star"],
+                "filename": "blazstar.zip",
+                "versions": {
+                    "snk": {
+                        "size": 21364073,
+                        "crc": "CED38BBE"
+                    }
+                }
+            },
+            "blazstar_neogeo.zip": {
+                "rel_path": ["Blazing Star"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "fatfursp.zip": {
+                "rel_path": ["Fatal Fury Special"],
+                "filename": "fatfursp.zip",
+                "versions": {
+                    "snk": {
+                        "size": 11382761,
+                        "crc": "D5019435"
+                    }
+                }
+            },
+            "fatfursp_neogeo.zip": {
+                "rel_path": ["Fatal Fury Special"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "garou.zip": {
+                "rel_path": ["GarouMOTW"],
+                "filename": "garou.zip",
+                "versions": {
+                    "snk": {
+                        "size": 83515642,
+                        "crc": "2D84ABD3"
+                    }
+                }
+            },
+            "garou_neogeo.zip": {
+                "rel_path": ["GarouMOTW"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "ironclad.zip": {
+                "rel_path": ["Ironclad"],
+                "filename": "ironclad.zip",
+                "versions": {
+                    "snk": {
+                        "size": 12780240,
+                        "crc": "F2EC33A4"
+                    }
+                }
+            },
+            "ironclad_neogeo.zip": {
+                "rel_path": ["Ironclad"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "mslug.zip": {
+                "rel_path": ["MetalSlug"],
+                "filename": "mslug.zip",
+                "versions": {
+                    "snk": {
+                        "size": 12958458,
+                        "crc": "86CB2984"
+                    }
+                }
+            },
+            "mslug_neogeo.zip": {
+                "rel_path": ["MetalSlug"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "mslug2.zip": {
+                "rel_path": ["MetalSlug2"],
+                "filename": "mslug2.zip",
+                "versions": {
+                    "snk": {
+                        "size": 17215264,
+                        "crc": "5FE8F003"
+                    }
+                }
+            },
+            "mslug2_neogeo.zip": {
+                "rel_path": ["MetalSlug2"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "mslug3.zip": {
+                "rel_path": ["MetalSlug3"],
+                "filename": "mslug3.zip",
+                "versions": {
+                    "snk": {
+                        "size": 79997554,
+                        "crc": "966D097E"
+                    }
+                }
+            },
+            "mslug3_neogeo.zip": {
+                "rel_path": ["MetalSlug3"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "mslugx.zip": {
+                "rel_path": ["MetalSlugX"],
+                "filename": "mslugx.zip",
+                "versions": {
+                    "snk": {
+                        "size": 28048630,
+                        "crc": "CACFABF6"
+                    }
+                }
+            },
+            "mslugx_neogeo.zip": {
+                "rel_path": ["MetalSlugX"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "pulstar.zip": {
+                "rel_path": ["Pulstar"],
+                "filename": "pulstar.zip",
+                "versions": {
+                    "snk": {
+                        "size": 18548811,
+                        "crc": "F2E94297"
+                    }
+                }
+            },
+            "pulstar_neogeo.zip": {
+                "rel_path": ["Pulstar"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "rbff2.zip": {
+                "rel_path": ["Real Bout Fatal Fury 2 - The"],
+                "filename": "rbff2.zip",
+                "versions": {
+                    "snk": {
+                        "size": 29995063,
+                        "crc": "67070BEA"
+                    }
+                }
+            },
+            "rbff2_neogeo.zip": {
+                "rel_path": ["Real Bout Fatal Fury 2 - The"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "samsho2.zip": {
+                "rel_path": ["Samurai Shodown II"],
+                "filename": "samsho2.zip",
+                "versions": {
+                    "snk": {
+                        "size": 15763063,
+                        "crc": "F50FF212"
+                    }
+                }
+            },
+            "samsho2_neogeo.zip": {
+                "rel_path": ["Samurai Shodown II"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "samsh5sp.zip": {
+                "rel_path": ["SamuraiShodown5Special"],
+                "filename": "samsh5sp.zip",
+                "versions": {
+                    "snk": {
+                        "size": 87108330,
+                        "crc": "EC4CD3F9"
+                    }
+                }
+            },
+            "samsh5sp_neogeo.zip": {
+                "rel_path": ["SamuraiShodown5Special"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "Sengoku 3.zip": {
+                "rel_path": ["Sengoku 3"],
+                "filename": "Sengoku 3.zip",
+                "versions": {
+                    "snk": {
+                        "size": 44641361,
+                        "crc": "9921C24B"
+                    }
+                }
+            },
+            "Sengoku 3_neogeo.zip": {
+                "rel_path": ["Sengoku 3"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "shocktro.zip": {
+                "rel_path": ["ShockTroopers"],
+                "filename": "shocktro.zip",
+                "versions": {
+                    "snk": {
+                        "size": 19669395,
+                        "crc": "97FE4C83"
+                    }
+                }
+            },
+            "shocktro_neogeo.zip": {
+                "rel_path": ["ShockTroopers"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "shocktr2.zip": {
+                "rel_path": ["ShockTroopers2"],
+                "filename": "shocktr2.zip",
+                "versions": {
+                    "snk": {
+                        "size": 28304273,
+                        "crc": "D0423F68"
+                    }
+                }
+            },
+            "shocktr2_neogeo.zip": {
+                "rel_path": ["ShockTroopers2"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "kof2000.zip": {
+                "rel_path": ["The King of Fighters 2000"],
+                "filename": "kof2000.zip",
+                "versions": {
+                    "snk": {
+                        "size": 82720791,
+                        "crc": "21BD67F1"
+                    }
+                }
+            },
+            "kof2000_neogeo.zip": {
+                "rel_path": ["The King of Fighters 2000"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "kof2002.zip": {
+                "rel_path": ["The King of Fighters 2002"],
+                "filename": "kof2002.zip",
+                "versions": {
+                    "snk": {
+                        "size": 82132354,
+                        "crc": "72A21FBB"
+                    }
+                }
+            },
+            "kof2002_neogeo.zip": {
+                "rel_path": ["The King of Fighters 2002"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            },
+            "kotm.zip": {
+                "rel_path": ["King of the Monsters"],
+                "filename": "kotm.zip",
+                "versions": {
+                    "snk": {
+                        "size": 4148083,
+                        "crc": "C5842E89"
+                    }
+                }
+            },
+            "kotm_neogeo.zip": {
+                "rel_path": ["King of the Monsters"],
+                "filename": "neogeo.zip",
+                "versions": {
+                    "basic": {
+                        "size": 122286,
+                        "crc": "D5295B2B"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Art of Fighting 2",
+                "system": "NeoGeo",
+                "filename": "aof2.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "056-c1.c1": {"size": 2097152, "crc": "BF6F58F4"},
+                        "056-c2.c2": {"size": 2097152, "crc": "9C7F9694"},
+                        "056-c3.c3": {"size": 2097152, "crc": "D2C88768"},
+                        "056-c4.c4": {"size": 2097152, "crc": "DB39B883"},
+                        "056-c5.c5": {"size": 2097152, "crc": "C3074137"},
+                        "056-c6.c6": {"size": 2097152, "crc": "31DE68D3"},
+                        "056-c7.c7": {"size": 2097152, "crc": "3F36DF57"},
+                        "056-c8.c8": {"size": 2097152, "crc": "E546D7A8"},
+                        "056-epr.ep1": {"size": 524288, "crc": "75D6301C"},
+                        "056-m1.m1": {"size": 131072, "crc": "F27E9D52"},
+                        "056-p1.p1": {"size": 1048576, "crc": "A3B1D021"},
+                        "056-s1.s1": {"size": 131072, "crc": "8B02638E"},
+                        "056-v1.v1": {"size": 2097152, "crc": "4628FDE0"},
+                        "056-v2.v2": {"size": 2097152, "crc": "B710E2F2"},
+                        "056-v3.v3": {"size": 1048576, "crc": "D168C301"}
+                    }
+                }
+            },
+            {
+                "game": "Baseball Stars 2",
+                "system": "NeoGeo",
+                "filename": "bstars2.zip",
+                "status": "playable",
+                "notes": ["Team names have been modified from the original release."],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "041-p1.p1": {"size": 524288, "crc": "EC922E91"},
+                        "041-v1.v1": {"size": 1048576, "crc": "BE77CF0A"},
+                        "041-v2.v2": {"size": 1048576, "crc": "A6E794D7"},
+                        "041-v3.v3": {"size": 524288, "crc": "AFAA0180"},
+                        "000-lo.lo": {"size": 131072, "crc": "5A86CFF2"},
+                        "041-m1.m1": {"size": 131072, "crc": "6CD7C5B4"},
+                        "041-c1.c1": {"size": 1048576, "crc": "B39A12E1"},
+                        "041-c2.c2": {"size": 1048576, "crc": "766CFC2F"},
+                        "041-c3.c3": {"size": 1048576, "crc": "FB31339D"},
+                        "041-c4.c4": {"size": 1048576, "crc": "70457A0C"},
+                        "041-s1.s1": {"size": 131072, "crc": "2F19F5F0"}
+                    }
+                }
+            },
+            {
+                "game": "Blazing Star",
+                "system": "NeoGeo",
+                "filename": "blazstar.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "239-c1.c1": {"size": 4194304, "crc": "84F6D584"},
+                        "239-c2.c2": {"size": 4194304, "crc": "05A0CB22"},
+                        "239-c3.c3": {"size": 4194304, "crc": "5FB69C9E"},
+                        "239-c4.c4": {"size": 4194304, "crc": "0BE028C4"},
+                        "239-c5.c5": {"size": 4194304, "crc": "74BAE5F8"},
+                        "239-c6.c6": {"size": 4194304, "crc": "4E0700D2"},
+                        "239-c7.c7": {"size": 4194304, "crc": "010FF4FD"},
+                        "239-c8.c8": {"size": 4194304, "crc": "DB60460E"},
+                        "239-m1.m1": {"size": 131072, "crc": "D31A3AEA"},
+                        "239-p1.p1": {"size": 1048576, "crc": "183682F8"},
+                        "239-p2.sp2": {"size": 2097152, "crc": "9A9F4154"},
+                        "239-s1.s1": {"size": 131072, "crc": "D56CB498"},
+                        "239-v1.v1": {"size": 4194304, "crc": "1B8D5BF7"},
+                        "239-v2.v2": {"size": 4194304, "crc": "74CF0A70"}
+                    }
+                }
+            },
+            {
+                "game": "Fatal Fury Special",
+                "system": "NeoGeo",
+                "filename": "fatfursp.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "058-c1.c1": {"size": 2097152, "crc": "044AB13C"},
+                        "058-c2.c2": {"size": 2097152, "crc": "11E6BF96"},
+                        "058-c3.c3": {"size": 2097152, "crc": "6F7938D5"},
+                        "058-c4.c4": {"size": 2097152, "crc": "4AD066FF"},
+                        "058-c5.c5": {"size": 2097152, "crc": "49C5E0BF"},
+                        "058-c6.c6": {"size": 2097152, "crc": "8FF1F43D"},
+                        "058-epr.ep1": {"size": 524288, "crc": "9F0C1E1A"},
+                        "058-m1.m1": {"size": 131072, "crc": "CCC5186E"},
+                        "058-p1.p1": {"size": 1048576, "crc": "2F585BA2"},
+                        "058-p2.sp2": {"size": 524288, "crc": "D7C71A6B"},
+                        "058-s1.s1": {"size": 131072, "crc": "2DF03197"},
+                        "058-v1.v1": {"size": 2097152, "crc": "55D7CE84"},
+                        "058-v2.v2": {"size": 2097152, "crc": "EE080B10"},
+                        "058-v3.v3": {"size": 1048576, "crc": "F9EB3D4A"}
+                    }
+                }
+            },
+            {
+                "game": "Garou: Mark of the Wolf",
+                "system": "NeoGeo",
+                "filename": "garou.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "253-c1.c1": {"size": 8388608, "crc": "0603E046"},
+                        "253-c2.c2": {"size": 8388608, "crc": "0917D2A4"},
+                        "253-c3.c3": {"size": 8388608, "crc": "6737C92D"},
+                        "253-c4.c4": {"size": 8388608, "crc": "5BA92EC6"},
+                        "253-c5.c5": {"size": 8388608, "crc": "3EAB5557"},
+                        "253-c6.c6": {"size": 8388608, "crc": "308D098B"},
+                        "253-c7.c7": {"size": 8388608, "crc": "C0E995AE"},
+                        "253-c8.c8": {"size": 8388608, "crc": "21A11303"},
+                        "253-ep1.p1": {"size": 2097152, "crc": "EA3171A4"},
+                        "253-ep2.p2": {"size": 2097152, "crc": "382F704B"},
+                        "253-ep3.p3": {"size": 2097152, "crc": "E395BFDD"},
+                        "253-ep4.p4": {"size": 2097152, "crc": "DA92C08E"},
+                        "253-m1.m1": {"size": 262144, "crc": "36A806BE"},
+                        "253-p1.p1": {"size": 4194304, "crc": "18AE5D7E"},
+                        "253-p2.p2": {"size": 4194304, "crc": "AFFFA779"},
+                        "253-v1.v1": {"size": 4194304, "crc": "263E388C"},
+                        "253-v2.v2": {"size": 4194304, "crc": "2C6BC7BE"},
+                        "253-v3.v3": {"size": 4194304, "crc": "0425B27D"},
+                        "253-v4.v4": {"size": 4194304, "crc": "A54BE8A9"},
+                        "ke.neo-sma": {"size": 262144, "crc": "96C72233"},
+                        "kf.neo-sma": {"size": 262144, "crc": "98BC93DC"}
+                    }
+                }
+            },
+            {
+                "game": "Ironclad",
+                "system": "NeoGeo",
+                "filename": "ironclad.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "220-p1a.bin": {"size": 2097152, "crc": "CE37E3A0"},
+                        "proto_220-c1.c1": {"size": 4194304, "crc": "9AA2B7DC"},
+                        "proto_220-c2.c2": {"size": 4194304, "crc": "8A2AD708"},
+                        "proto_220-c3.c3": {"size": 4194304, "crc": "D67FB15A"},
+                        "proto_220-c4.c4": {"size": 4194304, "crc": "E73EA38B"},
+                        "proto_220-m1.m1": {"size": 131072, "crc": "3A08BB63"},
+                        "proto_220-p1.p1": {"size": 2097152, "crc": "62A942C6"},
+                        "proto_220-s1.s1": {"size": 131072, "crc": "372FE217"},
+                        "proto_220-v1.v1": {"size": 4194304, "crc": "8F30A215"}
+                    }
+                }
+            },
+            {
+                "game": "King of Fighters 2000",
+                "system": "NeoGeo",
+                "filename": "kof2000.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "257-c1.c1": {"size": 8388608, "crc": "CEF1CDFA"},
+                        "257-c2.c2": {"size": 8388608, "crc": "F7BF0003"},
+                        "257-c3.c3": {"size": 8388608, "crc": "101E6560"},
+                        "257-c4.c4": {"size": 8388608, "crc": "BD2FC1B1"},
+                        "257-c5.c5": {"size": 8388608, "crc": "89775412"},
+                        "257-c6.c6": {"size": 8388608, "crc": "FA7200D5"},
+                        "257-c7.c7": {"size": 8388608, "crc": "7DA11FE4"},
+                        "257-c8.c8": {"size": 8388608, "crc": "B1AFA60B"},
+                        "257-m1.m1": {"size": 262144, "crc": "4B749113"},
+                        "257-p1.p1": {"size": 4194304, "crc": "60947B4C"},
+                        "257-p2.p2": {"size": 4194304, "crc": "1B7EC415"},
+                        "257-pg1.p1": {"size": 1048576, "crc": "5F809DBE"},
+                        "257-pg2.sp2": {"size": 4194304, "crc": "693C2C5E"},
+                        "257-v1.v1": {"size": 4194304, "crc": "17CDE847"},
+                        "257-v2.v2": {"size": 4194304, "crc": "1AFB20FF"},
+                        "257-v3.v3": {"size": 4194304, "crc": "4605036A"},
+                        "257-v4.v4": {"size": 4194304, "crc": "764BBD6B"},
+                        "neo-sma": {"size": 262144, "crc": "71C6E6BB"}
+                    }
+                }
+            },
+            {
+                "game": "King of Fighters 2002",
+                "system": "NeoGeo",
+                "filename": "kof2002.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "265-c1.c1": {"size": 8388608, "crc": "2B65A656"},
+                        "265-c2.c2": {"size": 8388608, "crc": "ADF18983"},
+                        "265-c3.c3": {"size": 8388608, "crc": "875E9FD7"},
+                        "265-c4.c4": {"size": 8388608, "crc": "2DA13947"},
+                        "265-c5.c5": {"size": 8388608, "crc": "61BD165D"},
+                        "265-c6.c6": {"size": 8388608, "crc": "03FDD1EB"},
+                        "265-c7.c7": {"size": 8388608, "crc": "1A2749D8"},
+                        "265-c8.c8": {"size": 8388608, "crc": "AB0BB549"},
+                        "265-m1.m1": {"size": 131072, "crc": "85AAA632"},
+                        "265-p1.p1": {"size": 1048576, "crc": "9EDE7323"},
+                        "265-p2.sp2": {"size": 4194304, "crc": "327266B8"},
+                        "265-v1.v1": {"size": 8388608, "crc": "15E8F3F5"},
+                        "265-v2.v2": {"size": 8388608, "crc": "DA41D6F9"}
+                    }
+                }
+            },
+            {
+                "game": "King of the Monsters",
+                "system": "NeoGeo",
+                "filename": "kotm.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "016-c1.c1": {"size": 1048576, "crc": "71471C25"},
+                        "016-c2.c2": {"size": 1048576, "crc": "320DB048"},
+                        "016-c3.c3": {"size": 1048576, "crc": "98DE7995"},
+                        "016-c4.c4": {"size": 1048576, "crc": "070506E2"},
+                        "016-hp1.p1": {"size": 524288, "crc": "B774621E"},
+                        "016-m1.m1": {"size": 131072, "crc": "9DA9CA10"},
+                        "016-p1.p1": {"size": 524288, "crc": "1B818731"},
+                        "016-p2.p2": {"size": 131072, "crc": "12AFDC2B"},
+                        "016-s1.s1": {"size": 131072, "crc": "1A2EEEB3"},
+                        "016-v1.v1": {"size": 1048576, "crc": "86C0A502"},
+                        "016-v2.v2": {"size": 1048576, "crc": "5BC23EC5"}
+                    }
+                }
+            },
+            {
+                "game": "The Last Blade",
+                "system": "NeoGeo",
+                "filename": "lastblad.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "134-p1k.p1": {"size": 1048576, "crc": "906F3065"},
+                        "234-c1.c1": {"size": 8388608, "crc": "9F7E2BD3"},
+                        "234-c2.c2": {"size": 8388608, "crc": "80623D3C"},
+                        "234-c3.c3": {"size": 8388608, "crc": "91AB1A30"},
+                        "234-c4.c4": {"size": 8388608, "crc": "3D60B037"},
+                        "234-c5.c5": {"size": 4194304, "crc": "1BA80CEE"},
+                        "234-c6.c6": {"size": 4194304, "crc": "BEAFD091"},
+                        "234-m1.m1": {"size": 131072, "crc": "087628EA"},
+                        "234-p1.p1": {"size": 1048576, "crc": "E123A5A3"},
+                        "234-p2.sp2": {"size": 4194304, "crc": "0FDC289E"},
+                        "234-pg1.p1": {"size": 1048576, "crc": "CD01C06D"},
+                        "234-s1.s1": {"size": 131072, "crc": "95561412"},
+                        "234-v1.v1": {"size": 4194304, "crc": "ED66B76F"},
+                        "234-v2.v2": {"size": 4194304, "crc": "A0E7F6E2"},
+                        "234-v3.v3": {"size": 4194304, "crc": "A506E1E2"},
+                        "234-v4.v4": {"size": 4194304, "crc": "0E34157F"}
+                    }
+                }
+            },
+            {
+                "game": "Metal Slug",
+                "system": "NeoGeo",
+                "filename": "mslug.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "201-c1.c1": {"size": 4194304, "crc": "72813676"},
+                        "201-c2.c2": {"size": 4194304, "crc": "96F62574"},
+                        "201-c3.c3": {"size": 4194304, "crc": "5121456A"},
+                        "201-c4.c4": {"size": 4194304, "crc": "F4AD59A3"},
+                        "201-m1.m1": {"size": 131072, "crc": "C28B3253"},
+                        "201-p1.p1": {"size": 2097152, "crc": "08D8DAA5"},
+                        "201-s1.s1": {"size": 131072, "crc": "2F55958D"},
+                        "201-v1.v1": {"size": 4194304, "crc": "23D22ED1"},
+                        "201-v2.v2": {"size": 4194304, "crc": "472CF9DB"}
+                    }
+                }
+            },
+            {
+                "game": "Metal Slug 2",
+                "system": "NeoGeo",
+                "filename": "mslug2.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "241-c1.c1": {"size": 8388608, "crc": "394B5E0D"},
+                        "241-c2.c2": {"size": 8388608, "crc": "E5806221"},
+                        "241-c3.c3": {"size": 8388608, "crc": "9F6BFA6F"},
+                        "241-c4.c4": {"size": 8388608, "crc": "7D3E306F"},
+                        "241-m1.m1": {"size": 131072, "crc": "94520EBD"},
+                        "241-p1.p1": {"size": 1048576, "crc": "2A53C5DA"},
+                        "241-p2.sp2": {"size": 2097152, "crc": "38883F44"},
+                        "241-s1.s1": {"size": 131072, "crc": "F3D32F0F"},
+                        "241-v1.v1": {"size": 4194304, "crc": "99EC20E8"},
+                        "241-v2.v2": {"size": 4194304, "crc": "ECB16799"}
+                    }
+                }
+            },
+            {
+                "game": "Metal Slug 3",
+                "system": "NeoGeo",
+                "filename": "mslug3.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "256-c1.c1": {"size": 8388608, "crc": "5A79C34E"},
+                        "256-c2.c2": {"size": 8388608, "crc": "944C362C"},
+                        "256-c3.c3": {"size": 8388608, "crc": "6E69D36F"},
+                        "256-c4.c4": {"size": 8388608, "crc": "B755B4EB"},
+                        "256-c5.c5": {"size": 8388608, "crc": "7AACAB47"},
+                        "256-c6.c6": {"size": 8388608, "crc": "C698FD5D"},
+                        "256-c7.c7": {"size": 8388608, "crc": "CFCEDDD2"},
+                        "256-c8.c8": {"size": 8388608, "crc": "4D9BE34C"},
+                        "256-m1.m1": {"size": 524288, "crc": "EAEEC116"},
+                        "256-pg1.p1": {"size": 4194304, "crc": "B07EDFD5"},
+                        "256-pg2.p2": {"size": 4194304, "crc": "6097C26B"},
+                        "256-v1.v1": {"size": 4194304, "crc": "F2690241"},
+                        "256-v2.v2": {"size": 4194304, "crc": "7E2A10BD"},
+                        "256-v3.v3": {"size": 4194304, "crc": "0EAEC17C"},
+                        "256-v4.v4": {"size": 4194304, "crc": "9B4B22D4"},
+                        "neo-sma": {"size": 262144, "crc": "9CD55736"}
+                    }
+                }
+            },
+            {
+                "game": "Metal Slug X",
+                "system": "NeoGeo",
+                "filename": "mslugx.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "250-c1.c1": {"size": 8388608, "crc": "09A52C6F"},
+                        "250-c2.c2": {"size": 8388608, "crc": "31679821"},
+                        "250-c3.c3": {"size": 8388608, "crc": "FD602019"},
+                        "250-c4.c4": {"size": 8388608, "crc": "31354513"},
+                        "250-c5.c5": {"size": 8388608, "crc": "A4B56124"},
+                        "250-c6.c6": {"size": 8388608, "crc": "83E3E69D"},
+                        "250-m1.m1": {"size": 131072, "crc": "FD42A842"},
+                        "250-p1.p1": {"size": 1048576, "crc": "81F1F60B"},
+                        "250-p2.ep1": {"size": 4194304, "crc": "1FDA2E12"},
+                        "250-s1.s1": {"size": 131072, "crc": "FB6F441D"},
+                        "250-v1.v1": {"size": 4194304, "crc": "C79EDE73"},
+                        "250-v2.v2": {"size": 4194304, "crc": "EA9AABE1"},
+                        "250-v3.v3": {"size": 2097152, "crc": "2CA65102"}
+                    }
+                }
+            },
+            {
+                "game": "Pulstar",
+                "system": "NeoGeo",
+                "filename": "pulstar.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "089-c1.c1": {"size": 4194304, "crc": "F4E97332"},
+                        "089-c2.c2": {"size": 4194304, "crc": "836D14DA"},
+                        "089-c3.c3": {"size": 4194304, "crc": "913611C4"},
+                        "089-c4.c4": {"size": 4194304, "crc": "44CEF0E3"},
+                        "089-c5.c5": {"size": 4194304, "crc": "89BAA1D7"},
+                        "089-c6.c6": {"size": 4194304, "crc": "B2594D56"},
+                        "089-c7.c7": {"size": 2097152, "crc": "6A5618CA"},
+                        "089-c8.c8": {"size": 2097152, "crc": "A223572D"},
+                        "089-m1.m1": {"size": 131072, "crc": "FF3DF7C7"},
+                        "089-p1.p1": {"size": 1048576, "crc": "5E5847A2"},
+                        "089-p2.sp2": {"size": 2097152, "crc": "028B774C"},
+                        "089-s1.s1": {"size": 131072, "crc": "C79FC2C8"},
+                        "089-v1.v1": {"size": 4194304, "crc": "6F726ECB"},
+                        "089-v2.v2": {"size": 4194304, "crc": "9D2DB551"}
+                    }
+                }
+            },
+            {
+                "game": "Real Bout Fatal Fury 2",
+                "system": "NeoGeo",
+                "filename": "rbff2.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "140-p1k.p1": {"size": 1048576, "crc": "965EDEE1"},
+                        "240-c1.c1": {"size": 8388608, "crc": "EFFAC504"},
+                        "240-c2.c2": {"size": 8388608, "crc": "ED182D44"},
+                        "240-c3.c3": {"size": 8388608, "crc": "22E0330A"},
+                        "240-c4.c4": {"size": 8388608, "crc": "C19A07EB"},
+                        "240-c5.c5": {"size": 8388608, "crc": "244DFF5A"},
+                        "240-c6.c6": {"size": 8388608, "crc": "4609E507"},
+                        "240-m1.m1": {"size": 262144, "crc": "ED482791"},
+                        "240-p1.p1": {"size": 1048576, "crc": "80E41205"},
+                        "240-p2.sp2": {"size": 4194304, "crc": "960AA88D"},
+                        "240-pg1.p1": {"size": 1048576, "crc": "B6969780"},
+                        "240-s1.s1": {"size": 131072, "crc": "DA3B40DE"},
+                        "240-v1.v1": {"size": 4194304, "crc": "F796265A"},
+                        "240-v2.v2": {"size": 4194304, "crc": "2CB3F3BB"},
+                        "240-v3.v3": {"size": 4194304, "crc": "8FE1367A"},
+                        "240-v4.v4": {"size": 2097152, "crc": "996704D8"}
+                    }
+                }
+            },
+            {
+                "game": "Samurai Shodown 2",
+                "system": "NeoGeo",
+                "filename": "samsho2.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "063-c1.c1": {"size": 2097152, "crc": "86CD307C"},
+                        "063-c2.c2": {"size": 2097152, "crc": "CDFCC4CA"},
+                        "063-c3.c3": {"size": 2097152, "crc": "7A63CCC7"},
+                        "063-c4.c4": {"size": 2097152, "crc": "751025CE"},
+                        "063-c5.c5": {"size": 2097152, "crc": "20D3A475"},
+                        "063-c6.c6": {"size": 2097152, "crc": "AE4C0A88"},
+                        "063-c7.c7": {"size": 2097152, "crc": "2DF3CBCF"},
+                        "063-c8.c8": {"size": 2097152, "crc": "1FFC6DFA"},
+                        "063-ep1-kan.ep1": {"size": 524288, "crc": "FA32E2D8"},
+                        "063-ep2-kan.ep2": {"size": 524288, "crc": "70B1A4D9"},
+                        "063-m1.m1": {"size": 131072, "crc": "56675098"},
+                        "063-p1-kan.p1": {"size": 2097152, "crc": "147CC6D7"},
+                        "063-p1.p1": {"size": 2097152, "crc": "22368892"},
+                        "063-s1-kan.s1": {"size": 131072, "crc": "FF08F80B"},
+                        "063-s1.s1": {"size": 131072, "crc": "64A5CD66"},
+                        "063-v1.v1": {"size": 2097152, "crc": "37703F91"},
+                        "063-v2.v2": {"size": 2097152, "crc": "0142BDE8"},
+                        "063-v3.v3": {"size": 2097152, "crc": "D07FA5CA"},
+                        "063-v4.v4": {"size": 1048576, "crc": "24AAB4BB"}
+                    }
+                }
+            },
+            {
+                "game": "Samurai Shodown 5 Special",
+                "system": "NeoGeo",
+                "filename": "samsh5sp.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "272-c1.c1": {"size": 8388608, "crc": "4F97661A"},
+                        "272-c2.c2": {"size": 8388608, "crc": "A3AFDA4F"},
+                        "272-c3.c3": {"size": 8388608, "crc": "8C3C7502"},
+                        "272-c4.c4": {"size": 8388608, "crc": "32D5E2E2"},
+                        "272-c5.c5": {"size": 8388608, "crc": "6CE085BC"},
+                        "272-c6.c6": {"size": 8388608, "crc": "05C8DC8E"},
+                        "272-c7.c7": {"size": 8388608, "crc": "1417B742"},
+                        "272-c8.c8": {"size": 8388608, "crc": "D49773CD"},
+                        "272-m1.m1": {"size": 524288, "crc": "ADEEBF40"},
+                        "272-p1.p1": {"size": 4194304, "crc": "FB7A6BBA"},
+                        "272-p1c.p1": {"size": 4194304, "crc": "9291794D"},
+                        "272-p1ca.p1": {"size": 4194304, "crc": "C30A08DD"},
+                        "272-p2.sp2": {"size": 4194304, "crc": "63492EA6"},
+                        "272-p2c.sp2": {"size": 4194304, "crc": "FA1A7DD8"},
+                        "272-p2ca.sp2": {"size": 4194304, "crc": "BD64A518"},
+                        "272-v1.v1": {"size": 8388608, "crc": "76A94127"},
+                        "272-v2.v2": {"size": 8388608, "crc": "4BA507F1"}
+                    }
+                }
+            },
+            {
+                "game": "Sengoku 3",
+                "system": "NeoGeo",
+                "filename": "Sengoku 3.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "261-c1.c1": {"size": 8388608, "crc": "DED84D9C"},
+                        "261-c2.c2": {"size": 8388608, "crc": "B8EB4348"},
+                        "261-c3.c3": {"size": 8388608, "crc": "84E2034A"},
+                        "261-c4.c4": {"size": 8388608, "crc": "0B45AE53"},
+                        "261-m1.m1": {"size": 524288, "crc": "7D501C39"},
+                        "261-ph1.p1": {"size": 2097152, "crc": "E0D4BC0A"},
+                        "261-v1.v1": {"size": 4194304, "crc": "64C30081"},
+                        "261-v2.v2": {"size": 4194304, "crc": "392A9C47"},
+                        "261-v3.v3": {"size": 4194304, "crc": "C1A7EBE3"},
+                        "261-v4.v4": {"size": 2097152, "crc": "9000D085"}
+                    }
+                }
+            },
+            {
+                "game": "Shock Troopers",
+                "system": "NeoGeo",
+                "filename": "shocktro.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "238-c1.c1": {"size": 4194304, "crc": "90C6A181"},
+                        "238-c2.c2": {"size": 4194304, "crc": "888720F0"},
+                        "238-c3.c3": {"size": 4194304, "crc": "2C393AA3"},
+                        "238-c4.c4": {"size": 4194304, "crc": "B9E909EB"},
+                        "238-c5.c5": {"size": 4194304, "crc": "C22C68EB"},
+                        "238-c6.c6": {"size": 4194304, "crc": "119323CD"},
+                        "238-c7.c7": {"size": 4194304, "crc": "A72CE7ED"},
+                        "238-c8.c8": {"size": 4194304, "crc": "1C7C2EFB"},
+                        "238-m1.m1": {"size": 131072, "crc": "075B9518"},
+                        "238-p1.p1": {"size": 1048576, "crc": "5677456F"},
+                        "238-p2.sp2": {"size": 4194304, "crc": "5B4A09C5"},
+                        "238-pg1.p1": {"size": 1048576, "crc": "EFEDF8DC"},
+                        "238-s1.s1": {"size": 131072, "crc": "1F95CEDB"},
+                        "238-v1.v1": {"size": 4194304, "crc": "260C0BEF"},
+                        "238-v2.v2": {"size": 2097152, "crc": "4AD7D59E"}
+                    }
+                }
+            },
+            {
+                "game": "Shock Troopers 2",
+                "system": "NeoGeo",
+                "filename": "shocktr2.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "246-c1.c1": {"size": 8388608, "crc": "47AC9EC5"},
+                        "246-c2.c2": {"size": 8388608, "crc": "7BCAB64F"},
+                        "246-c3.c3": {"size": 8388608, "crc": "DB2F73E8"},
+                        "246-c4.c4": {"size": 8388608, "crc": "5503854E"},
+                        "246-c5.c5": {"size": 8388608, "crc": "055B3701"},
+                        "246-c6.c6": {"size": 8388608, "crc": "7E2CAAE1"},
+                        "246-m1.bin": {"size": 131072, "crc": "D0604AD1"},
+                        "246-m1.m1": {"size": 131072, "crc": "D0604AD1"},
+                        "246-p1.p1": {"size": 1048576, "crc": "6D4B7781"},
+                        "246-p2.sp2": {"size": 4194304, "crc": "72EA04C3"},
+                        "246-s1.s1": {"size": 131072, "crc": "2A360637"},
+                        "246-v1.v1": {"size": 4194304, "crc": "16986FC6"},
+                        "246-v2.v2": {"size": 4194304, "crc": "ADA41E83"},
+                        "246-v3.v3": {"size": 2097152, "crc": "A05BA5DB"}
+                    }
+                }
+            },
+            {
+                "game": "Twinkle Star Sprites",
+                "system": "NeoGeo",
+                "filename": "twinspri.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "224-c1.c1": {"size": 4194304, "crc": "F7DA64AB"},
+                        "224-c2.c2": {"size": 4194304, "crc": "4C09BBFB"},
+                        "224-c3.c3": {"size": 1048576, "crc": "C59E4129"},
+                        "224-c4.c4": {"size": 1048576, "crc": "B5532E53"},
+                        "224-m1.m1": {"size": 131072, "crc": "364D6F96"},
+                        "224-p1.p1": {"size": 2097152, "crc": "7697E445"},
+                        "224-s1.s1": {"size": 131072, "crc": "EEED5758"},
+                        "224-v1.v1": {"size": 4194304, "crc": "FF57F088"},
+                        "224-v2.v2": {"size": 2097152, "crc": "7AD26599"}
+                    }
+                }
+            },
+            {
+                "game": "Neo Geo BIOS",
+                "system": "NeoGeo",
+                "filename": "neogeo.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "versions",
+                    "versions": {
+                        "basic": {
+                            "type": "zip",
+                            "entries": {
+                                "sm1.sm1": {"size": 131072, "crc": "94416D67"},
+                                "sp-e.sp1": {"size": 131072, "crc": "2723A5B5"},
+                                "sp-s2.sp1": {"size": 131072, "crc": "9036D879"},
+                                "usa_2slt.bin": {"size": 131072, "crc": "E72943DE"},
+                                "000-lo.lo": {"size": 131072, "crc": "5A86CFF2"},
+                                "sfix.sfix": {"size": 131072, "crc": "C2EA0CFD"}
+                            }
+                        },
+                        "enhanced": {
+                            "type": "zip",
+                            "entries": {
+                                "000-lo.lo": {"size": 131072, "crc": "5A86CFF2"},
+                                "asia-s3.rom": {"size": 131072, "crc": "91B64BE3"},
+                                "japan-j3.bin": {"size": 131072, "crc": "DFF6D41F"},
+                                "sfix.sfix": {"size": 131072, "crc": "C2EA0CFD"},
+                                "sm1.sm1": {"size": 131072, "crc": "94416D67"},
+                                "sp-1v1_3db8c.bin": {"size": 131072, "crc": "162F0EBE"},
+                                "sp-45.sp1": {"size": 524288, "crc": "03CC9F6A"},
+                                "sp-e.sp1": {"size": 131072, "crc": "2723A5B5"},
+                                "sp-j2.sp1": {"size": 131072, "crc": "ACEDE59C"},
+                                "sp-s.sp1": {"size": 131072, "crc": "C7F2FA45"},
+                                "sp-s2.sp1": {"size": 131072, "crc": "9036D879"},
+                                "sp1.jipan.1024": {"size": 131072, "crc": "9FB0ABE4"},
+                                "uni-bios_1_0.rom": {"size": 131072, "crc": "0CE453A0"},
+                                "uni-bios_1_1.rom": {"size": 131072, "crc": "5DDA0D84"},
+                                "uni-bios_1_2.rom": {"size": 131072, "crc": "4FA698E9"},
+                                "uni-bios_1_2o.rom": {"size": 131072, "crc": "E19D3CE9"},
+                                "uni-bios_1_3.rom": {"size": 131072, "crc": "B24B44A0"},
+                                "uni-bios_2_0.rom": {"size": 131072, "crc": "0C12C2AD"},
+                                "uni-bios_2_1.rom": {"size": 131072, "crc": "8DABF76B"},
+                                "uni-bios_2_2.rom": {"size": 131072, "crc": "2D50996A"},
+                                "uni-bios_2_3.rom": {"size": 131072, "crc": "27664EB5"},
+                                "uni-bios_2_3o.rom": {"size": 131072, "crc": "601720AE"},
+                                "usa_2slt.bin": {"size": 131072, "crc": "E72943DE"},
+                                "vs-bios.rom": {"size": 131072, "crc": "F0E8F27D"}
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}

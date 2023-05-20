@@ -421,6 +421,25 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing neogeo_classics_amazon: NeoGeo Classics free with Amazon Prime",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "neogeo_classics_amazon",
+                "--srcdir",
+                "C:\\Amazon Games\\Library", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\neogeo_classics_amazon\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing neogeo_classics_humble: SNK Playmore Neo Geo Classics (Humble)",
             "type": "python",
             "request": "launch",
