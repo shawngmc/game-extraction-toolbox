@@ -1,6 +1,9 @@
 '''
-Utility functions for SNK games
+Utility functions and common rebuilds for SNK games
 '''
+
+from gex.lib.tasks import helpers
+from gex.lib.utils.blob import transforms
 
 def sfix_reorder(contents):
     '''Reorders an SFIX rom file'''
@@ -47,57 +50,86 @@ def deoptimize_sprites(contents):
     return contents
 
 
-# def deoptimize_sprites(contents):
-#     '''Deoptimizes sprites from the merged game releases'''
-#     if isinstance(contents, bytes):
-#         contents = bytearray(contents)
-        
-# # This is doing a lot of bitwise ORs (|), bitwise ANDs (&) and shifts (<<)
-# # Ultimately, I THINK this is a bit-based reordering, but it's hard to mentally parse
-# # for dstData, the individual sections don't interfere with each other due to the shifts
+def handle_bstars2(bundle_contents):
+    func_map = {}
+    def bstars2_maincpu(in_files):
+        contents = in_files['bstars2_game_m68k']
 
-#     # We know the first half of the operation is reversing the order of every 4 byte chunk
-#     # Ref: https://i486.mods.jp/ichild/sample-page/android_neogeo, 2013/04/25 postscript C-ROM rule can be specified
-#     for i in range(0, len(contents), 4):
-#         tmp = contents[i:i+4]
-#         tmp.reverse()
-#         contents[i:i+4] = tmp
-        
-#     # The problem is that there is definitely a bit transformation
-#     # This bit transformation is before the split and deinterleave
+        chunks = transforms.equal_split(contents, num_chunks=2)
 
-#     # For example, bstars2:
-#     # - Reverse 4 bits
-#     # - Transform???
-#     # - Cut in half
-#     # - Deinterleave
+        return {"041-p1.p1": chunks[0]}
+    func_map['maincpu'] = bstars2_maincpu
+    adpcm_file_map = {
+        '041-v1.v1': 0x100000,
+        '041-v2.v2': 0x100000,
+        '041-v3.v3': 0x80000
+    }
+    func_map['adpcm'] = helpers.custom_split_helper('bstars2_adpcm', adpcm_file_map)
+    func_map['zoom'] = helpers.name_file_helper("bstars2_zoom_table", "000-lo.lo")
 
+    # Audio CPU seems to officially duplicate the data?
+    def bstars2_audiocpu(in_files):
+        contents = in_files['bstars2_game_z80']
 
-        
+        return {"041-m1.m1": transforms.merge([contents, contents])}
+    func_map['audiocpu'] = bstars2_audiocpu
 
-# #             let dstData;
-# #             dstData = buf[i+(y*8)+0] <<  0 |
-# #                       buf[i+(y*8)+1] <<  8 |
-# #                       buf[i+(y*8)+2] << 16 |
-# #                       buf[i+(y*8)+3] << 24;
-# #             for (let x = 0; x < 8; x++) {
-# #                 tmp[0x43 | y << 2] |= (dstData >> x*4+3 & 1) << 7-x;
-# #                 tmp[0x41 | y << 2] |= (dstData >> x*4+2 & 1) << 7-x;
-# #                 tmp[0x42 | y << 2] |= (dstData >> x*4+1 & 1) << 7-x;
-# #                 tmp[0x40 | y << 2] |= (dstData >> x*4+0 & 1) << 7-x;
-# #             }
+    def bstars2_sprites(in_files):
+        contents = in_files['bstars2_tiles']
+        deoptimized = deoptimize_sprites(contents)
+        filenames = [
+            "041-c1.c1",
+            "041-c2.c2",
+            "041-c3.c3",
+            "041-c4.c4",
+        ]
+        chunks = transforms.equal_split(deoptimized, len(filenames) // 2)
+        chunks = transforms.deinterleave_all(chunks, 2, 1)
+        return dict(zip(filenames, chunks))
+    func_map['sprites'] = bstars2_sprites
 
-# #             dstData = buf[i+(y*8)+4] <<  0 |
-# #                       buf[i+(y*8)+5] <<  8 |
-# #                       buf[i+(y*8)+6] << 16 |
-# #                       buf[i+(y*8)+7] << 24;
-# #             for (let x = 0; x < 8; x++) {
-# #                 tmp[0x03 | y << 2] |= (dstData >> x*4+3 & 1) << 7-x;
-# #                 tmp[0x01 | y << 2] |= (dstData >> x*4+2 & 1) << 7-x;
-# #                 tmp[0x02 | y << 2] |= (dstData >> x*4+1 & 1) << 7-x;
-# #                 tmp[0x00 | y << 2] |= (dstData >> x*4+0 & 1) << 7-x;
-# #             }
-# #         }
-#         # contents[i:i+0x80] = tmp
-# #     }
-#     return contents
+    def bstars2_fixed(in_files):
+        contents = in_files['bstars2_game_sfix']
+
+        return {"041-s1.s1": sfix_reorder(contents)}
+    func_map['fixed'] = bstars2_fixed
+
+    return helpers.build_rom(bundle_contents, func_map)
+
+def handle_twinspri(bundle_contents):
+    func_map = {}
+    def twinspri_maincpu(in_files):
+        contents = in_files['twinspri_game_m68k']
+
+        chunks = transforms.equal_split(contents, num_chunks=2)
+
+        return {"224-p1.p1": chunks[0]}
+    func_map['maincpu'] = twinspri_maincpu
+    adpcm_file_map = {
+        '224-v1.v1': 0x400000,
+        '224-v2.v2': 0x200000,
+    }
+    func_map['adpcm'] = helpers.custom_split_helper('twinspri_adpcm', adpcm_file_map)
+    func_map['zoom'] = helpers.name_file_helper("twinspri_zoom_table", "000-lo.lo")
+    func_map['audiocpu'] = helpers.name_file_helper("twinspri_game_z80", "224-m1.m1")
+
+    def twinspri_sprites(in_files):
+        contents = in_files['twinspri_tiles']
+        deoptimized = deoptimize_sprites(contents)
+        filenames = [
+            "224-c1.c1",
+            "224-c2.c2",
+            "224-c3.c3",
+            "224-c4.c4",
+        ]
+        chunks = transforms.custom_split(deoptimized, [0x800000, 0x200000])
+        chunks = transforms.deinterleave_all(chunks, 2, 1)
+        return dict(zip(filenames, chunks))
+    func_map['sprites'] = twinspri_sprites
+
+    def twinspri_fixed(in_files):
+        contents = in_files['twinspri_game_sfix']
+        return {"224-s1.s1": sfix_reorder(contents)}
+    func_map['fixed'] = twinspri_fixed
+
+    return helpers.build_rom(bundle_contents, func_map)

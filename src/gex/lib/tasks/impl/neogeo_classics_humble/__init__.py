@@ -2,8 +2,6 @@
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
-from gex.lib.tasks import helpers
-from gex.lib.utils.blob import transforms
 from gex.lib.utils.vendor import snk
 
 logger = logging.getLogger('gextoolbox')
@@ -52,13 +50,27 @@ As of right now, the only exception known is Samurai Shodown Neogeo Collection.
             else:
                 logger.info(f"No {folder} folder found...")
 
+        merged_rom_data = {
+            "Baseball Stars 2": {
+                'filename': 'bstars2.zip',
+                'function': snk.handle_bstars2
+            }
+        }
+
         # Process titles
         out_files = {}
         for folder in found_folders:
-            if folder == "Baseball Stars 2":
-                logger.info(f"Found {folder}; this release may take a while...")
+            if folder in merged_rom_data:
+                # Read the files
                 title_in_files = [v for v in in_files.values() if v['rel_path'][0] == folder]
-                out_files['bstars2.zip'] = self._handle_bstars2(in_dir, title_in_files)
+                bundle_contents = {}
+                for file_metadata in title_in_files:
+                    bundle_contents[file_metadata['filename']] = self.read_datafile(in_dir, file_metadata)['contents']
+
+                logger.info(f"Read vendor version of {folder}; this release may take a while...")
+                out_name = merged_rom_data[folder]['filename']
+                handle_func = merged_rom_data[folder]['function']
+                out_files[out_name] = handle_func(bundle_contents)
             else:
                 title_in_files = [v for v in in_files.values() if v['rel_path'][0] == folder]
 
@@ -99,54 +111,3 @@ As of right now, the only exception known is Samurai Shodown Neogeo Collection.
                 out_file.write(contents)
 
         logger.info("Processing complete.")
-
-    def _handle_bstars2(self, in_dir, title_in_files):
-        # Read the bstars2 files
-        bundle_contents = {}
-        for file_metadata in title_in_files:
-            bundle_contents[file_metadata['filename']] = self.read_datafile(in_dir, file_metadata)['contents']
-
-        func_map = {}
-        def bstars2_maincpu(in_files):
-            contents = in_files['bstars2_game_m68k']
-
-            chunks = transforms.equal_split(contents, num_chunks=2)
-
-            return {"041-p1.p1": chunks[0]}
-        func_map['maincpu'] = bstars2_maincpu
-        adpcm_file_map = {
-            '041-v1.v1': 0x100000,
-            '041-v2.v2': 0x100000,
-            '041-v3.v3': 0x80000
-        }
-        func_map['adpcm'] = helpers.custom_split_helper('bstars2_adpcm', adpcm_file_map)
-        func_map['zoom'] = helpers.name_file_helper("bstars2_zoom_table", "000-lo.lo")
-
-        # Audio CPU seems to officially duplicate the data?
-        def bstars2_audiocpu(in_files):
-            contents = in_files['bstars2_game_z80']
-
-            return {"041-m1.m1": transforms.merge([contents, contents])}
-        func_map['audiocpu'] = bstars2_audiocpu
-
-        def bstars2_sprites(in_files):
-            contents = in_files['bstars2_tiles']
-            deoptimized = snk.deoptimize_sprites(contents)
-            filenames = [
-                "041-c1.c1",
-                "041-c2.c2",
-                "041-c3.c3",
-                "041-c4.c4",
-            ]
-            chunks = transforms.equal_split(deoptimized, len(filenames) // 2)
-            chunks = transforms.deinterleave_all(chunks, 2, 1)
-            return dict(zip(filenames, chunks))
-        func_map['sprites'] = bstars2_sprites
-
-        def bstars2_fixed(in_files):
-            contents = in_files['bstars2_game_sfix']
-
-            return {"041-s1.s1": snk.sfix_reorder(contents)}
-        func_map['fixed'] = bstars2_fixed
-
-        return helpers.build_rom(bundle_contents, func_map)
