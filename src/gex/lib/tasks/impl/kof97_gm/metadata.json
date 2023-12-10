@@ -43,7 +43,7 @@
             },
             "v1.bin": {
                 "rel_path": ["Data", "rom"],
-                "filename": "p1.bin",
+                "filename": "v1.bin",
                 "versions": {
                     "snk": {
                         "size": 12582912,
