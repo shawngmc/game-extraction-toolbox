@@ -22,7 +22,7 @@ Based on:
 - https://github.com/RedundantCich/goNCommand/blob/main/GoKOF97
 - https://www.arcade-projects.com/threads/samurai-shodown-v-perfect-on-real-hardware.13565/page-2
     '''
-    _default_input_folder = r"C:\Program Files (x86)\GOG Galaxy\Games"
+    _default_input_folder = helpers.gen_steam_app_default_folder("THE KING OF FIGHTERS '97 GLOBAL MATCH")
     _input_folder_desc = "Game Library (Amazon, Steam, etc.) folder"
 
     def get_out_file_info(self):
