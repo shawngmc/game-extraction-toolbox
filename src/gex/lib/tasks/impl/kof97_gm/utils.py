@@ -1,4 +1,4 @@
-# Based on Ark's post from https://www.arcade-projects.com/threads/samurai-shodown-v-perfect-on-real-hardware.13565/page-2
+# Based on "ack" post https://www.arcade-projects.com/threads/samurai-shodown-v-perfect-on-real-hardware.13565/page-2
 def unswizzle(data: bytes):
     odd = bytearray()
     even = bytearray()
