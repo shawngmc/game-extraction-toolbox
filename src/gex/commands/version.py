@@ -1,8 +1,8 @@
 import click
-import pkg_resources
+from importlib import metadata
 
 @click.command()
 def version():
     """Return build info"""
-    version = pkg_resources.get_distribution('game-extraction-toolbox').version
+    version = metadata.version('game-extraction-toolbox')
     print(f'Game Extraction Toolbox v{version}')
