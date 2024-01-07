@@ -1,0 +1,57 @@
+{
+    "in": {
+        "files": {
+            "gfx.rom": {
+                "filename": "gfx.rom",
+                "versions": {
+                    "origins": {
+                        "size": 33554432,
+                        "crc": "54A6FC89"
+                    }
+                }
+            },
+            "main.rom": {
+                "filename": "main.rom",
+                "versions": {
+                    "origins": {
+                        "size": 8388608,
+                        "crc": "F1BF8034"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Marvel VS Capcom: Clash of Super Heroes",
+                "system": "Arcade",
+                "filename": "mvscu.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "mvcu.03d": {"size": 0, "crc": ""},
+                        "mvcu.04d": {"size": 0, "crc": ""},
+                        "mvc.05a": {"size": 0, "crc": ""},
+                        "mvc.06a": {"size": 0, "crc": ""},
+                        "mvc.07": {"size": 0, "crc": ""},
+                        "mvc.08": {"size": 0, "crc": ""},
+                        "mvc.09": {"size": 0, "crc": ""},
+                        "mvc.10": {"size": 0, "crc": ""},
+                        "mvc.13m": {"size": 4194304, "crc": ""},
+                        "mvc.14m": {"size": 4194304, "crc": ""},
+                        "mvc.15m": {"size": 4194304, "crc": ""},
+                        "mvc.16m": {"size": 4194304, "crc": ""},
+                        "mvc.17m": {"size": 4194304, "crc": ""},
+                        "mvc.18m": {"size": 4194304, "crc": ""},
+                        "mvc.19m": {"size": 4194304, "crc": ""},
+                        "mvc.20m": {"size": 4194304, "crc": ""}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
