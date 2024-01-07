@@ -1,4 +1,4 @@
-'''Implementation of neogeo_classics_humble: Neo Geo Classics by SNK Playmore on Humble'''
+'''Implementation of kof97: The King of Fighters '97: Global Match on Steam and Amazon'''
 import logging
 import os
 import lzma
