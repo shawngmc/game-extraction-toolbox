@@ -1,7 +1,7 @@
 '''
 Wrapper for python-magic that adds support for game extraction specific file types
 '''
-magic = None
+import magic
 
 # Internally tracking these in https://docs.google.com/spreadsheets/d/1eMI9EIzopg1J9UZsMFOx5lLSMPsf7EYxovLM5VFoUjU/edit#gid=0
 
