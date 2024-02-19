@@ -30,6 +30,22 @@
                 }
             },
             {
+                "game": "Rockman X (r1)",
+                "system": "SNES",
+                "filename": "rockmanxr1.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "5584641E",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg0": {"start": "0xD0C4E0", "length": "0x80000"},
+                    "prg1": {"start": "0xC0C4E0", "length": "0x100000"}
+                }
+            },
+            {
                 "game": "Rockman X2",
                 "system": "SNES",
                 "filename": "rockmanx2.sfc",
@@ -72,6 +88,22 @@
                 },
                 "sections": {
                     "prg": {"start": "0xD8C4E0", "length": "0x180000"}
+                }
+            },
+            {
+                "game": "Mega Man X (r1)",
+                "system": "SNES",
+                "filename": "megamanxr1.sfc",
+                "status": "good",
+                "notes": [],
+                "verify": {
+                    "type": "crc",
+                    "crc": "0D9BE382",
+                    "size": 1572864
+                },
+                "sections": {
+                    "prg0": {"start": "0xF0C4E0", "length": "0x80000"},
+                    "prg1": {"start": "0xE0C4E0", "length": "0x100000"}
                 }
             },
             {
