@@ -42,3 +42,21 @@
 In the task details, markdown tables behave oddly:
 * Rows are not resized automatically
 * Every line needs 1-2 spaces at the end
+
+
+
+
+# Windows Miniconda Quickstart
+1. Install Miniconda
+2. In the Start Menu, open 'Edit environment variables for your account'
+3. Add to path "C:\Users\USERNAME\miniconda3" and "C:\Users\USERNAME\miniconda\Scripts"
+4. Open a new shell
+5. Initialize Conda: ```conda init```
+6. Open a new shell
+7. Install pipx: ```pip install pipx```
+8. Make pipx update the path: ```python -m pipx ensurepath```
+9. Open a new shell
+10. Install twine ```pipx install twine```
+11. Install build ```pipx install build```
+12. Install local repo as linked build: ```pip install --user -e .```
+13. Try running: ```gextoolbox```

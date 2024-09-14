@@ -6,17 +6,20 @@
     "configurations": [
         {
             "name": "GEXToolbox - Testing acac: Arcade Classics Anniversary Collection (Konami)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
+            "envFile": "${workspaceFolder}\\.env",
             "args": [
                 "tasks", 
                 "extract", 
                 "--task", 
                 "acac", 
+                "--srcdir",
+                "\"D:\\game-rom-extraction-sources\\Steam\\steamapps\\common\\Arcade Classics Anniversary Collection\"",
                 "--destdir", 
                 "\"${workspaceFolder}\\out\\acac\"",
                 "--prop",
@@ -25,7 +28,7 @@
         },
         {
             "name": "GEXToolbox - Testing ags_digdug: Namco Arcade Game Series: Dig Dug",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -42,7 +45,7 @@
         },
         {
             "name": "GEXToolbox - Testing ags_galaga: Namco Arcade Game Series: Galaga",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -59,7 +62,7 @@
         },
         {
             "name": "GEXToolbox - Testing ags_pacman: Namco Arcade Game Series: Pac-Man",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -76,7 +79,7 @@
         },
         {
             "name": "GEXToolbox - Testing ags_mspacman: Namco Arcade Game Series: Ms. Pac-Man",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -93,7 +96,7 @@
         },
         {
             "name": "GEXToolbox - Testing atarivault: Atari Vault",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -112,7 +115,7 @@
         },
         {
             "name": "GEXToolbox - Testing blizzarcade: Blizzard Arcade Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -129,7 +132,7 @@
         },
         {
             "name": "GEXToolbox - Testing breakers: Breakers Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -146,7 +149,7 @@
         },
         {
             "name": "GEXToolbox - Testing bubsy: Bubsy Two-Fur Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -163,7 +166,7 @@
         },
         {
             "name": "GEXToolbox - Testing cas1: Capcom Arcade Stadium",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -182,7 +185,7 @@
         },
         {
             "name": "GEXToolbox - Testing cas1_old: Capcom Arcade Stadium (Old Release)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -199,7 +202,7 @@
         },
         {
             "name": "GEXToolbox - Testing cas2: Capcom Arcade 2nd Stadium",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -218,7 +221,7 @@
         },
         {
             "name": "GEXToolbox - Testing cbeub: Capcom Beat 'em Up Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -235,7 +238,7 @@
         },
         {
             "name": "GEXToolbox - Testing cfc: Capcom Fighting Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -252,7 +255,7 @@
         },
         {
             "name": "GEXToolbox - Testing ddragontrilogy: Double Dragon Trilogy",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -269,7 +272,7 @@
         },
         {
             "name": "GEXToolbox - Testing disneyac: Disney Afternoon Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -286,7 +289,7 @@
         },
         {
             "name": "GEXToolbox - Testing disneyalkb: Disney Classics Aladdin and Lion King w/ DLC",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -303,7 +306,7 @@
         },
         {
             "name": "GEXToolbox - Testing genesis: Genese & Mega Drive Classics Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -320,7 +323,7 @@
         },
         {
             "name": "GEXToolbox - Testing irem: Irem Arcade Hits",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -337,7 +340,7 @@
         },
         {
             "name": "GEXToolbox - Testing mmbnlc1: Mega Man Battle Network Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -354,7 +357,7 @@
         },
         {
             "name": "GEXToolbox - Testing mmbnlc2: Mega Man Battle Network Legacy Collection 2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -371,7 +374,7 @@
         },
         {
             "name": "GEXToolbox - Testing mmlc1: Mega Man Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -388,7 +391,7 @@
         },
         {
             "name": "GEXToolbox - Testing mmxlc1: Mega Man X Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -405,7 +408,7 @@
         },
         {
             "name": "GEXToolbox - Testing mkak: Mortal Kombat Arcade Kollection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -441,7 +444,7 @@
         },
         {
             "name": "GEXToolbox - Testing neogeo_classics_humble: SNK Playmore Neo Geo Classics (Humble)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -460,7 +463,7 @@
         },
         {
             "name": "GEXToolbox - Testing pacmanmplus: Pac Man Museum Plus",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -479,7 +482,7 @@
         },
         {
             "name": "GEXToolbox - Testing psikyo: Psikyo Shooter Collector's Bundle",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -498,7 +501,7 @@
         },
         {
             "name": "GEXToolbox - Testing sadxgg: Sonic Adventure DX (Game Gear only)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -515,7 +518,7 @@
         },
         {
             "name": "GEXToolbox - Testing saga: Collection of SaGa",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -532,7 +535,7 @@
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -549,7 +552,7 @@
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection (Verbose)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -568,7 +571,7 @@
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection International",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -587,7 +590,7 @@
         },
         {
             "name": "GEXToolbox - Profile sf30ac: Street Fighter 30th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "cProfile",
             "console": "integratedTerminal",
@@ -607,7 +610,7 @@
         },
         {
             "name": "GEXToolbox - Testing snk40: SNK 40th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -626,7 +629,7 @@
         },
         {
             "name": "GEXToolbox - Testing ssp1: Sega Smash Pack 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -643,7 +646,7 @@
         },
         {
             "name": "GEXToolbox - Testing ssp2: Sega Smash Pack 2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -660,7 +663,7 @@
         },
         {
             "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Columns III",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -677,7 +680,7 @@
         },
         {
             "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Dr. Robotnik's Mean Bean Machine",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -694,7 +697,7 @@
         },
         {
             "name": "GEXToolbox - Testing wonderboy3: Wonder Boy 3",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -713,7 +716,7 @@
         },
         {
             "name": "GEXToolbox - Testing zamn: Zombies Ate My Neighbor and Ghould Patrol",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -730,7 +733,7 @@
         },
         {
             "name": "GEXToolbox - List Tasks",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
