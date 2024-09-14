@@ -1,0 +1,265 @@
+{
+    "in": {
+        "files": {
+            "xmcotaj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_00.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 16879999,
+                        "crc": "eb9d8b40"
+                    }
+                }
+            },
+            "xmcotau": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_01.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 16880099,
+                        "crc": "9308d9c8"
+                    }
+                }
+            },
+            "mshj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_10.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17056645,
+                        "crc": "6201e8a4"
+                    }
+                }
+            },
+            "mshh": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_11.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 17054449,
+                        "crc": "c7fd9ad7"
+                    }
+                }
+            },
+            "xmvsfj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_20.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 16657327,
+                        "crc": "7c72f8aa"
+                    }
+                }
+            },
+            "xmvsfu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_21.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 16657278,
+                        "crc": "8011e464"
+                    }
+                }
+            },
+            "mshvsfj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_30.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 20105316,
+                        "crc": "b9a89ed5"
+                    }
+                }
+            },
+            "mshvsfu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_31.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 20105362,
+                        "crc": "863150a2"
+                    }
+                }
+            },
+            "mvscj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_40.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 19679312,
+                        "crc": "80bd4410"
+                    }
+                }
+            },
+            "mvscu": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_41.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 19679177,
+                        "crc": "df6ac377"
+                    }
+                }
+            },
+            "mvsc2": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_50.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 64874779,
+                        "crc": "dc73fe63"
+                    }
+                }
+            },
+            "mvc2s": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_5s.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 25757401,
+                        "crc": "d6eb257d"
+                    }
+                }
+            },
+            "punisherj": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_60.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 3855462,
+                        "crc": "cc5e8b89"
+                    }
+                }
+            },
+            "punisheru": {
+                "rel_path": ["nativeDX11x64", "arc", "pc"],
+                "filename": "game_61.arc",
+                "versions": {
+                    "Steam": {
+                        "size": 3855228,
+                        "crc": "647fb423"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "X-Men Children of the Atom (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "xmcotaj",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "X-Men Children of the Atom (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "xmcotau",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel Super Heroes (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mshu",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel Super Heroes (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mshj",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "X-Men vs. Street Fighter (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "xmvsfu",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "X-Men vs. Street Fighter (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "xmvsfj",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel Super Heroes vs. Street Fighter (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mshvsfu",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel Super Heroes vs. Street Fighter (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mshvsfj",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel vs. Capcom (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mvscu",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel vs. Capcom (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mvscj",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "Marvel vs. Capcom 2 (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mvsc2",
+                "status": "no-rom",
+                "notes": [1]
+            },
+            {
+                "game": "Marvel vs. Capcom 2 (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "mvsc2",
+                "status": "no-rom",
+                "notes": [1]
+            },
+            {
+                "game": "The Punisher (U)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "punisheru",
+                "status": "no-rom",
+                "notes": []
+            },
+            {
+                "game": "The Punisher (J)",
+                "system": "Arcade",
+                "filename": "N/A",
+                "in_file": "punisherj",
+                "status": "no-rom",
+                "notes": []
+            }
+        ],
+        "notes": {
+            "1": "This Naomi appears to be missing audio data."
+        }
+    }
+}
