@@ -421,6 +421,23 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing mvcfc: Marvel vs. Capcom Fighting Collection",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mvcfc", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\mvcfc\""
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing neogeo_classics_amazon: NeoGeo Classics free with Amazon Prime",
             "type": "python",
             "request": "launch",
