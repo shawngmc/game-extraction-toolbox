@@ -35,7 +35,6 @@ TODO: Implement the rest of the games: The Punisher and MvC2.
         # for each output file entry
         for out_file_entry in self._metadata['out']['files']:
             pkg_name = out_file_entry['in_file']
-            logger.info("hello")
             # Check the status of it
             if out_file_entry['status'] == 'no-rom':
                 logger.info(f"Skipping {pkg_name} - cannot extract...")
