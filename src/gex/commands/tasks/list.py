@@ -13,4 +13,4 @@ def list_cli():
         if task_class:
             name = task_class.get_task_name()
             if name is not None:
-                logger.info(f"{name.rjust(15, ' ')}: {task_class.get_title()}")
+                logger.info(f"{name.rjust(25, ' ')}: {task_class.get_title()}")
