@@ -24,7 +24,7 @@ def extract(in_file, out_dir):
                 contents = file_entry['contents']
 
                 try:
-                    type_id = identify.enhanced_magic_from_buffer(contents)
+                    type_id = identify.custom_magic_from_buffer(contents)
                     if not type_id == identify.ARC:
                         logger.warning(f'Found {type_id} file, will try to extract anyway...')
                 except Exception as _:
