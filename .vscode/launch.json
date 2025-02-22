@@ -21,7 +21,7 @@
                 "--srcdir",
                 "\"D:\\game-rom-extraction-sources\\Steam\\steamapps\\common\\Arcade Classics Anniversary Collection\"",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\acac\"",
+                "${workspaceFolder}\\out\\acac",
                 "--prop",
                 "include-partials=True"
             ]
@@ -40,7 +40,7 @@
                 "--task", 
                 "ags_digdug", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_digdug\""
+                "${workspaceFolder}\\out\\ags_digdug"
             ]
         },
         {
@@ -57,7 +57,7 @@
                 "--task", 
                 "ags_galaga", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_galaga\""
+                "${workspaceFolder}\\out\\ags_galaga"
             ]
         },
         {
@@ -74,7 +74,7 @@
                 "--task", 
                 "ags_pacman", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_pacman\""
+                "${workspaceFolder}\\out\\ags_pacman"
             ]
         },
         {
@@ -91,7 +91,7 @@
                 "--task", 
                 "ags_mspacman", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_mspacman\""
+                "${workspaceFolder}\\out\\ags_mspacman"
             ]
         },
         {
@@ -108,7 +108,7 @@
                 "--task", 
                 "atarivault", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\atarivault\"",
+                "${workspaceFolder}\\out\\atarivault",
                 "--prop",
                 "include-arcade-partials=True"
             ]
@@ -127,7 +127,7 @@
                 "--task", 
                 "blizzarcade", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\blizzarcade\""
+                "${workspaceFolder}\\out\\blizzarcade"
             ]
         },
         {
@@ -144,7 +144,7 @@
                 "--task", 
                 "breakers",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\breakers\""
+                "${workspaceFolder}\\out\\breakers"
             ]
         },
         {
@@ -161,7 +161,7 @@
                 "--task", 
                 "bubsy", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\bubsy\""
+                "${workspaceFolder}\\out\\bubsy"
             ]
         },
         {
@@ -178,7 +178,7 @@
                 "--task", 
                 "cas1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas1\"",
+                "${workspaceFolder}\\out\\cas1",
                 "--prop",
                 "include-partials=True"
             ]
@@ -197,7 +197,7 @@
                 "--task", 
                 "cas1_old", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas1_old\""
+                "${workspaceFolder}\\out\\cas1_old"
             ]
         },
         {
@@ -214,7 +214,7 @@
                 "--task", 
                 "cas2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas2\"",
+                "${workspaceFolder}\\out\\cas2",
                 "--prop",
                 "include-partials=True"
             ]
@@ -233,7 +233,7 @@
                 "--task", 
                 "cbeub", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cbeub\""
+                "${workspaceFolder}\\out\\cbeub"
             ]
         },
         {
@@ -250,7 +250,7 @@
                 "--task", 
                 "cfc", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cfc\""
+                "${workspaceFolder}\\out\\cfc"
             ]
         },
         {
@@ -267,7 +267,7 @@
                 "--task", 
                 "ddragontrilogy", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ddragontrilogy\""
+                "${workspaceFolder}\\out\\ddragontrilogy"
             ]
         },
         {
@@ -284,7 +284,7 @@
                 "--task", 
                 "disneyac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\disneyac\""
+                "${workspaceFolder}\\out\\disneyac"
             ]
         },
         {
@@ -301,7 +301,7 @@
                 "--task", 
                 "disneyalkb", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\disneyalkb\""
+                "${workspaceFolder}\\out\\disneyalkb"
             ]
         },
         {
@@ -318,7 +318,7 @@
                 "--task", 
                 "genesis", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\genesis\""
+                "${workspaceFolder}\\out\\genesis"
             ]
         },
         {
@@ -335,7 +335,7 @@
                 "--task", 
                 "irem", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\irem\""
+                "${workspaceFolder}\\out\\irem"
             ]
         },
         {
@@ -352,7 +352,7 @@
                 "--task", 
                 "mmbnlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmbnlc1\""
+                "${workspaceFolder}\\out\\mmbnlc1"
             ]
         },
         {
@@ -369,7 +369,7 @@
                 "--task", 
                 "mmbnlc2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmbnlc2\""
+                "${workspaceFolder}\\out\\mmbnlc2"
             ]
         },
         {
@@ -386,7 +386,7 @@
                 "--task", 
                 "mmlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmlc1\""
+                "${workspaceFolder}\\out\\mmlc1"
             ]
         },
         {
@@ -403,7 +403,7 @@
                 "--task", 
                 "mmxlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmxlc1\""
+                "${workspaceFolder}\\out\\mmxlc1"
             ]
         },
         {
@@ -420,7 +420,7 @@
                 "--task", 
                 "mkak", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mkak\""
+                "${workspaceFolder}\\out\\mkak"
             ]
         },
         {
@@ -458,7 +458,7 @@
                 "--srcdir",
                 "C:\\Program Files (x86)\\NeoGeo 25th Anniversery", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\neogeo_classics_humble\""
+                "${workspaceFolder}\\out\\neogeo_classics_humble"
             ]
         },
         {
@@ -475,7 +475,7 @@
                 "--task", 
                 "pacmanmplus", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\pacmanmplus\"",
+                "${workspaceFolder}\\out\\pacmanmplus",
                 "--prop",
                 "include-partials=True"
             ]
@@ -494,7 +494,7 @@
                 "--task", 
                 "psikyo", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\psikyo\"",
+                "${workspaceFolder}\\out\\psikyo",
                 "--prop",
                 "include-partials=True"
             ]
@@ -513,7 +513,7 @@
                 "--task", 
                 "sadxgg", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sadxgg\""
+                "${workspaceFolder}\\out\\sadxgg"
             ]
         },
         {
@@ -530,7 +530,7 @@
                 "--task", 
                 "saga", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\saga\""
+                "${workspaceFolder}\\out\\saga"
             ]
         },
         {
@@ -547,7 +547,7 @@
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\""
+                "${workspaceFolder}\\out\\sf30ac"
             ]
         },
         {
@@ -564,7 +564,7 @@
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\"",
+                "${workspaceFolder}\\out\\sf30ac",
                 "-v",
                 "DEBUG"
             ]
@@ -583,9 +583,9 @@
                 "--task", 
                 "sf30ac", 
                 "--srcdir", 
-                "\"${workspaceFolder}\\out\\sf30acint-testing\"",
+                "${workspaceFolder}\\out\\sf30acint-testing",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30acint\""
+                "${workspaceFolder}\\out\\sf30acint"
             ]
         },
         {
@@ -598,14 +598,14 @@
             "justMyCode": true,
             "args": [
                 "-o",
-                "\"${workspaceFolder}\\out\\sf30ac.prof\"",
+                "${workspaceFolder}\\out\\sf30ac.prof",
                 "${workspaceFolder}\\src\\gex\\toolbox.py",
                 "tasks", 
                 "extract", 
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\""
+                "${workspaceFolder}\\out\\sf30ac"
             ]
         },
         {
@@ -622,9 +622,9 @@
                 "--task", 
                 "snk40", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\snk40\"",
+                "${workspaceFolder}\\out\\snk40",
                 "--srcdir", 
-                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\""
+                "C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection"
             ]
         },
         {
@@ -641,7 +641,7 @@
                 "--task", 
                 "ssp1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp1\""
+                "${workspaceFolder}\\out\\ssp1"
             ]
         },
         {
@@ -658,7 +658,7 @@
                 "--task", 
                 "ssp2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp2\""
+                "${workspaceFolder}\\out\\ssp2"
             ]
         },
         {
@@ -675,7 +675,7 @@
                 "--task", 
                 "spp_columnsiii", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\spp_columnsiii\""
+                "${workspaceFolder}\\out\\spp_columnsiii"
             ]
         },
         {
@@ -692,7 +692,24 @@
                 "--task", 
                 "spp_drmbm", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp_drmbm\""
+                "${workspaceFolder}\\out\\ssp_drmbm"
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing toaplan_truxton2: Truxton 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "toaplan_truxton2", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\toaplan_truxton2"
             ]
         },
         {
@@ -709,9 +726,9 @@
                 "--task", 
                 "wonderboy3", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\wonderboy3\"",
+                "${workspaceFolder}\\out\\wonderboy3",
                 "--srcdir", 
-                "\"C:\\Program Files\\Epic Games\\WonderBoyTheDragonsTFUa87\""
+                "C:\\Program Files\\Epic Games\\WonderBoyTheDragonsTFUa87"
             ]
         },
         {
@@ -728,7 +745,7 @@
                 "--task", 
                 "zamn", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\zamn\""
+                "${workspaceFolder}\\out\\zamn"
             ]
         },
         {
