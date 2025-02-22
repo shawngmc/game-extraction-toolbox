@@ -27,6 +27,8 @@ py -m pip install --user pipx
 py -m pipx ensurepath
 ```
 
+Note: Windows may need the Visual C++ Build Tools and Windows SDK installed; see [this issue](https://github.com/K0lb3/UnityPy/issues/223) for UnityPy
+
 ##### Linux
 ```
 py -m pip install --user pipx
