@@ -14,7 +14,7 @@ logger = logging.getLogger('gextoolbox')
 class ToaplanTruxton2Task(BaseTask):
     '''Implements of toaplan_truxton2: Truxton 2'''
     _task_name = "toaplan_truxton2"
-    _title = " Truxton 2"
+    _title = "Truxton 2"
     _details_markdown = ''''''
 
     _default_input_folder = helpers.gen_steam_app_default_folder("Truxton 2")
