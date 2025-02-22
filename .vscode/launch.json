@@ -523,7 +523,7 @@
             "program": "toolbox.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/src/gex",
-            "justMyCode": true,
+            "justMyCode": false,
             "args": [
                 "tasks", 
                 "extract", 
