@@ -29,6 +29,7 @@ There are a few more regional variants that are only available in PAK files, but
         for file_metadata in self._metadata['in']['files'].values():
             resolved_file = self.read_datafile(in_dir, file_metadata)
             if not resolved_file:  # these games are bought separately; some might not be installed
+                logger.warning(f"Skipping {file_metadata[filename]}, not found...")
                 continue
             if 'copy_to' in file_metadata:
                 out_file_entry = [x for x in self._metadata['out']['files'] if x['game'] == file_metadata['copy_to']][0]
