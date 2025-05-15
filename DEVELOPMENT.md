@@ -1,6 +1,6 @@
 ## Development
 ### Setup
-1. Clone Repo
+1. Clone Repo from the DEVELOP branch
 2. Run ```pip install -e --user .``` from the root project folder
 
 
