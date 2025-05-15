@@ -1,0 +1,217 @@
+{
+  "in": {
+    "files": {
+      "xmcotau": {
+        "rel_path": ["nativeDX11x64", "arc", "pc"],
+        "filename": "game_01.arc",
+        "versions": {
+          "Steam": {
+            "size": 16880099,
+            "crc": "9308D9C8"
+          }
+        }
+      },
+      "mshh": {
+        "rel_path": ["nativeDX11x64", "arc", "pc"],
+        "filename": "game_11.arc",
+        "versions": {
+          "Steam": {
+            "size": 17054449,
+            "crc": "C7FD9AD7"
+          }
+        }
+      },
+      "xmvsfu": {
+        "rel_path": ["nativeDX11x64", "arc", "pc"],
+        "filename": "game_21.arc",
+        "versions": {
+          "Steam": {
+            "size": 16657278,
+            "crc": "8011E464"
+          }
+        }
+      },
+      "mshvsfu": {
+        "rel_path": ["nativeDX11x64", "arc", "pc"],
+        "filename": "game_31.arc",
+        "versions": {
+          "Steam": {
+            "size": 20105362,
+            "crc": "863150A2"
+          }
+        }
+      },
+      "mvscu": {
+        "rel_path": ["nativeDX11x64", "arc", "pc"],
+        "filename": "game_41.arc",
+        "versions": {
+          "Steam": {
+            "size": 19679177,
+            "crc": "DF6AC377"
+          }
+        }
+      }
+    }
+  },
+  "out": {
+    "files": [
+      {
+        "game": "X-Men: Children of the Atom",
+        "system": "Arcade",
+        "filename": "xmcotau.zip",
+        "in_file": "xmcotau",
+        "status": "playable",
+        "verify": {
+          "type": "zip",
+          "entries": {
+            "xmn.01a": { "size": 131072, "crc": "40F479EA" },
+            "xmn.02a": { "size": 131072, "crc": "39D9B5AD" },
+            "xmnu.03e": { "size": 524288, "crc": "0BAFEB0E" },
+            "xmnu.04e": { "size": 524288, "crc": "C29BDAE3" },
+            "xmn.06a": { "size": 524288, "crc": "1B86A328" },
+            "xmn.07a": { "size": 524288, "crc": "2C142A44" },
+            "xmn.08a": { "size": 524288, "crc": "F712D44F" },
+            "xmn.09a": { "size": 524288, "crc": "9241CAE8" },
+            "xmn.11m": { "size": 2097152, "crc": "C848A6BC" },
+            "xmn.12m": { "size": 2097152, "crc": "729C188F" },
+            "xmn.13m": { "size": 4194304, "crc": "BF4DF073" },
+            "xmn.14m": { "size": 4194304, "crc": "778237B7" },
+            "xmn.15m": { "size": 4194304, "crc": "4D7E4CEF" },
+            "xmn.16m": { "size": 4194304, "crc": "67B36948" },
+            "xmn.17m": { "size": 4194304, "crc": "513EEA17" },
+            "xmn.18m": { "size": 4194304, "crc": "015A7C4C" },
+            "xmn.19m": { "size": 4194304, "crc": "D23897FC" },
+            "xmn.20m": { "size": 4194304, "crc": "9DDE2758" }
+          }
+        }
+      },
+      {
+        "game": "Marvel Super Heroes",
+        "system": "Arcade",
+        "filename": "mshh.zip",
+        "in_file": "mshh",
+        "status": "playable",
+        "verify": {
+          "type": "zip",
+          "entries": {
+            "msh.01": { "size": 131072, "crc": "C976E6F9" },
+            "msh.02": { "size": 131072, "crc": "CE67D0D9" },
+            "mshh.03c": { "size": 524288, "crc": "8D84B0FA" },
+            "mshh.04c": { "size": 524288, "crc": "D638F601" },
+            "msh.05a": { "size": 524288, "crc": "F37539E6" },
+            "msh.06b": { "size": 524288, "crc": "803E3FA4" },
+            "msh.07a": { "size": 524288, "crc": "C45F8E27" },
+            "msh.08a": { "size": 524288, "crc": "9CA6F12C" },
+            "msh.09a": { "size": 524288, "crc": "82EC27AF" },
+            "msh.10b": { "size": 524288, "crc": "8D931196" },
+            "msh.11m": { "size": 2097152, "crc": "37AC6D30" },
+            "msh.12m": { "size": 2097152, "crc": "DE092570" },
+            "msh.13m": { "size": 4194304, "crc": "09D14566" },
+            "msh.14m": { "size": 4194304, "crc": "4197973E" },
+            "msh.15m": { "size": 4194304, "crc": "EE962057" },
+            "msh.16m": { "size": 4194304, "crc": "438DA4A0" },
+            "msh.17m": { "size": 4194304, "crc": "604ECE14" },
+            "msh.18m": { "size": 4194304, "crc": "4DB92D94" },
+            "msh.19m": { "size": 4194304, "crc": "94A731E8" },
+            "msh.20m": { "size": 4194304, "crc": "A2B0C6C0" }
+          }
+        }
+      },
+      {
+        "game": "X-Men Vs. Street Fighter",
+        "system": "Arcade",
+        "filename": "xmvsfu.zip",
+        "in_file": "xmvsfu",
+        "status": "playable",
+        "verify": {
+          "type": "zip",
+          "entries": {
+            "xvs.01": { "size": 131072, "crc": "3999E93A" },
+            "xvs.02": { "size": 131072, "crc": "101BDEE9" },
+            "xvsu.03k": { "size": 524288, "crc": "8739EF61" },
+            "xvsu.04k": { "size": 524288, "crc": "E11D35C1" },
+            "xvs.05a": { "size": 524288, "crc": "7DB6025D" },
+            "xvs.06a": { "size": 524288, "crc": "E8E2C75C" },
+            "xvs.07": { "size": 524288, "crc": "08F0ABED" },
+            "xvs.08": { "size": 524288, "crc": "81929675" },
+            "xvs.09": { "size": 524288, "crc": "9641F36B" },
+            "xvs.11m": { "size": 2097152, "crc": "9CADCDBC" },
+            "xvs.12m": { "size": 2097152, "crc": "7B11E460" },
+            "xvs.13m": { "size": 4194304, "crc": "F6684EFD" },
+            "xvs.14m": { "size": 4194304, "crc": "BCAC2E41" },
+            "xvs.15m": { "size": 4194304, "crc": "29109221" },
+            "xvs.16m": { "size": 4194304, "crc": "EA04A272" },
+            "xvs.17m": { "size": 4194304, "crc": "92DB3474" },
+            "xvs.18m": { "size": 4194304, "crc": "B0DEF86A" },
+            "xvs.19m": { "size": 4194304, "crc": "3733473C" },
+            "xvs.20m": { "size": 4194304, "crc": "4B40FF9f" }
+          }
+        }
+      },
+      {
+        "game": "Marvel Super Heroes vs. Street Fighter",
+        "system": "Arcade",
+        "filename": "mshvsfu.zip",
+        "in_file": "mshvsfu",
+        "status": "playable",
+        "verify": {
+          "type": "zip",
+          "entries": {
+            "mvs.01": { "size": 131072, "crc": "68252324" },
+            "mvs.02": { "size": 131072, "crc": "b34e773d" },
+            "mvsu.03g": { "size": 524288, "crc": "0664ab15" },
+            "mvsu.04g": { "size": 524288, "crc": "97e060ee" },
+            "mvs.05d": { "size": 524288, "crc": "921fc542" },
+            "mvs.06a": { "size": 524288, "crc": "959f3030" },
+            "mvs.07b": { "size": 524288, "crc": "7f915bdb" },
+            "mvs.08a": { "size": 524288, "crc": "c2813884" },
+            "mvs.09b": { "size": 524288, "crc": "3ba08818" },
+            "mvs.10b": { "size": 524288, "crc": "cf0dba98" },
+            "mvs.11m": { "size": 4194304, "crc": "86219770" },
+            "mvs.12m": { "size": 4194304, "crc": "f2fd7f68" },
+            "mvs.13m": { "size": 4194304, "crc": "29b05fd9" },
+            "mvs.14m": { "size": 4194304, "crc": "b3b1972d" },
+            "mvs.15m": { "size": 4194304, "crc": "faddccf1" },
+            "mvs.16m": { "size": 4194304, "crc": "08aadb5d" },
+            "mvs.17m": { "size": 4194304, "crc": "97aaf4c7" },
+            "mvs.18m": { "size": 4194304, "crc": "c1228b35" },
+            "mvs.19m": { "size": 4194304, "crc": "cb70e915" },
+            "mvs.20m": { "size": 4194304, "crc": "366cc6c2" }
+          }
+        }
+      },
+      {
+        "game": "Marvel vs. Capcom: Clash of Super Heroes",
+        "system": "Arcade",
+        "filename": "mvscu.zip",
+        "in_file": "mvscu",
+        "status": "playable",
+        "verify": {
+          "type": "zip",
+          "entries": {
+            "mvc.01": { "size": 131072, "crc": "41629e95" },
+            "mvc.02": { "size": 131072, "crc": "963abf6b" },
+            "mvcu.03d": { "size": 524288, "crc": "c6007557" },
+            "mvcu.04d": { "size": 524288, "crc": "724b2b20" },
+            "mvc.05a": { "size": 524288, "crc": "2d8c8e86" },
+            "mvc.06a": { "size": 524288, "crc": "8528e1f5" },
+            "mvc.07": { "size": 524288, "crc": "c3baa32b" },
+            "mvc.08": { "size": 524288, "crc": "bc002fcd" },
+            "mvc.09": { "size": 524288, "crc": "c67b26df" },
+            "mvc.10": { "size": 524288, "crc": "0fdd1e26" },
+            "mvc.11m": { "size": 4194304, "crc": "850fe663" },
+            "mvc.12m": { "size": 4194304, "crc": "7ccb1896" },
+            "mvc.13m": { "size": 4194304, "crc": "fa5f74bc" },
+            "mvc.14m": { "size": 4194304, "crc": "7f1df4e4" },
+            "mvc.15m": { "size": 4194304, "crc": "71938a8f" },
+            "mvc.16m": { "size": 4194304, "crc": "90bd3203" },
+            "mvc.17m": { "size": 4194304, "crc": "92741d07" },
+            "mvc.18m": { "size": 4194304, "crc": "67aaf727" },
+            "mvc.19m": { "size": 4194304, "crc": "bcb72fc6" },
+            "mvc.20m": { "size": 4194304, "crc": "8b0bade8" }
+          }
+        }
+      }
+    ]
+  }
+}
