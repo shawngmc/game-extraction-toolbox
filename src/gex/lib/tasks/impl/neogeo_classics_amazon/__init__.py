@@ -1,4 +1,4 @@
-'''Implementation of neogeo_classics_humble: Neo Geo Classics by SNK Playmore on Humble'''
+'''Implementation of neogeo_classics_amazon: Neo Geo Classics free with Amazon Prime Gaming'''
 import logging
 import os
 from gex.lib.tasks.basetask import BaseTask
@@ -6,19 +6,16 @@ from gex.lib.utils.vendor import snk
 
 logger = logging.getLogger('gextoolbox')
 
-class NeoGeoClassicsHumbleTask(BaseTask):
-    '''Implements neogeo_classics_humble: Neo Geo Classics by SNK Playmore on Humble'''
-    _task_name = "neogeo_classics_humble"
-    _title = "Neo Geo Classics by SNK Playmore on Humble Store"
+class NeoGeoClassicsAmazonTask(BaseTask):
+    '''Implements neogeo_classics_amazon: Neo Geo Classics free with Amazon Prime Gaming'''
+    _task_name = "neogeo_classics_amazon"
+    _title = "Neo Geo Classics free with Amazon Prime Gaming"
     _details_markdown = '''
-This task covers a variety of SNK Neo Geo releases Humble Store.
+This task covers a variety of SNK Neo Geo releases free with Amazon Prime Gaming.
 In some cases, these games simply have ZIP files for the ROM; in other cases, the files are in a subfolder.
-
-This also covers most collections/bundles, but only if they install as separate titles. 
-As of right now, the only exception known is Samurai Shodown Neogeo Collection.
     '''
-    _default_input_folder = r"C:\Program Files (x86)\NeoGeo 25th Anniversery"
-    _input_folder_desc = "Root install folder for the NeoGeo 25th Anniversary bundle"
+    _default_input_folder = r"C:\Amazon Games\Library"
+    _input_folder_desc = "Root Amazon Games Library folder"
 
     def get_out_file_info(self):
         '''Return a list of output files'''
@@ -54,6 +51,14 @@ As of right now, the only exception known is Samurai Shodown Neogeo Collection.
             "Baseball Stars 2": {
                 'filename': 'bstars2.zip',
                 'function': snk.handle_bstars2
+            },
+            "Twinkle Star Sprites": {
+                'filename': 'twinspri.zip',
+                'function': snk.handle_twinspri
+            },
+            "The Last Blade": {
+                'filename': 'lastblad.zip',
+                'function': snk.handle_lastblad
             }
         }
 

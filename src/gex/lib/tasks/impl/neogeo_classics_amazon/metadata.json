@@ -61,8 +61,128 @@
                     }
                 }
             },
+            "twinspri_adpcm": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 6291456,
+                        "crc": "2E5DA6DD"
+                    }
+                }
+            },
+            "twinspri_game_m68k": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 4194304,
+                        "crc": "C78FF6CD"
+                    }
+                }
+            },
+            "twinspri_game_sfix": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "9F4C5EAD"
+                    }
+                }
+            },
+            "twinspri_game_z80": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "364D6F96"
+                    }
+                }
+            },
+            "twinspri_tiles": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 10485760,
+                        "crc": "0862CA91"
+                    }
+                }
+            },
+            "twinspri_zoom_table": {
+                "rel_path": ["Twinkle Star Sprites", "resources", "game"],
+                "filename": "twinspri_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "5A86CFF2"
+                    }
+                }
+            },
+            "lastblad_adpcm": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_adpcm",
+                "versions": {
+                    "snk": {
+                        "size": 16777216,
+                        "crc": "436E8345"
+                    }
+                }
+            },
+            "lastblad_game_m68k": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_m68k",
+                "versions": {
+                    "snk": {
+                        "size": 5242880,
+                        "crc": "5DED714E"
+                    }
+                }
+            },
+            "lastblad_game_sfix": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_sfix",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "94AE3C25"
+                    }
+                }
+            },
+            "lastblad_game_z80": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_game_z80",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "087628EA"
+                    }
+                }
+            },
+            "lastblad_tiles": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_tiles",
+                "versions": {
+                    "snk": {
+                        "size": 41943040,
+                        "crc": "4A19CC24"
+                    }
+                }
+            },
+            "lastblad_zoom_table": {
+                "rel_path": ["The Last Blade", "resources", "game"],
+                "filename": "lastblad_zoom_table",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "5A86CFF2"
+                    }
+                }
+            },
             "aof2.zip": {
-                "rel_path": ["SNKTwitchArtOfFighting2_2020Jun18__1_"],
+                "rel_path": ["Art of Fighting 2"],
                 "filename": "aof2.zip",
                 "versions": {
                     "snk": {
@@ -72,7 +192,7 @@
                 }
             },
             "aof2_neogeo.zip": {
-                "rel_path": ["SNKTwitchArtOfFighting2_2020Jun18__1_"],
+                "rel_path": ["Art of Fighting 2"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "enhanced": {
@@ -82,7 +202,7 @@
                 }
             },
             "blazstar.zip": {
-                "rel_path": ["BlazingStar"],
+                "rel_path": ["Blazing Star"],
                 "filename": "blazstar.zip",
                 "versions": {
                     "snk": {
@@ -92,7 +212,7 @@
                 }
             },
             "blazstar_neogeo.zip": {
-                "rel_path": ["BlazingStar"],
+                "rel_path": ["Blazing Star"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -102,7 +222,7 @@
                 }
             },
             "fatfursp.zip": {
-                "rel_path": ["FatalFurySpecial"],
+                "rel_path": ["Fatal Fury Special"],
                 "filename": "fatfursp.zip",
                 "versions": {
                     "snk": {
@@ -112,7 +232,7 @@
                 }
             },
             "fatfursp_neogeo.zip": {
-                "rel_path": ["FatalFurySpecial"],
+                "rel_path": ["Fatal Fury Special"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -241,26 +361,6 @@
                     }
                 }
             },
-            "turfmast.zip": {
-                "rel_path": ["NeoTurfMasters"],
-                "filename": "turfmast.zip",
-                "versions": {
-                    "snk": {
-                        "size": 9207899,
-                        "crc": "115B860C"
-                    }
-                }
-            },
-            "turfmast_neogeo.zip": {
-                "rel_path": ["NeoTurfMasters"],
-                "filename": "neogeo.zip",
-                "versions": {
-                    "basic": {
-                        "size": 122286,
-                        "crc": "D5295B2B"
-                    }
-                }
-            },
             "pulstar.zip": {
                 "rel_path": ["Pulstar"],
                 "filename": "pulstar.zip",
@@ -282,7 +382,7 @@
                 }
             },
             "rbff2.zip": {
-                "rel_path": ["RealBoutFatalFury2"],
+                "rel_path": ["Real Bout Fatal Fury 2 - The"],
                 "filename": "rbff2.zip",
                 "versions": {
                     "snk": {
@@ -292,7 +392,7 @@
                 }
             },
             "rbff2_neogeo.zip": {
-                "rel_path": ["RealBoutFatalFury2"],
+                "rel_path": ["Real Bout Fatal Fury 2 - The"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -302,7 +402,7 @@
                 }
             },
             "samsho2.zip": {
-                "rel_path": ["SamuraiShodown2"],
+                "rel_path": ["Samurai Shodown II"],
                 "filename": "samsho2.zip",
                 "versions": {
                     "snk": {
@@ -312,7 +412,7 @@
                 }
             },
             "samsho2_neogeo.zip": {
-                "rel_path": ["SamuraiShodown2"],
+                "rel_path": ["Samurai Shodown II"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -341,9 +441,9 @@
                     }
                 }
             },
-            "sengoku3.zip": {
-                "rel_path": ["Sengoku3"],
-                "filename": "sengoku3.zip",
+            "Sengoku 3.zip": {
+                "rel_path": ["Sengoku 3"],
+                "filename": "Sengoku 3.zip",
                 "versions": {
                     "snk": {
                         "size": 44641361,
@@ -351,8 +451,8 @@
                     }
                 }
             },
-            "sengoku3_neogeo.zip": {
-                "rel_path": ["Sengoku3"],
+            "Sengoku 3_neogeo.zip": {
+                "rel_path": ["Sengoku 3"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -402,7 +502,7 @@
                 }
             },
             "kof2000.zip": {
-                "rel_path": ["KingOfFighters2000"],
+                "rel_path": ["The King of Fighters 2000"],
                 "filename": "kof2000.zip",
                 "versions": {
                     "snk": {
@@ -412,27 +512,7 @@
                 }
             },
             "kof2000_neogeo.zip": {
-                "rel_path": ["KingOfFighters2000"],
-                "filename": "neogeo.zip",
-                "versions": {
-                    "basic": {
-                        "size": 122286,
-                        "crc": "D5295B2B"
-                    }
-                }
-            },
-            "lastblad.zip": {
-                "rel_path": ["LastBlade"],
-                "filename": "lastblad.zip",
-                "versions": {
-                    "snk": {
-                        "size": 26475250,
-                        "crc": "E795A22E"
-                    }
-                }
-            },
-            "lastblad_neogeo.zip": {
-                "rel_path": ["LastBlade"],
+                "rel_path": ["The King of Fighters 2000"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -442,7 +522,7 @@
                 }
             },
             "kof2002.zip": {
-                "rel_path": ["KingOfFighters2002"],
+                "rel_path": ["The King of Fighters 2002"],
                 "filename": "kof2002.zip",
                 "versions": {
                     "snk": {
@@ -452,7 +532,7 @@
                 }
             },
             "kof2002_neogeo.zip": {
-                "rel_path": ["KingOfFighters2002"],
+                "rel_path": ["The King of Fighters 2002"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
@@ -462,7 +542,7 @@
                 }
             },
             "kotm.zip": {
-                "rel_path": ["KingOfTheMonsters"],
+                "rel_path": ["King of the Monsters"],
                 "filename": "kotm.zip",
                 "versions": {
                     "snk": {
@@ -472,32 +552,12 @@
                 }
             },
             "kotm_neogeo.zip": {
-                "rel_path": ["KingOfTheMonsters"],
+                "rel_path": ["King of the Monsters"],
                 "filename": "neogeo.zip",
                 "versions": {
                     "basic": {
                         "size": 122286,
                         "crc": "D5295B2B"
-                    }
-                }
-            },
-            "twinspri.zip": {
-                "rel_path": ["TwinkleStarSprites"],
-                "filename": "twinspri.zip",
-                "versions": {
-                    "snk": {
-                        "size": 8988573,
-                        "crc": "8BC552B8"
-                    }
-                }
-            },
-            "twinspri_neogeo.zip": {
-                "rel_path": ["TwinkleStarSprites"],
-                "filename": "neogeo.zip",
-                "versions": {
-                    "enhanced": {
-                        "size": 1346731,
-                        "crc": "AFCE86AC"
                     }
                 }
             }
@@ -864,27 +924,6 @@
                 }
             },
             {
-                "game": "Neo Turf Masters",
-                "system": "NeoGeo",
-                "filename": "turfmast.zip",
-                "status": "playable",
-                "notes": [],
-                "verify": {
-                    "type": "zip",
-                    "entries": {
-                        "200-c1.c1": {"size": 4194304, "crc": "8E7BF41A"},
-                        "200-c2.c2": {"size": 4194304, "crc": "5A65A8CE"},
-                        "200-m1.m1": {"size": 131072, "crc": "9994AC00"},
-                        "200-p1.p1": {"size": 2097152, "crc": "28C83048"},
-                        "200-s1.s1": {"size": 131072, "crc": "9A5402B2"},
-                        "200-v1.v1": {"size": 2097152, "crc": "00FD48D2"},
-                        "200-v2.v2": {"size": 2097152, "crc": "082ACB31"},
-                        "200-v3.v3": {"size": 2097152, "crc": "7ABCA053"},
-                        "200-v4.v4": {"size": 2097152, "crc": "6C7B4902"}
-                    }
-                }
-            },
-            {
                 "game": "Pulstar",
                 "system": "NeoGeo",
                 "filename": "pulstar.zip",
@@ -1001,7 +1040,7 @@
             {
                 "game": "Sengoku 3",
                 "system": "NeoGeo",
-                "filename": "sengoku3.zip",
+                "filename": "Sengoku 3.zip",
                 "status": "playable",
                 "notes": [],
                 "verify": {

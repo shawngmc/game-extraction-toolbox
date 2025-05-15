@@ -45,7 +45,7 @@ See https://github.com/farmerbb/RED-Project/issues/39 for more info.
 
                 # Get the rom asset entry
                 rom_asset = unity_bundle.container.get(out_file_entry['extract']['archive_path'])
-                rom_data = rom_asset.read().script
+                rom_data = rom_asset.read().m_Script.encode("utf-8", "surrogateescape")
 
                 if rom_asset is None:
                     logger.warning("Could not find rom asset in archive.")

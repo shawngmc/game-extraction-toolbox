@@ -1,3 +1,9 @@
+# 0.1.8
+- Updated Collections:
+  - NeoGeo Classics by SNK (Humble Store)
+    - Fixed issue with AoF2 zip identification
+    - Added Basebasll Stars 2
+
 # 0.1.7
  - Added Games/Collections
    - Breakers Collection (Thanks tydog98 and Feilakas)
