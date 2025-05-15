@@ -1,0 +1,86 @@
+{
+    "in": {
+        "files": {
+            "c1.bin": {
+                "rel_path": ["Data", "rom"],
+                "filename": "c1.bin",
+                "versions": {
+                    "snk": {
+                        "size": 41943040,
+                        "crc": "E9CB47E7"
+                    }
+                }
+            },
+            "m1.bin": {
+                "rel_path": ["Data", "rom"],
+                "filename": "m1.bin",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "45348747"
+                    }
+                }
+            },
+            "p1.bin": {
+                "rel_path": ["Data", "rom"],
+                "filename": "p1.bin",
+                "versions": {
+                    "snk": {
+                        "size": 5242880,
+                        "crc": "F2E4C21A"
+                    }
+                }
+            },
+            "s1.bin": {
+                "rel_path": ["Data", "rom"],
+                "filename": "s1.bin",
+                "versions": {
+                    "snk": {
+                        "size": 131072,
+                        "crc": "8514ECF5"
+                    }
+                }
+            },
+            "v1.bin": {
+                "rel_path": ["Data", "rom"],
+                "filename": "v1.bin",
+                "versions": {
+                    "snk": {
+                        "size": 12582912,
+                        "crc": "35656A78"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "The King of Fighters '97",
+                "system": "NeoGeo",
+                "filename": "kof97.zip",
+                "status": "playable",
+                "notes": [],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "232-c1.c1": {"size": 8388608, "crc": "5F8BF0A1"},
+                        "232-c2.c2": {"size": 8388608, "crc": "E4D45C81"},
+                        "232-c3.c3": {"size": 8388608, "crc": "581D6618"},
+                        "232-c4.c4": {"size": 8388608, "crc": "49BB1E68"},
+                        "232-c5.c5": {"size": 4194304, "crc": "34FC4E51"},
+                        "232-c6.c6": {"size": 4194304, "crc": "4FF4D47B"},
+                        "232-m1.m1": {"size": 131072, "crc": "45348747"},
+                        "232-p1.p1": {"size": 1048576, "crc": "7DB81AD9"},
+                        "232-p2.sp2": {"size": 4194304, "crc": "158B23F6"},
+                        "232-s1.s1": {"size": 131072, "crc": "8514ECF5"},
+                        "232-v1.v1": {"size": 4194304, "crc": "22A2B5B5"},
+                        "232-v2.v2": {"size": 4194304, "crc": "2304E744"},
+                        "232-v3.v3": {"size": 4194304, "crc": "759EB954"}
+                    }
+                }
+            }
+        ],
+        "notes": {}
+    }
+}
