@@ -90,6 +90,10 @@
   0x00400000	0x01FFFFFF	16MB	???
   0x02000000	0x023FFFFF	4MB	NULL
   Missing 36 MB of contents with 16MB of unidentified stuff?
+- Retro SNES Collection Vol. 1 (Jim Power, Legend, Iron Commando, Dorke and Ymp)
+- S-Tribute (Metal Black S-Tribute, Puzzle Bobble 2x/3 and Bust-a-Move 2/3 S-Tribute)
+  - These appear to have a bin-cue file pair for each title
+  - However, these are not mountable - are they encrypted?
 - Piko Interactive Releases
   - Jim Power (SNES)
   - Legend (SNES)
@@ -233,3 +237,13 @@ Teenage Mutant Ninja Turtles: Shredder's Revenge    | Modern Sequel            |
   Rebuilt by CodeMasters
 - The King of Fighters 2002 Unlimited Match
   Rebuilt by CodeMasters
+  
+### Encrypted
+- Atari 50th: Anniversary Collection (Winter 2022)
+  https://store.steampowered.com/app/1919470/Atari_50_The_Anniversary_Celebration/
+  Digital Eclipse release that is encrypted
+  Recommend looking at: https://github.com/Masquerade64/Cowabunga
+- Teenage Mutant Ninja Turtles: The Cowabunga Collection (August 30th, 2022) (#17 in GitHub project)
+  https://store.steampowered.com/app/1659600/Teenage_Mutant_Ninja_Turtles_The_Cowabunga_Collection/
+  Digital Eclipse release that is encrypted
+  Recommend looking at: https://github.com/Masquerade64/Cowabunga
