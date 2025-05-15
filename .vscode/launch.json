@@ -356,6 +356,23 @@
             ]
         },
         {
+            "name": "GEXToolbox - Testing kof97_gm: The King of Fighters '97 Global Match",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "kof97_gm", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\kof97_gm"
+            ]
+        },
+        {
             "name": "GEXToolbox - Testing mmbnlc1: Mega Man Battle Network Legacy Collection 1",
             "type": "debugpy",
             "request": "launch",

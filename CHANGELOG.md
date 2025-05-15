@@ -1,8 +1,21 @@
-# 0.1.8
-- Updated Collections:
+# 0.2.0
+- Fixes
+  - Remove external compiled dependencies 
+    - Removed libmagic, which has binary components
+    - Removed UnityPy, which has binary components... this does break SaGa extraction
+- Added Collections
+  - kof97_gm: The King of Fighters '97 Global Match - thanks @fliperama86
+    - Requires Neo-Geo BIOS ROM
+  - mvscc: Marvel vs. Capcom Fighting Collection - thanks @fliperama86
+    - 5/7 games implemented
+    - The Punisher and MVC2 not yet implemented
+- Updated Collections
   - NeoGeo Classics by SNK (Humble Store)
     - Fixed issue with AoF2 zip identification
     - Added Basebasll Stars 2
+- Known Issues
+  - Collection of SaGa/Final Fantasy Legend
+    - currently broken; needs reimplemented without UnityPy
 
 # 0.1.7
  - Added Games/Collections
