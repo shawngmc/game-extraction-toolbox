@@ -5,8 +5,14 @@ import zipfile
 from gex.lib.utils.blob import transforms
 import gex.lib.archive.zip as ziphelper
 
+AMAZON_APP_ROOT = r"C:\Amazon Games\Library"
 STEAM_APP_ROOT = r"C:\Program Files (x86)\Steam\steamapps\common"
 def gen_steam_app_default_folder(app_folder, library_root=STEAM_APP_ROOT):
+    '''Convenience function to get a Steam App folder'''
+    return os.path.join(library_root, app_folder)
+
+
+def gen_amazon_app_default_folder(app_folder, library_root=AMAZON_APP_ROOT):
     '''Convenience function to get a Steam App folder'''
     return os.path.join(library_root, app_folder)
 
