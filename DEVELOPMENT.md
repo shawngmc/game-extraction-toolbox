@@ -16,7 +16,7 @@
 
 ### Build
 1. Clean out dist dir
-2. Build via ```py -m build```
+2. Build via ```pipx run build```
 
 ### Test
 1. Push to develop
@@ -33,7 +33,7 @@
 3. Monitor the GH Publish Action
 
 ### Manual
-1. Distribute via twine ```twine upload dist/*```
+1. Distribute via twine ```pipx run twine upload dist/*```
 2. Clean out dist dir
 
 
