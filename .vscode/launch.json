@@ -253,6 +253,23 @@
                 "${workspaceFolder}\\out\\cfc"
             ]
         },
+        {   
+            "name": "GEXToolbox - Testing mvscc: Marvel vs. Capcom Fighting Collection",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mvscc", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\mvscc"
+            ]
+        },
         {
             "name": "GEXToolbox - Testing ddragontrilogy: Double Dragon Trilogy",
             "type": "debugpy",
@@ -523,7 +540,7 @@
             "program": "toolbox.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/src/gex",
-            "justMyCode": true,
+            "justMyCode": false,
             "args": [
                 "tasks", 
                 "extract", 
