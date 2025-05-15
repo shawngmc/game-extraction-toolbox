@@ -1,6 +1,6 @@
 [project]
 name = "game-extraction-toolbox"
-version = "0.1.7"
+version = "0.2.0"
 authors = [
   { name="Shawn McNaughton", email="shawngmc@gmail.com" },
 ]
@@ -14,8 +14,7 @@ dependencies = [
   'click-log >= 0.4.0',
   'psutil >= 5.9.1',
   'rich >= 12.5.1',
-  'texttable >= 1.6.4',
-  'UnityPy >= 1.21.0'
+  'texttable >= 1.6.4'
 ]
 
 [project.urls]

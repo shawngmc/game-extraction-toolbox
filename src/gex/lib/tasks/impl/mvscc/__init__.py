@@ -21,7 +21,7 @@ This script will extract and prep the ROMs. Some per-rom errata are in the notes
 
 TODO: Implement the rest of the games: The Punisher and MvC2.
 '''
-    _default_input_folder = helpers.gen_steam_app_default_folder("MARVEL vs. CAPCOM Fighting Collection: Arcade Classics")
+    _default_input_folder = helpers.gen_steam_app_default_folder("MARVEL vs. CAPCOM Fighting Collection")
     _input_folder_desc = "MVSCC Steam folder"
 
     def get_out_file_info(self):

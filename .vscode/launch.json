@@ -253,6 +253,23 @@
                 "${workspaceFolder}\\out\\cfc"
             ]
         },
+        {   
+            "name": "GEXToolbox - Testing mvscc: Marvel vs. Capcom Fighting Collection",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "mvscc", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\mvscc"
+            ]
+        },
         {
             "name": "GEXToolbox - Testing ddragontrilogy: Double Dragon Trilogy",
             "type": "debugpy",
@@ -336,6 +353,23 @@
                 "irem", 
                 "--destdir", 
                 "${workspaceFolder}\\out\\irem"
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing kof97_gm: The King of Fighters '97 Global Match",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "kof97_gm", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\kof97_gm"
             ]
         },
         {
@@ -523,7 +557,7 @@
             "program": "toolbox.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/src/gex",
-            "justMyCode": true,
+            "justMyCode": false,
             "args": [
                 "tasks", 
                 "extract", 

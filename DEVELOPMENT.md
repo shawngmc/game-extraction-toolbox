@@ -1,6 +1,6 @@
 ## Development
 ### Setup
-1. Clone Repo
+1. Clone Repo from the DEVELOP branch
 2. Run ```pip install -e --user .``` from the root project folder
 
 
@@ -16,7 +16,7 @@
 
 ### Build
 1. Clean out dist dir
-2. Build via ```py -m build```
+2. Build via ```pipx run build```
 
 ### Test
 1. Push to develop
@@ -33,7 +33,7 @@
 3. Monitor the GH Publish Action
 
 ### Manual
-1. Distribute via twine ```twine upload dist/*```
+1. Distribute via twine ```pipx run twine upload dist/*```
 2. Clean out dist dir
 
 

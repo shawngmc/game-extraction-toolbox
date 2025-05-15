@@ -124,11 +124,13 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Capcom Arcade Stadium 1 (via Depot)**        | 95%            | N                | Requires Steam depot downloading, a couple shaky ROMs... 
  **Capcom Beat 'Em Up Bundle**                  | 95%            | Y                | 6/7 playable on some version of MAME, but wof/wofj missing audiocpu data  
  **Capcom Fighting Collection**                 | 90%            | Y                | CPS2 is semi-standard. No Enc keys present. CP3 game is a curveball!  
- **Collection of SaGa/Final Fantasy Legend**    | 100%           | Y                |  
+ **Collection of SaGa/Final Fantasy Legend**    | 0%             | Y                | Temporarily removed to remove UnityPy dependencies, needs reimplemented.
  **Disney Afternoon Collection**                | 100%           | Y                |  
  **Disney Classics Aladdin & Lion King w/DLC**  | 100%           | Y                | Includes Jungle Book DLC
  **Double Dragon Trilogy**                      | 100%           | Y                |  
  **IREM Arcade Classics**                       | 100%           | Y                |  
+ **King of Fighters '97 Global Match**          | 100%           | Y                | Requires Neo-Geo BIOS ROM.
+ **Marvel vs. Capcom Fighting Collection**      | 71%            | Y                | The Punisher and MVC2 not yet extractable. Thanks @fliperama86
  **Mega Man Legacy Collection 1**               | 100%           | Y                |  
  **Mega Man Battle Network Legacy Collection 1**| 100%           | Y                | 
  **Mega Man Battle Network Legacy Collection 2**| 100%           | Y                | 
