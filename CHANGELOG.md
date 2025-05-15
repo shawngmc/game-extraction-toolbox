@@ -10,9 +10,11 @@
     - 5/7 games implemented
     - The Punisher and MVC2 not yet implemented
 - Updated Collections
-  - NeoGeo Classics by SNK (Humble Store)
+  - genesis: Sega Genesis Collection
+    - Fix for when not all titles are owned - thanks @LeXofLeviafan
+  - neogeo_classics_humble: NeoGeo Classics by SNK (Humble Store)
     - Fixed issue with AoF2 zip identification
-    - Added Basebasll Stars 2
+    - Added Baseball Stars 2
 - Known Issues
   - Collection of SaGa/Final Fantasy Legend
     - currently broken; needs reimplemented without UnityPy
