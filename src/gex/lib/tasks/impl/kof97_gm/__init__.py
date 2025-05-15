@@ -18,6 +18,8 @@ Including both Steam and Amazon Prime Gaming versions.
 
 To extract the Amazon version, provide your Amazon Game library as a input directory.
 
+Requires Neo-Geo BIOS ROM.
+
 Based on:
 - https://github.com/RedundantCich/goNCommand/blob/main/GoKOF97
 - https://www.arcade-projects.com/threads/samurai-shodown-v-perfect-on-real-hardware.13565/page-2
