@@ -6,26 +6,29 @@
     "configurations": [
         {
             "name": "GEXToolbox - Testing acac: Arcade Classics Anniversary Collection (Konami)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/src/gex",
             "justMyCode": true,
+            "envFile": "${workspaceFolder}\\.env",
             "args": [
                 "tasks", 
                 "extract", 
                 "--task", 
                 "acac", 
+                "--srcdir",
+                "\"D:\\game-rom-extraction-sources\\Steam\\steamapps\\common\\Arcade Classics Anniversary Collection\"",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\acac\"",
+                "${workspaceFolder}\\out\\acac",
                 "--prop",
                 "include-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing ags_digdug: Namco Arcade Game Series: Dig Dug",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -37,12 +40,12 @@
                 "--task", 
                 "ags_digdug", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_digdug\""
+                "${workspaceFolder}\\out\\ags_digdug"
             ]
         },
         {
             "name": "GEXToolbox - Testing ags_galaga: Namco Arcade Game Series: Galaga",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -54,12 +57,12 @@
                 "--task", 
                 "ags_galaga", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_galaga\""
+                "${workspaceFolder}\\out\\ags_galaga"
             ]
         },
         {
             "name": "GEXToolbox - Testing ags_pacman: Namco Arcade Game Series: Pac-Man",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -71,12 +74,12 @@
                 "--task", 
                 "ags_pacman", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_pacman\""
+                "${workspaceFolder}\\out\\ags_pacman"
             ]
         },
         {
             "name": "GEXToolbox - Testing ags_mspacman: Namco Arcade Game Series: Ms. Pac-Man",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -88,12 +91,12 @@
                 "--task", 
                 "ags_mspacman", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ags_mspacman\""
+                "${workspaceFolder}\\out\\ags_mspacman"
             ]
         },
         {
             "name": "GEXToolbox - Testing atarivault: Atari Vault",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -105,14 +108,14 @@
                 "--task", 
                 "atarivault", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\atarivault\"",
+                "${workspaceFolder}\\out\\atarivault",
                 "--prop",
                 "include-arcade-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing blizzarcade: Blizzard Arcade Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -124,12 +127,12 @@
                 "--task", 
                 "blizzarcade", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\blizzarcade\""
+                "${workspaceFolder}\\out\\blizzarcade"
             ]
         },
         {
             "name": "GEXToolbox - Testing breakers: Breakers Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -141,12 +144,12 @@
                 "--task", 
                 "breakers",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\breakers\""
+                "${workspaceFolder}\\out\\breakers"
             ]
         },
         {
             "name": "GEXToolbox - Testing bubsy: Bubsy Two-Fur Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -158,12 +161,12 @@
                 "--task", 
                 "bubsy", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\bubsy\""
+                "${workspaceFolder}\\out\\bubsy"
             ]
         },
         {
             "name": "GEXToolbox - Testing cas1: Capcom Arcade Stadium",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -175,14 +178,14 @@
                 "--task", 
                 "cas1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas1\"",
+                "${workspaceFolder}\\out\\cas1",
                 "--prop",
                 "include-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing cas1_old: Capcom Arcade Stadium (Old Release)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -194,12 +197,12 @@
                 "--task", 
                 "cas1_old", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas1_old\""
+                "${workspaceFolder}\\out\\cas1_old"
             ]
         },
         {
             "name": "GEXToolbox - Testing cas2: Capcom Arcade 2nd Stadium",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -211,14 +214,14 @@
                 "--task", 
                 "cas2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cas2\"",
+                "${workspaceFolder}\\out\\cas2",
                 "--prop",
                 "include-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing cbeub: Capcom Beat 'em Up Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -230,12 +233,12 @@
                 "--task", 
                 "cbeub", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cbeub\""
+                "${workspaceFolder}\\out\\cbeub"
             ]
         },
         {
             "name": "GEXToolbox - Testing cfc: Capcom Fighting Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -247,12 +250,12 @@
                 "--task", 
                 "cfc", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\cfc\""
+                "${workspaceFolder}\\out\\cfc"
             ]
         },
         {
             "name": "GEXToolbox - Testing ddragontrilogy: Double Dragon Trilogy",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -264,12 +267,12 @@
                 "--task", 
                 "ddragontrilogy", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ddragontrilogy\""
+                "${workspaceFolder}\\out\\ddragontrilogy"
             ]
         },
         {
             "name": "GEXToolbox - Testing disneyac: Disney Afternoon Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -281,12 +284,12 @@
                 "--task", 
                 "disneyac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\disneyac\""
+                "${workspaceFolder}\\out\\disneyac"
             ]
         },
         {
             "name": "GEXToolbox - Testing disneyalkb: Disney Classics Aladdin and Lion King w/ DLC",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -298,12 +301,12 @@
                 "--task", 
                 "disneyalkb", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\disneyalkb\""
+                "${workspaceFolder}\\out\\disneyalkb"
             ]
         },
         {
             "name": "GEXToolbox - Testing genesis: Genese & Mega Drive Classics Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -315,12 +318,12 @@
                 "--task", 
                 "genesis", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\genesis\""
+                "${workspaceFolder}\\out\\genesis"
             ]
         },
         {
             "name": "GEXToolbox - Testing irem: Irem Arcade Hits",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -332,12 +335,12 @@
                 "--task", 
                 "irem", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\irem\""
+                "${workspaceFolder}\\out\\irem"
             ]
         },
         {
             "name": "GEXToolbox - Testing mmbnlc1: Mega Man Battle Network Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -349,12 +352,12 @@
                 "--task", 
                 "mmbnlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmbnlc1\""
+                "${workspaceFolder}\\out\\mmbnlc1"
             ]
         },
         {
             "name": "GEXToolbox - Testing mmbnlc2: Mega Man Battle Network Legacy Collection 2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -366,12 +369,12 @@
                 "--task", 
                 "mmbnlc2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmbnlc2\""
+                "${workspaceFolder}\\out\\mmbnlc2"
             ]
         },
         {
             "name": "GEXToolbox - Testing mmlc1: Mega Man Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -383,12 +386,12 @@
                 "--task", 
                 "mmlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmlc1\""
+                "${workspaceFolder}\\out\\mmlc1"
             ]
         },
         {
             "name": "GEXToolbox - Testing mmxlc1: Mega Man X Legacy Collection 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -400,12 +403,12 @@
                 "--task", 
                 "mmxlc1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mmxlc1\""
+                "${workspaceFolder}\\out\\mmxlc1"
             ]
         },
         {
             "name": "GEXToolbox - Testing mkak: Mortal Kombat Arcade Kollection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -417,12 +420,31 @@
                 "--task", 
                 "mkak", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\mkak\""
+                "${workspaceFolder}\\out\\mkak"
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing neogeo_classics_amazon: NeoGeo Classics free with Amazon Prime",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "neogeo_classics_amazon",
+                "--srcdir",
+                "C:\\Amazon Games\\Library", 
+                "--destdir", 
+                "\"${workspaceFolder}\\out\\neogeo_classics_amazon\""
             ]
         },
         {
             "name": "GEXToolbox - Testing neogeo_classics_humble: SNK Playmore Neo Geo Classics (Humble)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -436,12 +458,12 @@
                 "--srcdir",
                 "C:\\Program Files (x86)\\NeoGeo 25th Anniversery", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\neogeo_classics_humble\""
+                "${workspaceFolder}\\out\\neogeo_classics_humble"
             ]
         },
         {
             "name": "GEXToolbox - Testing pacmanmplus: Pac Man Museum Plus",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -453,14 +475,14 @@
                 "--task", 
                 "pacmanmplus", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\pacmanmplus\"",
+                "${workspaceFolder}\\out\\pacmanmplus",
                 "--prop",
                 "include-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing psikyo: Psikyo Shooter Collector's Bundle",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -472,14 +494,14 @@
                 "--task", 
                 "psikyo", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\psikyo\"",
+                "${workspaceFolder}\\out\\psikyo",
                 "--prop",
                 "include-partials=True"
             ]
         },
         {
             "name": "GEXToolbox - Testing sadxgg: Sonic Adventure DX (Game Gear only)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -491,12 +513,12 @@
                 "--task", 
                 "sadxgg", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sadxgg\""
+                "${workspaceFolder}\\out\\sadxgg"
             ]
         },
         {
             "name": "GEXToolbox - Testing saga: Collection of SaGa",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -508,12 +530,12 @@
                 "--task", 
                 "saga", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\saga\""
+                "${workspaceFolder}\\out\\saga"
             ]
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -525,12 +547,12 @@
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\""
+                "${workspaceFolder}\\out\\sf30ac"
             ]
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection (Verbose)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -542,14 +564,14 @@
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\"",
+                "${workspaceFolder}\\out\\sf30ac",
                 "-v",
                 "DEBUG"
             ]
         },
         {
             "name": "GEXToolbox - Testing sf30ac: Street Fighter 30th Anniversary Collection International",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -561,14 +583,14 @@
                 "--task", 
                 "sf30ac", 
                 "--srcdir", 
-                "\"${workspaceFolder}\\out\\sf30acint-testing\"",
+                "${workspaceFolder}\\out\\sf30acint-testing",
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30acint\""
+                "${workspaceFolder}\\out\\sf30acint"
             ]
         },
         {
             "name": "GEXToolbox - Profile sf30ac: Street Fighter 30th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "cProfile",
             "console": "integratedTerminal",
@@ -576,19 +598,19 @@
             "justMyCode": true,
             "args": [
                 "-o",
-                "\"${workspaceFolder}\\out\\sf30ac.prof\"",
+                "${workspaceFolder}\\out\\sf30ac.prof",
                 "${workspaceFolder}\\src\\gex\\toolbox.py",
                 "tasks", 
                 "extract", 
                 "--task", 
                 "sf30ac", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\sf30ac\""
+                "${workspaceFolder}\\out\\sf30ac"
             ]
         },
         {
             "name": "GEXToolbox - Testing snk40: SNK 40th Anniversary Collection",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -600,14 +622,14 @@
                 "--task", 
                 "snk40", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\snk40\"",
+                "${workspaceFolder}\\out\\snk40",
                 "--srcdir", 
-                "\"C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection\""
+                "C:\\Program Files (x86)\\Amazon Games\\Library\\SNK 40th Anniversary Collection"
             ]
         },
         {
             "name": "GEXToolbox - Testing ssp1: Sega Smash Pack 1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -619,12 +641,12 @@
                 "--task", 
                 "ssp1", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp1\""
+                "${workspaceFolder}\\out\\ssp1"
             ]
         },
         {
             "name": "GEXToolbox - Testing ssp2: Sega Smash Pack 2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -636,12 +658,12 @@
                 "--task", 
                 "ssp2", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp2\""
+                "${workspaceFolder}\\out\\ssp2"
             ]
         },
         {
             "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Columns III",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -653,12 +675,12 @@
                 "--task", 
                 "spp_columnsiii", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\spp_columnsiii\""
+                "${workspaceFolder}\\out\\spp_columnsiii"
             ]
         },
         {
             "name": "GEXToolbox - Testing spp_drmbm: Sega Puzzle Pack Dr. Robotnik's Mean Bean Machine",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -670,12 +692,29 @@
                 "--task", 
                 "spp_drmbm", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\ssp_drmbm\""
+                "${workspaceFolder}\\out\\ssp_drmbm"
+            ]
+        },
+        {
+            "name": "GEXToolbox - Testing toaplan_truxton2: Truxton 2",
+            "type": "python",
+            "request": "launch",
+            "program": "toolbox.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/gex",
+            "justMyCode": true,
+            "args": [
+                "tasks", 
+                "extract", 
+                "--task", 
+                "toaplan_truxton2", 
+                "--destdir", 
+                "${workspaceFolder}\\out\\toaplan_truxton2"
             ]
         },
         {
             "name": "GEXToolbox - Testing wonderboy3: Wonder Boy 3",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -687,14 +726,14 @@
                 "--task", 
                 "wonderboy3", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\wonderboy3\"",
+                "${workspaceFolder}\\out\\wonderboy3",
                 "--srcdir", 
-                "\"C:\\Program Files\\Epic Games\\WonderBoyTheDragonsTFUa87\""
+                "C:\\Program Files\\Epic Games\\WonderBoyTheDragonsTFUa87"
             ]
         },
         {
             "name": "GEXToolbox - Testing zamn: Zombies Ate My Neighbor and Ghould Patrol",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",
@@ -706,12 +745,12 @@
                 "--task", 
                 "zamn", 
                 "--destdir", 
-                "\"${workspaceFolder}\\out\\zamn\""
+                "${workspaceFolder}\\out\\zamn"
             ]
         },
         {
             "name": "GEXToolbox - List Tasks",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "toolbox.py",
             "console": "integratedTerminal",

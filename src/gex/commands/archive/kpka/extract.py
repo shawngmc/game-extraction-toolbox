@@ -25,7 +25,7 @@ def extract(in_file, out_dir):
                 filename = f'{hex(offset)}_{len(file_entry["contents"])}.dat'
 
                 try:
-                    type_id = identify.enhanced_magic_from_buffer(contents)
+                    type_id = identify.custom_magic_from_buffer(contents)
                     if not type_id == identify.KPKA:
                         logger.warning(f'Found {type_id} when identifying file, will try to extract anyway...')
                 except Exception as _:

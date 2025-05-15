@@ -319,6 +319,39 @@
                 }
             },
             {
+                "game": "Vampire Savior: The Lord of Vampire (J)",
+                "system": "Arcade",
+                "filename": "vsavj.zip",
+                "in_file": "vsavj",
+                "status": "playable",
+                "notes": [1],
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "vm3j.03d": {"size": 524288, "crc": "2A2E74A4"},
+                        "vm3j.04d": {"size": 524288, "crc": "1C2427BC"},
+                        "vm3j.05a": {"size": 524288, "crc": "95CE88D5"},
+                        "vm3j.06b": {"size": 524288, "crc": "2C4297E0"},
+                        "vm3j.07b": {"size": 524288, "crc": "A38AAAE7"},
+                        "vm3j.08a": {"size": 524288, "crc": "5773E5C9"},
+                        "vm3j.09b": {"size": 524288, "crc": "D064F8B9"},
+                        "vm3j.10b": {"size": 524288, "crc": "434518E9"},
+                        "vm3.13m": {"size": 4194304, "crc": "FD8A11EB"},
+                        "vm3.14m": {"size": 4194304, "crc": "C1A28E6C"},
+                        "vm3.15m": {"size": 4194304, "crc": "DD1E7D4E"},
+                        "vm3.16m": {"size": 4194304, "crc": "194A7304"},
+                        "vm3.17m": {"size": 4194304, "crc": "6B89445E"},
+                        "vm3.18m": {"size": 4194304, "crc": "DF9A9F47"},
+                        "vm3.19m": {"size": 4194304, "crc": "3830FDC7"},
+                        "vm3.20m": {"size": 4194304, "crc": "C22FC3D9"},
+                        "vm3.01": {"size": 131072, "crc": "F778769B"},
+                        "vm3.02": {"size": 131072, "crc": "CC09FAA1"},
+                        "vm3.11m": {"size": 4194304, "crc": "E80E956E"},
+                        "vm3.12m": {"size": 4194304, "crc": "9CD71557"}
+                    }
+                }
+            },
+            {
                 "game": "Vampire Savior: The Lord of Vampire (U)",
                 "system": "Arcade",
                 "filename": "vsavu.zip",

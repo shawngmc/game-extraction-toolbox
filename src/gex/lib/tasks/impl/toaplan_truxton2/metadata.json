@@ -1,0 +1,37 @@
+{
+    "in": {
+        "files": {
+            "truxton2": {
+                "rel_path": [],
+                "filename": "Truxton2.exe",
+                "versions": {
+                    "Steam": {
+                        "size": 3286296,
+                        "crc": "D0080E0C"
+                    }
+                }
+            }
+        }
+    },
+    "out": {
+        "files": [
+            {
+                "game": "Truxton2",
+                "system": "Arcade",
+                "filename": "truxton2.zip",
+                "status": "playable",
+                "notes": [],
+                "in_file": "truxton2",
+                "verify": {
+                    "type": "zip",
+                    "entries": {
+                        "tp024_1.bin": {"size": 524288, "crc": "F5CFE6EE"},
+                        "tp024_2.bin": {"size": 524288, "crc": "F2F6CAE4"},
+                        "tp024_3.bin": {"size": 1048576, "crc": "47587164"},
+                        "tp024_4.bin": {"size": 1048576, "crc": "805C449E"}
+                    }
+                }
+            }
+        ]
+    }
+}

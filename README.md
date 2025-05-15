@@ -27,6 +27,8 @@ py -m pip install --user pipx
 py -m pipx ensurepath
 ```
 
+Note: Windows may need the Visual C++ Build Tools and Windows SDK installed; see [this issue](https://github.com/K0lb3/UnityPy/issues/223) for UnityPy
+
 ##### Linux
 ```
 py -m pip install --user pipx
@@ -135,11 +137,11 @@ These are noted in the documentation for each script. If you think a ROM is misi
  **Namco Arcade Game Series: Galaga**           | 100%           | Y                |   
  **Namco Arcade Game Series: Ms. Pac-Man**      | 100%           | Y                |   
  **Namco Arcade Game Series: Pacman**           | 100%           | Y                |   
- **NeoGeo Classics by SNK (Humble Store)**      | 95%            | Y                | Baseball Stars 2 is more complex 
+ **NeoGeo Classics by SNK (Humble Store)**      | 100%            | Y               | 
  **Pac Man Museum Plus**                        | 40%            | Y                | Some progress, but there are a lot of non-extractable titles.
  **Sega Genesis and Mega Drive Collection**     | 90%            | Y                | Some compressed variants not yet extracted  
  **Sega Smash Pack 1**                          | 100%           | Y                | 
- **Sega Smash Pack 1**                          | 100%           | Y                | All games except Sega Swirl!
+ **Sega Smash Pack 2**                          | 100%           | Y                | All games except Sega Swirl!
  **Sonic Adventure DX (Hidden Game Gear games)**| 100%           | Y                | This is only the Game Gear games - SADX itself can not be made into a ROM/ISO!
  **SNK 40th Anniversary Collection**            | 100%           | Y                | All games supported by an emulator are extracted!
  **Street Fighter 30th Anniversary Collection** | 90%            | Y                | Now includes all playable international versions.
